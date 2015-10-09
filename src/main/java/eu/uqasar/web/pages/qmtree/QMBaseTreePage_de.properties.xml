@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Quality Models</entry>
+<entry key="treenode.saved.message">${name} wurde gespeichert.</entry>
+<entry key="label.qModelTagData">Tags</entry>
+<entry key="label.meta.known">Tags {0}</entry>
+<entry key="placeholder.meta.input">Enter {0}</entry>
+<entry key="help.meta.input">Press Enter, Tab or Comma to separate entries</entry>
+</properties>

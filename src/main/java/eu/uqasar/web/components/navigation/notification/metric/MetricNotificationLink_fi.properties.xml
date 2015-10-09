@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="metric.the">The Metric</entry>
+<entry key="metric.about.to.due">is about to due in {0} days from today.</entry>
+</properties>

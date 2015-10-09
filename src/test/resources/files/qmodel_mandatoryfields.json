@@ -1,0 +1,134 @@
+{
+    "name": "quality model u-qasar json",
+    "edition": "2_0",
+	"companyId": 4,
+	"shortName": "qm-uqasar",
+	"description":"quality model u-qasar imported from json",
+    "isActive": false,
+    "qualityObjective": [
+        {
+            "name": "Code coverage above 80%",
+            "description": "Average degree to which the source code  is tested by the set of Test Cases designed for the system at Unit and Integration levels)",
+            "lowerLimit": "80",
+            "upperLimit": "100",
+			"domainObjective": [
+			{"domain": "Bank",
+			"domain": "Public"
+			}
+			],
+			"purpose": "Process",
+			"paradigm": "Waterfall",
+			"rolObjective": [
+			{"rol":"ScrumMaster"
+			}
+			],
+            "qualityIndicator": [
+                {
+                    "name": "Unit Test coverage",
+                    "description": "Average degree to which the source code  is tested by the set of Unit Tests. It should be above 60%",
+                    "lowerLimit": "60",
+                    "upperLimit": "100",
+					"purpose": "Process",
+					"paradigm": "Waterfall",
+					"stage": "Implementation",
+					"rolIndicator": [
+					{"rol":"Developer"					
+					}
+					],
+                    "metric": [
+                        {
+                            "name": "Loc covered Unit Tests",
+                            "description": "Lines Of Code covered by Unit Unit",
+							"source": "StaticAnalysis",
+							"scale":"Ordinal",
+							"unit":"Loc"
+						},
+                        {
+                            "name": "Loc",
+                            "description": "Lines Of Code",
+							"source": "StaticAnalysis",
+							"scale":"Ordinal",
+							"unit":"Loc"
+                        }
+                    ]
+                },
+				{
+                    "name": "Integration Test coverage",
+                    "description": "Average degree to which the source code is tested by the set of Integration Tests. It should be above 80%",
+                    "lowerLimit": "80",
+                    "upperLimit": "100",
+					"purpose": "Process",
+					"paradigm": "Waterfall",
+					"stage": "Implementation",
+					"rolIndicator": [
+					{"rol":"Developer",
+					"rol":"Tester"
+					}
+					],
+                    "metric": [
+                        {
+                            "name": "Loc covered Integration Tests",
+                            "description": "Lines Of Code covered by Unit Integration",
+							"source":"StaticAnalysis",
+							"scale":"Ordinal",
+							"unit":"Loc"
+                        },
+                        {
+                            "name": "Loc",
+                            "description": "Lines Of Code",
+							"source":"StaticAnalysis",
+							"scale":"Ordinal",
+							"unit":"Loc"
+                        }
+                    ]
+                }	
+            ]
+        },
+		{
+            "name": "Minimize Technical Debt",
+            "description": "Work that needs to be done before a particular job can be considered complete",
+            "lowerLimit": "0",
+            "upperLimit": "70",
+			"domainObjective":[
+			{"domain":"Bank"
+			}
+			],
+			"purpose": "Product",
+			"version": "Final",
+			"rolObjective": [
+			{"rol":"ScrumMaster"
+			}
+			],
+            "qualityIndicator": [
+                {
+                    "name": "Effort needed to fix all issues",
+                    "description": "",
+                    "lowerLimit": "0",
+                    "upperLimit": "70",
+					"purpose": "Product",
+					"version": "Final",
+					"rolIndicator": [
+					{"rol":"Developer"					
+					}
+					],
+                    "metric": [
+                        {
+                            "name": "BLockers issues",
+                            "description": "Number of bLockers issues",
+							"source":"IssueTracker",
+							"scale":"Ordinal",
+							"unit":"Issue"
+                        },
+                        {
+                            "name": "Critical/major/minor issues",
+                            "description": "Number of critical/major/minor issues",
+							"source":"IssueTracker",
+							"scale":"Ordinal",
+							"unit":"Issue"
+                        }
+                    ]
+                }	
+            ]
+        }
+    ]
+}

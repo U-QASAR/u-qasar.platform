@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.apache.org/">
+<head>
+<title></title>
+</head>
+<body>
+	<wicket:panel>
+		<div class="accordion" id="companyFilter">
+			<div class="accordion-group">
+				<div class="accordion-heading">
+					<a class="accordion-toggle" data-toggle="collapse"
+						data-parent="#productFilter" href="#collapseOne"><i
+						class="icon-filter"></i> <wicket:message key="label.filter.title" />
+					</a>
+				</div>
+				<div id="collapseOne" class="accordion-body collapse">
+					<div class="accordion-inner filter">
+						<form class="form" id="filterForm" wicket:id="form">
+							<div class="row-fluid">
+								<div class="span4">
+									<label class="control-label" for="name"> <wicket:message
+											key="label.filter.name" />:
+									</label> <input type="text" id="name" wicket:id="name" />
+								</div>
+								<div class="span4">
+									<label class="control-label" for="shortName"> <wicket:message
+											key="label.filter.shortName" />:
+									</label> <input type="text" id="shortName" wicket:id="shortName" />
+								</div>						
+								<div class="span4">
+									<label class="control-label" for="country"> <wicket:message
+											key="label.filter.country" />:
+									</label> <select id="country" wicket:id="country" />
+								</div>						
+							</div>
+							<div class="row-fluid">
+								<div class="span12">
+									<span class="pull-right">
+										<button type="button" class="btn btn-primary"
+											wicket:id="apply">
+											<i class="icon-refresh"></i>
+											<wicket:message key="button.filter.apply" />
+										</button>
+										<button type="button" class="btn" wicket:id="reset">
+											<i class="icon-remove-sign"></i>
+											<wicket:message key="button.filter.clear" />
+										</button>
+									</span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</wicket:panel>
+</body>
+</html>

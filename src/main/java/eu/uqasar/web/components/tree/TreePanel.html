@@ -1,0 +1,38 @@
+<wicket:panel xmlns:wicket>
+	<div wicket:id="tree"></div>
+	<div class="tree-controls">
+		<div class="btn-toolbar">
+			<div class="btn-group">
+				<a class="btn btn-small btn-success dropdown-toggle" data-toggle="dropdown"
+					href="#"> <i class="icon-plus"></i> <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" wicket:id="container.tree.node.new">
+					<li><a class="new project" wicket:id="link.tree.node.new.project"><i class="icon-sitemap"></i>
+							Project</a></li>
+					<li><a class="new quality objective" wicket:id="link.tree.node.new.objective"><i class="icon-tasks"></i>
+							Quality Objective</a></li>
+					<li><a class="new quality indicator" wicket:id="link.tree.node.new.indicator"><i class="icon-dashboard"></i>
+							Quality Indicator</a></li>
+					<li><a class="new metric" wicket:id="link.tree.node.new.metric"><i class="icon-signal"></i>
+							Metric</a></li>
+				</ul>
+				<a class="btn btn-small btn-success edit" wicket:id="link.tree.node.edit">
+					<i class="icon-pencil"></i>
+				</a>
+			</div>
+			<div class="btn-group">
+				<a class="btn btn-small move up" wicket:id="link.tree.node.move.up">
+					<i class="icon-chevron-sign-up"></i>
+				</a>
+				<a class="btn btn-small move down" wicket:id="link.tree.node.move.down">
+					<i class="icon-chevron-sign-down"></i>
+				</a>
+			</div>
+			<div class="btn-group">
+				<a class="btn btn-small btn-danger delete" wicket:id="link.tree.node.delete">
+					<i class="icon-trash"></i>
+				</a>				
+			</div>
+		</div>
+	</div>
+</wicket:panel>

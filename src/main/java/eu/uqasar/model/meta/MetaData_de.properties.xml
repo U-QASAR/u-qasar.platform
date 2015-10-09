@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="label.metadata.ContinuousIntegrationTool">Continuous Integration Tools</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.new">Neues Continuous Integration Tool</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.existing">Existierende Continuous Integration Tools</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.selected">ausgewählten Continuous Integration Tools</entry>
+    <entry key="label.metadata.CustomerType">Kundentypen</entry>
+    <entry key="label.metadata.CustomerType.new">Neuer Kundentyp</entry>
+    <entry key="label.metadata.CustomerType.existing">Existierende Kundentypen</entry>
+    <entry key="label.metadata.CustomerType.selected">ausgewählten Kundentypen </entry>
+    <entry key="label.metadata.IssueTrackingTool">Issue Tracking Tools</entry>
+    <entry key="label.metadata.IssueTrackingTool.new">Neues Issue Tracking Tool</entry>
+    <entry key="label.metadata.IssueTrackingTool.existing">Existierende Issue Tracking Tools</entry>
+    <entry key="label.metadata.IssueTrackingTool.selected">ausgewählten Issue Tracking Tools</entry>
+    <entry key="label.metadata.ProgrammingLanguage">Programmiersprachen</entry>
+    <entry key="label.metadata.ProgrammingLanguage.new">Neue Programmiersprache</entry>
+    <entry key="label.metadata.ProgrammingLanguage.existing">Existierende Programmiersprachen</entry>
+    <entry key="label.metadata.ProgrammingLanguage.selected">ausgewählten Programmiersprachen</entry>
+    <entry key="label.metadata.ProjectType">Projekttypen</entry>
+    <entry key="label.metadata.ProjectType.new">Neuer Projekttyp</entry>
+    <entry key="label.metadata.ProjectType.existing">Existierende Projekttypen</entry>
+    <entry key="label.metadata.ProjectType.selected">ausgewählten Projekttypen</entry>
+    <entry key="label.metadata.SoftwareLicense">Softwarelizenzen</entry>
+    <entry key="label.metadata.SoftwareLicense.new">Neue Softwarelizenz</entry>
+    <entry key="label.metadata.SoftwareLicense.existing">Existierende Softwarelizenzen</entry>
+    <entry key="label.metadata.SoftwareLicense.selected">ausgewählte Softwarelizenzen</entry>
+    <entry key="label.metadata.SoftwareType">Softwaretypen</entry>
+    <entry key="label.metadata.SoftwareType.new">Nuer Softwaretyp</entry>
+    <entry key="label.metadata.SoftwareType.existing">Existierende Softwaretypen</entry>
+    <entry key="label.metadata.SoftwareType.selected">ausgewählten Softwaretypen</entry>
+    <entry key="label.metadata.SourceCodeManagementTool">Source Code Management Tools</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.new">Neues Source Code Management Tool</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.existing">Existierende Source Code Management Tools</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.selected">ausgewählten Source Code Management Tools</entry>
+    <entry key="label.metadata.StaticAnalysisTool">Static Analysis Tools</entry>
+    <entry key="label.metadata.StaticAnalysisTool.new">Neues Static Analysis Tool</entry>
+    <entry key="label.metadata.StaticAnalysisTool.existing">Existierende Static Analysis Tools</entry>
+    <entry key="label.metadata.StaticAnalysisTool.selected">ausgewählten Static Analysis Tools</entry>
+    <entry key="label.metadata.TestManagementTool">Test Management Tools</entry>
+    <entry key="label.metadata.TestManagementTool.new">Neues Test Management Tool</entry>
+    <entry key="label.metadata.TestManagementTool.existing">Existierende Test Management Tools</entry>
+    <entry key="label.metadata.TestManagementTool.selected">ausgewählten Test Management Tools</entry>
+    <entry key="label.metadata.Topic">Themenfelder</entry>
+    <entry key="label.metadata.Topic.new">Neues Themenfeld</entry>
+    <entry key="label.metadata.Topic.existing">Existierende Themenfelder</entry>
+    <entry key="label.metadata.Topic.selected">ausgewählten Themenfelder</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology">Software Entwicklung Methodologie</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.new">Neue Software Entwicklung Methodologie</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.existing">Existierende Software Development Methodologien</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.selected">ausgewählte Software Development Methodologien</entry>
+    <entry key="label.metadata.QModelTagData"></entry>   
+</properties>

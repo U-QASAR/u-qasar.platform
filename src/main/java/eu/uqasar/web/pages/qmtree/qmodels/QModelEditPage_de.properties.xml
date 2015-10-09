@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="name.null">properties name is required</entry>
+<entry key="page.title">${name} bearbeiten</entry>
+<entry key="form.name.required">Name required</entry>
+<entry key="form.name.max">Name size &lt; 255 characters</entry>
+<entry key="form.key.required">Schlüssel benötigt</entry>
+<entry key="help.active">Um ein Qualitätsmodell als aktiv auszuwählen, sollten andere inaktiv sein</entry>
+<entry key="form.key.repeated">This key is already in use, the value should be unique</entry>
+</properties>

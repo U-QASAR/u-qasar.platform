@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="users">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2><wicket:message key="page.title"></wicket:message></h2>
+					</div>
+				</div>
+				<hr/>
+				 <div class="row-fluid">
+					<div class="span12" wicket:id="filter"></div>
+				 </div> 
+				<form wicket:id="form">
+				
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span12" wicket:id="companyGroup">
+								<div wicket:id="companyContainer">
+									<table class="table table-striped users" id="userlist">
+											<thead>
+												<tr>
+													<th colspan="6" class="alignright"><a class="btn btn-primary" wicket:id="link.create.company"><wicket:message key="column.head.actions.create"></wicket:message></a></th>
+												</tr>
+											<tr>
+												<th class="checkbox"><input type="checkbox" wicket:id="companyGroupSelector" /></th>
+												<th class="user"><wicket:message key="column.head.company" /></th>
+												<th class="user"><wicket:message key="column.head.shortName" /></th>
+												<th class="role"><wicket:message key="column.head.address" /></th>
+												<th class="role"><wicket:message key="column.head.country" /></th>
+												<th class="source"><wicket:message key="column.head.phone" /></th>
+												<th class="source"><wicket:message key="column.head.fax" /></th>
+												<th><wicket:message key="column.head.actions" /></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr wicket:id="companies" class="users">
+												<td class="checkbox"><input type="checkbox" wicket:id="companyCheck" /></td>
+												<td class="name">
+													<a wicket:id="link.name.edit.company">
+														<span wicket:id="td.name"></span>
+													</a>	
+												</td>
+												<td><span wicket:id="td.shortName"></span></td>
+												<td class="role">
+													<span wicket:id="td.street"></span><br/>
+													<span wicket:id="td.zipcode"></span>
+													<span wicket:id="td.city"></span>
+												</td>
+												<td class="role"><span wicket:id="td.country"></span></td>
+												
+												<td class="source"><span wicket:id="td.phone"></span></td>
+												<td class="source"><span wicket:id="td.fax"></span></td>
+												<td>
+													<div class="btn-toolbar">
+														<div class="btn-group">
+															<a wicket:id="link.actions.edit.company" class="btn btn-success" wicket:message="title:td.company.actions.edit"><i class="icon-pencil"></i></a>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="4" class="navigator"><div wicket:id="navigatorFoot"></div></td>
+												<td colspan="3" class="alignright">
+													<button class="btn btn-danger" wicket:id="deleteSelected"><wicket:message key="td.company.actions.batch.remove"></wicket:message></button>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+			<div wicket:id="deleteConfirmationModal"></div>
+		</wicket:extend>
+	</body>
+</html>

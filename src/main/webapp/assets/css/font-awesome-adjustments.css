@@ -1,0 +1,3 @@
+.btn-small [class^="icon-"],.btn-small [class*=" icon-"] {
+	font-size: 110%;
+}

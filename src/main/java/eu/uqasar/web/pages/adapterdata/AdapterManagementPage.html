@@ -1,0 +1,65 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />
+			</h2>
+		</div>
+		<div>
+			<form wicket:id="deleteForm" id="deleteForm">
+				<div wicket:id="adapterGroup">
+					<div wicket:id="adapterContainer">
+						<table class="table table-striped tablesorter" id="adapter-list">
+							<thead>
+								<tr>
+									<td colspan="5" style="padding-left: 0px;">
+										<a class="btn btn-primary" wicket:id="addAdapterLink" id="addAdapterLink">
+											<wicket:message key="create.adapter.button" />
+										</a>
+									</td>
+									<td colspan="3" class="navigator right"><div wicket:id="navigatorHead"></div></td>
+								</tr>
+								<tr>
+									<th class="checkbox" style="width: 05%"><input type="checkbox" wicket:id="adapterGroupSelector" /></th>
+									<th style="width: 25%"><wicket:message key="name.column" /></th>
+ 									<th style="width: 20%"><wicket:message key="metricSource.column" /></th>
+	 								<th style="width: 10%"><wicket:message key="url.column" /></th>
+	 								<th style="width: 10%"><wicket:message key="project.column" /></th>
+	 								<th style="width: 15%"><wicket:message key="latestUpdate.column" /></th>									
+									<th style="width: 15%"><wicket:message key="action.column" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="adapters">
+									<td class="checkbox"><input type="checkbox" wicket:id="adapterCheck" /></td>
+									<td><span wicket:id="name"></span></td>
+									<td><span wicket:id="metricSource"></span></td>
+ 									<td><span wicket:id="url"></span></td>
+									<td><span wicket:id="project"></span></td>
+ 									<td><span wicket:id="latestUpdate"></span></td>						
+									<td colspan="3" id="actionsBar">
+										<a class="btn btn-small" wicket:message="title:update.measurements.button" wicket:id="updateAdapterData"><i class="icon-refresh"></i></a>
+										<a class="btn btn-small" wicket:message="title:edit.link.text" wicket:id="edit"><i class="icon-edit"></i></a>
+										<a class="btn btn-small" wicket:message="title:managedata.link.text" wicket:id="manage"><i class="icon-check"></i></a>
+									</td>
+									
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="5" style="padding-left: 0px;">
+										<a class="btn btn-danger" wicket:id="deleteSelected">
+											<wicket:message key="delete.adapter.batch.button" />
+										</a>
+									</td>
+									<td colspan="3" class="navigator right"><div wicket:id="navigatorFoot"></div></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div wicket:id="deleteConfirmationModal"></div>
+</wicket:extend>

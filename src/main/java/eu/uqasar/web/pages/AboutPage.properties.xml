@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.acronym">U-QASAR Project</entry>
+<entry key="page.title">U-QASAR Platform</entry>
+<entry key="project.desc">This is the Prototype of the U-QASAR Platform. 
+The main objective of U-QASAR is to create a flexible Quality Assurance, 
+Control and Measurement methodology to assess the quality of software 
+development projects and their resulting products. The U-QASAR platform 
+enables measurement of the quality of the process and product at any time.</entry>
+<entry key="platform.overview">The U-QASAR platform is based on a modular 
+architecture with the following groups of services: Monitoring Services that 
+take care of obtaining and storing the measurement data from different sources 
+of data, Analytical Services proving means for analysing the data, 
+Enhancement Services further refining the data and content in the platform thus 
+creating added value to the users, Visualization and Reporting Services 
+as well as Utility Services supporting the other services.</entry>
+</properties>

@@ -1,0 +1,35 @@
+<wicket:extend xmlns:wicket>
+	<div class="row">
+		<div class="span12">
+			<section>
+				<div class="page-header">
+					<h2>
+						<wicket:message key="export.downloadFile" />
+					</h2>
+				</div>
+				<div class="span9"></div>
+
+				<form wicket:id="form">
+
+					<div class="row-fluid headline">
+						<div class="span9">
+							<wicket:message key="export.selectQModel" />
+							<select wicket:id="qmodels"></select>
+						</div>
+
+						<select wicket:id="selector">
+							<option wicket:id="filetype1">JSON file</option>
+							<option wicket:id="filetype2">XML file</option>
+						</select>
+
+						<div class="span1">
+							<input type="submit" value="Download quality model"
+								class="btn btn-primary" />
+						</div>
+					</div>
+				</form>
+			</section>
+		</div>
+	</div>
+
+</wicket:extend>

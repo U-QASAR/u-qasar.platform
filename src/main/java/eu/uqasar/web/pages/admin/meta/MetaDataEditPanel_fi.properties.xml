@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="label.new">Uusi</entry>
+    <entry key="label.add">Lisää</entry>
+    <entry key="table.head.label.isUsed">Käytössä?</entry>
+    <entry key="buttons.remove">Poista valitut</entry>
+    <entry key="buttons.update">Päivitä</entry>
+    <entry key="delete.confirmation.modal.header">Poista {0}?</entry>
+    <entry key="delete.confirmation.modal.message">Oletteko varma, että haluatte poistaa {0} ({1})?</entry>
+    <entry key="delete.confirmation.modal.submit.text">Kyllä, poista.</entry>
+    <entry key="delete.confirmation.modal.cancel.text">Ei, keskeytä.</entry>
+</properties>

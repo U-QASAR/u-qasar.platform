@@ -1,0 +1,36 @@
+<wicket:extend xmlns:wicket>
+	<div class="row">
+		<div class="span12">
+			<section>
+				<div class="page-header">
+					<h2>
+						<wicket:message key="export.downloadFile" />
+					</h2>
+				</div>
+				<form wicket:id="form">
+
+					<div class="row-fluid headline">
+						<div class="span12">
+							<wicket:message key="export.selectProj" /> <br/>
+							<select wicket:id="projects" class="input-xlarge"></select>
+						
+						<br/><br/>
+						
+						<wicket:message key="export.format" /> 
+						<br/>
+						<select wicket:id="selector" class="input-xlarge">
+							<option wicket:id="filetype1">JSON</option>
+							<option wicket:id="filetype2">XML</option>
+						</select>
+
+						<br/><br/>
+						
+						<input type="submit" wicket:id="exportProject" class="btn btn-primary" />
+						</div>
+					</div>
+				</form>
+			</section>
+		</div>
+	</div>
+
+</wicket:extend>

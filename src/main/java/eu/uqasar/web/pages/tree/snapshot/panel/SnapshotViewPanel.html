@@ -1,0 +1,62 @@
+<wicket:panel xmlns:wicket>
+	<form>
+		<div>
+			<div>
+				<div>
+					<ul>
+						<li style="list-style-type: none;" wicket:id="qmodel">
+								<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+								<span wicket:id="name"></span>
+							</a>
+							<div wicket:id="valueContainer" class="pull-right">
+								(<span wicket:id="unit"></span>)
+								<span wicket:id="hValue"></span>
+							</div>
+						</li>
+						<li style="list-style-type: none;">
+							<ul wicket:id="qmlist">
+								<li style="list-style-type: none;" wicket:id="qobjective">
+										<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+										<span wicket:id="name"></span>
+									</a> 
+									<div wicket:id="valueContainer" class="pull-right">
+										(<span wicket:id="unit"></span>)
+										<span wicket:id="hValue"></span>
+									</div>
+									
+								</li>
+								<li style="list-style-type: none;">
+									<ul wicket:id="qmlist">
+										<li style="list-style-type: none;" wicket:id="qindicator">
+												<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+												<span wicket:id="name"></span>
+											</a>
+											<div wicket:id="valueContainer" class="pull-right">
+												(<span wicket:id="unit"></span>)
+												<span wicket:id="hValue"></span>
+											</div>
+											
+										</li>
+										<li style="list-style-type: none;">
+											<ul wicket:id="qmlist">
+												<li style="list-style-type: none;" wicket:id="qmetric">
+														<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+														<span wicket:id="name"></span>
+													</a>
+													<div wicket:id="valueContainer" class="pull-right">
+														(<span wicket:id="unit"></span>)
+														<span wicket:id="hValue"></span>
+													</div> 
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

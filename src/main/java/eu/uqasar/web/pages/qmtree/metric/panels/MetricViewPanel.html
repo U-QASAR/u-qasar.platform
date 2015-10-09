@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+	<wicket:panel>
+		<div class="view metric">
+			<form>
+				<div class="row-fluid">
+					<div class="span12">
+						<h2 class="name">
+							<i class="icon" wicket:id="icon"></i> <span wicket:id="name"></span>
+							<span class="actions"> <a wicket:id="link.edit"
+								wicket:message="title:button.edit"> <i class="icon-pencil"></i>
+									<wicket:message key="button.edit" />
+							</a>
+							</span>
+						</h2>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="description" for="description"><wicket:message
+								key="label.description" />:</label>
+						<div id="description" class="description" wicket:id="description"></div>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+ 					<div class="span4">
+						<label class="inline">
+						<wicket:message key="label.metric.source" />:</label><span wicket:id="source"></span>
+					</div>
+				</div> 
+				<hr />
+				<div class="row-fluid">
+ 					<div class="span4">
+						<label class="inline">
+						<wicket:message key="label.metric.scale" />:</label><span wicket:id="scale"></span>
+					</div>
+					<div class="span4">
+						<label class="inline"><wicket:message
+								key="label.metric.unit" />:</label><span wicket:id="unit"></span>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span3 expected value">
+						<label><span wicket:id="limitsLabel"></span></label>
+						<label><span wicket:id="lowerLabel"></span><span wicket:id="lowerLimit"></span></label>
+						<label><span wicket:id="upperLabel"></span><span wicket:id="upperLimit"></span></label>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span3 expected value">
+						<label><wicket:message key="label.metric.targetValue" />: <span wicket:id="targetValue"></span></label>
+						<label><wicket:message key="label.metric.weight" />: <span wicket:id="weight"></span></label>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12" wicket:id="wmcQModelTagData">
+						<label class="inline" for="qModelTagData"><wicket:message key="label.qModelTagData" /></label>
+						<div id="qModelTagData" class="qModelTagData" wicket:id="qModelTagData" ></div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</wicket:panel>
+</body>
+</html>

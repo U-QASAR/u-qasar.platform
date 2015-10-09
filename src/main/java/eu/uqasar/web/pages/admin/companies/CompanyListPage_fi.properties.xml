@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="column.head.source">Lähde</entry>
+	<entry key="page.title">Rekisteröityjen yritysten lista</entry>
+	<entry key="column.head.company">Yritys</entry>
+	<entry key="column.head.shortName">Lyhyt nimi</entry>
+	<entry key="column.head.address">Osoite</entry>
+	<entry key="column.head.country">Maa</entry>
+	<entry key="column.head.phone">Puhelin</entry>
+	<entry key="column.head.fax">Faksi</entry>
+	<entry key="column.head.actions">Toiminnot</entry>
+	<entry key="column.head.actions.create">Luo yritys</entry>
+	<entry key="td.company.actions.edit">Muokkaa yritystä</entry>
+	<entry key="td.company.actions.batch.remove">Poista valittu/valitut yritys/yritykset</entry>
+	<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+	<entry key="delete.confirmation.modal.message">Oletko aivan varma, että haluat poistaa valitun yrityksen/valitut yritykset sekä näihin liittyvät käyttäjät?
+Tätä toimintoa ei voi kumota!</entry>
+	<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+	<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+	<entry key="delete.confirmed">Valitut yritykset on poistettu.</entry>
+</properties>

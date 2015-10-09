@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Sivua tai resurssia ei löydetä</entry>
+	<entry key="description.text">Pahoittelut, haluamasi sivu tai resurssi {0} voi olla väliaikaisesti tavoittamattomissa, siirretty tai poistettu.</entry>
+	<entry key="description.item"><![CDATA[({0} <em>'{1}'</em>) ]]></entry>
+	<entry key="solution.entry">Koeta seuraavaa selvittääksesi, mitä etsit:</entry>
+	<entry key="solution.first">Kirjoita hakutermi tai avainsana hakukenttään ylhäällä.</entry>
+	<entry key="solution.second">Käytä sivuston navigaatiopalkkia ylhäällä.</entry>
+	<entry key="solution.third">Käytä selaimesi takaisin-nappia palataksesi edelliselle sivulle.</entry>
+</properties>

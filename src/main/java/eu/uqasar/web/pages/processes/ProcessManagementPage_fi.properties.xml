@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Prosessit</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="version.column">Versio</entry>
+<entry key="page.title">Prosessit</entry>
+<entry key="delete.process.batch.button">Poista Prosessit</entry>
+<entry key="name.column">Nimi</entry>
+<entry key="description.column">Kuvaus</entry>
+<entry key="process.deleted">Prosessi ${name} on poistettu.</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="endDate.column">Päättymispäivä</entry>
+<entry key="create.process.button">Luo prosessi</entry>
+<entry key="delete.confirmation.modal.message">Oletko täysin varma, että haluat poistaa valitun (valitut) prosessin (prosessit))?
+Tätä toimintoa ei voi peruuttaa!</entry>
+<entry key="startDate.column">Alkamispäivämäärä</entry>
+<entry key="edit.link.text">Muokkaa prosessia</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+<entry key="process.selected.deleted">Valitut prosessit on poistettu.</entry>
+</properties>

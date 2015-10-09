@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.team">Team bearbeiten</entry>
+<entry key="help.key">Schlüssel des Projekts (wird in URLs verwendet) </entry>
+<entry key="label.meta.known">Genutzte {0}</entry>
+<entry key="placeholder.meta.input">{0} eingeben</entry>
+<entry key="help.meta.input">Einträge mittels Enter, Tabulator oder Komma trennen</entry>
+</properties>

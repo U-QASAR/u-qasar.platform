@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Adapter editieren</entry>
+<entry key="name.Required">Bitte einen Namen dem Adapter eingeben</entry>
+<entry key="page.copy.title">Adapter kopieren</entry>
+<entry key="form.create.header">Ein neues Adapter erstellen</entry>
+<entry key="page.create.title">Adapter erstellen</entry>
+<entry key="submit.text">Speichern</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Bitte dem neuen Adapter einen validen Namen eingeben</entry>
+<entry key="form.edit.header">Adapter editieren</entry>
+<entry key="name.input.placeholder">Ein Name dem Adapter eingeben...</entry>
+<entry key="saved.message">Das Adapter ${name} wurde gespeichert</entry>
+<entry key="cancel.text">Abbrechen</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Der Name eines Adapters muss zwischen ${min} und ${max} Zeichen sein</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="form.copy.header">Adapter ${name} kopieren</entry>
+<entry key="label.metricsource">Metrikquelle</entry>
+<entry key="url.input.label">URL</entry>
+<entry key="url.input.placeholder">Ein URL vom Adapter eingeben...</entry>
+<entry key="username.input.label">Benutzername</entry>
+<entry key="pwd.input.label">Kennwort</entry>
+<entry key="username.input.placeholder">Bitte ein Benutzername für den Adapter eingeben...</entry>
+<entry key="password.input.placeholder">Bitte ein Kennwort für den Adapter eingeben...</entry>
+<entry key="label.project">Projekt</entry>
+<entry key="label.password">Kennwort</entry>
+<entry key="label.username">Benutzername</entry>
+<entry key="adapterProject.input.label">Projekt vom Adapter benutzt</entry>
+<entry key="adapterProject.input.placeholder">Bitte den Namen der Projekts benutzt vom Adapter eingeben</entry>
+<entry key="adapterTestPlan.input.label">Testplan vom Adapter benutzt (Testing framework)</entry>
+<entry key="adapterTestPlan.input.placeholder">Bitte den Namen der Testplans benutzt vom Adapter eingeben</entry>
+<entry key="canceled.message">Die Operation wurde abgebrochen</entry>
+<entry key="add.confirmed">Ein neuer Adapter wurde erfolgreich erstellt.</entry>
+</properties>

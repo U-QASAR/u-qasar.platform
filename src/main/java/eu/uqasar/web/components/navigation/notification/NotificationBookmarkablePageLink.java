@@ -1,0 +1,182 @@
+package eu.uqasar.web.components.navigation.notification;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.text.DateFormat;
+import java.util.Date;
+
+import org.apache.wicket.Page;
+import org.apache.wicket.core.util.lang.WicketObjects;
+import org.apache.wicket.markup.html.TransparentWebMarkupContainer;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.panel.IMarkupSourcingStrategy;
+import org.apache.wicket.markup.html.panel.PanelMarkupSourcingStrategy;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
+import org.jboss.solder.logging.Logger;
+
+import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.CssClassNameAppender;
+import de.agilecoders.wicket.core.markup.html.bootstrap.image.Icon;
+import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
+import eu.uqasar.model.notification.INotification;
+import eu.uqasar.web.UQasar;
+
+public class NotificationBookmarkablePageLink<T extends INotification, C extends Page> extends Link<T> {
+
+	private static final long serialVersionUID = 9134635901931928968L;
+	
+	protected static org.jboss.solder.logging.Logger logger = Logger.getLogger(NotificationBookmarkablePageLink.class);
+
+	/**
+	 * The page class that this link links to.
+	 */
+	protected final String pageClassName;
+
+	/**
+	 * The parameters to pass to the class constructor when instantiated.
+	 */
+	protected PageParameters parameters;
+
+	protected Icon icon;
+	protected WebMarkupContainer gotoContainer;
+	protected Label notificationDate;
+	
+	public NotificationBookmarkablePageLink(String id, Class<C> pageClass, IModel<T> model) {
+		this(id, pageClass, new PageParameters(), model);
+	}
+
+	public NotificationBookmarkablePageLink(final String id, final Class<C> pageClass, final PageParameters parameters, IModel<T> model) {
+		
+		super(id, model);
+		this.parameters = parameters;
+
+		if (pageClass == null) {
+			throw new IllegalArgumentException(
+					"Page class for bookmarkable link cannot be null");
+		} else if (!Page.class.isAssignableFrom(pageClass)) {
+			throw new IllegalArgumentException(
+					"Page class must be derived from " + Page.class.getName());
+		}
+		pageClassName = pageClass.getName();
+
+		final String className = (model != null) && (model.getObject() != null) ? model
+				.getObject().getClass().getSimpleName()
+				: this.getClass().getSimpleName();
+
+		add(new CssClassNameAppender("notification", className));
+		TransparentWebMarkupContainer notificationContainer = new TransparentWebMarkupContainer(
+				"notification.container");
+		add(notificationContainer);
+		DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, UQasar
+				.getSession().getLocale());
+
+		
+		// Add a check whether the creation date is null
+		Date creationDate = new Date();
+		if (model.getObject().getCreationDate() == null) {
+			creationDate = model.getObject().getCreationDate();
+		}
+		
+		gotoContainer = new WebMarkupContainer("notification.goto.container");
+		gotoContainer.add(notificationDate = new Label("notification.date", df
+				.format(creationDate)));
+		notificationContainer.add(icon = new Icon("notification.icon",
+				new IconType("group")));
+		notificationContainer.add(gotoContainer);
+	}
+
+	public NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
+		icon.setType(iconType);
+		return this;
+	}
+
+	public NotificationBookmarkablePageLink<T, C> setIcon(String iconName) {
+		icon.setType(new IconType(iconName));
+		return this;
+	}
+
+	/**
+	 * @return page parameters
+	 */
+	public PageParameters getPageParameters() {
+		if (parameters == null) {
+			parameters = new PageParameters();
+		}
+		return parameters;
+	}
+
+	public void setPageParameters(PageParameters parameters) {
+		this.parameters = parameters;
+	}
+
+	/**
+	 * Get the page class registered with the link
+	 *
+	 * @return Page class
+	 */
+	public final Class<? extends Page> getPageClass() {
+		return WicketObjects.resolveClass(pageClassName);
+	}
+
+	/**
+	 * Whether this link refers to the given page.
+	 *
+	 * @param page the page
+	 * @see
+	 * org.apache.wicket.markup.html.link.Link#linksTo(org.apache.wicket.Page)
+	 */
+	@Override
+	public boolean linksTo(final Page page) {
+		return page.getClass() == getPageClass();
+	}
+
+	@Override
+	protected boolean getStatelessHint() {
+		return true;
+	}
+
+	
+	/**
+	 * Gets the url to use for this link.
+	 *
+	 * @return The URL that this link links to
+	 * @see org.apache.wicket.markup.html.link.Link#getURL()
+	 */
+	@Override
+	protected CharSequence getURL() {
+		return urlFor(getPageClass(), getPageParameters());
+	}
+
+	@Override
+	protected IMarkupSourcingStrategy newMarkupSourcingStrategy() {
+		return new PanelMarkupSourcingStrategy(true);
+	}
+
+	public static <N extends INotification, P extends Page, T extends NotificationBookmarkablePageLink<N, P>> T getLink(Class<? extends NotificationBookmarkablePageLink> clazz, String id, IModel<N> model) {
+		try {
+			Constructor<? extends NotificationBookmarkablePageLink> constructor = clazz.getConstructor(String.class, IModel.class);
+			return (T) constructor.newInstance(id, model);
+		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+			logger.error(ex.getMessage(), ex);
+		}
+		return null;
+	}
+
+	public static <N extends INotification, P extends Page, T extends NotificationBookmarkablePageLink<N, P>> T getLink(Class<N> clazz, 
+			String id, PageParameters parameters, IModel<N> model) {
+		try {
+			Constructor<N> constructor = clazz.getConstructor(String.class, PageParameters.class, IModel.class);
+			return (T) constructor.newInstance(id, parameters, model);
+		} catch (NoSuchMethodException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
+			logger.error(ex.getMessage(), ex);
+		}
+		return null;
+	}
+
+	@Override
+	public void onClick() {
+	}
+
+}

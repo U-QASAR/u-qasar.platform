@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a teamname</entry>
+<entry key="label.add.userrole">Role of additional User</entry>
+<entry key="column.head.role">Role</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Teamname must be at least ${min} characters long</entry>
+<entry key="column.head.member">User</entry>
+<entry key="placeholder.add.userName">Type to start auto completion</entry>
+<entry key="placeholder.name">The name of the team</entry>
+<entry key="page.title.new">Create new Team</entry>
+<entry key="td.members.actions.batch.remove">Remove selected user(s) from ${name}</entry>
+<entry key="page.title.edit">Edit ${name}</entry>
+<entry key="button.add.save">Add user to ${name}</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.description">Description</entry>
+<entry key="label.add.username">Name of additional User</entry>
+<entry key="button.update">Commit changes</entry>
+<entry key="name.Required">Please provide a teamname</entry>
+<entry key="label.list.title">${name} members and their roles</entry>
+<entry key="label.add.title">Add a user to ${name}</entry>
+<entry key="error.user.notvalid">The user to be added is not valid!</entry>
+<entry key="delete.confirmation.modal.header">Remove users from team?</entry>
+<entry key="delete.confirmation.modal.message">Are you sure you want to remove the selected users from the team?</entry>
+<entry key="delete.confirmation.modal.submit.text">Yes, remove the users</entry>
+<entry key="delete.confirmation.modal.cancel.text">No, cancel removal</entry>
+<entry key="save.confirmed">Your changes have been saved.</entry>
+<entry key="delete.confirmed">Selected users have been removed from team.</entry>
+</properties>

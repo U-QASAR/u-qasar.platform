@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.lcStage">Elinkaarivaihe</entry>
+<entry key="label.name">Nimi</entry>
+<entry key="label.description">Kuvaus</entry>
+<entry key="button.edit">Muokkaa</entry>
+<entry key="label.targetAudience">Kohdeyleisö</entry>
+<entry key="label.key">lyhyt nimi</entry>
+</properties>

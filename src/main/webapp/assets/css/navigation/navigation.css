@@ -1,0 +1,156 @@
+@IMPORT url("notifications.css");
+
+/******************************************************************************/
+/* adjust navbar subemnu for languages to contain flags of the language	 	  */
+/******************************************************************************/
+.navbar .dropdown-menu>li>a.language i,.navbar .dropdown-submenu.language>a i
+	{
+	background-repeat: no-repeat;
+	padding-left: 17px;
+	background-position-y: center;
+}
+
+.navbar .dropdown-menu>li>a.language.de i,.navbar .dropdown-submenu.language.de>a i
+	{
+	background-image: url('../../img/locale/de_small.png');
+}
+
+.navbar .dropdown-menu>li>a.language.en i,.navbar .dropdown-submenu.language.en>a i
+	{
+	background-image: url('../../img/locale/en_small.png');
+}
+
+.navbar .dropdown-menu>li>a.language.fi i,.navbar .dropdown-submenu.language.fi>a i
+	{
+	background-image: url('../../img/locale/fi_small.png');
+}
+.navbar .dropdown-menu>li>a.language.es i,.navbar .dropdown-submenu.language.es>a i
+	{
+	background-image: url('../../img/locale/es_small.png');
+}
+
+.navbar .dropdown-menu>li>a.language.el i,.navbar .dropdown-submenu.language.el>a i
+	{
+	background-image: url('../../img/locale/el_small.png');
+}
+
+/******************************************************************************/
+/* adjust navbar size and navbar dropdown caret margin for logo			  	  */
+/******************************************************************************/
+.navbar .nav .loggedin.user {
+	
+}
+
+.navbar .nav .loggedin.user .user.picture {
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	background-size: 32px;
+	display: block;
+	width: 36px;
+	height: 36px;
+	float: left;
+	background-size: 36px;
+	border-radius: 5px;
+}
+
+.navbar .nav .loggedin.user>.caret {
+	margin-left: 6px;
+}
+
+.navbar .nav>li {
+	float: left;
+	line-height: 32px;
+}
+
+#navbar-user-name-label {
+	display: none;
+	padding-left: 5px;
+}
+
+.navbar .nav .dropdown-toggle .caret {
+	margin-top: 14px;
+}
+
+.navbar-form {
+	margin-top: 6px;
+	margin-bottom: 0;
+	margin-right: 10px;
+}
+
+.navbar .dropdown-menu li a.active {
+	font-weight: bold;
+}
+
+.dropdown-menu li.divider a:hover {
+	background: none;
+}
+
+/******************************************************************************/
+/* adjust projects navbar submenu to color icons according to status	  	  */
+/******************************************************************************/
+.dropdown-menu.projects a.red i[class^="icon-"],.dropdown-menu.projects a.red i[class*=" icon-"]
+	{
+	color: #e60033;
+}
+
+.dropdown-menu.projects a.yellow i[class^="icon-"],.dropdown-menu.projects a.yellow i[class*=" icon-"]
+	{
+	color: #FEC100;
+}
+
+.dropdown-menu.projects a.green i[class^="icon-"],.dropdown-menu.projects a.green i[class*=" icon-"]
+	{
+	color: #379f15;
+}
+
+/******************************************************************************/
+/* responsive stuff goes here	  	  										  */
+/******************************************************************************/
+@media ( max-width : 979px) {
+	.nav-collapse .nav>li {
+		float: none;
+		line-height: auto;
+	}
+	.nav-collapse .nav>li>a,.nav-collapse .dropdown-menu a {
+		font-weight: normal;
+		color: #fff;
+	}
+	.nav-collapse .nav>li>a:hover,.nav-collapse .nav>li>a:focus,.nav-collapse .dropdown-menu a:hover,.nav-collapse .dropdown-menu a:focus
+		{
+		color: #fff;
+		background-color: #666;
+	}
+	.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a
+		{
+		color: #fff;
+		background-color: #666;
+	}
+	.nav-collapse .navbar-form,.nav-collapse .navbar-search {
+		float: none;
+		padding: 5px 10px 10px 10px;
+		margin: -5px 0 5px 0px;
+		border: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		border-top: 1px solid #cacaca;
+		border-bottom: 1px solid #cacaca;
+	}
+	.navbar .nav li.dropdown>a:hover .caret,.navbar .nav li.dropdown>a:focus .caret
+		{
+		border-top-color: #fff;
+		border-bottom-color: #fff;
+	}
+	.nav-collapse .dropdown-menu .divider {
+		display: block;
+		height: 1px;
+		margin: 2px 1px;
+		overflow: hidden;
+		background-color: #000;
+		border-bottom: 1px solid #666;
+		height: 1px;
+	}
+	#navbar-user-name-label {
+		display: inline;
+	}
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="tooltip.tree.node.move.down">Nach unten bewegen</entry>
+<entry key="tooltip.tree.node.move.up">Nach oben bewegen</entry>
+<entry key="button.tree.new.project">Projekt</entry>
+<entry key="tooltip.tree.node.delete">Objekt löschen</entry>
+<entry key="button.tree.new.objective">Qualitätsziel</entry>
+<entry key="button.tree.new.metric">Metrik</entry>
+<entry key="button.tree.new.indicator">Qualitätsindikator</entry>
+<entry key="tooltip.tree.node.edit">Objekt editieren</entry>
+</properties>

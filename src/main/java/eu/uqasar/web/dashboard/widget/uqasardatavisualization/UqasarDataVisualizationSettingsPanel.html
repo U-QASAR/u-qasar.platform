@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+<div style="margin: 10px;">
+    <form wicket:id="form">     	
+       	
+       	<div class="flex" wicket:id="wmcGeneral">
+	       	<div>
+		       	<label for="projects">Project:</label> 
+		        <select class="input-xlarge" id="projects" wicket:id="projects"></select>
+	        </div>
+	         <!-- <div style="margin-left: 20px" >
+		       	<label for="qualityParams">Quality Parameter:</label> 
+		        <select class="input-xlarge" id="qualityParams" wicket:id="qualityParams">
+		        
+		             <option selected="selected" disabled="disabled"> Please choose</option>
+		             
+		        	 <optgroup label="All Quality Parameters">
+		        		<wicket:container wicket:id="allParams"> 
+		        			<option wicket:id="option" > </option> 
+		        		</wicket:container>
+		        	</optgroup>
+		        	 <optgroup label="Quality Objectives">
+		        		<wicket:container wicket:id="objectives"> 
+		        			<option wicket:id="option" > </option> 
+		        		</wicket:container>
+		        	</optgroup>
+		        	<optgroup label="Quality Indicators">
+		        		<wicket:container wicket:id="indicators"> 
+		        			<option wicket:id="option" > </option> 
+		        		</wicket:container>
+		        	</optgroup>
+		        	<optgroup label="Metrics">
+		        		<wicket:container wicket:id="metrics"> 
+		        			<option wicket:id="option" > </option> 
+		        		</wicket:container>
+		        	</optgroup>  
+		        
+		        </select>
+	        </div> -->
+	        
+	         <div style="margin-left: 20px" >
+	        		<label for="qualityParams">Quality Parameter: </label>
+	        		<select class="input-xlarge" id="qualityParams" wicket:id="qualityParams"></select> 
+	        </div>
+	       
+        </div>
+        <br />
+        <div>
+	        <a wicket:id="submit" class="btn btn-primary">Save</a>
+	        <a wicket:id="cancel" class="btn btn-default">Cancel</a>   
+	        <hr />
+        </div>
+    </form>
+</div>
+</wicket:panel>
+</html>    

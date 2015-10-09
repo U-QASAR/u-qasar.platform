@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+<head>
+</head>
+<body>
+	<wicket:panel xmlns:wicket>
+		<div class="view objective">
+			<form wicket:id="form">
+					<div class="row-fluid">
+					<div class="span12">
+						<label for="name"><wicket:message key="label.name" />:</label> <input
+							wicket:id="name" id="name" type="text" class="input-block-level" />
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+					<div class="checkbox">
+						<span class="pull-right"><input type="checkbox"
+							id="richtext" wicket:id="toggle.richtext"
+							style="margin-top: 5px" /><label class="inline right"
+							for="richtext"><wicket:message key="label.description.check.richtext" /></label></span></div>
+						<label for="description"><wicket:message key="label.description" />:</label>
+						<textarea wicket:id="description" id="description" rows="10"
+							class="input-block-level"></textarea>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div wicket:id="thresholdEditor"></div>
+				</div>
+				<div class="row-fluid">
+					<div class="span3">
+						<label class="control-label" for="useFormula"> <wicket:message key="label.use.formula" />: </label>
+						<select class="input-medium" wicket:id="useFormula" id="useFormula"></select>
+					</div>
+					<div class="span3">
+						<label for="targetValue"><wicket:message key="label.indicator.value.target" />:</label> 
+						<input wicket:id="targetValue" id="targetValue" type="text" class="input-block-level" />
+					</div>
+					<div class="span3">
+						<label for="weight"><wicket:message key="label.indicator.weight" />:</label>
+						<input wicket:id="weight" id="weight" type="text" class="input-block-level" />
+					</div>
+					<div wicket:id="totalWeight"></div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="inline" for="formulaEditor"><wicket:message
+							key="label.formula.editor" />:</label> 
+						<!-- <textarea wicket:id="autocomp-text" id="autocomp-text" 
+						rows="4" class="input-block-level"></textarea> -->
+							<div wicket:id="autocomp-text" id="formulaEditor"   class="input-block-level contenteditableDiv" contenteditable ="true" ></div>
+							<textarea wicket:id="hidden" id="hiddenField" style="display: none;"></textarea>
+					</div>			
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary" wicket:id="save">
+								<wicket:message key="button.save" /></button>
+							<button type="submit" class="btn" wicket:id="cancel">
+								<wicket:message key="button.cancel" /></button>
+							<label class="checkbox">
+								<input type="checkbox" wicket:id="checkboxCopy" style="margin-right: 5px"/>
+								<span wicket:id="checkboxCopyLabel"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</wicket:panel>
+</body>
+</html>

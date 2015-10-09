@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="teams">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2><wicket:message key="page.title"></wicket:message></h2>
+					</div>
+				</div>
+				<form wicket:id="form">
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span12" wicket:id="teamGroup">
+								<div wicket:id="teamsContainer">
+									<table class="table table-striped teams" id="teamlist">
+										<thead>
+											<tr>
+												<th colspan="7" class="alignright"><a class="btn btn-primary" wicket:id="link.create.team"><wicket:message key="column.head.actions.create"></wicket:message></a></th>
+											</tr>
+											<tr>
+												<th class="checkbox"><input type="checkbox" wicket:id="teamGroupSelector" /></th>
+												<th class="team" colspan="2"><wicket:message key="column.head.team" /></th>
+												<th class="team" colspan="2"><wicket:message key="column.head.description" /></th>
+												<th class="members" colspan="2"><wicket:message key="column.head.members" /></th>
+												<th style="width: 20%;" colspan="2"><wicket:message key="column.head.actions" /></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr wicket:id="teams" class="teams">
+												<td class="checkbox"><input type="checkbox" wicket:id="teamCheck" /></td>
+												<td class="team" colspan="2"><a wicket:id="link.edit.team"><span wicket:id="td.teamname"></span></a></td>
+												<td class="dscription" colspan="2" wicket:id="td.description"></td>
+												<td class="members" colspan="2">
+													<ul class="inline" wicket:id="membersList">
+														<li wicket:id="member"><a wicket:id="link.edit.member"><span class="user" wicket:id="user"></span></a><span class="role" wicket:id="role"></span></li>
+													</ul>
+												</td>
+												<td colspan="2">
+													<div class="btn-toolbar">
+														<div class="btn-group">
+															<a class="btn btn-success" wicket:id="button.edit" wicket:message="title:td.teams.actions.edit"><i class="icon-pencil"></i></a>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="3" class="navigator"><div wicket:id="navigatorFoot"></div></td>
+												<td colspan="4" class="alignright">
+													<button class="btn btn-danger" wicket:id="deleteSelected"><wicket:message key="td.teams.actions.batch.remove"></wicket:message></button>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+			<div wicket:id="deleteConfirmationModal"></div>
+		</wicket:extend>
+	</body>
+</html>

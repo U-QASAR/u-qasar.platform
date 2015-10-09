@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.source">Lähde</entry>
+<entry key="page.title">Rekisteröityneiden käyttäjien lista</entry>
+<entry key="column.head.user">Käyttäjä</entry>
+<entry key="td.users.actions.team">Lisää tiimeihin</entry>
+<entry key="column.head.role">Rooli</entry>
+<entry key="column.head.status">Status</entry>
+<entry key="column.head.actions">Toiminnot</entry>
+<entry key="column.head.actions.create">Luo Käyttäjä</entry>
+<entry key="td.users.actions.resetpw">Nollaa salasana</entry>
+<entry key="td.users.actions.edit">Muokkaa käyttäjää</entry>
+<entry key="td.users.actions.batch.remove">Poista käyttäjä(t)</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="delete.confirmation.modal.message">Oletko täysin varma, että haluat poistaa käyttäjän/käyttäjät? Tätä toimintoa ei voida peruuttaa!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="delete.confirmed">Valitut käyttäjät on poistettu.</entry>
+</properties>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.password.confirm">Salasanan vahvistus</entry>
+<entry key="label.lastName">Sukunimi</entry>
+<entry key="lastName.javax.validation.constraints.NotNull.message">Anna sukunimesi</entry>
+<entry key="placeholder.mail">Sähköpostiosoitteesi</entry>
+<entry key="lastName.javax.validation.constraints.Size.message.String">Sukunimen on oltava vähintään ${min} merkkiä pitkä</entry>
+<entry key="confirmPassword.EqualPasswordInputValidator">Salasanasi eivät täsmänneet</entry>
+<entry key="label.userName">Käyttäjätunnus</entry>
+<entry key="placeholder.password.confirm">Salasanasi uudelleen</entry>
+<entry key="page.title">Registeröinti</entry>
+<entry key="lastName.Required">Anna sukunimesi</entry>
+<entry key="userName.javax.validation.constraints.NotNull.message">Anna käyttäjätunnus</entry>
+<entry key="label.password">Salasana</entry>
+<entry key="userName.javax.validation.constraints.Size.message.String">Käyttäjätunnuksen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+<entry key="password.PatternValidator">Salasanasi ei täytä vaatimuksia</entry>
+<entry key="label.firstName">Etunimi</entry>
+<entry key="mail.Required">Anna sähköpostiosoite</entry>
+<entry key="placeholder.lastName">Sukunimesi</entry>
+<entry key="button.save">Registeröi</entry>
+<entry key="placeholder.userName">Käyttäjätunnuksesi</entry>
+<entry key="firstName.javax.validation.constraints.NotNull.message">Anna etunimesi</entry>
+<entry key="error.user.register.notification">Sähköpostin lähetyksessä tapahtui virhe!</entry>
+<entry key="confirmPassword.Required">Vahvista salasanasi</entry>
+<entry key="placeholder.password">Salasanasi</entry>
+<entry key="mail.javax.validation.constraints.NotNull.message">Anna sähköpostiosoite</entry>
+<entry key="userName.Required">Anna käyttäjätunnus</entry>
+<entry key="mail.org.hibernate.validator.constraints.Email.message">Anna validi sähköpostiosoite</entry>
+<entry key="error.user.exists.userName">Käyttäjä tunnuksella ${userName} on jo olemassa!</entry>
+<entry key="placeholder.firstName">Etunimesi</entry>
+<entry key="help.mail">Kirjoita validi sähköpostiosoite. Tämä on sisäänkirjautumistunnuksesi.</entry>
+<entry key="firstName.javax.validation.constraints.Size.message.String">Etunimen on oltava vähintään ${min} merkkiä pitkä</entry>
+<entry key="help.userName"><![CDATA[Tämä käyttäjätunnus on osa julkisen profiilisi URL:ia (esim. <em>uqasar.eu/user/<strong>username</strong></em>).]]></entry>
+<entry key="firstName.Required">Anna etunimesi</entry>
+<entry key="error.user.exists.mail">Sähköpostiosoite ${mail} on jo rekisteröity järjestelmään!</entry>
+<entry key="label.mail">Sähköposti</entry>
+<entry key="password.Required">Anna salasana</entry>
+<entry key="help.password">Salasanassa on oltava vähintään 1 numero ja 1 pienaakkonen ja 1 suuraakkonen, 1 symboli ja sen on oltava vähintään 6 ja enintään 256 merkkiä pitkä.</entry>
+<entry key="userName.javax.validation.constraints.Pattern.message.String">Käyttäjänimessä saa olla ainoastaan pien- ja suuraakkosia sekä numeroita</entry>
+</properties>

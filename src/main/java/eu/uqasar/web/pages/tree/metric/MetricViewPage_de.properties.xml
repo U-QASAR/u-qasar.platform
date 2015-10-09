@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.metric.value.issues.resolved">Erledigte Vorgänge</entry>
+<entry key="label.metric.value.issues.inprogress">Vorgänge in Arbeit</entry>
+<entry key="label.metric.value.issues.closed">Geschlossene Vorgänge</entry>
+<entry key="page.title">${name}</entry>
+<entry key="label.metric.value.issues.open">Offene Vorgänge</entry>
+<entry key="label.metric.value.issues.re-opened">Erneut geöffnete Vorgänge</entry>
+<entry key="label.metric.source">Metrikquelle</entry>
+<entry key="label.metric.type">Metriktyp</entry>
+</properties>

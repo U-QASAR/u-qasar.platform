@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.the">Die Software Qualität des Projektes</entry>
+<entry key="project.about.to.decrease">verschlechtert sich zunehmend.</entry>
+</properties>

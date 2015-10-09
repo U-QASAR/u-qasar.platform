@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="complexity.one">Metriikan </entry>
+<entry key="complexity.two"> 10:ssä viime mittauksessa on mitattu keskimäärin yli 25% kasvu monimutkaisuudessa. Ehkä sinun olisi aika refaktoroida lähdekoodisi. </entry>
+<entry key="delete.title">Poista</entry>
+<entry key="delete.message">Notification successfully deleted.</entry>
+</properties>

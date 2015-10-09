@@ -1,0 +1,36 @@
+.user.profile.compact {	
+	cursor: pointer;
+	text-align: center;
+	display: block;
+}
+
+.user.profile.compact .picture-border {
+	width: 50px;
+	display: block;
+	border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 5px #ccc; /* webkit browser*/
+	-moz-box-shadow: 0px 0px 5px #ccc; /* firefox */
+	box-shadow: 0px 0px 5px #ccc;
+	background-color: white;
+	overflow: hidden;
+}
+
+.user.profile.compact .picture {
+	display: block;
+    overflow: hidden;
+}
+
+.user.profile.compact .alias {
+	font-weight: bold;
+	font-size: 90%;
+}
+
+.user.profile.compact .avatar {
+	width: 50px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="users">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2 wicket:id="page.title"></h2>
+					</div>
+				</div>
+				<div wicket:id="edit.profile"></div>
+				<hr />
+				<form wicket:id="form.teams.add" id="teams">
+					<h3 wicket:id="header.teams.add"></h3>
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span4 required">
+								<label class="control-label" for="teamName"> <span><wicket:message
+											key="label.add.teamname" /></span>:
+								</label>
+								<input type="text" id="teamName" wicket:id="add.teamName" 
+									   wicket:message="placeholder:placeholder.add.teamname" />
+							</div>
+							<div class="span4 required">
+								<label class="control-label" for="userRole"> <span wicket:id="label.add.userrole"></span>:
+								</label>
+								<select id="userRole" wicket:id="add.userRole"></select>
+							</div>
+							<div class="span4" style="margin-top: 1.6em">
+								<a wicket:id="add.team" class="btn btn-primary"><span wicket:id="label.add.team"></span></a>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<form wicket:id="form.teams.edit">
+					<h3 id="teams" wicket:id="section.teams.title"></h3>
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span12"  wicket:id="teamsGroup">
+								<div wicket:id="teamsContainer">
+									<table class="table table-striped teams" id="teamslist">
+										<thead>
+											<tr>
+												<th class="checkbox"><input type="checkbox" wicket:id="teamGroupSelector" /></th>
+												<th class="team"><wicket:message key="column.head.team" /></th>
+												<th class="role"><wicket:message key="column.head.role" /></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr wicket:id="teams" class="teams">
+												<td class="checkbox"><input type="checkbox" wicket:id="teamCheck" /></td>
+												<td class="team"><a wicket:id="link.edit.team"><span wicket:id="td.teamname"></span></a></td>
+												<td class="role"><select wicket:id="td.role"></select></td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="7" class="alignright">
+													<button class="btn btn-primary"><wicket:message key="button.update"></wicket:message></button>
+													<button class="btn btn-danger" wicket:id="deleteSelected"><span wicket:id="deleteSelectedLabel"></span></button>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+            <div wicket:id="deleteConfirmationModal"></div>
+		</wicket:extend>
+	</body>
+</html>

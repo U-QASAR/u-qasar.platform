@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Adapterit</entry>
+<entry key="adapter.deleted">Adapteri nimeltään ${name} on poistettu.</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="page.title">Adapterit</entry>
+<entry key="name.column">Nimi</entry>
+<entry key="delete.adapter.batch.button">Poista adapteri</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="adapter.selected.deleted">Valitut adapterit on poistettu.</entry>
+<entry key="delete.confirmation.modal.message">Oletko aivan varma, että haluat poistaa valitun adapterin/valitut adapterit sekä tähän liittyvän mittausdatan?
+Tätä toimintoa ei voi kumota!</entry>
+<entry key="edit.link.text">Muokkaa adapteria</entry>
+<entry key="create.adapter.button">Lisää adapteri</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+<entry key="metricSource.column">Metriikkalähde</entry>
+<entry key="url.column">URL</entry>
+<entry key="credentials.column">Käyttäjätiedot</entry>
+<entry key="updateInterval.column">Adapteridatan päivitysväli</entry>
+<entry key="project.column">Projekti</entry>
+<entry key="update.measurements.button">Päivitä adapteridata</entry>
+<entry key="updated.message">Adapteridata on päivitetty</entry>
+<entry key="error.message">Virhe päivitettäessä adapteridataa</entry>
+<entry key="latestUpdate.column">Datan viimeisin päivitys</entry>
+<entry key="managedata.link.text">Hallinnoi adapteridataa</entry>
+</properties>

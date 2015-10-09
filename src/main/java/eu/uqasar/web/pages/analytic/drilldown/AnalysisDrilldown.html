@@ -1,0 +1,49 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="title.header" />
+			</h2>
+		</div>
+
+		<dl>
+			<dt><wicket:message key="label.name" /></dt>
+			<dd wicket:id="name"></dd>
+			<dd>&nbsp;</dd>
+
+			<dt><wicket:message key="label.description" /></dt>
+			<dd wicket:id="description"></dd> 
+			<dd>&nbsp;</dd>
+			
+			<dt><wicket:message key="label.query" /></dt>
+			<dd><a wicket:id="linkCubesQuery"><span wicket:id="query"></span> </a></dd>
+			<dd>&nbsp;</dd>
+			
+			<dt><wicket:message	key="label.drilldown.dimensions" /></dt>
+			<dd>
+				<form wicket:id="form">
+					<input type="hidden" class="input-xxlarge" id="drilldownSelector"
+						wicket:id="dimensionSelector" />
+					<button type="submit" class="btn btn-primary" wicket:id="save">
+						<wicket:message key="button.save" />
+					</button>
+				</form>
+			</dd>
+			<dt><wicket:message key="label.results" /></dt>
+		</dl>
+		<div >
+			<table class="table table-striped tablesorter" id="cubes-list">
+				<thead>
+					<tr>
+						<th wicket:id="headers"></th> 
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="contentlist">
+						<td wicket:id="data"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+</wicket:extend>

@@ -1,0 +1,82 @@
+<wicket:panel xmlns:wicket>
+    
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="btn btn-primary no-cursor" for="title" style="cursor: default;"><wicket:message key="step3.title" /></label>
+        </div>
+    </div>
+    <br/>
+    <form wicket:id="form">
+        <div class="row-fluid"  style="padding-right: 90px;">
+            <div class="span4">
+                <label class="control-label" for="customerType"> <wicket:message key="step3.label.customerType" />: </label> 
+                  <input type="hidden" class="input-large"  id="customerType" wicket:id="customerType"/> 
+            </div>
+
+            <div class="span4"   style="padding-right: 90px;">
+                <label class="control-label" for="projectType"> <wicket:message key="step3.label.projectType" />: </label> 
+                 <input type="hidden" class="input-large" id="projectType" wicket:id="projectType"/> 
+            </div>
+            <div class="span4">
+                <label class="control-label" for="softwareType"> <wicket:message key="step3.label.softwareType" />: </label> 
+                <input type="hidden" class="input-large"  id="softwareType"  wicket:id="softwareType"/> 
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid"  style="padding-right: 90px;">
+            <div class="span4">
+                <label class="control-label" for="softwareLicense"> <wicket:message key="step3.label.softwareLicense" />: </label> 
+                 <input type="hidden" class="input-large"  id="softwareLicense" wicket:id="softwareLicense"/>    
+            </div>
+            <div class="span4">
+                <label class="control-label" for="topic"> <wicket:message key="step3.label.topic" />: </label> 
+                <input type="hidden" class="input-large"  id="topic"  wicket:id="topic"/>   
+            </div>
+            <div class="span4">
+                <label class="control-label" for="roles"> <wicket:message key="step3.label.roles" />: </label> 
+                <input type="hidden" class="input-large"  id="roles" wicket:id="roles" />  
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid"  style="padding-right: 90px;">
+         	<div class="span4"   style="padding-right: 90px;">
+                <label class="control-label" for="progLanguage"> <wicket:message key="step3.label.progLanguage" />: </label> 
+                <input type="hidden" class="input-large" id="progLanguage"  wicket:id="progLanguage" /> 
+            </div>
+            
+            <div class="span4">
+                <label class="control-label" for="contIntegration"> <wicket:message key="step3.label.contIntegration" />: </label> 
+                <input type="hidden"  class="input-large" id="contIntegration"  wicket:id="contIntegration"/> 
+            </div>
+
+            <div class="span4"   style="padding-right: 90px;">
+                <label class="control-label" for="issueTracking"> <wicket:message key="step3.label.issueTracking" />: </label> 
+                <input type="hidden" class="input-large" id="issueTracking"  wicket:id="issueTracking" />   
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid"  style="padding-right: 90px;">
+         	<div class="span4">
+                <label class="control-label" for="srcCodeManagement"> <wicket:message key="step3.label.srcCodeManagement" />: </label> 
+                <input type="hidden" class="input-large" id="srcCodeManagement"  wicket:id="srcCodeManagement"/>
+            </div>
+            <div class="span4">
+                <label class="control-label" for="staticAnalysis"> <wicket:message key="step3.label.staticAnalysis" />: </label> 
+                 <input type="hidden" class="input-large" id="staticAnalysis"  wicket:id="staticAnalysis"/> 
+            </div>
+            <div class="span4">
+                <label class="control-label" for="testManagement"> <wicket:message key="step3.label.testManagement" />: </label> 
+                 <input type="hidden" class="input-large" id="testManagement"  wicket:id="testManagement"/>   
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid"  style="padding-right: 90px;">
+         	<div class="span4">
+                <label class="control-label" for="softwareDevelopmentMethodology"> <wicket:message key="step3.label.softwareDevelopmentMethodology" />: </label> 
+                <input type="hidden" class="input-large" id="softwareDevelopmentMethodology"  wicket:id="softwareDevelopmentMethodology"/>
+            </div>
+        </div>
+        
+    </form>
+
+</wicket:panel>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Muokkaa adapteria</entry>
+<entry key="name.Required">Anna nimi uudelle adapterille</entry>
+<entry key="page.copy.title">Kopioi adapteri</entry>
+<entry key="form.create.header">Luo uusi adapteri</entry>
+<entry key="page.create.title">Luo adapteri</entry>
+<entry key="submit.text">Tallenna</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Anna nimi uudelle adapterille</entry>
+<entry key="form.edit.header">Muokkaa adapteria</entry>
+<entry key="name.input.placeholder">Anna nimi adapterille...</entry>
+<entry key="saved.message">Adapteri ${name} on tallennettu</entry>
+<entry key="cancel.text">Peruuta</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Adapterin nimen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+<entry key="name.input.label">Nimi</entry>
+<entry key="form.copy.header">Luo kopio adapterista ${name}</entry>
+<entry key="label.metricsource">Metriikkalähde</entry>
+<entry key="url.input.label">URL</entry>
+<entry key="url.input.placeholder">Anna adapterin URL...</entry>
+<entry key="username.input.label">Käyttäjätunnus</entry>
+<entry key="pwd.input.label">Salasana</entry>
+<entry key="username.input.placeholder">Anna adapterin käyttämä käyttäjätunnus...</entry>
+<entry key="password.input.placeholder">Anna adapterin käyttämä salasana...</entry>
+<entry key="label.project">Projekti</entry>
+<entry key="label.password">Salasana</entry>
+<entry key="label.username">Käyttäjätunnus</entry>
+<entry key="adapterProject.input.label">Adapterin käyttämä projekti</entry>
+<entry key="adapterProject.input.placeholder">Anna projektin nimi, jota adapteri käyttää</entry>
+<entry key="adapterTestPlan.input.label">Adapterin käyttämä Test Plan (Testaus-framework)</entry>
+<entry key="adapterTestPlan.input.placeholder">Anna adapterin käyttämä Test Plan</entry>
+<entry key="canceled.message">Toiminto on peruutettu</entry>
+<entry key="add.confirmed">Uusi adapteri luotiin onnistuneesti.</entry>
+</properties>

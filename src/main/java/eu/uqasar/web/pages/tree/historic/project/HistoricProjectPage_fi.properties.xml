@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Historiallinen data</entry>
+<entry key="measurement.deleted">Mittaus/mittaukset ${name} on poistettu.</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="page.title">Historiallinen data</entry>
+<entry key="value.column">Arvo</entry>
+<entry key="targetValue.column">Tavoite</entry>
+<entry key="lowerAcceptanceLimit.column">Alempi hyväksymisraja</entry>
+<entry key="upperAcceptanceLimit.column">Ylempi hyväksymisraja</entry>
+<entry key="weight.column">Paino</entry>
+<entry key="date.column">Päivämäärä</entry>
+<entry key="delete.batch.button">Poista mittaukset</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="cubesmeasurement.selected.deleted">Valitut mittaukset on poistettu.</entry>
+<entry key="delete.confirmation.modal.message">Olet täysin varma, että haluat poistaa valitut mittaukset? Tätä toimintoa ei voida peruuttaa!</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+<entry key="update.measurements.button">Päivitä mittaukset</entry>
+<entry key="measurements.updated">Mittaukset on päivitetty.</entry>
+</properties>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.team">Valitse tiimi</entry>
+<entry key="TextFieldValidator.format">Validation Name</entry>
+<entry key="help.key">Specify the key of the quality model (will be used in URLs) </entry>
+<entry key="label.company">Yritys</entry>
+</properties>

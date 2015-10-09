@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+<div style="margin: 10px;">
+    <form wicket:id="form">     	
+       	
+       	<div>
+	       	<div>
+		       	<label for="projects">Project:</label> 
+		        <select class="input-xlarge" id="projects" wicket:id="projects"></select>
+	        </div>
+	       	<div>
+		       	<label for="metrics">Metric:</label> 
+		        <select class="input-xlarge" id="metrics" wicket:id="metrics"></select>
+	        </div>
+	        <div>
+            	<label for="noOfItemsDp">no Of Items:</label> <select class="input-xlarge" id="noOfItemsDp"
+                	wicket:id="noOfItemsDp"></select>
+        	</div>
+        </div>
+        <br />
+        <div>
+	        <a wicket:id="submit" class="btn btn-primary">Save</a>
+	        <a wicket:id="cancel" class="btn btn-default">Cancel</a>   
+	        <hr />
+        </div>
+    </form>
+</div>
+</wicket:panel>
+</html>

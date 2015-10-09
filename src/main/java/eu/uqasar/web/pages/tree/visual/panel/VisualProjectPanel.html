@@ -1,0 +1,72 @@
+<wicket:panel xmlns:wicket>
+	<form> <!-- 	<form wicket:id="saveForm"> -->
+		<div><!-- 		<div wicket:id="dataGroup"> -->
+			<div><!-- 			<div wicket:id="dataContainer"> -->
+				<div>
+<!-- 					<input type="checkbox" wicket:id="dataGroupSelector" />&nbsp; -->
+<!-- 					<wicket:message key="all.select" /> -->
+<!-- 					<p></p> -->
+					<ul wicket:id="qmlist">
+						<li style="list-style-type: none;" wicket:id="qmodel">
+<!-- 							<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp;  -->
+								<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+								<span wicket:id="name"></span>
+							</a>
+							<div wicket:id="valueContainer" class="pull-right">
+								(<span wicket:id="unit"></span>)
+								<span wicket:id="value"></span>
+							</div>
+							
+						</li>
+						<li style="list-style-type: none;">
+							<ul wicket:id="qmlist">
+								<li style="list-style-type: none;" wicket:id="qobjective">
+<!-- 									<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp;  -->
+										<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+										<span wicket:id="name"></span>
+									</a> 
+									<div wicket:id="valueContainer" class="pull-right">
+										(<span wicket:id="unit"></span>)
+										<span wicket:id="value"></span>
+									</div>
+									
+								</li>
+								<li style="list-style-type: none;">
+									<ul wicket:id="qmlist">
+										<li style="list-style-type: none;" wicket:id="qindicator">
+<!-- 											<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp; -->
+												<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+												<span wicket:id="name"></span>
+											</a>
+											<div wicket:id="valueContainer" class="pull-right">
+												(<span wicket:id="unit"></span>)
+												<span wicket:id="value"></span>
+											</div>
+											
+										</li>
+										<li style="list-style-type: none;">
+											<ul wicket:id="qmlist">
+												<li style="list-style-type: none;" wicket:id="qmetric">
+<!-- 													<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp; -->
+														<i class="icon" wicket:id="icon"></i><a wicket:id="link">
+														<span wicket:id="name"></span>
+													</a>
+													<div wicket:id="valueContainer" class="pull-right">
+														(<span wicket:id="unit"></span>)
+														<span wicket:id="value"></span>
+													</div> 
+													
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<hr/>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

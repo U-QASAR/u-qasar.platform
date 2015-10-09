@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.rupStage.const">Construction</entry>
+<entry key="label.rupStage.elab">Elaboration	</entry>
+<entry key="label.rupStage.inc">Inception</entry>
+<entry key="label.rupStage.trans">Transition</entry>
+</properties>

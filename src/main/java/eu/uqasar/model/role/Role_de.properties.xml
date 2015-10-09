@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.role.manager.process">ProcessManager</entry>
+<entry key="label.role.admin">Administrator</entry>
+<entry key="label.role.user">User</entry>
+<entry key="label.role.tester">Tester</entry>
+<entry key="label.role.manager.product">ProductManager</entry>
+<entry key="label.role.scrummaster">ScrumMaster</entry>
+<entry key="label.role.engineer.reqs">ReqsEngineer</entry>
+<entry key="label.role.developer">Developer</entry>
+<entry key="label.role.engineer.design">Design Engineer</entry>
+<entry key="label.role.norole">NoRole</entry>
+</properties>

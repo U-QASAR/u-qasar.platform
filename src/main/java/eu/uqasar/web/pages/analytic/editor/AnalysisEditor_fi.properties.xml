@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key = "title.header">Analysis Editor</entry>
+<entry key = "label.name">Nimi</entry>
+<entry key = "label.project">Project</entry>
+<entry key = "label.description">Kuvaus</entry>
+<entry key = "label.drilldown">Yksityiskohtien tarkastelu mitat</entry>
+<entry key = "name.input.placeholder">Anna otsikko teidän analyysi</entry>
+<entry key = "description.input.placeholder">Kuvaile tarkoituksena teidän analyysi</entry>
+<entry key = "submit.text">Tallenna Analysis</entry>
+<entry key = "cancel.text">Peruuta</entry>
+<entry key = "saved.message">Analyysi on tallennettu</entry>
+</properties>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.below">Hier </entry>
+<entry key="label.between">Zwischen</entry>
+<entry key="label.over">Über </entry>
+<entry key="help.lower.limit">Unterhalb dieser Grenze bar werden ${threshold.colorLowerAcceptanceLimit}</entry>
+<entry key="help.upper.limit">Bis zu dieser Grenze bar werden ${threshold.colorUpperAcceptanceLimit}</entry>
+</properties>

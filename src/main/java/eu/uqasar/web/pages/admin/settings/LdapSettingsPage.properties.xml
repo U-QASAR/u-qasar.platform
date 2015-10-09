@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">LDAP Settings</entry>
+	<entry key="page.head.ldap.connection.settings">LDAP Connection Settings</entry>
+	<entry key="page.head.ldap.user.mapping.settings">LDAP User Field Mappings</entry>
+	<entry key="page.head.ldap.group.mapping.settings">LDAP Group Field Mappings</entry>
+	<entry key="page.head.tabs.connection">Connection Settings</entry>
+	<entry key="page.head.tabs.users">User Mappings</entry>
+	<entry key="page.head.tabs.groups">Group Mappings</entry>
+	<entry key="label.host">LDAP Server Address</entry>
+	<entry key="label.port">LDAP Server Port</entry>
+	<entry key="label.password">Password</entry>
+	<entry key="label.userDN">User DN </entry>
+	<entry key="label.user.filter">User Filter</entry>
+	<entry key="label.user.filter.baseDN">Base DN</entry>
+	<entry key="label.user.mapping.username">Username Field</entry>
+	<entry key="label.user.mapping.mail">Mail Field</entry>
+	<entry key="label.user.mapping.firstname">First Name Field</entry>
+	<entry key="label.user.mapping.lastname">Last Name Field</entry>
+	<entry key="label.user.mapping.photo">Photo Field</entry>
+	<entry key="label.group.filter">Group Filter</entry>
+	<entry key="label.group.filter.baseDN">Base DN</entry>
+	<entry key="label.group.mapping.name">Name</entry>
+	<entry key="label.group.mapping.description">Description</entry>
+	<entry key="label.group.mapping.member">Members</entry>
+	<entry key="label.validation.success">LDAP connection established successfully!</entry>
+	<entry key="label.retrieval.user.success">{0} LDAP user(s) retrieved successfully!</entry>
+	<entry key="label.retrieval.group.success">{0} LDAP group(s) retrieved successfully!</entry>
+	<entry key="button.connection.validate.text">Validate Settings</entry>
+	<entry key="button.retrieve.users">Retrieve LDAP users</entry>
+	<entry key="button.retrieve.groups">Retrieve LDAP groups</entry>
+	<entry key="help.host">Please provide a resolvable address of the LDAP server (IP or DNS)</entry>
+	<entry key="help.userDN">Please insert DN of a user that is authorized to query the LDAP</entry>
+	<entry key="help.user.filter">An optional user filter to append to the default filter when loading users. The default user filter is created using the attribute specified by the username field. For example, if the username field is "uid", then the default user filter would be "(uid={0})" where {0} is dynamically replaced with the username being searched for.</entry>
+	<entry key="help.user.filter.baseDN">Please insert DN that serves as the base for the search for users</entry>
+	<entry key="help.user.mapping">Use the form below to specify the LDAP fields that match the profile fields. Fields that are left empty will not be mapped. Values enclosed in {} will be replaced with actual LDAP content.</entry>
+	<entry key="help.user.mapping.username"><![CDATA[The field name that the username lookups will be performed on. If this property is not set, the default value is <b>{uid}</b>. Active Directory users should try the default value <b>{sAMAccountName}</b>]]></entry>
+	<entry key="help.user.mapping.mail">The name of the LDAP field that contains the user's mail address</entry>
+	<entry key="help.user.mapping.firstname">The LDAP field name that contains the user's first name</entry>
+	<entry key="help.user.mapping.lastname">The name of the LDAP field that contains the user's last name</entry>
+	<entry key="help.user.mapping.photo">The name of the LDAP field that contains a thumbnail of the user's photo (binary)</entry>
+	<entry key="help.group.filter">An optional group filter to append to the default filter when loading groups. The default group filter is created using the group name. For example, if the group name field is "cn", then the default group filter would be "(cn={0})" where {0} is dynamically replaced with the group name being searched for.</entry>
+	<entry key="help.group.filter.baseDN">Please insert DN that serves as the base for the search for groups</entry>
+	<entry key="help.group.mapping">Use the form below to specify the LDAP fields that match the profile fields. Fields that are left empty will not be mapped. Values enclosed in {} will be replaced with actual LDAP content.</entry>
+	<entry key="help.group.mapping.name"><![CDATA[The field name that the group name lookups will be performed on. If this property is not set, the default value is <b>{cn}</b>.]]></entry>
+	<entry key="help.group.mapping.description"><![CDATA[The field name that holds the description a group. If this property is not set, the default value is <b>{description}</b>.]]></entry>
+	<entry key="help.group.mapping.member"><![CDATA[The field name that holds the members in a group. If this property is not set, the default value is <b>{member}</b>.]]></entry>
+	<entry key="placeholder.host">example.com or 192.168.0.1</entry>
+	<entry key="placeholder.port">389</entry>
+	<entry key="placeholder.password">Password of the LDAP user</entry>
+	<entry key="placeholder.userDN">cn=Administrator,ou=users,dc=example,dc=com</entry>
+	<entry key="placeholder.baseDN">ou=users,dc=example,dc=com</entry>
+	<entry key="placeholder.user.filter.baseDN">ou=users,dc=example,dc=com</entry>
+	<entry key="placeholder.group.filter.baseDN">ou=users,dc=example,dc=com</entry>
+</properties>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.indicator.paradigm">Paradigm </entry>
+<entry key="page.title">${name}</entry>
+<entry key="label.indicator.lower.limit">Lower limit : </entry>
+<entry key="label.indicator.limits">Valid values</entry>
+<entry key="label.indicator.upper.limit">Upper limit : </entry>
+<entry key="label.indicator.value.formula.title">Average </entry>
+<entry key="label.indicator.purpose">Purpose</entry>
+<entry key="label.indicator.lcStage">Stage</entry>
+<entry key="label.indicator.version">Version</entry>
+<entry key="label.indicator.targetValue">Target value</entry>
+<entry key="label.indicator.weight">Weight</entry>
+</properties>

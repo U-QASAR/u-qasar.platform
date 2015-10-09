@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.team">Tiimi</entry>
+<entry key="label.add.userrole">Käyttäjän ${fullName} rooli tiimissä</entry>
+<entry key="section.teams.title">Käyttäjän ${fullName} tiimijäsenyydet</entry>
+<entry key="column.head.role">Rooli</entry>
+<entry key="page.title.new">Luo uusi käyttäjä</entry>
+<entry key="page.title.edit">Muokkaa käyttäjän ${fullName} profiilia</entry>
+<entry key="label.add.teamname">Olemassa olevan tiimin nimi</entry>
+<entry key="button.add.save">Lisää ${fullName} Tiimiin</entry>
+<entry key="placeholder.add.teamname">Kirjoita käynnistääksesi automaattitäydennys</entry>
+<entry key="td.teams.actions.batch.remove">Poista ${fullName} valitusta tiimistä/valituista tiimeistä</entry>
+<entry key="button.update">Vahvista muutokset</entry>
+<entry key="label.add.title">Aseta tiimi käyttäjälle ${fullName}</entry>
+<entry key="error.team.notvalid">Lisättävä tiimi ei ole validi!</entry>
+<entry key="error.user.exists.mail">Sähköpostiosoite ${mail} on jo rekisteröity järjestelmään!</entry>
+<entry key="error.user.exists.userName">Käyttäjä, jolla on käyttäjätunnus ${userName} on jo olemassa!</entry>
+<entry key="error.user.register.notification">Rekisteröintisähköpostin lähettämisessä tapahtui virhe!</entry>
+<entry key="delete.confirmation.modal.header">Poista käyttäjä tiimeistä?</entry>
+<entry key="delete.confirmation.modal.message">Oletko varma, että haluat poistaa käyttäjän valituista tiimeistä?</entry>
+<entry key="delete.confirmation.modal.submit.text">Kyllä, poista tiimeistä</entry>
+<entry key="delete.confirmation.modal.cancel.text">Ei, peruuta poisto</entry>
+<entry key="save.confirmed">Muutoksesi tallennettiin.</entry>
+<entry key="add.confirmed">Uusi käyttäjä luotiin onnistuneesti.</entry>
+<entry key="cancel.confirmed">Peruutit prosessin.</entry>
+<entry key="delete.confirmed"> ${fullName} on poistettu valituista tiimeistä.</entry>
+</properties>

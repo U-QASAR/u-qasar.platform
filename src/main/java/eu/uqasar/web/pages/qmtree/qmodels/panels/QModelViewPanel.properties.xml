@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.date.update">Last Updated</entry>
+<entry key="progress.status.title">{0} of {1} days elapsed ({2} %, {3} remaining)</entry>
+<entry key="label.active">Active</entry>
+<entry key="label.edition">Edition</entry>
+<entry key="label.company">Company</entry>
+</properties>

@@ -1,0 +1,9 @@
+.auth .badge-image { 
+	margin-top: 2em; 
+	text-align: center;
+	background: none;
+}
+
+.auth .lead {
+	margin-top: 2em;
+}

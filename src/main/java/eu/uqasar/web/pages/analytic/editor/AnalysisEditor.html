@@ -1,0 +1,48 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="title.header" />
+			</h2>
+		</div>
+		<form wicket:id="form">
+
+			<div class="control-group" wicket:id="nameValidationBorder">
+				<input type="text" class="input-xxlarge" id="name"
+					wicket:message="placeholder:name.input.placeholder"
+					wicket:id="name" />
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label" for="description"> <wicket:message
+						key="label.description" />:
+				</label> <textarea class="input-xxlarge" id="description" rows="4"
+					wicket:message="placeholder:description.input.placeholder"
+					wicket:id="description"></textarea>
+			</div>
+
+			<div class="control-group">
+				<label class="control-lable" for="drilldownSelector"><wicket:message
+						key="label.drilldown" /></label> <input type="hidden"
+					class="input-xxlarge" id="drilldownSelector"
+					wicket:id="dimensionSelector" />
+			</div>
+
+			<div class="control-group" wicket:id="projectValidatorBorder">
+				<select class="input-large" wicket:id="project" id="project"></select>
+			</div>
+
+			<br>
+
+			<div class="control-group">
+				<div class="controls">
+					<input type="submit" class="btn btn-primary"
+						wicket:message="value:submit.text" wicket:id="submit" /> <input
+						type="reset" class="btn" wicket:message="value:cancel.text"
+						wicket:id="cancel" />
+				</div>
+			</div>
+
+		</form>
+	</section>
+</wicket:extend>

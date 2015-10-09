@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title.new">Eine neue Firma erstellen</entry>
+<entry key="page.title.edit">${name} editieren</entry>
+</properties>

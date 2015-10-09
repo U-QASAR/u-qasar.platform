@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.the">Projekti</entry>
+<entry key="project.about.to.end">on päättymässä {0} päivän kuluttua tästä päivästä.</entry>
+</properties>

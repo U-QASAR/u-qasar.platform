@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.indicator.name">Name</entry>
+<entry key="label.indicator.paradigm">Paradigm </entry>
+<entry key="page.title">Edit ${name}</entry>
+<entry key="label.indicator.lower.limit">Lower limit : </entry>
+<entry key="label.indicator.limits">Valid values</entry>
+<entry key="label.indicator.upper.limit">Upper limit : </entry>
+<entry key="form.name.max">Name size &lt; 255 characters</entry>
+<entry key="label.indicator.purpose">Purpose</entry>
+<entry key="form.name.required">Name required</entry>
+<entry key="label.indicator.lcStage">Stage</entry>
+<entry key="form.upperLimit.low">Low limit must be lower than upper limit</entry>
+<entry key="label.indicator.version">Version</entry>
+<entry key="label.indicator.checkboxCopy">Check if you want to create a copy of this quality indicator</entry>
+<entry key="label.indicator.targetValue">Target value</entry>
+<entry key="label.indicator.weight">Weight</entry>
+</properties>

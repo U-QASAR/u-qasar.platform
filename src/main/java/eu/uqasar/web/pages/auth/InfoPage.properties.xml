@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="message.cancel.success">Your registration at the platform has been cancelled.</entry>
+<entry key="login.link.text">login</entry>
+<entry key="message.reset.pw.success">Your password for the platform has been reset.</entry>
+<entry key="forgot.password.message">If you would like to reset your password please click the link below.</entry>
+<entry key="header.registered">Registration successful.</entry>
+<entry key="message.recover.password">Your request to reset your password for the platform has been processed. Please check your email for the password reset link.</entry>
+<entry key="header.resend.registration.confirmation">Registration not yet confirmed.</entry>
+<entry key="message.confirm.success">Your registration at the platform has been confirmed.</entry>
+<entry key="header.registration.failure">Completing registration failed.</entry>
+<entry key="message.registered">You have been successfully registered at the platform. Please check your email to complete the registration process.</entry>
+<entry key="header.reset.pw.success">Password reset.</entry>
+<entry key="header.recover.password">Reset password email sent.</entry>
+<entry key="message.reset.pw.not.pending">You don't have any pending requests to reset your password.</entry>
+<entry key="header.confirm.success">Registration confirmed.</entry>
+<entry key="header.cancel.success">Registration cancelled.</entry>
+<entry key="register.link.text">register</entry>
+<entry key="message.registration.failure.not.pending">You don't have any pending registration. You may have already confirmed or cancelled your registration.</entry>
+<entry key="header.no.such.user">No such user</entry>
+<entry key="message.registration.confirmation.sent.again">The confirmation email for your registration at the platform has been sent again. Please check your email to complete the registration process.</entry>
+<entry key="message.registration.failure.timeout">This link for completing your registration has expired.</entry>
+<entry key="message.reset.pw.timeout">This link for resetting your password has expired.</entry>
+<entry key="register.message">Please register at the ${registerLink} page.</entry>
+<entry key="resend.registration.link.text">Resend registration confirmation</entry>
+<entry key="header.registration.confirmation.sent.again"/>
+<entry key="header.resend.registration.failure">Resending confirmation email failed.</entry>
+<entry key="forgot.password.link.text">Forgot password...</entry>
+<entry key="resend.registration.message">To resend the confirmation email for your registration at the platform please click the link below.</entry>
+<entry key="message.resend.registration.confirmation">You haven't confirmed your registration at the platform yet.</entry>
+<entry key="login.message">Please login at the ${loginLink} page.</entry>
+<entry key="message.no.such.user">The email address you have entered is not registered as an account or you may not have permission to reset your password because you used some alternative registration mechanism liked LDAP.</entry>
+<entry key="login.register.message">Please login at the ${loginLink} page or register anew at the ${registerLink} page.</entry>
+<entry key="header.reset.pw.failure">Resetting password failed.</entry>
+<entry key="message.resend.registration.failure">You don't have any pending registration. Maybe you have confirmed or cancelled your registration already.</entry>
+</properties>

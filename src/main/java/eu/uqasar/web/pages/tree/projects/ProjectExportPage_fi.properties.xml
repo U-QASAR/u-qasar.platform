@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="export.button">Vie projekti</entry>
+<entry key="export.downloadMsg">Ladataan tiedostoa...</entry>
+<entry key="page.title">Vie projekti</entry>
+<entry key="export.downloadFile">Vie projekti</entry>
+<entry key="export.selectProj">Valitse projekti</entry>
+<entry key="export.format">Valitse tiedostomuoto</entry>
+</properties>

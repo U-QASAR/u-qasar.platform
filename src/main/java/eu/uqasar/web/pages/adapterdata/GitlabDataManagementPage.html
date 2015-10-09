@@ -1,0 +1,52 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />
+			</h2>
+		</div>
+		<div>
+			<form wicket:id="deleteForm">
+				<div wicket:id="gitlabGroup">
+					<div wicket:id="gitlabContainer">
+						<table class="table table-striped tablesorter" id="gitlab-list">
+							<thead>
+								<tr>
+									<td colspan="3" class="navigator right"><div
+											wicket:id="navigatorHead"></div></td>
+								</tr>
+								<tr>
+									<th class="checkbox" style="width: 05%"><input type="checkbox" wicket:id="gitlabGroupSelector" /></th>
+									<th style="width: 15%"><wicket:message key="name.column" /></th>
+									<th style="width: 20%"><wicket:message key="metric.column" /></th>
+									<th style="width: 20%"><wicket:message key="value.column" /></th>
+									<th style="width: 25%"><wicket:message key="timestamp.column" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="gitlabMeasurements">
+									<td class="checkbox"><input type="checkbox" wicket:id="gitlabCheck" /></td>
+									<td><span wicket:id="name"></span></td>
+									<td><span wicket:id="metric"></span></td>
+									<td><span wicket:id="value"></span></td>
+									<td><span wicket:id="timeStamp"></span></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2" style="padding-left: 0px;"><a
+										class="btn btn-danger" wicket:id="deleteSelected"> <wicket:message
+												key="delete.gitlab.batch.button" />
+									</a></td>
+									<td colspan="3" class="navigator right"><div
+											wicket:id="navigatorFoot"></div></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div wicket:id="deleteConfirmationModal"></div>
+</wicket:extend>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Valitse käyttäjä(t), joille haluat jakaa kojelaudan</entry>
+<entry key="column.head.user">Käyttäjä</entry>
+<entry key="column.head.role">Rooli</entry>
+<entry key="td.users.actions.batch.share">Jaa kojelauta valitulle käyttäjälle/valituille käyttäjille</entry>
+<entry key="td.users.actions.batch.share.cancel">Peruuta</entry>
+<entry key="share.confirmation.modal.header">Vahvista jako</entry>
+<entry key="share.confirmation.modal.message">Oletko täysin varma, että haluat jakaa kojelaudan valitulle käyttäjälle/valituille käyttäjille? Tätä toimintoa ei voi peruuttaa!</entry>
+<entry key="share.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="share.confirmation.modal.submit.text">Jaa</entry>
+<entry key="share.confirmed">Kojelauta on jaettu valitulle käyttäjälle/valituille käyttäjille.</entry>
+<entry key="canceled.message">Toiminto peruutettiin.</entry>
+</properties>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.lcStage.impl">Implementation</entry>
+<entry key="label.lcStage.spec">Specification</entry>
+<entry key="label.lcStage.design">Design	</entry>
+<entry key="label.lcStage.maint">Maintenance</entry>
+<entry key="label.lcStage.req">Requirements</entry>
+<entry key="label.lcStage.test">Testing</entry>
+</properties>

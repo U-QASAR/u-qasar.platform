@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Import Users</entry>
+	<entry key="message.import.description.lead">On this page you can import existing users from an LDAP server into the U-QASAR platform.</entry>
+	<entry key="message.import.description">In order to start import of LDAP users, you first have to retrieve a list of existing LDAP users and then select the ones to be imported.</entry>
+	<entry key="message.import.settings"><![CDATA[The retrieval of users will be performed according to the LDAP settings for the <strong>user mapping</strong>]]> </entry>
+	<entry key="message.import.settings.change"> (click here to revise or change these settings)</entry>
+	<entry key="message.import.note">Please note, that certain LDAP-users may not be imported in case another user in the U-QASAR platform exists, that has the same eMail address OR the same username as the LDAP user to be imported. Those non-importable users </entry>
+	<entry key="message.import.note.highlight">will be marked as such by color and a curresponding pointer.</entry>
+	<entry key="message.import.result.error">{0} user(s) ({1}) could not be imported!.</entry>
+	<entry key="message.import.result.success">{0} user(s) ({1}) were imported successfully!.</entry>
+	<entry key="label.retrieval.success">{0} LDAP user(s) retrieved successfully!</entry>
+	<entry key="label.userRole">Role of the imported users</entry>
+	<entry key="label.registrationMail">User needs to confirm registration?</entry>
+	<entry key="button.retrieve">Retrieve Users from LDAP for selection</entry>
+	<entry key="button.import">Import Selected Users</entry>
+</properties>

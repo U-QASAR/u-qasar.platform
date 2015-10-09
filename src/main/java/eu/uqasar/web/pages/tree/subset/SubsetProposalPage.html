@@ -1,0 +1,18 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />
+			</h2>
+		</div>
+		<div class="row-fluid">
+			<div class="span8">
+				<div wicket:id="subsetPanel"></div>
+				<a class="btn btn-danger" wicket:id="saveSelected"> <wicket:message
+						key="create.batch.button" />
+				</a>
+			</div>
+		</div>
+		<div wicket:id="saveConfirmationModal"></div>
+	</section>
+</wicket:extend>

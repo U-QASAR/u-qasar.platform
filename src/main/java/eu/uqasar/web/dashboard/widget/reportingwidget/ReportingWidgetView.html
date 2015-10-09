@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+
+    <div class="foo-inner">
+        <div wicket:id="chart" style="height: 500px;" class="exportClass"/>
+    </div>
+    <!-- final print table -->
+    <form wicket:id="formVoid">
+        <div wicket:id="reportWMC">
+            <table class="table table-striped">
+                <tr>
+                    <th><span wicket:id="type">[type]</span></th>
+                    <th>Count</th>
+                </tr>
+                <tr wicket:id="reportListView" class="reportListView">
+                    <td><span wicket:id="value">[type]</span></td>
+                    <td><span wicket:id="count">[count]</span></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</wicket:panel>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="auth register">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2><wicket:message key="page.title"></wicket:message></h2>
+					</div>
+				</div>
+				<div wicket:id="fragment"></div>
+			</section>
+			
+			<wicket:fragment wicket:id="error">
+				<div class="row-fluid">
+					<div class="span10">
+						<p class="lead"><span wicket:id="message"></span></p>
+					</div>
+					<div class="span2 hidden-phone">
+						<div class="badge-image">
+							<img src="assets/img/auth/error.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</wicket:fragment>
+			
+			<wicket:fragment wicket:id="success">
+				<div class="row-fluid">
+					<div class="span10">
+						<p class="lead"><span wicket:id="message"></span></p>
+						<p><a wicket:id="login"><span wicket:id="loginlabel"></span></a></p>
+					</div>
+					<div class="span2 hidden-phone">
+						<div class="badge-image">
+							<img src="assets/img/auth/success.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</wicket:fragment>
+		</wicket:extend>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+
+.wicket-aa {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.wicket-aa ul {
+	list-style-type: none;
+	margin: 5px;
+}
+
+.wicket-aa ul li {
+	padding: 2px;
+	cursor: pointer;
+}
+
+.wicket-aa ul li.selected {
+	background-color: #007fff;
+	color: #fff;
+}
+
+.validation.results {
+	max-height: 250px;
+	overflow: auto;
+}
+
+.validation.results .success {
+	color: #379f15;
+}
+
+.validation.results .error,
+.inuse.error {
+	color: #e60033;
+}
+
+.inuse.error {
+    font-weight: bold;
+}
+
+/*************************************************************************/
+/* LDAP Styling															 */
+/*************************************************************************/
+
+div.ldap-table-container-preview {
+	padding: 10px;
+	overflow: auto; 
+	margin-top: 10px;
+	max-height: 400px;
+	margin-bottom: 10px;
+}
+
+table.ldap thead tr.ldap-table-container-fixed-header {
+	background-color: white;
+	border-bottom: 1px solid #dddddd;
+}
+
+table.ldap th.name, 
+table.ldap td.name {
+	width: 15%;
+	 -ms-word-break: break-all;
+     word-break: break-all;
+}
+
+table.ldap td.name,
+table.ldap td.description {
+	font-size: 85%;	
+}
+
+table.ldap th.description, 
+table.ldap td.description {
+	width: 25%;
+	 -ms-word-break: break-all;
+     word-break: break-all;
+}
+
+table.ldap th.members, 
+table.ldap td.members {
+	width: 60%;
+}
+
+table.ldap .inline {
+	margin-bottom: 0;
+}
+
+table.ldap .groupmember {
+	padding: 3px;
+	border: 1px solid #cacaca;
+	margin: 2px;
+	padding-left: 7px;
+	padding-right: 7px;
+	border-radius: 5px;
+	background-color: white;
+	font-size: 85%;
+}
+
+table.ldap .groupmember .details {
+	text-align: center;
+	color: #555;
+}
+
+table.ldap .groupmember span {
+	display: block;
+	line-height: 16px;
+}
+
+
+table.ldap .groupmember .username {
+    font-weight: bold;
+}
+
+table.ldap .groupmember .username:before {
+	content: '(';
+}
+
+table.ldap .groupmember .username:after {
+	content: ')';
+}
+
+table.ldap .groupmember .fullname {
+}
+
+table.ldap .groupmember .mail {
+	font-style: italic;
+}
+
+

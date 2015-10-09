@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.dashboard.new.allwidgets">Alle Widgets hinzufügen</entry>
+<entry key="button.dashboard.new.widgetforjira">JIRA-Widget hinzufügen</entry>
+<entry key="button.dashboard.new.sonarqualitywidget">Sonar Widget hinzufügen</entry>
+<entry key="button.dashboard.new.projectqualitywidget">Projektsqualität Widget hinzufügen </entry>
+<entry key="button.dashboard.new.testlinkwidget">TestLink Widget hinzufügen </entry>
+<entry key="button.dashboard.new.jenkins">Jenkins Widget hinzufügen </entry>
+<entry key="button.dashboard.new.uqasardata">Projektbaum Widget hinzufügen </entry>
+<entry key="button.dashboard.new.datadeviation">Datenunterschiede Widget hinzufügen</entry>
+<entry key="button.dashboard.new.techdebt">Tech Debt Widget hinzufügen</entry>
+<entry key="button.dashboard.new.reporting">Reporting Widget hinzufügen</entry>
+<entry key="button.dashboard.update">Aktualisieren</entry>
+<entry key="button.dashboard.delete">Löschen</entry>
+<entry key="button.dashboard.reset">Zurücksetzen</entry>
+<entry key="button.dashboard.share">Teilen</entry>
+<entry key="button.dashboard.export">Exportieren</entry>
+
+<entry key="widget.feedback.success">Das Widget wurde erfolgreich zu ihrem Dashboard hinzugefügt!</entry>
+<entry key="widget.feedback.error">Leider ist ein Fehler beim Hinzufügen des Widgets aufgetreten. Bitte versuchen Sie er erneut!</entry>
+
+<entry key="reset.confirmation.modal.header">Zurücksetzen bestätigen</entry>
+<entry key="reset.confirmation.modal.message">Sind sie absolut sicher, dass sie ihr derzeitige Dashboard zurücksetzen möchten? Diese Aktion kann nicht rückgängig gemacht werden!</entry>
+<entry key="reset.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="reset.confirmation.modal.submit.text">Zurücksetzen</entry>
+
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="delete.confirmation.modal.message">Sind sie absolut sicher, dass sie ihr derzeitige Dashboard löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+
+<entry key="suggestion.feedback.info">Die Widgets unten werden empfohlen, da sie häufig von gleichartigen Benutzern der Platform verwendet werden.</entry>
+<entry key="canceled.message">Die Operation wurde abgebrochen.</entry>
+
+</properties>

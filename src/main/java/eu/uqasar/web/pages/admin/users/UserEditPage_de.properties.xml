@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.team">Team</entry>
+<entry key="label.add.userrole">Rolle von ${fullName} im Team</entry>
+<entry key="section.teams.title">Teamzugehörigkeiten von ${fullName}</entry>
+<entry key="column.head.role">Rolle</entry>
+<entry key="page.title.new">Benutzer erstellen</entry>
+<entry key="page.title.edit">${fullName} bearbeiten</entry>
+<entry key="label.add.teamname">Name des existierenden Teams</entry>
+<entry key="button.add.save">${fullName} zum Team hinzufügen</entry>
+<entry key="placeholder.add.teamname">Tippen für Autovervollständigung</entry>
+<entry key="td.teams.actions.batch.remove">${fullName} aus gewählten Team(s) entfernen</entry>
+<entry key="button.update">Änderungen übernehmen</entry>
+<entry key="label.add.title">${fullName} zu Team hinzufügen</entry>
+<entry key="error.team.notvalid">Das angegebene Team ist ungültig!</entry>
+<entry key="error.user.exists.mail">Die E-Mail Adresse ${mail} ist im System bereits registriert!</entry>
+<entry key="error.user.exists.userName">Ein Benutzer mit dem Benutzernamen ${userName} existiert bereits!</entry>
+<entry key="error.user.register.notification">Die Bestätigungs E-Mail konnte nicht verschickt werden!</entry>
+<entry key="delete.confirmation.modal.header">Benutzer aus gewählten Teams entfernen?</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie sicher, dass sie den Benutzer aus den ausgewählten Teams entfernen wollen?</entry>
+<entry key="delete.confirmation.modal.submit.text">Ja, aus Teams entfernen</entry>
+<entry key="delete.confirmation.modal.cancel.text">Nein, abbrechen</entry>
+<entry key="save.confirmed">Die Änderungen wurden gespeichert.</entry>
+<entry key="add.confirmed">Der Benutzer wurde erfolgreich erstellt.</entry>
+<entry key="cancel.confirmed">Das Prozess wurde zurückgestellt.</entry>
+<entry key="delete.confirmed"> ${fullName} wurde von den ausgewählten Teams entfernt.</entry>
+</properties>

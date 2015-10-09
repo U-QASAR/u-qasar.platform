@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.below">Below </entry>
+<entry key="label.between">Between</entry>
+<entry key="label.over">Over </entry>
+</properties>

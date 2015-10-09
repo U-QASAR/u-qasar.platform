@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.add.userrole">Rolle des neuen Nutzers</entry>
+<entry key="column.head.role">Rolle</entry>
+<entry key="column.head.member">Benutzer</entry>
+<entry key="placeholder.add.userName">Tippen für Autovervollständigung</entry>
+<entry key="placeholder.name">Der Name des Teams</entry>
+<entry key="td.members.actions.batch.remove">Ausgewählte(n) Benutzer aus ${name} entfernen</entry>
+<entry key="button.add.save">Benutzer zu ${name} hinzufügen</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.add.username">Name des neuen Nutzers</entry>
+<entry key="button.update">Änderungen übernehmen</entry>
+<entry key="label.list.title">io Mitglieder und deren Rollen</entry>
+<entry key="label.add.title">Einen Benutzer zu ${name} hinzufügen</entry>
+</properties>

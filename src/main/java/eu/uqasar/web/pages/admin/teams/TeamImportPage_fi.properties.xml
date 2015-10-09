@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Tuo tiimejä</entry>
+	<entry key="message.import.description.lead">Tällä sivulla voit tuoda olemassa olevia tiimejä (ryhmiä) LDAP-palvelimelta U-QASAR-alustalle.</entry>
+	<entry key="message.import.description">Aloittaaksesi LDAP-ryhmien tuonnin sinun on ensin haettava lista olemassa olevista LDAP-ryhmistä ja sitten valittava ne, jotka haluat tuoda tiimeinä.</entry>
+	<entry key="message.import.group.settings"><![CDATA[Tiimien tuonti suoritetaan <strong>ryhmävalintojen</strong> LDAP-asetusten mukaisesti ]]></entry>
+	<entry key="message.import.user.settings"><![CDATA[Lisäksi kaikki käyttäjät, jotka kuuluvat LDAP-ryhmään, tuodaan <strong>käyttäjävalintojen</strong> LDAP-asetusten mukaisesti. Mikäli LDAP-pohjainen käyttäjä on jo olemassa U-QASAR-alustalla, sitä ei tuoda uudelleen, vaan ainoastaan lisätään tuotavaan tiimiin (ryhmään) ]]></entry>
+	<entry key="message.import.group.settings.change">(klikkaa tästä tarkistaaksesi tai muuttaaksesi LDAP-ryhmävalintoja)</entry>
+	<entry key="message.import.user.settings.change">(klikkaa tästä tarkistaaksesi tai muuttaaksesi LDAP-käyttäjävalintoja)</entry>
+	<entry key="message.import.note">Huomioi, että tiettyjä LDAP-ryhmiä ei voida tuoda, mikäli toinen tiimi (ryhmä), jolla on sama nimi kuin tuotavalla LDAP-ryhmällä, on jo olemassa U-QASAR-alustalla. Sellaiset ei-tuotavissa olevat ryhmät </entry>
+	<entry key="message.import.note.highlight">näytetään värillä korostettuna.</entry>
+	<entry key="message.import.result.error">{0} tiimiä ({1}) ei voitu tuoda!.</entry>
+	<entry key="message.import.result.success">{0} tiimiä ({1}) tuotiin onnistuneesti!.</entry>
+	<entry key="label.retrieval.success">{0} LDAP-ryhmää haettiin onnistuneesti!</entry>
+	<entry key="label.groupRole">Käyttäjien rooli tuoduissa tiimeissä</entry>
+    <entry key="label.userRole">Tuotujen käyttäjien rooli</entry>
+	<entry key="label.registrationMail">Käyttäjän täytyy vahvistaa rekisteröinti?</entry>
+	<entry key="button.retrieve">Hae tiimit (ryhmät) LDAP:sta valintaa varten</entry>
+	<entry key="button.import">Tuo valitut tiimit (ryhmät)</entry>
+    <entry key="error.user.exists.mail">Ei tuoda käyttäjää, jolla on sähköpostiosoite {mail}, koska se on jo olemassa.</entry>
+    <entry key="error.user.exists.userName">Ei tuoda käyttäjää, jonka käyttäjätunnus on {userName}, koska se on jo olemassa.</entry>
+</properties>

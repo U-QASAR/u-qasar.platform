@@ -1,0 +1,204 @@
+#navbar-notifications-label {
+	display: none;
+}
+
+.navbar .dropdown-menu .notification-container {
+    overflow-y: auto;
+    max-height: 400px;
+    overflow-x: hidden;
+    margin-right: -18px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.navbar .dropdown-menu a.notification {
+	padding: 0px!important;
+	margin: 10px 26px 10px 6px !important;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	border: 1px solid #ccc;
+	color: #555555;
+}
+
+.navbar .dropdown-menu a.notification,
+.navbar .dropdown-menu span.notification {
+	width: 300px;
+	display: block;
+}
+
+
+.navbar .dropdown-menu a.notification:hover {
+	background-color: transparent;
+	background-image: none;
+	text-decoration: none;
+	color: #333;
+	box-shadow: none;
+	padding: 0;
+	border: 1px solid #ccc;
+}
+
+.navbar .dropdown-menu .notification {
+	font-size: 12px;
+	margin: 6px 6px;
+	padding: 0px 0px;
+	overflow: hidden;
+}
+
+.navbar .dropdown-menu a.notification:hover .wrapper .icon i {
+	color: #007fff;
+}
+
+.navbar .dropdown-menu .notification-container li:last-child {
+	margin-bottom: 0px;
+}
+
+.navbar .dropdown-menu .notification p {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar .dropdown-menu .notification .wrapper .icon {
+	width: 10%;
+	color: #ccc;
+	font-size: 190%;
+	padding: 0px;
+	padding-top: 4px;
+	vertical-align: top;
+}
+
+.navbar .dropdown-menu .notification .wrapper .icon i[class^="icon-"],
+.navbar .dropdown-menu .notification .wrapper .icon i[class*=" icon-"]
+	{
+	vertical-align: middle;
+}
+
+.navbar .dropdown-menu .notification .wrapper .description {
+	line-height: 18px;
+	padding-top: 4px;
+	width: 90%;
+}
+
+.navbar .dropdown-menu .notification .goto td {
+	font-size: 85%;
+	background-color: #fafafa;
+	padding: 4px;
+	padding-right: 4px;
+	line-height: 12px;
+}
+
+.navbar .dropdown-menu .notification .goto .icon {
+	width: 50%;
+}
+
+.navbar .dropdown-menu .notification .goto .description {
+	text-align: right;
+	width: 50%;
+}
+
+.navbar .dropdown-menu .notification .goto .date {
+}
+
+.navbar .dropdown-menu a.notification:hover .notification .goto td {
+	background-color: #007fff;
+	color: #ffffff;
+}
+
+.navbar .dropdown-menu .notification .goto i[class^="icon-"],
+.navbar .dropdown-menu .notification .goto i[class*=" icon-"]
+	{
+	font-size: 13px;
+}
+
+.navbar .badge.rounded {
+	padding: 2px 6px;
+	border-radius: 10px;
+}
+
+.navbar .dropdown-menu .notification .none {
+	line-height: 24px;
+}
+/*********************************************************/
+/* Project specific notifications						 */
+/*********************************************************/
+.navbar .dropdown-menu .notification.project.red .wrapper .icon i[class^="icon-"],
+.navbar .dropdown-menu .notification.project.red .wrapper .icon i[class*=" icon-"]
+	{
+	color: #e60033;
+}
+
+.navbar .dropdown-menu .notification.project.yellow .wrapper .icon i[class^="icon-"],
+.navbar .dropdown-menu .notification.project.yellow .wrapper .icon i[class*=" icon-"]
+	{
+	color: #FEC100;
+}
+
+.navbar .dropdown-menu .notification.project.green .wrapper .icon i[class^="icon-"],
+.navbar .dropdown-menu .notification.project.green .wrapper .icon i[class*=" icon-"]
+	{
+	color: #379f15;
+}
+
+.navbar .dropdown-menu .notification.project .project.name {
+	font-weight: bold;
+}
+
+/*********************************************************/
+/* Responsive things here								 */
+/*********************************************************/
+@media ( max-width : 979px) {
+	#navbar-notifications-label {
+		display: inline;
+	}
+	
+	.navbar .dropdown-menu .notification-container {
+		max-height: none;
+		overflow: visible;
+		margin-right: 0px;
+		margin-top: 0px;
+	    margin-bottom: 0px;
+	}
+	
+	.nav-collapse .dropdown-menu a.notification,
+	.nav-collapse .dropdown-menu span.notification {
+		font-weight: normal;
+		padding: 3px;
+		color: #fff;
+		width: auto;
+		min-width: 50%;
+		max-width: 500px;
+	}
+	
+	.nav-collapse .dropdown-menu table.notification {
+		width: 98%;
+	}
+	
+	.nav-collapse .dropdown-menu a.notification:hover {
+		background-color: #666;
+		color: #fff;
+		border: none;
+	}
+	
+	.nav-collapse .dropdown-menu a.notification:hover .goto td {
+		background-color: #666 !important;
+		color: #fff;
+	}
+	
+	.nav-collapse .dropdown-menu .notification .goto,
+	.nav-collapse .dropdown-menu .notification .goto td {
+		color: #fff;
+		background-color: transparent;
+	}
+	
+	.navbar .dropdown-menu a.notification:hover .notification .goto td {
+		color: #ffffff;
+	}
+	
+	.nav-collapse .dropdown-menu .notification .description {
+		color: #fff;
+	}
+	
+	.navbar .dropdown-menu a.notification {
+		padding: 0px !important;
+		margin: 6px !important;
+		border: none;
+	}
+}

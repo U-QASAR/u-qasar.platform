@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="suggestion.no_suggestion"></entry>
+<entry key="suggestion.qo.replace">Suggestion: Use the following similar QualityObjective</entry>
+<entry key="suggestion.qo.remove">Suggestion: To be removed (no value can be computed based on the available QI/metric values)</entry>
+<entry key="suggestion.metric.remove">Suggestion: To be removed (no measurement value available)</entry>
+</properties>

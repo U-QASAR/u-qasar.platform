@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.indicator.thresholds.limits">Thresholds Limits</entry>
+<entry key="label.average">Formula Weighted Average</entry>
+<entry key="page.title">U-QASAR</entry>
+<entry key="label.indicator.value.historic">Historic</entry>
+<entry key="label.indicator.value.stats">Statistics</entry>
+<entry key="label.indicator.value.last.update">Value updated on</entry>
+<entry key="label.indicator.value.target">Target Value</entry>
+<entry key="label.indicator.value.formula">Formula</entry>
+<entry key="label.metric.script">Script</entry>
+<entry key="label.lcStage.current">Current</entry>
+<entry key="label.tools">Tools</entry>
+<entry key="label.metric.value">Value</entry>
+<entry key="label.metric.value.target">Target Value</entry>
+<entry key="button.save">Save changes</entry>
+<entry key="button.cancel">Cancel</entry>
+<entry key="label.indicator.purpose">Purpose</entry>
+<entry key="label.description.check.richtext">Text Formatting</entry>
+<entry key="label.indicator.type">Type</entry>
+<entry key="label.indicator.weight">Weight</entry>
+<entry key="label.use.formula">Use Formula</entry>
+<entry key="label.total.weight.consumed">Total Weight Consumed</entry>
+<entry key="label.non.use.formula">Value is calculated using %  achievement </entry>
+<entry key="footer.text">&amp;copy; {0,number,####} U-QASAR Consortium. All Rights Reserved.</entry>
+<entry key="label.metric.provider">Metric Provider</entry>
+<entry key="label.formula.editor">Formula</entry>
+<entry key="label.svn.version">SVN Version</entry>
+<entry key="label.unit">Unit</entry>
+<entry key="label.last.updated">Last Update</entry>
+</properties>

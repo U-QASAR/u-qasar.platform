@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="qmodel.settings.title">Laatumalliasetukset</entry>
+<entry key="qmodel.settings.short.name">Lyhyt nimi</entry>
+<entry key="qmodel.settings.name">Nimi</entry>
+<entry key="qmodel.settings.high.title">Ensimmäisen/Korkean tason entiteetti</entry>
+<entry key="placeholder.high">QO</entry>
+<entry key="placeholder.highEntity">Laatutavoite</entry>
+<entry key="qmodel.settings.medium.title">Toisen tason/Keskitason entiteetti</entry>
+<entry key="placeholder.medium">QI</entry>
+<entry key="placeholder.mediumEntity">Laatuindikaattori</entry>
+<entry key="qmodel.settings.low.title">Kolmannen tason/Matalan tason entiteetti</entry>
+<entry key="placeholder.low">QM</entry>
+<entry key="placeholder.lowEntity">Laatumetriikka</entry>
+</properties>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+<head>
+</head>
+<body>
+    <wicket:panel xmlns:wicket>
+        <div class="view project">
+            <form>
+                <div class="row-fluid">
+                    <div class="span12">
+						<div id="qualityStatus" wicket:id="quality.status"
+							class="quality status pull-right">
+                            <div class="value">
+                                <span wicket:id="quality.value"></span><span>%</span>
+                            </div>
+                        </div>
+                        <h2 class="name">
+							<i class="icon" wicket:id="icon"></i> <span
+								wicket:id="name"></span> <span class="actions" id="projectEdit"> <a
+								wicket:id="link.edit" wicket:message="title:button.edit">
+									<i class="icon-pencil"></i><wicket:message key="button.edit" />
+                            </a>
+                            </span>
+                        </h2>
+                    </div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div class="span3">
+						<label class="key inline"><wicket:message
+								key="label.key" />:</label> <span class="key"
+                            wicket:id="nodeKey"></span>
+                    </div>
+                    <div class="span3">
+						<label class="current lcStage inline" for="lcStage"><wicket:message
+								key="label.lcStage.current" /> <wicket:message
+								key="label.lcStage" />:</label>
+						<span wicket:id="lcStage.current"></span>
+                    </div>
+                    <div class="span3">
+						<label><wicket:message key="label.tools" />:</label>
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown" id="tools">
+                                <i class="icon-camera"></i> <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a wicket:id="saveSnapButton">Save Snapshot</a></li>
+                                <li><a wicket:id="recoverSnapButton">Recover Snapshot</a></li>
+                            </ul>
+                        </div>
+                    </div>
+					<div class="span3">
+						<label><wicket:message key="label.last.updated" />:</label> 
+						<span wicket:id="lastUpdated"></span>
+					</div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div class="span3">
+						<label class="startDate inline"><wicket:message
+								key="label.date.start" />:</label> <span class="startDate"
+							wicket:id="startDate"></span>
+                    </div>
+                    <div class="span6">
+                        <div wicket:id="progress.bar"></div>
+                        <span class="progresstext" wicket:id="progress.text"></span>
+                    </div>
+                    <div class="span3">
+						<label class="endDate inline"><wicket:message
+								key="label.date.end" />:</label> <span class="endDate"
+                            wicket:id="endDate"></span>
+                    </div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div class="span12" wicket:id="descriptionWebMarkUp">
+                        <label class="description" for="description"><wicket:message key="label.description" />:</label>
+                        <div id="description" class="description" wicket:id="description"></div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                     <div class="span4" wicket:id="qmodelWebMarkUp">
+                        <label class="qmodel inline" for="qmodel"><wicket:message key="label.qmodel" />:</label>
+                        <div id="qmodel" class="qmodel" wicket:id="qmodel"></div>
+                    </div>
+                    <div class="span4" wicket:id="productWebMarkUp">
+                        <label class="product inline" for="product"><wicket:message key="label.product" />:</label>
+                        <div id="product" class="product" wicket:id="product"></div>
+                    </div>
+                    <div class="span4" wicket:id="processWebMarkUp">
+                        <label class="process inline" for="process"><wicket:message key="label.process" />:</label>
+                        <div id="process" class="process" wicket:id="process"></div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div wicket:id="thresholdIndicator"></div>
+                    <div class="span3">
+						<label class="formula weighted average"><wicket:message
+								key="label.average" /></label>
+                        <div id="formulaAverage" wicket:id="formulaAverage"></div>
+                    </div>
+                </div>
+
+                <hr id="team" />
+                <div class="row-fluid">
+                    <div class="span12 team">
+                        <label class="team" for="team"><span wicket:id="teamLabelId">team:</span></label>
+                        <div class="member" wicket:id="users">
+                            <div wicket:id="userPanel"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row-fluid">
+                    <div class="span12">
+                        <label class="metadata left" for="metadata"><span wicket:id="metadataId">metadata</span> </label>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4" wicket:id="wmcProgLan">
+                            <label class="progLan inline" for="progLan"><wicket:message key="label.progLan" /></label>
+                            <div id="progLan" class="progLan" wicket:id="progLan"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcItTool">
+                            <label class="itTool inline" for="itTool"><wicket:message key="label.itTool" /></label>
+                            <div id="itTool" class="itTool" wicket:id="itTool"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcScmTool">
+                            <label class="scmTool inline" for="scmTool"><wicket:message key="label.scmTool" /></label>
+                            <div id="scmTool" class="scmTool" wicket:id="scmTool"></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row-fluid">
+                        <div class="span4" wicket:id="wmcSaTool">
+                            <label class="saTool inline" for="saTool"><wicket:message key="label.saTool" /></label>
+                            <div id="saTool" class="saTool" wicket:id="saTool"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcTmTool">
+                            <label class="tmTool inline" for="tmTool"><wicket:message key="label.tmTool" /></label>
+                            <div id="tmTool" class="tmTool" wicket:id="tmTool"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcCiTool">
+                            <label class="ciTool inline" for="ciTool"><wicket:message key="label.ciTool" /></label>
+                            <div id="ciTool" class="ciTool" wicket:id="ciTool"></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row-fluid">
+                        <div class="span4" wicket:id="wmcCtype">
+								<label class="customerType inline" for="customerType"><wicket:message key="label.customerType" /></label>
+                            <div id="customerType" class="customerType" wicket:id="customerType"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcPtype">
+                            <label class="projectType inline" for="projectType"><wicket:message key="label.projectType" /></label>
+                            <div id="projectType" class="projectType" wicket:id="projectType"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcSwType">
+								<label class="softwareType inline" for="softwareType"><wicket:message key="label.softwareType" /></label>
+                            <div id="softwareType" class="softwareType" wicket:id="softwareType"></div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row-fluid">
+                        <div class="span4" wicket:id="wmcSwLicense">
+								<label class="softwareLicense inline" for="softwareLicense"><wicket:message key="label.softwareLicense" /></label>
+                            <div id="softwareLicense" class="softwareLicense" wicket:id="softwareLicense"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcTopic">
+                            <label class="topic inline" for="topic"><wicket:message key="label.topic" /></label>
+                            <div id="topic" class="topic" wicket:id="topic"></div>
+                        </div>
+                        <div class="span4" wicket:id="wmcSwDevMeth">
+								<label class="softwareDevelopmentMethodology inline" for="softwareDevelopmentMethodology"><wicket:message key="label.softwareDevelopmentMethodology" /></label>
+								<div id="softwareDevelopmentMethodology" class="softwareDevelopmentMethodology" wicket:id="softwareDevelopmentMethodology" ></div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div class="span6">
+						<label class="Historic"><wicket:message key="label.indicator.value.historic" />&nbsp;
+						(<span wicket:id="noOfRegisters"></span>)&nbsp;
+						<a wicket:id="historical"><i class="icon-time"></i></a> 
+						</label>
+						<ul><li wicket:id="listOfHistValues"></li></ul>
+                    </div>
+                    <div class="span6">
+						<label class="Statistics">
+<!-- 							<wicket:message key="label.indicator.value.stats" /> -->
+                        </label>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row-fluid">
+                    <div class="span12">
+						<label class="quality trend chart" for="trend"><wicket:message
+								key="label.quality.trend" />:</label>
+                        <div id="trend" class="quality trend chart" wicket:id="trend"></div>
+                    </div>
+                </div>
+
+               <!-- DISQUS Commenting feature, see https://disqus.com/  -->
+		        <div id="disqus_thread"></div>
+	     
+			     <script type="text/javascript">
+			            /* CONFIGURATION VARIABLES */
+			            var url = window.location.href;
+			            var res = url.split("?");
+			            var disqus_url = res[0];  
+                        
+			            var disqus_container_id = 'disqus_thread';
+		           		var disqus_shortname = 'uqassessment';
+			            
+			            var disqus_config_custom = window.disqus_config;
+			            
+			            /* * * DON'T EDIT BELOW THIS LINE * * */
+			            (function() {
+			                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			            })();
+			    </script> 				
+			</form>
+		</div>
+        <div wicket:id="newSaveSnapshootModal"></div>
+        <div wicket:id="newRecoverSnapshootModal"></div>
+    </wicket:panel>
+</body>
+</html>

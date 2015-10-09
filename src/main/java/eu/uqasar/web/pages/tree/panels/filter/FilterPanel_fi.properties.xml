@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.filter.apply">Käytä</entry>
+<entry key="label.project.date.end">Päättymispäivä</entry>
+<entry key="label.filter.title">Suodata</entry>
+<entry key="label.project.date.start">Aloituspäivä</entry>
+<entry key="label.filter.status">Status</entry>
+<entry key="label.filter.lcStage">Elinkaarivaihe</entry>
+<entry key="button.filter.clear">Tyhjennä</entry>
+</properties>

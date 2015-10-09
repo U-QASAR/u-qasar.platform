@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="step1.label.name">Nimi</entry>
+<entry key="step1.label.key">Avain</entry>
+<entry key="step1.label.description">Kuvaus</entry>
+
+<entry key="step2.label.date.start">Alkamispäivä</entry>
+<entry key="step2.label.date.end">Päättymispäivä</entry>
+
+<entry key="step3.label.customerType"> Asiakastyypit </entry>
+<entry key="step3.label.projectType">Projektityypit</entry>
+<entry key="step3.label.softwareType">Ohjelmistotyypit </entry>
+<entry key="step3.label.softwareLicense">Ohjelmistolisenssit</entry>
+<entry key="step3.label.progLanguage">Ohjelmointikielet</entry>
+<entry key="step3.label.topic">Aiheet</entry>
+<entry key="step3.label.roles">Roolit</entry>
+<entry key="step3.label.contIntegration">Jatkuvan integroinnin työkalut</entry>
+<entry key="step3.label.issueTracking">Ongelmien seurantatyökalut</entry>
+<entry key="step3.label.srcCodeManagement">Lähdekoodin hallinnointityökalut</entry>
+<entry key="step3.label.staticAnalysis">Staattisen analyysin työkalut</entry>
+<entry key="step3.label.testManagement">Testien hallinnointityökalut</entry>
+<entry key="step3.label.softwareDevelopmentMethodology">Ohjelmistotuotannon metodi</entry>
+
+
+<entry key="step4.header.company"> Yritys </entry>
+<entry key="step4.header.user"> Käyttäjä </entry>
+<entry key="step4.header.role"> Rooli </entry>
+<entry key="step4.header.skills">  Sopivat taidot  </entry>
+<entry key="step4.header.options"> Valinnat </entry>
+<entry key="step4.confirm.user"> Vahvista Käyttäjä </entry>
+<entry key="step4.reject.user"> Hylkää Käyttäjä </entry>
+<entry key="step4.hint"> Vihje: Tätä tiimiä voi myöhemmin muokata myös kohdassa "Pääkäyttäjän Konsoli >> Hallinnoi Tiimejä" </entry>
+<entry key="step4.label.add.username">Käyttäjän nimi</entry>
+<entry key="step4.placeholder.add.userName">Kirjoita aloittaaksesi nimen automaattitäydennys</entry>
+<entry key="button.add.save">Lisää käyttäjä tiimiin</entry>
+
+
+<entry key="step5.label.qmodel">Laatumalli</entry>
+<entry key="step5.label.product">Tuote</entry>
+<entry key="step5.label.process">Prosessi</entry>
+<entry key="step5.label.lcStage">Nykyinen Elinkaarivaihe</entry>
+
+<entry key="step7.page.edit.title">Muokkaa adapteria</entry>
+<entry key="step7.name.Required">Anna nimi uudelle adapterille</entry>
+<entry key="step7.page.copy.title">Kopioi adapteri</entry>
+<entry key="step7.form.create.header">Luo uusi adapteri</entry>
+<entry key="step7.page.create.title">Luo adapteri</entry>
+<entry key="step7.submit.text">Tallenna</entry>
+<entry key="step7.name.javax.validation.constraints.NotNull.message">Anna nimi uudelle adapterille</entry>
+<entry key="step7.form.edit.header">Muokkaa adapteria</entry>
+<entry key="step7.name.input.placeholder">Anna nimi adapterille...</entry>
+<entry key="step7.saved.message">Adapteri ${name} on tallennettu</entry>
+<entry key="step7.cancel.text">Peruuta</entry>
+<entry key="step7.name.javax.validation.constraints.Size.message.String">Adapterin nimen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+<entry key="step7.name.input.label">Nimi</entry>
+<entry key="step7.form.copy.header">Luo kopio adapterista ${name}</entry>
+<entry key="step7.label.metricsource">Datalähteen tyyppi</entry>
+<entry key="step7.url.input.label">URL</entry>
+<entry key="step7.url.input.placeholder">Anna adapterin URL...</entry>
+<entry key="step7.username.input.label">Käyttäjätunnus</entry>
+<entry key="step7.pwd.input.label">Salasana</entry>
+<entry key="step7.username.input.placeholder">Anna adapterin käyttämä käyttäjätunnus...</entry>
+<entry key="step7.password.input.placeholder">Anna adapterin käyttämä salasana...</entry>
+<entry key="step7.updateInterval.input.label">Adapteridatan päivitysväli</entry>
+<entry key="step7.label.project">Projekti</entry>
+<entry key="step7.updateInterval.input.placeholder">Anna päivitysväli minuutteina adapteridatalle...</entry>
+<entry key="step7.label.password">Salasana</entry>
+<entry key="step7.label.username">Käyttäjätunnus</entry>
+<entry key="step7.adapterProject.input.label">Adapterin käyttämä projekti</entry>
+<entry key="step7.adapterProject.input.placeholder">Anna projektin nimi, jota adapteri käyttää</entry>
+<entry key="step7.name.popover.text">Anna tässä kentässä adapterille kuvaava nimi.</entry>
+<entry key="step7.metricSource.popover.text">Valitse datalähteen tyyppi, josta metriikkadata haetaan. Optio manuaalinen tarkoittaa, jotta tiedot on syötettävä käsin.</entry>
+<entry key="step7.url.popover.text">Määrittele datalähteen URL tässä kentässä.</entry>
+<entry key="step7.username.popover.text">Tämä kenttä sisältää käyttäjätunnuksen, jota käytetään adapterin autentikoimiseen datan lähteessä.</entry>
+<entry key="step7.password.popover.text">Tämä kenttä sisältää salasanan, jota käytetään adapterin autentikoimiseen datan lähteessä.</entry>
+<entry key="step7.updateInterval.popover.text">Tässä kentässä määritetään, kuinka usein dataa haetaan lähteestä. Arvo annetaan minuutteina. Arvo 0 tarkoittaa, että dataa ei päivitetä automaattisesti.</entry>
+<entry key="step7.adapterProject.popover.text">Tämä kenttä määrittää datalähteen käyttämän sisäisen projektin nimen.</entry>
+<entry key="step7.project.popover.text">Käytä pudotusvalikkoa valitaksesi laatuprojektin, joka käyttää tätä adapteria.</entry>
+<entry key="step7.adapterTestPlan.input.label">Adapterin käyttämä test plan (testausframeworkille)</entry>
+<entry key="step7.adapterTestPlan.popover.text">Tämä kenttä määrittelee adapterin käyttämän test planin (tätä käyttää testausframework)</entry>
+<entry key="step7.adapterTestPlan.input.placeholder">Kirjoita test planin nimi, jota testausframework käyttää</entry>
+<entry key="step7.description">Tällä sivulla voit määrittää data-adapterin tiedot mittausdatan noutamiseksi. Lisää adaptereita voi määrittää menukohdassa Adapteriasetukset.</entry>
+<entry key="step7.add">Lisää adapteri</entry>
+<entry key="step7.add.confirmed">Adapteri on lisätty.</entry>
+
+<entry key="placeholder.meta.input">Anna {0}</entry>
+<entry key="placeholder.meta.role">Anna roolit</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="delete.confirmation.modal.message">Oletko varma, että haluat poistaa tämän tiimijäsenen? Tätä ei voi perua!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="delete.confirmed">Valittu tiimin jäsen on poistettu.</entry>
+
+<entry key="step1.title"> Vaihe 1: Yleinen </entry>
+<entry key="step2.title"> Vaihe 2: Projektin päivämäärät </entry>
+<entry key="step3.title"> Vaihe 3: Metadata </entry>
+<entry key="step4.title"> Vaihe 4: Tiimikokoonpanot </entry>
+<entry key="step5.title"> Vaihe 5: Laatumalli </entry>
+<entry key="step6.title"> Vaihe 6: Laatumalliehdotus: osajoukko</entry>
+<entry key="step6.title"> Vaihe 7: Data-adapterit</entry>
+
+
+</properties>

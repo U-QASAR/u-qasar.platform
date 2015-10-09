@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="table.users.head.column.userName">Benutzername</entry>
+	<entry key="table.users.head.column.firstName">Vorame</entry>
+	<entry key="table.users.head.column.lastName">Nachname</entry>
+	<entry key="table.users.head.column.mail">E-Mail</entry>
+	<entry key="table.users.head.column.photo">Foto</entry>
+	<entry key="table.users.warning.exists">Ein Benutzer mit dem gleichen Benutzername oder der gleichen E-Mail Adresse existiert im System bereits!</entry>
+</properties>

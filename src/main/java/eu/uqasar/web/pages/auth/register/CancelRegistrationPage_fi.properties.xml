@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.success"><![CDATA[Käyttäjän <strong>{0}</strong> rekisteröinti peruutettiin. Tilisi tiedot (mukaanlukien sähköpostisoitteesi) on poistettu järjestelmästä.]]></entry>
+<entry key="label.error"><![CDATA[Rekisteröintiprosessia ei pystytty peruuttamaan!<br />Ei löydetty jonossa olevaa käyttäjää, jolla on rekisteröintitunnus <em>{0}</em>.]]></entry>
+<entry key="page.title">Peruuta jonossa oleva rekisteröityminen</entry>
+<entry key="label.success.link">Mennäksesi aloitussivulle, klikkaa tästä tai odota {0} sekuntia.</entry>
+</properties>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+<head>
+</head>
+<body>
+	<wicket:panel xmlns:wicket>
+		<div class="view metric">
+			<form>
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="span7">
+							<h2 class="name">
+								<i class="icon" wicket:id="icon"></i> <span wicket:id="name"></span>
+								<span class="actions"> <a wicket:id="link.edit"
+									wicket:message="title:button.edit"> <i class="icon-pencil"></i>
+										<wicket:message key="button.edit" />
+								</a>
+								</span>
+							</h2>
+						</div>
+						<div class="span5">
+							<div wicket:id="quality.status" class="quality status pull-right">
+									<div class="value" wicket:id="unit"></div>
+							</div>
+							<div class="metric value">
+								<span wicket:id="value"></span>
+								<span> /</span>
+								<span wicket:id="targetValue"> -</span>								
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span3">
+						<label class="inline indicator target selected"><wicket:message
+								key="label.indicator.purpose" /></label> <span wicket:id="purpose"></span>
+					</div>
+					<div class="span9">
+						<label class="current lcStage inline"><wicket:message
+								key="label.lcStage" />:</label> <span wicket:id="lcStage"></span>
+					</div>
+					
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="description" for="description"><wicket:message
+								key="label.description" />:</label>
+						<div id="description" class="description" wicket:id="description"></div>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span4">
+						<label class="inline metricSource" for="metricSource"><wicket:message
+								key="label.metric.source" />:</label>
+						<div id="metricSource"> 
+							<span wicket:id="metricSource"></span>&nbsp;
+							<a wicket:id="metricDrill"><i class="icon-magnet"></i></a>
+						</div>					
+					</div>
+					<div class="span4">
+						<label class="inline metricType" for="metricType"><wicket:message
+								key="label.metric.type" />:</label>
+						<div id="metricType"><span wicket:id="metricType"></span> </div>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div wicket:id="thresholdIndicator"></div>
+					<div class="span1">
+						<label class="weight"><wicket:message
+								key="label.indicator.weight" /></label>
+						<div id="weight" wicket:id="weight"></div>
+					</div>
+ 					<div class="span3">
+						<label class="last update"><wicket:message
+								key="label.indicator.value.last.update" /></label> <span
+							wicket:id="lastUpdated"></span>
+					</div>
+				</div>
+				<hr>
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="Historic"><wicket:message key="label.indicator.value.historic" />&nbsp;
+						(<span wicket:id="noOfRegisters"></span>)&nbsp;
+						<a wicket:id="historical"><i class="icon-time"></i></a>
+						</label>
+						<ul><li wicket:id="listOfHistValues"></li></ul>
+					</div>
+					<div class="span6">
+						<label class="Statistics">
+							<wicket:message key="label.indicator.value.stats" />
+						</label>
+					</div>
+				</div>			
+				<hr />
+				<br />
+				<br />
+				<div class="row-fluid">
+					<div class="span1"></div>
+					<div class="span10">
+						<div class="suggestion"><span wicket:id="suggestion">[suggestion]</span></div>					
+					</div>
+					<div class="span1"></div>
+				</div>
+				
+				<!-- DISQUS Commenting feature, see https://disqus.com/  -->
+		        <div id="disqus_thread"></div>
+	     
+			     <script type="text/javascript">
+			            /* CONFIGURATION VARIABLES */
+			            var url = window.location.href;
+			            var res = url.split("?");
+			            var disqus_url = res[0];
+						var disqus_container_id = 'disqus_thread';
+			            var disqus_shortname = 'uqassqm';
+			            
+			            var disqus_config_custom = window.disqus_config;
+			            
+			            /* * * DON'T EDIT BELOW THIS LINE * * */
+			            (function() {
+			                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			            })();
+			    </script>
+			</form>
+		</div>
+	</wicket:panel>
+</body>
+</html>

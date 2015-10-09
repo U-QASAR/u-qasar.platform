@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.paradigm.xp">XP</entry>
+<entry key="label.paradigm.rup">Rup</entry>
+<entry key="label.paradigm.lean">Lean</entry>
+<entry key="label.paradigm.scrum">Scrum</entry>
+<entry key="label.paradigm.waterfall">Vesiputous</entry>
+<entry key="label.paradigm.kanban">Kanban</entry>
+</properties>

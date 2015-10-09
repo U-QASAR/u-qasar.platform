@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.success"><![CDATA[Registration of <strong>{0}</strong> was cancelled. Your account details (including your e-mail address) have been removed from the system.]]></entry>
+<entry key="label.error"><![CDATA[Could not cancel the registration process!<br />No pending user with a registration token of <em>{0}</em>; could be found.]]></entry>
+<entry key="page.title">Cancel pending registration</entry>
+<entry key="label.success.link">To go to the start page, simply click here or wait {0} seconds.</entry>
+</properties>

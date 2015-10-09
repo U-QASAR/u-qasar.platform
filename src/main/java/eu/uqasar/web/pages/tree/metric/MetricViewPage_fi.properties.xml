@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.metric.value.issues.resolved">Ratkaistut ongelmat</entry>
+<entry key="label.metric.value.issues.inprogress">Käsiteltävänä olevat ongelmat</entry>
+<entry key="label.metric.value.issues.closed">Suljetut ongelmat</entry>
+<entry key="page.title">${name}</entry>
+<entry key="label.metric.value.issues.open">Avoimet ongelmat</entry>
+<entry key="label.metric.value.issues.re-opened">Uudelleenavatut ongelmat</entry>
+<entry key="label.metric.source">Metriikkalähde</entry>
+<entry key="label.metric.type">Metriikkatyyppi</entry>
+</properties>

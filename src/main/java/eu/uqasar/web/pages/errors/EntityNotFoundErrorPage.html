@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<div class="row-fluid">
+				<div class="span10">
+					<div class="page-header">
+						<h2>404 - <wicket:message key="page.title" /></h2>
+					</div>
+					<p class="lead" wicket:id="description"></p>
+					<p><strong><wicket:message key="solution.entry"></wicket:message></strong></p>
+					<ul>
+						<li><wicket:message key="solution.first" /></li>
+						<li><wicket:message key="solution.second" /></li>
+						<li><wicket:message key="solution.third" /></li>
+					</ul>
+				</div>
+				<div class="span2 hidden-phone">
+					<img src="assets/img/error.png" alt=""/>
+				</div>
+			</div>
+		</wicket:extend>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="chart.series.legend.average">Durchschnittswert</entry>
+<entry key="chart.button.context.title">Grafik exportieren</entry>
+<entry key="chart.button.title.print">Grafik drucken</entry>
+<entry key="chart.button.download.pdf">Als PDF speichern</entry>
+<entry key="chart.button.title.reset.zoom">Zoom zurücksetzen</entry>
+<entry key="chart.button.reset.zoom">Zoom zurücksetzen</entry>
+<entry key="chart.button.download.svg">Als SVG speichern</entry>
+<entry key="chart.label.status.loading">Lade...</entry>
+<entry key="chart.button.download.jpeg">Als JPEG speichern</entry>
+<entry key="chart.button.download.png">Als PNG speichern</entry>
+</properties>

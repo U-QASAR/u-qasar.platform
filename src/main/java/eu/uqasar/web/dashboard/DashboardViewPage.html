@@ -1,0 +1,53 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="btn-toolbar">
+			<div class="btn-group">
+				<a class="btn btn-success dropdown-toggle" id="addwidget"
+					data-toggle="dropdown" href="#"> <i class="icon-plus"></i> <span
+					class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" wicket:id="container.dashboard.node.new">
+					<li><a class="new projectQualityWidget"
+						wicket:id="link.dashboard.node.new.projectquality"> Project Quality
+							Widget </a></li>
+					<li><a class="new jiraWidget"
+						wicket:id="link.dashboard.node.new.widgetforjira">Widget for JIRA(R)</a></li>
+					<li><a class="new sonarQualityWidget"
+						wicket:id="link.dashboard.node.new.sonarquality">Sonar Quality
+							Widget</a></li>
+					<li><a class="new testLinkWidget"
+						wicket:id="link.dashboard.node.new.testlink">TestLink Widget</a></li>
+					<li><a class="new jenkinsLinkWidget"
+						wicket:id="link.dashboard.node.new.jenkins">Jenkins Widget</a></li>
+					<li><a class="new uqasardataWidget"
+						wicket:id="link.dashboard.node.new.uqasardata">U-QASAR Data
+							Widget</a></li>
+					<li><a class="new datadeviationWidget"
+						wicket:id="link.dashboard.node.new.datadeviation">Deviation
+							Widget</a></li>
+					<li><a class="new techdebtWidget"
+						wicket:id="link.dashboard.node.new.techdebt">Technical Debt Widget</a></li>
+					<li><a class="new reportingWidget"
+						wicket:id="link.dashboard.node.new.reporting">Reporting Widget</a>
+					</li>
+
+				</ul>
+				<div class="btn-group">
+					<button type="submit" class="btn btn-success" id="updatedashboard"
+						wicket:id="link.dashboard.update">Update</button>
+					<button type="submit" class="btn btn-info" id="sharedashboard"
+						wicket:id="link.dashboard.share">Share</button>
+					<button type="submit" class="btn btn-danger" id="resetdashboard"
+						wicket:id="link.dashboard.reset">Reset</button>
+					<button type="submit" class="btn btn-danger" id="deletedashboard"
+						wicket:id="link.dashboard.delete">Delete Dashboard</button>
+					<button type="submit" class="btn btn-warning" id="exportdashboard"
+						wicket:id="link.dashboard.export">Export Dashboard</button>
+				</div>
+			</div>
+		</div>
+		<div wicket:id="dashboard" class="dashboard"></div>
+		<div wicket:id="resetConfirmationModal"></div>
+		<div wicket:id="deleteConfirmationModal"></div>
+	</section>
+</wicket:extend>

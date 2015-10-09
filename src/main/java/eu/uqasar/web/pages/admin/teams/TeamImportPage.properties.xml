@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Import Teams</entry>
+	<entry key="message.import.description.lead">On this page you can import existing teams (groups) from an LDAP server into the U-QASAR platform.</entry>
+	<entry key="message.import.description">In order to start import of LDAP groups you first have to retrieve a list of existing LDAP groups and then select the ones to be imported as teams.</entry>
+	<entry key="message.import.group.settings"><![CDATA[The retrieval of teams will be performed according to the LDAP settings for the <strong>group mapping</strong> ]]></entry>
+	<entry key="message.import.user.settings"><![CDATA[Additionally, all users belonging to an LDAP group will be imported according to the the LDAP settings for the <strong>user mapping</strong>. In case an LDAP-based user is already existent in the U-QASAR platform, it will not be imported once again but only be added to the imported team (group) ]]></entry>
+	<entry key="message.import.group.settings.change">(click here to revise or change LDAP group mappings)</entry>
+	<entry key="message.import.user.settings.change">(click here to revise or change LDAP user mappings)</entry>
+	<entry key="message.import.note">Please note, that certain LDAP groups may not be imported in case another team (group) in the U-QASAR platform exists, that has the same name as the LDAP group to be imported. Those non-importable groups </entry>
+	<entry key="message.import.note.highlight">will be marked as such by color and a curresponding pointer.</entry>
+	<entry key="message.import.result.error">{0} team(s) ({1}) could not be imported!.</entry>
+	<entry key="message.import.result.success">{0} team(s) ({1}) were imported successfully!.</entry>
+	<entry key="label.retrieval.success">{0} LDAP group(s) retrieved successfully!</entry>
+	<entry key="label.groupRole">Role of users within the imported teams</entry>
+    <entry key="label.userRole">Role of newly imported users</entry>
+	<entry key="label.registrationMail">User needs to confirm registration?</entry>
+	<entry key="button.retrieve">Retrieve teams (groups) from LDAP for selection</entry>
+	<entry key="button.import">Import Selected Teams (groups)</entry>
+    <entry key="error.user.exists.mail">Not importing a user with user e-Mail address {mail} because it already exists.</entry>
+    <entry key="error.user.exists.userName">Not importing a user with user name {userName}, because it already exists.</entry>
+</properties>

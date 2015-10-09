@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.team">Muokkaa tiimi</entry>
+<entry key="help.key">Projektin avain (käytetään URL:eissa)</entry>
+<entry key="label.meta.known">Käytetyt {0}</entry>
+<entry key="placeholder.meta.input">Kirjoita {0}</entry>
+<entry key="help.meta.input">Paina Enter, Tabulaattori tai pilkku erottaaksesi syötteet toisistaan</entry>
+</properties>

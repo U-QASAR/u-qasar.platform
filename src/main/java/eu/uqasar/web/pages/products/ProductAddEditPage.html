@@ -1,0 +1,35 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2><span wicket:id="header"></span></h2>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<form wicket:id="form">
+					<fieldset>
+						<div class="control-group" wicket:id="nameValidationBorder">
+							<input type="text" class="input-xxlarge" id="name" wicket:message="placeholder:name.input.placeholder" wicket:id="name">
+						</div>
+						<div class="control-group" wicket:id="descriptionValidationBorder">
+							<input type="text" class="input-xxlarge" id="description" wicket:message="placeholder:description.input.placeholder" wicket:id="description">
+						</div>
+						<div class="control-group" wicket:id="versionValidationBorder">
+							<input type="text" class="input-xxlarge" id="version" wicket:message="placeholder:version.input.placeholder" wicket:id="version">
+						</div>
+						<div class="control-group" wicket:id="releaseDateValidationBorder">
+							<input type="text" class="input-xxlarge" id="releaseDate" wicket:message="placeholder:releasedate.input.placeholder" wicket:id="releaseDate">
+						</div>
+						
+						
+						<div class="control-group">
+							<div class="controls">
+								<input type="submit" class="btn btn-primary" wicket:message="value:submit.text" wicket:id="submit" />
+								<input type="reset" class="btn" wicket:message="value:cancel.text"  wicket:id="cancel" />
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</section>
+</wicket:extend>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="message.cancel.success">Rekisteröintisi järjestelmään on peruutettu.</entry>
+<entry key="login.link.text">kirjaudu sisään</entry>
+<entry key="message.reset.pw.success">Salasanasi alustalle on nollattu.</entry>
+<entry key="forgot.password.message">Mikäli haluat nollata salasanasi, klikkaa alla olevaa linkkiä.</entry>
+<entry key="header.registered">Rekisteröinti onnistui.</entry>
+<entry key="message.recover.password">Pyyntösi nollata salasanasi järjestelmään on käsitelty. Tarkista sähköpostisi salasanan nollauslinkin varalta.</entry>
+<entry key="header.resend.registration.confirmation">Rekisteröintiä ei ole vielä vahvistettu.</entry>
+<entry key="message.confirm.success">Rekisteröitymisesi järjestelmään on vahvistettu.</entry>
+<entry key="header.registration.failure">Rekisteröinnin suorittaminen loppuun epäonnistui.</entry>
+<entry key="message.registered">Olet rekisteröitynyt onnistuneesti järjestelmään. Tarkista sähköpostisi suorittaaksesi rekisteröintiprosessin loppuun.</entry>
+<entry key="header.reset.pw.success">Salasana nollattu.</entry>
+<entry key="header.recover.password">Sähköposti salasanan nollaamiseksi on lähetetty.</entry>
+<entry key="message.reset.pw.not.pending">Sinulla ei ole jonossa olevia pyyntöjä nollata salasanasi.</entry>
+<entry key="header.confirm.success">Rekisteröinti vahvistettu.</entry>
+<entry key="header.cancel.success">Rekisteröinti peruutettu.</entry>
+<entry key="register.link.text">rekisteröidy</entry>
+<entry key="message.registration.failure.not.pending">Sinulla ei ole jonossa olevaa rekisteröintiä. Olet ehkä jo vahvistanut tai peruuttanut rekisteröitymisesi.</entry>
+<entry key="header.no.such.user">Ei sellaista käyttäjää</entry>
+<entry key="message.registration.confirmation.sent.again">Vahvistusviesti alustalle rekisteröitymiseksi on lähetetty uudelleen. Tarkista sähköpostisi uudelleen päättääksesi rekisteröintiprosessin.</entry>
+<entry key="message.registration.failure.timeout">Linkki rekisteröinnin loppuunsuorittamiseksi on vanhentunut.</entry>
+<entry key="message.reset.pw.timeout">Tämä linkki salasanasi nollaamiseksi on vanhentunut.</entry>
+<entry key="register.message">Rekisteröidy sivulla ${registerLink}.</entry>
+<entry key="resend.registration.link.text">Lähetä rekisteröintivahvistus uudelleen</entry>
+<entry key="header.registration.confirmation.sent.again"/>
+<entry key="header.resend.registration.failure">Vahvistusviestin uudelleenlähetys epäonnistui.</entry>
+<entry key="forgot.password.link.text">Salasana unohtunut...</entry>
+<entry key="resend.registration.message">Lähettääksesi rekisteröinnin vahvistusviestin uudelleen, klikkaa alla olevaa linkkiä.</entry>
+<entry key="message.resend.registration.confirmation">Et ole vahvistanut rekisteröintiäsi alustalle vielä.</entry>
+<entry key="login.message">Kirjaudu sisään sivulla ${loginLink}.</entry>
+<entry key="message.no.such.user">Antamaasi sähköpostiosoitetta ei ole rekisteröity tilinä tai sinulla ei ole oikeutta nollata salasanaasi jonkin vaihtoehtoisen rekisteröintimekanismin, kuten LDAP:n takia.</entry>
+<entry key="login.register.message">Kirjaudu sisään sivulla ${loginLink} tai rekisteröidy uudelleen sivulla ${registerLink} page.</entry>
+<entry key="header.reset.pw.failure">Salasanan nollaus epäonnistui.</entry>
+<entry key="message.resend.registration.failure">Sinulla ei ole jonossa rekisteröintiä. Ehkä olet vahvistanut tai peruuttanut rekistöintisi jo.</entry>
+</properties>

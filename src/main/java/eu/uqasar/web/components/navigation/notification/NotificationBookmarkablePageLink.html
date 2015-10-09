@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:panel>
+			<table class="notification" wicket:id="notification.container">
+				<tbody>
+					<tr class="wrapper">
+						<td class="icon"><i wicket:id="notification.icon"></i></td>
+						<td class="description" colspan="2"><wicket:child/></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr class="goto" wicket:id="notification.goto.container">
+						<td class="icon" colspan="2"><span class="date" wicket:id="notification.date"></span></td>
+						<td class="description"><wicket:message key="notification.goto"/> <i class="icon-chevron-sign-right"></i></td>
+					</tr>
+				</tfoot>
+			</table>
+		</wicket:panel>
+	</body>
+</html>

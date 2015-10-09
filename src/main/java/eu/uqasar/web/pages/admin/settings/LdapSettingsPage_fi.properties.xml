@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">LDAP-asetukset</entry>
+<entry key="page.head.ldap.connection.settings">LDAP-yhteysasetukset</entry>
+<entry key="label.host">LDAP-palvelinosoite</entry>
+<entry key="label.port">LDAP-palvelinportti</entry>
+<entry key="label.password">Salasana</entry>
+<entry key="label.userDN">Käyttäjä-DN</entry>
+<entry key="label.validation.success">LDAP-yhteys muodostettu onnistuneesti!</entry>
+<entry key="button.connection.validate.text">Asetusten validointi</entry>
+<entry key="help.host">Anna LDAP-palvelimen selvitettävissä oleva osoite (IP or DNS)</entry>
+<entry key="help.userDN">Anna DN sille käyttäjälle, jolla on oikeus tehdä LDAP-kyselyjä</entry>
+<entry key="placeholder.host">example.com tai 192.168.0.1</entry>
+<entry key="placeholder.port">389</entry>
+<entry key="placeholder.password">LDAP-käyttäjän salasana</entry>
+<entry key="placeholder.userDN">cn=Administrator,ou=users,dc=example,dc=com</entry>
+<entry key="placeholder.baseDN">ou=users,dc=example,dc=com</entry>
+<entry key="placeholder.user.filter.baseDN">ou=users,dc=example,dc=com</entry>
+<entry key="placeholder.group.filter.baseDN">ou=users,dc=example,dc=com</entry>
+</properties>

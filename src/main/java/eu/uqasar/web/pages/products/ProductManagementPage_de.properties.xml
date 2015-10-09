@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Produkte</entry>
+<entry key="product.deleted">Produkt ${name} wurde gelöscht.</entry>
+<entry key="releasedate.column">Veröffentlichungsdatum</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+<entry key="version.column">Version</entry>
+<entry key="page.title">Produkte</entry>
+<entry key="name.column">Name</entry>
+<entry key="description.column">Beschreibung</entry>
+<entry key="delete.product.batch.button">Produkte löschen</entry>
+<entry key="delete.confirmation.modal.cancel.text">Zurücksetzen</entry>
+<entry key="product.selected.deleted">Die ausgewählten Produkte wurden gelöscht.</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählten Produkte gelöscht werden sollen?
+Diese Aktion kann nicht zurückgesetzt werden!</entry>
+<entry key="edit.link.text">Produkt modifizieren</entry>
+<entry key="create.product.button">Produkt erstellen</entry>
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="action.column">Aktionen</entry>
+</properties>

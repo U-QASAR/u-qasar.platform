@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Subset Vorschlag</entry>
+<entry key="page.title">Subset Vorschlag</entry>
+<entry key="all.select">Alles auswählen</entry>
+<entry key="from.created.project">Projekt aus </entry>
+<entry key="auto.created.project">Auto erstellt Projekt</entry>
+<entry key="auto.created.objective">Auto geschaffen Ziel</entry>
+<entry key="auto.created.indicator">Auto erstellt Anzeige</entry>
+</properties>

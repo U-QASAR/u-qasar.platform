@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Projekte</entry>
+<entry key="treenode.saved.message">${name} wurde gespeichert.</entry>
+<entry key="snapshot.saved.message">Ein Snapshot des Projektes ${project.name} wurde gespeichert.</entry>
+<entry key="snapshot.loaded.message">Der Snapshot wurde erfolgreich wiederhergestellt.</entry>
+
+</properties>

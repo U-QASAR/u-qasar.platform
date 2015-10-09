@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Seite oder Ressource kann nicht gefunden werden</entry>
+	<entry key="description.text">Verzeihung, aber die gewünschte Seite oder Ressource {0} ist entweder temporär nicht verfügbar, wurde verschoben oder entfernt.</entry>
+	<entry key="description.item"><![CDATA[({0} <em>'{1}'</em>) ]]></entry>
+	<entry key="solution.entry">Bitte versuchen Sie folgendes um die gewünschte Seite zu finden:</entry>
+	<entry key="solution.first">Geben Sie einen Suchbegriff in das obige Suchfeld ein.</entry>
+	<entry key="solution.second">Benutzen Sie das Navigationsmenü in der Kopfzeile der Seite.</entry>
+	<entry key="solution.third">Benutzen Sie den Zurück Knopf Ihres Browsers um zu vorherigen Seite zurück zu kehren.</entry>
+</properties>

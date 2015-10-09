@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="step1.label.name"> Name </entry>
+<entry key="step1.label.key"> Schlüssel </entry>
+<entry key="step1.label.description"> Beschreibung </entry>
+
+<entry key="step2.label.date.start"> Startdatum</entry>
+<entry key="step2.label.date.end"> Enddatum</entry>
+
+<entry key="step3.label.contIntegration"> Continuous Integration Tool </entry>
+<entry key="step3.label.issueTracking"> Issue Tracking Tool </entry>
+<entry key="step3.label.customerType"> Kundentyp </entry>
+<entry key="step3.label.progLanguage"> Programmiersprache </entry>
+<entry key="step3.label.projectType"> Projekttyp </entry>
+<entry key="step3.label.softwareLicense"> Software Lizenz </entry>
+<entry key="step3.label.softwareType"> Softwaretyp </entry>
+<entry key="step3.label.srcCodeManagement"> Source Code Management Tool </entry>
+<entry key="step3.label.staticAnalysis"> Static Analysis Tool </entry>
+<entry key="step3.label.testManagement"> Test Management Tool </entry>
+<entry key="step3.label.topic"> Themenfeld </entry>
+<entry key="step3.label.roles"> Rollen </entry>
+<entry key="step3.label.softwareDevelopmentMethodology">Software Entwicklung Methodologie</entry>
+
+<entry key="step4.header.company"> Firma </entry>
+<entry key="step4.header.user"> Benutzer </entry>
+<entry key="step4.header.role"> Rolle </entry>
+<entry key="step4.header.skills">  Passende Kompetenzen </entry>
+<entry key="step4.header.skillCount"> Skill Count </entry>
+<entry key="step4.header.options"> Optionen </entry>
+<entry key="step4.confirm.user"> Benutzer akzeptieren </entry>
+<entry key="step4.reject.user"> Benutzer löschen </entry>
+<entry key="step4.hint"> Hinweis: Dieses Team kann später u.A. unter "Admin Konsole >> Teams verwalten" bearbeitet werden </entry>
+<entry key="step4.label.add.username">Name des Benutzers</entry>
+<entry key="step4.placeholder.add.userName">Start zu tippen um die Autovervollständigung zu starten</entry>
+<entry key="button.add.save">Benutzer in ein Team hinzufügen</entry>
+
+
+<entry key="step5.label.qmodel"> Qualitätsmodell</entry>
+<entry key="step5.label.product"> Produkt</entry>
+<entry key="step5.label.process"> Prozess</entry>
+<entry key="step5.label.lcStage"> LC Phase</entry>
+
+<entry key="step7.page.edit.title">Adapter editieren</entry>
+<entry key="step7.name.Required">Bitte einen Namen dem Adapter eingeben</entry>
+<entry key="step7.page.copy.title">Adapter kopieren</entry>
+<entry key="step7.form.create.header">Ein neues Adapter erstellen</entry>
+<entry key="step7.page.create.title">Adapter erstellen</entry>
+<entry key="step7.submit.text">Speichern</entry>
+<entry key="step7.name.javax.validation.constraints.NotNull.message">Bitte dem neuen Adapter einen validen Namen eingeben</entry>
+<entry key="step7.form.edit.header">Adapter editieren</entry>
+<entry key="step7.name.input.placeholder">Ein Name dem Adapter eingeben...</entry>
+<entry key="step7.saved.message">Das Adapter ${name} wurde gespeichert</entry>
+<entry key="step7.cancel.text">Abbrechen</entry>
+<entry key="step7.name.javax.validation.constraints.Size.message.String">Der Name eines Adapters muss zwischen ${min} und ${max} Zeichen sein</entry>
+<entry key="step7.name.input.label">Name</entry>
+<entry key="step7.form.copy.header">Adapter ${name} kopieren</entry>
+<entry key="step7.label.metricsource">Typ der Datenquelle</entry>
+<entry key="step7.url.input.label">URL</entry>
+<entry key="step7.url.input.placeholder">Ein URL vom Adapter eingeben...</entry>
+<entry key="step7.username.input.label">Benutzername</entry>
+<entry key="step7.pwd.input.label">Kennwort</entry>
+<entry key="step7.username.input.placeholder">Bitte ein Benutzername für den Adapter eingeben...</entry>
+<entry key="step7.password.input.placeholder">Bitte ein Kennwort für den Adapter eingeben...</entry>
+<entry key="step7.updateInterval.input.label">Intervall zwischen Aktualisierungen von Adapterdaten</entry>
+<entry key="step7.label.project">Projekt</entry>
+<entry key="step7.updateInterval.input.placeholder">Bitte ein Intervall zwischen Aktualisierungen für den Adapter eingeben (in Minuten)...</entry>
+<entry key="step7.label.password">Kennwort</entry>
+<entry key="step7.label.username">Benutzername</entry>
+<entry key="step7.adapterProject.input.label">Projekt vom Adapter benutzt</entry>
+<entry key="step7.adapterProject.input.placeholder">Bitte den Namen der Projekts benutzt vom Adapter eingeben</entry>
+<entry key="step7.name.popover.text">Auf dem Feld soll man einen Namen für den Adapter eingeben.</entry>
+<entry key="step7.metricSource.popover.text">Hier wählt man den Typ der Datenquelle aus von der die Metrikdaten abgeholt werden. Die Option manuell bezieht sich darauf, dass die Daten manuell eingegeben werden müssen.</entry>
+<entry key="step7.url.popover.text">Auf dem Feld soll man die URL der Datenquelle eingeben.</entry>
+<entry key="step7.username.popover.text">Das Feld enthält einen Benutzernamen, um den Adapter sich bei der Datenquelle zu authentifizieren.</entry>
+<entry key="step7.password.popover.text">Das Feld enthält ein Kennwort, um den Adapter sich bei der Datenquelle zu authentifizieren.</entry>
+<entry key="step7.updateInterval.popover.text">Auf dem Feld spezifiziert man wie oft ein neuer Datenset von der Datenquelle abgeholt werden soll. Der Wert wird in Minuten spezifiziert. Der Wert 0 bedeutet, dass keine Daten automatisch heruntergeladen werden.</entry>
+<entry key="step7.adapterProject.popover.text">Das Feld enthält den Namen eines internen Projekts, das auf der Datenquelle sich befindet.</entry>
+<entry key="step7.project.popover.text">In dieser Menü wählt man aus, welches QAProjekt den Datenadapter verwenden soll.</entry>
+<entry key="step7.adapterTestPlan.input.label">Test Plan für den Adapter (Testing Framework)</entry>
+<entry key="step7.adapterTestPlan.popover.text">Das Feld enthält den Namen eines Testplans, der vom Adapter benötigt wird (vom Testing Framework benutzt)</entry>
+<entry key="step7.adapterTestPlan.input.placeholder">Bitte den Namen des Testplans für das Testingframework eingeben</entry>
+<entry key="step7.description">Auf dieser Seite kann man einen Adapter für die Messdaten definieren. Weitere Adapter kann man unter den Menüpunkt Adaptereinstellungen definieren.</entry>
+<entry key="step7.add">Adapter erstellen</entry>
+<entry key="step7.add.confirmed">Der Adapter wurde gespeichert.</entry>
+
+<entry key="placeholder.meta.input">Suche {0}</entry>
+<entry key="placeholder.meta.role">Suche Rolle</entry>
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass dieses Teammitglied gelöscht werden sollen? Diese Aktion kann nicht zurückgesetzt werden!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+<entry key="delete.confirmed">Das ausgewählte Teammitglied wurde gelöscht.</entry>
+
+<entry key="step1.title"> Schritt 1: Allgemein </entry>
+<entry key="step2.title"> Schritt 2: Projektdaten </entry>
+<entry key="step3.title"> Schritt 3: Metadaten </entry>
+<entry key="step4.title"> Schritt 4: Teamzusammenstellung </entry>
+<entry key="step5.title"> Schritt 5: Qualitätsmodell </entry>
+<entry key="step6.title"> Schritt 6: QModell Subset Vorschlag</entry>
+<entry key="step7.title"> Schritt 7: Datenadapter</entry>
+
+</properties>

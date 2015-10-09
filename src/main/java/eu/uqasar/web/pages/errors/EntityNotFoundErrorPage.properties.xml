@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Page or resource cannot be found</entry>
+	<entry key="description.text">Sorry, the page or resource you requested {0}may be temporarily unavailable, moved, or taken off.</entry>
+	<entry key="description.item"><![CDATA[({0} <em>'{1}'</em>) ]]></entry>
+	<entry key="solution.entry">Please try the following to find what you're looking for:</entry>
+	<entry key="solution.first">Enter a term or keyword into our search field above.</entry>
+	<entry key="solution.second">Use the site's top navigation bar.</entry>
+	<entry key="solution.third">Use your browser's back button to return to the previous page.</entry>
+</properties>

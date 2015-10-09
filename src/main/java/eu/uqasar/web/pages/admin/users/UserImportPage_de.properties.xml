@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Benutzer importieren</entry>
+	<entry key="message.import.description.lead">Auf dieser Seite können bestehende LDAP Benutzer in U-QASAR importiert werden.</entry>
+	<entry key="message.import.description">Um Benutzer zu importieren, müssen zunächste alle passenden LDAP Benutzer abgefragt und anschließend zu importierende ausgewählt werden.</entry>
+	<entry key="message.import.settings"><![CDATA[Das Abfragen von bestehnden LDAP Benutzer geschieht gemäß den LDAP Einstellungen für die <strong>Benutzerzuordnung</strong>]]> </entry>
+	<entry key="message.import.settings.change"> (hier klicken um diese Einstellungen zu ändern)</entry>
+	<entry key="message.import.note">Es gilt zu beachten: manche LDAP Benutzer können nicht importiert werden. Dies gilt inbesondere dann, wenn bereits ein Nutzer mit dem Benutzernamen oder der E-Mail Adresse des zu importierenden LDAP Benutzers in U-QASAR existiert. Diese nicht importierbaren Benutzer </entry>
+    <entry key="message.import.note.highlight">werden entsprechend farblich gekennzeichnet.</entry>
+	<entry key="message.import.result.error">{0} Benutzer ({1}) nicht importiert!</entry>
+	<entry key="message.import.result.success">{0} Benutzer ({1}) erfolgreich importiert!</entry>
+	<entry key="label.retrieval.success">{0} LDAP Benutzer erfolgreich abgefragt!</entry>
+	<entry key="label.userRole">Rolle von neu importierten Nutzern</entry>
+	<entry key="label.registrationMail">Soll eine Registrierungsbestätigung erforderlich sein?</entry>
+	<entry key="button.retrieve">Bestehende LDAP Benutzer abfragen</entry>
+	<entry key="button.import">Ausgewählte Benutzer importieren</entry>
+</properties>

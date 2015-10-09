@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Processes</entry>
+<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+<entry key="version.column">Version</entry>
+<entry key="page.title">Processes</entry>
+<entry key="delete.process.batch.button">Delete Processes</entry>
+<entry key="name.column">Name</entry>
+<entry key="description.column">Description</entry>
+<entry key="process.deleted">Process ${name} has been deleted.</entry>
+<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="endDate.column">End date</entry>
+<entry key="create.process.button">Create Process</entry>
+<entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Process(es)?
+This action cannot be undone!</entry>
+<entry key="startDate.column">Start date</entry>
+<entry key="edit.link.text">Edit Process</entry>
+<entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
+<entry key="action.column">Actions</entry>
+<entry key="process.selected.deleted">Selected Processes have been deleted.</entry>
+</properties>

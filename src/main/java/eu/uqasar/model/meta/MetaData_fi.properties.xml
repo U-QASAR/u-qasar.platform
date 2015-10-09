@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="label.metadata.ContinuousIntegrationTool">Jatkuvan integroinnin työkalut</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.new">Uusi jatkuvan integroinnin työkalu</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.existing">Olemassa olevat jatkuvan integroinnin työkalut</entry>
+    <entry key="label.metadata.ContinuousIntegrationTool.selected">valitut jatkuvan integroinnin työkalut</entry>
+    <entry key="label.metadata.CustomerType">Asiakastyypit</entry>
+    <entry key="label.metadata.CustomerType.new">Uusi asiakastyyppi</entry>
+    <entry key="label.metadata.CustomerType.existing">Olemassaolevat asiakastyypit</entry>
+    <entry key="label.metadata.CustomerType.selected">valitut asiakastyypit</entry>
+    <entry key="label.metadata.IssueTrackingTool">Ongelmien seurantatyökalut</entry>
+    <entry key="label.metadata.IssueTrackingTool.new">Uusi ongelmien seurantatyökalu</entry>
+    <entry key="label.metadata.IssueTrackingTool.existing">Olemassaolevat ongelmien seurantatyökalut</entry>
+    <entry key="label.metadata.IssueTrackingTool.selected">valitut ongelmien seurantatyökalut</entry>
+    <entry key="label.metadata.ProgrammingLanguage">Ohjelmointikielet</entry>
+    <entry key="label.metadata.ProgrammingLanguage.new">Uusi ohjelmointikieli</entry>
+    <entry key="label.metadata.ProgrammingLanguage.existing">Olemassaolevat ohjelmointikielet</entry>
+    <entry key="label.metadata.ProgrammingLanguage.selected">valitut ohjelmointikielet</entry>
+    <entry key="label.metadata.ProjectType">Projektityypit</entry>
+    <entry key="label.metadata.ProjectType.new">Uusi projektityyppi</entry>
+    <entry key="label.metadata.ProjectType.existing">Olemassaolevat projektityypit</entry>
+    <entry key="label.metadata.ProjectType.selected">valitut projektityypit</entry>
+    <entry key="label.metadata.SoftwareLicense">Ohjelmistolisenssit</entry>
+    <entry key="label.metadata.SoftwareLicense.new">Uusi ohjelmistolisenssi</entry>
+    <entry key="label.metadata.SoftwareLicense.existing">Olemassaolevat ohjelmistolisenssit</entry>
+    <entry key="label.metadata.SoftwareLicense.selected">valitut ohjelmistolisenssit</entry>
+    <entry key="label.metadata.SoftwareType">Ohjelmistotyypit</entry>
+    <entry key="label.metadata.SoftwareType.new">Uusi ohjelmistotyyppi</entry>
+    <entry key="label.metadata.SoftwareType.existing">Olemassaolevat ohjelmistotyypit</entry>
+    <entry key="label.metadata.SoftwareType.selected">valitut ohjelmistotyypit</entry>
+    <entry key="label.metadata.SourceCodeManagementTool">Lähdekoodin hallinnointityökalut</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.new">Uusi lähdekoodin hallinnointityökalu</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.existing">Olemassaolevat lähdekoodin hallinnointityökalut</entry>
+    <entry key="label.metadata.SourceCodeManagementTool.selected">valitut lähdekoodin hallinnointityökalut</entry>
+    <entry key="label.metadata.StaticAnalysisTool">Staattisen analyysin työkalut</entry>
+    <entry key="label.metadata.StaticAnalysisTool.new">Uusi staattisen analyysin työkalu</entry>
+    <entry key="label.metadata.StaticAnalysisTool.existing">Olemassaolevat staattisen analyysin työkalut</entry>
+    <entry key="label.metadata.StaticAnalysisTool.selected">valitut staattisen analyysin työkalut</entry>
+    <entry key="label.metadata.TestManagementTool">Testien hallinnointityökalut</entry>
+    <entry key="label.metadata.TestManagementTool.new">Uusi testien hallinnointityökalu</entry>
+    <entry key="label.metadata.TestManagementTool.existing">Olemassaolevat testien hallinnointityökalut</entry>
+    <entry key="label.metadata.TestManagementTool.selected">valitut testien hallinnointityökalut</entry>
+    <entry key="label.metadata.Topic">Aiheet</entry>
+    <entry key="label.metadata.Topic.new">Uusi aihe</entry>
+    <entry key="label.metadata.Topic.existing">Olemassaolevat aiheet</entry>
+    <entry key="label.metadata.Topic.selected">valitut aiheet</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology">Ohjelmistotuotannon metodi</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.new">Uusi ohjelmistotuotannon metodi</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.existing">Olemassaolevat ohjelmistotuotannon metodit</entry>
+    <entry key="label.metadata.SoftwareDevelopmentMethodology.selected">valitut ohjelmistotuotannon metodit</entry>
+    <entry key="label.metadata.QModelTagData"></entry>
+</properties>

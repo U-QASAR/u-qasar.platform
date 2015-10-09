@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="releaseDate.IConverter">'${input}' ist nicht valid</entry>
+<entry key="page.edit.title">Produkt modifizieren</entry>
+<entry key="name.Required">Bitte ein Name für das Produkt eingeben</entry>
+<entry key="page.copy.title">Produkt kopieren</entry>
+<entry key="releaseDate.javax.validation.constraints.Future.message">Der Datum soll in der Zukunft sein</entry>
+<entry key="releasedate.input.placeholder">Ein Veröffentlichungsdatum eingeben - (tt.mm.jjjj)</entry>
+<entry key="releasedate.input.label">Veröffentlichungsdatum</entry>
+<entry key="form.create.header">Ein neues Produkt erstellen</entry>
+<entry key="page.create.title">Produkt erstellen</entry>
+<entry key="submit.text">Speichern</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Bitte ein Name für das neue Produkt eingeben</entry>
+<entry key="description.input.placeholder">Eine Beschreibung für das Produkt eingeben...</entry>
+<entry key="description.input.label">Beschreibung</entry>
+<entry key="form.edit.header">Produkt modifizieren</entry>
+<entry key="name.input.placeholder">Ein name für das Produkt eingeben...</entry>
+<entry key="releaseDate.Required">Bitte ein Veröffentlichungsdatum eingeben</entry>
+<entry key="saved.message">Das Produkt ${name} wurde gespeichert</entry>
+<entry key="canceled.message">Die Operation wurde zurückgesetzt</entry>
+<entry key="cancel.text">Zurücksetzen</entry>
+<entry key="version.input.placeholder">Eine Version für das Produkt eingeben...</entry>
+<entry key="releaseDate.javax.validation.constraints.NotNull.message">Bitte ein Veröffentlichungsdatum eingeben</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Der Name eines Produkts muss zwischen ${min} und ${max} Zeichen lang sein</entry>
+<entry key="version.input.label">Version</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="form.copy.header">Eine Kopie vom Produkt ${name} erstellen</entry>
+<entry key="add.confirmed">Ein neues Produkt wurde erstellt.</entry>
+</properties>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="menu.home.link.text">Aloitus</entry>
+	<entry key="menu.projects.link.text">Projektit</entry>
+	<entry key="menu.projects.recently.updated">Äskettäin päivitetty</entry>
+	<entry key="menu.projects.create.text">Luo projekti</entry>
+	<entry key="menu.projects.export.text">Vie projekti</entry>
+	<entry key="menu.projects.import.text">Tuo projekti</entry>
+	<entry key="menu.projects.visualize.text">Visualisoi projekti</entry>
+	<entry key="menu.projects.dummy.reset">Nollaa dummyprojekti</entry>
+	<entry key="menu.qmodels.link.text">Laatumallit</entry>
+	<entry key="menu.qmodels.recently.updated">Äskettäin päivitetty</entry>
+	<entry key="menu.qmodels.create.text">Luo laatumalli</entry>
+	<entry key="menu.qmodels.export.text">Vie laatumalli</entry>
+	<entry key="menu.qmodels.import.text">Tuo laatumalli</entry>
+	<entry key="menu.qmodels.dummy.reset">Nollaa dummylaatumalli</entry>
+	<entry key="menu.products.manage.text">Hallinnoi tuotteita</entry>
+	<entry key="menu.processes.manage.text">Hallinnoi prosesseja</entry>
+	<entry key="menu.admin.link.text">Hallinto</entry>
+	<entry key="menu.admin.users.header.text">Yritykset, Käyttäjät &amp; tiimit</entry>	
+	<entry key="menu.admin.companies.list.link.text">Hallinnoi yritykset</entry>
+	<entry key="menu.admin.companies.import.link.text">Tuo yritykset</entry>	
+	<entry key="menu.admin.users.list.link.text">Hallinnoi käyttäjiä</entry>
+	<entry key="menu.admin.users.import.link.text">Tuo käyttäjiä</entry>
+	<entry key="menu.admin.teams.list.link.text">Hallinnoi tiimejä</entry>
+	<entry key="menu.admin.teams.import.link.text">Tuo tiimejä</entry>
+	<entry key="menu.admin.settings.header.text">Asetukset</entry>
+    <entry key="menu.admin.settings.metadata.link.text">Metadata-asetukset</entry>
+	<entry key="menu.admin.settings.mail.link.text">Sähköpostiasetukset</entry>
+	<entry key="menu.admin.settings.ldap.link.text">LDAP-asetukset</entry>
+	<entry key="menu.admin.settings.adapters.link.text">Hallinnoi adaptereita ja mittausdataa</entry>
+	<entry key="menu.admin.products_processes.header.text">Tuotteet/prosessit</entry>
+	<entry key="menu.admin.settings.qmodel.link.text">Laatumalliasetukset</entry>
+	<entry key="menu.admin.settings.platform.link.text">Alustan asetukset</entry>
+	<entry key="menu.profile.link.text">Profiili</entry>
+	<entry key="menu.languages.submenu.text">Kieli	</entry>
+	<entry key="menu.login.link.text">Sisäänkirjautuminen</entry>
+	<entry key="menu.logout.link.text">Uloskirjautuminen</entry>
+	<entry key="menu.dashboards.link.text">Kojelaudat</entry>
+	<entry key="menu.dashboards.show.text">Kojelaudat</entry>
+	<entry key="menu.dashboards.create.text">Luo Kojelauta</entry>
+	<entry key="menu.dashboards.share.text">Jaa Kojelauta</entry>
+	<entry key="menu.dashboards.reset.text">Nollaa kojelauta</entry>
+	<entry key="menu.tour.take.text">Tutustumiskierros</entry>
+	<entry key="menu.analytic.link.text">Analyyttinen</entry>
+	<entry key="menu.analytic.drilldown.text">Analyysilista</entry>
+</properties>

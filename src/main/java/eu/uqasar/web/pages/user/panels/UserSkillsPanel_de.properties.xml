@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="text.skills.intro">Bitte geben Sie unten an, welche Fähigkeiten und Kompetenzen Sie in Bezug auf Programmiersprachen und Software-Engineering Tools verfügen.</entry>
+    <entry key="text.skills.help">Hierzu geben Sie einfach die ersten Buchstaben der Programmiersprache oder des Tools in das entsprechende Textfeld ein. Bekannte Programmiersprachen und Tools werden automatisch vervollständigt. Sollte ein entsprechendes Tool oder die Programmiersprache dem System bisher nicht bekannt sein, kann es durch einfaches ausschreiben des Namens hinzugefügt werden.</entry>
+    <entry key="label.meta.known">Bekannte {0}</entry>
+    <entry key="placeholder.meta.input">{0} eingeben</entry>
+    <entry key="help.meta.input">Einträge mittels Enter, Tabulator oder Komma trennen</entry>
+    
+    <entry key="label.softwareType"> Bekannte Softwaretypen</entry>
+    <entry key="label.projectType"> Bekannte Projekttypen</entry>
+    <entry key="label.customerType"> Bekannte Kundentypen</entry>
+    <entry key="label.topic"> Bekannte Themenbereiche </entry>
+    <entry key="label.softwareLicenses"> Bekannte Softwarelizensen</entry>
+    <entry key="label.methodology"> Bekannte Software Vorgehensmodelle </entry>
+    
+</properties>

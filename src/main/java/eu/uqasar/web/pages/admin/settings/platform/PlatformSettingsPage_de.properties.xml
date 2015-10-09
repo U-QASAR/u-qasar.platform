@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.settings.title">Projekt Einstellungen</entry>
+<entry key="project.settings.key">Schlüssel</entry>
+<entry key="project.settings.value">Wert</entry>
+<entry key="placeholder.key">Schlüssel</entry>
+<entry key="placeholder.value">Wert</entry>
+<entry key="key.input.placeholder">Schlüssel eingeben...</entry>
+<entry key="value.input.placeholder">Wert eingeben...</entry>
+<entry key="key.input.label">Schlüssel</entry>
+<entry key="key.header">Schlüssel</entry>
+<entry key="value.header">Wert</entry>
+<entry key="create.settings.button">Einstellung hinzufügen</entry>
+<entry key="edit.link.text">Einstellung editieren</entry>
+<entry key="settings.selected.deleted">Die ausgewählten Einstellung sind gelöscht worden.</entry>
+<entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählte(n) Einstellung(en) gelöscht werden sollen? Diese Aktion kann nicht widerrufen werden!</entry>
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+</properties>

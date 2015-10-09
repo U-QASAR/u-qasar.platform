@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="form.create.header">Dashboard settings</entry>
+<entry key="title.input.label">Dashboard name</entry>
+<entry key="columncount.input.label">Number of Columns</entry>
+<entry key="submit.text">Save</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="saved.message">Dashboard was saved successfully.</entry>
+<entry key="title.input.placeholder">Enter Dashboard name</entry>
+<entry key="column.input.placeholder">Enter the number of Dashboard columns</entry>
+<entry key="enable.suggestion.check.label">Add a set of recommended widgets to Dashboard</entry>
+<entry key="enable.check.label.allWidget">Add all widgets to Dashboard</entry>
+</properties>

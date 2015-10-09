@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Sonar-mittaukset</entry>
+<entry key="measurement.deleted">Mittaus ${name} on poistettu.</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="page.title">Sonar-mittaukset</entry>
+<entry key="name.column">Projektin nimi</entry>
+<entry key="key.column">Projektin avain</entry>
+<entry key="metric.column">Metriikka</entry>
+<entry key="value.column">Arvo</entry>
+<entry key="edit.column">Muokkaa</entry>
+<entry key="timestamp.column">Päiväys</entry>
+<entry key="delete.sonar.batch.button">Poista mittaukset</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="sonarmeasurement.selected.deleted">Valitut mittaukset on poistettu.</entry>
+<entry key="delete.confirmation.modal.message">Oletko täysin varma, että haluat poistaa valitut mittaukset?
+Tätä toimintoa ei voida perua!</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+<entry key="update.measurements.button">Päivitä mittaukset</entry>
+<entry key="measurements.updated">Mittaukset on päivitetty.</entry>
+</properties>

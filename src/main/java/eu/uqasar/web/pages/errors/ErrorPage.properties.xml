@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="bug.report.title">Report an Issue</entry>
+	<entry key="bug.report.header">Report an Issue</entry>
+	<entry key="bug.report.message">You can help the U-QASAR support team hunt down issues in the platform by submitting an issue report below.</entry>
+	<entry key="error.header">Oops - that shouldn't have happened...</entry>
+	<entry key="error.message">You can help the U-QASAR support team hunt down this issue by submitting an issue report below.</entry>
+	<entry key="label.userName">Your name</entry>
+	<entry key="label.userMail">Your eMail address</entry>
+	<entry key="desc.input.placeholder">Please describe shortly how to reproduce the issue...</entry>
+	<entry key="submit.text">Submit Issue</entry>
+	<entry key="show.stacktrace">Show Stacktrace</entry>
+	<entry key="success.message">Thank you for reporting this issue.</entry>
+	<entry key="fail.message">Could not send issue report!</entry>
+	<entry key="home.link.message">Or you can just return to the ${homeLink} ...</entry>
+	<entry key="home.link.text">home page</entry>
+</properties>

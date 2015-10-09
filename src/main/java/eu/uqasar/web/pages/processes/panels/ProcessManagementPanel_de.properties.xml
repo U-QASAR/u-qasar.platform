@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="label.filter.title">Prozesse filtern</entry>
+	<entry key="label.filter.name">Name</entry>
+	<entry key="label.filter.startDateOrder">Nach Startdatum sortieren</entry>
+	<entry key="label.filter.endDateOrder">Nach Enddatum sortieren</entry>
+	<entry key="button.filter.apply">Anwenden</entry>
+	<entry key="button.filter.clear">Leeren</entry>
+</properties>

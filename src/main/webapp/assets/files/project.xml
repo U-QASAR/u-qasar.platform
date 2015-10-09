@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project>
+    <name>U-QASAR Platform Development</name>
+    <shortName>U-QASAR xml</shortName>
+    <description>Quality Project: U-QASAR Platform Development</description>
+    <endDate>2015-10-01</endDate>
+    <formulaAverage>true</formulaAverage>
+    <formulaToView>(Code coverage above 80%+Minimize Technical Debt+High Degree of Code Documentation+Percentage of testing completion)/4</formulaToView>
+    <lifeCycleStage>Implementation</lifeCycleStage>
+    <startDate>2012-10-01</startDate>
+    <threshold>
+        <lowerAcceptanceLimit>40.0</lowerAcceptanceLimit>
+        <upperAcceptanceLimit>80.0</upperAcceptanceLimit>
+        <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+        <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+        <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+    </threshold>
+    <value>0.0</value>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qualityObjective">
+        <name>Code coverage above 80%</name>
+        <description>Average degree to which the source code  is tested by the set of Test Cases designed for the system at all Test Levels (i.e. Unit, Integration and Acceptance)</description>
+        <targetValue>0.0</targetValue>
+        <threshold>
+            <lowerAcceptanceLimit>60.0</lowerAcceptanceLimit>
+            <upperAcceptanceLimit>80.0</upperAcceptanceLimit>
+            <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+            <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+            <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+        </threshold>
+        <useFormula>true</useFormula>
+        <value>0.0</value>
+        <viewFormula>( Unit_Test_coverage_ + Integration_Test_coverage_ + Acceptance_Test_coverage_ ) / 3</viewFormula>
+        <weight>1.0</weight>
+        <children xsi:type="qualityIndicator">
+            <name>Unit Test coverage</name>
+            <description>Average degree to which the source code  is tested by the set of Unit Tests. It should be above 60%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>70.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>35.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>60.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <viewFormula>Lines_covered_by_Unit_Tests_ / Lines_of_code_ * 100</viewFormula>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Lines covered by Unit Tests</name>
+                <description>Lines covered by Unit Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Testing</lifeCycleStage>
+                <metricSource>Manual</metricSource>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>10000.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Lines of code</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>StaticAnalysis</metricSource>
+                <metricType>NCLOC</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+        <children xsi:type="qualityIndicator">
+            <name>Integration Test coverage</name>
+            <description>Average degree to which the source code  is tested by the set of Integration Tests. It should be 100%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>100.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>50.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>100.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <viewFormula>Lines_covered_by_Integration_Tests_ / Lines_of_code_ * 100</viewFormula>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Lines covered by Integration Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Testing</lifeCycleStage>
+                <metricSource>Manual</metricSource>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>20000.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Lines of code</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>StaticAnalysis</metricSource>
+                <metricType>NCLOC</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+        <children xsi:type="qualityIndicator">
+            <name>Acceptance Test coverage</name>
+            <description>Average degree to which the source code is tested by the set of Acceptance Tests. It should be above 80%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>90.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>50.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>80.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <viewFormula>Lines_covered_by_Acceptance_Tests_ / Lines_of_code_ * 100</viewFormula>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Lines covered by Acceptance Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>Manual</metricSource>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>25000.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Lines of code</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>StaticAnalysis</metricSource>
+                <metricType>NCLOC</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qualityObjective">
+        <name>Minimize Technical Debt</name>
+        <description>Work that needs to be done before a particular job can be considered complete.</description>
+        <targetValue>0.0</targetValue>
+        <threshold>
+            <lowerAcceptanceLimit>50.0</lowerAcceptanceLimit>
+            <upperAcceptanceLimit>75.0</upperAcceptanceLimit>
+            <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+            <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+            <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+        </threshold>
+        <useFormula>true</useFormula>
+        <value>0.0</value>
+        <weight>1.0</weight>
+        <children xsi:type="qualityIndicator">
+            <name>Effort needed to fix all issues</name>
+            <description></description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>0.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>45.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>75.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Number of Open &amp; Major issues</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>CubeAnalysis</metricSource>
+                <metricType>cube/jira/aggregate?cut=Status:Open&amp;cut=Priority:Major</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>8.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>3.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Blocker issues</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>CubeAnalysis</metricSource>
+                <metricType>cube/jira/aggregate?cut=Priority:Blocker</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>5.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>2.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Critical issues</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>CubeAnalysis</metricSource>
+                <metricType>cube/jira/aggregate?cut=Priority:Critical</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>5.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>3.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Major issues</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>CubeAnalysis</metricSource>
+                <metricType>cube/jira/aggregate?cut=Priority:Major</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>8.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>6.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Minor issues</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>CubeAnalysis</metricSource>
+                <metricType>cube/jira/aggregate?cut=Priority:Minor</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>25.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>15.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qualityObjective">
+        <name>High Degree of Code Documentation</name>
+        <description>Average percentage of commented lines of code</description>
+        <targetValue>0.0</targetValue>
+        <threshold>
+            <lowerAcceptanceLimit>15.0</lowerAcceptanceLimit>
+            <upperAcceptanceLimit>20.0</upperAcceptanceLimit>
+            <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+            <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+            <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+        </threshold>
+        <useFormula>true</useFormula>
+        <value>0.0</value>
+        <viewFormula>Percentage_of_commented_lines_of_code_</viewFormula>
+        <weight>1.0</weight>
+        <children xsi:type="qualityIndicator">
+            <name>Percentage of commented lines of code</name>
+            <description>Percentage of commented code should be over 20%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>0.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>15.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>20.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <viewFormula>Number_of_comment_lines_ / Lines_of_code_ * 100</viewFormula>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Number of comment lines</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Requirements</lifeCycleStage>
+                <metricSource>StaticAnalysis</metricSource>
+                <metricType>DUPLICATED_LINES</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Lines of code</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Requirements</lifeCycleStage>
+                <metricSource>StaticAnalysis</metricSource>
+                <metricType>NCLOC</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qualityObjective">
+        <name>Percentage of testing completion</name>
+        <description>Percentage of executed test cases</description>
+        <targetValue>0.0</targetValue>
+        <threshold>
+            <lowerAcceptanceLimit>80.0</lowerAcceptanceLimit>
+            <upperAcceptanceLimit>85.0</upperAcceptanceLimit>
+            <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+            <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+            <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+        </threshold>
+        <useFormula>true</useFormula>
+        <value>0.0</value>
+        <viewFormula>Percentage_of_functional_testing_completion_</viewFormula>
+        <weight>1.0</weight>
+        <children xsi:type="qualityIndicator">
+            <name>Percentage of functional testing completion</name>
+            <description>100 * Executed functional test cases / Planned functional test cases. It should be above 95%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <indicatorType>Automatic</indicatorType>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <targetValue>0.0</targetValue>
+            <threshold>
+                <lowerAcceptanceLimit>80.0</lowerAcceptanceLimit>
+                <upperAcceptanceLimit>95.0</upperAcceptanceLimit>
+                <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+            </threshold>
+            <useFormula>true</useFormula>
+            <value>0.0</value>
+            <viewFormula>100 * ( Number_of_Passed_Tests_ + Number_of_Failed_Tests_ + Number_of_Blocked_Tests_ ) / Number_of_TOTAL_Tests_</viewFormula>
+            <weight>1.0</weight>
+            <children xsi:type="metric">
+                <name>Number of Passed Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>TestingFramework</metricSource>
+                <metricType>TEST_P</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Failed Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>TestingFramework</metricSource>
+                <metricType>TEST_F</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Blocked Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>TestingFramework</metricSource>
+                <metricType>TEST_B</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of Not Run Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>TestingFramework</metricSource>
+                <metricType>TEST_N</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+            <children xsi:type="metric">
+                <name>Number of TOTAL Tests</name>
+                <description></description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <lifeCycleStage>Implementation</lifeCycleStage>
+                <metricSource>TestingFramework</metricSource>
+                <metricType>TEST_TOTAL</metricType>
+                <targetValue>0.0</targetValue>
+                <threshold>
+                    <lowerAcceptanceLimit>0.0</lowerAcceptanceLimit>
+                    <upperAcceptanceLimit>0.0</upperAcceptanceLimit>
+                    <colorLowerAcceptanceLimit>Red</colorLowerAcceptanceLimit>
+                    <colorMiddAcceptanceLimit>Yellow</colorMiddAcceptanceLimit>
+                    <colorUpperAcceptanceLimit>Green</colorUpperAcceptanceLimit>
+                </threshold>
+                <unit>Unit</unit>
+                <value>0.0</value>
+                <weight>1.0</weight>
+            </children>
+        </children>
+    </children>
+</project>

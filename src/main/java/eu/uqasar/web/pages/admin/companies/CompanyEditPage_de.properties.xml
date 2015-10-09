@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+
+<entry key="page.title.new">Firma erstellen</entry>
+<entry key="page.title.edit">${name} bearbeiten</entry>
+<entry key="label.profile">Profil</entry>
+
+<entry key="label.name">Name</entry>
+<entry key="label.shortName">Kurzname</entry>
+<entry key="label.street">Straße</entry>
+<entry key="label.zipcode">Postleitzahl</entry>
+<entry key="label.city">Stadt</entry>
+<entry key="label.country">Land</entry>
+<entry key="label.phone">Telefonnummer</entry>
+<entry key="label.fax">Faxnummer</entry>
+
+<entry key="placeholder.name">Name der Firma</entry>
+<entry key="placeholder.shortName">Akronym der Firma</entry>
+<entry key="placeholder.street">Straße</entry>
+<entry key="placeholder.zipcode">Postleitzahl</entry>
+<entry key="placeholder.city">Stadt</entry>
+<entry key="placeholder.country">Land</entry>
+<entry key="placeholder.phone">Telefonnummer</entry>
+<entry key="placeholder.fax">Faxnummer</entry>
+<entry key="message.save">Ihre Änderungen wurden gespeichert</entry>
+<entry key="message.save.new">Sie haben die neue Firma angelegt</entry>
+<entry key="message.cancel">Sie haben den Vorgang abgebrochen</entry>
+</properties>

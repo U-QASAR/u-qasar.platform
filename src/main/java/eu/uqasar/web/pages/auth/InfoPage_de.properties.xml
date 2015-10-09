@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="message.cancel.success">Ihre Registrierung in der Plattform wurde abgebrochen.</entry>
+<entry key="login.link.text">Anmelden</entry>
+<entry key="message.reset.pw.success">Ihr Passwort für die Plattform wurde erfolgreich zurückgesetzt.</entry>
+<entry key="forgot.password.message">Wenn Sie Ihr Passwort zurücksetzen wollen, klicken Sie untenstehenden Link an.</entry>
+<entry key="header.registered">Registrierung erfolgreich.</entry>
+<entry key="message.recover.password">Ihre Anfrage zum Zurücksetzen Ihres Passworts für die Plattform wurde bearbeitet. Bitte überprüfen Sie Ihr e-Mail Postfach um den Vorgang abzuschließen.</entry>
+<entry key="header.resend.registration.confirmation">Registrierung noch nicht bestätigt.</entry>
+<entry key="message.confirm.success">Ihre Registrierung in der Plattform wurde bestätigt und ist nun abgeschlossen.</entry>
+<entry key="header.registration.failure">Abschließen der Registrierung fehlgeschlagen.</entry>
+<entry key="message.registered">Sie haben sich erfolgreich in der Plattform registriert. Bitte überprüfen Sie Ihr e-Mail Postfach um den Registrierungsvorgang abzuschließen.</entry>
+<entry key="header.reset.pw.success">Passwort wurde zurückgesetzt.</entry>
+<entry key="header.recover.password">E-Mail zur Passwortwiederherstellung wurde verschickt.</entry>
+<entry key="message.reset.pw.not.pending">Sie haben das Zurücksetzen Ihres Passworts nicht angefordert.</entry>
+<entry key="header.confirm.success">Registrierung bestätigt.</entry>
+<entry key="header.cancel.success">Registrierung abgebrochen.</entry>
+<entry key="register.link.text">Registrieren</entry>
+<entry key="message.registration.failure.not.pending">Sie haben aktuell keine unbestätigte Registrierung. Eventuell haben Sie die Registrierung bereits abgebrochen oder bestätigt?</entry>
+<entry key="header.no.such.user">Fehlender Benutzer</entry>
+<entry key="message.registration.confirmation.sent.again">Die e-Mail zum Bestätigung Ihrer Registrierung in der Plattform wurde erneut verschickt. Bitte überprüfen Sie Ihr e-Mail Postfach um den Registrierungsvorgang abzuschließen. </entry>
+<entry key="message.registration.failure.timeout">Der von Ihnen aufgerufene Link zum Bestätigen der Registerierung ist abgelaufen.</entry>
+<entry key="message.reset.pw.timeout">Der von Ihnen aufgerufene Link zum Zurücksetzen des Passworts ist abgelaufen.</entry>
+<entry key="register.message">Bitte registrieren Sie sich unter ${registerLink}.</entry>
+<entry key="resend.registration.link.text">Registrierungsbestätigung erneut senden</entry>
+<entry key="header.registration.confirmation.sent.again">Bestätigungsmail erneut verschickt</entry>
+<entry key="header.resend.registration.failure">Erneutes Versenden der Bestätigungsmail fehlgeschlagen.</entry>
+<entry key="forgot.password.link.text">Passwort vergessen?</entry>
+<entry key="resend.registration.message">Um die Bestätigungsmail erneut zu senden, klicken Sie untenstehenden Link an.</entry>
+<entry key="message.resend.registration.confirmation">Sie haben die Registrierung in der Plattform bisher noch nicht bestätigt.</entry>
+<entry key="login.message">Bitte melden Sie sich unter ${loginLink} an.</entry>
+<entry key="message.no.such.user">Die von Ihnen eingegebene e-Mail Adresse ist im System nicht bekannt oder das Passwort hierfür kann nicht zurückgesetzt werden, weil das Konto anderweitig erstellt wurde (z.B. über LDAP).</entry>
+<entry key="login.register.message">Bitte melden Sie sich unter ${loginLink} an oder registrieren Sie sich unter ${registerLink}.</entry>
+<entry key="header.reset.pw.failure">Zurücksetzen des Passworts fehlgeschlagen.</entry>
+<entry key="message.resend.registration.failure">Sie haben aktuell keine unbestätigte Registrierung. Eventuell haben Sie die Registrierung bereits abgebrochen oder bestätigt?</entry>
+</properties>

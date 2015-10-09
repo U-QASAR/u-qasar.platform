@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="releaseDate.IConverter">'${input}' ei ole validi päivä</entry>
+<entry key="page.edit.title">Muokkaa tuotetta</entry>
+<entry key="name.Required">Anna nimi uudelle tuotteelle</entry>
+<entry key="page.copy.title">Kopioi tuote</entry>
+<entry key="releaseDate.javax.validation.constraints.Future.message">Päivän on oltava tulevaisuudessa</entry>
+<entry key="releasedate.input.placeholder">Anna julkaisupäivä - (pp.kk.vvvv)</entry>
+<entry key="releasedate.input.label">Julkaisupäivä</entry>
+<entry key="form.create.header">Luo uusi tuote</entry>
+<entry key="page.create.title">Luo tuote</entry>
+<entry key="submit.text">Tallenna</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Anna nimi uudelle tuotteelle</entry>
+<entry key="description.input.placeholder">Anna kuvaus tuotteelle...</entry>
+<entry key="description.input.label">Kuvaus</entry>
+<entry key="form.edit.header">Muokkaa tuotetta</entry>
+<entry key="name.input.placeholder">Anna nimi tuotteelle...</entry>
+<entry key="releaseDate.Required">Anna julkaisupäivä</entry>
+<entry key="saved.message">Tuote ${name} on tallennettu</entry>
+<entry key="canceled.message">Peruutit toiminnon</entry>
+<entry key="cancel.text">Peruuta</entry>
+<entry key="version.input.placeholder">Anna versio tuotteelle...</entry>
+<entry key="releaseDate.javax.validation.constraints.NotNull.message">Anna julkaisupäivä</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Tuotteen nimen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+<entry key="version.input.label">Versio</entry>
+<entry key="name.input.label">Nimi</entry>
+<entry key="form.copy.header">Luo kopio tuotteesta ${name}</entry>
+<entry key="add.confirmed">Uusi tuote luotiin onnistuneesti.</entry>
+</properties>

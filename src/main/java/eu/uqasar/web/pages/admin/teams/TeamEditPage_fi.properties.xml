@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="name.javax.validation.constraints.NotNull.message">Anna tiimin nimi</entry>
+<entry key="label.add.userrole">Käyttäjän rooli</entry>
+<entry key="column.head.role">Rooli</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Tiimin nimen on oltava vähintään ${min} merkkiä pitkä</entry>
+<entry key="column.head.member">Käyttäjä</entry>
+<entry key="placeholder.add.userName">Ala kirjoittaa aktivoidaksesi automaattitäydennys</entry>
+<entry key="placeholder.name">Tiimin nimi</entry>
+<entry key="page.title.new">Luo uusi tiimi</entry>
+<entry key="td.members.actions.batch.remove">Poista käyttäjä(t) ryhmästä ${name}</entry>
+<entry key="page.title.edit">Muokkaa ${name}</entry>
+<entry key="button.add.save">Lisää käyttäjä ryhmään ${name}</entry>
+<entry key="label.name">Nimi</entry>
+<entry key="label.description">Kuvaus</entry>
+<entry key="label.add.username">Käyttäjän nimi</entry>
+<entry key="button.update">Vahvista muutokset</entry>
+<entry key="name.Required">Anna tiimin nimi</entry>
+<entry key="label.list.title">${name} jäsenet ja heidän roolinsa</entry>
+<entry key="label.add.title">Lisää käyttäjä tiimiin ${name}</entry>
+<entry key="error.user.notvalid">Lisättävä käyttäjä ei ole validi!</entry>
+<entry key="delete.confirmation.modal.header">Poista käyttäjät tiimistä?</entry>
+<entry key="delete.confirmation.modal.message">Oletko varma, että haluat poistaa valitut käyttäjät tiimistä?</entry>
+<entry key="delete.confirmation.modal.submit.text">Kyllä, poista käyttäjät</entry>
+<entry key="delete.confirmation.modal.cancel.text">Ei, peruuta poisto</entry>
+<entry key="save.confirmed">Muutoksesi on tallennettu.</entry>
+<entry key="delete.confirmed">Valitut käyttäjät on poistettu tiimistä.</entry>
+</properties>

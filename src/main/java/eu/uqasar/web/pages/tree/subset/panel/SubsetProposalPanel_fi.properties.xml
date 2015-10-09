@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Subset Ehdotus</entry>
+<entry key="page.title">Subset Ehdotus</entry>
+<entry key="all.select">Valitse kaikki</entry>
+<entry key="from.created.project">Project alkaen </entry>
+<entry key="auto.created.project">Auto luotu Project</entry>
+<entry key="auto.created.objective">Auto luotu Tavoite</entry>
+<entry key="auto.created.indicator">Auto luotu Indikaattori</entry>
+</properties>

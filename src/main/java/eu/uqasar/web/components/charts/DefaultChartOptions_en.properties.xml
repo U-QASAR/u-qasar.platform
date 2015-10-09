@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="chart.series.legend.average">Average value</entry>
+<entry key="chart.button.context.title">Export chart</entry>
+<entry key="chart.button.title.print">Print chart</entry>
+<entry key="chart.button.download.pdf">Download as PDF</entry>
+<entry key="chart.button.title.reset.zoom">Reset Zoom</entry>
+<entry key="chart.button.reset.zoom">Reset Zoom</entry>
+<entry key="chart.button.download.svg">Download as SVG</entry>
+<entry key="chart.label.status.loading">Loading...</entry>
+<entry key="chart.button.download.jpeg">Download as JPEG</entry>
+<entry key="chart.button.download.png">Download as PNG</entry>
+</properties>

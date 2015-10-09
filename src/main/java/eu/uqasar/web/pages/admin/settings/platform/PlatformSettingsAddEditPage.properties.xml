@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Edit Setting</entry>
+<entry key="name.Required">Please provide a name for the new Setting</entry>
+<entry key="page.copy.title">Copy Setting</entry>
+<entry key="form.create.header">Create a new Setting</entry>
+<entry key="page.create.title">Create Setting</entry>
+<entry key="submit.text">Save</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a name for the new Setting</entry>
+<entry key="form.edit.header">Edit Setting</entry>
+<entry key="name.input.placeholder">Enter a name for your Setting...</entry>
+
+<entry key="saved.message">The Setting ${settingKey} has been saved</entry>
+
+<entry key="cancel.text">Cancel</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Setting name must be between ${min} and ${max} characters long</entry>
+
+<entry key="key.input.label">key</entry>
+<entry key="value.input.label">value</entry>
+
+<entry key="key.input.placeholder">Enter the key for the selected setting...</entry>
+<entry key="value.input.placeholder">Enter the value for the selected setting...</entry>
+
+<entry key="label.key">Key</entry>
+<entry key="label.value">Value</entry>
+</properties>

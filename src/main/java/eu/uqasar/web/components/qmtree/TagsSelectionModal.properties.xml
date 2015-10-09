@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="tags.selection.modal.message">Please, select the proper metadata type : </entry>
+<entry key="button.tags.confirm">Confirm</entry>
+</properties>

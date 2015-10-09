@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:panel>
+			<div class="span12" wicket:id="entityGroup">
+				<div id="tableContainer" wicket:id="tableContainer">
+					<table class="table table-striped table-hover ldap users" id="entityList">
+						<thead>
+							<tr wicket:id="listHeader">
+								<th><input type="checkbox" wicket:id="entityGroupSelector" /></th>
+								<th><wicket:message key="table.users.head.column.userName"></wicket:message></th>
+								<th><wicket:message key="table.users.head.column.lastName"></wicket:message></th>
+								<th><wicket:message key="table.users.head.column.firstName"></wicket:message></th>
+								<th><wicket:message key="table.users.head.column.mail"></wicket:message></th>
+								<th><wicket:message key="table.users.head.column.photo"></wicket:message></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="entities">
+								<td class="check"><input type="checkbox" wicket:id="check" /></td>
+                                <td><label wicket:for="check"><span wicket:id="username"></span></label></td>
+								<td><label wicket:for="check"><span wicket:id="lastName"></span></label></td>
+								<td><label wicket:for="check"><span wicket:id="firstName"></span></label></td>
+								<td><a href="#" wicket:id="mail"><span wicket:id="mailText"/></a> </td>
+                                <td style="text-align: center; vertical-align: middle"><label wicket:for="check"><img wicket:id="photo" style="max-width: 48px; max-height: 48px;"/></label></td>
+							</tr>
+						</tbody>
+					</table>
+					<script type="text/javascript" wicket:id="javascript"></script>
+				</div>
+			</div>
+		</wicket:panel>
+	</body>
+</html>

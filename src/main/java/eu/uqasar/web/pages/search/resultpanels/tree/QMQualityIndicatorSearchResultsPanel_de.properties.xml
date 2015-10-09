@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="panel.title">Qualityindikatoren im Qualitätsmodell, die mit »{0}« übereinstimmen</entry>
+    <entry key="table.head.qmodel">Benutzt in</entry>
+    <entry key="table.head.value">Wert</entry>
+</properties>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.product">Tuote</entry>
+<entry key="label.metric">Metriikka</entry>
+<entry key="label.date.end">Päättymispäivä</entry>
+<entry key="label.date.start">Alkamispäivä</entry>
+<entry key="label.process">Prosessi</entry>
+<entry key="label.quality.trend">${name}:n laatutrendi </entry>
+<entry key="label.lcStage">Elinkaarivaihe</entry>
+<entry key="label.operator">Operaattori</entry>
+<entry key="label.quality.value">Laatuarvo</entry>
+<entry key="button.edit">Muokkaa</entry>
+<entry key="label.indicator.value.expected">Odotusarvo</entry>
+<entry key="label.name">Nimi</entry>
+<entry key="label.key">lyhyt nimi</entry>
+<entry key="label.qmodel">Laatumalli</entry>
+<entry key="label.description">Kuvaus</entry>
+<entry key="label.team">Tiimi</entry>
+<entry key="label.indicator">Laatuindikaattori</entry>
+<entry key="label.metadata">Metadata</entry>
+<entry key="label.softwareDevelopmentMethodology">Ohjelmistotuotannon metodit</entry>
+</properties>

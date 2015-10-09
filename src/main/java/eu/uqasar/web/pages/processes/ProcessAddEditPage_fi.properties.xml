@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Muokkaa Prosessia</entry>
+<entry key="name.Required">Anna nimi uudelle Prosessille</entry>
+<entry key="startdate.input.label">Aloituspäivä</entry>
+<entry key="page.copy.title">Kopioi Prosessi</entry>
+<entry key="form.create.header">Luo uusi Prosessi</entry>
+<entry key="startDate.javax.validation.constraints.Future.message">Päivän on oltava tulevaisuudessa</entry>
+<entry key="page.create.title">Luo Prosessi</entry>
+<entry key="endDate.Required">Anna päättymispäivä</entry>
+<entry key="submit.text">Tallenna</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Anna nimi uudelle Prosessille</entry>
+<entry key="startDate.Required">Anna aloituspäivä</entry>
+<entry key="description.input.placeholder">Anna kuvaus Prosessille...</entry>
+<entry key="enddate.input.placeholder">Anna päättymispäivä - (dd.mm.yyyy)</entry>
+<entry key="description.input.label">Kuvaus</entry>
+<entry key="startdate.input.placeholder">Anna aloituspäivä - (dd.mm.yyyy)</entry>
+<entry key="form.edit.header">Muokkaa Prosessia</entry>
+<entry key="name.input.placeholder">Anna nimi Prosessille...</entry>
+<entry key="saved.message">Prosessi ${name} on tallennettu</entry>
+<entry key="canceled.message">Peruutit toiminnon </entry>
+<entry key="startDate.IConverter">'${input}' ei ole validi päivämäärä</entry>
+<entry key="endDate.javax.validation.constraints.NotNull.message">Anna päättymispäivä</entry>
+<entry key="enddate.input.label">Päättymispäivä</entry>
+<entry key="startDate.javax.validation.constraints.NotNull.message">Anna aloituspäivä</entry>
+<entry key="cancel.text">Peruuta</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Prosessin nimen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+<entry key="endDate.javax.validation.constraints.Future.message">Päivämäärän on oltava tulevaisuudessa</entry>
+<entry key="name.input.label">Nimi</entry>
+<entry key="endDate.IConverter">'${input}' ei ole validi päivämäärä</entry>
+<entry key="form.copy.header">Luo kopio Prosessista ${name}</entry>
+<entry key="add.confirmed">Loit uuden Prosessin onnistuneesti.</entry>
+<entry key="date.message">Päättymispäivän on oltava alkamispäivää myöhäisempi.</entry>
+</properties>

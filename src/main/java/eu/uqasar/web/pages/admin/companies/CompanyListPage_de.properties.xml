@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.source">Quelle</entry>
+<entry key="page.title">Liste der registrierten Firmen</entry>
+<entry key="column.head.company">Firma</entry>
+<entry key="column.head.shortName">Kurzname</entry>
+<entry key="column.head.address">Adresse</entry>
+<entry key="column.head.country">Land</entry>
+<entry key="column.head.phone">Telefon</entry>
+<entry key="column.head.fax">Fax</entry>
+<entry key="column.head.actions">Optionen</entry>
+<entry key="column.head.actions.create">Firma anlegen</entry>
+<entry key="td.company.actions.edit">Firma bearbeiten</entry>
+<entry key="td.company.actions.batch.remove">Ausgewählte Firma(en) entfernen</entry>
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählte(n) Firma(en) gelöscht werden sollen? Bitte beachten, dass auch die zugehörigen Benutzer gelöscht werden! Diese Aktion kann nicht zurückgesetzt werden!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+<entry key="delete.confirmed">Die ausgewählten Firmen wurden gelöscht.</entry>
+</properties>

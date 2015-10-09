@@ -1,0 +1,422 @@
+/******************************************************************************/
+/* Basic stuff																  */
+/******************************************************************************/
+.word-break {
+	word-wrap: break-word;
+}
+
+body {
+	margin-top: 75px;
+}
+
+h2 .icon {
+	padding-left: .3em;
+	color: #d5d5d5;
+}
+
+h2 .icon.red {
+	color: #e60033;	
+}
+
+h2 .icon.gray {
+	color: #dddddd;
+}
+
+h2 .icon.green {
+	color: #379f15;
+}
+
+h2 .icon.yellow {
+	color: #fec100;
+}
+
+h2 .actions {
+	margin-right: 5px;
+	margin-left: 10px;
+	font-size: 50%;
+	font-weight: normal;
+	font-family: "Open Sans", Calibri, Candara, Arial, sans-serif;
+	border-left: 1px solid #c5c5c5;
+	padding: 10px 5px 10px 5px;
+}
+
+h2 .actions a {
+	padding: 3px;
+}
+
+label {
+	color: #7b7b7b;
+}
+
+table td.alignright {
+	text-align: right;
+}
+
+@media ( max-width : 979px) {
+	body {
+		margin-top: 0px;
+	}
+}
+
+select option.placeHolder {
+	color: #ccc;
+	font-size: 0px;
+	display: none;
+}
+
+label.inline {
+	display: inline;
+	padding-top: 5px;
+	padding-right: 10px;
+}
+
+label.inline.right {
+	display: inline;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+.required label span:after {
+	content: ' *';
+}
+
+.filter .row-fluid [class*="span"] {
+	margin-bottom: 10px;
+}
+
+/******************************************************************************/
+/* Icon and text list item color style		       							  */
+/******************************************************************************/
+li .icon {
+	padding-left: .3em;
+	color: #d5d5d5;
+}
+
+li .icon.red, .text-red {
+	color: #e60033;	
+}
+
+li .icon.gray, .text.gray {
+	color: #dddddd;
+}
+
+li .icon.green, .text-green {
+	color: #379f15;
+}
+
+li .icon.yellow, .text-yellow  {
+	color: #fec100;
+}
+
+/******************************************************************************/
+/* no list style for Wicket feedback messages 								  */
+/******************************************************************************/
+ul.feedbackPanel {
+	list-style: none;
+	margin-left: 0px;
+}
+
+ul.styledFeedbackPanel {
+	list-style: none;
+}
+
+/******************************************************************************/
+/* adjust colors for Wicket feedback messages 								  */
+/******************************************************************************/
+@keyframes blinker {  
+    0% { opacity: 1.0}
+    100% { opacity: 0.0}
+}
+@-webkit-keyframes blinker {
+	0% { opacity: 1.0}
+    100% { opacity: 0.0}
+}
+
+li.feedbackPanelERROR {
+	font-weight: bold;
+	color: red;
+	-webkit-animation-name: blinker;  
+	-webkit-animation-iteration-count: infinite;  
+	-webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+	-webkit-animation-duration: 1s; 
+}
+li.feedbackPanelWARN {
+	color: #c09853;
+}
+
+li.feedbackPanelSUCCESS {
+	color: #468847;
+}
+
+.blink {
+	-webkit-animation-name: blinker;  
+	-webkit-animation-iteration-count: infinite;  
+	-webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+	-webkit-animation-duration: 1s; 
+}
+
+/******************************************************************************/
+/* style the AJAX indicator differently than original wicket 				  */
+/******************************************************************************/
+.ajax-indicator {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	padding: 2px 10px;
+	border: 1px solid #dadada;
+	font-size: 85%;
+	background-color: white;
+	box-shadow: 0px 0px 5px 0px #bbbbbb;
+}
+
+.ajax-indicator img {
+	vertical-align: middle;
+}
+
+.ajax-indicator .loading {
+	padding-left: 9px;
+	vertical-align: middle;
+	font-weight: bold;
+}
+/******************************************************************************/
+/* fix label colors in control-groups used in InputValidationBorder			  */
+/******************************************************************************/
+.control-group.error label, .control-group.error .help-block {
+	color: #b94a48;
+}
+
+.control-group.warning label, .control-group.warning .help-block {
+	color: #c09853;
+}
+
+.control-group.success label, .control-group.success .help-block {
+	color: #468847;
+}
+
+/******************************************************************************/
+/* text-alignment of navigators for table pagination						  */
+/******************************************************************************/
+td>div.pagination {
+	margin-top: 0px;
+}
+
+td.navigator.left {
+	text-align: left;
+	padding-left: 0;
+}
+
+td.navigator.right {
+	text-align: right;
+	padding-right: 0;
+}
+
+/******************************************************************************/
+/* styling navigator bootstrap style										  */
+/******************************************************************************/
+.navigator {
+	height: 40px;
+	margin: 20px 0;
+}
+
+.navigator>div {
+	display: inline-block;
+	*display: inline;
+	margin-bottom: 0;
+	margin-left: 0;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	*zoom: 1;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.navigator>div>a,.navigator>div>span,.navigator>div>em {
+	float: left;
+	padding: 0 10px;
+	line-height: 25px;
+	text-decoration: none;
+	background-color: #ffffff;
+	border: 1px solid #dddddd;
+	border-left-width: 0;
+}
+
+.navigator>div em {
+	font-style: normal !important;
+}
+
+.navigator>div>a:hover,.navigator>div>.goto:hover {
+	background-color: #f5f5f5;
+}
+
+.navigator>div span em {
+	color: #999999;
+	cursor: default;
+	background-color: transparent;
+}
+
+.navigator>div .first {
+	border-left-width: 1px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+.navigator>div .last {
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.pagination-centered {
+	text-align: center;
+}
+
+.pagination-right {
+	text-align: right;
+}
+
+/******************************************************************************/
+/* tablesorter																  */
+/******************************************************************************/
+table.tablesorter thead tr .header {
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(../img/asc.gif);
+}
+
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(../img/desc.gif);
+}
+
+/******************************************************************************/
+/* select2 drop boxes disabled styling                                        */
+/******************************************************************************/
+.select2-container-disabled input[disabled="disabled"] {
+	width: 100% !important;
+}
+
+.select2-container-disabled li {
+	width: 100%;
+}
+
+.feedbackPanelContainer {
+	position: fixed;
+	margin-left: 0;
+	opacity: 0.95;
+	z-index: 1;
+}
+
+.feedbackPanelContainer .alert {
+	width: 90%; 
+	margin-left: auto; 
+	margin-right: auto;
+	box-shadow: 0px 0px 6px 2px #888;
+}
+
+
+.contenteditableDiv{
+	width : 100%;
+	min-height : 100px;
+	border : 1px solid #bbbbbb; 
+	padding: 5px 0 0 2px;
+}
+
+.contentEdit{
+	background-color: #9b59bb !important;
+	padding: 3px 5px 5px 18px !important;
+	color: white !important;
+	line-height: 115%;
+	border: none;
+}
+
+/******************************************************************************/
+/* TOUR ADAPTATIONS                         */
+/******************************************************************************/
+.mypopover{
+	background: #41bb19;
+	border: 0;
+	max-width: 340px;
+}
+.arrow {
+	border-bottom-color: #41bb19 !important;
+/* 	border-rightcolor: #41bb19 !important;
+	border-left-color: #41bb19 !important;
+	border-top-color: #41bb19 !important; */
+}
+/* #9b59bb  */
+.arrow::after {
+	border-bottom-color: #41bb19 !important;
+/* 	border-rightcolor: #41bb19 !important;
+	border-left-color: #41bb19 !important;
+	border-top-color: #41bb19 !important; */
+}
+.underlined{
+	border-bottom: 1px solid #fff;	
+}
+.tour{	list-style: none; }
+
+.flex{
+	display: flex;
+}
+
+
+/******************************************************************************/
+/* Override styles of autocomplete widget */
+/******************************************************************************/
+.wicket-aa {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.wicket-aa ul {
+	list-style-type: none;
+	margin: 5px;
+}
+
+.wicket-aa ul li {
+	padding: 2px;
+	cursor: pointer;
+}
+
+.wicket-aa ul li.selected {
+	background-color: #007fff;
+	color: #fff;
+}
+
+/******************************************************************************/
+/* Override styles of Progress bar , Cosmos theme breaks the colors          */
+/******************************************************************************/
+.progress.bar.green {
+	background-color:  #379f15;
+}
+
+.progress.yellow {
+	background-color:  #fec100;
+}
+
+.progress.bar.red {
+	background-color:  #e60033;
+}
+
+.progress.bar.gray {
+	background-color:  #dddddd;
+}
+/******************************************************************************/
+/* checkbox size                                                              */
+/******************************************************************************/
+
+.checkbox input[type="checkbox"]{
+
+  -ms-transform: scale(1.6); /* IE */
+  -moz-transform: scale(1.6); /* FF */
+  -webkit-transform: scale(1.6); /* Safari and Chrome */
+  -o-transform: scale(1.6); /* Opera */
+  margin-left: auto; 
+  margin-right: auto;
+}

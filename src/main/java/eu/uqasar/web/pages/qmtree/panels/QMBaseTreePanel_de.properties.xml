@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.lcStage">LC Phase</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.description">Beschreibung</entry>
+<entry key="button.edit">Bearbeiten</entry>
+<entry key="label.targetAudience">Target Audience</entry>
+<entry key="label.key">Kurzname</entry>
+</properties>

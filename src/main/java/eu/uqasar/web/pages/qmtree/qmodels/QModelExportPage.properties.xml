@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="export.downloadMsg">Downloading file...</entry>
+<entry key="export.selectQModel">Select a quality model</entry>
+<entry key="page.title">QModelExportPage</entry>
+<entry key="export.downloadFile">Export a quality model</entry>
+</properties>

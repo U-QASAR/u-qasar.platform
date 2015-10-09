@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="table.users.head.column.userName">Käyttäjätunnus</entry>
+	<entry key="table.users.head.column.firstName">Etunimi</entry>
+	<entry key="table.users.head.column.lastName">Sukunimi</entry>
+	<entry key="table.users.head.column.mail">E-Mail</entry>
+	<entry key="table.users.head.column.photo">Valokuva</entry>
+	<entry key="table.users.warning.exists">Käyttäjä, jolla on tämä sähköpostiosoite tai käyttäjätunnus, on jo olemassa!</entry>
+</properties>

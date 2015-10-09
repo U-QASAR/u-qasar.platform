@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.qmodelstatus.active">Aktiv</entry>
+<entry key="label.qmodelstatus.notactive">Nicht aktiv</entry>
+<entry key="label.qmodelstatus.oldactive">Es ist aktiv gewesen</entry>
+</properties>

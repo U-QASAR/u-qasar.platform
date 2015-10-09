@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>	
+			<section class="users">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2 wicket:id="page.title"></h2>
+					</div>
+					<ul class="nav nav-pills hidden-phone">
+						<li class="active"><a data-toggle="tab"><wicket:message key="label.profile"></wicket:message></a></li>
+					</ul>
+					<div wicket:id="companyEditPanel"></div>
+				</div>
+				<hr />
+			</section>
+			
+		</wicket:extend>
+	</body>
+</html>

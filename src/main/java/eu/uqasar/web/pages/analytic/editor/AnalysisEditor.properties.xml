@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="title.header">Analysis Editor</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.project">Project</entry>
+<entry key="label.description">Description</entry>
+<entry key="label.drilldown">Drilldown dimensions</entry>
+<entry key="name.input.placeholder">Provide a title for your Analysis</entry>
+<entry key="description.input.placeholder">Describe the purpose of your Analysis</entry>
+<entry key="submit.text">Save Analysis</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="saved.message">Analysis has been saved</entry>
+</properties>

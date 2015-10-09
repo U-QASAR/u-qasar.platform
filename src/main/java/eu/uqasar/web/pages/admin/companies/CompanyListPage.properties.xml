@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="column.head.source">Source</entry>
+	<entry key="page.title">List of registered companies</entry>
+	<entry key="column.head.company">Company</entry>
+	<entry key="column.head.shortName">Short Name</entry>
+	<entry key="column.head.address">Address</entry>
+	<entry key="column.head.country">Country</entry>
+	<entry key="column.head.phone">Phone</entry>
+	<entry key="column.head.fax">Fax</entry>
+	<entry key="column.head.actions">Actions</entry>
+	<entry key="column.head.actions.create">Create Company</entry>
+	<entry key="td.company.actions.edit">Edit Company</entry>
+	<entry key="td.company.actions.batch.remove">Remove selected Company(ies)</entry>
+	<entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
+	<entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Company(ies)? Note that the users belonging to the Company(ies) are deleted as well! This action cannot be undone!</entry>
+	<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+	<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+	<entry key="delete.confirmed">Selected Companies have been deleted.</entry>
+</properties>

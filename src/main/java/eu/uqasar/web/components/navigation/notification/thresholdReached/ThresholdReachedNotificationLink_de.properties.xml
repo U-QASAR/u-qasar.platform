@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="thresholds">Die Werte der folgenden Baumknoten sind sehr nahe oder liegen unterhalb deiner definierten Grenzwerte! Bitte anpassen! </entry>
+<entry key="thresholds.in.project">in dem Projekt</entry>
+<entry key="delete.title">Benachrichtigung löschen</entry>
+<entry key="delete.message">Benachrichtigung gelöscht!</entry>
+</properties>

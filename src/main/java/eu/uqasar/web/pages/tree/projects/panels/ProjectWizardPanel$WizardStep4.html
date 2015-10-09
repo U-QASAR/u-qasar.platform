@@ -1,0 +1,78 @@
+<wicket:panel xmlns:wicket>
+     <div class="row-fluid">
+        <div class="span12">
+            <label class="btn btn-primary no-cursor" for="title" style="cursor: default;"><wicket:message key="step4.title" /></label>
+        </div>
+    </div>
+    <br/>
+<div class="row-fluid">
+      <div class="span12">
+	    	<fieldset>
+	    	<form wicket:id="form">
+	    		<div wicket:id="teamContainer">
+			   		<table class="table table-striped">
+			   			<thead>
+							<tr>
+								<th><wicket:message key="step4.header.company" /></th>
+								<th><wicket:message key="step4.header.user" /></th>
+								<th></th>
+								<th><wicket:message key="step4.header.role" /></th>
+ 								<th style="width:22%"><wicket:message key="step4.header.skills" /></th>
+ 								<th><wicket:message key="step4.header.options" /></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr wicket:id="users" class="users">
+								<td> <span wicket:id="company"></span></td>
+								<td class="avatar">
+									<a wicket:id="link.picture.edit.user">
+										<span class="user profile compact">
+											<span class="picture-border">
+												<div wicket:id="picture" class="avatar picture"></div>
+											</span>
+										</span>
+									</a>
+								</td>
+								<td class="name"><a wicket:id="link.name.edit.user"><span wicket:id="td.username"></span></a></td>
+								<td class="role">
+									<select class="input-large" id="role" wicket:id="role"></select>
+								</td>
+								<td> <span wicket:id="skills"></span></td>
+								<td>
+									<div class="btn-toolbar">
+										<div class="btn-group" wicket:id="btnContainer">
+											<a wicket:id="confirm" class="btn" wicket:message="title:step4.confirm.user"><i class="icon-ok"></i></a>
+											<a wicket:id="reject" class="btn btn-danger" wicket:message="title:step4.reject.user"><i class="icon-remove"></i></a>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+			   		</table>			   		
+		   		</div>
+		   		 	
+						<div class="span4" >
+							<label class="control-label" for="userName"> <wicket:message
+											key="step4.label.add.username" />:
+							</label>
+							<input type="text" id="userName" wicket:id="add.userName"
+										   wicket:message="placeholder:step4.placeholder.add.userName" />
+						</div>
+						<div class="span4" style="margin-top: 1.6em">
+							<a wicket:id="add.member" class="btn btn-primary"><span wicket:id="button.add.save"></span></a>
+						</div>
+				
+			</form>
+			
+		
+			
+		 </fieldset>
+		
+		 
+		 
+		 
+	     <div wicket:id="deleteConfirmationModal"></div>
+	       <p class="help-block offset-top"><wicket:message key="step4.hint" /></p>
+	   </div>
+ </div>
+</wicket:panel>

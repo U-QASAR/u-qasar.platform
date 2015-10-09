@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="help.from.address">Please provide the senders e-Mail address. It will be show as the originator to the receiver.</entry>
+<entry key="label.to.address">Receivers E-Mail Address</entry>
+<entry key="label.server">SMTP Server Address</entry>
+<entry key="label.password">Password</entry>
+<entry key="placeholder.password">Password of the LDAP user</entry>
+<entry key="page.title">Mail Server Settings</entry>
+<entry key="placeholder.user">admin@example.com</entry>
+<entry key="label.from.user">Senders Name (From)</entry>
+<entry key="label.user">Username</entry>
+<entry key="help.server">Please provide a resolvable address of the SMTP server (IP or DNS)</entry>
+<entry key="page.head.mail.test">Send Test Mail</entry>
+<entry key="button.connection.validate.text">Validate Settings</entry>
+<entry key="help.from.user">Please provide the senders name. It will be show as the originator to the receiver.</entry>
+<entry key="help.to.address">Please provide the e-Mail address you want to send the test mail to.</entry>
+<entry key="page.head.mail.connection.settings">Mail Server Settings</entry>
+<entry key="label.auth.required">Authentication required?</entry>
+<entry key="help.user">Please insert a login of a user that is authorized to send mails</entry>
+<entry key="content.mail.text">This is a test mail from the U-QASAR platform. The server settings are correct.</entry>
+<entry key="help.to.subject">Please provide the subject of the test mail.</entry>
+<entry key="placeholder.from.address">no-reply@example.com</entry>
+<entry key="placeholder.from.user">U-QASAR</entry>
+<entry key="label.auth.tls">Enable TLS?</entry>
+<entry key="placeholder.server">example.com or 192.168.0.1</entry>
+<entry key="label.validation.success">Test Mail was delivered successfully.</entry>
+<entry key="label.port">SMTP Server Port</entry>
+<entry key="placeholder.port">25</entry>
+<entry key="label.from.address">Senders E-Mail Address (From)</entry>
+<entry key="placeholder.to.address">me@example.com</entry>
+<entry key="label.to.subject">Test Mail's Subject</entry>
+<entry key="placeholder.to.subject">U-QASAR Test Mail</entry>
+<entry key="save.confirmed">Your changes have been saved.</entry>
+</properties>

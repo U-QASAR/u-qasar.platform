@@ -1,0 +1,331 @@
+package eu.uqasar.rest;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import eu.uqasar.model.measure.CubesMetricMeasurement;
+import eu.uqasar.model.measure.GitlabMetricMeasurement;
+import eu.uqasar.model.measure.JenkinsMetricMeasurement;
+import eu.uqasar.model.measure.JiraMetricMeasurement;
+import eu.uqasar.model.measure.MetricSource;
+import eu.uqasar.model.measure.SonarMetricMeasurement;
+import eu.uqasar.model.measure.TestLinkMetricMeasurement;
+import eu.uqasar.model.qmtree.QMTreeNode;
+import eu.uqasar.model.qmtree.QModel;
+import eu.uqasar.model.settings.adapter.AdapterSettings;
+import eu.uqasar.model.tree.Metric;
+import eu.uqasar.model.tree.Project;
+import eu.uqasar.model.tree.QualityIndicator;
+import eu.uqasar.model.tree.QualityObjective;
+import eu.uqasar.model.tree.TreeNode;
+import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
+import eu.uqasar.qualifier.Conversational;
+import eu.uqasar.service.QMTreeNodeService;
+import eu.uqasar.service.dataadapter.AdapterSettingsService;
+import eu.uqasar.service.dataadapter.CubesDataService;
+import eu.uqasar.service.dataadapter.GitlabDataService;
+import eu.uqasar.service.dataadapter.JenkinsDataService;
+import eu.uqasar.service.dataadapter.JiraDataService;
+import eu.uqasar.service.dataadapter.SonarDataService;
+import eu.uqasar.service.dataadapter.TestLinkDataService;
+import eu.uqasar.service.tree.TreeNodeService;
+
+/**
+ * U-QASAR REST API
+ */
+@Path("/api")
+@Conversational
+public class UQasarRestService implements Serializable {
+
+	private static final long serialVersionUID = 1466280785737772722L;
+
+	@Inject
+	private TreeNodeService treeNodeService;
+	@Inject
+	private QMTreeNodeService qMTreeNodeService; 
+	@Inject
+	private AdapterSettingsService adapterSettingsService;
+	@Inject 
+	private JiraDataService jiraDataService;
+	@Inject 
+	private TestLinkDataService testlinkDataService;
+	@Inject 
+	private SonarDataService sonarDataService;
+	@Inject 
+	private CubesDataService cubesDataService;
+	@Inject 
+	private GitlabDataService gitlabDataService;
+	@Inject 
+	private JenkinsDataService jenkinsDataService;
+	private List<TreeNode> allNodes = new LinkedList<TreeNode>();
+
+
+	/**
+	 * Return all projects as JSON
+	 * @return json string
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	@GET
+	@Path("/projects")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public String getProjects() throws JsonGenerationException, JsonMappingException, IOException {
+		List<Project> projects = treeNodeService.getAllProjects();
+		String retValue = null;
+		if (projects != null) {
+			ObjectMapper mapper = new ObjectMapper();
+			retValue = mapper.writeValueAsString(projects);
+		}
+		return retValue;
+	}
+
+
+	/**
+	 * Return a JSON formatted project 
+	 * @param name : full name of the project 
+	 * @return json string 
+	 * @throws IOException 
+	 * @throws JsonMappingException 
+	 * @throws JsonGenerationException  
+	 * 
+	 * Demo Url :http://localhost:8080/uqasar/rest/api/projects/U-QASAR Platform Development 
+	 */
+	@GET
+	@Path("/projects/{name}")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public String getProjectByName(@PathParam("name") String name) throws JsonGenerationException, JsonMappingException, IOException {
+		Project project = treeNodeService.getProjectByName(name);
+		String value = null;
+		if (project != null) {
+			ObjectMapper mapper = new ObjectMapper();
+			value = mapper.writeValueAsString(project);
+		}
+		return value;
+	}
+
+
+
+	/**
+	 * Get a specific treenode by its ID
+	 * @param nodeId
+	 * @return json string
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	@GET
+	@Path("/treenodes/{nodeid}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public String getTreeNodeById(@PathParam("nodeid") Long nodeId) throws JsonGenerationException, JsonMappingException, IOException {
+
+		TreeNode node = treeNodeService.getById(nodeId);
+		String value = null;
+		if (node != null) {
+			ObjectMapper mapper = new ObjectMapper();
+			value = mapper.writeValueAsString(node);
+		}
+
+		return value;
+	}
+
+
+
+	/**
+	 * Get all QModels
+	 * @return json string
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	@GET
+	@Path("/qmodels")
+	@Produces({MediaType.APPLICATION_JSON})
+	public String getQModels() throws JsonGenerationException, JsonMappingException, IOException {
+
+		List<QModel> qmodels = qMTreeNodeService.getAllQModels();
+		String retValue = null;
+		if (qmodels != null) {
+			ObjectMapper mapper = new ObjectMapper();
+			retValue = mapper.writeValueAsString(qmodels);
+		}
+
+		return retValue;    	
+	}
+
+
+	/**
+	 * Return a JSON formatted QModel 
+	 * @param name : full name of the QModel 
+	 * @return json string 
+	 * @throws IOException 
+	 * @throws JsonMappingException 
+	 * @throws JsonGenerationException 
+	 * Demo Url : http://localhost:8080/uqasar/rest/api/qmodels/Quality Model A 
+	 */
+	@GET
+	@Path("/qmodels/{name}")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public String getQModelByName(@PathParam("name") String name) throws JsonGenerationException, JsonMappingException, IOException {
+
+		QMTreeNode qMTreeNode = qMTreeNodeService.getByName(QMTreeNode.class, name);
+		String value = null; 
+		if (qMTreeNode != null) {
+			ObjectMapper mapper = new ObjectMapper();
+			value = mapper.writeValueAsString(qMTreeNode);
+		}
+
+		return value;
+	}
+
+	
+	
+	/**
+	 * Get a measurements belonging to a specific adapter
+	 * @param adapterId Id of the adapter whose data shall be acquired
+	 * @return json string
+	 * @throws JsonGenerationException
+	 * @throws JsonMappingException
+	 * @throws IOException
+	 */
+	@GET
+	@Path("/measurements/{adapterid}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public String getAdapterData(@PathParam("adapterid") Long adapterId) throws JsonGenerationException, JsonMappingException, IOException {
+		
+		String value = null;
+		AdapterSettings settings = adapterSettingsService.getById(adapterId);
+		if (settings != null) {
+			MetricSource metricSource = settings.getMetricSource();
+
+			// Handle the different cases of adapter types
+			if (metricSource != null && metricSource == MetricSource.IssueTracker) {
+				List<JiraMetricMeasurement> res = jiraDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value;
+				}			
+			} else if (metricSource != null && metricSource == MetricSource.TestingFramework) {
+				List<TestLinkMetricMeasurement> res = testlinkDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value; 
+				}
+			} else if (metricSource != null && metricSource == MetricSource.StaticAnalysis) {
+				List<SonarMetricMeasurement> res = sonarDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value; 
+				}
+			} else if (metricSource != null && metricSource == MetricSource.CubeAnalysis){
+				List<CubesMetricMeasurement> res = cubesDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value; 
+				}
+			} else if (metricSource != null && metricSource == MetricSource.VersionControl) {
+				List<GitlabMetricMeasurement> res = gitlabDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value; 				
+				}
+			} else if (metricSource != null && metricSource == MetricSource.ContinuousIntegration) {
+				List<JenkinsMetricMeasurement> res = jenkinsDataService.getAllByAdapter(settings);
+				if (res != null) {
+					ObjectMapper mapper = new ObjectMapper();
+					value = mapper.writeValueAsString(res);
+					return value;
+				}
+			}
+		}
+		
+		return value;
+	}
+	
+	
+	
+	/**
+	 * Return historical values for a treenode as JSON formatted string 
+	 * @param name : full name of the Quality Project 
+	 * @param treenodeid : Id of the treenode for which the historical values are to be fetched
+	 * @return json string 
+	 * @throws IOException 
+	 * @throws JsonMappingException 
+	 * @throws JsonGenerationException 
+	 * Demo Url : http://localhost:8080/uqasar/rest/api/historicvalues?projectname=U-QASAR Platform Development&treenodeid=123 
+	 */
+	@GET
+	@Path("/historicvalues")
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<String> getHistValueOFTreeNode(@QueryParam("projectname") String projectName,
+			@QueryParam("treenodeid") Long treeNodeId) throws JsonGenerationException, JsonMappingException, IOException {
+
+		List<String> histValues = new LinkedList<String>();
+		Project project = treeNodeService.getProjectByName(projectName);
+
+		if (project != null) {
+			ObjectMapper mapper = new ObjectMapper();
+
+			collectChildrenNodes(project);
+
+			for (TreeNode node : allNodes) {
+
+				if (treeNodeId.compareTo(node.getId()) == 0) {
+					if (node instanceof Metric) {
+						for (HistoricValuesBaseIndicator hv : ((Metric) node).getHistoricValues())
+
+							histValues.add(mapper.writeValueAsString(hv));
+					} else if (node instanceof QualityIndicator) {
+						for (HistoricValuesBaseIndicator hv : ((QualityIndicator) node).getHistoricValues())
+
+							histValues.add(mapper.writeValueAsString(hv));
+					} else if (node instanceof QualityObjective) {
+						for (HistoricValuesBaseIndicator hv : ((QualityObjective) node).getHistoricValues())
+
+							histValues.add(mapper.writeValueAsString(hv));
+					}
+
+				}
+
+			}
+		}
+
+		return histValues;
+	}
+
+
+	/**
+	 * 
+	 * @param node
+	 */
+	private void collectChildrenNodes(TreeNode node){
+
+		if(node != null){
+			for(TreeNode n : node.getChildren()){
+				allNodes.add(n);
+
+				//call this method recursively
+				collectChildrenNodes(n);
+			} 
+		}
+	}
+}

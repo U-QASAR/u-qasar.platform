@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="label.new">Neu</entry>
+    <entry key="label.add">Hinzufügen</entry>
+    <entry key="table.head.label.isUsed">In Verwendung?</entry>
+    <entry key="buttons.remove">Ausgewählte Löschen</entry>
+    <entry key="buttons.update">Aktualisieren</entry>
+    <entry key="delete.confirmation.modal.header">Die {0} löschen?</entry>
+    <entry key="delete.confirmation.modal.message">Sind Sie sicher, dass Sie die {0} löschen wollen ({1})?</entry>
+    <entry key="delete.confirmation.modal.submit.text">Ja, löschen.</entry>
+    <entry key="delete.confirmation.modal.cancel.text">Nein, abbrechen.</entry>
+</properties>

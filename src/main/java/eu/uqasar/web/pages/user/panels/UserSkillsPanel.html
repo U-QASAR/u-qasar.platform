@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div class="row-fluid">
+                <div class="span12">
+                    <p class="lead"><wicket:message key="text.skills.intro"></wicket:message></p>
+                    <p><wicket:message key="text.skills.help"></wicket:message></p>
+                </div>
+            </div>
+            <hr />
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="programmingLanguages" wicket:id="label.programmingLanguages"></label>
+                        <div class="controls">
+                            <input type="hidden" id="programmingLanguages" class="input-xxlarge" wicket:id="programmingLanguages" />
+                            <p class="help-block offset-top" wicket:id="help.programmingLanguages"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="issueTrackingTools" wicket:id="label.issueTrackingTools"></label>
+                        <div class="controls">
+                            <input type="hidden" id="issueTrackingTools" class="input-xxlarge" wicket:id="issueTrackingTools" />
+                            <p class="help-block offset-top" wicket:id="help.issueTrackingTools"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="sourceCodeManagementTools" wicket:id="label.sourceCodeManagementTools"></label>
+                        <div class="controls">
+                            <input type="hidden" id="sourceCodeManagementTools" class="input-xxlarge" wicket:id="sourceCodeManagementTools" />
+                            <p class="help-block offset-top" wicket:id="help.sourceCodeManagementTools"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="staticAnalysisTools" wicket:id="label.staticAnalysisTools"></label>
+                        <div class="controls">
+                            <input type="hidden" id="staticAnalysisTools" class="input-xxlarge" wicket:id="staticAnalysisTools" />
+                            <p class="help-block offset-top" wicket:id="help.staticAnalysisTools"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="testManagementTools" wicket:id="label.testManagementTools"></label>
+                        <div class="controls">
+                            <input type="hidden" id="testManagementTools" class="input-xxlarge" wicket:id="testManagementTools" />
+                            <p class="help-block offset-top" wicket:id="help.testManagementTools"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="continuousIntegrationTools" wicket:id="label.continuousIntegrationTools"></label>
+                        <div class="controls">
+                            <input type="hidden" id="continuousIntegrationTools" class="input-xxlarge" wicket:id="continuousIntegrationTools" />
+                            <p class="help-block offset-top" wicket:id="help.continuousIntegrationTools"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="customerType"wicket:id="label.customerType"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="customerType" wicket:id="customerType"/>
+                  			 <p class="help-block offset-top" wicket:id="help.customerType"></p> 
+                  		</div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="projectType"wicket:id="label.projectType"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="projectType" wicket:id="projectType"/>
+                  			 <p class="help-block offset-top" wicket:id="help.projectType"></p> 
+                  		</div>
+                    </div>
+                </div>
+            </div>      
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="softwareType"wicket:id="label.softwareType"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="softwareType" wicket:id="softwareType"/>
+                  			 <p class="help-block offset-top" wicket:id="help.softwareType"></p> 
+                  		</div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="softwareLicense"wicket:id="label.softwareLicense"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="softwareLicense" wicket:id="softwareLicense"/>
+                  			 <p class="help-block offset-top" wicket:id="help.softwareLicense"></p> 
+                  		</div>
+                    </div>
+                </div>
+            </div>   
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="topic"wicket:id="label.topic"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="topic" wicket:id="topic"/>
+                  			 <p class="help-block offset-top" wicket:id="help.topic"></p> 
+                  		</div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group">
+                       <label class="control-label" for="methodology"wicket:id="label.methodology"></label> 
+                        <div class="controls">
+                  			<input type="hidden" class="input-xxlarge"  id="methodology" wicket:id="methodology"/>
+                  			 <p class="help-block offset-top" wicket:id="help.methodology"></p> 
+                  		</div>
+                    </div>
+                </div>
+            </div>   
+        
+        </wicket:panel>
+    </body>
+</html>

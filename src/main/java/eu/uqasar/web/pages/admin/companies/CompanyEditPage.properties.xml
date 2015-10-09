@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title.new">Create new Company</entry>
+<entry key="page.title.edit">Edit ${name}</entry>
+<entry key="label.profile">Profile</entry>
+
+<entry key="label.name">Name</entry>
+<entry key="label.shortName">Abbreviation</entry>
+<entry key="label.street">Street</entry>
+<entry key="label.zipcode">Zipcode</entry>
+<entry key="label.city">City</entry>
+<entry key="label.country">Country</entry>
+<entry key="label.phone">Phone</entry>
+<entry key="label.fax">Fax</entry>
+
+<entry key="placeholder.name">Company Name</entry>
+<entry key="placeholder.shortName">Company Acronym</entry>
+<entry key="placeholder.street">Street</entry>
+<entry key="placeholder.number">Number</entry>
+<entry key="placeholder.zipcode">Zipcode</entry>
+<entry key="placeholder.city">City</entry>
+<entry key="placeholder.country">Country</entry>
+<entry key="placeholder.phone">Phone</entry>
+<entry key="placeholder.fax">Fax</entry>
+<entry key="message.save">Your changes have been saved</entry>
+<entry key="message.save.new">You created the new company successfully</entry>
+<entry key="message.cancel">You canceled the process</entry>
+</properties>

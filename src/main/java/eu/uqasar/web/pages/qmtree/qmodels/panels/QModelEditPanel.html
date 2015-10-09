@@ -1,0 +1,67 @@
+<wicket:panel xmlns:wicket>
+	<form wicket:id="form">
+		<div class="row-fluid">
+			<div class="span12">
+				<label for="name"><wicket:message key="label.name" />:</label> <input
+					wicket:id="name" id="name" type="text" class="input-block-level" />
+					<span wicket:id="feedbackName"></span>
+					
+			</div>
+		</div>
+		<hr />
+		<div class="row-fluid">
+			<div class="span6">
+				<label for="key"><wicket:message key="label.key" />:</label> <input
+					wicket:id="nodeKey" id="key" type="text" class="input-medium" /> <span
+					class="help-block"><wicket:message key="help.key" /></span>
+					<span wicket:id="feedbackKey"></span>
+			</div>
+		</div>
+		<hr />
+		<div class="row-fluid">
+					<div class="span4">
+						<label class="key inline"><wicket:message
+								key="label.edition" />:</label>
+								<span wicket:id="edition"></span>
+					</div>
+ 		</div>
+		<hr />
+		<div class="row-fluid">
+        <div class="span4">
+        	<label class="inline"><wicket:message key="label.company" /></label><br/>
+            	<select wicket:id="company"></select>
+            </div>
+        </div>
+        <hr />
+		<div class="row-fluid">
+			<div class="span6">
+				<label for="checkActive"><wicket:message key="label.active" /> :</label>
+					<div class="checkbox">
+						<input type="checkbox" id="checkActive" wicket:id="checkActive" /></div> <br><br>
+				 <span class="help-block"><wicket:message key="help.active" /></span>
+			</div>
+		</div>
+		<hr />
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="checkbox">
+					<span class="pull-right"><input type="checkbox" id="richtext"
+					wicket:id="toggle.richtext" style="margin-top:5px" /><label
+					class="inline right" for="richtext"><wicket:message
+							key="label.description.check.richtext" /></label></span></div> <label
+					for="description"><wicket:message key="label.description" />:</label>
+				<textarea wicket:id="description" id="description" rows="10"
+					class="input-block-level"></textarea>
+			</div>
+		</div> 
+		<hr />
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="form-actions">
+					<button type="submit" class="btn btn-primary" wicket:id="save"><wicket:message key="button.save" /></button>
+					<button type="submit" class="btn" wicket:id="cancel"><wicket:message key="button.cancel" /></button>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

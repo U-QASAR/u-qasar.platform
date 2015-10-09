@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="step1.label.name"> Name </entry>
+<entry key="step1.label.key"> Key </entry>
+<entry key="step1.label.description"> Description </entry>
+
+<entry key="step2.label.date.start"> Start Date</entry>
+<entry key="step2.label.date.end"> End Date</entry>
+
+
+<entry key="step3.label.customerType"> Customer Type </entry>
+<entry key="step3.label.projectType"> Project Type </entry>
+<entry key="step3.label.softwareType"> Software Type </entry>
+<entry key="step3.label.softwareLicense"> Software License </entry>
+<entry key="step3.label.progLanguage"> Programming Language </entry>
+<entry key="step3.label.topic"> Topic </entry>
+<entry key="step3.label.roles"> Roles </entry>
+<entry key="step3.label.contIntegration"> Continuous Integration Tool </entry>
+<entry key="step3.label.issueTracking"> Issue Tracking Tool </entry>
+<entry key="step3.label.srcCodeManagement"> Source Code Management Tool </entry>
+<entry key="step3.label.staticAnalysis"> Static Analysis Tool </entry>
+<entry key="step3.label.testManagement"> Test Management Tool </entry>
+<entry key="step3.label.softwareDevelopmentMethodology">Software Development Methodology</entry>
+
+<entry key="step4.header.company"> Company </entry>
+<entry key="step4.header.user"> User </entry>
+<entry key="step4.header.role"> Role </entry>
+<entry key="step4.header.skills">  Matched Skills  </entry>
+<entry key="step4.header.options"> Options </entry>
+<entry key="step4.confirm.user"> Confirm User </entry>
+<entry key="step4.reject.user"> Reject User </entry>
+<entry key="step4.hint"> Hint: This team can also be edited later under "Admin Console >> Manage Teams"</entry>
+<entry key="step4.label.add.username">Name of additional User</entry>
+<entry key="step4.placeholder.add.userName">Type to start auto completion</entry>
+<entry key="button.add.save">Add user to Team</entry>
+
+
+<entry key="step5.label.qmodel"> Quality Model</entry>
+<entry key="step5.label.product"> Product</entry>
+<entry key="step5.label.process"> Process</entry>
+<entry key="step5.label.lcStage"> LC Stage</entry>
+
+<entry key="step7.page.edit.title">Edit Adapter</entry>
+<entry key="step7.name.Required">Please provide a name for the new Adapter</entry>
+<entry key="step7.page.copy.title">Copy Adapter</entry>
+<entry key="step7.form.create.header">Create a new Adapter</entry>
+<entry key="step7.page.create.title">Create Adapter</entry>
+<entry key="step7.submit.text">Save</entry>
+<entry key="step7.name.javax.validation.constraints.NotNull.message">Please provide a name for the new Adapter</entry>
+<entry key="step7.form.edit.header">Edit Adapter</entry>
+<entry key="step7.name.input.placeholder">Enter a name for your Adapter...</entry>
+<entry key="step7.saved.message">The Adapter ${name} has been saved</entry>
+<entry key="step7.cancel.text">Cancel</entry>
+<entry key="step7.name.javax.validation.constraints.Size.message.String">Adapter name must be between ${min} and ${max} characters long</entry>
+<entry key="step7.name.input.label">Name</entry>
+<entry key="step7.form.copy.header">Create a copy of Adapter ${name}</entry>
+<entry key="step7.label.metricsource">Type of data source</entry>
+<entry key="step7.url.input.label">URL</entry>
+<entry key="step7.url.input.placeholder">Add adapter URL...</entry>
+<entry key="step7.username.input.label">Username</entry>
+<entry key="step7.pwd.input.label">Password</entry>
+<entry key="step7.username.input.placeholder">Enter the username for the user used by the adapter...</entry>
+<entry key="step7.password.input.placeholder">Enter the password for the user used by the adapter...</entry>
+<entry key="step7.updateInterval.input.label">Update interval of adapter data</entry>
+<entry key="step7.label.project">Project</entry>
+<entry key="step7.updateInterval.input.placeholder">Enter the interval for adapter data updates (in minutes)...</entry>
+<entry key="step7.label.password">Password</entry>
+<entry key="step7.label.username">Username</entry>
+<entry key="step7.adapterProject.input.label">Project used by Adapter</entry>
+<entry key="step7.adapterProject.input.placeholder">Enter the Project name used by Adapter</entry>
+<entry key="step7.name.popover.text">On this field you should provide a well descriptive name for the adapter.</entry>
+<entry key="step7.metricSource.popover.text">Here you select the type of data source from which metric data is obtained. The option manual refers to that the data has to be inputted manually</entry>
+<entry key="step7.url.popover.text">On this field you specify the URL of the data source.</entry>
+<entry key="step7.username.popover.text">This field contains a username used to authenticate the adapter on data source.</entry>
+<entry key="step7.password.popover.text">This field contains a password used to authenticate the adapter on data source.</entry>
+<entry key="step7.updateInterval.popover.text">On this field you specify how often new sets of data are obtained from the data source. The value is specified in minutes. The value 0 means no data is updated automatically.</entry>
+<entry key="step7.adapterProject.popover.text">This field specifies the name of the internal project based on data source.</entry>
+<entry key="step7.project.popover.text">By using this drop down menu, you select which QA Project shall use this data adapter.</entry>
+<entry key="step7.adapterTestPlan.input.label">Test Plan used by Adapter (Testing Framework)</entry>
+<entry key="step7.adapterTestPlan.popover.text">This field specifies the name of the test plan used by the adapter (used by Testing Framework)</entry>
+<entry key="step7.adapterTestPlan.input.placeholder">Enter the test plan name used by the testing framework</entry>
+<entry key="step7.description">On this page you can define adapter settings for fetching measurement data. Further adapters can be defined in the menu Adaptersettings.</entry>
+<entry key="step7.add">Add new adapter</entry>
+<entry key="step7.add.confirmed">Adapter has been added.</entry>
+
+<entry key="placeholder.meta.input">Enter {0}</entry>
+<entry key="placeholder.meta.role">Enter Role</entry>
+<entry key="delete.confirmation.modal.header">Confirm deletion</entry>
+<entry key="delete.confirmation.modal.message">Are you sure to remove this team member? This can not be undone!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+<entry key="delete.confirmed">The selected team member has been removed.</entry>
+
+<entry key="step1.title"> Step 1: General </entry>
+<entry key="step2.title"> Step 2: Project Dates </entry>
+<entry key="step3.title"> Step 3: Metadata </entry>
+<entry key="step4.title"> Step 4: Team Composition </entry>
+<entry key="step5.title"> Step 5: Quality Model </entry>
+<entry key="step6.title"> Step 6: QModel Subset Proposal</entry>
+<entry key="step7.title"> Step 7: Data adapters </entry>
+
+</properties>

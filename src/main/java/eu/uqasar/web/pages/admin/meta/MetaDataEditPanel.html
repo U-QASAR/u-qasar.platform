@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head><title></title></head>
+    <body>
+        <wicket:panel>
+            <div class="row-fluid">
+                <h3 wicket:id="head.type.add"></h3>
+            </div>
+            <form wicket:id="form">
+                <fieldset>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group required" wicket:id="nameValidationBorder">
+                                <input type="text" class="input-xlarge name" id="name" 
+                                       wicket:id="name"  />
+                                <a wicket:id="add" class="btn btn-primary" style="margin-top: -.8em;">
+                                <wicket:message key="label.add"></wicket:message></a>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <hr />
+            <div class="row-fluid">
+                <form wicket:id="form.existing">
+                    <h3 wicket:id="head.type.existing"></h3>
+                    <div wicket:id="checkGroup">
+                        <table class="table table-striped" wicket:id="dataContainer">
+                            <thead>
+                                <tr>
+                                    <th class="checkbox"><input type="checkbox" wicket:id="dataGroupSelector" /></th>
+                                    <th wicket:id="table.head.type"></th>
+                                    <th><wicket:message key="table.head.label.isUsed"></wicket:message></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr wicket:id="data">
+                                    <td class="checkbox"><input type="checkbox" wicket:id="check" /></td>
+                                    <td wicket:id="nameValidationBorder"><input wicket:id="name" class="input-xlarge"/></td>
+                                    <td wicket:id="inUse"></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3" class="alignright">
+                                        <button class="btn btn-primary" wicket:id="update"><wicket:message key="buttons.update"></wicket:message></button>
+                                        <button class="btn btn-danger" wicket:id="deleteSelected"><wicket:message key="buttons.remove"></wicket:message></button>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </form>
+            </div>
+            <div wicket:id="deleteConfirmationModal"></div>
+        </wicket:panel>
+    </body>
+</html>

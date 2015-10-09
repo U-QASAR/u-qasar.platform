@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="help.from.address">Bitte Absenderadresse angeben. Diese wird beim Empfänger als Absender gezeigt.</entry>
+<entry key="label.server">SMTP Server Adresse</entry>
+<entry key="label.password">Passwort</entry>
+<entry key="placeholder.password">Passwort des STMP Nutzers</entry>
+<entry key="page.title">E-Mail Server Einstellungen</entry>
+<entry key="label.to.address">E-Mail Adresse des Empfängers</entry>
+<entry key="placeholder.user">admin@beispiel.de</entry>
+<entry key="label.from.user">Absendername (Von)</entry>
+<entry key="label.user">Benutzername</entry>
+<entry key="help.server">Bitte die auflösbare Adresse des SMTP Server angeben (IP oder DNS)</entry>
+<entry key="page.head.mail.test">Test E-Mail Schicken</entry>
+<entry key="button.connection.validate.text">Einstellungen überprüfen</entry>
+<entry key="help.from.user">Bitte Namen des Absenders eingeben. Dieser wird beim Empfänger als Absender gezeigt.</entry>
+<entry key="help.to.address">Bitte die E-Mail Adresse angeben, die eine Test-Mail erhalten soll.</entry>
+<entry key="page.head.mail.connection.settings">E-Mail Server Einstellungen</entry>
+<entry key="label.auth.required">Authentifizierung erforderlich?</entry>
+<entry key="help.user">Bitte den Login eines Benutzers angeben, der E-Mails verschicken darf</entry>
+<entry key="content.mail.text">Dies ist eine Test-Mail von U-QASAR. Die Server Einstellungen sind korrekt.</entry>
+<entry key="help.to.subject">Bitte den Betreff der Test-Mail angeben.</entry>
+<entry key="placeholder.from.address">no-reply@beispiel.de</entry>
+<entry key="placeholder.from.user">U-QASAR</entry>
+<entry key="label.auth.tls">TLS erforderlich?</entry>
+<entry key="placeholder.server">beispiel.de oder 192.168.0.1</entry>
+<entry key="label.validation.success">Die Test Mail wurde erfolgreich versendet!</entry>
+<entry key="label.port">SMTP Server Port</entry>
+<entry key="placeholder.port">25</entry>
+<entry key="label.from.address">Absenderadresse (Von)</entry>
+<entry key="placeholder.to.address">ich@beispiel.de</entry>
+<entry key="label.to.subject">Betreff der Test Mail</entry>
+<entry key="placeholder.to.subject">U-QASAR Test Mail</entry>
+</properties>

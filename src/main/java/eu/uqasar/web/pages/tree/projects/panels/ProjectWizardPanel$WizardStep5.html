@@ -1,0 +1,42 @@
+<wicket:panel xmlns:wicket>  
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="btn btn-primary no-cursor" for="title" style="cursor: default;"><wicket:message key="step5.title" /></label>
+        </div>
+    </div>
+    <br/>
+    <form wicket:id="form">
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="control-label" for="qmodel"> <wicket:message key="step5.label.qmodel" />: </label> 
+                <select class="input-large" wicket:id="qmodel" id="qmodel"> </select>   
+            </div>
+        </div>
+        <hr />
+
+        <div class="row-fluid"  wicket:id="wmcProduct">
+            <div class="span12">
+                <label class="control-label" for="product"> <wicket:message key="step5.label.product" />:</label> 
+                <select class="input-large" wicket:id="product" id="product"></select>
+            </div>
+        </div>
+      	<hr />
+
+        <div class="row-fluid" wicket:id="wmcProcess">
+            <div class="span12" >
+                <label class="control-label" for="process"> <wicket:message key="step5.label.process" />: </label> 
+                <select class="input-large" wicket:id="process" id="process"></select>
+            </div>
+        </div>
+        <hr />
+
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="control-label" for="lcStageSelector"> <wicket:message key="step5.label.lcStage" />:</label> 
+                <select class="input-large" wicket:id="lcStage" id="lcStageSelector"></select>
+            </div>
+        </div>
+        <hr />
+    </form>
+    
+</wicket:panel>

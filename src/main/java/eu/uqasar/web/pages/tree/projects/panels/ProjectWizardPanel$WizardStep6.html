@@ -1,0 +1,17 @@
+<wicket:panel xmlns:wicket>  
+     <script  type="text/javascript">
+        $(document).ready(function() {
+              $(".wicketExtensionsWizardButtonBar input[name='buttons:finish']").removeClass("btn-inverse");
+              $(".wicketExtensionsWizardButtonBar input[name='buttons:finish']").addClass("btn-success");
+         });
+    </script>
+    <div class="row-fluid">
+        <div class="span12">
+            <label class="btn btn-primary no-cursor" for="title" style="cursor: default;"><wicket:message key="step6.title" /></label>
+        </div>
+    </div>
+    <br/>
+    <div wicket:id="subsetContainer">
+    	<div wicket:id="subsetPanel"></div>
+    </div>
+</wicket:panel>

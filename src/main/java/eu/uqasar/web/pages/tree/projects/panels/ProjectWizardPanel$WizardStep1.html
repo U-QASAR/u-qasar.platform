@@ -1,0 +1,33 @@
+<wicket:panel xmlns:wicket>
+     <div class="row-fluid">
+        <div class="span12">
+            <label class="btn btn-primary no-cursor" for="title" style="cursor: default;"><wicket:message key="step1.title" /></label>
+        </div>
+    </div>
+    <br/>
+    <form wicket:id="form">
+   
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="name" for="name"><wicket:message key="step1.label.name" />:</label>
+                <input id="name" type="text"  class="name" wicket:id="projectName" />
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="key" for="key"><wicket:message key="step1.label.key" />:</label>
+                <input id="key" type="text"  class="key" wicket:id="projectKey" />
+            </div>
+        </div>
+        <hr />
+        <div class="row-fluid">
+            <div class="span12">
+                <label class="description" for="description"><wicket:message key="step1.label.description" />:</label>
+                <textarea id="description" class="description" wicket:id="projectDescription"></textarea>
+            </div>
+        </div>
+        <hr />
+    </form>
+    
+</wicket:panel>

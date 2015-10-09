@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Adapters</entry>
+<entry key="adapter.deleted">Adapter ${name} has been deleted.</entry>
+<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+<entry key="page.title">Adapters</entry>
+<entry key="name.column">Name</entry>
+<entry key="delete.adapter.batch.button">Delete Adapters</entry>
+<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="adapter.selected.deleted">Selected Adapters have been deleted.</entry>
+<entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Adapter(s) and the belonging measurements?
+This action cannot be undone!</entry>
+<entry key="edit.link.text">Edit Adapter</entry>
+<entry key="create.adapter.button">Add Adapter</entry>
+<entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
+<entry key="action.column">Actions</entry>
+<entry key="metricSource.column">Metric source</entry>
+<entry key="url.column">URL</entry>
+<entry key="credentials.column">Credentials</entry>
+<entry key="updateInterval.column">Update interval of adapter data</entry>
+<entry key="project.column">Project</entry>
+<entry key="update.measurements.button">Update adapter data</entry>
+<entry key="updated.message">Adapter data updated successfully</entry>
+<entry key="error.message">Error when trying to update adapter data</entry>
+<entry key="latestUpdate.column">Latest update of adapter data</entry>
+<entry key="managedata.link.text">Manage adapter data</entry>
+</properties>

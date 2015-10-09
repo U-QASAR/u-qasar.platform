@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="qmodel.type.file.error">Content type is not valid</entry>
+<entry key="qmodel.active.error">There is other quality model active at the moment, this field must be set to false</entry>
+<entry key="qmodel.incomplete.error">Review the quality model. At least, one quality objective is required.</entry>
+<entry key="qmodel.json.char.error">Unexpected character, expected valid values in fields</entry>
+<entry key="qmodel.rol.error">Review the rol attributes, valid values are: ProductOwner, Developer, Tester, ScrumMaster, ReqsEngineer, DesignEngineer</entry>
+<entry key="page.title">Import Quality Model</entry>
+<entry key="qmodel.xml.link">Download XML example</entry>
+<entry key="qmodel.json.link">Download JSON example</entry>
+<entry key="qmodel.uploadFile">Upload file</entry>
+<entry key="qmodel.paradigm.error">Field 'paradigm' is required when the field 'purpose' is 'Process'. Valid values are: Waterfall, Rup</entry>
+<entry key="qmodel.max.file.error">The length of the file exceeds the maximum size allowed</entry>
+<entry key="qmodel.rup.error">Field 'stage' is required when the field 'paradigm' is 'RUP'. Valid values are: Inception , Elaboration, Construction, Transition</entry>
+<entry key="qmodel.selectFile">Select file (json / xml)</entry>
+<entry key="treenode.imported.message">The quality model has been successfully created.</entry>
+<entry key="objective.incomplete.error">Review quality objectives. At least, one quality indicator is required per objective</entry>
+<entry key="qmodel.required.error">Review the required attributes of the quality model</entry>
+<entry key="qmodel.version.error">Field 'version' is required when the field 'purpose' is 'Product'. Valid values are: Prototype, Alfa, Beta, Final</entry>
+<entry key="qmodel.source.error">Review field 'source', valid values are: TestingFramework, IssueTracker, StaticAnalysis, ContinuousIntegration, Manual</entry>
+<entry key="qmodel.import.importError">Upload failed</entry>
+<entry key="qmodel.indicator.limit.error">Review upper and lower limits of quality indicators</entry>
+<entry key="qmodel.xml.parse.error">The xml structure is not valid</entry>
+<entry key="qmodel.empty.file.error">No file uploaded </entry>
+<entry key="qmodel.purpose.error">Review 'purpose' field. Valid values are: Product, Process</entry>
+<entry key="qmodel.stage.error">Field 'stage' is required when the field 'paradigm' is 'Waterfall'. Valid values are: Requirements, Design, Implementation, Testing</entry>
+<entry key="qmodel.scale.error">Review field 'scale', valid values are: Nominal, Ordinal, Interval, Ratio</entry>
+<entry key="qmodel.json.parse.error">The json structure is not valid</entry>
+<entry key="qmodel.objective.limit.error">Review upper and lower limits of quality objectives</entry>
+<entry key="indicator.incomplete.error">Review quality indicators.  At least, one metric is required per indicator</entry>
+<entry key="qmodel.unit.error">Review field 'unit', valid values are: Loc, Issue, FunctionPoint, Test, Unity</entry>
+<entry key="qmodel.number.error">Review the numeric attributes of quality model</entry>
+<entry key="qmodel.domain.error">Review the domain attributes, valid values are: Telecommunications, Bank, Industry, Insurance, Public</entry>
+<entry key="qmodel.importFile">Import a new quality model</entry>
+<entry key="qmodel.json.enum.error">Review the enumerated values, some of them don't exist in U-QASAR system</entry>
+<entry key="qmodel.key.unique">Review the field "short name", there is already a quality model with that value. The value should be unique</entry>
+</properties>

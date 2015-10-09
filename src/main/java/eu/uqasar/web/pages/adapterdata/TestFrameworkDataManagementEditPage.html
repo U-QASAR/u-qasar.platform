@@ -1,0 +1,56 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header" style="margin-left: 2%">
+			<h2>
+				<span wicket:id="header"></span>
+			</h2>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<form wicket:id="form">
+					<fieldset>
+						<table class="myTable">
+							<tr>
+                                <td wicket:id="projectNameBorder"><input type="text" id="serviceTicketNo"
+                                    wicket:message="placeholder:name.input.placeholder" wicket:id=name></td>
+
+                                <td></td>
+							</tr>
+                            <tr>
+                                <td wicket:id="projectKeyBorder"><input type="text" id="serviceTicketNo"
+                                    wicket:message="placeholder:testLinkKey.input.placeholder" wicket:id=testLinkKey></td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td wicket:id="metricBorder"><input type="text" id="serviceTicketNo"
+                                    wicket:message="placeholder:testLinkMetric.input.placeholder" wicket:id=testLinkMetric></td>
+
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td wicket:id="valueBorder"><textarea type="text" id="jsonContentBorder"
+                                        wicket:message="placeholder:value.input.placeholder" wicket:id=value></textarea>
+	                            </td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td class="control-group" wicket:id="someDateValidationBorder"><input type="text"
+                                    class="input-xxlarge" id="dueDate" wicket:message="placeholder:some.date.input.placeholder"
+                                    wicket:id="timeStamp"></td>
+                            </tr>
+                            <tr>
+								<td><input type="submit" class="btn btn-primary"
+									wicket:message="value:submit.text" wicket:id="submit" /> <input
+									type="reset" class="btn" wicket:message="value:cancel.text"
+									wicket:id="cancel" /></td>
+							</tr>
+						</table>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</section>
+</wicket:extend>

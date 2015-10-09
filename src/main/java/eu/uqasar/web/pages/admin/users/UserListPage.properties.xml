@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.source">Source</entry>
+<entry key="page.title">List of registered users</entry>
+<entry key="column.head.user">User</entry>
+<entry key="td.users.actions.team">Assign to Teams</entry>
+<entry key="column.head.role">Role</entry>
+<entry key="column.head.status">Status</entry>
+<entry key="column.head.actions">Actions</entry>
+<entry key="column.head.actions.create">Create User</entry>
+<entry key="td.users.actions.resetpw">Reset Password</entry>
+<entry key="td.users.actions.edit">Edit User</entry>
+<entry key="td.users.actions.batch.remove">Remove selected User(s)</entry>
+<entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
+<entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Users(s)? This action cannot be undone!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+<entry key="delete.confirmed">Selected Users have been deleted.</entry>
+</properties>

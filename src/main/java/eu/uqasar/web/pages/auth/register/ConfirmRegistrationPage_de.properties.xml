@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.success"><![CDATA[Die Bestätigung der Registrierung für <strong>{0}</strong> war erfolgreich. Sie können Sich jetzt mit Ihrer E-Mail Adresse (<em>{1}</em>) und Ihrem Passwort am System anmelden.]]></entry>
+<entry key="label.success.ldap"><![CDATA[Die Bestätigung der Registrierung für <strong>{0}</strong> war erfolgreich. Sie können Sich jetzt mit Ihrem LDAP Benutzernamen (<em>{1}</em>) und Ihrem LDAP Passwort am System anmelden.]]></entry>
+<entry key="label.error"><![CDATA[Die Bestätigung der Registrierung konnte nicht abgeschlossen werden!<br />Für den angegeben Token (<em>{0}</em>) konnte kein noch offener Registrierungsantrag gefunden werden.]]></entry>
+<entry key="page.title">Registrierung bestätigen</entry>
+<entry key="label.success.loginlink">Um zur Anmeldung zu gelangen, klicken Sie hier oder warten Sie {0} Sekunden.</entry>
+</properties>

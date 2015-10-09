@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.filter.apply">Apply</entry>
+<entry key="label.filter.title">Filter</entry>
+<entry key="label.filter.activeOpt">Active/Inactive</entry>
+<entry key="button.filter.clear">Clear</entry>
+</properties>

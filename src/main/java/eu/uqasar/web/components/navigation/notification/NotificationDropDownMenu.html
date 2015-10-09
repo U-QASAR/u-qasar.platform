@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+        <wicket:panel>
+            <a class="dropdown-toggle" data-toggle="dropdown" wicket:id="btn" href="#">
+                <i wicket:id="icon"></i>
+                <span wicket:id="label.container" class="badge rounded"><span wicket:id="label"></span></span>
+                <span id="navbar-notifications-label" wicket:id="notification.title" class="notification title"></span>
+                <span class="caret"></span>
+            </a>
+            <ul wicket:id="dropdown-menu" class="dropdown-menu">
+				<div class="notification-container">
+					<li wicket:id="buttons">
+						<a wicket:id="button"></a>
+					</li>
+				</div>
+            </ul>
+        </wicket:panel>
+    </body>
+</html>

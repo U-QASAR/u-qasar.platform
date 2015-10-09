@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.add.userrole">Käyttäjän rooli</entry>
+<entry key="column.head.role">Rooli</entry>
+<entry key="column.head.member">Käyttäjä</entry>
+<entry key="placeholder.add.userName">Ala kirjoittaa aktivoidaksesi automaattitäydennys</entry>
+<entry key="placeholder.name">Tiimin nimi</entry>
+<entry key="td.members.actions.batch.remove">Poista käyttäjä(t) tiimistä ${name}</entry>
+<entry key="button.add.save">Lisää käyttäjä ryhmään ${name}</entry>
+<entry key="label.name">Nimi</entry>
+<entry key="label.add.username">Käyttäjän nimi</entry>
+<entry key="button.update">Vahvista muutokset</entry>
+<entry key="label.list.title">${name} jäsenet ja heidän roolinsa</entry>
+<entry key="label.add.title">Lisää käyttäjä tiimiin ${name}</entry>
+</properties>

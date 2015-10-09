@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.quality.indicator.type.automatic">Automatisch</entry>
+<entry key="label.quality.indicator.type.manual">Manuell</entry>
+</properties>

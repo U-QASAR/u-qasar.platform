@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.password.confirm">Password confirmation</entry>
+<entry key="page.title.edit">Edit ${fullName}</entry>
+<entry key="label.lastName">Last name</entry>
+<entry key="lastName.javax.validation.constraints.NotNull.message">Please provide the user's last name</entry>
+<entry key="placeholder.mail">the user's eMail address</entry>
+<entry key="lastName.javax.validation.constraints.Size.message.String">Last name name must be at least ${min} characters long</entry>
+<entry key="confirmPassword.EqualPasswordInputValidator">Your passwords did not match</entry>
+<entry key="label.userName">User name</entry>
+<entry key="placeholder.password.confirm">the user's password again</entry>
+<entry key="lastName.Required">Please provide the user's last name</entry>
+<entry key="userName.javax.validation.constraints.NotNull.message">Please provide a username</entry>
+<entry key="label.password">Password</entry>
+<entry key="userName.javax.validation.constraints.Size.message.String">Username must be between ${min} and ${max} characters long</entry>
+<entry key="password.PatternValidator">Your password does not meet the requirements</entry>
+<entry key="label.firstName">First name</entry>
+<entry key="mail.Required">Please provide an email address</entry>
+<entry key="placeholder.lastName">the user's last name</entry>
+<entry key="button.save">Save</entry>
+<entry key="placeholder.userName">the user's user name</entry>
+<entry key="help.password.twicetochange">Please populate both fields in order to set a new password.</entry>
+<entry key="firstName.javax.validation.constraints.NotNull.message">Please provide the user's first name</entry>
+<entry key="confirmPassword.Required">Please confirm the user's password</entry>
+<entry key="placeholder.password">the user's password</entry>
+<entry key="mail.javax.validation.constraints.NotNull.message">Please provide an email address</entry>
+<entry key="userName.Required">Please provide a username</entry>
+<entry key="mail.org.hibernate.validator.constraints.Email.message">Please provide a valid email address</entry>
+<entry key="error.user.exists.userName">A user with the username ${userName} already exists!</entry>
+<entry key="placeholder.firstName">the user's first name</entry>
+<entry key="help.mail">Enter a valid email address. This will be the user's login.</entry>
+<entry key="firstName.javax.validation.constraints.Size.message.String">First name name must be at least ${min} characters long</entry>
+<entry key="help.userName"><![CDATA[This username will be part of the URL for the user's public profile (e.g. <em>uqasar.eu/user/<strong>username</strong></em>).]]></entry>
+<entry key="firstName.Required">Please provide the user's first name</entry>
+<entry key="label.mail">eMail</entry>
+<entry key="password.Required">Please provide a password</entry>
+<entry key="help.password">Password must contain at least 1 digit and 1 lower case and 1 upper case letter, 1 symbol and must be between 6 and 256 characters long.</entry>
+<entry key="userName.javax.validation.constraints.Pattern.message.String">Username must only contain lower and upper case letters and digits</entry>
+<entry key="label.img">Profile image</entry>
+<entry key="import.selectFile">Choose an image for the profile</entry>
+<entry key="button.upload">Upload image</entry>
+<entry key="button.picture.clear">Remove image</entry>
+<entry key="mail.UniqueMailValidator">The eMail address you entered is already in use!</entry>
+<entry key="userName.UniqueUsernameValidator">The username you entered is already in use!</entry>
+<entry key="label.role">Role</entry>
+<entry key="password.changed">Your password was changed successfully.</entry>
+<entry key="label.gender">Gender</entry>
+<entry key="label.company">Company</entry>
+<entry key="label.birthday">Birthday</entry>
+<entry key="label.birthday">Birthday</entry>
+<entry key="label.tabs.profile">Profile</entry>
+<entry key="label.tabs.picture">Picture</entry>
+<entry key="label.tabs.skills">Skills</entry>
+<entry key="label.age">{0} years old</entry>
+<entry key="button.gravatar">Use Gravatar</entry>
+</properties>

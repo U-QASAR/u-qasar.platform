@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="view user">
+				<div class="row-fluid headline">
+					<div class="span9">
+						<h2>
+							<i class="icon icon-user"></i> 
+							<span wicket:id="user.firstname" class="firstName"></span>
+							<span wicket:id="user.lastname" class="lastName"></span>
+							<span class="alias"> (<span wicket:id="user.username"></span>)</span>
+						</h2>
+					</div>
+					<div class="span3">
+						<div class="picture-border">
+							<div class="picture">
+								<div wicket:id="picture" class="avatar img-circle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+			</section>
+		</wicket:extend>
+	</body>
+</html>

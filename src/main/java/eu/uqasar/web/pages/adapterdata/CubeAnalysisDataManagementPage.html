@@ -1,0 +1,57 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />
+			</h2>
+		</div>
+		<div>
+			<form wicket:id="deleteForm">
+				<div wicket:id="cubesGroup">
+					<div wicket:id="cubesContainer">
+						<table class="table table-striped tablesorter" id="cubes-list">
+							<thead>
+								<tr>
+									<td colspan="5" class="navigator right"><div wicket:id="navigatorHead"></div></td>
+								</tr>
+								<tr>
+									<th class="checkbox" style="width: 05%"><input type="checkbox" wicket:id="cubesGroupSelector" /></th>
+ 									<th style="width: 10%"><wicket:message key="key.column" /></th>
+									<th style="width: 5%"><wicket:message key="value.column" /></th>
+									<th style="width: 60%"><wicket:message key="jsonContent.column" /></th>
+									<th style="width: 15%"><wicket:message key="timestamp.column" /></th>
+                                    <th style="width: 5%"><wicket:message key="edit.column" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="cubesMeasurements">
+									<td class="checkbox"><input type="checkbox" wicket:id="cubesCheck" /></td>
+									<td>
+										<span><a wicket:id="linkCubesQuery"><i wicket:id="cubesMetric"></i></a></span><br>
+									</td>
+									<td><span wicket:id="value"></span></td>
+									<td><pre style="" wicket:id="jsonContent"></pre></td>
+									<td><span wicket:id="timeStamp"></span></td>
+                                    <td><a class="btn btn-small"
+                                            wicket:message="title:edit.link.text" wicket:id="edit"><i
+                                                class="icon-edit"></i></a></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2" style="padding-left: 0px;">
+										<a class="btn btn-danger" wicket:id="deleteSelected">
+											<wicket:message key="delete.cubes.batch.button" />
+										</a>
+									</td>
+									<td colspan="3" class="navigator right"><div wicket:id="navigatorFoot"></div></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div wicket:id="deleteConfirmationModal"></div>
+</wicket:extend>

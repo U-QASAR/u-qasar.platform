@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+<div  style="margin: 10px;">
+    <form wicket:id="form">
+    	<div wicket:id="wmcGeneral">
+	       	<div>
+		       	<label for="chartType">ChartType:</label>
+		        <select class="input-xlarge" wicket:id="chartType" id="chartType"></select>
+			</div>
+			<div>
+				<label for="project">Project:</label> 
+				<select class="input-xlarge" wicket:id="project" id="project"></select>
+			</div>
+			<div>
+				<label for="time">Period:</label> 
+				<select class="input-xlarge" wicket:id="time" id="time"></select>
+			</div>
+            <div>
+            <label for="metric">Individual Metric:</label> 
+            <select class="input-xlarge" wicket:id="individualMetric" id="individualMetric"></select>
+        </div>
+		</div>
+		<a wicket:id="submit" class="btn btn-primary">Save</a>
+        <a wicket:id="cancel" class="btn">Cancel</a>
+	</form>
+</div>
+</wicket:panel>
+</html>    

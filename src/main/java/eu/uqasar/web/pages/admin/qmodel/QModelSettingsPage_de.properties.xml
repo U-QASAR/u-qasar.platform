@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="qmodel.settings.title">Quality Model Settings</entry>
+<entry key="qmodel.settings.short.name">Short name</entry>
+<entry key="qmodel.settings.name">Name</entry>
+<entry key="qmodel.settings.high.title">First/High level entity</entry>
+<entry key="placeholder.high">QO</entry>
+<entry key="placeholder.highEntity">Quality Objective</entry>
+<entry key="qmodel.settings.medium.title">Second/Medium level entity</entry>
+<entry key="placeholder.medium">QI</entry>
+<entry key="placeholder.mediumEntity">Quality Indicator</entry>
+<entry key="qmodel.settings.low.title">Third/Low level entity</entry>
+<entry key="placeholder.low">QM</entry>
+<entry key="placeholder.lowEntity">Quality Metric</entry>
+</properties>

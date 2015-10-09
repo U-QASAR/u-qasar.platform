@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Edit Adapter</entry>
+<entry key="name.Required">Please provide a name for the new Adapter</entry>
+<entry key="page.copy.title">Copy Adapter</entry>
+<entry key="form.create.header">Create a new Adapter</entry>
+<entry key="page.create.title">Create Adapter</entry>
+<entry key="submit.text">Save</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a name for the new Adapter</entry>
+<entry key="form.edit.header">Edit Adapter</entry>
+<entry key="name.input.placeholder">Enter a name for your Adapter...</entry>
+<entry key="saved.message">The Adapter ${name} has been saved</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Adapter name must be between ${min} and ${max} characters long</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="form.copy.header">Create a copy of Adapter ${name}</entry>
+<entry key="label.metricsource">Metric source</entry>
+<entry key="url.input.label">URL</entry>
+<entry key="url.input.placeholder">Add adapter URL...</entry>
+<entry key="username.input.label">Username</entry>
+<entry key="pwd.input.label">Password</entry>
+<entry key="username.input.placeholder">Enter the username for the user used by the adapter...</entry>
+<entry key="password.input.placeholder">Enter the password for the user used by the adapter...</entry>
+<entry key="label.project">Project</entry>
+<entry key="label.password">Password</entry>
+<entry key="label.username">Username</entry>
+<entry key="adapterProject.input.label">Project used by Adapter</entry>
+<entry key="adapterProject.input.placeholder">Enter the Project name used by Adapter</entry>
+<entry key="adapterTestPlan.input.label">Test Plan used by Adapter (Testing framework)</entry>
+<entry key="adapterTestPlan.input.placeholder">Enter the Test Plan name used by Adapter</entry>
+<entry key="canceled.message">Process has been canceled</entry>
+<entry key="add.confirmed">You created the new adapter successfully.</entry>
+</properties>

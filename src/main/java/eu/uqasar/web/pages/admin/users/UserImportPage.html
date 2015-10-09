@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="users import">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2><wicket:message key="page.title"></wicket:message></h2>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span9">
+						<p class="lead"><wicket:message key="message.import.description.lead"></wicket:message></p>
+						<p><wicket:message key="message.import.description"></wicket:message> <wicket:message key="message.import.settings"></wicket:message><a wicket:id="change.settings"><wicket:message key="message.import.settings.change"></wicket:message></a>.</p>
+						<p class="small"><em><wicket:message key="message.import.note"></wicket:message> <span class="warning"><wicket:message key="message.import.note.highlight"></wicket:message></span></em></p>
+					</div>
+					<div class="span3 hidden-phone">
+						<div class="badge-image">
+							<img src="assets/img/admin/users/import.png"/>
+						</div>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12"><hr /></div>
+				</div>
+				<form wicket:id="form" class="form-horizontal">
+					<div class="row-fluid">
+						<div class="span2">
+							<button class="btn btn-info" wicket:id="retrieveUsers"><wicket:message key="button.retrieve"></wicket:message></button>
+						</div>
+						<div class="span10">
+							<div class="validation results"><pre wicket:id="userRetrievalInfo"></pre></div>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12" wicket:id="usersList"></div>
+					</div>
+					<div class="row-fluid">
+						<div class="span6 required">
+							<label class="control-label" for="userRole">
+								<span><wicket:message key="label.userRole"></wicket:message>:</span>
+							</label>
+							<select id="userRole" wicket:id="userRole"></select>
+						</div>
+						<div class="span6">
+							<label class="control-label" for="registrationMail">
+								<wicket:message key="label.registrationMail"></wicket:message>
+							</label>
+							<div class="checkbox">
+								<input type="checkbox" id="registrationMail" wicket:id="registrationMail" style="margin-left:10px"/></div>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="form-actions">
+								<button class="pull-right btn btn-primary" wicket:id="import"><wicket:message key="button.import"></wicket:message></button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</section>
+		</wicket:extend>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Tuotteet</entry>
+<entry key="product.deleted">Tuote nimeltään ${name} on poistettu.</entry>
+<entry key="releasedate.column">Julkaisupäivä</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="version.column">Versio</entry>
+<entry key="page.title">Tuotteet</entry>
+<entry key="name.column">Nimi</entry>
+<entry key="description.column">Kuvaus</entry>
+<entry key="delete.product.batch.button">Poista tuote</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="product.selected.deleted">Valitut tuotteet on poistettu.</entry>
+<entry key="delete.confirmation.modal.message">Oletko aivan varma, että haluat poistaa valitun tuotteet/valitut tuotteet?
+Tätä toimintoa ei voi kumota!</entry>
+<entry key="edit.link.text">Muokkaa tuotetta</entry>
+<entry key="create.product.button">Luo tuote</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+</properties>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="name.javax.validation.constraints.NotNull.message">Bitte einen Teamnamen angeben</entry>
+<entry key="label.add.userrole">Rolle des neuen Nutzers</entry>
+<entry key="column.head.role">Rolle</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Der Teamname muss mindestes ${min} Zeichen lang sein</entry>
+<entry key="column.head.member">Benutzer</entry>
+<entry key="placeholder.add.userName">Tippen für Autovervollständigung</entry>
+<entry key="placeholder.name">Der Name des Teams</entry>
+<entry key="page.title.new">Team erstellen</entry>
+<entry key="td.members.actions.batch.remove">Ausgewählte(n) Benutzer aus ${name} entfernen</entry>
+<entry key="page.title.edit">${name} bearbeiten</entry>
+<entry key="button.add.save">Benutzer zu ${name} hinzufügen</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.description">Beschreibung</entry>
+<entry key="label.add.username">Name des neuen Nutzers</entry>
+<entry key="button.update">Änderungen übernehmen</entry>
+<entry key="name.Required">Bitte einen Teamnamen angeben</entry>
+<entry key="label.list.title">${name} Mitglieder und deren Rollen</entry>
+<entry key="label.add.title">Einen Benutzer zu ${name} hinzufügen</entry>
+<entry key="error.user.notvalid">Der angegebene Benutzer ist ungültig!</entry>
+<entry key="delete.confirmation.modal.header">Ausgewählte Benutzer aus Team entfernen?</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie sicher, dass sie die ausgewählten Benutzer aus dem Team entfernen wollen?</entry>
+<entry key="delete.confirmation.modal.submit.text">Ja, Benutzer entfernen</entry>
+<entry key="delete.confirmation.modal.cancel.text">Nein, abbrechen</entry>
+<entry key="save.confirmed">Die Änderungen wurden gespeichert.</entry>
+<entry key="delete.confirmed">Die ausgewählten Benutzer wurden vom Team entfernt.</entry>
+</properties>

@@ -1,0 +1,60 @@
+.tree-node-info-panel hr {
+	margin: 5px 0;
+}
+
+.tree-controls {
+	background-color: #f5f5f5;
+}
+
+.tree-controls {
+	text-align: center;
+}
+
+.tree-controls .btn-group {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.tree-controls .dropdown-menu,.tree-controls .dropdown-menu li,.tree-controls .dropdown-menu,.tree-controls .dropdown-menu li a
+	{
+	text-align: left;
+}
+
+.tree-content a {
+	border: 1px solid transparent;
+}
+
+.tree-content a.selected {
+	border: 1px dotted #7d7d7d;
+	background-color: #ececec;
+}
+
+.tree-content a.red i[class^="icon-"],.tree-content a.red i[class*=" icon-"]
+	{
+	color: #e60033;
+}
+
+.tree-content a.yellow i[class^="icon-"],.tree-content a.yellow i[class*=" icon-"]
+	{
+	color: #FEC100;
+}
+
+.tree-content a.green i[class^="icon-"],.tree-content a.green i[class*=" icon-"]
+	{
+	color: #379f15;
+}
+
+.tree-content a.gray i[class^="icon-"],.tree-content a.gray i[class*=" icon-"]
+	{
+	color: #dddddd;
+}
+
+.tree-content a.over {
+	color: #aaa;
+}
+
+.tree-content a.over .tree-label > span {
+	text-decoration: line-through;
+}

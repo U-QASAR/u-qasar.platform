@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="metric.the">The Metric</entry>
+<entry key="metric.about.to.due">is due since last {0} days.</entry>
+<entry key="metric.needs.to.initialize">needs to be initialized for the first time.</entry>
+<entry key="delete.title">Delete notification</entry>
+<entry key="delete.message">Notification deleted!</entry>
+</properties>

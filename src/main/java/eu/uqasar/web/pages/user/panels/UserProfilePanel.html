@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <wicket:panel>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div class="control-group required" wicket:id="mailValidationBorder">
+                        <input type="text" class="input-block-level mail" id="mail"
+                               wicket:id="mail"
+                               wicket:message="placeholder:placeholder.mail" />
+                    </div>
+                    <div class="control-group required"
+                         wicket:id="userNameValidationBorder">
+                        <input type="text" class="input-block-level userName" id="userName"
+                               wicket:id="userName"
+                               wicket:message="placeholder:placeholder.userName" />
+                    </div>
+                    <div class="control-group" wicket:id="passwordValidationBorder">
+                        <input type="password" class="input-block-level password"
+                               id="password" wicket:id="password"
+                               wicket:message="placeholder:placeholder.password"
+                               maxlength="256" />
+                    </div>
+                    <div class="control-group"
+                         wicket:id="confirmPasswordValidationBorder">
+                        <input type="password" class="input-block-level confirmPassword"
+                               id="confirmPassword" wicket:id="confirmPassword"
+                               wicket:message="placeholder:placeholder.password.confirm"
+                               maxlength="256" />
+                    </div>
+                    <p>
+                        <em><wicket:message key="help.password.twicetochange"></wicket:message></em>
+                    </p>
+                </div>
+                <div class="span6">
+                    <div class="control-group required"
+                         wicket:id="firstNameValidationBorder">
+                        <input type="text" class="input-block-level firstName" id="firstName"
+                               wicket:id="firstName"
+                               wicket:message="placeholder:placeholder.firstName" />
+                    </div>
+                    <div class="control-group required"
+                         wicket:id="lastNameValidationBorder">
+                        <input type="text" class="input-block-level lastName" id="lastName"
+                               wicket:id="lastName"
+                               wicket:message="placeholder:placeholder.lastName" />
+                    </div>
+                    <div class="control-group">
+                        <label wicket:for="gender"><wicket:message key="label.gender"></wicket:message></label>
+                        <select id="gender" wicket:id="gender"></select>
+                    </div>
+                    <div class="control-group">
+                        <label wicket:for="birthday"><wicket:message key="label.birthday"></wicket:message></label>
+                        <div class="input-append">
+                            <input wicket:id="birthday" name="birthday" id="birthday" type="text"
+                                   class="input-small" /> <span class="add-on" autocomplete="off"><i
+                                    class="icon-calendar"></i></span>
+                        </div>
+                        <small wicket:id="age" style="vertical-align: text-bottom;"></small>
+                    </div>
+                     <div class="control-group required" wicket:id="companyContainer">
+                        <label wicket:for="company"><wicket:message key="label.company"></wicket:message></label>
+                        <select wicket:id="company"  class="input-block-level"></select>
+                    </div>       
+                    <div class="control-group required" wicket:id="roleContainer">
+                        <label wicket:for="role"><wicket:message key="label.role"></wicket:message></label>
+                        <select wicket:id="role" class="input-block-level"></select>
+                    </div> 
+                                
+                </div>
+            </div>
+        </wicket:panel>
+    </body>
+</html>

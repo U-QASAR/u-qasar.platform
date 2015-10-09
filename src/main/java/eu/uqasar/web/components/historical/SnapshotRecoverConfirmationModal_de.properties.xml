@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="snapshot.confirmation.modal.message">Do you really want to save the current values to a Snapshot?</entry>
+<entry key="snapshot.confirmation.modal.header">Create a Snapshot</entry>
+<entry key="snapshot.confirmation.modal.submit.text">Save Snapshot</entry>
+<entry key="snapshot.confirmation.modal.cancel.text">Cancel</entry>
+</properties>

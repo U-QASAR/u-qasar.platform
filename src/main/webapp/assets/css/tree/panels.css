@@ -1,0 +1,107 @@
+@IMPORT url("../team/user-profile-badges.css");
+
+.view .row-fluid [class*="span"] {
+	min-height: 20px !important;
+}
+
+
+.view .suggestion {
+	font-style: italic; 
+	font-size: 24px; 
+	color:orange;
+}
+
+.view label {
+	cursor: default;
+}
+
+.view .description p {
+	text-align: justify;
+}
+
+.view .quality.status {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	overflow: visible;
+}
+
+.view .quality.status .value {
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	font-size: 150%;
+	top: 33%;
+	text-shadow: 0px 0px 3px #202020;
+}
+
+.view .metric.value {
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+	font-weight: bold;
+	text-align: right;
+	position: relative;
+	font-size: 170%;
+	padding-top: 22px;
+	padding-right: 75px;
+}
+
+.view .quality.status.red {
+	background-color: #e60033;
+}
+
+.view .quality.status.red .value {
+	color: #fff;
+}
+
+.view .quality.status.yellow {
+	background-color: #FEC100;
+}
+
+.view .quality.status.yellow .value {
+	color: #fff;
+}
+
+.view .quality.status.green {
+	background-color: #379f15;
+}
+
+.view .quality.status.green .value {
+	color: #fff;
+}
+
+.view .quality.status.gray {
+	background-color: #dddddd;
+}
+
+.view .quality.status.gray .value {
+	color: #fff;
+}
+
+
+.view .team {
+	overflow: hidden;
+}
+
+.view .team .member {
+	float: left;
+	margin: 5px 10px;
+}
+
+.view .progresstext {
+	font-size: 75%;
+	color: #777;
+}
+
+.view .target {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.view .inline {
+	display: inline;
+}

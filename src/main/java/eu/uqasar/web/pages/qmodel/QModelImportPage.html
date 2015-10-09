@@ -1,0 +1,44 @@
+<html>
+<wicket:extend xmlns:wicket>
+	<div class="row">
+		<div class="span12">
+			<section>
+			<form wicket:id="form">
+        			<div class="page-header">
+					<h2 class="name"><wicket:message key="qmodel.importFile"/>
+ 					</h2>
+		        	</div>
+	
+			
+	<div style="display:table;line-height:25px">
+		<div class="span8"></div>
+		<div class="span3">
+			<a wicket:id="xmlLink"><wicket:message key="qmodel.xml.link" /></a>
+		</div>
+		<div class="span8"></div>
+		<div class="span3">
+			<a wicket:id="jsonLink"><wicket:message key="qmodel.json.link" /></a>
+		</div>
+	</div>
+	
+	
+		<div class="row-fluid">
+					<div class="span9">
+						<wicket:message key="qmodel.selectFile"/>: <br/>
+						<input wicket:id="file" type="file" accept=".xml, .json" /> (<span wicket:id="max"></span> max)<br/><br/>
+						<div wicket:id="progress"></div>
+    				</div>
+				
+					<div class="span1">
+						<input type="submit" value="Upload file" class="btn btn-primary"/>	
+					</div>
+				</div>
+				
+	
+				</form>	
+			</section>
+		</div>
+	</div>
+
+</wicket:extend>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="tooltip.tree.node.move.down">Siirrä alaspäin</entry>
+<entry key="tooltip.tree.node.move.up">Siirrä ylöspäin</entry>
+<entry key="button.tree.new.project">Projekti</entry>
+<entry key="tooltip.tree.node.delete">Poista</entry>
+<entry key="button.tree.new.objective">Laatutavoite</entry>
+<entry key="button.tree.new.metric">Metriikka</entry>
+<entry key="button.tree.new.indicator">Laatuindikaattori</entry>
+<entry key="tooltip.tree.node.edit">Editoi</entry>
+</properties>

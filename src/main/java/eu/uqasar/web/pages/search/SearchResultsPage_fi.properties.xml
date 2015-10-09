@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="page.title.resultsfor">Hakutulokset kohteelle »{0}«</entry>
+    <entry key="page.title.empty">Haku</entry>
+    <entry key="label.search.term">Hakutermi</entry>
+    <entry key="button.search">Hae</entry>
+</properties>
+

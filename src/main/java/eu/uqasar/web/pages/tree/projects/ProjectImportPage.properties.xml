@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="upload.button">Upload project</entry>
+<entry key="import.importFile">Import a project</entry>
+<entry key="page.title">Project import</entry>
+<entry key="import.selectFile">Select file (json / xml)</entry>
+<entry key="import.importError">Upload failed</entry>
+<entry key="import.importMessage">Your project has been uploaded successfully</entry>
+<entry key="import.key.unique">Review the field "short name", there is already a quality project with that value. The value should be unique</entry>
+</properties>

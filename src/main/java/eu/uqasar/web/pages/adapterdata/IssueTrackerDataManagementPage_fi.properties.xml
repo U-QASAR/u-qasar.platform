@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Jira-mittaukset</entry>
+<entry key="measurement.deleted">Mittaus/mittaukset ${name} on poistettu.</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="page.title">Jira-mittaukset</entry>
+<entry key="key.column">Projektiavain</entry>
+<entry key="self.column">URL</entry>
+<entry key="metric.column">JIRA-metriikka</entry>
+<entry key="timestamp.column">Päiväys</entry>
+<entry key="edit.column">Muokkaa</entry>
+<entry key="jsonContent.column">Mittauksen sisältö</entry>
+<entry key="delete.jira.batch.button">Poista mittaukset</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="jirameasurement.selected.deleted">Valitut mittaukset on poistettu.</entry>
+<entry key="delete.confirmation.modal.message">Olet täysin varma, että haluat poistaa valitut mittaukset? Tätä toimintoa ei voida peruuttaa!</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="action.column">Toiminnot</entry>
+<entry key="update.measurements.button">Päivitä mittaukset</entry>
+<entry key="measurements.updated">Mittaukset on päivitetty.</entry>
+</properties>

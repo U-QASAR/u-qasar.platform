@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Jira Measurements</entry>
+<entry key="measurement.deleted">Measurement ${name} has been deleted.</entry>
+<entry key="delete.confirmation.modal.submit.text">Delete</entry>
+<entry key="page.title">Jira Measurements</entry>
+<entry key="key.column">Project Key</entry>
+<entry key="self.column">Issue URL</entry>
+<entry key="metric.column">JIRA Metric</entry>
+<entry key="edit.column">Edit</entry>
+<entry key="timestamp.column">Snapshot Date</entry>
+<entry key="jsonContent.column">Issue Content</entry>
+<entry key="delete.jira.batch.button">Delete Measurements</entry>
+<entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="jirameasurement.selected.deleted">Selected Measurements have been deleted.</entry>
+<entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Measurement(s)?
+This action cannot be undone!</entry>
+<entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
+<entry key="action.column">Actions</entry>
+<entry key="update.measurements.button">Update Measurements</entry>
+<entry key="measurements.updated">Measurements have been updated.</entry>
+</properties>

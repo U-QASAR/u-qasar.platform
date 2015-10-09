@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="form" autocomplete="off">
+                <input style="display:none" />
+                <input type="password" style="display:none" />
+                <div class="row-fluid">
+                    <div class="span12">
+                        <ul class="nav nav-pills nav-stacked visible-phone" id="profileTabsPhone">
+                            <li><a href="#Profile" data-toggle="tab"><wicket:message key="label.tabs.profile"></wicket:message></a></li>
+                            <li><a href="#Picture" data-toggle="tab"><wicket:message key="label.tabs.picture"></wicket:message></a></li>
+                            <li><a href="#Skills" data-toggle="tab"><wicket:message key="label.tabs.skills"></wicket:message></a></li>
+                        </ul>
+                        <ul class="nav nav-pills hidden-phone" id="profileTabs">
+                            <li><a href="#Profile" data-toggle="tab"><wicket:message key="label.tabs.profile"></wicket:message></a></li>
+                            <li><a href="#Picture" data-toggle="tab"><wicket:message key="label.tabs.picture"></wicket:message></a></li>
+                            <li><a href="#Skills" data-toggle="tab"><wicket:message key="label.tabs.skills"></wicket:message></a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="Profile" wicket:id="userPanel"></div>
+                            <div class="tab-pane" id="Picture" wicket:id="picturePanel"></div>
+                            <div class="tab-pane" id="Skills" wicket:id="skillsPanel"></div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" wicket:id="submitForm">
+                                <wicket:message key="button.save"></wicket:message>
+                            </button>
+                            <button type="button" class="btn" wicket:id="cancel">
+                                <wicket:message key="button.cancel"></wicket:message>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <script type="text/javascript">
+                var containerId = $('#profileTabsPhone').is(":visible") ? "#profileTabsPhone" : "#profileTabs";
+                $(function() {
+                    activateTabHashing(containerId, '#Profile');
+                });
+            </script>
+        </wicket:panel>
+    </body>
+</html>

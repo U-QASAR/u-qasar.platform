@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="help.from.address">Anna lähettäjän sähköpostiosoite. Se näytetään viestin lähettäjän osoitteena vastaanottajalle.</entry>
+<entry key="label.to.address">Vastaanottajan sähköpostiosoite</entry>
+<entry key="label.server">SMTP-palvelinosoite</entry>
+<entry key="label.password">Salasana</entry>
+<entry key="placeholder.password">LDAP-käyttäjän salasana</entry>
+<entry key="page.title">Sähköpostipalvelinasetukset</entry>
+<entry key="placeholder.user">admin@example.com</entry>
+<entry key="label.from.user">Lähettäjän nimi (From)</entry>
+<entry key="label.user">Käyttäjätunnus</entry>
+<entry key="help.server">Anna SMTP-palvelimen selvitettävissä oleva osoite (IP tai DNS)</entry>
+<entry key="page.head.mail.test">Lähetä testiviesti</entry>
+<entry key="button.connection.validate.text">Validoi asetukset</entry>
+<entry key="help.from.user">Anna lähettäjän nimi. Se näytetään viestin lähettäjän nimenä vastaanottajalle.</entry>
+<entry key="help.to.address">Anna sähköpostiosoite, johon haluat lähettää testiviestin.</entry>
+<entry key="page.head.mail.connection.settings">Sähköpostipalvelinasetukset</entry>
+<entry key="label.auth.required">Autentikointi vaadittu?</entry>
+<entry key="help.user">Anna käyttäjätunnus, jonka on sallittu lähettää sähköpostia</entry>
+<entry key="content.mail.text">Tämä on testiviesti U-QASAR-alustalta. Palvelinasetukset ovat oikeat.</entry>
+<entry key="help.to.subject">Anna testiviestin otsikko.</entry>
+<entry key="placeholder.from.address">no-reply@example.com</entry>
+<entry key="placeholder.from.user">U-QASAR</entry>
+<entry key="label.auth.tls">Ota käyttöön TLS?</entry>
+<entry key="placeholder.server">example.com tai 192.168.0.1</entry>
+<entry key="label.validation.success">Testiviesti lähetettiin onnistuneesti.</entry>
+<entry key="label.port">SMTP-palvelinportti</entry>
+<entry key="placeholder.port">25</entry>
+<entry key="label.from.address">Lähettäjän sähköpostiosoite (From)</entry>
+<entry key="placeholder.to.address">me@example.com</entry>
+<entry key="label.to.subject">Testiviestin otsikko</entry>
+<entry key="placeholder.to.subject">U-QASAR Testiviesti</entry>
+</properties>

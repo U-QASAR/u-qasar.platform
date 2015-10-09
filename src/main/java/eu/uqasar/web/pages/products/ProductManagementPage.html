@@ -1,0 +1,61 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />
+			</h2>
+		</div>
+		<div>
+			<form wicket:id="deleteForm">
+			<div wicket:id="filter"></div>
+				<div wicket:id="productGroup">
+					<div wicket:id="productsContainer">
+						<table class="table table-striped tablesorter" id="product-list">
+							<thead>
+								<tr>
+									<td colspan="2" style="padding-left: 0px;">
+										<a class="btn btn-primary" wicket:id="addProductLink">
+											<wicket:message key="create.product.button" />
+										</a>
+									</td>
+									<td colspan="3" class="navigator right"><div wicket:id="navigatorHead"></div></td>
+								</tr>
+								<tr>
+									<th class="checkbox" style="width: 05%"><input type="checkbox" wicket:id="productGroupSelector" /></th>
+									<th style="width: 30%"><wicket:message key="name.column" /></th>
+									<th style="width: 30%"><wicket:message key="description.column" /></th>
+									<th style="width: 15%"><wicket:message key="version.column" /></th>
+									<th style="width: 20%"><wicket:message key="releasedate.column" /></th>									
+									<th style="width: 5%"><wicket:message key="action.column" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="products">
+									<td class="checkbox"><input type="checkbox" wicket:id="productCheck" /></td>
+									<td><span wicket:id="name"></span></td>
+									<td><span wicket:id="description"></span></td>
+									<td><span wicket:id="version"></span></td>
+									<td><span wicket:id="releaseDate"></span></td>									
+									<td>
+										<a class="btn btn-small" wicket:message="title:edit.link.text" wicket:id="edit"><i class="icon-edit"></i></a>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2" style="padding-left: 0px;">
+										<a class="btn btn-danger" wicket:id="deleteSelected">
+											<wicket:message key="delete.product.batch.button" />
+										</a>
+									</td>
+									<td colspan="3" class="navigator right"><div wicket:id="navigatorFoot"></div></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div wicket:id="deleteConfirmationModal"></div>
+</wicket:extend>

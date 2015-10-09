@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="button.filter.apply">Käytä</entry>
+	<entry key="label.filter.version">Versio</entry>
+	<entry key="label.filter.title">Suodata Tuotteita</entry>
+	<entry key="button.filter.clear">Tyhjennä</entry>
+	<entry key="label.filter.name">Nimi</entry>
+	<entry key="label.filter.dateorder">Järjestä päiväyksen mukaan</entry>
+</properties>

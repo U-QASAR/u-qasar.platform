@@ -1,0 +1,64 @@
+<wicket:panel xmlns:wicket>
+	<form wicket:id="saveForm">
+		<div wicket:id="dataGroup">
+			<div wicket:id="dataContainer">
+				<div>
+					<input type="checkbox" wicket:id="dataGroupSelector" />&nbsp;
+					<wicket:message key="all.select" />
+					<p></p>
+					<ul wicket:id="qmlist">
+						<li style="list-style-type: none;" wicket:id="qmodel">
+							<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp;  
+							<i wicket:id="icon"></i> <strong wicket:id="name"></strong>
+						</li>
+						<li style="list-style-type: none;">
+							<ul wicket:id="qmlist">
+								<li style="list-style-type: none;" wicket:id="qobjective">
+									<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp; <i
+									wicket:id="icon"></i> <strong wicket:id="name"></strong>
+									<br>
+									<span wicket:id="tags">
+										<small>
+										<i class="icon-tags"></i>
+										<i><span wicket:id="tag"></span></i>
+										</small>
+									</span>
+								</li>
+								<li style="list-style-type: none;">
+									<ul wicket:id="qmlist">
+										<li style="list-style-type: none;" wicket:id="qindicator">
+											<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp;
+											<i wicket:id="icon"></i> <strong wicket:id="name"></strong>
+											<br>
+											<span wicket:id="tags">
+												<small>
+												<i class="icon-tags"></i>
+												<i><span wicket:id="tag"></span></i>
+												</small>
+											</span>
+										</li>
+										<li style="list-style-type: none;">
+											<ul wicket:id="qmlist">
+												<li style="list-style-type: none;" wicket:id="qmetric">
+													<input type="checkbox" wicket:id="nodeCheck" />&nbsp;&nbsp;
+													<i wicket:id="icon"></i> <strong wicket:id="name"></strong>
+													<br>
+													<span wicket:id="tags">
+														<small>
+														<i class="icon-tags"></i>
+														<i><span wicket:id="tag"></span></i>
+														</small>
+													</span>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</form>
+</wicket:panel>

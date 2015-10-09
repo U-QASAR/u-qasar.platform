@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="snapshot.confirmation.modal.message">You are about to create a Snapshot of the tree storing all the current values with a TimeStamp.</entry>
+<entry key="snapshot.confirmation.modal.message.name">Please, provide a name to identify this Snapshot:</entry>
+<entry key="snapshot.confirmation.modal.header">Create a Snapshot</entry>
+<entry key="snapshot.confirmation.modal.submit.text">Save Snapshot</entry>
+<entry key="snapshot.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="button.snapshot.confirm">Save</entry>
+<entry key="button.snapshot.cancel">Cancel</entry>
+</properties>

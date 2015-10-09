@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html>
+<head>
+</head>
+<body>
+	<wicket:panel xmlns:wicket>
+		<div class="view project">
+			<form>
+				<div class="row-fluid">
+					<div class="span12">
+						<h2 class="name">
+							<i class="icon" wicket:id="icon"></i> <span
+								wicket:id="name"></span> <span class="actions"> <a
+								wicket:id="link.edit" wicket:message="title:button.edit">
+									<i class="icon-pencil"></i><wicket:message key="button.edit" />
+							</a>
+							</span>
+						</h2>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span6">
+						<label class="key inline"><wicket:message
+								key="label.key" />:</label> <span class="key"
+							wicket:id="nodeKey"></span>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span4">
+						<label class="key inline"><wicket:message
+								key="label.edition" />:</label>
+								<span wicket:id="edition"></span>
+					</div>
+ 				</div>
+ 				<hr />
+ 				<div class="row-fluid">
+					<div class="span4">
+						<label class="key inline"><wicket:message
+								key="label.company" />:</label>
+								<span wicket:id="company"></span>
+					</div>
+ 				</div>
+ 				<hr />
+ 				<div class="row-fluid">
+ 					<div class="span4">
+						<label class="key inline">
+						<wicket:message key="label.active" />:</label>
+						<img wicket:id="isActive" />
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span4">
+						<label class="startDate inline"><wicket:message
+								key="label.date.update" />:</label> <span class="startDate"
+							wicket:id="updateDate"></span>
+					</div>
+ 				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<label class="description" for="description"><wicket:message
+								key="label.description" />:</label>
+						<div id="description" class="description"
+							wicket:id="description"></div>
+					</div>
+				</div>
+				<hr />
+			</form>
+		</div>
+	</wicket:panel>
+</body>
+</html>

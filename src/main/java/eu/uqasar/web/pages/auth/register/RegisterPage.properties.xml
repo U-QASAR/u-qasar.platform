@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.password.confirm">Password confirmation</entry>
+<entry key="label.lastName">Last name</entry>
+<entry key="lastName.javax.validation.constraints.NotNull.message">Please provide your last name</entry>
+<entry key="placeholder.mail">your eMail address</entry>
+<entry key="lastName.javax.validation.constraints.Size.message.String">Last name name must be at least ${min} characters long</entry>
+<entry key="confirmPassword.EqualPasswordInputValidator">Your passwords did not match</entry>
+<entry key="label.userName">User name</entry>
+<entry key="placeholder.password.confirm">your password again</entry>
+<entry key="page.title">Register</entry>
+<entry key="lastName.Required">Please provide your last name</entry>
+<entry key="userName.javax.validation.constraints.NotNull.message">Please provide a username</entry>
+<entry key="label.password">Password</entry>
+<entry key="userName.javax.validation.constraints.Size.message.String">Username must be between ${min} and ${max} characters long</entry>
+<entry key="password.PatternValidator">Your password does not meet the requirements</entry>
+<entry key="label.firstName">First name</entry>
+<entry key="mail.Required">Please provide an email address</entry>
+<entry key="placeholder.lastName">your last name</entry>
+<entry key="button.save">Register</entry>
+<entry key="placeholder.userName">your user name</entry>
+<entry key="firstName.javax.validation.constraints.NotNull.message">Please provide your first name</entry>
+<entry key="error.user.register.notification">There was an error sending the registration mail!</entry>
+<entry key="confirmPassword.Required">Please confirm your password</entry>
+<entry key="placeholder.password">your password</entry>
+<entry key="mail.javax.validation.constraints.NotNull.message">Please provide an email address</entry>
+<entry key="userName.Required">Please provide a username</entry>
+<entry key="mail.org.hibernate.validator.constraints.Email.message">Please provide a valid email address</entry>
+<entry key="error.user.exists.userName">A user with the username ${userName} already exists!</entry>
+<entry key="placeholder.firstName">your first name</entry>
+<entry key="help.mail">Enter a valid email address. This will be your login.</entry>
+<entry key="firstName.javax.validation.constraints.Size.message.String">First name name must be at least ${min} characters long</entry>
+<entry key="help.userName"><![CDATA[This username will be part of the URL for your public profile (e.g. <em>uqasar.eu/user/<strong>username</strong></em>).]]></entry>
+<entry key="firstName.Required">Please provide your first name</entry>
+<entry key="error.user.exists.mail">The email address ${mail} is already registered in the system!</entry>
+<entry key="label.mail">eMail</entry>
+<entry key="password.Required">Please provide a password</entry>
+<entry key="help.password">Password must contain at least 1 digit and 1 lower case and 1 upper case letter, 1 symbol and must be between 6 and 256 characters long.</entry>
+<entry key="userName.javax.validation.constraints.Pattern.message.String">Username must only contain lower and upper case letters and digits</entry>
+</properties>

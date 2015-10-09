@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="column.head.team">Team</entry>
+<entry key="label.add.userrole">Role of ${fullName} in the Team</entry>
+<entry key="section.teams.title">Team Memberships of ${fullName}</entry>
+<entry key="column.head.role">Role</entry>
+<entry key="page.title.new">Create new User</entry>
+<entry key="page.title.edit">Edit ${fullName}</entry>
+<entry key="label.add.teamname">Name of the existing Team</entry>
+<entry key="button.add.save">Add ${fullName} to the Team</entry>
+<entry key="placeholder.add.teamname">type for auto completion</entry>
+<entry key="td.teams.actions.batch.remove">Remove ${fullName} from selected team(s)</entry>
+<entry key="button.update">Commit changes</entry>
+<entry key="label.add.title">Assign a Team to ${fullName}</entry>
+<entry key="error.team.notvalid">The team to be added is not valid!</entry>
+<entry key="error.user.exists.mail">The email address ${mail} is already registered in the system!</entry>
+<entry key="error.user.exists.userName">A user with the username ${userName} already exists!</entry>
+<entry key="error.user.register.notification">There was an error sending the registration mail!</entry>
+<entry key="delete.confirmation.modal.header">Remove user from teams?</entry>
+<entry key="delete.confirmation.modal.message">Are you sure you want to remove the user from all the selected teams?</entry>
+<entry key="delete.confirmation.modal.submit.text">Yes, leave the teams</entry>
+<entry key="delete.confirmation.modal.cancel.text">No, cancel removal</entry>
+<entry key="save.confirmed">Your changes have been saved.</entry>
+<entry key="add.confirmed">You created the new user successfully.</entry>
+<entry key="cancel.confirmed">You canceled the process.</entry>
+<entry key="delete.confirmed"> ${fullName} has been removed from selected teams.</entry>
+</properties>

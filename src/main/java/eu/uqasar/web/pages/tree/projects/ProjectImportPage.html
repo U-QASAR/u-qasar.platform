@@ -1,0 +1,23 @@
+<wicket:extend xmlns:wicket>
+	<div class="row">
+		<div class="span12">
+			<section>
+				<div class="page-header">
+					<h2><wicket:message key="import.importFile"/></h2>
+				</div>
+							
+				<form wicket:id="form">
+			        <br/><br/>	
+					<div class="row-fluid headline">
+						<div class="span12">
+							<wicket:message key="import.selectFile"/><br/>
+							<input wicket:id="file" type="file"/> (<span wicket:id="max"></span> max)<br/><br/>
+							<div wicket:id="progress"></div>				
+							<input type="submit" class="btn btn-primary" wicket:id="uploadButton"/>
+						</div>
+					</div>
+				</form>	
+			</section>
+		</div>
+	</div>
+</wicket:extend>

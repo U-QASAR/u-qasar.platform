@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="bug.report.title">Fehlerbericht erstellen</entry>
+	<entry key="bug.report.header">Fehlerbericht erstellen</entry>
+	<entry key="bug.report.message">Sie können dem U-QASAR Support Team helfen Fehler zu beheben, indem Sie einen Fehlerbericht mit Hilfe des nachfolgenden Formulars erstellen.</entry>
+	<entry key="error.header">Oops - das sollte eigentlich nicht passieren...</entry>
+	<entry key="error.message">Sie können dem U-QASAR Support Team helfen den von Ihnen entdeckten Fehler zu beheben, indem Sie einen Fehlerbericht mit Hilfe des nachfolgenden Formulars erstellen.</entry>
+	<entry key="label.userName">Ihr Name</entry>
+	<entry key="label.userMail">Ihre e-Mail Adresse</entry>
+	<entry key="desc.input.placeholder">Bitte beschreiben Sie kurz, wie der Fehler zu reproduzieren ist...</entry>
+	<entry key="submit.text">Bericht übermitteln</entry>
+	<entry key="show.stacktrace">Stacktrace anzeigen</entry>
+	<entry key="success.message">Vielen Dank für das Übermitteln des Fehlerberichts.</entry>
+	<entry key="fail.message">Der Fehlerbericht konnte nicht versendet werden!</entry>
+	<entry key="home.link.message">Alternativ können Sie einfach zur ${homeLink} zurückkehren...</entry>
+	<entry key="home.link.text">Startseite</entry>
+</properties>

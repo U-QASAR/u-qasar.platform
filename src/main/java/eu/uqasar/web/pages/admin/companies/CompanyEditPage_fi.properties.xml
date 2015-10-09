@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title.new">Luo uusi yritys</entry>
+<entry key="page.title.edit">Muokkaa kohdetta ${name}</entry>
+<entry key="label.profile">Profiili</entry>
+
+<entry key="label.name">Nimi</entry>
+<entry key="label.shortName">Lyhenne</entry>
+<entry key="label.street">Katuosoite</entry>
+<entry key="label.zipcode">Postinumero</entry>
+<entry key="label.city">Postitoimipaikka</entry>
+<entry key="label.country">Maa</entry>
+<entry key="label.phone">Puhelin</entry>
+<entry key="label.fax">Faksi</entry>
+
+<entry key="placeholder.name">Yrityksen nimi</entry>
+<entry key="placeholder.shortName">Yrityksen lyhenne</entry>
+<entry key="placeholder.street">Katuosoite</entry>
+<entry key="placeholder.number">Numero</entry>
+<entry key="placeholder.zipcode">Postinumero</entry>
+<entry key="placeholder.city">Postitoimipaikka</entry>
+<entry key="placeholder.country">Maa</entry>
+<entry key="placeholder.phone">Puhelin</entry>
+<entry key="placeholder.fax">Faksi</entry>
+<entry key="message.save">Muutoksesi on tallennettu</entry>
+<entry key="message.save.new">Loit uuden yrityksen onnistuneesti</entry>
+<entry key="message.cancel">Peruutit toiminnon</entry>
+</properties>

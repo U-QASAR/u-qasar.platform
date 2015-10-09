@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Muokkaa asetuksia</entry>
+<entry key="name.Required">Anna nimi asetukselle</entry>
+<entry key="page.copy.title">Kopio asetus</entry>
+<entry key="form.create.header">Luo uusi asetus</entry>
+<entry key="page.create.title">Luo asetus</entry>
+<entry key="submit.text">Tallenna</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Anna nimi asetukselle</entry>
+<entry key="form.edit.header">Muokkaa asetusta</entry>
+<entry key="name.input.placeholder">Anna nimi asetukselle...</entry>
+
+<entry key="saved.message">Asetus ${settingKey} on tallennettu</entry>
+
+<entry key="cancel.text">Peruuta</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Asetuksen nimen on oltava vähintään ${min} ja enintään ${max} merkkiä pitkä</entry>
+
+<entry key="key.input.label">Avain</entry>
+<entry key="value.input.label">Arvo</entry>
+
+<entry key="key.input.placeholder">Anna avain valitulle asetukselle...</entry>
+<entry key="value.input.placeholder">Anna arvo valitulle arvolle...</entry>
+
+<entry key="label.key">Avain</entry>
+<entry key="label.value">Arvo</entry>
+</properties>

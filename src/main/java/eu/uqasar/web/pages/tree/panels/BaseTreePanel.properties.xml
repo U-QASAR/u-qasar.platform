@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.product">Product</entry>
+<entry key="label.metric">Metric</entry>
+<entry key="label.date.end">End Date</entry>
+<entry key="label.date.start">Start Date</entry>
+<entry key="label.process">Process</entry>
+<entry key="label.quality.trend">Quality trend of ${name} </entry>
+<entry key="label.lcStage">LC Stage</entry>
+<entry key="label.operator">Operator</entry>
+<entry key="label.quality.value">Q Value</entry>
+<entry key="button.edit">Edit</entry>
+<entry key="label.indicator.value.expected">Expected Value</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.key">Short name</entry>
+<entry key="label.qmodel">Quality Model</entry>
+<entry key="label.description">Description</entry>
+<entry key="label.team">Team</entry>
+<entry key="label.indicator">Quality Indicator</entry>
+<entry key="label.metadata">Metadata</entry>
+<entry key="label.progLan">Programming Languages</entry>
+<entry key="label.itTool">Issue Tracking Tools</entry>
+<entry key="label.scmTool">Source Code Management Tools</entry>
+<entry key="label.saTool">Static Analysis Tools</entry>
+<entry key="label.tmTool">Test Management Tools</entry>
+<entry key="label.ciTool">Continuous Integration Tools</entry>
+<entry key="label.customerType">Customer Types</entry>
+<entry key="label.projectType">Project Types</entry>
+<entry key="label.softwareType">Software Types</entry>
+<entry key="label.softwareLicense">Software Licenses</entry>
+<entry key="label.topic">Topics</entry>
+<entry key="label.softwareDevelopmentMethodology">Software Development Methodologies</entry>
+</properties>

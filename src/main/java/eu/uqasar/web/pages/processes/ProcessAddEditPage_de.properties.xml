@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Prozess editieren</entry>
+<entry key="name.Required">Bitte ein Name für das Prozess eingeben</entry>
+<entry key="startdate.input.label">Startdatum</entry>
+<entry key="page.copy.title">Prozess kopieren</entry>
+<entry key="form.create.header">Ein neues Prozess erstellen</entry>
+<entry key="startDate.javax.validation.constraints.Future.message">Der Datum soll in der Zukunft sein</entry>
+<entry key="page.create.title">Prozess erstellen</entry>
+<entry key="endDate.Required">Bitte ein Enddatum eingeben</entry>
+<entry key="submit.text">Speichern</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Bitte ein Name für das neue Prozess eingeben</entry>
+<entry key="startDate.Required">Bitte ein Startdatum eingeben</entry>
+<entry key="description.input.placeholder">Bitte eine Beschreibung für das Prozess eingeben...</entry>
+<entry key="enddate.input.placeholder">Enddatum - (dd.mm.yyyy)</entry>
+<entry key="description.input.label">Beschreibung</entry>
+<entry key="startdate.input.placeholder">Startdatum eingeben - (dd.mm.yyyy)</entry>
+<entry key="form.edit.header">Prozess editieren</entry>
+<entry key="name.input.placeholder">Bitte ein Name für das Prozess eingeben...</entry>
+<entry key="saved.message">Das Prozess ${name} wurde gespeichert</entry>
+<entry key="canceled.message">Du hast das Prozess zurückgesetzt</entry>
+<entry key="startDate.IConverter">'${input}' ist kein valides Datum</entry>
+<entry key="endDate.javax.validation.constraints.NotNull.message">Bitte ein Enddatum eingeben</entry>
+<entry key="enddate.input.label">End date</entry>
+<entry key="startDate.javax.validation.constraints.NotNull.message">Bitte ein Startdatum eingeben</entry>
+<entry key="cancel.text">Abbrechen</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Der Prozessname muss zwischen ${min} und ${max} Zeichen lang sein</entry>
+<entry key="endDate.javax.validation.constraints.Future.message">Das Datum soll in der Zukunft sein</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="endDate.IConverter">'${input}' ist kein valides Datum</entry>
+<entry key="form.copy.header">Eine Kopie vom Prozess ${name} erstellen</entry>
+<entry key="add.confirmed">Du hast das neue Prozess erfolgreich erstellt.</entry>
+<entry key="date.message">Das Enddatum kann nicht früher oder gleich sein als das Startdatum</entry>
+</properties>

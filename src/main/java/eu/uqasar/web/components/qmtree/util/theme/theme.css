@@ -1,0 +1,125 @@
+.tree-theme-uqasar {
+	border: 1px solid #e5e5e5;
+	padding: 5px 10px;
+	overflow: auto;
+}
+
+.tree-theme-uqasar div.tree-subtree {
+	margin: 0px 0px 0px 12px;
+	padding: 0px;
+}
+
+.tree-theme-uqasar div.tree-branch {
+	margin: 0px;
+	padding: 0px;
+}
+
+.tree-theme-uqasar div.tree-branch-mid {
+	
+}
+
+.tree-theme-uqasar div.tree-branch-last {
+	
+}
+
+/* node */
+.tree-theme-uqasar span.tree-junction {
+	display: block;
+	float: left;
+	width: 18px;
+}
+
+.tree-theme-uqasar a.tree-junction-expanded {
+	display: block;
+	float: left;
+	width: 18px;
+	background-image: url(tree.gif);
+	background-position: -18px center;
+	background-repeat: no-repeat;
+	text-decoration: none;
+}
+
+.tree-theme-uqasar a.tree-junction-expanded:hover {
+	background-position: -54px center;
+}
+
+.tree-theme-uqasar a.tree-junction-collapsed {
+	display: block;
+	float: left;
+	width: 18px;
+	background-image: url(tree.gif);
+	background-position: 3px center;
+	background-repeat: no-repeat;
+	text-decoration: none;
+}
+
+.tree-theme-uqasar a.tree-junction-collapsed:hover {
+	background-position: -33px center;
+}
+
+.tree-theme-uqasar span.tree-content {
+	display: block;
+	margin-left: 18px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.tree-theme-uqasar .tree-label {
+}
+
+.tree-theme-uqasar i[class^="icon-"], 
+.tree-theme-uqasar i[class*=" icon-"] {
+	padding-right: 3px;
+} 
+
+
+/* tabletree */
+.tree-theme-uqasar table {
+	border-spacing: 0px;
+	border-collapse: collapse;
+}
+
+.tree-theme-uqasar tr.selected {
+	background-color: #fad184;
+}
+
+.tree-theme-uqasar td {
+	/* allow tree divs to fill complete td (regretfully height 100% on divs does not work) */
+	margin: 0px;
+	padding: 0px;
+}
+
+/* content */
+.tree-theme-uqasar span.tree-content a {
+	text-decoration: none;
+}
+
+.tree-theme-uqasar span.tree-content a:hover {
+	text-decoration: underline;
+}
+.tree-theme-uqasar .tree-folder-closed {
+	/*
+	padding-left: 20px;
+	background-image: url('folder-closed.png');
+	background-position: 3px 50%;
+	background-repeat: no-repeat;
+	*/
+}
+
+.tree-theme-uqasar .tree-folder-open {
+	/*
+	padding-left: 20px;
+	background-image: url('folder-open.png');
+	background-position: 3px 50%;
+	background-repeat: no-repeat;
+	*/
+}
+
+.tree-theme-uqasar .tree-folder-other {
+	/*
+	padding-left: 20px;
+	background-image: url('leaf.png');
+	background-position: 3px 50%;
+	background-repeat: no-repeat;
+	*/
+}

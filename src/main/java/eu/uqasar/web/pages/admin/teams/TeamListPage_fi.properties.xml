@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="td.teams.actions.edit">Muokkaa tiimiä</entry>
+<entry key="column.head.team">Tiimi</entry>
+<entry key="page.title">Tiimilista</entry>
+<entry key="column.head.actions">Toiminnot</entry>
+<entry key="column.head.actions.create">Luo tiimi</entry>
+<entry key="td.teams.actions.batch.remove">Poista tiimi(t)</entry>
+<entry key="column.head.members">Jäsenet</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="delete.confirmation.modal.message">Oletko täysin varma, että haluat poistaa tiimi(t)? Tätä toimintoa ei voi peruuttaa!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+<entry key="delete.confirmed">Valitut tiimit on poistettu.</entry>
+</properties>

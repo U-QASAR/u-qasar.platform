@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Bitte den/die Benutzer auswählen, mit denen man die Dashboard geteilt werden soll</entry>
+<entry key="column.head.user">Benutzer</entry>
+<entry key="column.head.role">Rolle</entry>
+<entry key="td.users.actions.batch.share">Die Dashboard mit dem ausgewählten Benutzer/den ausgewählten Benutzern teilen</entry>
+<entry key="td.users.actions.batch.share.cancel">Abbrechen</entry>
+<entry key="share.confirmation.modal.header">Teilen bestätigen</entry>
+<entry key="share.confirmation.modal.message">Sind Sie absolut sicher, dass Sie die Dashboard mit dem ausgewählten Benutzer/den ausgewählten Benutzern teilen wollen? Diese Aktion kann nicht widerrufen werden!</entry>
+<entry key="share.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="share.confirmation.modal.submit.text">Teilen</entry>
+<entry key="share.confirmed">Die Dashboard wurde mit dem ausgewählten Benutzer/den ausgewählten Benutzern geteilt.</entry>
+<entry key="canceled.message">Die Operation wurde abgebrochen.</entry>
+</properties>

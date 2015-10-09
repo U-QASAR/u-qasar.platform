@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.indicator.thresholds.limits">Kynnys</entry>
+<entry key="label.average">Kaava painotettu keskiarvo</entry>
+<entry key="page.title">U-QASAR</entry>
+<entry key="label.indicator.value.historic">Historiallinen</entry>
+<entry key="label.indicator.value.stats">Tilasto</entry>
+<entry key="label.indicator.value.last.update">Arvon viimeisin päivitys</entry>
+<entry key="label.indicator.value.target">Tavoitearvo</entry>
+<entry key="label.indicator.value.formula">Kaava</entry>
+<entry key="label.metric.script">Skripti</entry>
+<entry key="label.lcStage.current">Nykyinen</entry>
+<entry key="label.tools">Työkalut</entry>
+<entry key="label.metric.value">Arvo</entry>
+<entry key="label.metric.value.target">Tavoitearvo</entry>
+<entry key="button.save">Tallenna muutokset</entry>
+<entry key="button.cancel">Peruuta</entry>
+<entry key="label.indicator.purpose">Tarkoitus</entry>
+<entry key="label.description.check.richtext">Tekstin muotoilu</entry>
+<entry key="label.indicator.type">Tyyppi</entry>
+<entry key="label.indicator.weight">Paino</entry>
+<entry key="label.use.formula">Käytä kaavaa</entry>
+<entry key="label.total.weight.consumed">Kokonaispainosta kulutettu</entry>
+<entry key="label.non.use.formula">Arvo lasketaan käyttäen % saavutus</entry>
+<entry key="footer.text">&amp;copy; {0,number,####} U-QASAR-yhteenliittymä. Kaikki oikeudet pidätetään.</entry>
+<entry key="label.metric.provider">Metriikan tarjoaja</entry>
+<entry key="label.formula.editor">Kaava</entry>
+<entry key="label.svn.version">SVN-versio</entry>
+<entry key="label.unit">Yksikkö</entry>
+<entry key="label.last.updated">Viimeisin päivitys</entry>
+
+</properties>

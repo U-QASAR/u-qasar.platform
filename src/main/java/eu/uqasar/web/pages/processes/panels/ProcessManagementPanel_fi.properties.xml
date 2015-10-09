@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="label.filter.title">Suodata Prosesseja</entry>
+	<entry key="label.filter.name">Nimi</entry>
+	<entry key="label.filter.startDateOrder">Järjestä alkupäivämäärän mukaan</entry>
+	<entry key="label.filter.endDateOrder">Järjestä päättymispäivän mukaan</entry>
+	<entry key="button.filter.apply">Käytä</entry>
+	<entry key="button.filter.clear">Tyhjennä</entry>
+</properties>

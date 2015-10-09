@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="message.delete.metric"><![CDATA[Oletko varma, että haluat poistaa metriikan <strong>${name}</strong>?]]></entry>
+<entry key="button.delete.confirm">Kyllä, poista.</entry>
+<entry key="button.delete.cancel">Peruuta</entry>
+<entry key="message.delete.quality.indicator"><![CDATA[Oletko varma, että haluat poistaa laatuindikaattorin <strong>${name}</strong> ja kaikki siihen liittyvät metriikat {0}?]]></entry>
+<entry key="header.delete">Poista ${name}?</entry>
+<entry key="message.delete.quality.objective"><![CDATA[Oletko varma, että haluat poistaa laatutavoitteen <strong>${name}</strong> ja kaikki siihen liittyvät laatuindikaattorit {0} ja niiden metriikat?]]></entry>
+<entry key="message.delete.project"><![CDATA[Oletko varma, että haluat poistaa projektin <strong>${name}</strong> ja kaikki siihen liittyvät laatutavoitteet {0} niiden laatuindikaattorit ja niiden metriikat?]]></entry>
+</properties>

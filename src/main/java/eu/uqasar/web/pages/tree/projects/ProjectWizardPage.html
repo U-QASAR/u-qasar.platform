@@ -1,0 +1,23 @@
+<wicket:extend xmlns:wicket>
+    <script  type="text/javascript">
+    $(document).ready(function() {
+          $(".wicketExtensionsWizardButtonBar input[name='buttons:next']").addClass("btn btn-primary");
+          $(".wicketExtensionsWizardButtonBar input[name='buttons:cancel']").addClass("btn btn-danger");
+          $(".wicketExtensionsWizardButtonBar input[name='buttons:previous']").addClass("btn btn-inverse");
+          $(".wicketExtensionsWizardButtonBar input[name='buttons:finish']").addClass("btn btn-inverse");
+     });
+    </script>
+    <div class="row">
+        <div class="span12">
+            <section>
+                <div class="page-header">
+                    <h2><wicket:message key="wizard.header"/></h2>
+                </div>
+                <div class="span9">
+                    <div wicket:id="wizardPanel"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</wicket:extend>

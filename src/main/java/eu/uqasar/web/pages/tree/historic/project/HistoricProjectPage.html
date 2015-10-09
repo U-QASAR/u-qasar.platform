@@ -1,0 +1,53 @@
+<wicket:extend xmlns:wicket>
+	<section>
+		<div class="page-header">
+			<h2>
+				<wicket:message key="list.header" />&nbsp;-&nbsp; 
+				<span wicket:id="metricName"></span> 
+			</h2>
+		</div>
+		<div>
+			<form wicket:id="deleteForm">
+				<div wicket:id="dataGroup">
+					<div wicket:id="dataContainer">
+					<div wicket:id="chart"></div>
+						<table class="table table-striped tablesorter" id="historic-list">
+							<thead>
+								<tr>
+									<td colspan="7" class="navigator right"><div wicket:id="navigatorHead"></div></td>
+								</tr>
+								<tr>
+									<th style="width: 05%"><input type="checkbox" wicket:id="dataGroupSelector" /></th>
+ 									<th style="width: 30%"><wicket:message key="value.column" /></th>
+									<th style="width: 15%"><wicket:message key="lowerAcceptanceLimit.column" /></th>
+									<th style="width: 15%"><wicket:message key="upperAcceptanceLimit.column" /></th>
+									<th style="width: 20%"><wicket:message key="date.column" /></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr wicket:id="dataMeasurements">
+									<td><input type="checkbox" wicket:id="dataCheck" /></td>
+									<td><span wicket:id="value"></span></td>
+									<td><span wicket:id="lowerAcceptanceLimit"></span></td>
+									<td><span wicket:id="upperAcceptanceLimit"></span></td>
+									<td><span wicket:id="timeStamp"></span></td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="2" style="padding-left: 0px;">
+										<a class="btn btn-danger" wicket:id="deleteSelected">
+											<wicket:message key="delete.batch.button" />
+										</a>
+									</td>
+									<td colspan="5" class="navigator right"><div wicket:id="navigatorFoot"></div></td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div wicket:id="deleteConfirmationModal"></div>
+</wicket:extend>

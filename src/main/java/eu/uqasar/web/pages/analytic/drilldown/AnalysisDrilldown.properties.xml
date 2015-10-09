@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="title.header">Analysis Drilldown</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.query">Query</entry>
+<entry key="label.description">Description</entry>
+<entry key="label.drilldown.dimensions">Drilldown dimensions</entry>
+<entry key="label.results">Results</entry>
+</properties>

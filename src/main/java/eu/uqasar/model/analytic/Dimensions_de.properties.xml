@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.dimension.project">Project</entry>
+<entry key="label.dimension.status">Status</entry>
+<entry key="label.dimension.type">Type</entry>
+<entry key="label.dimension.priority">Priority</entry>
+<entry key="label.dimension.resolution">Resolution</entry>
+<entry key="label.dimension.assignee">Assignee</entry>
+<entry key="label.dimension.reporter">Reporter</entry>
+<entry key="label.dimension.creator">Creator</entry>
+<entry key="label.dimension.created">Created</entry>
+</properties>

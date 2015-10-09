@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Edit ${name}</entry>
+<entry key="label.objective.domain">Domain </entry>
+<entry key="label.objective.name">Name</entry>
+<entry key="form.name.max">Name size &lt; 255 characters</entry>
+<entry key="label.objective.upper.limit">Upper limit : </entry>
+<entry key="label.objective.lower.limit">Lower limit : </entry>
+<entry key="form.name.required">Name required</entry>
+<entry key="label.objective.paradigm">Paradigm </entry>
+<entry key="label.objective.purpose">Purpose</entry>
+<entry key="label.objective.limits">Valid values</entry>
+<entry key="label.objective.lcStage">Lc Stage</entry>
+<entry key="form.upperLimit.low">Low limit must be lower than upper limit</entry>
+<entry key="label.objective.version">Version</entry>
+<entry key="label.objective.checkboxCopy">Check if you want to create a copy of this quality objective</entry>
+<entry key="label.objective.targetValue">Target value</entry>
+<entry key="label.objective.weight">Weight</entry>
+</properties>

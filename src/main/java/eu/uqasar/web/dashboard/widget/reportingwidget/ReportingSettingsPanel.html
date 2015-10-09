@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+    <div style="margin: 10px;">
+        <form wicket:id="form">
+            <!-- Form for static Dropdown lists-->
+            <div>
+                <label for="metric">cube:</label> <select class="input-xlarge" wicket:id="cube" id="cube"></select>
+            </div>
+            <div>
+                <label for="metric">chartType:</label> <select class="input-xlarge" wicket:id=chartType id="chartType"></select>
+            </div>
+            <a wicket:id="submit" class="btn btn-primary">Save</a> <a wicket:id="cancel" class="btn">Cancel</a>
+
+         
+                <form wicket:id="formVoid">
+                    <!-- Form for Add Rule Dynamic Dropdown lists -->
+                    <div wicket:id="ruleContainer">
+                        <table class="table table-striped">
+                            <tr wicket:id="rulesListView" class="rulesListView">
+                                <td class="rules"><label for="metric">Rule:</label> <select class="input-xlarge"
+                                    wicket:id="rules" id="selectedRule"></select></td>
+                                <td class="additionalRules"><label for="metric">AdditionalRule:</label><select
+                                    class="input-xlarge" wicket:id="additionalRules" id="additionalRules"></select></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="span4" style="margin-top: 1.6em">
+                        <a wicket:id="add.rule" class="btn btn-primary"><span wicket:id="button.add.save"></span></a>
+                    </div>
+                </form>
+             
+        </form>
+    </div>
+
+</wicket:panel>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.source.uqasar">Internal</entry>
+<entry key="label.source.ldap">LDAP</entry>
+</properties>

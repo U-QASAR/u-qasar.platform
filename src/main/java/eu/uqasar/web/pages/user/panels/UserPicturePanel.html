@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <wicket:panel>
+            <form wicket:id="fileUploadForm">
+                <fieldset>
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="control-group">
+                                <label for="file"><wicket:message key="label.img" />:</label>
+                                <div class="control-group">
+                                    <div class="picture">
+                                        <img wicket:id="userImage" class="userImage" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <wicket:message key="import.selectFile" />
+                                    : <input wicket:id="fileUploadField" type="file" /> (<span
+                                        wicket:id="max"></span> max)
+                                    <div wicket:id="progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div>
+                                    <button type="button" class="btn btn-info" wicket:id="submit">
+                                        <wicket:message key="button.upload"></wicket:message>
+                                    </button>
+                                    <button type="button" class="btn btn-danger" wicket:id="clear">
+                                        <wicket:message key="button.picture.clear"></wicket:message>
+                                    </button>
+                                    <button type="button" class="btn btn-inverse" wicket:id="uploadGravatar">
+            							<wicket:message key="button.gravatar"></wicket:message>
+            						</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </wicket:panel>
+    </body>
+</html>

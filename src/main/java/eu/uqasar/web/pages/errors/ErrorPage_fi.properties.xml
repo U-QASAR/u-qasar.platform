@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="bug.report.title">Tee vikaraportti</entry>
+	<entry key="bug.report.header">Raportoi vika</entry>
+	<entry key="bug.report.message">Voit auttaa U-QASAR-tukitiimiä ratkaisemaan ongelmia alustassa lähettämällä vikaraportin.</entry>
+	<entry key="error.header">Hupsis - tätä ei olisi pitänyt tapahtua...</entry>
+	<entry key="error.message">Voit auttaa U-QASAR-tukitiimiä ratkaisemaan ongelmia alustassa lähettämällä vikaraportin.</entry>
+	<entry key="label.userName">Nimesi</entry>
+	<entry key="label.userMail">Sähköpostiosoitteesi</entry>
+	<entry key="desc.input.placeholder">Kuvaile lyhyesti, kuin virhe saadaan toistettua...</entry>
+	<entry key="submit.text">Lähetä vika</entry>
+	<entry key="show.stacktrace">Näytä Stacktrace</entry>
+	<entry key="success.message">Kiitos tämän vian raportoimisesta.</entry>
+	<entry key="fail.message">Vikaraporttia ei saatu lähetettyä!</entry>
+	<entry key="home.link.message">Tai voit vain palata kohteeseen ${homeLink} ...</entry>
+	<entry key="home.link.text">aloitussivu</entry>
+</properties>

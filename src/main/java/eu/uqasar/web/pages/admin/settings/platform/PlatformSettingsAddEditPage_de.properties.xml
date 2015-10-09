@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Einstellung editieren</entry>
+<entry key="name.Required">Die neue Einstellung umbenennen</entry>
+<entry key="page.copy.title">Einstellung kopieren</entry>
+<entry key="form.create.header">Eine neue Einstellung erstellen</entry>
+<entry key="page.create.title">Einstellung erstellen</entry>
+<entry key="submit.text">Speichern</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Bitte die Einstellung umbenennen</entry>
+<entry key="form.edit.header">Einstellung editieren</entry>
+<entry key="name.input.placeholder">Einstellung umbenennen...</entry>
+
+<entry key="saved.message">Die Einstellung ${settingKey} wurde gespeichert</entry>
+
+<entry key="cancel.text">Abbrechen</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Der Name der Einstellung muss zwischen ${min} und ${max} Zeichen sein</entry>
+
+<entry key="key.input.label">Schlüssel</entry>
+<entry key="value.input.label">Wert</entry>
+
+<entry key="key.input.placeholder">Schlüssel für die ausgewählte Einstellung...</entry>
+<entry key="value.input.placeholder">Wert für die ausgewählte Einstellung...</entry>
+
+<entry key="label.key">Schlüssel</entry>
+<entry key="label.value">Wert</entry>
+</properties>

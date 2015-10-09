@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+	<wicket:panel>
+		<div class="edit metric">
+			<form wicket:id="form">
+				<div class="row-fluid">
+					<div class="span12">
+						<label for="name"><wicket:message key="label.name" />:</label> <input
+							wicket:id="name" id="name" type="text" class="input-block-level" />
+							<span wicket:id="feedbackName"></span>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="checkbox">
+						<span class="pull-right"><input type="checkbox"
+							id="richtext" wicket:id="toggle.richtext"
+							style="margin-top: 5px" /><label class="inline right"
+							for="richtext"><wicket:message
+									key="label.description.check.richtext" /></label></span></div> <label
+							for="description"><wicket:message key="label.description" />:</label>
+						<textarea wicket:id="description" id="description" rows="10"
+							class="input-block-level"></textarea>
+					</div>
+				</div>
+				
+				<hr />
+				<div class="row-fluid">
+					<div class="span4">
+					<label class="control-label" for="source"> <wicket:message key="label.metric.source" />:</label>
+						<select wicket:id="source" id="source"></select>
+					</div>
+				</div>
+				<hr />
+				<div class="row-fluid">
+					<div class="span4">
+						<label class="control-label" for="scale"><wicket:message key="label.metric.scale" />:</label>
+						<select   wicket:id="scale" id="scale"></select>
+					</div>
+					<div class="span4">
+						<label class="control-label" for="unit"><wicket:message key="label.metric.unit" />:</label>
+						<select  wicket:id="unit" id="unit"></select>
+					</div>
+				</div>
+				<hr />
+                    <div class="row-fluid">
+                        <div class="span12 expected value">
+                            <label><span wicket:id="limitsLabel"></span></label>
+                            <label><span wicket:id="lowerLabel"></span><input wicket:id="lowerLimit"></input></label>
+                            <label><span wicket:id="upperLabel"></span><input wicket:id="upperLimit"></input></label>
+                            <span wicket:id="feedbackLow"></span>
+                            <span wicket:id="feedbackLimits"></span>
+                        </div>
+                    </div>
+				<hr />
+				<div class="row-fluid">
+                        <div class="span6">
+                            <label class="inline"><wicket:message key="label.metric.targetValue" />: <input wicket:id="targetValue"></input></label><br/>
+                        </div>
+                    	<div class="span6">
+                            <label class="inline"><wicket:message key="label.metric.weight" />: <input wicket:id="weight"></input></label><br/>
+                    	</div>
+                </div>
+                <hr />
+                <div class="row-fluid">
+		 			<div class="span12">
+                 		<div class="control-group">
+                     	<label class="control-label" for="qModelTagData" wicket:id="label.qModelTagData" ></label> 
+                     	<div class="controls">
+                        	<input type="hidden" id="qModelTagData" class="input-large" wicket:id="qModelTagData" style="width:100%" />
+				  			<p class="help-block offset-top" wicket:id="help.qModelTagData"></p>
+                     	</div>
+                 		</div>
+             		</div>
+				</div>
+					
+				<div wicket:id="tagsModal"></div>
+					
+				<hr />
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="form-actions">
+							<button type="submit" class="btn btn-primary" wicket:id="save"><wicket:message key="button.save" /></button>
+							<button type="submit" class="btn" wicket:id="cancel"><wicket:message key="button.cancel" /></button>
+							<label class="checkbox"><input type="checkbox" wicket:id="checkboxCopy" style="margin-right:5px"/><span wicket:id="checkboxCopyLabel"></span></label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</wicket:panel>
+</body>
+</html>

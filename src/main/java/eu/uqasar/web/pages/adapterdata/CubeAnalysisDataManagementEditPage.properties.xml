@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.create.title">Create a new Table Entry</entry>
+<entry key="page.text">Table Entry Add/Edit Page\n</entry>
+<entry key="page.edit.title">Edit Table Entry</entry>
+<entry key="page.copy.title">Copy Table Entry</entry>
+<entry key="form.create.header">Create a new Table Entry</entry> 
+<entry key="form.edit.header">Edit Table Entry</entry>
+<entry key="form.copy.header">Create a copy of Table Entry</entry> 
+
+<!--tableEntity form-->
+<entry key="submit.text">Save</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="saved.message">The Table Entry has been saved</entry>
+<entry key="serviceTicketNo.input.label">Table Entry Service Ticket No</entry>
+<entry key="value.input.label">Value</entry>
+<entry key="jsonContent.input.label">Json Value</entry>
+<entry key="titel.input.label">Title </entry>
+<entry key="titel.input.placeholder">Title</entry>
+<entry key="value.input.placeholder">Enter a Project Value</entry>
+<entry key="jsonValue.input.placeholder">Enter a Json Value</entry>  
+<entry key="some.date.input.label">Date</entry>
+<entry key="some.date.input.placeholder">Snapshot Date</entry>
+
+<!-- validation error messages-->
+<entry key="name.Required">Please provide a name for the new Company</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a name for the new Company</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Company name must be between ${min} and ${max} characters long</entry>
+<entry key="someDate.Required">Please provide some date</entry>
+<entry key="someDate.javax.validation.constraints.NotNull.message">Please provide some date</entry>
+<entry key="someDate.javax.validation.constraints.Future.message">Date must be in the future</entry>
+<entry key="someDate.IConverter">'${input}' is not a valid date</entry>
+<entry key="page.title">Add/Edit Company Page</entry>
+</properties>
+ 
+
+ 
+                                                      
+
+

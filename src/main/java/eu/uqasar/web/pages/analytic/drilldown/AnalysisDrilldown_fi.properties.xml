@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="title.header">Yksityiskohtien analyysi</entry>
+<entry key="label.name">Nimi</entry>
+<entry key="label.query">Kysely</entry>
+<entry key="label.description">Kuvaus</entry>
+<entry key="label.drilldown.dimensions">Yksityiskohtien tarkastelumitat</entry>
+<entry key="label.results">Tulokset</entry>
+</properties>

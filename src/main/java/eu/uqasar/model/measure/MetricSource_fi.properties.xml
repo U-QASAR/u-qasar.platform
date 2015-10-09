@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.source.test">Testing framework</entry>
+<entry key="label.source.issue">Issue tracker</entry>
+<entry key="label.source.ci">Continuous integration	</entry>
+<entry key="label.source.static">Static analysis</entry>
+<entry key="label.source.cube">Cube analysis</entry>
+<entry key="label.source.vcs">Version Control System</entry>
+<entry key="label.source.manual">Manual</entry>
+</properties>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">TestLink-Messungen</entry>
+<entry key="measurement.deleted">Messung ${name} wurde gelöscht.</entry>
+<entry key="delete.confirmation.modal.submit.text">Löschen</entry>
+<entry key="page.title">TestLink-Messungen</entry>
+<entry key="key.column">Projektschlüssel</entry>
+<entry key="value.column">Wert</entry>
+<entry key="metric.column">TestLink-Metrik</entry>
+<entry key="timestamp.column">Datum</entry>
+<entry key="edit.column">Editieren</entry>
+<entry key="name.column">Name</entry>
+<entry key="delete.testlink.batch.button">Messungen löschen</entry>
+<entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="jirameasurement.selected.deleted">Die ausgewählten Messungen wurden gelöscht.</entry>
+<entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählte(n) Messung(en) sollen gelöscht werden?
+Diese Aktion kann nicht widerrufen werden!</entry>
+<entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
+<entry key="action.column">Aktionen</entry>
+<entry key="update.measurements.button">Messungen aktualisieren</entry>
+<entry key="measurements.updated">Die Messungen wurden aktualisiert.</entry>
+</properties>

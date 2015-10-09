@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head><title></title></head>
+    <body>
+        <wicket:extend>
+            <section class="search">
+                <div class="row-fluid headline">
+                    <div class="span12">
+                        <h2 wicket:id="headline"></h2>
+                    </div>
+                </div>
+                <form wicket:id="form">
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <div class="control-group required" wicket:id="searchValidationBorder">
+                                <input type="text" class="input-xxlarge search" id="search" 
+                                       wicket:id="searchField" />
+                                <button type="submit" class="btn btn-primary" style="margin-top: -0.8em;">
+                                    <wicket:message key="button.search"></wicket:message>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div wicket:id="projects"></div>
+                <div wicket:id="qualityObjectives"></div>
+                <div wicket:id="qualityIndicators"></div>
+                <div wicket:id="metrics"></div>
+                <div wicket:id="products"></div>
+                <div wicket:id="processes"></div>
+                <div wicket:id="user"></div>
+                <div wicket:id="company"></div>
+                <div wicket:id="team"></div>
+                <div wicket:id="qualitymodel"></div>
+                <div wicket:id="qmqualityObjectives"></div>
+                <div wicket:id="qmqualityIndicators"></div>
+                <div wicket:id="qmmetrics"></div>
+                
+            </section>
+        </wicket:extend>
+    </body>
+</html>

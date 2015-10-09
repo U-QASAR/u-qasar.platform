@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="message.delete.metric"><![CDATA[Are you sure you want to delete the metric <strong>${name}</strong>?]]></entry>
+<entry key="button.delete.confirm">Yes, delete.</entry>
+<entry key="button.delete.cancel">Cancel</entry>
+<entry key="message.delete.quality.indicator"><![CDATA[Are you sure you want to delete the quality indicator <strong>${name}</strong> and all its associated metrics {0}?]]></entry>
+<entry key="header.delete">Delete ${name}?</entry>
+<entry key="message.delete.quality.objective"><![CDATA[Are you sure you want to delete the quality objective <strong>${name}</strong> and all its associated quality indicators {0} and their metrics?]]></entry>
+<entry key="message.delete.qmodel"><![CDATA[>Are you sure you want to delete the quality model <strong>${name}</strong> and all its associated quality objectives {0} their quality indicators and their metrics?]]></entry>
+<entry key="header.denydelete.qmodel">It is not allowed to delete the Quality Model ${name}.</entry>
+<entry key="message.denydelete.qmodel"><![CDATA[It cannot be active or have been active]]></entry>
+</properties>

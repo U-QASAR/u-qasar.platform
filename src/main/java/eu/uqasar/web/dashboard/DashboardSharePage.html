@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="users">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2><wicket:message key="page.title"></wicket:message></h2>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="span12" wicket:id="filter"></div>
+				</div>
+				<form wicket:id="form">
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span12" wicket:id="userGroup">
+								<div wicket:id="usersContainer">
+									<table class="table table-striped users" id="userlist">
+										<thead>
+											<tr>
+												<th class="checkbox"><input type="checkbox" wicket:id="userGroupSelector" /></th>
+												<th class="user" colspan="2"><wicket:message key="column.head.user" /></th>
+												<th class="role"><wicket:message key="column.head.role" /></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr wicket:id="users" class="users">
+												<td class="checkbox"><input type="checkbox" wicket:id="userCheck" /></td>
+												<td class="avatar"><a wicket:id="link.picture.edit.user"><span class="user profile compact"><span class="picture-border"><div wicket:id="td.picture" class="avatar"></div></span></span></a></td>
+												<td class="name"><span wicket:id="td.username"></span></td>
+												<td class="role"><span wicket:id="td.role"></span></td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td colspan="4" class="navigator"><div wicket:id="navigatorFoot"></div></td>
+												<td colspan="2" class="alignright">
+												<button class="btn btn-info" wicket:id="shareToSelected"><wicket:message key="td.users.actions.batch.share"></wicket:message></button>
+												</td>
+												<td colspan="1">
+												<a wicket:id="cancelButton" class="btn btn-default"><wicket:message key="td.users.actions.batch.share.cancel"></wicket:message></a> 
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+		<div wicket:id="shareConfirmationModal"></div>	
+		</wicket:extend>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+       http://jboss.org/schema/arquillian
+       http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+	<!-- configuration for a truly remote jboss container -->
+	<container qualifier="jenkins" default="true">
+		<configuration>
+			<property name="managementAddress">${jboss.as7.managementAddress}</property>
+			<property name="managementPort">${jboss.as7.managementPort}</property>
+			<property name="username">${jboss.as7.username}</property>
+			<property name="password">${jboss.as7.password}</property>
+		</configuration>
+	</container>
+</arquillian>

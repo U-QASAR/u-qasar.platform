@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<qModel>
+    <name> ImportQuality Model A</name>
+    <description> Importpre-loaded quality model</description>
+    <shortName>Importedqm</shortName>
+    <edition>1.0</edition>
+    <companyId>175</companyId>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qmQualityObjective">
+        <name> ImportCode coverage above 80%</name>
+        <description> ImportAverage degree to which the source code  is tested by the set of Test Cases designed for the system at all Test Levels (i.e. Unit, Integration and Acceptance)</description>
+        <domains>
+            <domain>Bank</domain>
+            <domain>Telecommunications</domain>
+            <domain>Public</domain>
+        </domains>
+        <indicatorPurpose>Process</indicatorPurpose>
+        <version>Prototype</version>
+        <paradigm>Waterfall</paradigm>
+        <audience>
+            <targetAudience>Developer</targetAudience>
+        </audience>
+        <upperLimit>90.0</upperLimit>
+        <lowerLimit>80.0</lowerLimit>
+        <targetValue>0.0</targetValue>
+        <weight>1.0</weight>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportUnit Test coverage</name>
+            <description> ImportAverage degree to which the source code  is tested by the set of Unit Tests. It should be above 60%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <lowerLimit>60.0</lowerLimit>
+            <paradigm>Waterfall</paradigm>
+            <lifeCycleStage>Implementation</lifeCycleStage>
+            <rupStage>Inception</rupStage>
+            <audience>
+                <targetAudience>Developer</targetAudience>
+            </audience>
+            <targetValue>0.0</targetValue>
+            <upperLimit>100.0</upperLimit>
+            <version>Prototype</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportLines covered by Unit Tests</name>
+                <description> ImportNumber of lines of code covered by Unit Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>StaticAnalysis</source>
+                <scale>Ordinal</scale>
+                <unit>Loc</unit>
+            </children>
+        </children>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportIntegration Test coverage</name>
+            <description> ImportAverage degree to which the source code  is tested by the set of Integration Tests.  It should be 100%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <lowerLimit>60.0</lowerLimit>
+            <paradigm>Waterfall</paradigm>
+            <lifeCycleStage>Testing</lifeCycleStage>
+            <rupStage>Inception</rupStage>
+            <audience/>
+            <targetValue>0.0</targetValue>
+            <upperLimit>100.0</upperLimit>
+            <version>Prototype</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportLines covered by Integration Tests</name>
+                <description> ImportNumber of lines of code covered by Integration Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Loc</unit>
+            </children>
+        </children>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportAcceptance Test coverage</name>
+            <description> ImportAverage degree to which the source code  is tested by the set of Acceptance Tests.It should be above 80%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <lowerLimit>50.0</lowerLimit>
+            <paradigm>Waterfall</paradigm>
+            <lifeCycleStage>Testing</lifeCycleStage>
+            <rupStage>Inception</rupStage>
+            <audience>
+                <targetAudience>Developer</targetAudience>
+            </audience>
+            <targetValue>0.0</targetValue>
+            <upperLimit>100.0</upperLimit>
+            <version>Prototype</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportLines covered by Acceptance Tests</name>
+                <description> ImportNumber of lines of code covered by Acceptance Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportLines of code</name>
+                <description> ImportNumber of physical lines that contain at least one character which is neither a whitespace or a tabulation or part of a comment.</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Loc</unit>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qmQualityObjective">
+        <name> ImportMinimize Technical Debt</name>
+        <description> ImportWork that needs to be done before a particular job can be considered complete.</description>
+        <domains>
+            <domain>Bank</domain>
+            <domain>Telecommunications</domain>
+            <domain>Public</domain>
+        </domains>
+        <indicatorPurpose>Product</indicatorPurpose>
+        <version>Alfa</version>
+        <paradigm>Waterfall</paradigm>
+        <audience>
+            <targetAudience>Developer</targetAudience>
+        </audience>
+        <upperLimit>70.0</upperLimit>
+        <lowerLimit>0.0</lowerLimit>
+        <targetValue>0.0</targetValue>
+        <weight>1.0</weight>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportEffort needed to fix all issues</name>
+            <indicatorPurpose>Product</indicatorPurpose>
+            <lowerLimit>0.0</lowerLimit>
+            <paradigm>Waterfall</paradigm>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <rupStage>Inception</rupStage>
+            <audience>
+                <targetAudience>Developer</targetAudience>
+            </audience>
+            <targetValue>0.0</targetValue>
+            <upperLimit>90.0</upperLimit>
+            <version>Alfa</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of blockers issues</name>
+                <description> ImportNumber of issues that blocks the use of the software</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>IssueTracker</source>
+                <scale>Ordinal</scale>
+                <unit>Issue</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of critical/major/minor issues</name>
+                <description> ImportNumber of issues qualify as critical, major and minor</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>IssueTracker</source>
+                <scale>Ordinal</scale>
+                <unit>Issue</unit>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qmQualityObjective">
+        <name> ImportHigh Degree of Code Documentation</name>
+        <description> ImportAverage percentage of commented lines of code</description>
+        <domains>
+            <domain>Bank</domain>
+            <domain>Telecommunications</domain>
+            <domain>Public</domain>
+        </domains>
+        <indicatorPurpose>Process</indicatorPurpose>
+        <version>Prototype</version>
+        <paradigm>Rup</paradigm>
+        <audience>
+            <targetAudience>Developer</targetAudience>
+        </audience>
+        <upperLimit>100.0</upperLimit>
+        <lowerLimit>60.0</lowerLimit>
+        <targetValue>0.0</targetValue>
+        <weight>1.0</weight>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportPercentage of commented lines of code</name>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <lowerLimit>0.0</lowerLimit>
+            <paradigm>Rup</paradigm>
+            <lifeCycleStage>Requirements</lifeCycleStage>
+            <rupStage>Transition</rupStage>
+            <audience>
+                <targetAudience>Developer</targetAudience>
+            </audience>
+            <targetValue>0.0</targetValue>
+            <upperLimit>100.0</upperLimit>
+            <version>Prototype</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of comment lines</name>
+                <description> ImportNumber of comment lines</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>StaticAnalysis</source>
+                <scale>Ordinal</scale>
+                <unit>Loc</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportLines of code</name>
+                <description> ImportNumber of physical lines that contain at least one character which is neither a whitespace or a tabulation or part of a comment.</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>StaticAnalysis</source>
+                <scale>Ordinal</scale>
+                <unit>Loc</unit>
+            </children>
+        </children>
+    </children>
+    <children xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="qmQualityObjective">
+        <name> ImportPercentage of testing completion</name>
+        <description> ImportPercentage of testing completion</description>
+        <domains>
+            <domain>Bank</domain>
+            <domain>Telecommunications</domain>
+            <domain>Public</domain>
+        </domains>
+        <indicatorPurpose>Process</indicatorPurpose>
+        <version>Prototype</version>
+        <paradigm>Waterfall</paradigm>
+        <audience>
+            <targetAudience>Developer</targetAudience>
+        </audience>
+        <upperLimit>100.0</upperLimit>
+        <lowerLimit>80.0</lowerLimit>
+        <targetValue>0.0</targetValue>
+        <weight>1.0</weight>
+        <children xsi:type="qmQualityIndicator">
+            <name> ImportPercentage of functional testing completion</name>
+            <description> Import100 * Executed functional test cases / Planned functional test cases. It should be above 80%</description>
+            <indicatorPurpose>Process</indicatorPurpose>
+            <lowerLimit>80.0</lowerLimit>
+            <paradigm>Waterfall</paradigm>
+            <lifeCycleStage>Testing</lifeCycleStage>
+            <rupStage>Inception</rupStage>
+            <audience>
+                <targetAudience>Developer</targetAudience>
+            </audience>
+            <targetValue>0.0</targetValue>
+            <upperLimit>100.0</upperLimit>
+            <version>Prototype</version>
+            <weight>1.0</weight>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of Passed Tests</name>
+                <description> ImportNumber of Passed Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of Failed Tests</name>
+                <description> ImportNumber of Failed Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of Blocked Tests</name>
+                <description> ImportNumber of Blocked Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportNumber of Not Run Tests</name>
+                <description> ImportNumber of Not Run Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+            <children xsi:type="qmMetric">
+                <name> ImportTotal Tests</name>
+                <description> ImportTotal Tests</description>
+                <indicatorPurpose>Process</indicatorPurpose>
+                <paradigm>Waterfall</paradigm>
+                <version>Prototype</version>
+                <lowerLimit>0.0</lowerLimit>
+                <upperLimit>0.0</upperLimit>
+                <weight>1.0</weight>
+                <targetValue>0.0</targetValue>
+                <source>TestingFramework</source>
+                <scale>Ordinal</scale>
+                <unit>Test</unit>
+            </children>
+        </children>
+    </children>
+</qModel>

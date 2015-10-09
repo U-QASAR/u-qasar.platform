@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="menu.home.link.text">Home</entry>
+	<entry key="menu.projects.link.text">Projects</entry>
+	<entry key="menu.projects.recently.updated">Recently updated</entry>
+	<entry key="menu.projects.create.text">Create project</entry>
+	<entry key="menu.projects.export.text">Export project</entry>
+	<entry key="menu.projects.import.text">Import project</entry>
+	<entry key="menu.projects.visualize.text">Visualize projects</entry>
+	<entry key="menu.projects.dummy.reset">Reset dummy project</entry>
+	<entry key="menu.qmodels.link.text">Quality Models</entry>
+	<entry key="menu.qmodels.recently.updated">Recently updated</entry>
+	<entry key="menu.qmodels.create.text">Create quality model</entry>
+	<entry key="menu.qmodels.export.text">Export quality model</entry>
+	<entry key="menu.qmodels.import.text">Import quality model</entry>
+	<entry key="menu.qmodels.dummy.reset">Reset dummy quality model</entry>
+	<entry key="menu.products.manage.text">Manage products</entry>
+	<entry key="menu.processes.manage.text">Manage processes</entry>
+	<entry key="menu.admin.link.text">Administration</entry>
+	<entry key="menu.admin.users.header.text">Companies, Users &amp; Teams</entry>
+	<entry key="menu.admin.companies.list.link.text">Manage Companies</entry>
+	<entry key="menu.admin.companies.import.link.text">Import Companies</entry>
+	
+	<entry key="menu.admin.users.list.link.text">Manage Users</entry>
+	<entry key="menu.admin.users.import.link.text">Import Users</entry>
+	<entry key="menu.admin.teams.list.link.text">Manage Teams</entry>
+	<entry key="menu.admin.teams.import.link.text">Import Teams</entry>
+	<entry key="menu.admin.settings.header.text">Settings</entry>
+    <entry key="menu.admin.settings.metadata.link.text">MetaData Settings</entry>
+	<entry key="menu.admin.settings.mail.link.text">E-Mail Settings</entry>
+	<entry key="menu.admin.settings.ldap.link.text">LDAP Settings</entry>
+	<entry key="menu.admin.settings.adapters.link.text">Manage adapters and measurement data</entry>
+	<entry key="menu.admin.settings.qmodel.link.text">Quality Model Settings</entry>
+	<entry key="menu.admin.settings.platform.link.text">Platform Settings</entry>
+	<entry key="menu.admin.products_processes.header.text">Products/processes</entry>
+	<entry key="menu.profile.link.text">Profile</entry>
+	<entry key="menu.languages.submenu.text">Language</entry>
+	<entry key="menu.login.link.text">Login</entry>
+	<entry key="menu.logout.link.text">Logout</entry>
+	<entry key="menu.reporting.link.text">Reporting</entry>        
+	<entry key="menu.dashboards.link.text">Dashboards</entry>
+	<entry key="menu.dashboards.show.text">Dashboard</entry>
+	<entry key="menu.dashboards.create.text">Create Dashboard</entry>
+	<entry key="menu.dashboards.share.text">Share Dashboard</entry>
+	<entry key="menu.dashboards.reset.text">Reset Dashboard</entry>
+	<entry key="menu.tour.take.text">Take a Tour</entry>
+	<entry key="menu.analytic.link.text">Analytic</entry>
+	<entry key="menu.analytic.drilldown.text">Analysis List</entry>
+</properties>

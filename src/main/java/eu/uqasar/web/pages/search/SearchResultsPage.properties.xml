@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="page.title.resultsfor">Search results for »{0}«</entry>
+    <entry key="page.title.empty">Search</entry>
+    <entry key="label.search.term">Term</entry>
+    <entry key="button.search">Search</entry>
+</properties>
+

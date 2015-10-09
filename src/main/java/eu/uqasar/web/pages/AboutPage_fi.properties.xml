@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.acronym">U-QASAR-projekti</entry>
+<entry key="page.title">U-QASAR-alusta</entry>
+<entry key="project.desc">Tämä on U-QASAR-alustan kehitysversio. U-QASAR-projektin 
+päätavoite on luoda joustava metodologia laadunvarmistukselle, valvonnalle ja 
+mittauksille, jotta ohjelmistokehitysprojektien ja sen tulosten laatua voidaan arvioida. 
+U-QASAR-alusta mahdollistaa prosessin ja tuotteen laadun mittaamisen milloin tahansa.</entry>
+<entry key="platform.overview">U-QASAR-alusta perustuu modulaariseen arkkitehtuuriin 
+ja sisältää seuraavat palveluryhmät: monitorointipalvelut, jotka huolehtivat 
+mittausdatan hakemisesta ja tallentamisesta eri lähteistä, analyyttiset palvelut, 
+jotka tarjoavat keinoja datan analysoimiseen, parantamispalvelut, jotka jalostavat 
+dataa ja sisältöä alustassa siten luoden lisäarvoa käyttäjille, visualisointi- 
+ja raportointipalvelut sekä varuspalvelut, jotka tukevat muita palveluita.</entry>
+</properties>

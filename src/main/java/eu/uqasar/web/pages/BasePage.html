@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head>
+		<title wicket:id="pageTitle">[PAGE TITLE GOES HERE]</title>
+		<meta wicket:id="chrome-frame" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700' rel='stylesheet' type='text/css' />
+		
+		<link href="assets/css/bootstrap-tour.min.css" rel="stylesheet" />
+		<link href="assets/css/bootstrap-adjustments.css" rel="stylesheet" />
+		<link href="assets/css/font-awesome.css" rel="stylesheet" />
+		<link href="assets/css/font-awesome-adjustments.css" rel="stylesheet" />
+		<link href="assets/css/main.css" rel="stylesheet" />
+		<link href="assets/css/navigation/navigation.css" rel="stylesheet" />
+		<link href="assets/css/auth/auth.css" rel="stylesheet" />
+		
+		
+		<script src="assets/js/bootstrap-tour.min.js"></script>
+		
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		
+		<!-- Bootstrap CSS fixes for IE6 -->
+		<!--[if lt IE 7]><link rel="stylesheet" href="assets/css/fileupload/bootstrap-ie6.min.css"><![endif]-->
+
+		<!-- The XDomainRequest Transport is included for cross-domain file deletion for IE8+ -->
+		<!--[if gte IE 8]><script src="assets/js/fileupload/cors/jquery.xdr-transport.js"></script><![endif]-->
+		
+		<!-- Le fav and touch icons -->
+		<link rel="shortcut icon" href="assets/ico/favicon.ico" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
+		<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
+	</head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar">
+        <div class="container">
+            <div wicket:id="navbar"></div>
+        </div>
+
+		<div class="container">
+			<section>
+				<!-- a boostrap styled global feedback panel -->
+				<div wicket:id="feedbackPanel" class="feedbackPanelContainer span12"></div>
+				
+				<!-- Page content goes here -->
+				<wicket:child />
+			</section>
+		
+			<hr />
+			
+			<footer>
+				<p>
+					<span wicket:id="footer"></span><br>
+					<wicket:message key="label.svn.version" /> 
+					<span wicket:id="buildNumber"></span> 
+					<span wicket:id="scmBranch"></span> 
+				</p>
+			</footer>
+		<script type="text/javascript">
+		</script>
+		</div> <!-- /container -->
+	</body>
+</html>

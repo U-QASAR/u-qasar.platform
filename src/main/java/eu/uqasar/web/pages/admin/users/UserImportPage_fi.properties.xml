@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">Tuo käyttäjiä</entry>
+	<entry key="message.import.description.lead">Tällä sivulla voit tuoda olemassa olevia käyttäjiä LDAP-palvelimelta U-QASAR-alustalle.</entry>
+	<entry key="message.import.description">Voidaksesi aloittaa LDAP-käyttäjien tuonnin, sinulla on ensin oltava lista olemassa olevista LDAP-käyttäjistä ja sitten valittava ne, jotka haluat tuoda.</entry>
+	<entry key="message.import.settings"><![CDATA[Käyttäjien tuonti suoritetaan <strong>käyttäjävalintojen</strong> LDAP-asetusten mukaisesti]]> </entry>
+	<entry key="message.import.settings.change"> (klikkaa tästä tarkistaaksesi tai muuttaaksesi näitä asetuksia)</entry>
+	<entry key="message.import.note">Huomioi, että tiettyjä LDAP-käyttäjiä ei voida tuoda, jos U-QASAR-alustalla on toinen käyttäjä, jolla on sama sähköpostiosoite TAI sama käyttäjätunnus kuin tuotavalla LDAP-käyttäjällä. Sellaiset ei-tuotativssa olevat käyttäjät </entry>
+	<entry key="message.import.note.highlight">näytetään värillä korostettuna.</entry>
+	<entry key="message.import.result.error">{0} käyttäjästä ({1}) ei voitu tuoda!.</entry>
+	<entry key="message.import.result.success">{0} käyttäjästä ({1}) tuotiin onnistuneesti!.</entry>
+	<entry key="label.retrieval.success">{0} LDAP-käyttäjää haettu onnistuneesti!</entry>
+	<entry key="label.userRole">Tuotujen käyttäjien rooli</entry>
+	<entry key="label.registrationMail">Käyttäjän on vahvistettava rekisteröinti?</entry>
+	<entry key="button.retrieve">Hae käyttäjät LDAP:sta valintaa varten</entry>
+	<entry key="button.import">Tuo valitut käyttäjät</entry>
+</properties>

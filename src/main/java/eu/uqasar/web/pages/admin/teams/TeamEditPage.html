@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>
+			<section class="teams">
+				<div class="row-fluid headline">
+					<div class="span12">
+						<h2 wicket:id="page.title"></h2>
+					</div>
+				</div>
+				<form wicket:id="form.edit">
+					<fieldset>
+						<div class="row-fluid">
+							<div class="span5">
+								<div class="control-group required" wicket:id="nameValidationBorder">
+									<input type="text" class="input-xlarge team name" id="name" 
+										   wicket:id="name" wicket:message="placeholder:placeholder.name" />
+								</div>
+							</div>
+							<div class="span7">
+								<div class="control-group" wicket:id="descriptionValidationBorder">
+									<label class="control-label" for="description"><wicket:message key="label.description" /></label>
+									<div class="controls">
+										<textarea class="input-block-level" rows="4" id="description" wicket:id="description"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row-fluid">
+							<div class="span12">
+								<div class="form-actions">
+									<button type="submit" class="btn btn-primary"><wicket:message key="button.save"></wicket:message></button>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<div wicket:id="existingTeam">
+					<h3 wicket:id="label.add.title"></h3>
+					<form wicket:id="form.add">
+						<fieldset>
+							<div class="row-fluid">
+								<div class="span4">
+									<label class="control-label" for="userName"> <wicket:message
+											key="label.add.username" />:
+									</label>
+									<input type="text" id="userName" wicket:id="add.userName"
+										   wicket:message="placeholder:placeholder.add.userName" />
+								</div>
+								<div class="span4">
+									<label class="control-label" for="userRole"> <wicket:message
+											key="label.add.userrole" />:
+									</label>
+									<select id="userRole" wicket:id="add.userRole"></select>
+								</div>
+								<div class="span4" style="margin-top: 1.6em">
+									<a wicket:id="add.member" class="btn btn-primary"><span wicket:id="button.add.save"></span></a>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+					<h3 wicket:id="label.list.title"></h3>
+					<form wicket:id="form.list">
+						<fieldset>
+							<div class="row-fluid">
+								<div class="span12"  wicket:id="membersGroup">
+									<div wicket:id="membersContainer">
+										<table class="table table-striped membership" id="memberslist">
+											<thead>
+												<tr>
+													<th class="checkbox"><input type="checkbox" wicket:id="memberGroupSelector" /></th>
+													<th class="member"><wicket:message key="column.head.member" /></th>
+													<th class="role"><wicket:message key="column.head.role" /></th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr wicket:id="members" class="members">
+													<td class="checkbox"><input type="checkbox" wicket:id="memberCheck" /></td>
+													<td class="member"><a wicket:id="link.edit.member"><span wicket:id="td.membername"></span></a></td>
+													<td class="role"><select wicket:id="td.role"></select></td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="7" class="alignright">
+														<button class="btn btn-primary"><wicket:message key="button.update"></wicket:message></button>
+														<button class="btn btn-danger" wicket:id="deleteSelected"><span wicket:id="td.members.actions.batch.remove"></span></button>
+													</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</section>
+            <div wicket:id="deleteConfirmationModal"></div>
+		</wicket:extend>
+	</body>
+</html>

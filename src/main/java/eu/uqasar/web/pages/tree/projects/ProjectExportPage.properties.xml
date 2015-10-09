@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="export.button">Export Project</entry>
+<entry key="export.downloadMsg">Downloading file...</entry>
+<entry key="page.title">Export Project</entry>
+<entry key="export.downloadFile">Export a project</entry>
+<entry key="export.selectProj">Select a project</entry>
+<entry key="export.format">Select file format</entry>
+</properties>

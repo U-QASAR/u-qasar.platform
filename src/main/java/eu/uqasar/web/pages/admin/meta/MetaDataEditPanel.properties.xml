@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="label.new">New</entry>
+    <entry key="label.add">Add</entry>
+    <entry key="table.head.label.isUsed">Is Used?</entry>
+    <entry key="buttons.remove">Delete Selected</entry>
+    <entry key="buttons.update">Update</entry>
+    <entry key="delete.confirmation.modal.header">Delete {0}?</entry>
+    <entry key="delete.confirmation.modal.message">Are you sure you want to delete the {0} ({1})?</entry>
+    <entry key="delete.confirmation.modal.submit.text">Yes, delete them.</entry>
+    <entry key="delete.confirmation.modal.cancel.text">No, cancel.</entry>
+    <entry key="delete.confirmed">Selected data have been deleted.</entry>
+    <entry key="update.confirmed">Data have been updated.</entry>
+</properties>

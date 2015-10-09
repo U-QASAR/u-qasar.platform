@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="register.link.text">Rekisteröidy</entry>
+<entry key="forgot.password.link.text">Salasana unohtunut?</entry>
+<entry key="error.user.register.cancelled">Käyttäjän {0} rekisteröinti peruutettiin!</entry>
+<entry key="label.mail">Sähköposti</entry>
+<entry key="page.title">Sisäänkirjautuminen</entry>
+<entry key="label.password">Salasana</entry>
+<entry key="mail.Required">Anna sähköpostiosoite</entry>
+<entry key="page.register.message">Eikö sinulla ole tiliä vielä? ${registerLink} nyt!</entry>
+<entry key="page.header">Sisäänkirjautuminen</entry>
+<entry key="button.save">Kirjaudu sisään</entry>
+<entry key="page.lead.message.1">Kirjaudu sisään U-QASAR-tilillesi sähköpostillasi ja salasanallasi.</entry>
+<entry key="placeholder.password">Salasanasi</entry>
+<entry key="error.user.unknown">{0} on tuntematon käyttäjä!</entry>
+<entry key="error.user.wrong.credentials">Ei voitu autentikoida {0}!</entry>
+<entry key="error.user.register.notconfirmed">Käyttäjän {0} rekisteröintiä ei ole vielä vahvistettu!</entry>
+<entry key="placeholder.mail">Sähköpostisi</entry>
+<entry key="password.Required">Anna salasana</entry>
+</properties>

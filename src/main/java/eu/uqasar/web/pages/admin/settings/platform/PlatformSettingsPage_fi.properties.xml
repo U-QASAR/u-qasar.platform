@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="project.settings.title">Projektiasetukset</entry>
+<entry key="project.settings.key">Avain</entry>
+<entry key="project.settings.value">Arvo</entry>
+<entry key="placeholder.key">Avain</entry>
+<entry key="placeholder.value">Arvo</entry>
+<entry key="key.input.placeholder">Anna avain...</entry>
+<entry key="value.input.placeholder">Anna arvo ...</entry>
+<entry key="key.input.label">Avain</entry>
+<entry key="key.header">Avain</entry>
+<entry key="value.header">Arvo</entry>
+<entry key="create.adapter.button">Lisää Asetus</entry>
+<entry key="edit.link.text">Muokkaa Asetusta</entry>
+<entry key="settings.selected.deleted">Valitut asetukset on poistettu.</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="delete.confirmation.modal.message">Oletko aivan varma, että haluat poistaa valitun Asetuksen?</entry>
+<entry key="delete.confirmation.modal.header">Vahvista poisto</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+</properties>

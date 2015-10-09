@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>eu.uqasar</groupId>
+	<artifactId>uqasar</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+
+	<name>U-QASAR</name>
+	<description>U-QASAR Platform (see www.uqasar.eu for details)</description>
+	<scm>
+		<url>https://github.com/U-QASAR/u-qasar.platform.git</url>
+		<connection>git@github.com:U-QASAR/u-qasar.platform.git</connection>
+		<developerConnection>git@github.com:U-QASAR/u-qasar.platform.git</developerConnection>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>Apache License Version 2.0</name>
+			<url>http://opensource.org/licenses/Apache-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<repositories>
+		<!-- JBoss Maven Repository -->
+		<repository>
+			<id>jboss-public</id>
+			<name>JBoss Maven Public Repository</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<!-- Local Maven Repository; modify as required -->
+		<repository>
+			<id>internal-repository</id>
+			<name>Internal repo</name>
+			<url>http://www.atb-bremen.de/artifactory/ext-releases-local/</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<generated.sources.dir>src/main/generated</generated.sources.dir>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+		<jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
+		<jboss.as.version>7.1.1.Final</jboss.as.version>
+		<weld.version>1.1.Final</weld.version>
+		<jboss.solder.version>3.1.0.Final</jboss.solder.version>
+		<jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
+		<jboss.seam.conversation.version>3.0.0.Final</jboss.seam.conversation.version>
+		<wicket.version>6.14.0</wicket.version>
+		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
+		<freemarker.version>2.3.20</freemarker.version>
+		<!-- resteasy version used in JBoss ${jboss.as.version} -->
+		<resteasy.version>2.3.2.Final</resteasy.version>
+		<jackson.version>1.9.2</jackson.version>
+		<arquillian.version>1.1.2.Final</arquillian.version>
+		<slf4j.version>1.6.4</slf4j.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Arquillian test framework dependencies -->
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>${arquillian.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- JBoss Java EE 6 dependencies -->
+		<dependency>
+			<groupId>org.jboss.spec</groupId>
+			<artifactId>jboss-javaee-6.0</artifactId>
+			<version>${jboss.javaee6.spec.version}</version>
+			<type>pom</type>
+			<!-- use provided scope as they are included in JBoss 7 -->
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Weld dependency -->
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-api</artifactId>
+			<version>${weld.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Seam Solder dependency -->
+		<dependency>
+			<groupId>org.jboss.solder</groupId>
+			<artifactId>solder-impl</artifactId>
+			<version>${jboss.solder.version}</version>
+		</dependency>
+
+		<!-- Seam Persistence dependency -->
+		<dependency>
+			<groupId>org.jboss.seam.persistence</groupId>
+			<artifactId>seam-persistence</artifactId>
+			<version>${jboss.seam.persistence.version}</version>
+		</dependency>
+
+		<!-- explicitly add jackson for @JsonIgnore annotation -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>${jackson.version}</version>
+			<!-- use provided scope as it is included in JBoss 7 -->
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Wicket dependencies -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-core</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-datetime</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
+		<!-- Wicket CDI dependencies for injecting CDI components into wicket pages -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-cdi</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
+		<!-- Wicket CDI dependencies for injecting EJBs into wicket pages -->
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-javaee-inject</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
+		<!-- needed for conversation scope propagation -->
+		<dependency>
+			<groupId>org.jboss.seam.conversation</groupId>
+			<artifactId>seam-conversation-weld</artifactId>
+			<version>${jboss.seam.conversation.version}</version>
+		</dependency>
+
+		<!-- for bean validation in wicket -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-bean-validation</artifactId>
+			<version>0.8</version>
+		</dependency>
+
+		<!-- the following is needed because Wicket uses slf4j 1.6.x and Weld uses 
+			1.5.x which are not compatible -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-ext</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<!-- Wicket Bootstrap components -->
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-core</artifactId>
+			<version>${wicket.bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-extensions</artifactId>
+			<version>${wicket.bootstrap.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>de.agilecoders.wicket</groupId>
+			<artifactId>wicket-bootstrap-themes</artifactId>
+			<version>${wicket.bootstrap.version}</version>
+		</dependency>
+		<!-- for urls like 'vfs://some/thing' -->
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jboss-vfs</artifactId>
+			<version>3.2.2.Final</version>
+		</dependency>
+		<!-- Wicket Select2 component -->
+		<dependency>
+			<groupId>com.vaynberg.wicket.select2</groupId>
+			<artifactId>wicket-select2</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<!-- Wicket Charting -->
+		<dependency>
+			<groupId>com.googlecode.wicked-charts</groupId>
+			<artifactId>wicked-charts-wicket6</artifactId>
+			<version>1.5.0</version>
+		</dependency>
+		<!-- Wicket TinyMCE -->
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-tinymce</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<!-- Wicket jquery-ui -->
+		<dependency>
+			<groupId>com.googlecode.wicket-jquery-ui</groupId>
+			<artifactId>wicket-jquery-ui</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+		<!-- Wicket jquery-ui plugins -->
+		<dependency>
+			<groupId>com.googlecode.wicket-jquery-ui</groupId>
+			<artifactId>wicket-jquery-ui-plugins</artifactId>
+			<version>${wicket.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>${freemarker.version}</version>
+		</dependency>
+
+		<!-- Hibernate Validation dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.0.Final</version>
+			<!-- use provided scope as it is included in JBoss 7 -->
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- for Hibernate meta model generation -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jpamodelgen</artifactId>
+			<version>1.2.0.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Hibernate Search dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search</artifactId>
+			<version>4.4.6.Final</version>
+		</dependency>
+
+		<!-- JBoss RestEasy -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jaxrs</artifactId>
+			<version>${resteasy.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- For Hibernate Validation in JBoss RestEasy -->
+		<dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-hibernatevalidator-provider</artifactId>
+			<version>${resteasy.version}</version>
+		</dependency>
+
+		<!-- for sluggifying strings to be url-friendly -->
+		<dependency>
+			<groupId>com.github.slugify</groupId>
+			<artifactId>slugify</artifactId>
+			<version>1.0-RELEASE</version>
+		</dependency>
+
+		<!-- Logging dependencies - SLF4J for Wicket -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.3.174</version>
+		</dependency>
+
+		<!-- Gson (json for java) for Wicket-Dashboard -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<!-- reporting dependencies -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20140107</version>
+		</dependency>
+
+		<dependency>
+			<groupId>us.monoid.web</groupId>
+			<artifactId>resty</artifactId>
+			<version>0.3.2</version>
+		</dependency>
+
+		<!-- Testlink API -->
+		<dependency>
+			<groupId>br.eti.kinoshita</groupId>
+			<artifactId>testlink-java-api</artifactId>
+			<!-- increased to 1.9.8 to solve exception new TestlinkAPI() -->
+			<version>1.9.8-1</version>
+		</dependency>
+
+		<!-- Image Resize Lib -->
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+		<!-- The Apache Tika™ toolkit for extracting metadata from various documents 
+			using existing parser libraries. -->
+		<dependency>
+			<groupId>org.apache.tika</groupId>
+			<artifactId>tika-core</artifactId>
+			<version>1.5</version>
+		</dependency>
+
+		<!-- Jasypt - Java-simplified encryption-->
+		<dependency>
+			<groupId>org.jasypt</groupId>
+			<artifactId>jasypt</artifactId>
+			<version>1.9.2</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>3.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.easyrules</groupId>
+			<artifactId>easyrules-core</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+		<!-- https://github.com/wicketstuff/core/wiki/GoogleCharts -->
+<!--		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-googlecharts</artifactId>
+			<version>6.14.0</version>
+		</dependency>
+ -->
+ 
+		<!-- Generic U-QASAR Adapter -->
+		<dependency> 
+			<groupId>eu.uqasar.adapter.uQasarAdapter</groupId> 
+			<artifactId>uQasarAdapter</artifactId> 
+			<version>2.0.4</version> 
+		</dependency>
+		
+		<!-- Cubes Adapter -->
+		<dependency>
+			<groupId>eu.uqasar.cubes.adapter.CubesAdapter</groupId>
+			<artifactId>CubesAdapter</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<!-- Adapter by U-QASAR for JIRA(R) issue tracking system -->
+		<dependency>
+			<groupId>eu.uqasar.jira.adapter.JiraAdapter</groupId>
+			<artifactId>JiraAdapter</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+
+		<!-- Sonar Adapter -->
+		<dependency>
+			<groupId>eu.uqasar.sonar.adapter.SonarAdapter</groupId>
+			<artifactId>SonarAdapter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<!-- TestLink Adapter -->
+		<dependency>
+		    <groupId>eu.uqasar.testlink.adapter.TestLinkAdapter</groupId>
+		    <artifactId>TestLinkAdapter</artifactId>
+		    <version>2.0.1</version>
+		</dependency>
+
+		<!-- Gitlab adapter -->
+		<dependency>
+			<groupId>eu.uqasar.gitlab.adapter.GitlabAdapter</groupId>
+			<artifactId>GitlabAdapter</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+		<!-- Jenkins Adapter -->
+		<dependency>
+			<groupId>eu.uqasar.jenkins.adapter.JenkinsAdapter</groupId>
+			<artifactId>JenkinsAdapter</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+
+		<!-- ***************** -->
+		<!-- test dependencies -->
+		<!-- ***************** -->
+		<!-- if you want to use TestNG as test framework <dependency> <groupId>org.testng</groupId> 
+			<artifactId>testng</artifactId> <version>5.14.9</version> <scope>test</scope> 
+			</dependency> <dependency> <groupId>org.jboss.arquillian.testng</groupId> 
+			<artifactId>arquillian-testng-container</artifactId> <scope>test</scope> 
+			</dependency> -->
+		<!-- if you want to use JUnit as test framework -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- REST-assured for testing REST services -->
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>1.6.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.1.3</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+			<version>4.1.4</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- for reading MANIFEST.MF SCM version number -->
+		<dependency>
+			<groupId>com.jcabi</groupId>
+			<artifactId>jcabi-manifests</artifactId>
+			<version>0.7.19</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+			<!-- also copy .html files to target/classes -->
+			<resource>
+				<filtering>false</filtering>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/resources</directory>
+			</testResource>
+			<!-- also copy .html files to target/classes -->
+			<testResource>
+				<filtering>false</filtering>
+				<directory>src/test/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.3.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.zeroturnaround</groupId>
+					<artifactId>jrebel-maven-plugin</artifactId>
+					<version>1.1.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.bsc.maven</groupId>
+					<artifactId>maven-processor-plugin</artifactId>
+					<version>2.0.5</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>1.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.9</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>buildnumber-maven-plugin</artifactId>
+					<version>1.2</version>
+				</plugin>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<!-- do not execute maven-processor plugin to generate JPA meta model -->
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.bsc.maven</groupId>
+										<artifactId>
+											maven-processor-plugin
+										</artifactId>
+										<versionRange>
+											[2.0.5,)
+										</versionRange>
+										<goals>
+											<goal>process</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<optimize>true</optimize>
+					<debug>true</debug>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- include datasource definition in war file -->
+					<webResources>
+						<resource>
+							<directory>${basedir}/src/main/webapp/WEB-INF</directory>
+							<!-- override the destination directory for this resource -->
+							<targetPath>WEB-INF</targetPath>
+							<!-- enable filtering -->
+							<filtering>true</filtering>
+							<includes>
+								<include>**/main-ds.xml</include>
+								<include>**/jboss-web.xml</include>
+							</includes>
+						</resource>
+					</webResources>
+
+					<!-- add org.jboss.msc dependencies to manifest, otherwise browser navigation 
+						(i.e. back button) may fail -->
+					<archive>
+						<manifestEntries>
+							<Dependencies>org.jboss.msc</Dependencies>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- for generating meta model for entity classes to use in JPA Criteria 
+				API "right click project and Run As -> Maven generate-sources" -->
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>maven-processor-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>generate-metamodel-classes</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${generated.sources.dir}</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${generated.sources.dir}</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Create SVN version number -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>buildnumber-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>create</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<doCheck>false</doCheck>
+					<doUpdate>false</doUpdate>
+				</configuration>
+			</plugin>
+			<!-- JRebel plugin uncomment this if you want to use JRebel Maven Plugin 
+				<plugin> <groupId>org.zeroturnaround</groupId> <artifactId>jrebel-maven-plugin</artifactId> 
+				<executions> <execution> <id>generate-rebel-xml</id> <phase>process-resources</phase> 
+				<goals> <goal>generate</goal> </goals> </execution> </executions> </plugin> -->
+		</plugins>
+
+	</build>
+
+	<!-- for switching Maven profiles within Eclipse, right-click project and 
+		select "Maven -> Select Maven Profiles..." -->
+	<profiles>
+		<!-- default profile -->
+		<!-- This should be used for development in Eclipse. For running/debugging 
+			the whole application: - right-click project and select Run/Debug As -> Run/Debug 
+			on Server For running/debugging tests: - change variable jboss.as7.home in 
+			default.properties to point to your local JBOSS_HOME directory - start local 
+			JBoss from within Eclipse in Debug mode - right-click project or test case 
+			and select Run As -> JUnit Test -->
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<version>${jboss.as.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>uqasar</finalName>
+				<!-- use default.properties file when filtering variables to replace 
+					jboss.as7.home variable with value provided in default.properties -->
+				<filters>
+					<filter>default.properties</filter>
+				</filters>
+				<testResources>
+					<!-- add test resources directory specific for jboss 7 -->
+					<testResource>
+						<filtering>true</filtering>
+						<directory>src/test/resources-default</directory>
+					</testResource>
+				</testResources>
+				<plugins>
+					<plugin>
+						<groupId>org.jboss.as.plugins</groupId>
+						<artifactId>jboss-as-maven-plugin</artifactId>
+						<version>${jboss.as.version}</version>
+						<configuration>
+							<!-- to deploy run: "mvn clean compile package jboss-as:deploy" -->
+							<!-- to UNdeploy run: "mvn jboss-as:undeploy" -->
+							<!-- adapt as needed to deploy to other servers -->
+							<hostname>127.0.0.1</hostname>
+							<username>admin</username>
+							<password>jboss</password>
+						</configuration>
+					</plugin>
+					<!-- org.jboss.msc dependency to MANIFEST.MF to avoid classloading problems 
+						when using browser back button -->
+					<!-- also add SVN version number -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<archive>
+								<manifestEntries>
+									<Dependencies>org.jboss.msc</Dependencies>
+									<SCM-Revision>${buildNumber}</SCM-Revision>
+									<SCM-Branch>${scmBranch}</SCM-Branch>
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- profile for unit tests in managed JBoss 7 instance -->
+		<!-- To use, pass "-Parquillian-jboss7-managed" to mvn command. Will automatically 
+			download, install and start a JBoss server to run tests. No need to configure 
+			anything regarding the server. Can not be used to debug test cases from within 
+			IDE. -->
+		<profile>
+			<id>arquillian-jboss7-managed</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
+					<version>${jboss.as.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>uqasar</finalName>
+				<filters>
+					<filter>arquillian-jboss7-managed.properties</filter>
+				</filters>
+				<testResources>
+					<!-- add test resources directory specific for jboss 7 managed -->
+					<testResource>
+						<filtering>true</filtering>
+						<directory>src/test/resources-jboss7-managed</directory>
+					</testResource>
+				</testResources>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>unpack</id>
+								<phase>process-test-classes</phase>
+								<goals>
+									<goal>unpack</goal>
+								</goals>
+								<configuration>
+									<artifactItems>
+										<artifactItem>
+											<groupId>org.jboss.as</groupId>
+											<artifactId>jboss-as-dist</artifactId>
+											<version>${jboss.as.version}</version>
+											<type>zip</type>
+											<overWrite>false</overWrite>
+											<outputDirectory>managed-servers</outputDirectory>
+										</artifactItem>
+									</artifactItems>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- profile for unit tests in an already running JBoss 7 instance on a 
+			local or remote machine -->
+		<!-- This could be used for running tests during build on build servers. 
+			You need a running JBoss instance on a remote machine. For running tests: 
+			- JBoss must be running on local or remote machine - change variables in 
+			arquillian-jboss7-remote to fit with your remote JBoss - pass "-Parquillian-jboss7-remote" 
+			to mvn command that is run on the build server You can also use this profile 
+			for debugging tests on a JBoss instance on a remote machine You need a running 
+			JBoss instance on a remote machine that is listening for debugging connections 
+			- in JBOSS_HOME/bin/standalone.conf uncomment the line by removing the leading 
+			# sign #JAVA_OPTS="$JAVA_OPTS -Xrunjdwp:transport=dt_socket,address=8787,server=y,suspend=n" 
+			For debugging tests on remote JBoss from within Eclipse: - JBoss must be 
+			running on remote machine in debug mode (see above) - change variables in 
+			arquillian-jboss7-remote to fit with your remote JBoss - Setup Remote Java 
+			Application Debug Configuration Run -> Debug Configurations... add new Remote 
+			Java Application set host to IP of your remote JBoss set port to 8787 - start 
+			the remote debug session in Eclipse - right-click test case and select Debug 
+			As -> JUnit Test -->
+		<profile>
+			<id>arquillian-jboss7-remote</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<version>${jboss.as.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>uqasar</finalName>
+				<!-- use arquillian-jboss7-remote.properties file when filtering variables 
+					to replace jboss.as7.XYZ variables with values provided in arquillian-jboss7-remote.properties -->
+				<filters>
+					<filter>arquillian-jboss7-remote.properties</filter>
+				</filters>
+				<testResources>
+					<!-- add test resources directory specific for jboss 7 -->
+					<testResource>
+						<filtering>true</filtering>
+						<directory>src/test/resources-jboss7-remote</directory>
+					</testResource>
+				</testResources>
+			</build>
+		</profile>
+		<!-- copy of arquillian-jboss7-remote profile for Jenkins CI -->
+		<profile>
+			<id>jenkins</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<version>${jboss.as.version}</version>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<finalName>uqasar</finalName>
+				<!-- use jenkins.properties file when filtering variables to replace 
+					jboss.as7.XYZ variables with values provided in jenkins.properties -->
+				<filters>
+					<filter>jenkins.properties</filter>
+				</filters>
+				<testResources>
+					<!-- add test resources directory specific for jboss 7 -->
+					<testResource>
+						<filtering>true</filtering>
+						<directory>src/test/resources-jenkins</directory>
+					</testResource>
+				</testResources>
+			</build>
+		</profile>
+	</profiles>
+</project>

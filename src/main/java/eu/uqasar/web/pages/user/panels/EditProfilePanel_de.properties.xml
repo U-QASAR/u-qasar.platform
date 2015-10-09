@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.password.confirm">Passwort bestätigen</entry>
+<entry key="page.title.edit">${fullName} bearbeiten</entry>
+<entry key="label.lastName">Nachname</entry>
+<entry key="lastName.javax.validation.constraints.NotNull.message">Bitte den Nachnamen des Benutzers angeben</entry>
+<entry key="placeholder.mail">e-Mail Adresse des Benutzers</entry>
+<entry key="lastName.javax.validation.constraints.Size.message.String">Der Nachname muss mindestens ${min} Zeichen lang sein</entry>
+<entry key="confirmPassword.EqualPasswordInputValidator">Die Passwörter stimmen nicht überein</entry>
+<entry key="label.userName">Benutzername</entry>
+<entry key="placeholder.password.confirm">Passwort des Benutzers - nochmal</entry>
+<entry key="lastName.Required">Bitte den Nachnamen des Benutzers angeben</entry>
+<entry key="userName.javax.validation.constraints.NotNull.message">Bitte einen Benutzernamen angeben</entry>
+<entry key="label.password">Passwort</entry>
+<entry key="userName.javax.validation.constraints.Size.message.String">Der Benutzername muss zwischen ${min} und ${max} Zeichen lang sein</entry>
+<entry key="password.PatternValidator">Das Passwort erfüllt die Anforderungen nicht</entry>
+<entry key="label.firstName">Vorname</entry>
+<entry key="mail.Required">Bitte eine E-Mail Adresse angeben</entry>
+<entry key="placeholder.lastName">Nachname des Benutzers</entry>
+<entry key="button.save">Speichern</entry>
+<entry key="placeholder.userName">Benutzername des Benutzers</entry>
+<entry key="help.password.twicetochange">Um dass Passwort zu ändern, bitte einfach beide Felder ausfüllen.</entry>
+<entry key="firstName.javax.validation.constraints.NotNull.message">Bitte den Vornamen des Benutzers angeben</entry>
+<entry key="confirmPassword.Required">Bitte das Passwort bestätigen</entry>
+<entry key="placeholder.password">Passwort des Benutzers</entry>
+<entry key="mail.javax.validation.constraints.NotNull.message">Bitte eine E-Mail Adresse angeben</entry>
+<entry key="userName.Required">Bitte einen Benutzernamen angeben</entry>
+<entry key="mail.org.hibernate.validator.constraints.Email.message">Bitte eine gültige E-Mail Adresse angeben</entry>
+<entry key="error.user.exists.userName">Ein Benutzer mit dem Benutzernamen ${userName} existiert bereits!</entry>
+<entry key="placeholder.firstName">Vorname des Benutzers</entry>
+<entry key="help.mail">Eine gültige E-Mail Adresse angeben. Dies wird der Login des Benutzers.</entry>
+<entry key="firstName.javax.validation.constraints.Size.message.String">Der Vorname muss mindestens ${min} Zeichen lang sein</entry>
+<entry key="help.userName"><![CDATA[Der Benutzername wird Teil der URL des öffentlichen Profils des Benutzers (z.B. <em>uqasar.eu/user/<strong>benutzername</strong></em>).]]></entry>
+<entry key="firstName.Required">Bitte den Vornamen des Benutzers angeben</entry>
+<entry key="label.mail">e-Mail</entry>
+<entry key="password.Required">Bitte ein Passwort angeben</entry>
+<entry key="help.password">Das Passwort muss mindestens 1 Zahl und 1 Klein- und 1 Großbuchstaben und 1 Symbol enthalten und zwischen 6 und 256 Zeichen lang sein.</entry>
+<entry key="userName.javax.validation.constraints.Pattern.message.String">Der Benutzernamen darf nur Klein- und Großbuchstaben sowie Ziffern enthalten</entry>
+<entry key="label.img">Profilfoto</entry>
+<entry key="import.selectFile">Bitte ein Profilfoto auswählen</entry>
+<entry key="button.upload">Hochladen</entry>
+<entry key="button.picture.clear">Entfernen</entry>
+<entry key="mail.UniqueMailValidator">Die E-Mail Adresse gehört einem anderen Benutzer!</entry>
+<entry key="userName.UniqueUsernameValidator">Der angegebene Benutzername gehört einem anderen Benutzer!</entry>
+<entry key="label.role">Rolle</entry>
+<entry key="password.changed">Das Passwort wurde erfolgreich geändert.</entry>
+<entry key="label.gender">Geschlecht</entry>
+<entry key="label.company">Firma</entry>
+<entry key="label.birthday">Geburtstag</entry>
+<entry key="label.tabs.profile">Profil</entry>
+<entry key="label.tabs.picture">Profilfoto</entry>
+<entry key="label.tabs.skills">Kompetenzen</entry>
+<entry key="label.age">{0} Jahre alt</entry>
+<entry key="button.gravatar">Gravatar verwenden</entry>
+</properties>

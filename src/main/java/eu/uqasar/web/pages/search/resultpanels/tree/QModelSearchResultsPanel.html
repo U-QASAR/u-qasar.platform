@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://wicket.apache.org/">
+    <head><title></title></head>
+    <body>
+        <wicket:extend>
+            <table class="table table-striped tablesorter">
+                <thead>
+                    <tr>
+                        <th wicket:id="table.head"></th>
+                        <th><wicket:message key="table.head.description"></wicket:message></th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr wicket:id="entities">
+                        <td><a wicket:id="link"><span wicket:id="name"></span></a></td>
+                        <td wicket:id="description"></td>
+                       
+                    </tr>
+                </tbody>
+                <tfoot wicket:id="tableFoot">
+                    <tr>
+                        <td colspan="4" class="navigator right"><div wicket:id="navigatorFoot"></div></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

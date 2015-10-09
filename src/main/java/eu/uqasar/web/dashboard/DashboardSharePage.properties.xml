@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.title">Select the user(s) to share the dashboard with</entry>
+<entry key="column.head.user">User</entry>
+<entry key="column.head.role">Role</entry>
+<entry key="td.users.actions.batch.share">Share dashboard with the selected User(s)</entry>
+<entry key="td.users.actions.batch.share.cancel">Cancel</entry>
+<entry key="share.confirmation.modal.header">Confirm sharing</entry>
+<entry key="share.confirmation.modal.message">Are you absolutely, positively sure that you want to share the dashboard with the selected User(s)? This action cannot be undone!</entry>
+<entry key="share.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="share.confirmation.modal.submit.text">Share</entry>
+<entry key="share.confirmed">The Dashboard has been shared with the chosen User(s).</entry>
+<entry key="canceled.message">The operation was cancelled.</entry>
+</properties>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="text.skills.intro">Määritä alla taidot ja/tai kompetenssit, joita sinulla on ohjelmointikieliä ja ohjelmistokehitystyökaluja koskien.</entry>
+    <entry key="text.skills.help">Voit tehdä niin alkamalla kirjoittaa ohjelmointikielen ja/tai työkalun nimeä vastaavaan tekstilaatikkoon. Tunnetut työkalut ja kielet täydennetään automaattisesti, jos järjestelmä tuntee ne. Muussa tapauksessa lisää uusia työkaluja ja ohjelmointikieliä yksinkertaisesti kirjoittamalla nimi.</entry>
+    <entry key="label.meta.known">Tunnettu {0}</entry>
+    <entry key="placeholder.meta.input">Kirjoita {0}</entry>
+    <entry key="help.meta.input">Paina Enter, Tabulaattori tai pilkku erottaaksesi syötteet toisistaan</entry>
+</properties>

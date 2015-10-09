@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="register.link.text">Register</entry>
+<entry key="forgot.password.link.text">Forgot your password?</entry>
+<entry key="error.user.register.cancelled">The registration for {0} was cancelled!</entry>
+<entry key="label.mail">eMail (or LDAP username)</entry>
+<entry key="page.title">Login</entry>
+<entry key="label.password">Password</entry>
+<entry key="mail.Required">Please provide an email address</entry>
+<entry key="page.register.message">Don't have an account yet? ${registerLink} now!</entry>
+<entry key="page.header">Login</entry>
+<entry key="button.save">Login</entry>
+<entry key="page.lead.message.1">Login to your U-QASAR account with your email (or LDAP username) and password.</entry>
+<entry key="placeholder.password">Your password</entry>
+<entry key="error.user.unknown">{0} is an unknown user!</entry>
+<entry key="error.user.wrong.credentials">Could not authenticate {0}!</entry>
+<entry key="error.user.register.notconfirmed">The registration for {0} is not yet confirmed!</entry>
+<entry key="placeholder.mail">Your eMail (or LDAP username)</entry>
+<entry key="password.Required">Please provide a password</entry>
+</properties>

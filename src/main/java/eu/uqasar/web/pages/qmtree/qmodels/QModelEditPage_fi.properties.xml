@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="name.null">Nimi on pakollinen kenttä</entry>
+<entry key="page.title">Muokkaa ${name}</entry>
+<entry key="form.name.required">Nimi vaaditaan</entry>
+<entry key="form.name.max">Nimi koko &lt; 255 merkkiä</entry>
+<entry key="form.key.required">Avain vaaditaan</entry>
+<entry key="form.key.repeated">Tämä avain on jo käytössä, arvon pitäisi olla uniikki</entry>
+</properties>

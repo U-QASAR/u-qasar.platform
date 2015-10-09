@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:wicket="http://wicket.apache.org/">
+	<head><title></title></head>
+	<body>
+		<wicket:extend>		
+			<!-- trash -->
+			<a href="#" wicket:id="delete" style="float:right;"><i class="icon-trash icon-white"></i></a>
+			<br/>	
+			<!-- Description -->
+			<wicket:message key="thresholds" />
+			<ul class="dashboard user" wicket:id="treeNodeNames">
+				<li><a href="" wicket:id="QOlink"><span wicket:id="name"></span></a></li>
+			</ul>
+			<wicket:message key="thresholds.in.project" />
+			<b><span class="dashboard user" wicket:id="projectName"></span></b>.	
+
+		</wicket:extend>
+	</body>
+</html>

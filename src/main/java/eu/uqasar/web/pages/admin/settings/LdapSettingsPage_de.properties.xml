@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="page.title">LDAP Einstellugnen</entry>
+	<entry key="page.head.ldap.connection.settings">LDAP Verbindungseinstellungen</entry>
+	<entry key="page.head.ldap.user.mapping.settings">LDAP Benutzerfelder Zuordnungen</entry>
+	<entry key="page.head.ldap.group.mapping.settings">LDAP Gruppenfelder Zuordnungen</entry>
+	<entry key="page.head.tabs.connection">Verbindungseinstellungen</entry>
+	<entry key="page.head.tabs.users">Benutzerzuordnungen</entry>
+	<entry key="page.head.tabs.groups">Gruppenzuordnungen</entry>
+	<entry key="label.host">LDAP Server Addresse</entry>
+	<entry key="label.port">LDAP Server Port</entry>
+	<entry key="label.password">Passwort</entry>
+	<entry key="label.userDN">Benutzer DN </entry>
+	<entry key="label.user.filter">Benutzerfilter</entry>
+	<entry key="label.user.filter.baseDN">Basis DN</entry>
+	<entry key="label.user.mapping.username">Benutzername</entry>
+	<entry key="label.user.mapping.mail">e-Mail</entry>
+	<entry key="label.user.mapping.firstname">Vorname</entry>
+	<entry key="label.user.mapping.lastname">Nachname</entry>
+	<entry key="label.user.mapping.photo">Foto</entry>
+	<entry key="label.group.filter">Gruppenfilter</entry>
+	<entry key="label.group.filter.baseDN">Basis DN</entry>
+	<entry key="label.group.mapping.name">Name</entry>
+	<entry key="label.group.mapping.description">Beschreibung</entry>
+	<entry key="label.group.mapping.member">Mitglieder</entry>
+	<entry key="label.validation.success">LDAP Verbindung erfolgreich hergestellt!</entry>
+	<entry key="label.retrieval.user.success">{0} LDAP Benutzer erfolgreich abgefragt!</entry>
+	<entry key="label.retrieval.group.success">{0} LDAP Gruppe(n) erfolgreich abgefragt!</entry>
+	<entry key="button.connection.validate.text">Einstellungen testen</entry>
+	<entry key="button.retrieve.users">LDAP Nutzer abfragen</entry>
+	<entry key="button.retrieve.groups">LDAP Gruppen abfragen</entry>
+	<entry key="help.host">Bitte die auflösbare Adresse des LDAP Servers angeben (IP oder DNS)</entry>
+	<entry key="help.userDN">Bitte den vollständigen DN eines Nutzers angeben, der LDAP Abfragen durchfürhren darf</entry>
+	<entry key="help.user.mapping">Bitte unten die Zuordnung zu den LDAP Feldern angeben, die relevante Nutzerinformationen enthalten. Nicht ausgefüllte Felder werden nicht zugeordnet. Werte in geschweiften Klammern ({}) werden mit dem tatsächlichen Wert aus dem LDAP ersetzt.</entry>
+	<entry key="help.user.filter">Ein optionaler Filter der an den Standardfilter angehängt wird. Der Standardfilter für Benutzer enthält lediglich das Feld für den Benutzernamen. Beispiel: falls der Benutzername dem Feld "uid" entspricht, wäre der Standardfilter "(uid={0})" wobei {0} dynamisch durch den zu suchenden Benutzernamen ersetzt wird.</entry>
+	<entry key="help.user.filter.baseDN">Bitte den DN angeben, ab dem die LDAP Suche für Benutzer durchgeführt wird</entry>
+	<entry key="help.user.mapping.username"><![CDATA[Der Name des Feldes wonach Benutzer unterschieden werden. Falls dieses Feld leer bleibt, ist <b>{uid}</b> der Standardwert. Active Directory Anwender sollten als Wert <b>{sAMAccountName}</b> verwenden]]></entry>
+	<entry key="help.user.mapping.mail">Der Name des LDAP Feldes, welches die e-Mail Adresse des Nutzers beinhaltet</entry>
+	<entry key="help.user.mapping.firstname">LDAP Feldname mit dem Vornamen eines Nutzers</entry>
+	<entry key="help.user.mapping.lastname">Der Name des LDAP Feldes, welches den Nachnamen eines Nutzers enthält</entry>
+	<entry key="help.user.mapping.photo">Der Name des LDAP Feldes, welches ein Miniaturbild des Nutzers enthält (binär)</entry>
+	<entry key="help.group.filter">Ein optionaler Filter der an den Standardfilter angehängt wird. Der Standardfilter für Gruppen enthält lediglich das Feld für den Gruppennamen. Beispiel: falls der Gruppenname dem Feld "cn" entspricht, wäre der Standardfilter "(cn={0})" wobei {0} dynamisch durch den zu suchenden Gruppennamen ersetzt wird.</entry>
+	<entry key="help.group.filter.baseDN">Bitte den DN angeben, ab dem die LDAP Suche für Gruppen durchgeführt wird</entry>
+	<entry key="help.group.mapping">Bitte unten die Zuordnung zu den LDAP Feldern angeben, die relevante nformationen zur Zurodning von Gruppen enthalten. Nicht ausgefüllte Felder werden nicht zugeordnet. Werte in geschweiften Klammern ({}) werden mit dem tatsächlichen Wert aus dem LDAP ersetzt.</entry>
+	<entry key="help.group.mapping.name"><![CDATA[The field name that the group name lookups will be performed on. If this property is not set, the default value is <b>{cn}</b>.]]></entry>
+	<entry key="help.group.mapping.description"><![CDATA[The field name that holds the description a group. If this property is not set, the default value is <b>{description}</b>.]]></entry>
+	<entry key="help.group.mapping.member"><![CDATA[The field name that holds the members in a group. If this property is not set, the default value is <b>{member}</b>.]]></entry>
+	<entry key="placeholder.host">example.de oder 192.168.0.1</entry>
+	<entry key="placeholder.port">389</entry>
+	<entry key="placeholder.password">Passwort des LDAP Nutzers</entry>
+	<entry key="placeholder.userDN">cn=Administrator,ou=users,dc=example,dc=de</entry>
+	<entry key="placeholder.baseDN">ou=users,dc=example,dc=de</entry>
+	<entry key="placeholder.user.filter.baseDN">ou=users,dc=example,dc=de</entry>
+	<entry key="placeholder.group.filter.baseDN">ou=users,dc=example,dc=de</entry>
+</properties>

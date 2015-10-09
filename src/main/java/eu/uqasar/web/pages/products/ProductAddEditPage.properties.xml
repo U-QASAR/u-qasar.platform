@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="releaseDate.IConverter">'${input}' is not a valid date</entry>
+<entry key="page.edit.title">Edit Product</entry>
+<entry key="name.Required">Please provide a name for the new Product</entry>
+<entry key="page.copy.title">Copy Product</entry>
+<entry key="releaseDate.javax.validation.constraints.Future.message">Date must be in the future</entry>
+<entry key="releasedate.input.placeholder">Enter release date - (dd.mm.yyyy)</entry>
+<entry key="releasedate.input.label">Release date</entry>
+<entry key="form.create.header">Create a new Product</entry>
+<entry key="page.create.title">Create Product</entry>
+<entry key="submit.text">Save</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a name for the new Product</entry>
+<entry key="description.input.placeholder">Enter a description for your Product...</entry>
+<entry key="description.input.label">Description</entry>
+<entry key="form.edit.header">Edit Product</entry>
+<entry key="name.input.placeholder">Enter a name for your Product...</entry>
+<entry key="releaseDate.Required">Please provide release date</entry>
+<entry key="saved.message">The Product ${name} has been saved</entry>
+<entry key="canceled.message">You cancelled the process</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="version.input.placeholder">Enter a version for your Product...</entry>
+<entry key="releaseDate.javax.validation.constraints.NotNull.message">Please provide release date</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Product name must be between ${min} and ${max} characters long</entry>
+<entry key="version.input.label">Version</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="form.copy.header">Create a copy of Product ${name}</entry>
+<entry key="add.confirmed">You created the new Product successfully.</entry>
+</properties>

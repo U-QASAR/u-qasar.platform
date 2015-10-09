@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.notifications">Benachrichtigungen</entry>
+<entry key="label.notifications.unread.count.none">Keine ungelesene Benachrichtigung</entry>
+<entry key="label.notifications.unread.count.multiple">{0} ungelesene Benachrichtigungen</entry>
+<entry key="label.notifications.unread.count.single">1 ungelesene Benachrichtigung</entry>
+</properties>

@@ -1,0 +1,22 @@
+@IMPORT url("../team/user-profile-badges.css");
+
+.targetAudience span label {
+	display: inline;
+}
+
+.targetAudience span input[type="checkbox"]{
+	width:10%;	
+	-ms-transform: scale(1.6); /* IE */
+  	-moz-transform: scale(1.6); /* FF */
+  	-webkit-transform: scale(1.6); /* Safari and Chrome */
+  	-o-transform: scale(1.6); /* Opera */
+  	margin-bottom: 5px;	
+}
+
+.domain span label {
+	display: inline;
+}
+
+.domain span input[type="checkbox"]{
+	width:10%;	
+}

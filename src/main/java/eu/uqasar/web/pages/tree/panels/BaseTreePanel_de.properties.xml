@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.product">Produkt</entry>
+<entry key="label.metric">Metrik</entry>
+<entry key="label.date.end">Enddatum</entry>
+<entry key="label.date.start">Startdatum</entry>
+<entry key="label.process">Prozess</entry>
+<entry key="label.quality.trend">Qualitätstrend von ${name}</entry>
+<entry key="label.lcStage">LC Phase</entry>
+<entry key="label.operator">Operator</entry>
+<entry key="label.quality.value">Q Wert</entry>
+<entry key="button.edit">Bearbeiten</entry>
+<entry key="label.indicator.value.expected">Erwarteter Wert</entry>
+<entry key="label.name">Name</entry>
+<entry key="label.key">Kurzname</entry>
+<entry key="label.qmodel">Qualitätsmodell</entry>
+<entry key="label.description">Beschreibung</entry>
+<entry key="label.team">Team</entry>
+<entry key="label.indicator">Qualitätsindikator</entry>
+<entry key="label.metadata">Metadaten</entry>
+<entry key="label.softwareDevelopmentMethodology">Software Entwicklung Methodologien</entry>
+</properties>

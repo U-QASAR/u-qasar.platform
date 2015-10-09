@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="label.success"><![CDATA[Die Registrierung für <strong>{0}</strong> wurde abgebrochen. Alle Benutzerinformationen (inkl. E-Mail Adresse) wurden erfolgreich vom System entfernt.]]></entry>
+<entry key="label.error"><![CDATA[Die Bestätigung der Registrierung konnte nicht abgebrochen werden!<br />Für den angegeben Token (<em>{0}</em>) konnte kein noch offener Registrierungsantrag gefunden werden.]]></entry>
+<entry key="page.title">Ausstehende Registrierung abbrechen</entry>
+<entry key="label.success.link">Um zur Startseite zurückzukehren, klicken Sie hier oder warten {0} Sekunden.</entry>
+</properties>

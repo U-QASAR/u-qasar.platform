@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.dashboard.new.allwidgets">Lisää kaikki widgetit</entry>
+<entry key="button.dashboard.new.widgetforjira">Lisää Widget JIRA(R) U-QASAR:lle</entry>
+<entry key="button.dashboard.new.sonarqualitywidget">Lisää Sonar-widget</entry>
+<entry key="button.dashboard.new.projectqualitywidget">Lisää Projektin laatu -widget</entry>
+<entry key="button.dashboard.new.testlinkwidget">Lisää TestLink-widget</entry>
+<entry key="button.dashboard.new.jenkins">Lisää Jenkins-widget</entry>
+<entry key="button.dashboard.new.uqasardata">Lisää Projektipuun tiedot -widget</entry>
+<entry key="button.dashboard.new.datadeviation">Lisää Datan Poikkemat -widget</entry>
+<entry key="button.dashboard.new.techdebt">Lisää Tekninen velka -widget</entry>
+<entry key="button.dashboard.new.reporting">Lisää Raportointi-widget</entry>
+<entry key="button.dashboard.update">Päivitä</entry>
+<entry key="button.dashboard.delete">Poista</entry>
+<entry key="button.dashboard.reset">Nollaa</entry>
+<entry key="button.dashboard.share">Jaa</entry>
+<entry key="button.dashboard.export">Vie</entry>
+
+<entry key="widget.feedback.success">Lisäsit widgetin onnistuneesti kojelaudalle!</entry>
+<entry key="widget.feedback.error">Virhe tapahtui widgettiä kojelaudalle lisättäessä! Yritä uudelleen!</entry>
+
+<entry key="reset.confirmation.modal.header">Vahvista Nollaus</entry>
+<entry key="reset.confirmation.modal.message">Oletko täysin varma, että haluat nollata nykyisen kojelaudan? Tätä toimintoa ei voida peruuttaa!</entry>
+<entry key="reset.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="reset.confirmation.modal.submit.text">Nollaa</entry>
+
+<entry key="delete.confirmation.modal.header">Vahvista Poisto</entry>
+<entry key="delete.confirmation.modal.message">Oletko täysin varma, että haluat poistaa nykyisen kojelaudan? Tätä toimintoa ei voida peruuttaa!</entry>
+<entry key="delete.confirmation.modal.cancel.text">Peruuta</entry>
+<entry key="delete.confirmation.modal.submit.text">Poista</entry>
+
+<entry key="suggestion.feedback.info">Seuraavia widgettejä suositellaan, koska samankaltaiset alustan käyttäjät käyttävät niitä.</entry>
+<entry key="canceled.message">Toiminto peruutettiin.</entry>
+</properties>

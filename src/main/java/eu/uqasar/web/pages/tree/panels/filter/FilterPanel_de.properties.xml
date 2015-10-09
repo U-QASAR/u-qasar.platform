@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="button.filter.apply">Anwenden</entry>
+<entry key="label.project.date.end">Enddatum</entry>
+<entry key="label.filter.title">Filter</entry>
+<entry key="label.project.date.start">Startdatum</entry>
+<entry key="label.filter.status">Status</entry>
+<entry key="label.filter.lcStage">LC Phase</entry>
+<entry key="button.filter.clear">Zurücksetzen</entry>
+</properties>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="page.edit.title">Edit Process</entry>
+<entry key="name.Required">Please provide a name for the new Process</entry>
+<entry key="startdate.input.label">Start date</entry>
+<entry key="page.copy.title">Copy Process</entry>
+<entry key="form.create.header">Create a new Process</entry>
+<entry key="startDate.javax.validation.constraints.Future.message">Date must be in the future</entry>
+<entry key="page.create.title">Create Process</entry>
+<entry key="endDate.Required">Please provide end date</entry>
+<entry key="submit.text">Save</entry>
+<entry key="name.javax.validation.constraints.NotNull.message">Please provide a name for the new Process</entry>
+<entry key="startDate.Required">Please provide start date</entry>
+<entry key="description.input.placeholder">Enter a description for your Process...</entry>
+<entry key="enddate.input.placeholder">Enter end date - (dd.mm.yyyy)</entry>
+<entry key="description.input.label">Description</entry>
+<entry key="startdate.input.placeholder">Enter start date - (dd.mm.yyyy)</entry>
+<entry key="form.edit.header">Edit Process</entry>
+<entry key="name.input.placeholder">Enter a name for your Process...</entry>
+<entry key="saved.message">The Process ${name} has been saved</entry>
+<entry key="canceled.message">You canceled the process</entry>
+<entry key="startDate.IConverter">'${input}' is not a valid date</entry>
+<entry key="endDate.javax.validation.constraints.NotNull.message">Please provide end date</entry>
+<entry key="enddate.input.label">End date</entry>
+<entry key="startDate.javax.validation.constraints.NotNull.message">Please provide start date</entry>
+<entry key="cancel.text">Cancel</entry>
+<entry key="name.javax.validation.constraints.Size.message.String">Process name must be between ${min} and ${max} characters long</entry>
+<entry key="endDate.javax.validation.constraints.Future.message">Date must be in the future</entry>
+<entry key="name.input.label">Name</entry>
+<entry key="endDate.IConverter">'${input}' is not a valid date</entry>
+<entry key="form.copy.header">Create a copy of Process ${name}</entry>
+<entry key="add.confirmed">You created the new process successfully.</entry>
+<entry key="date.message">The end date must be later than the start date</entry>
+</properties>

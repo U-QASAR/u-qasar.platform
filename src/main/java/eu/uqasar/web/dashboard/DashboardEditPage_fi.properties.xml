@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="form.create.header">Kojelaudan asetukset</entry>
+<entry key="title.input.label">Kojelaudan nimi</entry>
+<entry key="columncount.input.label">Sarakkeiden lukumäärä</entry>
+<entry key="submit.text">Tallenna</entry>
+<entry key="cancel.text">Peruuta</entry>
+<entry key="saved.message">Kojelauta tallennettiin onnistuneesti.</entry>
+<entry key="title.input.placeholder">Anna nimi kojelaudalle</entry>
+<entry key="column.input.placeholder">Anna kojelaudan sarakkeiden lukumäärä</entry>
+<entry key="enable.suggestion.check.label">Lisää suositellut widgetit kojelaudalle</entry>
+<entry key="enable.check.label.allWidget">Lisää kaikki widgetit kojelaudalle</entry>
+</properties>

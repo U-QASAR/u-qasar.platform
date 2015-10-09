@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="chart.series.legend.average">Keskiarvo</entry>
+<entry key="chart.button.context.title">Vie kaavio</entry>
+<entry key="chart.button.title.print">Tulosta kaavio</entry>
+<entry key="chart.button.download.pdf">Lataa PDF-muodossa</entry>
+<entry key="chart.button.title.reset.zoom">Nollaa Zoom</entry>
+<entry key="chart.button.reset.zoom">Nollaa Zoom</entry>
+<entry key="chart.button.download.svg">Lataa SVG-muodossa</entry>
+<entry key="chart.label.status.loading">Ladataan...</entry>
+<entry key="chart.button.download.jpeg">Lataa JPEG-muodossa</entry>
+<entry key="chart.button.download.png">Lataa PNG-muodossa</entry>
+</properties>

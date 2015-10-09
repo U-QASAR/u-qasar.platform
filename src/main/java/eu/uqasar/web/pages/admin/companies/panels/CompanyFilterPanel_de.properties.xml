@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="label.filter.title">Firmen filtern</entry>
+	<entry key="label.filter.name">Name</entry>
+	<entry key="label.filter.shortName">Kurzname</entry>
+	<entry key="label.filter.country">Land</entry>
+	<entry key="button.filter.apply">Anwenden</entry>
+	<entry key="button.filter.clear">Leeren</entry>
+</properties>

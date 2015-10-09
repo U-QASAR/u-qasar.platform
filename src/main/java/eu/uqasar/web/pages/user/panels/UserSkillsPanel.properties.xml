@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="text.skills.intro">Please specify below which skills and/or competencies in terms of programming languages and software engineering related tools you have.</entry>
+    <entry key="text.skills.help">You can do so, by start typing the name of a programming language and/or tool in the corresponding text box. Known tools and languages will be autocompleted if they are already known. Otherwise feel free to add new tools and programming languages by simply writing out the word.</entry>
+    <entry key="label.meta.known">Known {0}</entry>
+    <entry key="placeholder.meta.input">Enter {0}</entry>
+    <entry key="help.meta.input">Press Enter, Tab or Comma to separate entries</entry>
+    
+    <entry key="label.softwareType"> Known Software Types</entry>
+    <entry key="label.projectType"> Known Project Types</entry>
+    <entry key="label.customerType"> Known Customer Types</entry>
+    <entry key="label.topic"> Known Topics </entry>
+    <entry key="label.softwareLicense"> Known Software Licenses</entry>
+    <entry key="label.methodology"> Known Software Development Methodologies</entry>
+</properties>

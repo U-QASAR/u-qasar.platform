@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="list.header">Subset Vorschlag</entry>
+<entry key="subset.no.selection">Bitte wählen Sie mindestens ein oder mehrere Elemente</entry>
+<entry key="create.confirmation.modal.submit.text">Erstellen</entry>
+<entry key="create.batch.button">Bestätigen</entry>
+<entry key="create.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="subset.selected.created">Ausgewählte Artikel aus der Untergruppe erstellt wurden</entry>
+<entry key="create.confirmation.modal.message">Are you absolutely, positively sure that you want to create the selected subset of element(s)?</entry>
+<entry key="create.confirmation.modal.header">Confirm Creation</entry>
+</properties>

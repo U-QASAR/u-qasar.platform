@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="help.active">To select a quality model as active, others should be inactive</entry>
+<entry key="button.team">Select the team</entry>
+<entry key="TextFieldValidator.format">Validation Name</entry>
+<entry key="label.active">Active</entry>
+<entry key="help.key">Specify the key of the quality model (will be used in URLs)</entry>
+<entry key="label.edition">Edition</entry>
+<entry key="label.company">Company</entry>
+</properties>
