@@ -12,8 +12,8 @@
 	<description>U-QASAR Platform (see www.uqasar.eu for details)</description>
 	<scm>
 		<url>https://github.com/U-QASAR/u-qasar.platform.git</url>
-		<connection>git@github.com:U-QASAR/u-qasar.platform.git</connection>
-		<developerConnection>git@github.com:U-QASAR/u-qasar.platform.git</developerConnection>
+		<connection>scm:git:git@github.com:U-QASAR/u-qasar.platform.git</connection>
+		<developerConnection>scm:git:git@github.com:U-QASAR/u-qasar.platform.git</developerConnection>
 	</scm>
 
 	<licenses>
