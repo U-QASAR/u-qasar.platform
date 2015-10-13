@@ -64,7 +64,7 @@ The U-QASAR platform acquires the external measurement data by using data wrappe
 * [Data adapter for SonarQube(R) Static Code Analysis Software](https://github.com/wenns/SonarAdapter) 
 * [Data adapter for TestLink Test Management Tool](https://github.com/MTPsqa/TestLinkAdapter)
 * [Data adapter for Cubes OLAP Server](https://github.com/ManuDevelopia/CubesAdapter)
-* [Data adapter for Jenkins Continuous Integration Tool](https://github.com/pialindqvist/JenkinsAdapter2)
+* [Data adapter for Jenkins Continuous Integration Tool](https://github.com/pialindqvist/JenkinsAdapter2/tree/jenkinskehitys)
 * [Data adapter for Gitlab Version Management System](https://github.com/minzen/gladapter)
 
 
