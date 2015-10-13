@@ -146,7 +146,7 @@ public class ProjectWizardPanel extends Wizard{
 	private Form<Void> step4Form;
 	// The AdapterSettings to edit/save
 	private List<AdapterSettings> adapterSettingsList = new ArrayList<>();
-
+    private AdapterSettings adapterSettings  = new AdapterSettings();
 	// New Project Tags to match with the QM
 	private WebMarkupContainer subsetContainer;
 	private SubsetProposalPanel subsetProposalPanel;
@@ -786,12 +786,12 @@ public class ProjectWizardPanel extends Wizard{
 		private final InputBorder<String> adapterProjectTextField;
 		@SuppressWarnings("unused")
 		private final InputBorder<String> adapterTestPlanTextField;
-	    private final AjaxSubmitLink addButton;
+        @SuppressWarnings("unused")
+        private final AjaxSubmitLink addButton;
 	    private TextField<String> urlField;
 	    private TextField<String> nameField;
 	    private TextField<String> adapterProjectField;
 	    private TextField<String> adapterTestPlanField;
-	    private AdapterSettings adapterSettings = new AdapterSettings();
 
 		public WizardStep7(){            
 			super("", "");               
@@ -925,15 +925,20 @@ public class ProjectWizardPanel extends Wizard{
 		 private AjaxSubmitLink newAddButton() {
 				AjaxSubmitLink submitLink = new AjaxSubmitLink("add", adapterSettingsForm) {
 
+                    /**
+                     * 
+                     */
+                    private static final long serialVersionUID = 1L;
+
 					@Override
-					protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+                    protected void onSubmit(AjaxRequestTarget target, Form<?> adapterSettingsForm) {
 						
 						String message = new StringResourceModel("step7.add.confirmed", this, null).getString();
 				        // If the adapter has at least the service URL defined, attempt to save 
 				        // the adapter settings
-				        if (adapterSettings.getUrl() != null && !adapterSettings.getUrl().isEmpty()) {
-				        	adapterSettingsService.create(adapterSettings);
-				        	adapterSettingsList.add(adapterSettings);
+                        if (adapterSettings.getName() != null) {
+                            AdapterSettings as = adapterSettingsService.create(adapterSettings);
+                            adapterSettingsList.add(as);
 				        }
 				     
 				        
@@ -1051,7 +1056,19 @@ public class ProjectWizardPanel extends Wizard{
 
 		// step7: add adapter settings
 		// set the QA Project for the Adapter(s)
-		for (AdapterSettings adapterSettings : adapterSettingsList) {
+        if(adapterSettingsList.size() != 0){
+            for (AdapterSettings adapterSettingsInside : adapterSettingsList) {
+                
+                if (adapterSettingsInside.getName() != null) {    
+                    adapterSettingsInside.setProject(project);
+                    adapterSettingsService.update(adapterSettingsInside);
+                }
+            }
+        } 
+        
+        
+        // set the latest adapterSetting
+        if(adapterSettings.getName() != null){
 			adapterSettings.setProject(project);
 			adapterSettingsService.update(adapterSettings);
 		}
