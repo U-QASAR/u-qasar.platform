@@ -31,14 +31,16 @@ import org.reflections.vfs.ZipDir;
 import org.wicketstuff.javaee.injection.JavaEEComponentInjector;
 import org.wicketstuff.javaee.naming.global.ModuleJndiNamingStrategy;
 
+import ro.fortsoft.wicket.dashboard.DashboardContextInitializer;
+import ro.fortsoft.wicket.dashboard.web.DashboardContext;
 import de.agilecoders.wicket.core.Bootstrap;
 import de.agilecoders.wicket.core.settings.BootstrapSettings;
 import eu.uqasar.auth.strategies.UQasarAuthorizationStrategy;
-import eu.uqasar.service.dataadapter.AdapterSettingsService;
 import eu.uqasar.web.components.resources.UserPictureResource;
 import eu.uqasar.web.dashboard.DashboardEditPage;
 import eu.uqasar.web.dashboard.DashboardViewPage;
 import eu.uqasar.web.dashboard.DemoWidgetActionsFactory;
+import eu.uqasar.web.dashboard.projectqualitygooglechart.ProjectQualityGoogleChartWidgetDescriptor;
 import eu.uqasar.web.dashboard.widget.datadeviation.DataDeviationWidgetDescriptor;
 import eu.uqasar.web.dashboard.widget.jenkins.JenkinsWidgetDescriptor;
 import eu.uqasar.web.dashboard.widget.projectqualitychart.ProjectQualityChartWidgetDescriptor;
@@ -109,17 +111,12 @@ import eu.uqasar.web.pages.tree.visual.VisualPage;
 import eu.uqasar.web.pages.user.ProfilePage;
 import eu.uqasar.web.pages.user.UserPage;
 import eu.uqasar.web.provider.UrlProvider;
-import ro.fortsoft.wicket.dashboard.DashboardContextInitializer;
-import ro.fortsoft.wicket.dashboard.web.DashboardContext;
 
 public class UQasar extends WebApplication {
 
 	@Inject
 	private UrlProvider urlProvider;
 
-	@Inject
-	private AdapterSettingsService adapterSettingsService;
-	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -207,6 +204,7 @@ public class UQasar extends WebApplication {
 		DashboardContext dashboardContext = getDashboardContext();
 		dashboardContext.getWidgetRegistry()
 				.registerWidget(new ProjectQualityChartWidgetDescriptor())
+				.registerWidget(new ProjectQualityGoogleChartWidgetDescriptor())
 				.registerWidget(new UqasarDataVisualizationWidgetDescriptor())
 				.registerWidget(new DataDeviationWidgetDescriptor())
 				.registerWidget(new WidgetForJIRADescriptor())

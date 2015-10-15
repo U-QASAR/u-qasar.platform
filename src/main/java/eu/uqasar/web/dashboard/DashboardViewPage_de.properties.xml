@@ -5,6 +5,7 @@
 <entry key="button.dashboard.new.widgetforjira">JIRA-Widget hinzufügen</entry>
 <entry key="button.dashboard.new.sonarqualitywidget">Sonar Widget hinzufügen</entry>
 <entry key="button.dashboard.new.projectqualitywidget">Projektsqualität Widget hinzufügen </entry>
+<entry key="button.dashboard.new.projectqualitygooglechartwidget">Projektsqualität Widget (Google Charts) hinzufügen</entry>
 <entry key="button.dashboard.new.testlinkwidget">TestLink Widget hinzufügen </entry>
 <entry key="button.dashboard.new.jenkins">Jenkins Widget hinzufügen </entry>
 <entry key="button.dashboard.new.uqasardata">Projektbaum Widget hinzufügen </entry>

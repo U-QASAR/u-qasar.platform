@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:wicket="http://wicket.apache.org/">
+<wicket:panel>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['gauge']}]}"></script>
+       <div id="chart_div" style="width: 100%; height: 100%;"></div>
+    <script>
+       //google.setOnLoadCallback(drawChart(80));        
+            function drawChart(foo) {
+                var data = google.visualization.arrayToDataTable([
+                  ['Label', 'Value'],
+                  ['PQV', foo],]);
+          
+                var options = {
+                  width: 700, height: 240,
+                  redFrom: 90, redTo: 100,
+                  yellowFrom:75, yellowTo: 90,
+                  minorTicks: 5
+                };
+                var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+                chart.draw(data, options);
+        }
+    </script>
+</wicket:panel>
+</html>    
