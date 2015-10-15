@@ -1,17 +1,23 @@
 package eu.uqasar.rest;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -56,7 +62,7 @@ public class UQasarRestService implements Serializable {
 	@Inject
 	private TreeNodeService treeNodeService;
 	@Inject
-	private QMTreeNodeService qMTreeNodeService; 
+	private QMTreeNodeService qmTreeNodeService; 
 	@Inject
 	private AdapterSettingsService adapterSettingsService;
 	@Inject 
@@ -157,7 +163,7 @@ public class UQasarRestService implements Serializable {
 	@Produces({MediaType.APPLICATION_JSON})
 	public String getQModels() throws JsonGenerationException, JsonMappingException, IOException {
 
-		List<QModel> qmodels = qMTreeNodeService.getAllQModels();
+		List<QModel> qmodels = qmTreeNodeService.getAllQModels();
 		String retValue = null;
 		if (qmodels != null) {
 			ObjectMapper mapper = new ObjectMapper();
@@ -182,7 +188,7 @@ public class UQasarRestService implements Serializable {
 	@Produces({ MediaType.APPLICATION_JSON })
 	public String getQModelByName(@PathParam("name") String name) throws JsonGenerationException, JsonMappingException, IOException {
 
-		QMTreeNode qMTreeNode = qMTreeNodeService.getByName(QMTreeNode.class, name);
+		QMTreeNode qMTreeNode = qmTreeNodeService.getByName(QMTreeNode.class, name);
 		String value = null; 
 		if (qMTreeNode != null) {
 			ObjectMapper mapper = new ObjectMapper();
@@ -311,6 +317,72 @@ public class UQasarRestService implements Serializable {
 
 		return histValues;
 	}
+	
+
+	/**
+	 * Store a QA project
+	 * @return
+	 */
+	@POST
+	@Path("/projects")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response addQAProject(InputStream input) {
+
+		StringBuilder sb = new StringBuilder();
+		try {
+			BufferedReader in = new BufferedReader(new InputStreamReader(input));
+			String line = null;
+			while ((line = in.readLine()) != null) {
+				sb.append(line);
+			}
+			System.out.println("Data Received: " + sb.toString());
+
+			ObjectMapper mapper = new ObjectMapper();
+			Project p = mapper.readValue(sb.toString(), Project.class);
+            Project proj = (Project) treeNodeService.create(p);
+            System.out.println("Project " +proj.toString() + " created.");
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// return HTTP response 200 in case of success
+		return Response.status(200).entity(sb.toString()).build();
+	}
+
+	
+	/**
+	 * Store a QModel
+	 * @return
+	 */
+	@POST 
+	@Path("/qmodels")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response addQModel(InputStream input) {
+		StringBuilder sb = new StringBuilder();
+		try {
+			BufferedReader in = new BufferedReader(new InputStreamReader(input));
+			String line = null;
+			while ((line = in.readLine()) != null) {
+				sb.append(line);
+			}
+			System.out.println("Data Received: " + sb.toString());
+
+			ObjectMapper mapper = new ObjectMapper();
+			QModel qm = mapper.readValue(sb.toString(), QModel.class);
+            QModel qualityModel = (QModel) qmTreeNodeService.create(qm);
+            System.out.println("Quality Model " +qualityModel.toString() + " created.");
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		// return HTTP response 200 in case of success
+		return Response.status(200).entity(sb.toString()).build();
+	}
+	
 
 
 	/**
