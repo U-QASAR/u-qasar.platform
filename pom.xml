@@ -374,13 +374,12 @@
 			<version>1.2.0</version>
 		</dependency>
 
-		<!-- https://github.com/wicketstuff/core/wiki/GoogleCharts -->
-<!--		<dependency>
-			<groupId>org.wicketstuff</groupId>
-			<artifactId>wicketstuff-googlecharts</artifactId>
-			<version>6.14.0</version>
-		</dependency>
- -->
+ 		<!-- https://github.com/wicketstuff/core/wiki/GoogleCharts -->
+ 		<dependency>
+        	<groupId>org.wicketstuff</groupId>
+        	<artifactId>wicketstuff-googlecharts</artifactId>
+        	<version>6.14.0</version>
+        </dependency> 
  
 		<!-- Generic U-QASAR Adapter -->
 		<dependency> 

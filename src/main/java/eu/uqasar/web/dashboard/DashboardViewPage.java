@@ -31,6 +31,15 @@ import org.apache.wicket.model.StringResourceModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.jboss.solder.logging.Logger;
 
+import ro.fortsoft.wicket.dashboard.Dashboard;
+import ro.fortsoft.wicket.dashboard.DashboardUtils;
+import ro.fortsoft.wicket.dashboard.Widget;
+import ro.fortsoft.wicket.dashboard.WidgetDescriptor;
+import ro.fortsoft.wicket.dashboard.WidgetFactory;
+import ro.fortsoft.wicket.dashboard.WidgetLocation;
+import ro.fortsoft.wicket.dashboard.web.DashboardContext;
+import ro.fortsoft.wicket.dashboard.web.DashboardEvent;
+import ro.fortsoft.wicket.dashboard.web.DashboardPanel;
 import de.agilecoders.wicket.core.markup.html.bootstrap.button.BootstrapAjaxLink;
 import de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons;
 import de.agilecoders.wicket.core.markup.html.bootstrap.dialog.Modal;
@@ -44,6 +53,7 @@ import eu.uqasar.service.user.UserService;
 import eu.uqasar.web.UQasar;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
+import eu.uqasar.web.dashboard.projectqualitygooglechart.ProjectQualityGoogleChartWidget;
 import eu.uqasar.web.dashboard.widget.datadeviation.DataDeviationWidget;
 import eu.uqasar.web.dashboard.widget.jenkins.JenkinsWidget;
 import eu.uqasar.web.dashboard.widget.projectqualitychart.ProjectQualityChartWidget;
@@ -55,15 +65,6 @@ import eu.uqasar.web.dashboard.widget.uqasardatavisualization.UqasarDataVisualiz
 import eu.uqasar.web.dashboard.widget.widgetforjira.WidgetForJira;
 import eu.uqasar.web.pages.AboutPage;
 import eu.uqasar.web.pages.BasePage;
-import ro.fortsoft.wicket.dashboard.Dashboard;
-import ro.fortsoft.wicket.dashboard.DashboardUtils;
-import ro.fortsoft.wicket.dashboard.Widget;
-import ro.fortsoft.wicket.dashboard.WidgetDescriptor;
-import ro.fortsoft.wicket.dashboard.WidgetFactory;
-import ro.fortsoft.wicket.dashboard.WidgetLocation;
-import ro.fortsoft.wicket.dashboard.web.DashboardContext;
-import ro.fortsoft.wicket.dashboard.web.DashboardEvent;
-import ro.fortsoft.wicket.dashboard.web.DashboardPanel;
 
 
 /**
@@ -116,6 +117,8 @@ public class DashboardViewPage extends BasePage {
 		newLinksContainer.setOutputMarkupId(true);
 		BootstrapAjaxLink<String> addProjectQualityChartWidgetLink = 
 				getNewProjectQualityChartWidgetLink();
+		BootstrapAjaxLink<String> addProjectQualityGoogleChartWidgetLink = 
+				getNewProjectQualityGoogleChartWidgetLink();
 		BootstrapAjaxLink<String> addWidgetForJIRALink = 
 				getNewWidgetForJIRALink();
 		BootstrapAjaxLink<String> addSonarQualityWidgetLink = 
@@ -133,6 +136,7 @@ public class DashboardViewPage extends BasePage {
 		BootstrapAjaxLink<String> addReportingWidgetLink =  
 				getNewReportingWidgetLink();
 		newLinksContainer.add(addProjectQualityChartWidgetLink);
+		newLinksContainer.add(addProjectQualityGoogleChartWidgetLink);
 		newLinksContainer.add(addWidgetForJIRALink);
 		newLinksContainer.add(addSonarQualityWidgetLink);
 		newLinksContainer.add(addTestLinkWidgetLink);
@@ -375,6 +379,50 @@ public class DashboardViewPage extends BasePage {
 	}
 
 
+	
+	/**
+	 * 
+	 * @return
+	 */
+	private BootstrapAjaxLink<String> getNewProjectQualityGoogleChartWidgetLink() {
+		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
+				"link.dashboard.node.new.projectqualitygooglechart", 
+				new StringResourceModel(
+						"button.dashboard.new.projectqualitygooglechartwidget", 
+						this, null), Buttons.Type.Link) {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = -7142515721241176452L;
+
+			@Override
+			public void onClick(final AjaxRequestTarget target) {
+				WidgetDescriptor descriptor = 
+						dashboardContext.getWidgetRegistry().
+						getWidgetDescriptorByClassName(
+								ProjectQualityGoogleChartWidget.class.getName());
+				WidgetFactory widgetFactory = 
+						dashboardContext.getWidgetFactory();
+				Model<WidgetDescriptor> item = 
+						new Model<WidgetDescriptor>(descriptor);
+				Widget widget = widgetFactory.createWidget(item.getObject());
+				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
+						DashboardEvent.EventType.WIDGET_ADDED, widget));
+				DashboardUtils.updateWidgetLocations(dashboard, 
+						new DashboardEvent(target, 
+								DashboardEvent.EventType.WIDGET_ADDED, widget));
+				dashboard.addWidget(widget);
+				dashboardContext.getDashboardPersiter().save(dashboard);
+
+				target.add(dashboardPanel);
+			}
+		};
+		link.setOutputMarkupId(true);
+		return link;
+	}
+
+	
 	/**
 	 * 
 	 * @return

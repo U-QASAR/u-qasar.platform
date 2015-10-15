@@ -5,6 +5,7 @@
 <entry key="button.dashboard.new.widgetforjira">Lisää Widget JIRA(R) U-QASAR:lle</entry>
 <entry key="button.dashboard.new.sonarqualitywidget">Lisää Sonar-widget</entry>
 <entry key="button.dashboard.new.projectqualitywidget">Lisää Projektin laatu -widget</entry>
+<entry key="button.dashboard.new.projectqualitygooglechartwidget">Lisää Projektin laatu -widget (Google Charts)</entry>
 <entry key="button.dashboard.new.testlinkwidget">Lisää TestLink-widget</entry>
 <entry key="button.dashboard.new.jenkins">Lisää Jenkins-widget</entry>
 <entry key="button.dashboard.new.uqasardata">Lisää Projektipuun tiedot -widget</entry>

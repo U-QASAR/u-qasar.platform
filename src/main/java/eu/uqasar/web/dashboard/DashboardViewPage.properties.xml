@@ -5,6 +5,7 @@
 <entry key="button.dashboard.new.widgetforjira">Add Widget for JIRA(R)</entry>
 <entry key="button.dashboard.new.sonarqualitywidget">Add Sonar Quality Widget</entry>
 <entry key="button.dashboard.new.projectqualitywidget">Add Project Quality Widget</entry>
+<entry key="button.dashboard.new.projectqualitygooglechartwidget">Add Project Quality Google Charts Widget</entry>
 <entry key="button.dashboard.new.testlinkwidget">Add TestLink Widget</entry>
 <entry key="button.dashboard.new.jenkins">Add Jenkins Widget </entry>
 <entry key="button.dashboard.new.uqasardata">Add Project Tree Widget</entry>
