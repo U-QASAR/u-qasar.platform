@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="rdfmanagement.title">RDF Management</entry>
+<entry key="rdfmanagement.description">The ontology model is created by using 
+the jenabean library. The Java bean classes are equipped with annotations 
+that are used for mapping the entities to/from RDF/OWL.</entry>
+<entry key="button.write.model">Write model to file</entry>
+<entry key="button.read.model">Read model from file</entry>
+<entry key="button.output.model">Output model to console</entry>
+<entry key="button.execSparql">Execute SparQL query</entry>
+</properties>

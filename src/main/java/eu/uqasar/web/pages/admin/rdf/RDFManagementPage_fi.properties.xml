@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="rdfmanagement.title">RDF-hallinnointi</entry>
+<entry key="rdfmanagement.description">Semanttinen malli luodaan käyttäen 
+Jenabean-kirjastoa. The Java bean -luokat varustetaan annotaatioilla, joita 
+käytetään entiteettien kytkemiseen RDF/OWL-muotoon.</entry>
+<entry key="button.write.model">Kirjoita malli tiedostoon</entry>
+<entry key="button.read.model">Lue malli tiedostosta</entry>
+<entry key="button.output.model">Tulosta malli konsoliin</entry>
+</properties>
