@@ -1,10 +1,12 @@
 package eu.uqasar.util;
 
+import java.io.FileOutputStream;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Properties;
@@ -15,14 +17,46 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.jena.riot.RDFDataMgr;
 import org.apache.wicket.model.IModel;
 import org.jboss.solder.logging.Logger;
+import org.topbraid.spin.arq.ARQ2SPIN;
+import org.topbraid.spin.arq.ARQFactory;
+import org.topbraid.spin.model.Select;
+import org.topbraid.spin.system.SPINModuleRegistry;
+
+import thewebsemantic.Bean2RDF;
+import thewebsemantic.Sparql;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
+import com.hp.hpl.jena.ontology.OntModel;
+import com.hp.hpl.jena.ontology.OntModelSpec;
+import com.hp.hpl.jena.query.Query;
+import com.hp.hpl.jena.query.QueryExecution;
+import com.hp.hpl.jena.query.QuerySolutionMap;
+import com.hp.hpl.jena.query.ResultSet;
+import com.hp.hpl.jena.rdf.model.Model;
+import com.hp.hpl.jena.rdf.model.ModelFactory;
+import com.hp.hpl.jena.vocabulary.RDFS;
+import com.hp.hpl.jena.util.FileUtils;
 
 import eu.uqasar.model.formula.Formula;
 import eu.uqasar.model.measure.MetricSource;
+import eu.uqasar.model.meta.ContinuousIntegrationTool;
+import eu.uqasar.model.meta.CustomerType;
+import eu.uqasar.model.meta.IssueTrackingTool;
+import eu.uqasar.model.meta.MetaData;
+import eu.uqasar.model.meta.ProgrammingLanguage;
+import eu.uqasar.model.meta.ProjectType;
+import eu.uqasar.model.meta.QModelTagData;
+import eu.uqasar.model.meta.SoftwareDevelopmentMethodology;
+import eu.uqasar.model.meta.SoftwareLicense;
+import eu.uqasar.model.meta.SoftwareType;
+import eu.uqasar.model.meta.SourceCodeManagementTool;
+import eu.uqasar.model.meta.StaticAnalysisTool;
+import eu.uqasar.model.meta.TestManagementTool;
+import eu.uqasar.model.meta.Topic;
 import eu.uqasar.model.notification.INotification;
 import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
@@ -30,10 +64,25 @@ import eu.uqasar.model.tree.QualityIndicator;
 import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.QualityStatus;
 import eu.uqasar.model.tree.TreeNode;
+import eu.uqasar.model.user.User;
 import eu.uqasar.service.dataadapter.AdapterDataService;
+import eu.uqasar.service.meta.ContinuousIntegrationToolService;
+import eu.uqasar.service.meta.CustomerTypeService;
+import eu.uqasar.service.meta.IssueTrackingToolService;
+import eu.uqasar.service.meta.ProgrammingLanguageService;
+import eu.uqasar.service.meta.ProjectTypeService;
+import eu.uqasar.service.meta.QModelTagDataService;
+import eu.uqasar.service.meta.SoftwareDevelopmentMethodologyService;
+import eu.uqasar.service.meta.SoftwareLicenseService;
+import eu.uqasar.service.meta.SoftwareTypeService;
+import eu.uqasar.service.meta.SourceCodeManagementToolService;
+import eu.uqasar.service.meta.StaticAnalysisToolService;
+import eu.uqasar.service.meta.TestManagementToolService;
+import eu.uqasar.service.meta.TopicService;
 import eu.uqasar.service.similarity.ProjectSimilarityService;
 import eu.uqasar.service.similarity.QualityObjectiveSimilarityService;
 import eu.uqasar.service.tree.TreeNodeService;
+import eu.uqasar.service.user.UserService;
 import eu.uqasar.util.resources.ResourceBundleLocator;
 
 /**
@@ -45,6 +94,8 @@ public class UQasarUtil {
 
 	final static String SEPARATOR = 
 			java.nio.file.FileSystems.getDefault().getSeparator(); 
+	final static String ONTOLOGYFILE = "uq-ontology-model.rdf";
+
 
 	protected static ResourceBundle res = null;
 	private static Logger logger = Logger.getLogger(UQasarUtil.class);
@@ -54,6 +105,8 @@ public class UQasarUtil {
 	
 	private static Date latestTreeUpdateDate = new Date(); 
 	
+	private static Model uqModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+
 	// Enumeration for the various suggestion types
 	public enum SuggestionType {
 		
@@ -918,4 +971,274 @@ public class UQasarUtil {
 
 		return Arrays.asList(metrics);
 	}
+
+
+	/**
+	 * Uses the classes from the DB to write the RDF files based on those.
+	 */
+	public static void writeSemanticModelFiles() {
+		logger.debug("Writing the context model to a file");
+
+		// TODO: Complement the model with the other required entities 
+		OntModel usersModel = writeUserEntries();
+		OntModel projectsModel = writeProjectEntries();
+		OntModel metadataModel = writeMetaDataModelEntries();
+
+		//	uqModel.write(System.out, "RDF/XML");
+		//	RDFDataMgr.write(System.out, uqModel, RDFFormat.RDFXML_PRETTY);
+
+		// Write the individual models to a single file
+		// holding all the triples
+		final OntModel combined = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		for (final OntModel part : new OntModel[] { usersModel, projectsModel, metadataModel } ) {
+			combined.add(part);
+		}
+		try {
+			String dataDir = UQasarUtil.getDataDirPath();
+			// TODO: Find out why this does not work in Linux
+//			String modelPath = "file:///" + dataDir + ONTOLOGYFILE;
+			String modelPath = dataDir + ONTOLOGYFILE;
+			
+			combined.write(new FileOutputStream(modelPath, false));
+			logger.debug("Context Model written to file " +modelPath);
+			UQasarUtil.setUqModel(combined);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Writes the user entities to rdf
+	 * @param writer
+	 */
+	private static OntModel writeUserEntries() {
+		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		try {
+			thewebsemantic.Bean2RDF writer = new Bean2RDF(model);
+			InitialContext ic = new InitialContext();
+			UserService userService = (UserService) ic.lookup("java:module/UserService");
+			List<User> users = userService.getAll();
+			for (User u : users) {
+				writer.save(u);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return model;
+	}
+
+
+	/**
+	 * Writes the project entities to rdf
+	 * @param writer
+	 */
+	private static OntModel writeProjectEntries() {
+		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		try {
+			thewebsemantic.Bean2RDF writer = new Bean2RDF(model);
+			InitialContext ic = new InitialContext();
+			TreeNodeService treeNodeService = (TreeNodeService) ic.lookup("java:module/TreeNodeService");
+			List<Project> projects = treeNodeService.getAllProjects();
+			for (Project proj : projects) {
+				writer.save(proj);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return model;
+	}
+
+
+	/**
+	 * Write metadata entities from the beans to rdf model
+	 * @param writer
+	 */
+	private static OntModel writeMetaDataModelEntries() {
+		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		thewebsemantic.Bean2RDF writer = new Bean2RDF(model);
+		try {
+			InitialContext ic = new InitialContext();
+			for (final Class clazz : MetaData.getAllClasses()) {
+				if (ContinuousIntegrationTool.class.isAssignableFrom(clazz)) {
+					ContinuousIntegrationToolService cits = (ContinuousIntegrationToolService) ic.lookup("java:module/ContinuousIntegrationToolService");
+					List<ContinuousIntegrationTool> continuousIntegrationTools = cits.getAll();
+					for (ContinuousIntegrationTool continuousIntegrationTool : continuousIntegrationTools) {
+						writer.save(continuousIntegrationTool);
+					}	            	
+				} else if (CustomerType.class.isAssignableFrom(clazz)) {
+					CustomerTypeService cts = (CustomerTypeService) ic.lookup("java:module/CustomerTypeService");
+					List<CustomerType> customerTypes = cts.getAll();
+					for (CustomerType customerType : customerTypes) {
+						writer.save(customerType);
+					}
+				} else if (IssueTrackingTool.class.isAssignableFrom(clazz)) {
+					IssueTrackingToolService itts = (IssueTrackingToolService) ic.lookup("java:module/IssueTrackingToolService");
+					List<IssueTrackingTool> issueTrackingTools = itts.getAll();
+					for (IssueTrackingTool issueTrackingTool : issueTrackingTools) {
+						writer.save(issueTrackingTool);
+					}
+				} else if (ProgrammingLanguage.class.isAssignableFrom(clazz)) {
+					ProgrammingLanguageService pls = (ProgrammingLanguageService) ic.lookup("java:module/ProgrammingLanguageService");
+					List<ProgrammingLanguage> programmingLanguages = pls.getAll();
+					for (ProgrammingLanguage programmingLanguage : programmingLanguages) {
+						writer.save(programmingLanguage);
+					}
+				} else if (ProjectType.class.isAssignableFrom(clazz)) {
+					ProjectTypeService pts = (ProjectTypeService) ic.lookup("java:module/ProjectTypeService");
+					List<ProjectType> projectTypes = pts.getAll();
+					for (ProjectType projectType : projectTypes) {
+						writer.save(projectType);
+					}
+				} else if (SoftwareLicense.class.isAssignableFrom(clazz)) {
+					SoftwareLicenseService sls = (SoftwareLicenseService) ic.lookup("java:module/SoftwareLicenseService");
+					List<SoftwareLicense> softwareLicenses = sls.getAll();
+					for (SoftwareLicense softwareLicense : softwareLicenses) {
+						writer.save(softwareLicense);
+					}	            	
+				} else if (SoftwareType.class.isAssignableFrom(clazz)) {
+					SoftwareTypeService sts = (SoftwareTypeService) ic.lookup("java:module/SoftwareTypeService");
+					List<SoftwareType> softwareTypes = sts.getAll();
+					for (SoftwareType softwareType : softwareTypes) {
+						writer.save(softwareType);
+					}
+				} else if (SourceCodeManagementTool.class.isAssignableFrom(clazz)) {
+					SourceCodeManagementToolService scmts = (SourceCodeManagementToolService) ic.lookup("java:module/SourceCodeManagementToolService");
+					List<SourceCodeManagementTool> sourceCodeManagementTools = scmts.getAll();
+					for (SourceCodeManagementTool sourceCodeManagementTool : sourceCodeManagementTools) {
+						writer.save(sourceCodeManagementTool);
+					}	            	
+				} else if (StaticAnalysisTool.class.isAssignableFrom(clazz)) {
+					StaticAnalysisToolService sats = (StaticAnalysisToolService) ic.lookup("java:module/StaticAnalysisToolService");
+					List<StaticAnalysisTool> staticAnalysisTools = sats.getAll();
+					for (StaticAnalysisTool staticAnalysisTool : staticAnalysisTools) {
+						writer.save(staticAnalysisTool);
+					}
+				} else if (TestManagementTool.class.isAssignableFrom(clazz)) {
+					TestManagementToolService tmts = (TestManagementToolService) ic.lookup("java:module/TestManagementToolService");
+					List<TestManagementTool> testManagementTools = tmts.getAll();
+					for (TestManagementTool testManagementTool : testManagementTools) {
+						writer.save(testManagementTool);
+					}
+				} else if (Topic.class.isAssignableFrom(clazz)) {
+					TopicService ts = (TopicService) ic.lookup("java:module/TopicService");
+					List<Topic> topics = ts.getAll();
+					for (Topic topic : topics) {
+						writer.save(topic);
+					}
+				} else if (SoftwareDevelopmentMethodology.class.isAssignableFrom(clazz)) {
+					SoftwareDevelopmentMethodologyService sdms = (SoftwareDevelopmentMethodologyService) ic.lookup("java:module/SoftwareDevelopmentMethodologyService");
+					List<SoftwareDevelopmentMethodology> softwareDevelopmentMethodologies = sdms.getAll();
+					for (SoftwareDevelopmentMethodology softwareDevelopmentMethodology : softwareDevelopmentMethodologies) {
+						writer.save(softwareDevelopmentMethodology);
+					}
+				} else if (QModelTagData.class.isAssignableFrom(clazz)) {
+					QModelTagDataService qmtds = (QModelTagDataService) ic.lookup("java:module/QModelTagDataService");
+					List<QModelTagData> qmodelTagData = qmtds.getAll();
+					for (QModelTagData qmtd : qmodelTagData) {
+						writer.save(qmtd);
+					}            	
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return model;
+	}
+
+
+	/**
+	 * Read the RDF model from files.
+	 */
+	public static void readSemanticModelFiles() {
+		logger.debug("Reading the model from a file");
+		// Read the model to an existing model
+		String dataDir = UQasarUtil.getDataDirPath();
+		String modelPath = "file:///" + dataDir + ONTOLOGYFILE;
+//		String modelPath = "file:///C:/nyrhinen/Programme/jboss-as-7.1.1.Final/standalone/data/uq-ontology-model.rdf";
+
+		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
+		RDFDataMgr.read(model, modelPath);
+		// Test output to standard output
+		//		RDFDataMgr.write(System.out, uqModel, RDFFormat.RDFXML_PRETTY);
+		logger.debug("Model read from file " +modelPath);
+		UQasarUtil.setUqModel(model);
+		System.out.println("Reading done.");
+	}
+
+
+
+	public static String execSparQLQuery(String query) {
+		System.out.println("execSPINQuery");
+		Model model = getUqModel();
+
+		// Register system functions (such as sp:gt (>))
+		SPINModuleRegistry.get().init();
+
+		Query arqQuery = ARQFactory.get().createQuery(model, query);
+		ARQ2SPIN arq2SPIN = new ARQ2SPIN(model);
+		Select spinQuery = (Select) arq2SPIN.createQuery(arqQuery, null);
+
+		System.out.println("SPIN query in Turtle:");
+		model.write(System.out, FileUtils.langTurtle);
+
+		System.out.println("-----");
+		String str = spinQuery.toString();
+		System.out.println("SPIN query:\n" + str);
+
+		// Now turn it back into a Jena Query
+		Query parsedBack = ARQFactory.get().createQuery(spinQuery);
+		System.out.println("Jena query:\n" + parsedBack);
+		
+		com.hp.hpl.jena.query.Query arq = ARQFactory.get().createQuery(spinQuery);
+		QueryExecution qexec = ARQFactory.get().createQueryExecution(arq, model);
+		QuerySolutionMap arqBindings = new QuerySolutionMap();
+		arqBindings.add("predicate", RDFS.label);
+		qexec.setInitialBinding(arqBindings); // Pre-assign the arguments
+		ResultSet rs = qexec.execSelect();
+		
+//		System.out.println("#####################################################################");
+//		
+//		if (rs.hasNext()) {
+//			QuerySolution row = rs.next();
+//			System.out.println("Row: " +row.toString());
+//			RDFNode user = row.get("User");
+//			Literal label = row.getLiteral("label");
+//			System.out.println(user.toString());
+//		}
+//		RDFNode object = rs.next().get("object");
+//		System.out.println("Label is " + object);
+
+
+		
+		
+		
+		Collection<User> users = Sparql.exec(getUqModel(), User.class, query);
+		
+		String usersString = "";
+		for (User user : users) {
+			System.out.println("User: " +user.toString());
+			usersString += user.toString() +"<br/>";
+		}
+
+		
+		
+		System.out.println("execSPINQuery() done.");
+		return usersString;
+	}
+
+	/**
+	 * @return the myModel
+	 */
+	public static Model getUqModel() {
+		return uqModel;
+	}
+
+
+	/**
+	 * @param myModel the myModel to set
+	 */
+	public static void setUqModel(Model newModel) {
+		UQasarUtil.uqModel = newModel;
+	}	
 }

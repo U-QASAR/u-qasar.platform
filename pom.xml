@@ -44,6 +44,12 @@
 			<name>Internal repo</name>
 			<url>http://www.atb-bremen.de/artifactory/ext-releases-local/</url>
 		</repository>
+		
+		<!-- Topbraid SPIN -->
+	    <repository>
+	        <id>org.topbraid</id>
+	        <url>http://topquadrant.com/repository/spin</url>
+	    </repository>		
 	</repositories>
 
 	<properties>
@@ -430,6 +436,39 @@
 			<version>1.0</version>
 		</dependency>
 
+		<!-- Apache Jena -->
+		<dependency>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<type>pom</type>
+			<version>2.11.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>xml-apis</groupId>
+		    <artifactId>xml-apis</artifactId>
+		    <version>1.4.01</version>
+		</dependency>
+
+		<!--  Topbraid SPIN API -->
+ 		<dependency>
+	    	<groupId>org.topbraid</groupId>
+	    	<artifactId>spin</artifactId>
+	    	<version>1.4.0</version>
+	    </dependency>
+
+		<dependency> 
+		   <groupId>thewebsemantic</groupId> 
+		   <artifactId>jenabean</artifactId> 
+		   <version>1.0.7</version> 
+		   <exclusions>
+		   		<exclusion>
+		   		 	<groupId>com.hp.hpl.jena</groupId>
+		   		 	<artifactId>arq</artifactId>
+		   		</exclusion>
+		   </exclusions>
+		</dependency>
+		
 
 		<!-- ***************** -->
 		<!-- test dependencies -->

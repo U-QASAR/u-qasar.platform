@@ -29,6 +29,8 @@ public abstract class AbstractEntity implements Persistable<Long> {
 	private static final long serialVersionUID = -140781739309251820L;
 
 	@Id
+	@thewebsemantic.Id
+	@thewebsemantic.Generated
 	@XmlTransient
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@JsonIgnore

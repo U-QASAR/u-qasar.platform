@@ -57,6 +57,7 @@ import eu.uqasar.web.pages.admin.companies.CompanyEditPage;
 import eu.uqasar.web.pages.admin.companies.CompanyListPage;
 import eu.uqasar.web.pages.admin.meta.MetaDataSettingsPage;
 import eu.uqasar.web.pages.admin.qmodel.QModelSettingsPage;
+import eu.uqasar.web.pages.admin.rdf.RDFManagementPage;
 import eu.uqasar.web.pages.admin.settings.LdapSettingsPage;
 import eu.uqasar.web.pages.admin.settings.MailSettingsPage;
 import eu.uqasar.web.pages.admin.settings.platform.PlatformSettingsPage;
@@ -189,9 +190,10 @@ public class UQasar extends WebApplication {
 		// init dashboard from context
 		initDashboard();
 		
+		// Redirect to the start page on page expiration
+		getApplicationSettings().setPageExpiredErrorPage(AboutPage.class);
+		
 		getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);
-		
-		
 	}
 
 	public DashboardContext getDashboardContext() {
@@ -351,6 +353,7 @@ public class UQasar extends WebApplication {
 		mountPage("/admin/settings/meta", MetaDataSettingsPage.class);
 		mountPage("/admin/settings/qmodel", QModelSettingsPage.class);
 		mountPage("/admin/settings/platform", PlatformSettingsPage.class);
+		mountPage("/admin/rdf", RDFManagementPage.class);
 		
 		// Data adapter related
 		mountPage("/adapters", AdapterManagementPage.class);
