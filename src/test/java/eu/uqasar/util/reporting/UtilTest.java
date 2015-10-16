@@ -6,15 +6,11 @@ import java.util.List;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 
-
-@RunWith(Arquillian.class)
 public class UtilTest extends TestCase {
 
 	private static Logger logger = Logger.getLogger(UtilTest.class);

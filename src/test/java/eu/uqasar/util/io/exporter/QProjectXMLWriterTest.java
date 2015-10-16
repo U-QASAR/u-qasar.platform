@@ -16,7 +16,6 @@ import eu.uqasar.model.tree.Project;
 import eu.uqasar.util.io.importer.QProjectXmlDomParser;
 
 public class QProjectXMLWriterTest {
-
 	
 	private static Logger logger = Logger.getLogger(QProjectXMLWriterTest.class);
 

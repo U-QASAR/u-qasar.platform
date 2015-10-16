@@ -8,12 +8,10 @@ import javax.xml.bind.JAXBException;
 import junit.framework.Assert;
 
 import org.apache.wicket.util.file.File;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.measure.MetricSource;
@@ -25,7 +23,6 @@ import eu.uqasar.model.qmtree.QModelStatus;
 import eu.uqasar.model.quality.indicator.Domain;
 import eu.uqasar.model.role.Role;
 
-@RunWith(Arquillian.class)
 public class QModelXmlWriterTest {
 
 	private static Logger logger = Logger.getLogger(QModelXmlWriterTest.class);

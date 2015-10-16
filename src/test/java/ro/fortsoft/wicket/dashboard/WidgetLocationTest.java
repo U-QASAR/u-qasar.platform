@@ -8,7 +8,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-@RunWith(Arquillian.class)
 public class WidgetLocationTest extends TestCase {
 
 	private static Logger logger = Logger.getLogger(WidgetLocationTest.class);

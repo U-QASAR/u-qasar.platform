@@ -10,13 +10,11 @@ import javax.xml.bind.JAXBException;
 import junit.framework.Assert;
 
 import org.apache.wicket.util.file.File;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.lifecycle.LifeCycleStage;
@@ -34,8 +32,6 @@ import eu.uqasar.model.tree.historic.Snapshot;
 import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.util.io.exporter.QProjectXmlWriter;
 
-
-@RunWith(Arquillian.class)
 public class QProjectXmlWriterTest {
 
 		private static Logger logger = Logger.getLogger(QProjectXmlWriterTest.class);

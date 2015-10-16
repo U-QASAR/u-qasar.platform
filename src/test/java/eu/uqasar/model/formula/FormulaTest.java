@@ -1,14 +1,9 @@
 package eu.uqasar.model.formula;
 
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-import eu.uqasar.model.formula.Formula;
-
-@RunWith(Arquillian.class)
 public class FormulaTest {
 
 	private static Logger logger = Logger.getLogger(FormulaTest.class);

@@ -6,14 +6,10 @@ import java.util.List;
 
 import junit.framework.Assert;
 
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.joda.time.DateTime;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
-
-@RunWith(Arquillian.class)
 public class UQasarUtilTest {
 
 	private static Logger logger = Logger.getLogger(UQasarUtilTest.class);
