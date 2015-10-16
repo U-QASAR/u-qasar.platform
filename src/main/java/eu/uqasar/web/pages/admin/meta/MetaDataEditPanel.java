@@ -260,9 +260,9 @@ public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>>
                         if (!dataToBeRemoved.isEmpty()) {
                             for (T entity : dataToBeRemoved) {
                             	service.delete(entity);
-                            	getPage().success(message);
-                            	setResponsePage(getPage());
                             }
+                        	getPage().success(message);
+                        	setResponsePage(getPage());
                         }
                         // close modal
                         closeDeleteConfirmationModal(notificationModal, target);

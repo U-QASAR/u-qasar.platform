@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.SourceCodeManagementTool;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -25,6 +26,7 @@ public class SourceCodeManagementToolService extends MetaDataService<SourceCodeM
     public void delete(SourceCodeManagementTool entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -33,6 +35,14 @@ public class SourceCodeManagementToolService extends MetaDataService<SourceCodeM
         for (User user : users) {
             user.getKnownSourceCodeManagementTools().remove(entity);
             em.merge(user);
+        }
+    }
+
+    private void removeFromProject(SourceCodeManagementTool entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.sourceCodeManagementTools);
+        for (Project project : projects) {
+        	project.getSourceCodeManagementTools().remove(entity);
+            em.merge(project);
         }
     }
 

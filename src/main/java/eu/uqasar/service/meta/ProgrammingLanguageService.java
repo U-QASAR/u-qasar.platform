@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.ProgrammingLanguage;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -25,6 +26,7 @@ public class ProgrammingLanguageService extends MetaDataService<ProgrammingLangu
     public void delete(ProgrammingLanguage entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -33,6 +35,14 @@ public class ProgrammingLanguageService extends MetaDataService<ProgrammingLangu
         for (User user : users) {
             user.getKnownProgrammingLanguages().remove(entity);
             em.merge(user);
+        }
+    }
+
+    private void removeFromProject(ProgrammingLanguage entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.programmingLanguages);
+        for (Project project : projects) {
+        	project.getProgrammingLanguages().remove(entity);
+            em.merge(project);
         }
     }
 

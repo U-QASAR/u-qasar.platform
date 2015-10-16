@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.SoftwareLicense;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -35,6 +36,7 @@ public class SoftwareLicenseService extends MetaDataService<SoftwareLicense> {
     public void delete(SoftwareLicense entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -43,6 +45,14 @@ public class SoftwareLicenseService extends MetaDataService<SoftwareLicense> {
         for (User user : users) {
             user.getSoftwareLicenses().remove(entity);
             em.merge(user);
+        }
+    }
+    
+    private void removeFromProject(SoftwareLicense entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.softwareLicenses);
+        for (Project project : projects) {
+        	project.getSoftwareLicenses().remove(entity);
+            em.merge(project);
         }
     }
 }
