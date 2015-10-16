@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.TestManagementTool;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -25,6 +26,7 @@ public class TestManagementToolService extends MetaDataService<TestManagementToo
     public void delete(TestManagementTool entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -33,6 +35,14 @@ public class TestManagementToolService extends MetaDataService<TestManagementToo
         for (User user : users) {
             user.getKnownTestManagementTools().remove(entity);
             em.merge(user);
+        }
+    }
+
+    private void removeFromProject(TestManagementTool entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.testManagementTools);
+        for (Project project : projects) {
+        	project.getTestManagementTools().remove(entity);
+            em.merge(project);
         }
     }
 

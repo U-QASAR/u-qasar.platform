@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.ProjectType;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -36,6 +37,7 @@ public class ProjectTypeService extends MetaDataService<ProjectType> {
     public void delete(ProjectType entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -44,6 +46,14 @@ public class ProjectTypeService extends MetaDataService<ProjectType> {
         for (User user : users) {
             user.getProjectTypes().remove(entity);
             em.merge(user);
+        }
+    }
+    
+    private void removeFromProject(ProjectType entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.projectTypes);
+        for (Project project : projects) {
+        	project.getProjectTypes().remove(entity);
+            em.merge(project);
         }
     }
 }

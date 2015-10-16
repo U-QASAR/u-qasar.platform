@@ -112,6 +112,16 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         return em.createQuery(query).getResultList();
     }
 
+   
+    protected List<Project> getProjectsWithMetaData(T entity, SetAttribute<Project, T> attribute) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Project> query = cb.createQuery(Project.class);
+        Root<Project> root = query.from(Project.class);
+        Join<Project, T> join = root.join(attribute);
+        query.where(join.in(entity));
+        return em.createQuery(query).getResultList();
+    }
+
     public <T extends MetaData> List<T> getAllAscendingByName(Class<T> clazz, long first, long count) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<T> query = cb.createQuery(clazz);

@@ -6,6 +6,7 @@ import javax.ejb.Stateless;
 
 import eu.uqasar.model.meta.SoftwareDevelopmentMethodology;
 import eu.uqasar.model.qmtree.QMBaseIndicator_;
+import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
 import eu.uqasar.model.user.User;
 import eu.uqasar.model.user.User_;
@@ -31,6 +32,7 @@ public class SoftwareDevelopmentMethodologyService extends MetaDataService<Softw
     public void delete(SoftwareDevelopmentMethodology entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -42,4 +44,11 @@ public class SoftwareDevelopmentMethodologyService extends MetaDataService<Softw
         }
     }
     
+    private void removeFromProject(SoftwareDevelopmentMethodology entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.softwareDevelopmentMethodologies);
+        for (Project project : projects) {
+        	project.getSoftwareDevelopmentMethodologies().remove(entity);
+            em.merge(project);
+        }
+    }
 }

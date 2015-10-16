@@ -26,6 +26,7 @@ public class StaticAnalysisToolService extends MetaDataService<StaticAnalysisToo
     public void delete(StaticAnalysisTool entity) {
         removeFromUserSkills(entity);
         removefromQM(entity);
+        removeFromProject(entity);
         super.delete(entity);
     }
 
@@ -34,6 +35,14 @@ public class StaticAnalysisToolService extends MetaDataService<StaticAnalysisToo
         for (User user : users) {
             user.getKnownStaticAnalysisTools().remove(entity);
             em.merge(user);
+        }
+    }
+    
+    private void removeFromProject(StaticAnalysisTool entity) {
+        List<Project> projects = getProjectsWithMetaData(entity, Project_.staticAnalysisTools);
+        for (Project project : projects) {
+        	project.getStaticAnalysisTools().remove(entity);
+            em.merge(project);
         }
     }
     
