@@ -7,13 +7,11 @@ import junit.framework.Assert;
 import junit.framework.TestCase;
 
 import org.apache.wicket.util.file.File;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import eu.uqasar.model.lifecycle.LifeCycleStage;
 import eu.uqasar.model.lifecycle.RupStage;
@@ -31,7 +29,6 @@ import eu.uqasar.model.quality.indicator.Purpose;
 import eu.uqasar.model.quality.indicator.Version;
 import eu.uqasar.model.role.Role;
 
-@RunWith(Arquillian.class)
 public class QModelJsonWriterTest extends TestCase {
 
 	private static Logger logger = Logger.getLogger(QModelJsonWriterTest.class);

@@ -5,17 +5,14 @@ import java.util.ArrayList;
 import junit.framework.Assert;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import ro.fortsoft.wicket.dashboard.web.DashboardEvent;
-import ro.fortsoft.wicket.dashboard.web.WidgetView;
 import ro.fortsoft.wicket.dashboard.web.DashboardEvent.EventType;
+import ro.fortsoft.wicket.dashboard.web.WidgetView;
 
-@RunWith(Arquillian.class)
 public class DashboardUtilsTest {
 
 	private String id;

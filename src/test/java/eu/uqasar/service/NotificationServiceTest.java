@@ -6,21 +6,16 @@
 
 package eu.uqasar.service;
 
-import eu.uqasar.model.notification.project.ProjectNearEndNotification;
-import eu.uqasar.test.ArquillianBaseTest;
 import java.util.Date;
+
 import javax.inject.Inject;
-import org.jboss.arquillian.junit.Arquillian;
+
 import org.jboss.solder.logging.Logger;
 import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
-/**
- *
- *
- */
-//@RunWith(Arquillian.class)
+import eu.uqasar.model.notification.project.ProjectNearEndNotification;
+import eu.uqasar.test.ArquillianBaseTest;
+
 public class NotificationServiceTest extends ArquillianBaseTest {
 
 	// inject a logger

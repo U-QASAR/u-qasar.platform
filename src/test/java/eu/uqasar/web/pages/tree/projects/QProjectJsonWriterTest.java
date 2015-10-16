@@ -9,13 +9,11 @@ import java.util.List;
 import junit.framework.Assert;
 
 import org.apache.wicket.util.file.File;
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.lifecycle.LifeCycleStage;
@@ -33,8 +31,6 @@ import eu.uqasar.model.tree.historic.Snapshot;
 import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.util.io.exporter.QProjectJsonWriter;
 
-
-@RunWith(Arquillian.class)
 public class QProjectJsonWriterTest {
 
 		private static Logger logger = Logger.getLogger(QProjectJsonWriterTest.class);

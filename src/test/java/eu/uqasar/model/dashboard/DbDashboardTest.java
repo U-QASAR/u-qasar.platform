@@ -1,7 +1,5 @@
 package eu.uqasar.model.dashboard;
 
-import static org.junit.Assert.fail;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +8,11 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import ro.fortsoft.wicket.dashboard.Widget;
+import ro.fortsoft.wicket.dashboard.WidgetLocation;
 import eu.uqasar.web.dashboard.widget.sonarqualitywidget.SonarQualityWidget;
 import eu.uqasar.web.dashboard.widget.testlinkwidget.TestLinkWidget;
 import eu.uqasar.web.dashboard.widget.widgetforjira.WidgetForJira;
-import ro.fortsoft.wicket.dashboard.Widget;
-import ro.fortsoft.wicket.dashboard.WidgetLocation;
 
 public class DbDashboardTest {
 

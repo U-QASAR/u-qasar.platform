@@ -5,15 +5,12 @@ import java.util.HashMap;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.solder.logging.Logger;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import ro.fortsoft.wicket.dashboard.web.WidgetView;
 
-@RunWith(Arquillian.class)
 public class AbstractWidgetTest extends TestCase {
 
 	private AbstractWidget widget, widgetTest;

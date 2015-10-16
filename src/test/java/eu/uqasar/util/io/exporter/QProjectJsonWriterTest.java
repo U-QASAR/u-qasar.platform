@@ -22,7 +22,6 @@ import eu.uqasar.model.tree.Project;
 import junit.framework.Assert;
 
 public class QProjectJsonWriterTest {
-
 	
 	private static Logger logger = Logger.getLogger(QProjectJsonWriterTest.class);
 
