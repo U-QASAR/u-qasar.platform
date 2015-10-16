@@ -21,5 +21,24 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>HtmlAuth</web-resource-name>
+			<description>application security constraints</description>
+			<url-pattern>/rest/api/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>UserRoles simple realm</realm-name>
+	</login-config>
+	<security-role>
+		<role-name>Manager</role-name>
+	</security-role>
 </web-app>
 
