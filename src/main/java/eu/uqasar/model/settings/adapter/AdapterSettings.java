@@ -1,12 +1,16 @@
 package eu.uqasar.model.settings.adapter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.annotation.Nullable;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,7 +22,13 @@ import org.jboss.solder.logging.Logger;
 
 import eu.uqasar.adapter.exception.uQasarException;
 import eu.uqasar.model.AbstractEntity;
+import eu.uqasar.model.measure.CubesMetricMeasurement;
+import eu.uqasar.model.measure.GitlabMetricMeasurement;
+import eu.uqasar.model.measure.JenkinsMetricMeasurement;
+import eu.uqasar.model.measure.JiraMetricMeasurement;
 import eu.uqasar.model.measure.MetricSource;
+import eu.uqasar.model.measure.SonarMetricMeasurement;
+import eu.uqasar.model.measure.TestLinkMetricMeasurement;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.service.dataadapter.CubesDataService;
 import eu.uqasar.service.dataadapter.GitlabDataService;
@@ -50,6 +60,20 @@ public class AdapterSettings extends AbstractEntity {
     private String adapterProject;
     private String adapterTestPlan;
 
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<SonarMetricMeasurement> sonarMeasurements = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<JiraMetricMeasurement> jiraMeasurements = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<CubesMetricMeasurement> cubesMeasurements = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<JenkinsMetricMeasurement> jenkinsMeasurements = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<TestLinkMetricMeasurement> testlinkMeasurements = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="adapter", orphanRemoval=true)
+    private List<GitlabMetricMeasurement> gitlabMeasurements = new ArrayList<>();
+
+	
 	/**
 	 * 
 	 * @return the settingsName
@@ -192,6 +216,57 @@ public class AdapterSettings extends AbstractEntity {
     }
 
     
+	public List<SonarMetricMeasurement> getSonarMeasurements() {
+		return sonarMeasurements;
+	}
+
+	public void setSonarMeasurements(List<SonarMetricMeasurement> sonarMeasurements) {
+		this.sonarMeasurements = sonarMeasurements;
+	}
+
+	public List<JiraMetricMeasurement> getJiraMeasurements() {
+		return jiraMeasurements;
+	}
+
+	public void setJiraMeasurements(List<JiraMetricMeasurement> jiraMeasurements) {
+		this.jiraMeasurements = jiraMeasurements;
+	}
+
+	public List<CubesMetricMeasurement> getCubesMeasurements() {
+		return cubesMeasurements;
+	}
+
+	public void setCubesMeasurements(List<CubesMetricMeasurement> cubesMeasurements) {
+		this.cubesMeasurements = cubesMeasurements;
+	}
+
+	public List<JenkinsMetricMeasurement> getJenkinsMeasurements() {
+		return jenkinsMeasurements;
+	}
+
+	public void setJenkinsMeasurements(
+			List<JenkinsMetricMeasurement> jenkinsMeasurements) {
+		this.jenkinsMeasurements = jenkinsMeasurements;
+	}
+
+	public List<TestLinkMetricMeasurement> getTestlinkMeasurements() {
+		return testlinkMeasurements;
+	}
+
+	public void setTestlinkMeasurements(
+			List<TestLinkMetricMeasurement> testlinkMeasurements) {
+		this.testlinkMeasurements = testlinkMeasurements;
+	}
+
+	public List<GitlabMetricMeasurement> getGitlabMeasurements() {
+		return gitlabMeasurements;
+	}
+
+	public void setGitlabMeasurements(
+			List<GitlabMetricMeasurement> gitlabMeasurements) {
+		this.gitlabMeasurements = gitlabMeasurements;
+	}
+
 	/**
 	 * Get a new snapshot of adapter data
 	 */
