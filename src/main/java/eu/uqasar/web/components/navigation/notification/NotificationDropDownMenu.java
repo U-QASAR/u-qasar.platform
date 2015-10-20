@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
-import javax.inject.Inject;
 import javax.naming.InitialContext;
 
 import org.apache.wicket.Component;
@@ -26,7 +25,6 @@ import eu.uqasar.model.notification.dashboard.DashboardSharedNotification;
 import eu.uqasar.model.notification.project.ProjectNearEndNotification;
 import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
-import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
 import eu.uqasar.service.HistoricalDataService;
@@ -39,8 +37,8 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	private static final long serialVersionUID = 969519549174632887L;
 
 	protected INotification[] notifications = new INotification[0];
-	
-	
+
+
 	public NotificationDropDownMenu() {
 		super(Model.of(""));
 		setOutputMarkupId(true);
@@ -54,7 +52,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	public void setNotifications(INotification... notifications) {
 		this.notifications = notifications;
 	}
-	
+
 	protected void updateLabelAndIcon() {
 		if (notifications.length == 0) {
 			getNotificationCountLabelContainer().add(
@@ -100,16 +98,18 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	 * 
 	 */
 	public static INotification[] createNotifications(TreeNodeService service){
-		
-		List<INotification> notifications = new ArrayList<>();
-		// Obtain additional notifications from a shared list (these are created by rules triggered by timer)
-		if (UQasarUtil.getNotifications() != null && UQasarUtil.getNotifications().size() > 0) {
-			notifications.addAll(UQasarUtil.getNotifications());
-		}
+
 		List<Project> projects = service.getAllProjects();
-		
+		List<INotification> notifications = new ArrayList<>();
+
+		// Attempt to fetch notifications only if there are projects
 		if (projects.size() > 0) {
-			
+
+			// Obtain additional notifications from a shared list (these are created by rules triggered by timer)
+			if (UQasarUtil.getNotifications() != null && UQasarUtil.getNotifications().size() > 0) {
+				notifications.addAll(UQasarUtil.getNotifications());
+			}
+
 			// ProjectNearEndNotification
 			/////////////////////////////
 			for(Project project : projects){	
@@ -158,17 +158,17 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 						for(TreeNode metric : metrics){											
 							// cast to a real Metric
 							Metric m = (Metric)  metric;
-							
+
 							if(m.getMetricSource() == MetricSource.StaticAnalysis 
 									&& m.getMetricType()!=null 
 									&& m.getMetricType().toLowerCase().contains("complexity")){
-								
+
 								// 1. get last max. 10 historic values			
 								// set size (avoid divide by 0 zero)
 								List<HistoricValuesBaseIndicator> allHistoricalMetricValues = histService.getAllHistValuesForBaseIndAsc(metric.getId());
 								int size = allHistoricalMetricValues.size() == 0 ? 1 : allHistoricalMetricValues.size();
 								List<HistoricValuesBaseIndicator> lastMaxTenValues = allHistoricalMetricValues.subList(Math.max(size - 10, 0), size);
-								
+
 								// 2. calculate mean, if the increase of the mean  of the last max. 10 values
 								float sum = 0;
 								for(HistoricValuesBaseIndicator bi : lastMaxTenValues){
@@ -176,7 +176,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 								}
 								float mean = (sum / size) / 100; // mean in percent
 								// System.out.println("Mean: "+mean);
-								
+
 								// 3. create notify, if mean increase is > 25% 
 								if(mean > 0.25){
 									ComplexityNotification complexity = new ComplexityNotification();
@@ -187,7 +187,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 									notifications.add(complexity);
 								}
 							} 
-									
+
 						}
 					}
 				}
@@ -195,8 +195,8 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 		}
 		return notifications.toArray(new INotification[notifications.size()]);
 	}
-	
-	
+
+
 	public static INotification[] createRandomNotifications(TreeNodeService service) {
 		List<INotification> notifications = new ArrayList<>();
 		List<Project> projects = service.getAllProjects();
