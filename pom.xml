@@ -192,6 +192,12 @@
 			<groupId>de.agilecoders.wicket</groupId>
 			<artifactId>wicket-bootstrap-core</artifactId>
 			<version>${wicket.bootstrap.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.core</groupId>
+					<artifactId>jackson-core</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>de.agilecoders.wicket</groupId>
@@ -426,7 +432,7 @@
 		<dependency>
 			<groupId>eu.uqasar.gitlab.adapter.GitlabAdapter</groupId>
 			<artifactId>GitlabAdapter</artifactId>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</dependency>
 
 		<!-- Jenkins Adapter -->
