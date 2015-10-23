@@ -2,6 +2,8 @@ package eu.uqasar.web.pages.tree.subset.panel;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -98,8 +100,9 @@ public class SubsetProposalPanel extends Panel {
 
 		dataContainer.add(new CheckGroupSelector(
 				"dataGroupSelector", dataGroup));
-		
-		dataContainer.add(new ListView<QMTreeNode>("qmlist",qmTreeNodeService.getAllQModels()) {
+		List<QModel> qModelList = new LinkedList<>();
+		qModelList.add(project.getQmodel());
+		dataContainer.add(new ListView<QMTreeNode>("qmlist",qModelList) {
 			private static final long serialVersionUID = -8627579715676163392L;
 
 			@Override
