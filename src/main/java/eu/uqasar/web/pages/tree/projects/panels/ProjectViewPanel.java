@@ -50,6 +50,7 @@ import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.QualityStatus;
 import eu.uqasar.model.tree.historic.HistoricValuesProject;
+import eu.uqasar.model.user.Team;
 import eu.uqasar.model.user.User;
 import eu.uqasar.service.HistoricalDataService;
 import eu.uqasar.util.UQasarUtil;
@@ -350,13 +351,8 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 		List<User> users = new ArrayList<User>();
 
 		if (p.getTeams() != null && p.getTeams().size() > 0) {
-			if (p.getTeams().get(0).getName().equals("Team Proposed")) {
-				// Team proposedTeam = teamService.getProposedTeam(p);
-				users.addAll(p.getTeams().get(0).getAllUsers());
-			} else {
-				// for(Team tm : p.getTeams()){
-				users.addAll(p.getTeams().get(0).getAllUsers());
-				// }
+			for (Team t : p.getTeams()) {
+				users.addAll(t.getAllUsers());
 			}
 		}
 

@@ -6,9 +6,11 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.CssClassNameApp
 import de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons;
 import de.agilecoders.wicket.core.markup.html.bootstrap.dialog.Modal;
 import de.agilecoders.wicket.core.markup.html.bootstrap.navigation.ajax.BootstrapAjaxPagingNavigator;
+import eu.uqasar.exception.model.EntityNotFoundException;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.user.Team;
 import eu.uqasar.model.user.TeamMembership;
+import eu.uqasar.service.tree.ProjectSearchService;
 import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.service.user.TeamMembershipService;
 import eu.uqasar.service.user.TeamService;
@@ -56,17 +58,22 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  */
 public class TeamListPage extends AdminBasePage {
 
-	@Inject
-	UserService userService;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Inject
-	TeamService teamService;
+	private TeamService teamService;
 
 	@Inject
-	TeamMembershipService teamMemberService;
+	private TeamMembershipService teamMemberService;
 
 	@Inject
-	TreeNodeService treeNodeService;
+	private TreeNodeService treeNodeService;
+
+	@Inject
+	private ProjectSearchService projectService;
 
 	private static final int itemsPerPage = 10;
 
@@ -74,14 +81,24 @@ public class TeamListPage extends AdminBasePage {
 	private final TeamEntityProvider provider;
 	private final WebMarkupContainer teamsContainer;
 	private final AjaxSubmitLink deleteSelectedButton;
+	private final AjaxSubmitLink addSelectedButton;
 	private final BootstrapAjaxPagingNavigator navigator;
 	private final Modal deleteConfirmationModal;
-	
+	private final Modal addConfirmationModal;
 	private final List<Project> allProjects;
+
+	private Project project = new Project();
 
 
 	public TeamListPage(final PageParameters pageParameters) {
 		super(pageParameters);
+
+		if (!pageParameters.get("id").isEmpty()) {
+			project = projectService.getById(pageParameters.get("id").toLong());
+			if (project == null) {
+				throw new EntityNotFoundException(Team.class, pageParameters.get("id").toOptionalString());
+			}
+		}
 
 		Form<Void> form = new Form("form");
 		provider = new TeamEntityProvider();
@@ -106,7 +123,7 @@ public class TeamListPage extends AdminBasePage {
 		teamsContainer.add(checkGroupSelector);
 		teamsContainer.add(usersView);
 		teamsContainer.add(deleteSelectedButton = newDeleteSelectedButton(teamGroup));
-
+		teamsContainer.add(addSelectedButton = addteamButton(teamGroup));
 		BookmarkablePageLink<TeamEditPage> createTeam = new BookmarkablePageLink<>("link.create.team", TeamEditPage.class);
 		teamsContainer.add(createTeam);
 		add(form);
@@ -115,20 +132,21 @@ public class TeamListPage extends AdminBasePage {
 				"navigatorFoot", usersView));
 
 		allProjects = treeNodeService.getAllProjects();
-		
-		// add confirmation modal for deleting products
+
+		// add confirmation modal for deleting items, and adding team to a project
 		add(deleteConfirmationModal = newDeleteConfirmationModal());
+		add(addConfirmationModal = newAddConfirmationModal());
 	}
 
 	private void deleteSelectedTeams(Collection<Team> teams, AjaxRequestTarget target, Collection<Project> allProjects) {
 		String message = new StringResourceModel("delete.confirmed", this, null).getString();
-		
+
 		for (Team team : teams) {
 			//check if team to be deleted is assigned to any of the existing projects
 			if(!allProjects.isEmpty()){
 				for(Project project : allProjects){
 					if(!project.getTeams().isEmpty()){
-						
+
 						for(Team projectTeam :  project.getTeams()){
 							if(team.getId().equals(projectTeam.getId())){ 
 								project.getTeams().remove(projectTeam);
@@ -141,11 +159,9 @@ public class TeamListPage extends AdminBasePage {
 			for (TeamMembership member : team.getMembers()) {
 				teamMemberService.delete(member);
 			}
-		
-			teamService.delete(team);
 
+			teamService.delete(team);
 		}
-		
 		getPage().success(message);
 		target.add(feedbackPanel);
 		target.add(teamsContainer);
@@ -153,35 +169,68 @@ public class TeamListPage extends AdminBasePage {
 		target.add(deleteSelectedButton);
 	}
 
+
+
+
+	private void addSelectedTeams(Collection<Team> teams, AjaxRequestTarget target, Collection<Project> allProjects) {
+		String message = new StringResourceModel("add.confirmed", this, null).getString();
+
+		for (Team team : teams) {
+			if (project != null) {
+				if (!project.getTeams().contains(team)) {
+					project.getTeams().add(team);
+				}
+			}
+			teamService.update(team);
+			projectService.update(project);
+		}
+
+		getPage().success(message);
+		target.add(feedbackPanel);
+		target.add(teamsContainer);
+		teamGroup.updateModel();
+		target.add(addSelectedButton);
+	}
+
 	private NotificationModal newDeleteConfirmationModal() {
 		final NotificationModal notificationModal = new NotificationModal(
 				"deleteConfirmationModal", new StringResourceModel(
 						"delete.confirmation.modal.header", this, null),
-				new StringResourceModel("delete.confirmation.modal.message",
-						this, null), false);
+						new StringResourceModel("delete.confirmation.modal.message",
+								this, null), false);
 		notificationModal.addButton(new ModalActionButton(notificationModal,
 				Buttons.Type.Primary, new StringResourceModel(
 						"delete.confirmation.modal.submit.text", this, null),
-				true) {
+						true) {
 
-					@Override
-					protected void onAfterClick(AjaxRequestTarget target) {
-						// confirmed --> delete
-						deleteSelectedTeams(teamGroup.getModelObject(), target, allProjects);
-						// close modal
-						closeDeleteConfirmationModal(notificationModal, target);
-					}
-				});
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void onAfterClick(AjaxRequestTarget target) {
+				// confirmed --> delete
+				deleteSelectedTeams(teamGroup.getModelObject(), target, allProjects);
+				// close modal
+				closeDeleteConfirmationModal(notificationModal, target);
+			}
+		});
 		notificationModal.addButton(new ModalActionButton(notificationModal,
 				Buttons.Type.Default, new StringResourceModel(
 						"delete.confirmation.modal.cancel.text", this, null),
-				true) {
-					@Override
-					protected void onAfterClick(AjaxRequestTarget target) {
-						// Cancel clicked --> do nothing, close modal
-						closeDeleteConfirmationModal(notificationModal, target);
-					}
-				});
+						true) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void onAfterClick(AjaxRequestTarget target) {
+				// Cancel clicked --> do nothing, close modal
+				closeDeleteConfirmationModal(notificationModal, target);
+			}
+		});
 		return notificationModal;
 	}
 
@@ -190,12 +239,68 @@ public class TeamListPage extends AdminBasePage {
 		modal.appendCloseDialogJavaScript(target);
 	}
 
+
+	private NotificationModal newAddConfirmationModal() {
+		final NotificationModal notificationModal = new NotificationModal(
+				"addConfirmationModal", new StringResourceModel(
+						"add.confirmation.modal.header", this, null),
+						new StringResourceModel("add.confirmation.modal.message",
+								this, null), false);
+		notificationModal.addButton(new ModalActionButton(notificationModal,
+				Buttons.Type.Primary, new StringResourceModel(
+						"add.confirmation.modal.submit.text", this, null),
+						true) {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void onAfterClick(AjaxRequestTarget target) {
+				// confirmed --> delete
+				addSelectedTeams(teamGroup.getModelObject(), target, allProjects);
+				// close modal
+				closeAddConfirmationModal(notificationModal, target);
+			}
+		});
+		notificationModal.addButton(new ModalActionButton(notificationModal,
+				Buttons.Type.Default, new StringResourceModel(
+						"add.confirmation.modal.cancel.text", this, null),
+						true) {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			protected void onAfterClick(AjaxRequestTarget target) {
+				// Cancel clicked --> do nothing, close modal
+				closeAddConfirmationModal(notificationModal, target);
+			}
+		});
+		return notificationModal;
+	}
+
+
+	private void closeAddConfirmationModal(final Modal modal,
+			AjaxRequestTarget target) {
+		modal.appendCloseDialogJavaScript(target);
+	}
+
+
+
+
+
+
+
 	@Override
 	protected void onConfigure() {
 		super.onConfigure();
 		navigator.setVisible(provider.size() > itemsPerPage);
 	}
-	
+
 	private WebMarkupContainer newMembersPanel(final Team team) {
 		final WebMarkupContainer tagsContainer = new WebMarkupContainer("membersList");
 		tagsContainer.setOutputMarkupPlaceholderTag(true);
@@ -251,12 +356,58 @@ public class TeamListPage extends AdminBasePage {
 		return submitLink;
 	}
 
+
+
+
+
+	private AjaxSubmitLink addteamButton(
+			final CheckGroup<Team> teamGroup) {
+		AjaxSubmitLink submitLink = new AjaxSubmitLink("addSelected") {
+
+			@Override
+			protected void onConfigure() {
+				super.onConfigure();
+				// only enabled if at least one user is selected
+				if (!teamGroup.getModelObject().isEmpty() && project.getId() != null) {
+
+					setEnabled(true);
+				} else {
+					add(new CssClassNameAppender(Model.of("disabled")) {
+						private static final long serialVersionUID = 5588027455196328830L;
+
+						// remove css class when component is rendered again
+						@Override
+						public boolean isTemporary(Component component) {
+							return true;
+						}
+					});
+					setEnabled(false);
+				}
+			}
+
+			@Override
+			protected void onSubmit(AjaxRequestTarget target, Form<?> form) {
+				addConfirmationModal.appendShowDialogJavaScript(target);
+
+
+
+			}
+		};
+		submitLink.setOutputMarkupId(true);
+		return submitLink;
+	}
+
+
+
+
+
 	private CheckGroup newCheckGroup() {
 		CheckGroup<Team> checkGroup = new CheckGroup<>("teamGroup", new ArrayList<Team>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 			@Override
 			protected void onUpdate(AjaxRequestTarget target) {
 				target.add(deleteSelectedButton);
+				target.add(addSelectedButton);
 			}
 		});
 		return checkGroup;
