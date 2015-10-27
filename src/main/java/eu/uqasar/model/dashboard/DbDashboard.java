@@ -49,7 +49,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		this.dashboardId = id;
 		this.title = title;
 		this.columnCount = 2;
-		widgets = new ArrayList<Widget>();
+		this.widgets = new ArrayList<>();
 		this.sharedBy = null;
 	}
 
@@ -57,6 +57,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		this.dashboardId = id;
 		this.title = title;
 		this.columnCount = columnCount;
+		this.widgets = new ArrayList<>();
 		this.sharedBy = null;
 	}
 	
@@ -65,7 +66,8 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		this.dashboardId = String.valueOf(new Date().getTime());
 		this.title = copy.getTitle();
 		this.columnCount = copy.getColumnCount();
-		this.widgets = copy.getWidgets(); // TODO: Create a copy of these as well?
+		this.widgets = new ArrayList<>();
+		this.widgets.addAll(copy.getWidgets()); 
 		this.sharedBy = copy.getSharedBy();
 	}
 	
