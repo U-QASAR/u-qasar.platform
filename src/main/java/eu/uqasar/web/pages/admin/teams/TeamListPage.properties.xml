@@ -8,10 +8,16 @@
 <entry key="column.head.actions">Actions</entry>
 <entry key="column.head.actions.create">Create Team</entry>
 <entry key="td.teams.actions.batch.remove">Remove selected Team(s)</entry>
+<entry key="td.teams.actions.batch.add">Add selected Team(s) to Project</entry>
 <entry key="column.head.members">Members</entry>
 <entry key="delete.confirmation.modal.header">Confirm Deletion</entry>
 <entry key="delete.confirmation.modal.message">Are you absolutely, positively sure that you want to delete the selected Team(s)? This action cannot be undone!</entry>
 <entry key="delete.confirmation.modal.cancel.text">Cancel</entry>
 <entry key="delete.confirmation.modal.submit.text">Delete</entry>
 <entry key="delete.confirmed">Selected Teams have been deleted.</entry>
+<entry key="add.confirmed">Selected Teams have been added in to Project.</entry>
+<entry key="add.confirmation.modal.header">Confirm addition</entry>
+<entry key="add.confirmation.modal.message">Are you absolutely, positively sure that you want to add the selected Team(s) to project? This action cannot be undone!</entry>
+<entry key="add.confirmation.modal.cancel.text">Cancel</entry>
+<entry key="add.confirmation.modal.submit.text">Add</entry>
 </properties>

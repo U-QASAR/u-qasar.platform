@@ -7,11 +7,17 @@
 <entry key="page.title">Liste der Teams</entry>
 <entry key="column.head.actions">Optionen</entry>
 <entry key="column.head.actions.create">Team erstellen</entry>
-<entry key="td.teams.actions.batch.remove">Ausgewählte(s) Team(s) entfernen</entry>
+<entry key="td.teams.actions.batch.remove">Ausgewählte Team(s) entfernen</entry>
+<entry key="td.teams.actions.batch.add">Ausgewählte Team(s) zum Projekt hinzufügen</entry>
 <entry key="column.head.members">Mitglieder</entry>
 <entry key="delete.confirmation.modal.header">Löschen bestätigen</entry>
 <entry key="delete.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählten Teams gelöscht werden sollen? Diese Aktion kann nicht zurückgesetzt werden!</entry>
 <entry key="delete.confirmation.modal.cancel.text">Abbrechen</entry>
 <entry key="delete.confirmation.modal.submit.text">Löschen</entry>
 <entry key="delete.confirmed">Die ausgewählten Teams wurden gelöscht.</entry>
+<entry key="add.confirmed">Die ausgewählten Teams wurden in das Projekt hinzugefügt.</entry>
+<entry key="add.confirmation.modal.header">Hinzufügen bestätigen</entry>
+<entry key="add.confirmation.modal.message">Sind Sie ganz sicher, dass die ausgewählten Teams in das Projekt hinzugefügt werden sollen? Diese Aktion kann nicht zurückgesetzt werden!</entry>
+<entry key="add.confirmation.modal.cancel.text">Abbrechen</entry>
+<entry key="add.confirmation.modal.submit.text">Hinzufügen</entry>
 </properties>
