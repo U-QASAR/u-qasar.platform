@@ -12,7 +12,6 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.AjaxFormChoiceComponentUpdatingBehavior;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
-import org.apache.wicket.feedback.FeedbackMessage;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -42,7 +41,6 @@ import eu.uqasar.service.user.TeamMembershipService;
 import eu.uqasar.service.user.UserService;
 import eu.uqasar.web.UQSession;
 import eu.uqasar.web.UQasar;
-import eu.uqasar.web.components.HtmlEvent;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
 import eu.uqasar.web.components.behaviour.user.UserProfilePictureBackgroundBehaviour;
@@ -101,6 +99,11 @@ public class DashboardSharePage extends BasePage {
 		
 		
 		UserFilterPanel filter = new UserFilterPanel("filter") {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void applyClicked(AjaxRequestTarget target, Form<?> form) {
