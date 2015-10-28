@@ -98,14 +98,9 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 	
-    private Project project;
-	
 	public ProjectEditPanel(String id, final IModel<Project> model, boolean isNew) {
 		super(id, model);
 
-		project = model.getObject();
-		
-		
 		form = new Form<Project>("form", model) {
 			private static final long serialVersionUID = 6993544095735400633L;
 
@@ -186,7 +181,7 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 		});
 		
 		form.add(new BootstrapBookmarkablePageLink<TeamListPage>("buttonTeam", 
-				TeamListPage.class, new PageParameters().add("id", project.getId()),Type.Success){		
+				TeamListPage.class, new PageParameters().add("id", model.getObject().getId()),Type.Success){		
 			/**
 			 * 
 			 */
