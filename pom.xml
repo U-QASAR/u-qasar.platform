@@ -74,6 +74,7 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<checkstyle.config.location>proseco-checkstyle.xml</checkstyle.config.location>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssa</maven.build.timestamp.format>
+    		<timestamp>${maven.build.timestamp}</timestamp>
 	</properties>
 
 	<dependencyManagement>
