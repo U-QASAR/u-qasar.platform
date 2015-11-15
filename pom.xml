@@ -741,23 +741,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Create SVN version number -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>create</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<doCheck>false</doCheck>
-					<doUpdate>false</doUpdate>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -852,8 +835,6 @@
 							<archive>
 								<manifestEntries>
 									<Dependencies>org.jboss.msc</Dependencies>
-									<SCM-Revision>${buildNumber}</SCM-Revision>
-									<SCM-Branch>${scmBranch}</SCM-Branch>
 								</manifestEntries>
 							</archive>
 						</configuration>

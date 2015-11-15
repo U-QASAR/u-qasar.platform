@@ -46,7 +46,6 @@
 <entry key="footer.text">&amp;copy; {0,number,####} U-QASAR Konsortium. Alle Rechte vorbehalten.</entry>
 <entry key="label.metric.provider">Metrikquelle</entry>
 <entry key="label.formula.editor">Formel</entry>
-<entry key="label.svn.version">SVN Version</entry>
 <entry key="label.unit">Einheit</entry>
 <entry key="label.last.updated">Letzte Aktualisierung</entry>
 
