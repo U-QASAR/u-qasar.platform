@@ -46,7 +46,6 @@
 <entry key="footer.text">&amp;copy; {0,number,####} U-QASAR-yhteenliittymä. Kaikki oikeudet pidätetään.</entry>
 <entry key="label.metric.provider">Metriikan tarjoaja</entry>
 <entry key="label.formula.editor">Kaava</entry>
-<entry key="label.svn.version">SVN-versio</entry>
 <entry key="label.unit">Yksikkö</entry>
 <entry key="label.last.updated">Viimeisin päivitys</entry>
 

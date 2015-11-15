@@ -133,8 +133,6 @@ public abstract class BasePage extends WebPage {
 		// add the menu at the top
 		add(navbar = new HeaderNavigationBar("navbar", this));
 		setFooterYear();
-		add(newBuildNumberLabel());
-		add(newBranchLabel());
 		
 		SERVERNAMEANDPORT = getServerNameAndPort();
 		System.out.println("Current Server: "+SERVERNAMEANDPORT);
@@ -145,46 +143,7 @@ public abstract class BasePage extends WebPage {
 		String serverNameAndPort = req.getServerName() + ":" + req.getServerPort();
 		return serverNameAndPort;
 	}
-	
-	/**
-	 * 
-	 * @return the SVN version number 
-	 */
-	private Label newBuildNumberLabel() {
-		String buildNumber = "";
-		try {
-			Manifests.append(WebApplication.get().getServletContext());
-			buildNumber = Manifests.read("SCM-Revision");
-
-			logger.info("build number is: " + buildNumber);
-		} catch (Exception ex) {
-			// ignore if we can't get any version number
-			if (logger.isDebugEnabled()) {
-				logger.error("Could not read SCM-Revision from Manifest!", ex);
-			}
-		}
-		return new Label("buildNumber", buildNumber);
-	}
-
-	/**
-	 * @return the SVN branch 
-	 */
-	private Label newBranchLabel() {
-		String scmBranch = "";
-		try {
-			Manifests.append(WebApplication.get().getServletContext());
-			scmBranch = Manifests.read("SCM-Branch");
-			
-			logger.info("branch: " + scmBranch);
-		} catch (Exception ex) {
-			// ignore if we can't get any version number
-			if (logger.isDebugEnabled()) {
-				logger.error("Could not read SCM-Branch from Manifest!", ex);
-			}
-		}
-		return new Label("scmBranch", scmBranch);
-	}
-	
+		
     protected void setSearchTerm(final String query) {
         navbar.setSearchTerm(query);
     }
