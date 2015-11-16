@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/U-QASAR/u-qasar.platform.svg?branch=master)](https://travis-ci.org/U-QASAR/u-qasar.platform)
 [![Coverage Status](https://coveralls.io/repos/U-QASAR/u-qasar.platform/badge.svg?branch=master&service=github)](https://coveralls.io/github/U-QASAR/u-qasar.platform?branch=master)
+[![](https://badge.waffle.io/U-QASAR/u-qasar.platform.svg?label=ready&title=Ready)](http://waffle.io/U-QASAR/u-qasar.platform)
 
 # U-QASAR Platform
 
