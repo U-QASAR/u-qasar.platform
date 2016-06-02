@@ -81,15 +81,15 @@ public class UtilTest extends TestCase {
 		Assert.assertEquals("Project", res.get(0));
 	}
 
-	@Test
-	public void testCreateSummaryTable() {
-		logger.info("Testing createSummaryTable");
-		String urlToLoad = "http://uqasar.pythonanywhere.com/cube/jira/aggregate?&cut=Project:UQASAR";
-		JSONObject cuberesponse = Util.readJsonFromUrl(urlToLoad);
-		String res =Util.createSummaryTable(cuberesponse);
-		Assert.assertNotNull(res);
-		Assert.assertNotSame("<table cellpadding='10'>", res);
-	}	
+//	@Test
+//	public void testCreateSummaryTable() {
+//		logger.info("Testing createSummaryTable");
+//		String urlToLoad = "http://uqasar.pythonanywhere.com/cube/jira/aggregate?&cut=Project:UQASAR";
+//		JSONObject cuberesponse = Util.readJsonFromUrl(urlToLoad);
+//		String res =Util.createSummaryTable(cuberesponse);
+//		Assert.assertNotNull(res);
+//		Assert.assertNotSame("<table cellpadding='10'>", res);
+//	}	
 
 	@Test
 	public void testGetAvailableCubes() {
