@@ -44,16 +44,17 @@
 			<name>Internal repo</name>
 			<url>http://www.atb-bremen.de/artifactory/ext-releases-local/</url>
 		</repository>
-		
+
 		<!-- Topbraid SPIN -->
-	    <repository>
-	        <id>org.topbraid</id>
-	        <url>http://topquadrant.com/repository/spin</url>
-	    </repository>		
+		<repository>
+			<id>org.topbraid</id>
+			<url>http://topquadrant.com/repository/spin</url>
+		</repository>
 	</repositories>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<generated.sources.dir>src/main/generated</generated.sources.dir>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
@@ -71,6 +72,9 @@
 		<jackson.version>1.9.2</jackson.version>
 		<arquillian.version>1.1.2.Final</arquillian.version>
 		<slf4j.version>1.6.4</slf4j.version>
+		<checkstyle.config.location>proseco-checkstyle.xml</checkstyle.config.location>
+		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssa</maven.build.timestamp.format>
+    		<timestamp>${maven.build.timestamp}</timestamp>
 	</properties>
 
 	<dependencyManagement>
@@ -360,7 +364,7 @@
 			<version>1.5</version>
 		</dependency>
 
-		<!-- Jasypt - Java-simplified encryption-->
+		<!-- Jasypt - Java-simplified encryption -->
 		<dependency>
 			<groupId>org.jasypt</groupId>
 			<artifactId>jasypt</artifactId>
@@ -386,20 +390,20 @@
 			<version>1.2.0</version>
 		</dependency>
 
- 		<!-- https://github.com/wicketstuff/core/wiki/GoogleCharts -->
- 		<dependency>
-        	<groupId>org.wicketstuff</groupId>
-        	<artifactId>wicketstuff-googlecharts</artifactId>
-        	<version>6.14.0</version>
-        </dependency> 
- 
-		<!-- Generic U-QASAR Adapter -->
-		<dependency> 
-			<groupId>eu.uqasar.adapter.uQasarAdapter</groupId> 
-			<artifactId>uQasarAdapter</artifactId> 
-			<version>2.0.4</version> 
+		<!-- https://github.com/wicketstuff/core/wiki/GoogleCharts -->
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-googlecharts</artifactId>
+			<version>6.14.0</version>
 		</dependency>
-		
+
+		<!-- Generic U-QASAR Adapter -->
+		<dependency>
+			<groupId>eu.uqasar.adapter.uQasarAdapter</groupId>
+			<artifactId>uQasarAdapter</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+
 		<!-- Cubes Adapter -->
 		<dependency>
 			<groupId>eu.uqasar.cubes.adapter.CubesAdapter</groupId>
@@ -423,9 +427,9 @@
 
 		<!-- TestLink Adapter -->
 		<dependency>
-		    <groupId>eu.uqasar.testlink.adapter.TestLinkAdapter</groupId>
-		    <artifactId>TestLinkAdapter</artifactId>
-		    <version>2.0.1</version>
+			<groupId>eu.uqasar.testlink.adapter.TestLinkAdapter</groupId>
+			<artifactId>TestLinkAdapter</artifactId>
+			<version>2.0.1</version>
 		</dependency>
 
 		<!-- Gitlab adapter -->
@@ -451,30 +455,30 @@
 		</dependency>
 
 		<dependency>
-		    <groupId>xml-apis</groupId>
-		    <artifactId>xml-apis</artifactId>
-		    <version>1.4.01</version>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.4.01</version>
 		</dependency>
 
-		<!--  Topbraid SPIN API -->
- 		<dependency>
-	    	<groupId>org.topbraid</groupId>
-	    	<artifactId>spin</artifactId>
-	    	<version>1.4.0</version>
-	    </dependency>
-
-		<dependency> 
-		   <groupId>thewebsemantic</groupId> 
-		   <artifactId>jenabean</artifactId> 
-		   <version>1.0.7</version> 
-		   <exclusions>
-		   		<exclusion>
-		   		 	<groupId>com.hp.hpl.jena</groupId>
-		   		 	<artifactId>arq</artifactId>
-		   		</exclusion>
-		   </exclusions>
+		<!-- Topbraid SPIN API -->
+		<dependency>
+			<groupId>org.topbraid</groupId>
+			<artifactId>spin</artifactId>
+			<version>1.4.0</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>thewebsemantic</groupId>
+			<artifactId>jenabean</artifactId>
+			<version>1.0.7</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.hp.hpl.jena</groupId>
+					<artifactId>arq</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 
 		<!-- ***************** -->
 		<!-- test dependencies -->
@@ -632,6 +636,32 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<version>1.8</version>
+					<configuration>
+						<licenseName>apache_v2</licenseName>
+						<roots>
+							<root>src/main/java</root>
+							<root>src/main/resources</root>
+							<root>src/main/webapp</root>
+							<root>src/test</root>
+							<root>src/test/resources</root>
+						</roots>
+					</configuration>
+					<executions>
+						<execution>
+							<id>first</id>
+							<goals>
+								<goal>update-file-header</goal>
+								<goal>update-project-license</goal>
+								<goal>add-third-party</goal>
+							</goals>
+							<phase>process-sources</phase>
+						</execution>
+					</executions>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
@@ -711,29 +741,37 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- Create SVN version number -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>buildnumber-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>create</goal>
-						</goals>
-					</execution>
-				</executions>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.16</version>
 				<configuration>
-					<doCheck>false</doCheck>
-					<doUpdate>false</doUpdate>
+					<sourceDirectory>src</sourceDirectory>
+					<configLocation>${checkstyle.config.location}</configLocation>
 				</configuration>
 			</plugin>
 			<!-- JRebel plugin uncomment this if you want to use JRebel Maven Plugin 
 				<plugin> <groupId>org.zeroturnaround</groupId> <artifactId>jrebel-maven-plugin</artifactId> 
 				<executions> <execution> <id>generate-rebel-xml</id> <phase>process-resources</phase> 
 				<goals> <goal>generate</goal> </goals> </execution> </executions> </plugin> -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <format>xml</format>
+                    <maxmem>256m</maxmem>
+                    <!-- aggregated reports for multi-module projects -->
+                    <aggregate>true</aggregate>
+                    <check />
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
 		</plugins>
-
 	</build>
 
 	<!-- for switching Maven profiles within Eclipse, right-click project and 
@@ -797,8 +835,6 @@
 							<archive>
 								<manifestEntries>
 									<Dependencies>org.jboss.msc</Dependencies>
-									<SCM-Revision>${buildNumber}</SCM-Revision>
-									<SCM-Branch>${scmBranch}</SCM-Branch>
 								</manifestEntries>
 							</archive>
 						</configuration>
@@ -934,4 +970,9 @@
 			</build>
 		</profile>
 	</profiles>
+	<organization>
+		<name>U-QASAR Consortium</name>
+		<url>http://www.uqasar.eu</url>
+	</organization>
+	<inceptionYear>2012</inceptionYear>
 </project>

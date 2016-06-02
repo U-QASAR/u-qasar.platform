@@ -39,3 +39,7 @@ local.properties
 
 /target/
 /src/main/generated/
+
+# Ignore json files auto created 
+/Project for testing export.json
+/Project for testing export.xml

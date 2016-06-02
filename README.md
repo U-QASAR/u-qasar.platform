@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/U-QASAR/u-qasar.platform.svg?branch=master)](https://travis-ci.org/U-QASAR/u-qasar.platform)
+[![Coverage Status](https://coveralls.io/repos/U-QASAR/u-qasar.platform/badge.svg?branch=master&service=github)](https://coveralls.io/github/U-QASAR/u-qasar.platform?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/5656ef30ff016c002c001cd8/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5656ef30ff016c002c001cd8)
+[![](https://badge.waffle.io/U-QASAR/u-qasar.platform.svg?label=ready&title=Ready)](http://waffle.io/U-QASAR/u-qasar.platform)
+
 # U-QASAR Platform
 
 [U-QASAR ](http://www.uqasar.eu) aims at creating a flexible Quality Assurance, Control and Measurement Methodology to measure the quality of Internet-related software development projects and their resulting products. The methodology is supported by an Internet solution composed of several knowledge services based on open standards that will be able to detect changes in the scope and requirements of an Internet application (or changes in its development process) and provide the adequate set of assessments to deliver an accurate measurement of the quality of the process and product at any time.

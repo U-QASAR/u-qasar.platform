@@ -3,6 +3,26 @@
  */
 package eu.uqasar.web.pages;
 
+/*
+ * #%L
+ * U-QASAR
+ * %%
+ * Copyright (C) 2012 - 2015 U-QASAR Consortium
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
 import de.agilecoders.wicket.core.Bootstrap;
 import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.BootstrapResourcesBehavior;
 import de.agilecoders.wicket.core.markup.html.bootstrap.html.ChromeFrameMetaTag;
@@ -113,8 +133,6 @@ public abstract class BasePage extends WebPage {
 		// add the menu at the top
 		add(navbar = new HeaderNavigationBar("navbar", this));
 		setFooterYear();
-		add(newBuildNumberLabel());
-		add(newBranchLabel());
 		
 		SERVERNAMEANDPORT = getServerNameAndPort();
 		System.out.println("Current Server: "+SERVERNAMEANDPORT);
@@ -125,46 +143,7 @@ public abstract class BasePage extends WebPage {
 		String serverNameAndPort = req.getServerName() + ":" + req.getServerPort();
 		return serverNameAndPort;
 	}
-	
-	/**
-	 * 
-	 * @return the SVN version number 
-	 */
-	private Label newBuildNumberLabel() {
-		String buildNumber = "";
-		try {
-			Manifests.append(WebApplication.get().getServletContext());
-			buildNumber = Manifests.read("SCM-Revision");
-
-			logger.info("build number is: " + buildNumber);
-		} catch (Exception ex) {
-			// ignore if we can't get any version number
-			if (logger.isDebugEnabled()) {
-				logger.error("Could not read SCM-Revision from Manifest!", ex);
-			}
-		}
-		return new Label("buildNumber", buildNumber);
-	}
-
-	/**
-	 * @return the SVN branch 
-	 */
-	private Label newBranchLabel() {
-		String scmBranch = "";
-		try {
-			Manifests.append(WebApplication.get().getServletContext());
-			scmBranch = Manifests.read("SCM-Branch");
-			
-			logger.info("branch: " + scmBranch);
-		} catch (Exception ex) {
-			// ignore if we can't get any version number
-			if (logger.isDebugEnabled()) {
-				logger.error("Could not read SCM-Branch from Manifest!", ex);
-			}
-		}
-		return new Label("scmBranch", scmBranch);
-	}
-	
+		
     protected void setSearchTerm(final String query) {
         navbar.setSearchTerm(query);
     }
