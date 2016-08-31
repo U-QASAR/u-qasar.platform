@@ -24,32 +24,22 @@ package eu.uqasar.exception.model;
 
 
 import eu.uqasar.exception.ModelBasedRuntimeException;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.wicket.model.IModel;
 
 /**
  *
  *
  */
+@NoArgsConstructor
+@Setter
+@Getter
 public class EntityNotFoundException extends ModelBasedRuntimeException {
 
 	private String requestedId;
 	private Class<?> requestedEntityType;
-
-	public String getRequestedId() {
-		return requestedId;
-	}
-
-	public void setRequestedId(String requestedId) {
-		this.requestedId = requestedId;
-	}
-
-	public Class<?> getRequestedEntityType() {
-		return requestedEntityType;
-	}
-
-	public void setRequestedEntityType(Class<?> requestedEntityType) {
-		this.requestedEntityType = requestedEntityType;
-	}
 
 	public EntityNotFoundException(Class<?> requestedEntityType) {
 		fillInStackTrace();
@@ -60,9 +50,6 @@ public class EntityNotFoundException extends ModelBasedRuntimeException {
 		fillInStackTrace();
 		this.requestedEntityType = requestedEntityType;
 		this.requestedId = requestedId;
-	}
-
-	public EntityNotFoundException() {
 	}
 
 	public EntityNotFoundException(String message) {

@@ -21,19 +21,14 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 @Entity
 public class SourceCodeManagementTool extends MetaData {
 
-    public SourceCodeManagementTool() {
-        
-    }
-    
     public SourceCodeManagementTool(String name) {
         super(name);
     }

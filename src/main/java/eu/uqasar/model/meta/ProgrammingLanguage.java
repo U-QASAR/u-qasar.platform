@@ -21,18 +21,13 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 @Entity
 public class ProgrammingLanguage extends MetaData {
-
-    public ProgrammingLanguage() {
-
-    }
 
     public ProgrammingLanguage(final String name) {
         super(name);

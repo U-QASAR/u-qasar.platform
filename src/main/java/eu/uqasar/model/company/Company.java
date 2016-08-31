@@ -24,6 +24,8 @@ package eu.uqasar.model.company;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.codehaus.jackson.annotate.JsonTypeInfo.As;
 import org.codehaus.jackson.annotate.JsonTypeInfo.Id;
@@ -36,6 +38,8 @@ import org.hibernate.search.annotations.TermVector;
 
 import eu.uqasar.model.AbstractEntity;
 
+@Setter
+@Getter
 @Entity(name = "Company")
 @XmlRootElement
 @JsonTypeInfo(use = Id.CLASS, include = As.PROPERTY, property = "@class")
@@ -61,96 +65,8 @@ public class Company extends AbstractEntity {
 	private String phone;
 	@Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
 	private String fax;
-	
-	
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-	
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	/**
-	 * @return the shortName
-	 */
-	public String getShortName() {
-		return shortName;
-	}
-	
-	/**
-	 * @param shortName the shortName to set
-	 */
-	public void setShortName(String shortName) {
-		this.shortName = shortName;
-	}
-	
-	public String getStreet() {
-		return street;
-	}
 
-	public void setStreet(String street) {
-		this.street = street;
-	}
 
-	public int getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(int zipcode) {
-		this.zipcode = zipcode;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
-
-	/**
-	 * @return the phone
-	 */
-	public String getPhone() {
-		return phone;
-	}
-	
-	/**
-	 * @param phone the phone to set
-	 */
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	
-	/**
-	 * @return the fax
-	 */
-	public String getFax() {
-		return fax;
-	}
-	
-	/**
-	 * @param fax the fax to set
-	 */
-	public void setFax(String fax) {
-		this.fax = fax;
-	}
-	
 	public Company() {
 		this.name = null;
 		this.shortName = null;

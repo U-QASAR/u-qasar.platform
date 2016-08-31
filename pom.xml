@@ -55,11 +55,12 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<generated.sources.dir>src/main/generated</generated.sources.dir>
-		<maven.compiler.source>1.7</maven.compiler.source>
+<!--		<generated.sources.dir>src/main/generated</generated.sources.dir> -->
+		<generated.sources.dir>${project.build.directory}/generated</generated.sources.dir>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
-		<jboss.as.version>7.1.1.Final</jboss.as.version>
+		<jboss.javaee6.spec.version>1.0.0.Final</jboss.javaee6.spec.version>
+		<jboss.as.version>8.2.1.Final</jboss.as.version>
 		<weld.version>1.1.Final</weld.version>
 		<jboss.solder.version>3.1.0.Final</jboss.solder.version>
 		<jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
@@ -74,7 +75,22 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<checkstyle.config.location>proseco-checkstyle.xml</checkstyle.config.location>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssa</maven.build.timestamp.format>
-    		<timestamp>${maven.build.timestamp}</timestamp>
+   		<timestamp>${maven.build.timestamp}</timestamp>
+
+		<maven.plugin.enforcer.min.version>1.4.1</maven.plugin.enforcer.min.version>
+		<maven.plugin.versions.min.version>2.2</maven.plugin.versions.min.version>
+		<maven.plugin.compiler.min.version>3.5.1</maven.plugin.compiler.min.version>
+		<maven.plugin.surefire.min.version>2.19.1</maven.plugin.surefire.min.version>
+		<maven.plugin.failsafe.min.version>2.19.1</maven.plugin.failsafe.min.version>
+		<maven.plugin.docker.min.version>0.15.16</maven.plugin.docker.min.version>
+		<maven.plugin.license.min.version>1.9</maven.plugin.license.min.version>
+		<maven.plugin.source.min.version>3.0.0</maven.plugin.source.min.version>
+		<maven.plugin.javadoc.min.version>2.10.3</maven.plugin.javadoc.min.version>
+		<maven.plugin.install.min.version>2.5.2</maven.plugin.install.min.version>
+		<maven.plugin.deploy.min.version>2.8.2</maven.plugin.deploy.min.version>
+		<maven.plugin.release.min.version>2.5.3</maven.plugin.release.min.version>
+		<junit.version>4.12</junit.version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -87,6 +103,11 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.16.10</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -94,11 +115,16 @@
 		<!-- JBoss Java EE 6 dependencies -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-6.0</artifactId>
+			<artifactId>jboss-javaee-7.0</artifactId>
 			<version>${jboss.javaee6.spec.version}</version>
 			<type>pom</type>
 			<!-- use provided scope as they are included in JBoss 7 -->
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.resolver</groupId>
+			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+			<version>2.2.3</version>
 		</dependency>
 
 		<!-- Weld dependency -->
@@ -519,6 +545,12 @@
 			<version>4.1.4</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.10</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- for reading MANIFEST.MF SCM version number -->
 		<dependency>
@@ -568,7 +600,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
+					<version>${maven.plugin.compiler.min.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -673,7 +705,6 @@
 					<target>${maven.compiler.target}</target>
 					<optimize>true</optimize>
 					<debug>true</debug>
-					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -705,7 +736,7 @@
 				</configuration>
 			</plugin>
 			<!-- for generating meta model for entity classes to use in JPA Criteria 
-				API "right click project and Run As -> Maven generate-sources" -->
+				API "right click project and Run As -> Maven generate-sources"
 			<plugin>
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>
@@ -721,7 +752,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<!-- -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -744,7 +775,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.16</version>
+				<version>2.17</version>
 				<configuration>
 					<sourceDirectory>src</sourceDirectory>
 					<configLocation>${checkstyle.config.location}</configLocation>
@@ -769,7 +800,7 @@
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>4.2.0</version>
             </plugin>
 		</plugins>
 	</build>
@@ -791,8 +822,8 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<groupId>org.wildfly</groupId>
+					<artifactId>wildfly-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -813,8 +844,8 @@
 				</testResources>
 				<plugins>
 					<plugin>
-						<groupId>org.jboss.as.plugins</groupId>
-						<artifactId>jboss-as-maven-plugin</artifactId>
+						<groupId>org.wildfly</groupId>
+						<artifactId>wildfly-arquillian-container-managed</artifactId>
 						<version>${jboss.as.version}</version>
 						<configuration>
 							<!-- to deploy run: "mvn clean compile package jboss-as:deploy" -->
@@ -848,11 +879,11 @@
 			anything regarding the server. Can not be used to debug test cases from within 
 			IDE. -->
 		<profile>
-			<id>arquillian-jboss7-managed</id>
+			<id>arq-wildfly-managed</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-managed</artifactId>
+					<groupId>org.wildfly</groupId>
+					<artifactId>wildfly-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -917,11 +948,11 @@
 			the remote debug session in Eclipse - right-click test case and select Debug 
 			As -> JUnit Test -->
 		<profile>
-			<id>arquillian-jboss7-remote</id>
+			<id>arquillian-wildfly-remote</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<groupId>org.wildfly</groupId>
+					<artifactId>wildfly-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -947,8 +978,8 @@
 			<id>jenkins</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<groupId>org.wildfly</groupId>
+					<artifactId>wildfly-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
