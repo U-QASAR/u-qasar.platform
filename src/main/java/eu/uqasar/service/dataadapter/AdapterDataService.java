@@ -93,7 +93,7 @@ public class AdapterDataService implements Serializable {
 				e.printStackTrace();
 			}
 			if (res != null && res.size() > 0) {
-				storedMetricValue = Float.valueOf(res.size());
+				storedMetricValue = (float) res.size();
 			}
 		} else if (metricSource != null && metricSource == MetricSource.TestingFramework) {
 			String adapterProj = getAdapterProject(project, metricSource);
