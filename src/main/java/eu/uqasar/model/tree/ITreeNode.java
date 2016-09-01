@@ -29,40 +29,40 @@ import eu.uqasar.model.Persistable;
 
 public interface ITreeNode<Key extends Serializable> extends Persistable<Long>, Serializable {
 
-	public Key getNodeKey();
+	Key getNodeKey();
 	
-	public ITreeNode<Key> getParent();
+	ITreeNode<Key> getParent();
 	
-	public List<? extends ITreeNode<Key>> getSiblings();
+	List<? extends ITreeNode<Key>> getSiblings();
 	
-	public List<? extends ITreeNode<Key>> getSiblings(boolean includeSelf);
+	List<? extends ITreeNode<Key>> getSiblings(boolean includeSelf);
 	
-	public boolean canChangePositionWithNextSibling();
+	boolean canChangePositionWithNextSibling();
 
-	public boolean canChangePositionWithNextSibling(boolean changeParents);
+	boolean canChangePositionWithNextSibling(boolean changeParents);
 
-	public boolean canChangePositionWithPreviousSibling();
+	boolean canChangePositionWithPreviousSibling();
 
-	public boolean canChangePositionWithPreviousSibling(boolean changeParents);
+	boolean canChangePositionWithPreviousSibling(boolean changeParents);
 	
-	public boolean changePositionWithNextSibling();
+	boolean changePositionWithNextSibling();
 
-	public boolean changePositionWithNextSibling(boolean changeParents);
+	boolean changePositionWithNextSibling(boolean changeParents);
 
-	public boolean changePositionWithPreviousSibling();
+	boolean changePositionWithPreviousSibling();
 
-	public boolean changePositionWithPreviousSibling(boolean changeParents);
+	boolean changePositionWithPreviousSibling(boolean changeParents);
 	
-	public List<? extends ITreeNode<Key>> getChildren();
+	List<? extends ITreeNode<Key>> getChildren();
 	
-	public Class<? extends ITreeNode<Key>> getChildType();
+	Class<? extends ITreeNode<Key>> getChildType();
 
-	public void addChild(ITreeNode<Key> child);
+	void addChild(ITreeNode<Key> child);
 	
-	public String getName();
+	String getName();
 	
-	public IconType getIconType();
+	IconType getIconType();
 	
-	public QualityStatus getQualityStatus();
+	QualityStatus getQualityStatus();
 
 }

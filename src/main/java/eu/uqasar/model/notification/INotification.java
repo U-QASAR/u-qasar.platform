@@ -32,21 +32,21 @@ public interface INotification extends Serializable {
 	/**
 	 * @return the creationDate
 	 */
-	public Date getCreationDate();
+    Date getCreationDate();
 
 	/**
 	 * @return the notificationType
 	 */
-	public NotificationType getNotificationType();
+    NotificationType getNotificationType();
 
 	/**
 	 * @return the user
 	 */
-	public User getUser();
+    User getUser();
 
 	/**
 	 * @return the readDate
 	 */
-	public Date getReadDate();
+    Date getReadDate();
 
 }

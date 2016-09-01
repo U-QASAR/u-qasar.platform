@@ -19,10 +19,10 @@ import java.util.List;
  */
 public interface DashboardPersister {
 
-	public Dashboard load();
-	public List<Dashboard> loadAll();
-	public void save(Dashboard dashboard);
-	public void saveAll(List<Dashboard> dashboards);
+	Dashboard load();
+	List<Dashboard> loadAll();
+	void save(Dashboard dashboard);
+	void saveAll(List<Dashboard> dashboards);
 	
 	
 }

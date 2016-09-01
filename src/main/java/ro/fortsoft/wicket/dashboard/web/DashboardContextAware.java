@@ -20,6 +20,6 @@ package ro.fortsoft.wicket.dashboard.web;
  */
 public interface DashboardContextAware {
 	
-	public void setDashboardContext(DashboardContext dashboardContext);
+	void setDashboardContext(DashboardContext dashboardContext);
 
 }

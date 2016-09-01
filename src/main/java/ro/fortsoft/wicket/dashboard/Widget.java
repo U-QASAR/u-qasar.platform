@@ -24,32 +24,32 @@ import ro.fortsoft.wicket.dashboard.web.WidgetView;
  */
 public interface Widget extends Serializable {
 
-	public String getId();
+	String getId();
 	
-	public void setId(String id);
+	void setId(String id);
 	
-	public String getTitle();
+	String getTitle();
 	
-	public void setTitle(String title);
+	void setTitle(String title);
 	
-	public WidgetLocation getLocation();
+	WidgetLocation getLocation();
 	
-	public void setLocation(WidgetLocation location);
+	void setLocation(WidgetLocation location);
 	
-	public WidgetView createView(String viewId);
+	WidgetView createView(String viewId);
 	
-	public boolean isCollapsed();
+	boolean isCollapsed();
 	
-	public void setCollapsed(boolean collapsed);
+	void setCollapsed(boolean collapsed);
 	
-	public void init();
+	void init();
 	
-	public boolean hasSettings();
+	boolean hasSettings();
 	
-	public Map<String, String> getSettings();
+	Map<String, String> getSettings();
 	
-	public void setSettings(Map<String, String> settings);
+	void setSettings(Map<String, String> settings);
 	
-	public Panel createSettingsPanel(String settingsPanelId);
+	Panel createSettingsPanel(String settingsPanelId);
 	
 }

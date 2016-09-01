@@ -35,5 +35,5 @@ interface JenaBean {
      *
      * @return Output of JenaBean, where is saved RDF.
      */
-    public InputStream getOutputFromJenaBean();
+    InputStream getOutputFromJenaBean();
 }
