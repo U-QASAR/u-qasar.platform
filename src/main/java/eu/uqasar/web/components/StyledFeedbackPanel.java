@@ -123,7 +123,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 		super.onBeforeRender();
 	}
 
-	private final String getCSSClass() {
+	private String getCSSClass() {
 		if (anyErrorMessage()) {
 			hasError = true;
 			return "alert-error";

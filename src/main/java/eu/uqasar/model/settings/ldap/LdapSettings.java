@@ -89,7 +89,7 @@ public class LdapSettings extends Settings {
 		defSettings.setUserPhotoMapping("{thumbnailPhoto}");
 	}
 
-	public static final LdapSettings getDefault() {
+	public static LdapSettings getDefault() {
 		return defSettings;
 	}
 

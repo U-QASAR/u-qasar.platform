@@ -84,8 +84,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		permissions.authorize(componentClass, roles);
 	}
 
-	public static final <T extends Component> void authorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
-			final Role... roles) {
+	public static <T extends Component> void authorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
+                                                         final Role... roles) {
 		if (condition.isAuthorized()) {
 			authorize(componentClass, roles);
 		}
@@ -107,8 +107,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		authorize(componentClass, roles.toArray(new Role[roles.size()]));
 	}
 
-	public static final <T extends Component> void authorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
-			final EnumSet<Role> roles) {
+	public static <T extends Component> void authorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
+                                                         final EnumSet<Role> roles) {
 		if (condition.isAuthorized()) {
 			authorize(componentClass, roles);
 		}
@@ -131,8 +131,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		permissions.authorize(action, roles);
 	}
 
-	public static final void authorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
-			final Role... roles) {
+	public static void authorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
+                                   final Role... roles) {
 		if (condition.isAuthorized()) {
 			authorize(component, action, roles);
 		}
@@ -150,8 +150,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		authorize(component, action, roles.toArray(new Role[roles.size()]));
 	}
 
-	public static final void authorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
-			final EnumSet<Role> levels) {
+	public static void authorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
+                                   final EnumSet<Role> levels) {
 		if (condition.isAuthorized()) {
 			authorize(component, action, levels);
 		}
@@ -173,7 +173,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		}
 	}
 
-	public static final <T extends Component> void authorizeAllIf(final IAuthorizationCondition condition, final Class<T> componentClass) {
+	public static <T extends Component> void authorizeAllIf(final IAuthorizationCondition condition, final Class<T> componentClass) {
 		if (condition.isAuthorized()) {
 			authorizeAll(componentClass);
 		}
@@ -193,7 +193,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		}
 	}
 
-	public static final void authorizeAllIf(final IAuthorizationCondition condition, final Component component, final Action action) {
+	public static void authorizeAllIf(final IAuthorizationCondition condition, final Component component, final Action action) {
 		if (condition.isAuthorized()) {
 			authorizeAll(component, action);
 		}
@@ -221,8 +221,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		}
 	}
 
-	public static final <T extends Component> void unauthorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
-			final Role... roles) {
+	public static <T extends Component> void unauthorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
+                                                           final Role... roles) {
 		if (condition.isAuthorized()) {
 			unauthorize(componentClass, roles);
 		}
@@ -247,8 +247,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		unauthorize(componentClass, roles.toArray(new Role[roles.size()]));
 	}
 
-	public static final <T extends Component> void unauthorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
-			final EnumSet<Role> roles) {
+	public static <T extends Component> void unauthorizeIf(final IAuthorizationCondition condition, final Class<T> componentClass,
+                                                           final EnumSet<Role> roles) {
 		if (condition.isAuthorized()) {
 			unauthorize(componentClass, roles);
 		}
@@ -275,8 +275,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		}
 	}
 
-	public static final void unauthorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
-			final Role... roles) {
+	public static void unauthorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
+                                     final Role... roles) {
 		if (condition.isAuthorized()) {
 			unauthorize(component, action, roles);
 		}
@@ -298,8 +298,8 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		unauthorize(component, action, roleslevels.toArray(new Role[roleslevels.size()]));
 	}
 
-	public static final void unauthorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
-			final EnumSet<Role> roles) {
+	public static void unauthorizeIf(final IAuthorizationCondition condition, final Component component, final Action action,
+                                     final EnumSet<Role> roles) {
 		if (condition.isAuthorized()) {
 			unauthorize(component, action, roles);
 		}
@@ -318,7 +318,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		authorize(componentClass, Role.NoRole);
 	}
 
-	public static final <T extends Component> void unauthorizeAllIf(final IAuthorizationCondition condition, Class<T> componentClass) {
+	public static <T extends Component> void unauthorizeAllIf(final IAuthorizationCondition condition, Class<T> componentClass) {
 		if (condition.isAuthorized()) {
 			unauthorizeAll(componentClass);
 		}
@@ -336,7 +336,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 		authorize(component, action, Role.NoRole);
 	}
 
-	public static final void unauthorizeAllIf(final IAuthorizationCondition condition, final Component component, final Action action) {
+	public static void unauthorizeAllIf(final IAuthorizationCondition condition, final Component component, final Action action) {
 		if (condition.isAuthorized()) {
 			unauthorizeAll(component, action);
 		}

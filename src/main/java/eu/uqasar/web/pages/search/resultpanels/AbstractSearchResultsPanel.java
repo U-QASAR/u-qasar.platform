@@ -28,6 +28,8 @@ import eu.uqasar.service.AbstractService;
 import eu.uqasar.web.provider.EntityProvider;
 import java.util.Iterator;
 import java.util.List;
+
+import lombok.NoArgsConstructor;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -36,11 +38,6 @@ import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 
-/**
- *
- *
- * @param <T>
- */
 public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> extends Panel {
 
     private String searchTerm;
