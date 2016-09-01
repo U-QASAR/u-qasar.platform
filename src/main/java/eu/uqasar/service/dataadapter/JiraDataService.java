@@ -394,17 +394,23 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 		DateTime now = DateTime.now();
 		Date date;
 
-		if(timeInterval.equals("Last Year")){
-			date = now.minusMonths(12).toDate(); 
-		} else if(timeInterval.equals("Last 6 Months")){
-			date = now.minusMonths(6).toDate(); 
-		} else if(timeInterval.equals("Last Month")){
-			date = now.minusMonths(1).toDate(); 
-		} else if(timeInterval.equals("Last Week")){
-			date = now.minusWeeks(1).toDate();
-		} else{
-			date = now.minusYears(5).toDate();
-		}
+        switch (timeInterval) {
+            case "Last Year":
+                date = now.minusMonths(12).toDate();
+                break;
+            case "Last 6 Months":
+                date = now.minusMonths(6).toDate();
+                break;
+            case "Last Month":
+                date = now.minusMonths(1).toDate();
+                break;
+            case "Last Week":
+                date = now.minusWeeks(1).toDate();
+                break;
+            default:
+                date = now.minusYears(5).toDate();
+                break;
+        }
 		//System.out.println("datedatedate:"+date);
 
 		return date;

@@ -248,17 +248,23 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 		DateTime now = DateTime.now();
 		Date date;
 
-		if(period.equals("Last Year")){
-			date = now.minusMonths(12).toDate(); 
-		} else if(period.equals("Last 6 Months")){
-			date = now.minusMonths(6).toDate(); 
-		} else if(period.equals("Last Month")){
-			date = now.minusMonths(1).toDate(); 
-		} else if(period.equals("Last Week")){
-			date = now.minusWeeks(1).toDate();
-		} else{
-			date = now.minusYears(5).toDate();
-		}
+        switch (period) {
+            case "Last Year":
+                date = now.minusMonths(12).toDate();
+                break;
+            case "Last 6 Months":
+                date = now.minusMonths(6).toDate();
+                break;
+            case "Last Month":
+                date = now.minusMonths(1).toDate();
+                break;
+            case "Last Week":
+                date = now.minusWeeks(1).toDate();
+                break;
+            default:
+                date = now.minusYears(5).toDate();
+                break;
+        }
 		//System.out.println("datedatedate:"+date);
 
 		return date;

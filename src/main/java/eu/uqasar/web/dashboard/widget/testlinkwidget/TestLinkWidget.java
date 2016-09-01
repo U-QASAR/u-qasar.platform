@@ -173,16 +173,21 @@ public class TestLinkWidget extends AbstractWidget {
 			}
 				// we obtain the metrics, sorted by timestamp (descending)
 				for (int tlm= 0; tlm < items; tlm++){				
-					TestLinkMetricMeasurement metric = noTotal.get(tlm);				
-					if (metric.getTestLinkMetric().equals("TEST_P")) {				
-						series.addPoint(new Point("Tests Passed", new Double(metric.getValue())));					
-					} else if (metric.getTestLinkMetric().equals("TEST_F")) {
-						series.addPoint(new Point("Tests Failed", new Double(metric.getValue())));
-					} else if (metric.getTestLinkMetric().equals("TEST_B")) {
-						series.addPoint(new Point("Tests Blocking", new Double(metric.getValue())));
-					} else {
-						series.addPoint(new Point("Tests Not Executed", new Double(metric.getValue())));
-					}
+					TestLinkMetricMeasurement metric = noTotal.get(tlm);
+                    switch (metric.getTestLinkMetric()) {
+                        case "TEST_P":
+                            series.addPoint(new Point("Tests Passed", new Double(metric.getValue())));
+                            break;
+                        case "TEST_F":
+                            series.addPoint(new Point("Tests Failed", new Double(metric.getValue())));
+                            break;
+                        case "TEST_B":
+                            series.addPoint(new Point("Tests Blocking", new Double(metric.getValue())));
+                            break;
+                        default:
+                            series.addPoint(new Point("Tests Not Executed", new Double(metric.getValue())));
+                            break;
+                    }
 				}
 			options.addSeries(series);
 			options.setChartOptions(chartOptions);					
@@ -217,15 +222,20 @@ public class TestLinkWidget extends AbstractWidget {
             }
                 // we obtain the metrics, sorted by timestamp (descending)
                 for (int tlm= 0; tlm < items; tlm++){               
-                    TestLinkMetricMeasurement metric = noTotal.get(tlm);                
-                    if (metric.getTestLinkMetric().equals("TEST_P")) {              
-                        series.addPoint(new Point("Tests Passed", new Double(metric.getValue())));                  
-                    } else if (metric.getTestLinkMetric().equals("TEST_F")) {
-                        series.addPoint(new Point("Tests Failed", new Double(metric.getValue())));
-                    } else if (metric.getTestLinkMetric().equals("TEST_B")) {
-                        series.addPoint(new Point("Tests Blocking", new Double(metric.getValue())));
-                    } else {
-                        series.addPoint(new Point("Tests Not Executed", new Double(metric.getValue())));
+                    TestLinkMetricMeasurement metric = noTotal.get(tlm);
+                    switch (metric.getTestLinkMetric()) {
+                        case "TEST_P":
+                            series.addPoint(new Point("Tests Passed", new Double(metric.getValue())));
+                            break;
+                        case "TEST_F":
+                            series.addPoint(new Point("Tests Failed", new Double(metric.getValue())));
+                            break;
+                        case "TEST_B":
+                            series.addPoint(new Point("Tests Blocking", new Double(metric.getValue())));
+                            break;
+                        default:
+                            series.addPoint(new Point("Tests Not Executed", new Double(metric.getValue())));
+                            break;
                     }
                 }
             options.addSeries(series);
