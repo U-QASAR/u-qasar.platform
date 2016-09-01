@@ -215,12 +215,10 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 
 			// Only update project tree for the projects whose adapters were used to fetch data updates 
 			if (updateTree) {
-				Iterator<Project> iterator = projectsToUpdate.iterator();
-			    while (iterator.hasNext()) {
-			    	Project projectToUpdate = iterator.next();
-		            // Update the project tree
-		            UQasarUtil.updateTree(projectToUpdate);
-			    }
+                for (Project projectToUpdate : projectsToUpdate) {
+                    // Update the project tree
+                    UQasarUtil.updateTree(projectToUpdate);
+                }
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

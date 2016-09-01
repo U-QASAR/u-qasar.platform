@@ -439,9 +439,8 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							Iterator it = ch.iterator();
-							while (it.hasNext()){
-								set.add((QModelTagData)it.next());
+							for (Object aCh : ch) {
+								set.add(aCh);
 							}
 						} 
 						

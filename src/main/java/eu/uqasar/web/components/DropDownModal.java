@@ -64,10 +64,9 @@ public class DropDownModal extends Modal {
 		header(headerModel);		
 
 		List<String> ls = new ArrayList<>();
-		Iterator it = types.iterator();
-		while (it.hasNext()){
-			ls.add(((Class)it.next()).getSimpleName());
-		}
+        for (Object type : types) {
+            ls.add((type).getSimpleName());
+        }
 
 		metaDataTypes = new DropDownChoice<>("metaDataTypes", new Model(), ls);
 

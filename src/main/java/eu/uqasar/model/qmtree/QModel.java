@@ -113,12 +113,10 @@ public class QModel extends QMTreeNode {
 			if (children.isEmpty()){
 			isCompleted = false;	
 			} else {
-			Iterator<QMQualityObjective> it = children.iterator();
-			while (it.hasNext()){
-				QMQualityObjective qo = it.next();
-				isCompleted = isCompleted && qo.isCompleted();
-				nodes.add(qo);
-			}
+				for (QMQualityObjective qo : children) {
+					isCompleted = isCompleted && qo.isCompleted();
+					nodes.add(qo);
+				}
 			}
 		} else {
 			isCompleted = false;
