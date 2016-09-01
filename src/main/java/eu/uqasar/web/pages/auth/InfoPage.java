@@ -28,8 +28,6 @@ import eu.uqasar.service.AuthenticationService;
 import eu.uqasar.service.notification.message.auth.register.RegistrationMessageService;
 import eu.uqasar.web.pages.BasePage;
 import eu.uqasar.web.pages.auth.login.LoginPage;
-import eu.uqasar.web.pages.auth.register.CancelRegistrationPage;
-import eu.uqasar.web.pages.auth.register.ConfirmRegistrationPage;
 import eu.uqasar.web.pages.auth.register.RegisterPage;
 import eu.uqasar.web.provider.UrlProvider;
 import javax.inject.Inject;
@@ -141,7 +139,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @return
 	 */
-	public static InfoPage registrationConfirmationSentAgainMessage() {
+	private static InfoPage registrationConfirmationSentAgainMessage() {
 		return new InfoPage("headerRegistrationConfirmationSentAgain",
 				"messageRegistrationConfirmationSentAgain",
 				InfoFragmentType.EMPTY, null, new PageParameters());
@@ -151,7 +149,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @return
 	 */
-	public static InfoPage resendRegistrationFailureMessage() {
+	private static InfoPage resendRegistrationFailureMessage() {
 		return new InfoPage("headerResendRegistrationFailure",
 				"messageResendRegistrationFailure",
 				InfoFragmentType.LOGIN_REGISTER, null, new PageParameters());
@@ -161,8 +159,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @param headerMarkupId
 	 * @param messageMarkupId
-	 * @param infoFragment
-	 */
+     */
 	private InfoPage(final String headerMarkupId, final String messageMarkupId,
 			final InfoFragmentType infoFragmentType,
 			final IModel<String> model, final PageParameters parameters) {
@@ -198,9 +195,9 @@ public class InfoPage extends BasePage {
 	 *
 	 *
 	 */
-	private static enum InfoFragmentType {
+	private enum InfoFragmentType {
 
-		EMPTY, LOGIN, REGISTER, LOGIN_REGISTER, RESEND_REGISTRATION, FORGOT_PASSWORD;
+		EMPTY, LOGIN, REGISTER, LOGIN_REGISTER, RESEND_REGISTRATION, FORGOT_PASSWORD
 	}
 
 	private static class EmptyInfoFragment extends Fragment {

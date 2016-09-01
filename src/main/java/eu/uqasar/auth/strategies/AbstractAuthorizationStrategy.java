@@ -44,7 +44,7 @@ public abstract class AbstractAuthorizationStrategy implements IAuthorizationStr
 	 *
 	 * @param checkingStrategy the authorizer delegate
 	 */
-	public AbstractAuthorizationStrategy(IRoleCheckingStrategy checkingStrategy) {
+	protected AbstractAuthorizationStrategy(IRoleCheckingStrategy checkingStrategy) {
 		Args.notNull(checkingStrategy, "checkingStrategy");
 		this.checkingStrategy = checkingStrategy;
 	}

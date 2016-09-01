@@ -38,7 +38,7 @@ public enum RegistrationStatus {
 	
 	private final String labelKey;
 
-	private RegistrationStatus(final String labelKey) {
+	RegistrationStatus(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -47,7 +47,7 @@ public enum RegistrationStatus {
 		return getLabelModel().getObject();
 	}
 
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(RegistrationStatus.class, "label.status." + labelKey);
 	}
 }

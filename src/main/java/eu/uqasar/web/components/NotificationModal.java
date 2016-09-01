@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -39,12 +36,11 @@ public class NotificationModal extends Modal {
 	 */
 	private static final long serialVersionUID = 1530140481889690683L;
 
-	private Label message;
+	private final Label message;
 	
 	/**
 	 * 
 	 * @param id
-	 * @param model
 	 * @param showImmediately
 	 */
 	public NotificationModal(final String id, final IModel<String> headerModel,
@@ -75,7 +71,7 @@ public class NotificationModal extends Modal {
      * @param escapeMarkup True is model strings should be escaped
      * @return This
      */
-    public Modal message(final IModel<String> label, final boolean escapeMarkup) {
+    private Modal message(final IModel<String> label, final boolean escapeMarkup) {
     	if(message != null) {
     		message.setDefaultModel(label);
     		message.setEscapeModelStrings(escapeMarkup);

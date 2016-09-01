@@ -21,7 +21,6 @@ package eu.uqasar.model.qmtree;
  */
 
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -107,12 +106,12 @@ public class QMQualityObjective extends QMBaseIndicator {
 		
 		boolean isCompleted = true;
 		Iterator<QMQualityIndicator> it = children.iterator();
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
-			QMQualityIndicator qi = (QMQualityIndicator)it.next();
+			QMQualityIndicator qi = it.next();
 
 			isCompleted = isCompleted && qi.isCompleted();
-			nodes.add((QMTreeNode)qi);
+			nodes.add(qi);
 		}
 		this.setChildren(nodes);
 		this.setCompleted(isCompleted);

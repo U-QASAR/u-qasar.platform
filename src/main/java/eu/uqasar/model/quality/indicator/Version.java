@@ -22,6 +22,7 @@ package eu.uqasar.model.quality.indicator;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -42,9 +43,9 @@ public enum Version implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
-	private Version(final String labelKey) {
+	Version(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -62,10 +63,8 @@ public enum Version implements IResourceKeyProvider {
 	}
 	
 	public static List<Version> getAllVersions(){
-		List<Version> list = new ArrayList<Version>();
-		for (Version val : Version.values()) {
-		    	list.add(val);
-		}
+		List<Version> list = new ArrayList<>();
+        Collections.addAll(list, Version.values());
 		return list;
 	}
 	

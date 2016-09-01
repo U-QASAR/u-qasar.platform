@@ -93,13 +93,12 @@ public class WidgetLocation implements Serializable {
 
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("WidgetLocation[");
-		buffer.append("column = ").append(column);
-		buffer.append(" row = ").append(row);
-		buffer.append("]");
-		
-		return buffer.toString();
+        String buffer = "WidgetLocation[" +
+                "column = " + column +
+                " row = " + row +
+                "]";
+
+        return buffer;
 	}
 	
 }

@@ -108,7 +108,7 @@ public class LdapUser extends LdapEntity {
         return toUser(this);
     }
 
-    public static User toUser(LdapUser ldapUser) {
+    private static User toUser(LdapUser ldapUser) {
         User user = new User();
         user.setFirstName(ldapUser.getFirstName());
         user.setLastName(ldapUser.getLastName());
@@ -145,8 +145,7 @@ public class LdapUser extends LdapEntity {
 				if (mail != 0) {
 					return mail;
 				}
-				int dn = LdapEntity.compare(o1.getDN(), o2.getDN(), false);
-				return dn;
+                return LdapEntity.compare(o1.getDN(), o2.getDN(), false);
 			}
 		}
 

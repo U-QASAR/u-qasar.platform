@@ -41,7 +41,7 @@ public class MetaDataChoiceProvider<T extends MetaData> extends AbstractEntityCh
 	 */
 	private static final long serialVersionUID = -7455794633095208004L;
 
-	private Class<T> clazz;
+	private final Class<T> clazz;
 
     @Inject
     @Named(MetaDataService.NAME)

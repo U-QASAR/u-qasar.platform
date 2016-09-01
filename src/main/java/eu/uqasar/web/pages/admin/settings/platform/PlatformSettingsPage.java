@@ -75,9 +75,9 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     private final Form<Void> form1;
 
-    private WebMarkupContainer container;
+    private final WebMarkupContainer container;
     // private ListView<ProjectSettings> settingsView;
-    private PlatformSettings settings = new PlatformSettings();
+    private final PlatformSettings settings = new PlatformSettings();
 
     private final CheckGroup<PlatformSettings> settingsGroup;
     private final AjaxSubmitLink deleteSelectedButton;
@@ -164,7 +164,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param AdapterSettings
      * @return
      */
     private static PageParameters forSetting(PlatformSettings setting) {
@@ -176,8 +175,8 @@ public class PlatformSettingsPage extends AdminBasePage {
      * @return
      */
     private CheckGroup<PlatformSettings> newAdapterSettingsCheckGroup() {
-        CheckGroup<PlatformSettings> checkGroup = new CheckGroup<PlatformSettings>("adapterGroup",
-            new ArrayList<PlatformSettings>());
+        CheckGroup<PlatformSettings> checkGroup = new CheckGroup<>("adapterGroup",
+                new ArrayList<PlatformSettings>());
         checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
             /**
@@ -203,7 +202,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param productGroup
      * @return
      */
     private AjaxSubmitLink newDeleteSelectedButton(final CheckGroup<PlatformSettings> adapterGroup) {
@@ -282,7 +280,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param products
      * @param target
      */
     private void deleteSelectedAdapters(Collection<PlatformSettings> adapters, AjaxRequestTarget target) {

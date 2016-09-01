@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -126,7 +123,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 		super.onBeforeRender();
 	}
 
-	private final String getCSSClass() {
+	private String getCSSClass() {
 		if (anyErrorMessage()) {
 			hasError = true;
 			return "alert-error";
@@ -150,7 +147,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * 
 	 * @return whether there is any message for this panel of level ERROR or up
 	 */
-	public final boolean anyErrorMessage() {
+    private boolean anyErrorMessage() {
 		return anyMessage(FeedbackMessage.ERROR);
 	}
 
@@ -160,7 +157,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * 
 	 * @return whether there is any message for this panel
 	 */
-	public final boolean anyMessage() {
+    private boolean anyMessage() {
 		return anyMessage(FeedbackMessage.UNDEFINED);
 	}
 
@@ -172,7 +169,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 *            the level, see FeedbackMessage
 	 * @return whether there is any message for this panel of the given level
 	 */
-	public final boolean anyMessage(int level) {
+    private boolean anyMessage(int level) {
 		List<FeedbackMessage> msgs = getCurrentMessages();
 
 		for (FeedbackMessage msg : msgs) {
@@ -188,7 +185,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * @return Model for feedback messages on which you can install filters and
 	 *         other properties
 	 */
-	public final FeedbackMessagesModel getFeedbackMessagesModel() {
+    private FeedbackMessagesModel getFeedbackMessagesModel() {
 		return (FeedbackMessagesModel) messageListView.getDefaultModel();
 	}
 
@@ -222,7 +219,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * 
 	 * @return FeedbackPanel this.
 	 */
-	public final StyledFeedbackPanel setFilter(IFeedbackMessageFilter filter) {
+    private StyledFeedbackPanel setFilter(IFeedbackMessageFilter filter) {
 		getFeedbackMessagesModel().setFilter(filter);
 		return this;
 	}
@@ -258,7 +255,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * 
 	 * @return the currently collected messages for this panel, possibly empty
 	 */
-	protected final List<FeedbackMessage> getCurrentMessages() {
+    private List<FeedbackMessage> getCurrentMessages() {
 		final List<FeedbackMessage> messages = messageListView.getModelObject();
 		return Collections.unmodifiableList(messages);
 	}
@@ -268,7 +265,7 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 * 
 	 * @return Instance of FeedbackMessagesModel to use
 	 */
-	protected FeedbackMessagesModel newFeedbackMessagesModel() {
+    private FeedbackMessagesModel newFeedbackMessagesModel() {
 		return new FeedbackMessagesModel(this);
 	}
 
@@ -288,8 +285,8 @@ public class StyledFeedbackPanel extends Panel implements IFeedback {
 	 *            feedback message
 	 * @return component used to display the message
 	 */
-	protected Component newMessageDisplayComponent(String id,
-			FeedbackMessage message) {
+    private Component newMessageDisplayComponent(String id,
+                                                 FeedbackMessage message) {
 		Serializable serializable = message.getMessage();
 		Label label = new Label(id, (serializable == null) ? ""
 				: serializable.toString());

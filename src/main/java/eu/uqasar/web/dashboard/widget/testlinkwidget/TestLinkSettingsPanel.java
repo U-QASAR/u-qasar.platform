@@ -55,7 +55,9 @@ implements DashboardContextAware {
 	private static final long serialVersionUID = 1L;
 
 	private transient DashboardContext dashboardContext;
-	private String project, timeInterval, individualMetric;
+	private String project;
+    private final String timeInterval;
+    private final String individualMetric;
 
 	public TestLinkSettingsPanel(String id, 
 			IModel<TestLinkWidget> model) {
@@ -63,12 +65,12 @@ implements DashboardContextAware {
 
 		setOutputMarkupPlaceholderTag(true);
 
-		Form<Widget> form = new Form<Widget>("form");
+		Form<Widget> form = new Form<>("form");
 		project = getModelObject().getSettings().get("project");
 		timeInterval = getModelObject().getSettings().get("period");
 		individualMetric = getModelObject().getSettings().get("individualMetric");
 
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		try {
 			InitialContext ic = new InitialContext();
 			TestLinkDataService dataService = (TestLinkDataService) ic.lookup("java:module/TestLinkDataService");
@@ -77,12 +79,12 @@ implements DashboardContextAware {
 			e.printStackTrace();
 		}
 
-		form.add(new DropDownChoice<String>("project",
-				new PropertyModel<String>(this, "project"), projects));
+		form.add(new DropDownChoice<>("project",
+                new PropertyModel<String>(this, "project"), projects));
 
 		List<String> individualMetricGroups = UQasarUtil.getTestLinkMetricNames();        
-		DropDownChoice<String> dropDown = new DropDownChoice<String>("individualMetric", new PropertyModel<String>(this,
-				"individualMetric"), individualMetricGroups);
+		DropDownChoice<String> dropDown = new DropDownChoice<>("individualMetric", new PropertyModel<String>(this,
+                "individualMetric"), individualMetricGroups);
 		dropDown.setNullValid(true);
 		form.add(dropDown);
 
@@ -127,8 +129,8 @@ implements DashboardContextAware {
 		});
 
 		// Period
-		List<String> timeIntervals = Arrays.asList(new String[] { "Last Year", "Last 6 Months", "Last Month", "Last Week" });
-		form.add(new DropDownChoice<String>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
+		List<String> timeIntervals = Arrays.asList("Last Year", "Last 6 Months", "Last Month", "Last Week");
+		form.add(new DropDownChoice<>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
 
 
 		form.add(new AjaxLink<Void>("cancel") {

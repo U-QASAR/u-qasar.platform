@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.pages.tree.visual;
 
 /*
@@ -34,7 +31,7 @@ import eu.uqasar.web.pages.tree.visual.panel.VisualProjectPanel;
  */
 public class VisualPage extends BasePage{
 	private static final long serialVersionUID = 1404486356253398289L;
-	private VisualProjectPanel projectVisualPanel;
+	private final VisualProjectPanel projectVisualPanel;
 
 	public VisualPage(PageParameters parameters) {
 		super(parameters);

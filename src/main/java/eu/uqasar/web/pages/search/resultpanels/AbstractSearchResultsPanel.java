@@ -28,6 +28,8 @@ import eu.uqasar.service.AbstractService;
 import eu.uqasar.web.provider.EntityProvider;
 import java.util.Iterator;
 import java.util.List;
+
+import lombok.NoArgsConstructor;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -36,22 +38,17 @@ import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 
-/**
- *
- *
- * @param <T>
- */
 public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> extends Panel {
 
-    protected String searchTerm;
-    protected final Class<T> clazz;
-    private  WebMarkupContainer container = new WebMarkupContainer("container");
+    private String searchTerm;
+    private final Class<T> clazz;
+    private final WebMarkupContainer container = new WebMarkupContainer("container");
     private DataView<T> entities;
-    private WebMarkupContainer tableFoot = new WebMarkupContainer("tableFoot");
+    private final WebMarkupContainer tableFoot = new WebMarkupContainer("tableFoot");
 
-    protected int itemsPerPage = 10;
+    private final int itemsPerPage = 10;
 
-    public AbstractSearchResultsPanel(String id, String searchTerm, Class<T> clazz) {
+    protected AbstractSearchResultsPanel(String id, String searchTerm, Class<T> clazz) {
         super(id);
         this.clazz = clazz;
         this.searchTerm = searchTerm;
@@ -66,7 +63,7 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
         return this;
     }
 
-    public int getItemsPerPage() {
+    private int getItemsPerPage() {
         return this.itemsPerPage;
     }
 
@@ -98,7 +95,7 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
         }
     }
 
-    protected EntityProvider<T> getEntityProvider() {
+    private EntityProvider<T> getEntityProvider() {
         return new EntityProvider<T>() {
 
             @Override
@@ -116,9 +113,8 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
             public long size() {
                 final String[] terms = AbstractService.
                         prepareSearchTerm(searchTerm);
-                long count = getService().
+                return getService().
                         countFullTextResults(clazz, terms);
-                return count;
             }
         };
     }

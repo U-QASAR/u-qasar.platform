@@ -79,13 +79,13 @@ public class TeamImportPage extends AdminBasePage {
     private static final Logger logger = Logger.getLogger(TeamImportPage.class);
 
     private Label groupRetrievalInfo;
-    private SubmitLink importButton;
+    private final SubmitLink importButton;
     private LdapSettings ldapSettings;
     private LdapManager manager;
     private LdapGroupListPanel ldapGroupsList;
-    private Role userRole = Role.User;
-    private Role groupRole = Role.User;
-    private Boolean needToConfirmRegistration = false;
+    private final Role userRole = Role.User;
+    private final Role groupRole = Role.User;
+    private final Boolean needToConfirmRegistration = false;
 
     @Inject
     LdapSettingsService settingsService;
@@ -197,7 +197,7 @@ public class TeamImportPage extends AdminBasePage {
         addOrReplace(feedbackPanel);
     }
 
-    protected boolean tryToRegister(LdapGroup ldapGroup) {
+    private boolean tryToRegister(LdapGroup ldapGroup) {
         if (!teamService.ldapBasedGroupExists(ldapGroup)) {
             Team team = new Team();
             team.setName(ldapGroup.getName());
@@ -228,7 +228,7 @@ public class TeamImportPage extends AdminBasePage {
         return false;
     }
 
-    protected User tryToRegister(LdapUser ldapUser) {
+    private User tryToRegister(LdapUser ldapUser) {
         User newUser = ldapUser.toUser();
         try {
             authenticationService.checkMailAlreadyRegistered(newUser.getMail());

@@ -35,7 +35,7 @@ import org.apache.wicket.util.io.IClusterable;
  *
  *
  */
-public class ActionPermissions implements IClusterable {
+class ActionPermissions implements IClusterable {
 
 	/**
 	 * Map from an action to a set of roles

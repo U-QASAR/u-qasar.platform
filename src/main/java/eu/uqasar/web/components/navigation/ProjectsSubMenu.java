@@ -121,9 +121,9 @@ public class ProjectsSubMenu extends NavbarDropDownButton {
 		
 		subMenu.add(exportProjectLink);
 		
-		MenuBookmarkablePageLink<VisualPage> visualProjectLink = new MenuBookmarkablePageLink<VisualPage>(
-				VisualPage.class,
-				new StringResourceModel("menu.projects.visualize.text", this, null));
+		MenuBookmarkablePageLink<VisualPage> visualProjectLink = new MenuBookmarkablePageLink<>(
+                VisualPage.class,
+                new StringResourceModel("menu.projects.visualize.text", this, null));
 		visualProjectLink.setIconType(IconType.eyeopen);
 		subMenu.add(visualProjectLink);		
 		

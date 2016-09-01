@@ -105,7 +105,7 @@ public class UserActionLog extends AbstractEntity {
 		fillActionableItem(entity);
 	}
 
-	public void setUserDetails(User user) {
+	private void setUserDetails(User user) {
 		if (user != null) {
 			this.userId = user.getId();
 			this.userMail = user.getMail();

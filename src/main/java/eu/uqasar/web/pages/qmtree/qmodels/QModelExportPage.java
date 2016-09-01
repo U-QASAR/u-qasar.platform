@@ -22,7 +22,6 @@ package eu.uqasar.web.pages.qmtree.qmodels;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -57,14 +56,14 @@ public class QModelExportPage extends BasePage {
 
 	private static final long serialVersionUID = 3828016161086818909L;
 
-	private Logger logger = Logger.getLogger(QModelExportPage.class);
+	private final Logger logger = Logger.getLogger(QModelExportPage.class);
 
 	@Inject
 	private QMTreeNodeService treeNodeService;
 
 	private QModel currentQmodel;
 
-	private String selected = "Json";
+	private final String selected = "Json";
 
 	public QModelExportPage(PageParameters parameters) {
 		super(parameters);
@@ -114,13 +113,7 @@ public class QModelExportPage extends BasePage {
 										name));
 				
 				logger.info("onSubmit end");
-				} catch (JAXBException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (JsonGenerationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (JsonMappingException e) {
+				} catch (JAXBException | JsonGenerationException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IOException e) {

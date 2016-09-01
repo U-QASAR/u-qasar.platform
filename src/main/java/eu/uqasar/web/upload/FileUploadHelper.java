@@ -61,7 +61,7 @@ public abstract class FileUploadHelper extends FileUploadUtil implements Seriali
 	 * @return The path where the uploaded file was written to.
 	 * @throws IOException if any error occurs during writing of the file.
 	 */
-	public Path processFileUpload(FileUpload file, Path target) throws IOException {
+	Path processFileUpload(FileUpload file, Path target) throws IOException {
 		file.writeTo(target.toFile());
 		return target;
 	}
@@ -99,7 +99,7 @@ public abstract class FileUploadHelper extends FileUploadUtil implements Seriali
 	 * @return The path where the uploaded file was written to.
 	 * @throws IOException if any error occurs during writing of the file.
 	 */
-	public Path processUserFileUpload(FileUpload file, User user, boolean overwrite) throws IOException {
+	private Path processUserFileUpload(FileUpload file, User user, boolean overwrite) throws IOException {
 		Path target = getNewFileName(file, user, overwrite);
 		processFileUpload(file, target);
 		return target;
@@ -108,10 +108,6 @@ public abstract class FileUploadHelper extends FileUploadUtil implements Seriali
 	/**
 	 * Processes and writes the uploaded file into the upload folder of the
 	 * given user and overwrites any existing file.
-	 *
-	 * @see
-	 * FileUploadHelper#processUserFileUpload(org.apache.wicket.markup.html.form.upload.FileUpload,
-	 * boolean)
 	 *
 	 * @param file The uploaded file to be stored in the upload folder of the
 	 * givenuser.

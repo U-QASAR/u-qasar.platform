@@ -167,8 +167,7 @@ public class GitlabDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "gitlab-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -178,8 +177,8 @@ public class GitlabDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<GitlabMetricMeasurement> newGitlabCheckGroup() {
-		CheckGroup<GitlabMetricMeasurement> checkGroup = new CheckGroup<GitlabMetricMeasurement>(
-				"gitlabGroup", new ArrayList<GitlabMetricMeasurement>());
+		CheckGroup<GitlabMetricMeasurement> checkGroup = new CheckGroup<>(
+                "gitlabGroup", new ArrayList<GitlabMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;
@@ -194,7 +193,6 @@ public class GitlabDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -323,7 +321,6 @@ public class GitlabDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forGitlab(GitlabMetricMeasurement gitlabMeasurement) {
@@ -336,7 +333,7 @@ public class GitlabDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -5178285310705591769L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 
 		public GitlabProvider(Long adapterID) {

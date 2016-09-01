@@ -84,13 +84,11 @@ public class TechDebtChartWidget extends AbstractWidget{
 	 * 
 	 */
 	private static final long serialVersionUID = 376923874435436400L;
-	public static final String BAR_TYPE = "BAR";
-	public static final String PIE_TYPE = "PIE";
+	private static final String BAR_TYPE = "BAR";
+	private static final String PIE_TYPE = "PIE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			PIE_TYPE, 
-			BAR_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(PIE_TYPE,
+            BAR_TYPE);
 
 	private static TechDebtChartFactory chartDataFactory;	
 
@@ -133,15 +131,10 @@ public class TechDebtChartWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new TechDebtChartSettingsPanel(settingsPanelId, new Model<TechDebtChartWidget>(this));
+		return new TechDebtChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 
-	/**
-	 * Create a chart based on Google Chart
-	 * TODO: Before releasing U-QASAR as Open Source, HighCharts should be replaced by Google Chart or something corresponding. 
-	 * @return
-	 */
 	/*
 	public Chart createChart() {
 

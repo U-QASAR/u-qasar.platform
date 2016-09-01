@@ -102,7 +102,7 @@ public class AdapterManagementPage extends BasePage {
 
 	private final AjaxSubmitLink deleteSelectedButton;
 
-	private Logger logger = Logger.getLogger(AdapterManagementPage.class);
+	private final Logger logger = Logger.getLogger(AdapterManagementPage.class);
 
 	/**
 	 * Constructor building the page
@@ -259,8 +259,7 @@ public class AdapterManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "AdapterSettings-list")));
 			}
-			;
-		}
+        }
 
 		;
 	}
@@ -270,8 +269,8 @@ public class AdapterManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<AdapterSettings> newAdapterSettingsCheckGroup() {
-		CheckGroup<AdapterSettings> checkGroup = new CheckGroup<AdapterSettings>(
-				"adapterGroup", new ArrayList<AdapterSettings>());
+		CheckGroup<AdapterSettings> checkGroup = new CheckGroup<>(
+                "adapterGroup", new ArrayList<AdapterSettings>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			/**
@@ -289,7 +288,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -366,7 +364,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedAdapters(
@@ -448,7 +445,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param AdapterSettings
 	 * @return
 	 */
 	private static PageParameters forAdapter(AdapterSettings adapter) {

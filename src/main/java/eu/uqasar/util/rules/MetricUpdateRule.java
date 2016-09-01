@@ -21,7 +21,6 @@ package eu.uqasar.util.rules;
  */
 
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -62,9 +61,9 @@ public class MetricUpdateRule extends BasicRule {
 	// Target value for the overall project quality
 	private Float targetQualityValue = (float) 2;
 	private TreeNodeService treeNodeService; 
-	private List<Metric> MetricListForNotification = new LinkedList<Metric>();
-	private List<Project> projectsForNotifications = new LinkedList<Project>();
-	private List<Integer> dueDaysForNotifications = new LinkedList<Integer>();
+	private List<Metric> MetricListForNotification = new LinkedList<>();
+	private List<Project> projectsForNotifications = new LinkedList<>();
+	private List<Integer> dueDaysForNotifications = new LinkedList<>();
 	
 	public MetricUpdateRule() {
 
@@ -89,8 +88,8 @@ public class MetricUpdateRule extends BasicRule {
 		return checkConditionManually();
 	}
 
-    public boolean checkConditionManually() {
-        List<Metric> AllMetricList= new LinkedList<Metric>();
+    private boolean checkConditionManually() {
+        List<Metric> AllMetricList= new LinkedList<>();
         MetricListForNotification.clear();
         projectsForNotifications.clear();
         dueDaysForNotifications.clear();
@@ -155,14 +154,14 @@ public class MetricUpdateRule extends BasicRule {
         // Check for the target quality value and add a notification if needed
         int index = 0;
         List<INotification> notifications = UQasarUtil.getNotifications();
-        List<INotification> notificationsRemoved = new LinkedList<INotification>();
+        List<INotification> notificationsRemoved = new LinkedList<>();
         for (INotification notif : notifications) {
             if (notif instanceof MetricNeedsToBeEdited) {
                 notificationsRemoved.add(notif);
             }
         }
         UQasarUtil.getNotifications().removeAll(notificationsRemoved);
-        if (checkConditionManually() == true) {
+        if (checkConditionManually()) {
             
             logger.info("Note! Metric needs to be updated)");
 

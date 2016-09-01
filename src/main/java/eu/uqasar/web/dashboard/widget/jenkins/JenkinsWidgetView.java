@@ -75,9 +75,9 @@ public class JenkinsWidgetView extends WidgetView {
 	private static final long serialVersionUID = 7504539323135550980L;
 	private String metricName, projectName;
 	private Project project;
-	private JenkinsMetricMeasurement lastBuildSuccess;
-	private Map<Number, String> last100Builds;
-	private JenkinsWidget widget;
+	private final JenkinsMetricMeasurement lastBuildSuccess;
+	private final Map<Number, String> last100Builds;
+	private final JenkinsWidget widget;
 	private List<Entry<Number, String>> sortedLast100Builds;
 	
     public JenkinsWidgetView(String id, IModel<Widget> model) {
@@ -121,7 +121,7 @@ public class JenkinsWidgetView extends WidgetView {
         if (last100Builds != null && last100Builds.size() != 0) {
             // sortedLast100Builds = new TreeMap<Number, String>(last100Builds);
             Set<Entry<Number, String>> entrySet = last100Builds.entrySet();
-            sortedLast100Builds = new ArrayList<Entry<Number, String>>(entrySet);
+            sortedLast100Builds = new ArrayList<>(entrySet);
             Collections.sort(sortedLast100Builds, new SortByKeyDescending());
         }
 
@@ -203,8 +203,8 @@ public class JenkinsWidgetView extends WidgetView {
         // add the correct labels on the axes (0 = stable, 1=unstable, 2=broken, 3=Unknown
         // add the correct BuildNumber on the x-axis (not 0-99, but 634-734)
         List<Number> data = new ArrayList<>();
-        List<String> yAxisLabels = new ArrayList<String>();
-        List<String> xAxisLabels = new ArrayList<String>();
+        List<String> yAxisLabels = new ArrayList<>();
+        List<String> xAxisLabels = new ArrayList<>();
         
         int counter = 0;
          
@@ -253,8 +253,7 @@ public class JenkinsWidgetView extends WidgetView {
 	}
 	
 	private Options getOptions(){
-		Options options = new Options();
-		return options;
+        return new Options();
 	}
 	
 	private JenkinsMetricMeasurement getLastBuildSuccessStatus(Project project){
@@ -316,7 +315,7 @@ public class JenkinsWidgetView extends WidgetView {
 		return pro;
 	}
 	
-	class SortByKeyDescending implements Comparator<Map.Entry<Number, String>>{
+	private class SortByKeyDescending implements Comparator<Map.Entry<Number, String>>{
 	    
 	    @Override
 	    public int compare( Map.Entry<Number,String> entry1, Map.Entry<Number,String> entry2){

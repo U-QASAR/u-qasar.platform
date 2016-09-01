@@ -84,7 +84,7 @@ public class UserService extends AbstractService<User> {
 		Root<User> root = query.from(User.class);
 		if (filter != null && !filter.isEmpty()) {
 
-			Expression<String> literal = cb.upper(cb.literal((String) LIKE_WILDCARD + filter + LIKE_WILDCARD));
+			Expression<String> literal = cb.upper(cb.literal(LIKE_WILDCARD + filter + LIKE_WILDCARD));
 			Predicate likeFirstName = cb.like(cb.upper(root.get(User_.firstName)), literal);
 			Predicate likeLastName = cb.like(cb.upper(root.get(User_.lastName)), literal);
 			Predicate likeUserName = cb.like(cb.upper(root.get(User_.userName)), literal);
@@ -152,7 +152,7 @@ public class UserService extends AbstractService<User> {
 		return countByUserName(userName) > 0;
 	}
 
-	public Long countByUserName(final String userName) {
+	private Long countByUserName(final String userName) {
 		logger.infof("counting Users with userName %s ...", userName);
 		return performDistinctCountWithEqualPredicate(User_.userName, userName);
 	}
@@ -234,7 +234,7 @@ public class UserService extends AbstractService<User> {
 		return countByMail(mail) > 0;
 	}
 
-	public Long countByMail(final String mail) {
+	private Long countByMail(final String mail) {
 		logger.infof("counting Users with mail %s ...", mail);
 		return performDistinctCountWithEqualPredicate(User_.mail, mail);
 	}
@@ -262,8 +262,7 @@ public class UserService extends AbstractService<User> {
 		CriteriaQuery<User> query = cb.createQuery(User.class);
 		Root<User> root = query.from(User.class);
 		query.where(cb.equal(root.get(User_.company), company));
-		List<User> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}
 
 	public User getByPWResetToken(final String token) {
@@ -321,7 +320,7 @@ public class UserService extends AbstractService<User> {
 		return em.createQuery(criteria).getSingleResult();
 	}
 
-	protected List<Predicate> getFilterPredicates(final UserFilterStructure filter, CriteriaBuilder cb, Root<User> from) {
+	private List<Predicate> getFilterPredicates(final UserFilterStructure filter, CriteriaBuilder cb, Root<User> from) {
 		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;
@@ -337,7 +336,7 @@ public class UserService extends AbstractService<User> {
 			predicates.add(cb.equal(from.get(User_.registrationStatus), filter.getStatus()));
 		}
 		if (!StringUtils.isEmpty(filter.getName())) {
-			Predicate firstName = cb.like(cb.lower(from.<String> get(User_.lastName)), LIKE_WILDCARD + filter.getName().toLowerCase() + LIKE_WILDCARD);
+			Predicate firstName = cb.like(cb.lower(from.get(User_.lastName)), LIKE_WILDCARD + filter.getName().toLowerCase() + LIKE_WILDCARD);
 			Predicate lastName = cb.like(from.get(User_.firstName), LIKE_WILDCARD + filter.getName() + LIKE_WILDCARD);
 			Predicate userName = cb.like(from.get(User_.userName), LIKE_WILDCARD + filter.getName() + LIKE_WILDCARD);
 			Expression<String> fullName = cb.concat(cb.concat(from.get(User_.firstName), " "), from.get(User_.lastName));

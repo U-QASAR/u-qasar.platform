@@ -65,7 +65,7 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 	private CheckGroup<Entity> checkGroup;
 	private CheckGroupSelector checkGroupSelector;
 
-	public LdapEntityListPanel(String id, LdapEntityProvider<Entity> provider) {
+	LdapEntityListPanel(String id, LdapEntityProvider<Entity> provider) {
 		super(id);
 		this.provider = provider;
 		setOutputMarkupId(true);
@@ -80,7 +80,7 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 		return this;
 	}
 
-	public String getListHeaderCSSClass() {
+	private String getListHeaderCSSClass() {
 		return listHeaderCSSClass;
 	}
 
@@ -89,7 +89,7 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 		return this;
 	}
 
-	public String getContainerCSSClass() {
+	private String getContainerCSSClass() {
 		return containerCSSClass;
 	}
 
@@ -98,7 +98,7 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 		return this;
 	}
 
-	public boolean isSelectionEnabled() {
+	boolean isSelectionEnabled() {
 		return selectionEnabled;
 	}
 
@@ -170,18 +170,17 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 		}
 	}
 
-	public abstract void populateItem(Item<Entity> item, Check<Entity> check);
+	protected abstract void populateItem(Item<Entity> item, Check<Entity> check);
 
-	public abstract void selectionChanged(AjaxRequestTarget target);
+	protected abstract void selectionChanged(AjaxRequestTarget target);
 
 	private String getJavaScript() {
-		String js = "	var $table = $('#entityList');\n"
-				+ "	$table.floatThead({\n"
-				+ "			scrollContainer: function() {\n"
-				+ "			return $('#tableContainer');\n"
-				+ "		}\n"
-				+ "	});\n";
-		return js;
+        return "	var $table = $('#entityList');\n"
+                + "	$table.floatThead({\n"
+                + "			scrollContainer: function() {\n"
+                + "			return $('#tableContainer');\n"
+                + "		}\n"
+                + "	});\n";
 	}
 
 	private CheckGroup newCheckGroup() {

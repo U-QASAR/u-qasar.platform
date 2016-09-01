@@ -192,8 +192,7 @@ public class IssueTrackerDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-			;
-		}
+        }
 
 		;
 	}
@@ -203,8 +202,8 @@ public class IssueTrackerDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<JiraMetricMeasurement> newJiraCheckGroup() {
-		CheckGroup<JiraMetricMeasurement> checkGroup = new CheckGroup<JiraMetricMeasurement>(
-				"jiraGroup", new ArrayList<JiraMetricMeasurement>());
+		CheckGroup<JiraMetricMeasurement> checkGroup = new CheckGroup<>(
+                "jiraGroup", new ArrayList<JiraMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;
@@ -219,7 +218,6 @@ public class IssueTrackerDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -304,7 +302,6 @@ public class IssueTrackerDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedMeasurements(
@@ -361,7 +358,7 @@ public class IssueTrackerDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -2276310015122208686L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public JiraProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

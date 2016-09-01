@@ -97,7 +97,7 @@ public abstract class QMBaseIndicator extends QMTreeNode {
 	@ManyToMany(cascade = MERGE)
 	private Set<QModelTagData> qModelTagData = new HashSet<>();
 	
-	public QMBaseIndicator(final QMTreeNode parent) {
+	QMBaseIndicator(final QMTreeNode parent) {
 		super(parent);
 	}
 

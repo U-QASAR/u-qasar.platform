@@ -41,9 +41,5 @@ import javax.inject.Qualifier;
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
 @Documented
-/**
- *
- *
- */
 public @interface LoggedInUser {
 }

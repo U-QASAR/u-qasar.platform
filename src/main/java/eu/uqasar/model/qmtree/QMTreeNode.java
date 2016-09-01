@@ -58,8 +58,6 @@ import org.hibernate.search.annotations.Store;
 import org.hibernate.search.annotations.TermVector;
 import org.jboss.solder.logging.Logger;
 
-import com.github.slugify.Slugify;
-
 import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
 import eu.uqasar.model.AbstractEntity;
 
@@ -141,22 +139,22 @@ public class QMTreeNode extends
     }
 
     @JsonIgnore
-    protected List<QMTreeNode> getMutableSiblings() {
+    private List<QMTreeNode> getMutableSiblings() {
         return getMutableSiblings(true);
     }
 
     @JsonIgnore
-    protected List<QMTreeNode> getMutableSiblings(boolean includeSelf) {
+    private List<QMTreeNode> getMutableSiblings(boolean includeSelf) {
         if (this instanceof QModel) {
             // TODO not sure if QModels cannot have siblings!
             LinkedList<QMTreeNode> list = new LinkedList<>();
             if (includeSelf) {
-                list.add((QMTreeNode) this);
+                list.add(this);
             }
             return list;
         } else {
             if (includeSelf) {
-                return (LinkedList<QMTreeNode>) getParent().getChildren();
+                return getParent().getChildren();
             } else {
                 List<QMTreeNode> siblings = getParent()
                         .getChildren();
@@ -313,11 +311,10 @@ public class QMTreeNode extends
     public final String getChildrenString(final String prefix,
                                           final String suffix) {
 
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefix);
-        builder.append(StringUtils.join(getChildren(), ", "));
-        builder.append(suffix);
-        return builder.toString();
+        String builder = prefix +
+                StringUtils.join(getChildren(), ", ") +
+                suffix;
+        return builder;
     }
 
     @JsonIgnore
@@ -336,7 +333,7 @@ public class QMTreeNode extends
     }
 
     @JsonIgnore
-    protected static QMQualityIndicator getQualityIndicator(
+    private static QMQualityIndicator getQualityIndicator(
             IQMTreeNode<String> node) {
         if (node instanceof QMQualityIndicator) {
             return (QMQualityIndicator) node;
@@ -348,7 +345,7 @@ public class QMTreeNode extends
     }
 
     @JsonIgnore
-    protected static QMQualityObjective getQualityObjective(
+    private static QMQualityObjective getQualityObjective(
             IQMTreeNode<String> node) {
         if (node instanceof QMQualityObjective) {
             return (QMQualityObjective) node;
@@ -360,7 +357,7 @@ public class QMTreeNode extends
     }
 
     @JsonIgnore
-    protected static QModel getQModel(IQMTreeNode<String> node) {
+    private static QModel getQModel(IQMTreeNode<String> node) {
         if (node.getParent() == null || node instanceof QModel) {
             return (QModel) node;
         }

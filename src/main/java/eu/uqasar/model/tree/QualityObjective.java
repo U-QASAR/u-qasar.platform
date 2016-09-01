@@ -58,7 +58,7 @@ import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
 public class QualityObjective extends BaseIndicator implements Comparable<QualityObjective>{
 
 	private static final long serialVersionUID = 9113178213997749526L;
-	public static final IconType ICON = new IconType("tasks");
+	private static final IconType ICON = new IconType("tasks");
 
 	@XmlTransient
 	@ManyToOne
@@ -100,10 +100,10 @@ public class QualityObjective extends BaseIndicator implements Comparable<Qualit
 		this.setWeight(weight);
 		
 		Iterator<QualityIndicator> it = children.iterator();
-		List<TreeNode> nodes = new LinkedList<TreeNode>();
+		List<TreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
-			QualityIndicator qi = (QualityIndicator)it.next();
-			nodes.add((TreeNode)qi);
+			QualityIndicator qi = it.next();
+			nodes.add(qi);
 		}
 		this.setChildren(nodes);
 	}

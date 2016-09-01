@@ -63,7 +63,7 @@ public class QMTreeProvider implements ITreeProvider<QMTreeNode> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<? extends QMTreeNode> getChildren(QMTreeNode node) {
-		return (Iterator<? extends QMTreeNode>) node.getChildren().iterator();
+		return node.getChildren().iterator();
 	}
 
 	@Override

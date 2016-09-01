@@ -61,7 +61,7 @@ public class QMQualityIndicator extends QMBaseIndicator {
 	 */
 	private static final long serialVersionUID = 7941535859451021850L;
 
-	public static final IconType ICON = new IconType("dashboard");
+	private static final IconType ICON = new IconType("dashboard");
 
 	@JsonCreator
 	public QMQualityIndicator(
@@ -93,10 +93,10 @@ public class QMQualityIndicator extends QMBaseIndicator {
 		this.setWeight(weight);
 		
 		Iterator<QMMetric> it = children.iterator();
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
-			QMMetric met = (QMMetric)it.next();
-			nodes.add((QMTreeNode)met);
+			QMMetric met = it.next();
+			nodes.add(met);
 		}
 		this.setChildren(nodes);
 		if (this.getChildren().size()>0){

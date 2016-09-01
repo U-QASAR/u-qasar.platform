@@ -95,12 +95,12 @@ public class DashboardViewPage extends BasePage {
 
 	private static final long serialVersionUID = 1L;
 	private WebMarkupContainer newLinksContainer;
-	private transient DashboardContext dashboardContext =
+	private final transient DashboardContext dashboardContext =
 			UQasar.get().getDashboardContext();
 	private Dashboard dashboard;
 	private final Modal resetConfirmationModal;
 	private final Modal deleteConfirmationModal;
-	private Logger logger = Logger.getLogger(DashboardViewPage.class);
+	private final Logger logger = Logger.getLogger(DashboardViewPage.class);
 
 	@Inject
 	private DashboardService dashboardService;
@@ -119,7 +119,7 @@ public class DashboardViewPage extends BasePage {
 			}
 		} 
 
-		if (!parameters.get("useSuggestion").isEmpty() && parameters.get("useSuggestion").toBoolean() == true) {
+		if (!parameters.get("useSuggestion").isEmpty() && parameters.get("useSuggestion").toBoolean()) {
 
 			logger.info("Getting a suggestion for recommended dashboard setup.");
 			DbDashboard dbDash = (DbDashboard) dashboard;
@@ -129,7 +129,7 @@ public class DashboardViewPage extends BasePage {
 			getPage().info(message);			
 		}
 
-		dashboardPanel = new DashboardPanel("dashboard", new Model<Dashboard>(dashboard));
+		dashboardPanel = new DashboardPanel("dashboard", new Model<>(dashboard));
 		dashboardPanel.setOutputMarkupId(true);
 		add(dashboardPanel);
 		// Container for links of different types of sample widgets
@@ -380,8 +380,8 @@ public class DashboardViewPage extends BasePage {
 								ProjectQualityChartWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -425,8 +425,8 @@ public class DashboardViewPage extends BasePage {
 								ProjectQualityGoogleChartWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -464,8 +464,8 @@ public class DashboardViewPage extends BasePage {
 								WidgetForJira.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -504,8 +504,8 @@ public class DashboardViewPage extends BasePage {
 								SonarQualityWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -547,8 +547,8 @@ public class DashboardViewPage extends BasePage {
 								TestLinkWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -589,8 +589,8 @@ public class DashboardViewPage extends BasePage {
 								JenkinsWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -632,8 +632,8 @@ public class DashboardViewPage extends BasePage {
 								UqasarDataVisualizationWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -669,8 +669,8 @@ public class DashboardViewPage extends BasePage {
 						getWidgetDescriptorByClassName(DataDeviationWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 
 				Widget widget = widgetFactory.createWidget(item.getObject());
 
@@ -711,8 +711,8 @@ public class DashboardViewPage extends BasePage {
 						getWidgetDescriptorByClassName(TechDebtChartWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 
 				Widget widget = widgetFactory.createWidget(item.getObject());
 
@@ -751,8 +751,8 @@ public class DashboardViewPage extends BasePage {
 								ReportingWidget.class.getName());
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(descriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(descriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				send(getPage(), Broadcast.BREADTH, new DashboardEvent(target, 
 						DashboardEvent.EventType.WIDGET_ADDED, widget));
@@ -958,8 +958,8 @@ public class DashboardViewPage extends BasePage {
 
 				WidgetFactory widgetFactory = 
 						dashboardContext.getWidgetFactory();
-				Model<WidgetDescriptor> item = 
-						new Model<WidgetDescriptor>(widgetDescriptor);
+				Model<WidgetDescriptor> item =
+                        new Model<>(widgetDescriptor);
 				Widget widget = widgetFactory.createWidget(item.getObject());
 				WidgetLocation location = new WidgetLocation(col, row);
 				widget.setLocation(location);

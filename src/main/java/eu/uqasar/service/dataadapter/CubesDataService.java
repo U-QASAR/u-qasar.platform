@@ -79,7 +79,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	// Counts the number of trials to connect to Rest service, and limits them to 10
 	// TO BE removed after Cubes adapter integration
 	private Integer counter = 0;
-	private Integer counterLimit = 10;
+	private final Integer counterLimit = 10;
 
 	public CubesDataService() {
 		super(CubesMetricMeasurement.class);
@@ -94,9 +94,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 		CriteriaQuery<CubesMetricMeasurement> query = 
 				cb.createQuery(CubesMetricMeasurement.class);
 		query.from(CubesMetricMeasurement.class);
-		List<CubesMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 
@@ -117,9 +115,8 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	}
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<CubesMetricMeasurement> metrics) {
 		for (CubesMetricMeasurement m : metrics) {
 			delete(m);
@@ -190,7 +187,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 		String boundSystemURL = settings.getUrl();
 		String project = settings.getAdapterProject();
 
-		if(testConnectionToServer(boundSystemURL,10000) == false) return;
+		if(!testConnectionToServer(boundSystemURL, 10000)) return;
 
 		//TODO: Manu, create Cubes adapter
 		CubesAdapter adapter = new CubesAdapter();
@@ -207,14 +204,14 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 				Gson gson = new Gson();
 				CubesMetricMeasurement[] CubesMetricMeasurement = gson.fromJson(json, 
 						CubesMetricMeasurement[].class);
-				for (int i = 0; i < CubesMetricMeasurement.length; i++) {
-					// Add a timestamp and metric name to the object
-					CubesMetricMeasurement[i].setTimeStamp(snapshotTimeStamp);
-					CubesMetricMeasurement[i].setCubesMetric(metric);
-					CubesMetricMeasurement[i].setProject(settings.getProject());
-					CubesMetricMeasurement[i].setAdapter(settings);
-					create(CubesMetricMeasurement[i]);
-				}
+                for (eu.uqasar.model.measure.CubesMetricMeasurement aCubesMetricMeasurement : CubesMetricMeasurement) {
+                    // Add a timestamp and metric name to the object
+                    aCubesMetricMeasurement.setTimeStamp(snapshotTimeStamp);
+                    aCubesMetricMeasurement.setCubesMetric(metric);
+                    aCubesMetricMeasurement.setProject(settings.getProject());
+                    aCubesMetricMeasurement.setAdapter(settings);
+                    create(aCubesMetricMeasurement);
+                }
 			}
 		}
 
@@ -232,7 +229,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * Update the content of a CubesMetricMeasurement that is behind a URL (payload as JSON)
 	 * @param settings
 	 */
-	public void storeJSONPayload(AdapterSettings settings) {
+    private void storeJSONPayload(AdapterSettings settings) {
 		logger.info("Get JSON Payload for all CUBES metrics.");
 		String creds = settings.getAdapterUsername() +":" +settings.getAdapterPassword();
 
@@ -274,12 +271,10 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 						// Persist in database
 						update(CubesMetricMeasurement);
 
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (JSONException e) {
+					} catch (IOException | JSONException e) {
 						e.printStackTrace();
 					}
-				}
+                }
 			} catch (uQasarException e) {
 				e.printStackTrace();
 			}
@@ -289,7 +284,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 
 	public List<Measurement> cubesAdapterQuery(String bindedSystem, String cubeName, String queryExpression) throws uQasarException{
 		URI uri = null;
-		LinkedList<Measurement> measurements = new LinkedList<Measurement>();
+		LinkedList<Measurement> measurements = new LinkedList<>();
 
 		try {
 			uri = new URI(bindedSystem + "/" + queryExpression);
@@ -309,20 +304,11 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 
 			measurements.add(new Measurement(uQasarMetric.PROJECTS_PER_SYSTEM_INSTANCE, measurementResultJSONArray.toString()));
 
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (org.apache.wicket.ajax.json.JSONException e) {
-			// TODO Auto-generated catch block
+		} catch (URISyntaxException | org.apache.wicket.ajax.json.JSONException | JSONException | IOException e) {
 			e.printStackTrace();
 		}
 
-		return measurements;
+        return measurements;
 	}
 
 
@@ -374,7 +360,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * @return 	True or False according to the connection success
 	 * 			
 	 */
-	public static boolean testConnectionToServer(String url, int timeout) {
+	private static boolean testConnectionToServer(String url, int timeout) {
 		try {
 			URL myUrl = new URL(url);
 			URLConnection connection = myUrl.openConnection();
@@ -409,7 +395,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * Get the latest date of measurement snapshots
 	 * @return
 	 */
-	public Date getLatestDate() {
+    private Date getLatestDate() {
 		logger.info("Get the latest date from CUBES measurements...");
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<CubesMetricMeasurement> query = cb.createQuery(CubesMetricMeasurement.class);
@@ -425,7 +411,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * @return
 	 * @throws uQasarException
 	 */
-	public List<CubesMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date) 
+    private List<CubesMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date)
 			throws uQasarException {
 		logger.info("Get measurements for metric: " +metric);
 

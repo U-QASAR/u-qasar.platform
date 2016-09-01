@@ -40,10 +40,10 @@ public abstract class ProcessManagementPanel extends Panel {
 	private static final long serialVersionUID = 1L;
 
 	private static final List<String> orderSelection = Arrays
-			.asList(new String[] { "Ascending Date Order",
-					"Descending Date Order" });
-	public static String ASCENDING_IS_SELECTED = "Ascending Date Order";
-	public static String DESCENDING_IS_SELECTED = "Descending Date Order";
+			.asList("Ascending Date Order",
+                    "Descending Date Order");
+	private static final String ASCENDING_IS_SELECTED = "Ascending Date Order";
+	public static final String DESCENDING_IS_SELECTED = "Descending Date Order";
 
 	private String selected = ASCENDING_IS_SELECTED;
 
@@ -63,8 +63,8 @@ public abstract class ProcessManagementPanel extends Panel {
 		form = new Form<>("form");
 		add(form);
 
-		processName = new TextField<String>("name", new PropertyModel<String>(
-				this, "name"));
+		processName = new TextField<>("name", new PropertyModel<String>(
+                this, "name"));
 		form.add(processName);
 
 		startDate = new DropDownChoice("start.date", new PropertyModel(this,
@@ -148,7 +148,7 @@ public abstract class ProcessManagementPanel extends Panel {
 		endDate.setModelObject(null);
 	}
 
-	public void setSelected(String selected) {
+	private void setSelected(String selected) {
 		this.selected = selected;
 	}
 

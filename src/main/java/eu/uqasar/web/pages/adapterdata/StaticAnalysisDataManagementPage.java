@@ -190,8 +190,7 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -201,8 +200,8 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<SonarMetricMeasurement> newSonarCheckGroup() {
-		CheckGroup<SonarMetricMeasurement> checkGroup = new CheckGroup<SonarMetricMeasurement>(
-				"sonarGroup", new ArrayList<SonarMetricMeasurement>());
+		CheckGroup<SonarMetricMeasurement> checkGroup = new CheckGroup<>(
+                "sonarGroup", new ArrayList<SonarMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;
@@ -217,7 +216,6 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -346,7 +344,6 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forSonar(SonarMetricMeasurement sonarMeasurement) {
@@ -357,7 +354,7 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 	private final class SonarProvider extends EntityProvider<SonarMetricMeasurement> {
 
 		private static final long serialVersionUID = 1360608566900210699L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public SonarProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

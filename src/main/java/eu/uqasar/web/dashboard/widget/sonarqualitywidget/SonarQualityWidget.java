@@ -112,8 +112,8 @@ public class SonarQualityWidget extends AbstractWidget {
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new SonarQualityWidgetSettingsPanel(settingsPanelId, 
-				new Model<SonarQualityWidget>(this));
+		return new SonarQualityWidgetSettingsPanel(settingsPanelId,
+                new Model<>(this));
 	}
 
 	
@@ -123,7 +123,7 @@ public class SonarQualityWidget extends AbstractWidget {
 	 */
 	public List<SonarMetricMeasurement> getMeasurements(String period) {
 
-		List<SonarMetricMeasurement> measurements = new ArrayList<SonarMetricMeasurement>();
+		List<SonarMetricMeasurement> measurements = new ArrayList<>();
 
 		if (settings.get("project") != null) {
 			project = settings.get("project");
@@ -228,9 +228,9 @@ public class SonarQualityWidget extends AbstractWidget {
 		// incoming metrics are already sorted by timestamp descending (newest at beginning)
 		List<SonarMetricMeasurement> latestMetrics = new ArrayList<>();
 		if (metrics != null && !metrics.isEmpty()) {
-			for (int i = 0; i < metrics.size(); i++) {
-				latestMetrics.add(metrics.get(i));
-			}
+            for (SonarMetricMeasurement metric : metrics) {
+                latestMetrics.add(metric);
+            }
 		}
 		return latestMetrics;
 	}
@@ -244,51 +244,52 @@ public class SonarQualityWidget extends AbstractWidget {
 										test = new ArrayList<>();
 		
 		if (metrics != null && !metrics.isEmpty()) {
-			if (group.equals("Code Lines related")){
-				for (SonarMetricMeasurement m: metrics){
-					if (m.getSonarMetric().contains("LINE") && !m.getSonarMetric().contains("DENSITY") || m.getSonarMetric().equals("NCLOC") || m.getSonarMetric().equals("STATEMENTS") ){
-						lines.add(m);
-					}
-				}
-				return lines;
-			} else if (group.equals("Complexity related")){
-				for (SonarMetricMeasurement m: metrics){
-					if(m.getSonarMetric().contains("COMPLEXITY") && !m.getSonarMetric().contains("DENSITY")){
-						complex.add(m);
-					}
-				}
-				return complex;
-			} else if (group.equals("Test related")){
-				for (SonarMetricMeasurement m: metrics){
-					if (m.getSonarMetric().contains("TEST") && !m.getSonarMetric().contains("DENSITY")){
-						test.add(m);
-					}
-				}
-				return test;
-			} else if (group.equals("Density related")){
-				for (SonarMetricMeasurement m: metrics){
-					if (m.getSonarMetric().contains("DENSITY")){
-						System.out.println(m.getSonarMetric().contains("DENSITY"));
-						System.out.println(m.getSonarMetric());
-						density.add(m);
-					}
-				}
-				return density;
-			} else {
-				for (SonarMetricMeasurement m: metrics){
-					if (!m.getSonarMetric().contains("LINE") && 
-							!m.getSonarMetric().contains("COMPLEXITY") &&
-							!m.getSonarMetric().contains("TEST") && 
-							!m.getSonarMetric().contains("DENSITY") &&
-							!m.getSonarMetric().equals("NCLOC") && 
-							!m.getSonarMetric().equals("STATEMENTS")){
-						struct.add(m);
-					}
-				}
-				return struct;
-			}
+            switch (group) {
+                case "Code Lines related":
+                    for (SonarMetricMeasurement m : metrics) {
+                        if (m.getSonarMetric().contains("LINE") && !m.getSonarMetric().contains("DENSITY") || m.getSonarMetric().equals("NCLOC") || m.getSonarMetric().equals("STATEMENTS")) {
+                            lines.add(m);
+                        }
+                    }
+                    return lines;
+                case "Complexity related":
+                    for (SonarMetricMeasurement m : metrics) {
+                        if (m.getSonarMetric().contains("COMPLEXITY") && !m.getSonarMetric().contains("DENSITY")) {
+                            complex.add(m);
+                        }
+                    }
+                    return complex;
+                case "Test related":
+                    for (SonarMetricMeasurement m : metrics) {
+                        if (m.getSonarMetric().contains("TEST") && !m.getSonarMetric().contains("DENSITY")) {
+                            test.add(m);
+                        }
+                    }
+                    return test;
+                case "Density related":
+                    for (SonarMetricMeasurement m : metrics) {
+                        if (m.getSonarMetric().contains("DENSITY")) {
+                            System.out.println(m.getSonarMetric().contains("DENSITY"));
+                            System.out.println(m.getSonarMetric());
+                            density.add(m);
+                        }
+                    }
+                    return density;
+                default:
+                    for (SonarMetricMeasurement m : metrics) {
+                        if (!m.getSonarMetric().contains("LINE") &&
+                                !m.getSonarMetric().contains("COMPLEXITY") &&
+                                !m.getSonarMetric().contains("TEST") &&
+                                !m.getSonarMetric().contains("DENSITY") &&
+                                !m.getSonarMetric().equals("NCLOC") &&
+                                !m.getSonarMetric().equals("STATEMENTS")) {
+                            struct.add(m);
+                        }
+                    }
+                    return struct;
+            }
 		}
-		return new ArrayList<SonarMetricMeasurement>();
+		return new ArrayList<>();
 	}
 	
 	/**

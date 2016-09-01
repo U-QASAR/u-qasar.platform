@@ -46,7 +46,7 @@ public class DashboardContext {
 		return widgetFactory;
 	}
 	
-	public void setWidgetFactory(WidgetFactory widgetFactory) {
+	private void setWidgetFactory(WidgetFactory widgetFactory) {
 		this.widgetFactory = widgetFactory;
 	}
 	
@@ -54,7 +54,7 @@ public class DashboardContext {
 		return widgetRegistry;
 	}
 	
-	public void setWidgetRegistry(WidgetRegistry widgetRegistry) {
+	private void setWidgetRegistry(WidgetRegistry widgetRegistry) {
 		this.widgetRegistry = widgetRegistry;
 	}
 

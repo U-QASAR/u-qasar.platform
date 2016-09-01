@@ -77,7 +77,7 @@ public class Process extends AbstractEntity implements Namable {
 
 	@OneToMany
 	@JoinColumn(name = "project_id", nullable = true)
-	private Set<Project> projects = new HashSet<Project>();
+	private Set<Project> projects = new HashSet<>();
 
 	/**
 	 *
@@ -92,7 +92,7 @@ public class Process extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return the abbreviated name
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 

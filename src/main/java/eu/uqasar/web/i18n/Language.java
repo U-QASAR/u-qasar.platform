@@ -64,7 +64,7 @@ public enum Language {
 	 * @see DateFormat#LONG
 	 * @return
 	 */
-	public String getDatePattern(int style) {
+    private String getDatePattern(int style) {
 		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat
 				.getDateInstance(style, locale);
 		return dateFormat.toPattern();
@@ -94,7 +94,7 @@ public enum Language {
 		return getLocalizedDatePattern(DateFormat.SHORT);
 	}
 
-	public String getLocalizedDatePattern(int style) {
+	private String getLocalizedDatePattern(int style) {
 		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat
 				.getDateInstance(style, locale);
 		return isGerman() ? dateFormat.toLocalizedPattern().replace('u', 'j')

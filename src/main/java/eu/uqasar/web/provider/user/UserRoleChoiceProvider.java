@@ -23,7 +23,6 @@ package eu.uqasar.web.provider.user;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Locale;
 
 import com.vaynberg.wicket.select2.Response;
 import com.vaynberg.wicket.select2.TextChoiceProvider;
@@ -33,14 +32,13 @@ import eu.uqasar.model.role.Role;
 /**
  *
  *
- * @param <T>
  */
 public class UserRoleChoiceProvider  extends TextChoiceProvider<Role> {
 
 
     @Override
     public Collection<Role> toChoices(Collection<String> ids) {    	
-    	ArrayList<Role> roles = new ArrayList<Role>();
+    	ArrayList<Role> roles = new ArrayList<>();
     	
     	// TODO: Mapping String to Enum with translation
     	for(String id : ids){

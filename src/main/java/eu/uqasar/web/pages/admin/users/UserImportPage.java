@@ -71,12 +71,12 @@ public class UserImportPage extends AdminBasePage {
     private static final Logger logger = Logger.getLogger(UserImportPage.class);
 
     private Label userRetrievalInfo;
-    private SubmitLink importButton;
+    private final SubmitLink importButton;
     private LdapSettings ldapSettings;
     private LdapManager manager;
     private LdapUserListPanel ldapUsersList;
-    private Role userRole = Role.User;
-    private Boolean needToConfirmRegistration = false;
+    private final Role userRole = Role.User;
+    private final Boolean needToConfirmRegistration = false;
 
     @Inject
     LdapSettingsService settingsService;
@@ -170,7 +170,7 @@ public class UserImportPage extends AdminBasePage {
         addOrReplace(feedbackPanel);
     }
 
-    protected boolean tryToRegister(LdapUser ldapUser) {
+    private boolean tryToRegister(LdapUser ldapUser) {
         User newUser = ldapUser.toUser();
         try {
             authenticationService.checkMailAlreadyRegistered(newUser.getMail());

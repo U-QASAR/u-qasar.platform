@@ -31,9 +31,9 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  *
  * @param <T>
  */
-public class BaseErrorPage<T extends Throwable> extends BasePage {
+class BaseErrorPage<T extends Throwable> extends BasePage {
 
-	public BaseErrorPage(PageParameters parameters) {
+	BaseErrorPage(PageParameters parameters) {
 		super(parameters);
 	}
 
@@ -41,7 +41,7 @@ public class BaseErrorPage<T extends Throwable> extends BasePage {
 		this(throwable, new PageParameters());
 	}
 
-	public BaseErrorPage(T throwable, PageParameters parameters) {
+	private BaseErrorPage(T throwable, PageParameters parameters) {
 		super(new PageParameters());
 	}
 

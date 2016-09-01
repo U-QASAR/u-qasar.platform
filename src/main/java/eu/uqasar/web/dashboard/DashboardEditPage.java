@@ -74,9 +74,9 @@ public class DashboardEditPage extends BasePage {
 	private final InputBorder<Integer> columnValidationBorder; 
 	private final AjaxCheckBox suggestionCheck, allWidgetCheck;	
 
-	private transient DashboardContext dashboardContext = UQasar.get().getDashboardContext();
+	private final transient DashboardContext dashboardContext = UQasar.get().getDashboardContext();
 	// The dashboard to edit/save
-	protected DbDashboard dashboard;
+    private DbDashboard dashboard;
 
 	/**
 	 * @param parameters
@@ -130,7 +130,7 @@ public class DashboardEditPage extends BasePage {
 	protected void onConfigure() {
 		super.onConfigure();
 		
-		if (suggestionCheck.getModelObject() == true) {
+		if (suggestionCheck.getModelObject()) {
 			allWidgetCheck.setModelObject(false);
 			
 		} else {
@@ -156,7 +156,7 @@ public class DashboardEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadDashboard(final StringValue idParam) {
+    private void loadDashboard(final StringValue idParam) {
 		// Create a new dashboard, if no ID is provided 
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
@@ -185,7 +185,7 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private Form<Dashboard> newDashboardForm() {
-		Form<Dashboard> form = new InputValidationForm<Dashboard>("form");
+		Form<Dashboard> form = new InputValidationForm<>("form");
 		form.setOutputMarkupId(true);
 		return form;
 	}
@@ -195,12 +195,12 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newTitleTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"nameValidationBorder", new TextField<String>("title",
-						new PropertyModel<String>(dashboard, "title"))
-						.setRequired(true),
-						new StringResourceModel("title.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "nameValidationBorder", new TextField<>("title",
+                new PropertyModel<String>(dashboard, "title"))
+                .setRequired(true),
+                new StringResourceModel("title.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -208,12 +208,12 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<Integer> newColumnTextField() {
-		return new OnEventInputBeanValidationBorder<Integer>(
-				"columnValidationBorder", new TextField<Integer>("columnCount",
-						new PropertyModel<Integer>(dashboard, "columnCount"))
-						.setRequired(false),
-						new StringResourceModel("columncount.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "columnValidationBorder", new TextField<>("columnCount",
+                new PropertyModel<Integer>(dashboard, "columnCount"))
+                .setRequired(false),
+                new StringResourceModel("columncount.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -260,7 +260,7 @@ public class DashboardEditPage extends BasePage {
 	/**
 	 * 
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		DbDashboard dbdb = (DbDashboard) saveDashboard();
 		User user = userService.getById(UQasar.getSession().getLoggedInUser().getId());
 		user.addDashboard(dbdb);
@@ -281,14 +281,14 @@ public class DashboardEditPage extends BasePage {
 			dashboard = getDefaultDashboard(dashboard);
 		}  
 
-		return dashboardService.create((DbDashboard) dashboard);
+		return dashboardService.create(dashboard);
 	}
 
 	/**
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(dashboardForm);
@@ -301,8 +301,8 @@ public class DashboardEditPage extends BasePage {
 		for (WidgetDescriptor widgetDescriptor : descr) {
 			WidgetFactory widgetFactory = 
 					dashboardContext.getWidgetFactory();
-			Model<WidgetDescriptor> item = 
-					new Model<WidgetDescriptor>(widgetDescriptor);
+			Model<WidgetDescriptor> item =
+                    new Model<>(widgetDescriptor);
 			Widget widget = widgetFactory.createWidget(item.getObject());
 			WidgetLocation location = new WidgetLocation(col, row);
 			widget.setLocation(location);
@@ -322,12 +322,12 @@ public class DashboardEditPage extends BasePage {
 	/**
 	 * @return the suggestionCheck
 	 */
-	public CheckBox getSuggestionCheck() {
+    private CheckBox getSuggestionCheck() {
 		return suggestionCheck;
 	}
 
 	
-	public CheckBox getAllWidgetCheck() {
+	private CheckBox getAllWidgetCheck() {
 		return allWidgetCheck;
 	}
 }

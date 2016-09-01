@@ -50,7 +50,7 @@ public class QModelViewPanel extends QMBaseTreePanel<QModel> {
 	 */
 	private static final long serialVersionUID = 1088435851924101698L;
 	
-	private static Logger logger = Logger.getLogger(QModelViewPanel.class);
+	private static final Logger logger = Logger.getLogger(QModelViewPanel.class);
 
 
 	public QModelViewPanel(String id, IModel<QModel> model) {

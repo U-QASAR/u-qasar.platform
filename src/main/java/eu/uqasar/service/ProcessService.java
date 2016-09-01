@@ -56,8 +56,7 @@ public class ProcessService extends AbstractService<Process> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Process> query = cb.createQuery(Process.class);
 		query.from(Process.class);
-		List<Process> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**
@@ -99,7 +98,7 @@ public class ProcessService extends AbstractService<Process> {
 		Root<Process> from = criteria.from(Process.class);
 		criteria.where(cb.equal(from.get(Process_.id), processId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 
     @Override
@@ -175,10 +174,10 @@ public class ProcessService extends AbstractService<Process> {
 
 	}
 
-	protected List<Predicate> getFilterPredicates(
-			final ProcessesFilterStructure filter, CriteriaBuilder cb,
-			Root<Process> from) {
-		List<Predicate> predicates = new ArrayList<Predicate>();
+	private List<Predicate> getFilterPredicates(
+            final ProcessesFilterStructure filter, CriteriaBuilder cb,
+            Root<Process> from) {
+		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;
 		}
@@ -194,7 +193,7 @@ public class ProcessService extends AbstractService<Process> {
 
 		if (!StringUtils.isEmpty(filter.getName())) {
 			Predicate firstName = cb.like(
-					cb.lower(from.<String> get(Process_.name)), LIKE_WILDCARD
+					cb.lower(from.get(Process_.name)), LIKE_WILDCARD
 							+ filter.getName().toLowerCase() + LIKE_WILDCARD);
 			predicates.add((firstName));
 		}

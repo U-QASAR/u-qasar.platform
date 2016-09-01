@@ -21,8 +21,6 @@ package eu.uqasar.web.components.tree.util;
  */
 
 
-import java.io.Serializable;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree;
@@ -72,7 +70,7 @@ public class TreeFolder extends Folder<TreeNode> {
 				suggestionStr = " (*Change Suggestion)";
 			}			
 		}
-		Label suggestionLabel = (Label) new Label("suggestionLabelText", suggestionStr);
+		Label suggestionLabel = new Label("suggestionLabelText", suggestionStr);
 		labelContainer.add(label);
 		labelContainer.add(icon);
 		labelContainer.add(suggestionLabel);
@@ -133,11 +131,11 @@ public class TreeFolder extends Folder<TreeNode> {
 		}
 	}
 
-	protected String getMetricStyle(Metric node) {
+	private String getMetricStyle(Metric node) {
 		return getOtherStyleClass(node);
 	}
 
-	protected String getQualityIndicatorStyle(QualityIndicator node) {
+	private String getQualityIndicatorStyle(QualityIndicator node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {
@@ -145,7 +143,7 @@ public class TreeFolder extends Folder<TreeNode> {
 		}
 	}
 
-	protected String getQualityObjectiveStyle(QualityObjective node) {
+	private String getQualityObjectiveStyle(QualityObjective node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {
@@ -153,14 +151,14 @@ public class TreeFolder extends Folder<TreeNode> {
 		}
 	}
 
-	protected String getProjectStyle(Project node) {
+	private String getProjectStyle(Project node) {
 		if (!node.isRunning()) {
 			return "over";
 		}
 		return "running";
 	}
 
-	protected String getRunningStyle(TreeNode node) {
+	private String getRunningStyle(TreeNode node) {
 		Project p = node.getProject();
 		if (p != null && !p.isRunning()) {
 			return "over";

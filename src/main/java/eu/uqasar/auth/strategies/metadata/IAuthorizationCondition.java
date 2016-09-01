@@ -38,5 +38,5 @@ public interface IAuthorizationCondition extends Serializable {
 	 * @return <code>true</code> if this condition authorizes a specific
 	 * {@link Action} for a {@link Component}, <code>false</code> otherwise.
 	 */
-	public boolean isAuthorized();
+    boolean isAuthorized();
 }

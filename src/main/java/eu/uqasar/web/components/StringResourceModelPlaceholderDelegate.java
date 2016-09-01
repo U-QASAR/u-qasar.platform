@@ -88,8 +88,8 @@ public class StringResourceModelPlaceholderDelegate extends StringResourceModel 
 	 * @param parameters
 	 *            The parameters to substitute using a Java MessageFormat object
 	 */
-	public StringResourceModelPlaceholderDelegate(final String resourceKey, final Component component, final IModel<?> model,
-			final String defaultValue, final Object... parameters) {
+    private StringResourceModelPlaceholderDelegate(final String resourceKey, final Component component, final IModel<?> model,
+                                                   final String defaultValue, final Object... parameters) {
 		super(resourceKey, component, model, defaultValue, parameters);
 	}
 

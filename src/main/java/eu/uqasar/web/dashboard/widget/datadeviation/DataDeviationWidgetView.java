@@ -26,7 +26,6 @@ import org.apache.wicket.model.IModel;
 import ro.fortsoft.wicket.dashboard.Widget;
 import ro.fortsoft.wicket.dashboard.web.WidgetView;
 
-import com.googlecode.wickedcharts.highcharts.options.Options;
 import com.googlecode.wickedcharts.wicket6.highcharts.Chart;
 
 /**

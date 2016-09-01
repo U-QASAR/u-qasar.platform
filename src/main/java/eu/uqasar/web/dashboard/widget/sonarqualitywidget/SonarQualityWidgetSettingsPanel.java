@@ -54,7 +54,10 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
     private static final long serialVersionUID = 1L;
 
     private transient DashboardContext dashboardContext;
-    private String project, timeInterval, metric, individualMetric;
+    private String project;
+    private final String timeInterval;
+    private final String metric;
+    private final String individualMetric;
     private SonarDataService dataService;
 
     public SonarQualityWidgetSettingsPanel(String id, IModel<SonarQualityWidget> model) {
@@ -62,7 +65,7 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
 
         setOutputMarkupPlaceholderTag(true);
 
-        Form<Widget> form = new Form<Widget>("form");
+        Form<Widget> form = new Form<>("form");
         project = getModelObject().getSettings().get("project");
         metric = getModelObject().getSettings().get("metric");
         individualMetric = getModelObject().getSettings().get("individualMetric");
@@ -75,7 +78,7 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
         
         
 
-        List<String> projects = new ArrayList<String>();
+        List<String> projects = new ArrayList<>();
         try {
             InitialContext ic = new InitialContext();
             dataService = (SonarDataService) ic.lookup("java:module/SonarDataService");
@@ -84,15 +87,15 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
             e.printStackTrace();
         }
 
-        form.add(new DropDownChoice<String>("project", new PropertyModel<String>(this, "project"), projects));
+        form.add(new DropDownChoice<>("project", new PropertyModel<String>(this, "project"), projects));
 
-        List<String> metricGroups = Arrays.asList(new String[] { "Code Lines related", "Complexity related",
-                "Structure related", "Density related", "Test related" });
-        form.add(new DropDownChoice<String>("metric", new PropertyModel<String>(this, "metric"), metricGroups));
+        List<String> metricGroups = Arrays.asList("Code Lines related", "Complexity related",
+                "Structure related", "Density related", "Test related");
+        form.add(new DropDownChoice<>("metric", new PropertyModel<String>(this, "metric"), metricGroups));
         
         List<String> individualMetricGroups = UQasarUtil.getSonarMetricNames();
-        DropDownChoice<String> dropDown = new DropDownChoice<String>("individualMetric", new PropertyModel<String>(this,
-            "individualMetric"), individualMetricGroups);
+        DropDownChoice<String> dropDown = new DropDownChoice<>("individualMetric", new PropertyModel<String>(this,
+                "individualMetric"), individualMetricGroups);
         dropDown.setNullValid(true);
         form.add(dropDown);
 
@@ -134,9 +137,9 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
         });
 
         // Period
-        List<String> timeIntervals = Arrays.asList(new String[] { "Last Year", "Last 6 Months", "Last Month", "Last Week","Latest" });
+        List<String> timeIntervals = Arrays.asList("Last Year", "Last 6 Months", "Last Month", "Last Week","Latest");
 
-        form.add(new DropDownChoice<String>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
+        form.add(new DropDownChoice<>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
 
         form.add(new AjaxLink<Void>("cancel") {
 

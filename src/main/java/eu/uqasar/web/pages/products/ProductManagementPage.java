@@ -72,7 +72,7 @@ public class ProductManagementPage extends BasePage {
 	@Inject
 	private ProductService productService;
 
-	private ProductManagementPanel filterPanel;
+	private final ProductManagementPanel filterPanel;
 
 	private ProductFilterStructure productFilterStructure;
 
@@ -86,7 +86,7 @@ public class ProductManagementPage extends BasePage {
 
 	private final CheckGroup<Product> productGroup;
 
-	private ProductProvider productProvider;
+	private final ProductProvider productProvider;
 
 	private final AjaxSubmitLink deleteSelectedButton;
 
@@ -216,8 +216,7 @@ public class ProductManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -227,8 +226,8 @@ public class ProductManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<Product> newProductCheckGroup() {
-		CheckGroup<Product> checkGroup = new CheckGroup<Product>(
-				"productGroup", new ArrayList<Product>());
+		CheckGroup<Product> checkGroup = new CheckGroup<>(
+                "productGroup", new ArrayList<Product>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;
@@ -373,7 +372,6 @@ public class ProductManagementPage extends BasePage {
 
 	/**
 	 * 
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forProduct(Product product) {
@@ -388,9 +386,9 @@ public class ProductManagementPage extends BasePage {
 
 		public ProductProvider() {
 
-		};
+		}
 
-		public void setFilter(ProductFilterStructure filter) {
+        public void setFilter(ProductFilterStructure filter) {
 			this.filter = filter;
 		}
 

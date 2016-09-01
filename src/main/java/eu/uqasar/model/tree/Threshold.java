@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.model.tree;
 
 /*
@@ -30,7 +27,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import eu.uqasar.model.AbstractEntity;

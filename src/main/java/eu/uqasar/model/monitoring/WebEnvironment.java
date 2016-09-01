@@ -71,7 +71,7 @@ public class WebEnvironment extends AbstractEntity {
 		return new WebEnvironment(properties);
 	}
 
-	public static enum Browser {
+	public enum Browser {
 
 		Chrome,
 		InternetExplorer,

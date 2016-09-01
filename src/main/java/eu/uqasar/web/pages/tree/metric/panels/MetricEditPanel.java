@@ -80,16 +80,16 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 	private static final long serialVersionUID = 734784522589149171L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 	private final Form<Metric> form;
-	private static Logger logger = Logger.getLogger(MetricEditPanel.class);
+	private static final Logger logger = Logger.getLogger(MetricEditPanel.class);
 
 	@Inject
 	private TreeNodeService treeNodeService;
 	// map:source of metrics->list of metric types
-	private final Map<MetricSource, List<String>> metricsMap = new HashMap<MetricSource, List<String>>(); 
-	private TextField valueField; 
+	private final Map<MetricSource, List<String>> metricsMap = new HashMap<>();
+	private final TextField valueField;
 	
 	
 	//TODO: [Manu] maybe this two next attributes could be delete? Are they going to be used?
@@ -141,7 +141,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 			@Override
 			public List<MetricSource> getObject()	{
 				logger.info(metricsMap.keySet());
-				return new ArrayList<MetricSource>(metricsMap.keySet());
+				return new ArrayList<>(metricsMap.keySet());
 			}
 		};
 
@@ -221,26 +221,26 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 		form.add(new TextField<>("name", new PropertyModel<>(model, "name"))
 				.add(new AttributeAppender("maxlength", 255)));
 
-		form.add(new DropDownChoice<Purpose>("purpose",
-				new PropertyModel<Purpose>(model, "indicatorPurpose"), Arrays
-						.asList(Purpose.values())));
+		form.add(new DropDownChoice<>("purpose",
+                new PropertyModel<Purpose>(model, "indicatorPurpose"), Arrays
+                .asList(Purpose.values())));
 
-		form.add(new DropDownChoice<LifeCycleStage>("lcStage",
-				new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
-				Arrays.asList(LifeCycleStage.values())));
+		form.add(new DropDownChoice<>("lcStage",
+                new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
+                Arrays.asList(LifeCycleStage.values())));
 		
 		form.add(new TextField<>("unit", new PropertyModel<>(model,"unit")));
 
-		final DropDownChoice<MetricSource> metricSources = 
-				new DropDownChoice<MetricSource>("metricSources",
-						new PropertyModel<MetricSource>(model, "metricSource"), 
-						metricSourceChoices);
+		final DropDownChoice<MetricSource> metricSources =
+                new DropDownChoice<>("metricSources",
+                        new PropertyModel<MetricSource>(model, "metricSource"),
+                        metricSourceChoices);
 		form.add(metricSources);
 
-		final DropDownChoice<String> metricTypes = 
-				new DropDownChoice<String>("metricTypes",
-						new PropertyModel<String>(model, "metricType"), 
-						metricTypeChoices);
+		final DropDownChoice<String> metricTypes =
+                new DropDownChoice<>("metricTypes",
+                        new PropertyModel<String>(model, "metricType"),
+                        metricTypeChoices);
 		metricTypes.setOutputMarkupId(true);		
 		form.add(metricTypes);
 
@@ -275,7 +275,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 		});
 
 		// Threshold indicator
-		form.add(new ThresholdEditor<Metric>("thresholdEditor", model));
+		form.add(new ThresholdEditor<>("thresholdEditor", model));
 		
 		form.add(new TextField<>("targetValue", 
 				new PropertyModel<>(model, "targetValue")));
@@ -283,10 +283,10 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 				new PropertyModel<>(model, "weight")));
 		
 		// Weight indicator shows data of weight consumed and available
-		form.add(new WeightIndicator<Metric>("totalWeight",model));
+		form.add(new WeightIndicator<>("totalWeight", model));
 
-		form.add(description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description")));
+		form.add(description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description")));
 
 		description.add(tinyMceBehavior = new TinyMceBehavior(
 				DefaultTinyMCESettings.get()));
@@ -323,11 +323,11 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 
 		} else {
 			
-			form.add(new BootstrapBookmarkablePageLink<ProjectViewPage>(
-					"cancel",
-					MetricViewPage.class,
-					MetricViewPage.forMetric(model.getObject()),
-					de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>(
+                    "cancel",
+                    MetricViewPage.class,
+                    MetricViewPage.forMetric(model.getObject()),
+                    de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, null)));			
 		}
 
@@ -344,7 +344,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 		setOutputMarkupId(true);
 	}
 
-    protected void switchValueField(MetricSource metricSource) {
+    private void switchValueField(MetricSource metricSource) {
 		// TODO Auto-generated method stub
 		if(metricSource == null){
 			valueField.setEnabled(true);
@@ -369,7 +369,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
      * 
      * @param planName 
      */
-    public void setPlanName(String planName) {
+    private void setPlanName(String planName) {
         this.planName = planName;
     }
     
@@ -385,7 +385,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
      * 
      * @param adapterProjectName 
      */
-    public void setAdapterProjectName(String adapterProjectName) {
+    private void setAdapterProjectName(String adapterProjectName) {
         this.adapterProjectName = adapterProjectName;
     }
 

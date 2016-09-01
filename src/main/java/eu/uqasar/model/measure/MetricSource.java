@@ -22,6 +22,7 @@ package eu.uqasar.model.measure;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -47,9 +48,9 @@ public enum MetricSource implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
-	private MetricSource(final String labelKey) {
+	MetricSource(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -67,10 +68,8 @@ public enum MetricSource implements IResourceKeyProvider {
 	}
 	
 	public static List<MetricSource> getAllMetricSources(){
-		List<MetricSource> list = new ArrayList<MetricSource>();
-		for (MetricSource val : MetricSource.values()) {
-		    	list.add(val);
-		}
+		List<MetricSource> list = new ArrayList<>();
+        Collections.addAll(list, MetricSource.values());
 		return list;
 	}
 

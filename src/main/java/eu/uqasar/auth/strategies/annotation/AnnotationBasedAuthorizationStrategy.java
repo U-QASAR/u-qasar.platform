@@ -77,7 +77,7 @@ public class AnnotationBasedAuthorizationStrategy extends AbstractAuthorizationS
 		return isActionAuthorized(componentClass, action);
 	}
 
-	protected boolean isActionAuthorized(final Class<?> componentClass, final Action action) {
+	private boolean isActionAuthorized(final Class<?> componentClass, final Action action) {
 		// Check for a single action
 		if (!check(action, componentClass.getAnnotation(AuthorizeAction.class))) {
 			return false;
@@ -107,7 +107,7 @@ public class AnnotationBasedAuthorizationStrategy extends AbstractAuthorizationS
 		if (authorizeActionAnnotation != null) {
 			if (action.getName().equals(authorizeActionAnnotation.action())) {
 				Role[] deniedRoles = authorizeActionAnnotation.deny();
-				if ((isEmpty(deniedRoles) == false) && hasAny(deniedRoles)) {
+				if ((!isEmpty(deniedRoles)) && hasAny(deniedRoles)) {
 					return false;
 				}
 

@@ -36,7 +36,7 @@ public enum GravatarRating {
 
 	private String code;
 
-	private GravatarRating(String code) {
+	GravatarRating(String code) {
 		this.code = code;
 	}
 

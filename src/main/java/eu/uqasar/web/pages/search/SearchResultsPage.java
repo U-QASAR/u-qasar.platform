@@ -21,16 +21,6 @@ package eu.uqasar.web.pages.search;
  */
 
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.TextField;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
-import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.model.StringResourceModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
-
 import eu.uqasar.web.components.InputBorder;
 import eu.uqasar.web.components.InputValidationForm;
 import eu.uqasar.web.pages.BasePage;
@@ -63,9 +53,9 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  */
 public class SearchResultsPage extends BasePage {
 
-    public static final String QUERY_PARAM = "query";
+    private static final String QUERY_PARAM = "query";
     private final TextField<String> searchField;
-    private String query;
+    private final String query;
 
     public SearchResultsPage(PageParameters parameters) {
         super(parameters);

@@ -85,9 +85,10 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 
 	private final FormComponent name, key;
 	private FormComponent<Company> companySelect;
-	private ComponentFeedbackPanel feedbackName, feedbackKey;
-	private AjaxButton save;
-	private User user;
+	private final ComponentFeedbackPanel feedbackName;
+    private final ComponentFeedbackPanel feedbackKey;
+	private final AjaxButton save;
+	private final User user;
 	//private Company company;
 	private CheckBox chkActive;
 
@@ -198,7 +199,7 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 				qmodel.setCompany(user.getCompany());
 			}
 		}
-		companySelect = new DropDownChoice<Company>("company", Model.of(qmodel.getCompany()), companyService.getAll());
+		companySelect = new DropDownChoice<>("company", Model.of(qmodel.getCompany()), companyService.getAll());
 		form.add(companySelect);
 		
 		if (isNew){
@@ -222,9 +223,9 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 	        form.add(cancel);
 			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<QModelViewPage>("cancel",
-					QModelViewPage.class, QModelViewPage.forQModel(model
-							.getObject()), Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>("cancel",
+                    QModelViewPage.class, QModelViewPage.forQModel(model
+                    .getObject()), Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, null)));
 		}
 		

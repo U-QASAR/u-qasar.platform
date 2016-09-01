@@ -21,26 +21,16 @@ package eu.uqasar.service.company;
  */
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
-import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-
-import org.apache.commons.lang.StringUtils;
 
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.company.Company_;
-import eu.uqasar.model.product.Product;
-import eu.uqasar.model.product.Product_;
-import eu.uqasar.model.user.User;
-import eu.uqasar.model.user.User_;
 import eu.uqasar.service.AbstractService;
 import eu.uqasar.web.pages.admin.companies.panels.CompanyFilterStructure;
-import eu.uqasar.web.pages.admin.users.panels.UserFilterStructure;
 
 public class CompanyService extends AbstractService<Company> {
 
@@ -58,7 +48,6 @@ public class CompanyService extends AbstractService<Company> {
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Company> getAllByAscendingName() {
@@ -72,7 +61,6 @@ public class CompanyService extends AbstractService<Company> {
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Company> getAllByAscendingNameFiltered(CompanyFilterStructure filter, int first, int count) {
@@ -121,6 +109,6 @@ public class CompanyService extends AbstractService<Company> {
 		Root<Company> from = criteria.from(Company.class);
 		criteria.where(cb.equal(from.get(Company_.id), companyId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 }

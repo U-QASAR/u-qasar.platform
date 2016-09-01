@@ -61,9 +61,9 @@ public abstract class CompanyFilterPanel extends Panel {
 		super(id);
 
 		form = new Form<>("form");
-		companyName = new TextField<String>("name", new PropertyModel<String>(this, "name"));
-		companyShortName = new TextField<String>("shortName", new PropertyModel<String>(this, "shortName"));
-		companyCountry = new DropDownChoice<String>("country", new PropertyModel<String>(this, "country"), Arrays.asList("España","Deutschland","Luxemburg","Norge","Suomi"));
+		companyName = new TextField<>("name", new PropertyModel<String>(this, "name"));
+		companyShortName = new TextField<>("shortName", new PropertyModel<String>(this, "shortName"));
+		companyCountry = new DropDownChoice<>("country", new PropertyModel<String>(this, "country"), Arrays.asList("España", "Deutschland", "Luxemburg", "Norge", "Suomi"));
 		
 		form.add(companyName)
 			.add(companyShortName)

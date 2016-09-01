@@ -51,8 +51,8 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 	 */
 	private final String attribute = "style";
 	private User user;
-	private boolean caching;
-	private User.PictureDimensions dimension;
+	private final boolean caching;
+	private final User.PictureDimensions dimension;
 	
 	@Inject
 	UrlProvider urlProvider;
@@ -65,7 +65,7 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 		this(user, dimension, true);
 	}
 
-	public UserProfilePictureBackgroundBehaviour(User user, User.PictureDimensions dimension, boolean caching) {
+	private UserProfilePictureBackgroundBehaviour(User user, User.PictureDimensions dimension, boolean caching) {
 		CdiContainer.get().getNonContextualManager().inject(this);
 		if (user == null) {
 			if (UQasar.exists() && UQasar.getSession() != null) {
@@ -81,7 +81,7 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 		Args.notNull(this.urlProvider, "urlProvider");
 	}
 	
-	protected IModel<String> getReplaceModel() {
+	private IModel<String> getReplaceModel() {
 		final String url = urlProvider.urlFor(this.user.getProfilePictureReference(),
 				caching ? this.user.getUncachedProfilePicturePageParameters(dimension)
 				: this.user.getProfilePicturePageParameters(dimension));
@@ -104,7 +104,7 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 	 * @param component The component
 	 * @param tag The tag to replace the attribute value for
 	 */
-	public final void replaceAttributeValue(final Component component, final ComponentTag tag) {
+    private void replaceAttributeValue(final Component component, final ComponentTag tag) {
 		if (isEnabled(component)) {
 			final IValueMap attributes = tag.getAttributes();
 			final Object replacementValue = getReplacementOrNull(component);
@@ -131,10 +131,9 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 			return currentValue != null ? currentValue : null;
 		}
 
-		StringBuilder sb = new StringBuilder(currentValue);
-		sb.append((getSeparator() == null ? "" : getSeparator()));
-		sb.append(appendValue);
-		return sb.toString();
+        String sb = currentValue + (getSeparator() == null ? "" : getSeparator()) +
+                appendValue;
+        return sb;
 	}
 
 	/**
@@ -142,7 +141,7 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 	 *
 	 * @return the separator used by attribute appenders and prependers.
 	 */
-	public String getSeparator() {
+    private String getSeparator() {
 		return ";";
 	}
 

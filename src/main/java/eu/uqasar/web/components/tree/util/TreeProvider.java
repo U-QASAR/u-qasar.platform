@@ -61,7 +61,7 @@ public class TreeProvider implements ITreeProvider<TreeNode> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<? extends TreeNode> getChildren(TreeNode node) {
-		return (Iterator<? extends TreeNode>) node.getChildren().iterator();
+		return node.getChildren().iterator();
 	}
 
 	@Override

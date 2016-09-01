@@ -69,7 +69,7 @@ public class LdapManager implements Serializable {
     private static final transient Comparator<LdapUser> userComparator = new LdapUser.LdapUserComparator();
     private static final transient Comparator<LdapGroup> groupComparator = new LdapGroup.LdapGroupComparator();
 
-    protected LdapManager(LdapSettings settings) throws NamingException {
+    private LdapManager(LdapSettings settings) throws NamingException {
         this.settings = settings;
         context = getConnection();
     }
@@ -154,11 +154,9 @@ public class LdapManager implements Serializable {
     }
 
     private NamingEnumeration<SearchResult> searchLDAP(final String baseDN, final String preferredFilter) throws NamingException {
-        final String groupFilter = preferredFilter;
-        final String filter = groupFilter == null || groupFilter.isEmpty() ? EMPTY_FILTER : groupFilter;
-        NamingEnumeration<SearchResult> answer = getContext().
+        final String filter = preferredFilter == null || preferredFilter.isEmpty() ? EMPTY_FILTER : preferredFilter;
+        return getContext().
                 search(baseDN, filter, getDefaultSearchControls());
-        return answer;
     }
 
     private SearchControls getDefaultSearchControls() {
@@ -213,7 +211,7 @@ public class LdapManager implements Serializable {
         return null;
     }
 
-    public boolean hasRequiredUserAttributesFilled(Attributes attrs, LdapSettings settings) {
+    private boolean hasRequiredUserAttributesFilled(Attributes attrs, LdapSettings settings) {
         return LdapUser.hasValidMailValue(attrs, settings) && LdapUser.
                 hasValidUserNameValue(attrs, settings);
     }

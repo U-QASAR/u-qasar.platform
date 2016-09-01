@@ -53,14 +53,17 @@ import eu.uqasar.web.pages.BasePage;
 public class TestFrameworkDataManagementEditPage extends BasePage {
 
  // The tableEntity to edit/save
-    protected TestLinkMetricMeasurement tableEntity;
+ private TestLinkMetricMeasurement tableEntity;
     
     @Inject
     private TestLinkDataService testLinkService;
     
     private final Form<TestLinkMetricMeasurement> tableEntityForm;
     
-    protected final InputBorder<String> projectNameBorder,projectKeyBorder,metricBorder,valueBorder;
+    private final InputBorder<String> projectNameBorder;
+    private final InputBorder<String> projectKeyBorder;
+    private final InputBorder<String> metricBorder;
+    private final InputBorder<String> valueBorder;
     
     @SuppressWarnings("unused")
     private final DateTextField someDateField;
@@ -118,7 +121,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * 
      * @param idParam
      */
-    protected void loadTableEntity(final StringValue idParam) {
+    private void loadTableEntity(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this,
                     null));
@@ -146,7 +149,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<TestLinkMetricMeasurement> newTableEntityForm() {
-        Form<TestLinkMetricMeasurement> form = new InputValidationForm<TestLinkMetricMeasurement>("form");
+        Form<TestLinkMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -157,10 +160,10 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectNameField() {
-        return new OnEventInputBeanValidationBorder<String>("projectNameBorder",
-                new TextField<String>("name", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectNameBorder",
+                new TextField<>("name", new PropertyModel<String>(
                         tableEntity, "name")), new StringResourceModel(
-                        "name.input.label", this, null),
+                "name.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -169,10 +172,10 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectKeyField() {
-        return new OnEventInputBeanValidationBorder<String>("projectKeyBorder",
-                new TextField<String>("testLinkKey", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectKeyBorder",
+                new TextField<>("testLinkKey", new PropertyModel<String>(
                         tableEntity, "testLinkKey")), new StringResourceModel(
-                        "testLinkKey.input.label", this, null),
+                "testLinkKey.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -181,11 +184,11 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newMetricField(){
-        return new OnEventInputBeanValidationBorder<String>("metricBorder",
-            new TextField<String>("testLinkMetric", new PropertyModel<String>(
-                    tableEntity, "testLinkMetric")), new StringResourceModel(
-                    "testLinkMetric.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("metricBorder",
+                new TextField<>("testLinkMetric", new PropertyModel<String>(
+                        tableEntity, "testLinkMetric")), new StringResourceModel(
+                "testLinkMetric.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -193,11 +196,11 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField(){
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-            new org.apache.wicket.markup.html.form.TextArea<String>("value", new PropertyModel<String>(
-                    tableEntity, "value")), new StringResourceModel(
-                    "value.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("value", new PropertyModel<String>(
+                        tableEntity, "value")), new StringResourceModel(
+                "value.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -207,7 +210,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);
@@ -223,9 +226,8 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
                 .withStartDate(new DateTime().withYear(1900))
                 .allowKeyboardNavigation(true).autoClose(true)
                 .highlightToday(false).showTodayButton(false);
-        DateTextField dateTextField = new DateTextField("timeStamp",
+        return new DateTextField("timeStamp",
                 new PropertyModel<Date>(tableEntity, "timeStamp"), config);
-        return dateTextField;
     }
     
     /**
@@ -251,7 +253,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
     /**
      * 
      */
-    protected void save(AjaxRequestTarget target, PageParameters parameters) {
+    private void save(AjaxRequestTarget target, PageParameters parameters) {
         // save tableEntity
         saveTableEntity();
         // success message has to be associated to session so that it is shown
@@ -281,7 +283,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(tableEntityForm);

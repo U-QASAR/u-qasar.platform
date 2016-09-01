@@ -57,19 +57,18 @@ public class DropDownModal extends Modal {
 	 * @param types Options in DropDownChoice
 	 * @param showImmediately
 	 */
-	public DropDownModal(final String id, final IModel<String> headerModel,
-			List<Class> types, final boolean showImmediately) {
+	protected DropDownModal(final String id, final IModel<String> headerModel,
+							List<Class> types, final boolean showImmediately) {
 		super(id);
 		show(showImmediately);
 		header(headerModel);		
 
-		List<String> ls = new ArrayList<String>();
-		Iterator it = types.iterator();
-		while (it.hasNext()){
-			ls.add(((Class)it.next()).getSimpleName());
-		}
+		List<String> ls = new ArrayList<>();
+        for (Class type : types) {
+            ls.add((type).getSimpleName());
+        }
 
-		metaDataTypes = new DropDownChoice<String>("metaDataTypes",  new Model(), ls);
+		metaDataTypes = new DropDownChoice<>("metaDataTypes", new Model(), ls);
 
 		metaDataTypes.add(new AjaxEventBehavior("onchange") {
 			@Override

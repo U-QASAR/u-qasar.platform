@@ -28,12 +28,12 @@ import java.io.InputStream;
  *
  * @author Dominik Šmíd
  */
-public interface JenaBean {
+interface JenaBean {
 
     /**
      * Getr for output of this tool.
      *
      * @return Output of JenaBean, where is saved RDF.
      */
-    public InputStream getOutputFromJenaBean();
+    InputStream getOutputFromJenaBean();
 }

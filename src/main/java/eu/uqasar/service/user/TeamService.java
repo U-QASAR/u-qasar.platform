@@ -81,7 +81,7 @@ public class TeamService extends AbstractService<Team> {
 			exclude = cb.not(root.in(teamsToExclude));
 		}
 		if (filterValue != null && !filterValue.isEmpty()) {
-			Expression<String> literal = cb.upper(cb.literal((String) LIKE_WILDCARD + filterValue + LIKE_WILDCARD));
+			Expression<String> literal = cb.upper(cb.literal(LIKE_WILDCARD + filterValue + LIKE_WILDCARD));
 			filter = cb.like(cb.upper(root.get(Team_.name)), literal);
 		}
 		if (exclude != null || filter != null) {

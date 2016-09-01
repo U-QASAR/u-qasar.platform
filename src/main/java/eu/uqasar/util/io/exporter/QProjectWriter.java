@@ -21,7 +21,7 @@ package eu.uqasar.util.io.exporter;
  */
 
 
-public class QProjectWriter {
+class QProjectWriter {
 	
 	protected static final String NAME = "name";
 	protected static final String KEY = "nodeKey";

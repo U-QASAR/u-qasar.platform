@@ -67,7 +67,7 @@ public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<Project
 		
 		setOutputMarkupPlaceholderTag(true);
 		
-		Form<Widget> form = new Form<Widget>("form");
+		Form<Widget> form = new Form<>("form");
 
 		// Get the project from the settings
 		projectName = getModelObject().getSettings().get("project");
@@ -87,14 +87,14 @@ public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<Project
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-		DropDownChoice<Project> projectChoice = new DropDownChoice<Project>("project", 
-        		new PropertyModel<Project>(this, "project"), projects);
+		DropDownChoice<Project> projectChoice = new DropDownChoice<>("project",
+                new PropertyModel<Project>(this, "project"), projects);
         form.add(projectChoice);
 		
 		// Field for the chart type
 		chartType = getModelObject().getSettings().get("chartType");
-        DropDownChoice<String> choice = new DropDownChoice<String>("chartType", 
-        		new PropertyModel<String>(this, "chartType"), ProjectQualityGoogleChartWidget.TYPES);
+        DropDownChoice<String> choice = new DropDownChoice<>("chartType",
+                new PropertyModel<String>(this, "chartType"), ProjectQualityGoogleChartWidget.TYPES);
         form.add(choice);
         
         form.add(new AjaxSubmitLink("submit") {

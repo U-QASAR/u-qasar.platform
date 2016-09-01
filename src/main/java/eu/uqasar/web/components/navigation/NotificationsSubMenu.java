@@ -78,7 +78,7 @@ public class NotificationsSubMenu extends NotificationDropDownMenu {
 		} else if (notifications.length > 1) {
 			count = "multiple";
 		}
-		final IModel<String> title = new StringResourceModel("label.notifications.unread.count." + count, this, null, new Integer(notifications.length));
+		final IModel<String> title = new StringResourceModel("label.notifications.unread.count." + count, this, null, notifications.length);
 		getNotificationLabel().add(new AttributeModifier("title", title));
 	}
 	
@@ -100,7 +100,7 @@ public class NotificationsSubMenu extends NotificationDropDownMenu {
 		return links;
 	}
 	
-	protected static Class<? extends NotificationBookmarkablePageLink> getNotificationLink(INotification notification) {
+	private static Class<? extends NotificationBookmarkablePageLink> getNotificationLink(INotification notification) {
 		if (notification instanceof ProjectNearEndNotification) {
 			return ProjectNearEndNotificationLink.class;
 		} else if(notification instanceof DashboardSharedNotification){

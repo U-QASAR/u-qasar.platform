@@ -41,13 +41,13 @@ import thewebsemantic.binding.Jenabean;
  */
 public class JenaBeanTool implements JenaBean {
 
-    static Logger loggerJenaBean = Logger.getLogger(JenaBeanTool.class);
+    private static final Logger loggerJenaBean = Logger.getLogger(JenaBeanTool.class);
     /* InputStream is used as input for OwlApi. */
     private InputStream outputJenaBean;
     /* List of instances of objects. */
     private List listOfObjects = new ArrayList();
-    public Model model;
-    public Bean2RDF writer;
+    private final Model model;
+    private final Bean2RDF writer;
 
     /**
      * Constructor JenaBean. Input is a List of instances of objects. Instances are
@@ -55,7 +55,7 @@ public class JenaBeanTool implements JenaBean {
      *
      * @param listOfObjects The List contains instance of objects designated for transformation.
      */
-    public JenaBeanTool(List listOfObjects) throws IOException {
+    private JenaBeanTool(List listOfObjects) throws IOException {
         loggerJenaBean.info("JenaBean - start");
         this.listOfObjects = listOfObjects;
         model = ModelFactory.createDefaultModel();
@@ -76,7 +76,7 @@ public class JenaBeanTool implements JenaBean {
      *
      */
     public void isEmpty() {
-        if (listOfObjects.isEmpty() == true) {
+        if (listOfObjects.isEmpty()) {
             loggerJenaBean.info("ArrayList doesn't have any objects!");
         } else {
             if (listOfObjects.size() == 1) {
@@ -90,12 +90,11 @@ public class JenaBeanTool implements JenaBean {
     /**
      * Transformation from instances to the RDF.
      *
-     * @param list List of instances.
      */
-    public void convertToRdf() {
+    private void convertToRdf() {
         loggerJenaBean.info("Transform objects to beans.");
-        for (int i = 0; i < listOfObjects.size(); i++) {
-            writer.save(listOfObjects.get(i));
+        for (Object listOfObject : listOfObjects) {
+            writer.save(listOfObject);
         }
     }
 
@@ -103,7 +102,7 @@ public class JenaBeanTool implements JenaBean {
      * Save to the InputStream.
      *
      */
-    public void rdfToOutput() throws IOException {
+    private void rdfToOutput() throws IOException {
         ByteArrayOutputStream byos = new ByteArrayOutputStream();
         loggerJenaBean.info("Saving beans to InputStream.");
         model.write(byos);

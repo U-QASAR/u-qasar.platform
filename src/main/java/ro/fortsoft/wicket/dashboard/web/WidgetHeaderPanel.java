@@ -94,7 +94,7 @@ class WidgetHeaderPanel extends GenericPanel<Widget> implements DashboardContext
 		add(actionsPanel);		
 	}
 
-	public Widget getWidget() {
+	private Widget getWidget() {
 		return getModelObject();
 	}
 	

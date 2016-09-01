@@ -52,7 +52,6 @@ public class UQasarRoleCheckingStrategy implements IRoleCheckingStrategy, Serial
 		if ((provider == null) || (provider.getLoggedInUser() == null)) {
 			return false;
 		}
-		boolean authorized = provider.getLoggedInUser().hasAnyRoles(roles);
-		return authorized;
+        return provider.getLoggedInUser().hasAnyRoles(roles);
 	}
 }

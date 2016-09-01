@@ -100,9 +100,9 @@ public class UserSkillsPanel extends Panel {
      * @return
      */
     private <T extends MetaData> Select2Choice<T> newSelect2Single(final String id, Class<T> clazz, PropertyModel<T> model){
-    	 return new Select2Choice<T>(
-    			 id, model, new MetaDataCreateMissingEntitiesChoiceProvider<T>(
-    			 metaDataService.getAll(clazz), clazz));
+    	 return new Select2Choice<>(
+                 id, model, new MetaDataCreateMissingEntitiesChoiceProvider<>(
+                 metaDataService.getAll(clazz), clazz));
     }
     
     private <T extends MetaData> Select2MultiChoice<T> newSelect2(final String id,

@@ -22,6 +22,7 @@ package eu.uqasar.model.lifecycle;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -42,9 +43,9 @@ public enum RupStage implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
-	private RupStage(final String labelKey) {
+	RupStage(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -62,10 +63,8 @@ public enum RupStage implements IResourceKeyProvider {
 	}
 	
 	public static List<RupStage> getAllRupStages(){
-		List<RupStage> list = new ArrayList<RupStage>();
-		for (RupStage val : RupStage.values()) {
-		    	list.add(val);
-		}
+		List<RupStage> list = new ArrayList<>();
+        Collections.addAll(list, RupStage.values());
 		return list;
 	}
 

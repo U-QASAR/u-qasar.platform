@@ -87,23 +87,23 @@ public class AdminSubMenu extends NavbarDropDownButton {
 		
 		subMenu.add(new MenuHeader(new StringResourceModel("menu.admin.users.header.text", this, null)));
 		
-		subMenu.add(new MenuBookmarkablePageLink<CompanyListPage>(CompanyListPage.class, 
-				new StringResourceModel("menu.admin.companies.list.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(CompanyListPage.class,
+                new StringResourceModel("menu.admin.companies.list.link.text", this, null))
 				.setIconType(new IconType("home")));
 //		subMenu.add(new MenuBookmarkablePageLink<CompanyListPage>(CompanyListPage.class, 
 //				new StringResourceModel("menu.admin.companies.import.link.text", this, null))
 //				.setIconType(new IconType("signin")));		
-		subMenu.add(new MenuBookmarkablePageLink<UserListPage>(UserListPage.class, 
-				new StringResourceModel("menu.admin.users.list.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(UserListPage.class,
+                new StringResourceModel("menu.admin.users.list.link.text", this, null))
 				.setIconType(new IconType("user")));
-		subMenu.add(new MenuBookmarkablePageLink<UserImportPage>(UserImportPage.class, 
-				new StringResourceModel("menu.admin.users.import.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(UserImportPage.class,
+                new StringResourceModel("menu.admin.users.import.link.text", this, null))
 				.setIconType(new IconType("signin")));
-		subMenu.add(new MenuBookmarkablePageLink<TeamListPage>(TeamListPage.class, 
-				new StringResourceModel("menu.admin.teams.list.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(TeamListPage.class,
+                new StringResourceModel("menu.admin.teams.list.link.text", this, null))
 				.setIconType(new IconType("group")));
-		subMenu.add(new MenuBookmarkablePageLink<TeamImportPage>(TeamImportPage.class, 
-				new StringResourceModel("menu.admin.teams.import.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(TeamImportPage.class,
+                new StringResourceModel("menu.admin.teams.import.link.text", this, null))
 				.setIconType(new IconType("signin")));
 		subMenu.add(HeaderNavigationBar.createMenuDevider());
 		subMenu.add(new MenuHeader(new StringResourceModel("menu.admin.products_processes.header.text", this, null)));
@@ -115,23 +115,23 @@ public class AdminSubMenu extends NavbarDropDownButton {
 				new StringResourceModel("menu.processes.manage.text", this, null)));
 		subMenu.add(HeaderNavigationBar.createMenuDevider());
 		subMenu.add(new MenuHeader(new StringResourceModel("menu.admin.settings.header.text", this, null)));
-		subMenu.add(new MenuBookmarkablePageLink<MetaDataSettingsPage>(MetaDataSettingsPage.class, 
-				new StringResourceModel("menu.admin.settings.metadata.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(MetaDataSettingsPage.class,
+                new StringResourceModel("menu.admin.settings.metadata.link.text", this, null))
 				.setIconType(new IconType("puzzle-piece")));
-		subMenu.add(new MenuBookmarkablePageLink<LdapSettingsPage>(LdapSettingsPage.class, 
-				new StringResourceModel("menu.admin.settings.ldap.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(LdapSettingsPage.class,
+                new StringResourceModel("menu.admin.settings.ldap.link.text", this, null))
 				.setIconType(new IconType("sitemap")));
-		subMenu.add(new MenuBookmarkablePageLink<MailSettingsPage>(MailSettingsPage.class, 
-				new StringResourceModel("menu.admin.settings.mail.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(MailSettingsPage.class,
+                new StringResourceModel("menu.admin.settings.mail.link.text", this, null))
 				.setIconType(new IconType("envelope")));
-		subMenu.add(new MenuBookmarkablePageLink<AdapterManagementPage>(AdapterManagementPage.class,
-				new StringResourceModel("menu.admin.settings.adapters.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(AdapterManagementPage.class,
+                new StringResourceModel("menu.admin.settings.adapters.link.text", this, null))
 				.setIconType(new IconType("pencil")));
-		subMenu.add(new MenuBookmarkablePageLink<QModelSettingsPage>(QModelSettingsPage.class, 
-				new StringResourceModel("menu.admin.settings.qmodel.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(QModelSettingsPage.class,
+                new StringResourceModel("menu.admin.settings.qmodel.link.text", this, null))
 				.setIconType(new IconType("puzzle-piece")));
-		subMenu.add(new MenuBookmarkablePageLink<PlatformSettingsPage>(PlatformSettingsPage.class, 
-				new StringResourceModel("menu.admin.settings.platform.link.text", this, null))
+		subMenu.add(new MenuBookmarkablePageLink<>(PlatformSettingsPage.class,
+                new StringResourceModel("menu.admin.settings.platform.link.text", this, null))
 				.setIconType(IconType.globe));
 
 		return subMenu;

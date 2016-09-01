@@ -77,7 +77,7 @@ public abstract class EditTeamPanel extends Panel {
 	private final TextField<String> nameField;
 	private final Team team;
 	private final Form<Team> teamMembersList;
-	private TeamMembership membership = new TeamMembership();
+	private final TeamMembership membership = new TeamMembership();
 
 	private final CheckGroup<TeamMembership> teamGroup;
 	private final SubmitLink deleteSelectedButton;
@@ -167,7 +167,7 @@ public abstract class EditTeamPanel extends Panel {
 		add(new Label("label.list.title", new StringResourceModel("label.list.title", this, Model.of(team))));
 	}
 
-	protected Iterator<User> getTeamableUsers(final String input) {
+	private Iterator<User> getTeamableUsers(final String input) {
 		List<User> potentialUsers = userService.getAllExcept(team.getAllUsers());
 		Iterator<User> iterator = potentialUsers.iterator();
 		while (iterator.hasNext()) {
@@ -179,7 +179,7 @@ public abstract class EditTeamPanel extends Panel {
 		return potentialUsers.iterator();
 	}
 
-	public <T> IConverter<T> getAutocompleteConverter() {
+	private <T> IConverter<T> getAutocompleteConverter() {
 		return new IConverter<T>() {
 
 			@Override
@@ -194,7 +194,7 @@ public abstract class EditTeamPanel extends Panel {
 		};
 	}
 
-	public IAutoCompleteRenderer<User> getAutocompleteRenderer() {
+	private IAutoCompleteRenderer<User> getAutocompleteRenderer() {
 		return new AbstractAutoCompleteTextRenderer<User>() {
 
 			@Override
@@ -204,7 +204,7 @@ public abstract class EditTeamPanel extends Panel {
 		};
 	}
 	
-	public IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
+	private IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
 		return new IDataProvider<TeamMembership>() {
 
 			@Override

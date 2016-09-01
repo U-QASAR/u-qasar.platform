@@ -26,9 +26,9 @@ public class WidgetPanel extends GenericPanel<Widget> {
 
 	private static final long serialVersionUID = 1L;
 	
-	private WidgetHeaderPanel widgetHeaderPanel;
-	private WidgetView widgetView;
-	private Panel settingsPanel;
+	private final WidgetHeaderPanel widgetHeaderPanel;
+	private final WidgetView widgetView;
+	private final Panel settingsPanel;
 	
 	public WidgetPanel(String id, IModel<Widget> model) {
 		super(id, model);

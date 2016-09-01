@@ -33,7 +33,6 @@ import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.QualityIndicator;
 import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.TreeNode;
-import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
 
@@ -78,11 +77,11 @@ public abstract class DeletionConfirmationModal extends NotificationModal {
 		super.onConfigure();
 	}
 
-	protected IModel<String> getHeader(Model<?> model) {
+	private IModel<String> getHeader(Model<?> model) {
 		return new StringResourceModel("header.delete", model);
 	}
 
-	protected IModel<String> getMessage(Model<?> model) {
+	private IModel<String> getMessage(Model<?> model) {
 		TreeNode node = (TreeNode) model.getObject();
 		final String prefix = " (<em>", suffix = "</em>)";
 		if (node instanceof Project) {

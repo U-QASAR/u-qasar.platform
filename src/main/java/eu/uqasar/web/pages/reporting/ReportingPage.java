@@ -40,7 +40,7 @@ public class ReportingPage extends BasePage {
     
     public ReportingPage(PageParameters parameters) {
         super(parameters);        
-        final HttpServletRequest request = (HttpServletRequest ) ((WebRequest) getRequest()).getContainerRequest();        
+        final HttpServletRequest request = (HttpServletRequest ) getRequest().getContainerRequest();
         if (request.getParameter("cubeToLoad")!=null)  cubeurl = request.getParameter("cubeToLoad");
         //TODO the URL should be retrieved by the database
         String dynamicHtml = eu.uqasar.util.reporting.Util.getAvailableCubes("http://uqasar.pythonanywhere.com");

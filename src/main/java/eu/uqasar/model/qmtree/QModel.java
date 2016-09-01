@@ -107,18 +107,16 @@ public class QModel extends QMTreeNode {
 		this.setShortName(key);
 
 		boolean isCompleted = true;
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 
 		if (children != null){
 			if (children.isEmpty()){
 			isCompleted = false;	
 			} else {
-			Iterator<QMQualityObjective> it = children.iterator();
-			while (it.hasNext()){
-				QMQualityObjective qo = (QMQualityObjective)it.next();
-				isCompleted = isCompleted && qo.isCompleted();
-				nodes.add((QMTreeNode)qo);
-			}
+				for (QMQualityObjective qo : children) {
+					isCompleted = isCompleted && qo.isCompleted();
+					nodes.add(qo);
+				}
 			}
 		} else {
 			isCompleted = false;
@@ -140,7 +138,7 @@ public class QModel extends QMTreeNode {
 
 
 	@JsonIgnore
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 
@@ -162,7 +160,7 @@ public class QModel extends QMTreeNode {
 	
 	@JsonProperty("shortName")
 	@XmlElement(name="shortName")
-	public void setShortName(String nodeKey) {
+    private void setShortName(String nodeKey) {
 		super.setNodeKey(nodeKey);
 	}
 	

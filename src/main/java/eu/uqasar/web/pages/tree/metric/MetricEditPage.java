@@ -38,8 +38,8 @@ public class MetricEditPage extends BaseTreePage<Metric> {
 	
 	public MetricEditPage(PageParameters parameters) {
 		super(parameters);
-		if (parameters !=null && parameters.get("isNew") !=null && 
-				parameters.get("isNew").toBoolean() == true) {
+		if (parameters !=null && parameters.get("isNew") !=null &&
+                parameters.get("isNew").toBoolean()) {
 			isNew = true;
 		}
 	}

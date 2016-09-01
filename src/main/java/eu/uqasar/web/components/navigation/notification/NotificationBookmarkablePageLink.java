@@ -66,11 +66,11 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 	protected WebMarkupContainer gotoContainer;
 	protected Label notificationDate;
 	
-	public NotificationBookmarkablePageLink(String id, Class<C> pageClass, IModel<T> model) {
+	private NotificationBookmarkablePageLink(String id, Class<C> pageClass, IModel<T> model) {
 		this(id, pageClass, new PageParameters(), model);
 	}
 
-	public NotificationBookmarkablePageLink(final String id, final Class<C> pageClass, final PageParameters parameters, IModel<T> model) {
+	protected NotificationBookmarkablePageLink(final String id, final Class<C> pageClass, final PageParameters parameters, IModel<T> model) {
 		
 		super(id, model);
 		this.parameters = parameters;
@@ -110,7 +110,7 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 		notificationContainer.add(gotoContainer);
 	}
 
-	public NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
+	protected NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
 		icon.setType(iconType);
 		return this;
 	}
@@ -118,7 +118,7 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 	/**
 	 * @return page parameters
 	 */
-	public PageParameters getPageParameters() {
+    protected PageParameters getPageParameters() {
 		if (parameters == null) {
 			parameters = new PageParameters();
 		}
@@ -134,7 +134,7 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 	 *
 	 * @return Page class
 	 */
-	public final Class<? extends Page> getPageClass() {
+    private Class<? extends Page> getPageClass() {
 		return WicketObjects.resolveClass(pageClassName);
 	}
 

@@ -77,9 +77,9 @@ public class InputBeanValidationBorder<T> extends InputBorder<T> {
 	 * @param helpModel
 	 *            optional
 	 */
-	public InputBeanValidationBorder(final String id,
-			final FormComponent<T> inputComponent,
-			final IModel<String> labelModel, final IModel<String> helpModel) {
+    InputBeanValidationBorder(final String id,
+                              final FormComponent<T> inputComponent,
+                              final IModel<String> labelModel, final IModel<String> helpModel) {
 		super(id, inputComponent, labelModel, helpModel);
 
 		// remove wicket validation
@@ -95,9 +95,9 @@ public class InputBeanValidationBorder<T> extends InputBorder<T> {
 	 * 
 	 * @param fc
 	 */
-	protected void addPropertyValidator(FormComponent<T> fc) {
+    private void addPropertyValidator(FormComponent<T> fc) {
 		if (!hasPropertyValidator(fc)) {
-			final PropertyValidator<T> propertyValidator = new PropertyValidator<T>();
+			final PropertyValidator<T> propertyValidator = new PropertyValidator<>();
 			fc.add(propertyValidator);
 		}
 	}
@@ -108,7 +108,7 @@ public class InputBeanValidationBorder<T> extends InputBorder<T> {
 	 * @param fc
 	 * @return
 	 */
-	protected boolean hasPropertyValidator(FormComponent<T> fc) {
+    private boolean hasPropertyValidator(FormComponent<T> fc) {
 		for (IValidator<?> validator : fc.getValidators()) {
 			if (validator instanceof PropertyValidator) {
 				return true;

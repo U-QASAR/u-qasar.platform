@@ -31,7 +31,6 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import lombok.NoArgsConstructor;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -94,9 +93,9 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	private static final long serialVersionUID = -8405334366910955035L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
+	private final TextArea<String> description;
 	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
-	private AjaxButton save;
+	private final AjaxButton save;
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -105,12 +104,14 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 
-	private TagsSelectionModal tagsModal;
+	private final TagsSelectionModal tagsModal;
 
 	private final Form<QMMetric> form;
 
 	private final FormComponent<Object> name, lowerLimit, upperLimit, weight, targetValue;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
 
 	private CheckBox chkCreateCopy;
 	
@@ -119,7 +120,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 
 	public MetricEditPanel(String id, final IModel<QMMetric> model, final boolean isNew) {
 		super(id, model);
@@ -273,11 +274,11 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	        form.add(cancel);
 			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-				"cancel",
-				QMMetricViewPage.class,
-				QMMetricViewPage.forMetric(model.getObject()),
-				de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<QMMetric>(
+                    "cancel",
+                    QMMetricViewPage.class,
+                    QMMetricViewPage.forMetric(model.getObject()),
+                    de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 				.setLabel(new StringResourceModel("button.cancel", this, null)));
 		}
 
@@ -326,7 +327,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 		super.onConfigure();
 	}
 
-	public QMMetric checkCompleted(QMMetric node) {
+	private QMMetric checkCompleted(QMMetric node) {
 		if (!node.getParent().isCompleted()) {
 			//update indicator
 			node.getParent().setCompleted(true);
@@ -402,17 +403,16 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							Iterator it = ch.iterator();
-							while (it.hasNext()){
-								set.add((QModelTagData)it.next());
+							for (QModelTagData aCh : ch) {
+								set.add(aCh);
 							}
 						} 
 						
@@ -423,17 +423,11 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 						this.setTypeSelected("");
 						this.setTagName("");
 					}
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SecurityException e) {
+				} catch (ClassNotFoundException | SecurityException | IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return confirmed;
+                return confirmed;
 			}
 		};
 		

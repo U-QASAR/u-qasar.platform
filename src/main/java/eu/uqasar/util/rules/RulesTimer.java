@@ -53,8 +53,8 @@ import eu.uqasar.util.UQasarUtil;
 public class RulesTimer {
 
 	private final String RULES_TIMER_ABBR = "Rules-Timer";
-	private Logger logger = Logger.getLogger(RulesTimer.class);
-	private int timerInterval = 60; // default update interval for timer is 60 mins
+	private final Logger logger = Logger.getLogger(RulesTimer.class);
+	private final int timerInterval = 60; // default update interval for timer is 60 mins
 	private static final AnnotatedRulesEngine rulesEngine = new AnnotatedRulesEngine();
 
 	@Inject
@@ -85,7 +85,7 @@ public class RulesTimer {
 	/**
 	 * Initialize the timers for all the adapters taking care of data updates
 	 */
-	public void initRuleTimer() {
+    private void initRuleTimer() {
 
 		logger.debug("initRuleTimer() [" + new Date() + "]");
 
@@ -102,7 +102,7 @@ public class RulesTimer {
 	/**
 	 * Cancels the existing timer
 	 */
-	public void cancelTimer() {
+    private void cancelTimer() {
 
 		if (timerService.getTimers() != null
 				&& timerService.getTimers().size() > 0) {

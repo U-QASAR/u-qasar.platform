@@ -23,7 +23,6 @@ package eu.uqasar.exception.auth.register;
 
 import eu.uqasar.exception.ModelBasedException;
 import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
 
 /**
  *

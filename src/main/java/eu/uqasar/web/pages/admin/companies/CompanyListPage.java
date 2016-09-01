@@ -255,7 +255,7 @@ public class CompanyListPage extends AdminBasePage {
 		}
 	}
 	
-	public static PageParameters forCompany(final String name) {
+	private static PageParameters forCompany(final String name) {
 		return new PageParameters().add("name", name);
 	}
 	
@@ -316,15 +316,14 @@ public class CompanyListPage extends AdminBasePage {
 	}
 
 	private Check<Company> newDeleteCheck(final Item<Company> item) {
-		Check<Company> check = new Check<Company>("companyCheck", item.getModel(), companyGroup) {
+        return new Check<Company>("companyCheck", item.getModel(), companyGroup) {
 
-			@Override
-			protected void onConfigure() {
-				super.onConfigure();
-				setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
-			}
-		};
-		return check;
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
+            }
+        };
 	}
 	
 	
@@ -338,9 +337,9 @@ public class CompanyListPage extends AdminBasePage {
 
 		public CompanyProvider() {
 			this.filter = null;
-		};
+		}
 
-		public CompanyProvider(CompanyFilterStructure filter) {
+        public CompanyProvider(CompanyFilterStructure filter) {
 			this.filter = filter;
 		}
 

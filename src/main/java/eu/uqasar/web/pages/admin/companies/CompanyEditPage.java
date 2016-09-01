@@ -28,8 +28,6 @@ import javax.inject.Inject;
 import org.apache.wicket.markup.head.CssHeaderItem;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Form;
-import org.apache.wicket.markup.html.form.SubmitLink;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
@@ -37,15 +35,10 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import eu.uqasar.exception.model.EntityNotFoundException;
 import eu.uqasar.model.company.Company;
-import eu.uqasar.model.user.User;
 import eu.uqasar.service.company.CompanyService;
 import eu.uqasar.web.pages.BasePage;
 import eu.uqasar.web.pages.admin.AdminBasePage;
 import eu.uqasar.web.pages.admin.companies.panels.CompanyEditPanel;
-import eu.uqasar.web.pages.admin.users.UserEditPage;
-import eu.uqasar.web.pages.admin.users.UserListPage;
-import eu.uqasar.web.pages.qmtree.metric.QMMetricViewPage;
-import eu.uqasar.web.pages.user.panels.EditProfilePanel;
 
 /**
  *
@@ -119,7 +112,7 @@ public final class CompanyEditPage extends AdminBasePage {
 	        return linkToEdit(entity.getId());
 	    }
 	    
-	    public static PageParameters linkToEdit(Long entityId) {
+	    private static PageParameters linkToEdit(Long entityId) {
 	        return new PageParameters().set("id", entityId);
 	    }
 

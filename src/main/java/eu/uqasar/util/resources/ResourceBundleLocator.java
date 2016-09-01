@@ -38,8 +38,8 @@ public class ResourceBundleLocator {
 		return getResourceBundle(clazz, UQasar.getSession().getLocale());
 	}
 
-	public static <T> ResourceBundle getResourceBundle(Class<T> clazz,
-			Locale locale) {
+	private static <T> ResourceBundle getResourceBundle(Class<T> clazz,
+                                                        Locale locale) {
 
 		ResourceBundle bundle;
 		ResourceBundle.Control xmlLocator = new XMLResourceBundleControl();
@@ -73,8 +73,8 @@ public class ResourceBundleLocator {
 		return getLabelModel(clazz, UQasar.getSession().getLocale(), key);
 	}
 
-	public static <T> IModel<String> getLabelModel(Class<T> clazz, Locale locale,
-			final String key) {
+	private static <T> IModel<String> getLabelModel(Class<T> clazz, Locale locale,
+                                                    final String key) {
 		ResourceBundle bundle = getResourceBundle(clazz, locale);
 		return Model.of(bundle.getString(key));
 	}

@@ -79,7 +79,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		return getNewFileName(user.getId());
 	}
 
-	public static Path getNewFileName(Long userId) throws IOException {
+	private static Path getNewFileName(Long userId) throws IOException {
 		/*	we want the user picture files to always reside in a different folder than the users 
 		 personal folder, so we overwrite the method for determining the new name 
 		 */
@@ -87,8 +87,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		// we always name it PNG even though it could be a JPG or GIF. 
 		// This makes it easier for serving it later, so we don't have to are about extensions
 		final String fileName = String.format("%s.%s", userId, PROFILEPIC_EXTENSION);
-		final Path targetPath = FileSystems.getDefault().getPath(basePath, fileName);
-		return targetPath;
+        return FileSystems.getDefault().getPath(basePath, fileName);
 	}
 
 	public Path processFile(InputStream is, Path target) throws IOException {
@@ -104,7 +103,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 			try (FileOutputStream baos = new FileOutputStream(target.toFile())) {
 				ImageIO.write(thumb, "PNG", baos);
 			}
-		} catch (IOException ex) {
+		} catch (IOException ignored) {
 		}
 		return target;
 	}
@@ -145,7 +144,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		return null;
 	}
 
-	public static Path getUserPicturePath(User user) {
+	private static Path getUserPicturePath(User user) {
 		return getUserPicturePath(user.getId());
 	}
 

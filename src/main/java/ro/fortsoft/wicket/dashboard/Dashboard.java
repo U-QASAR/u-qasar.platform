@@ -20,24 +20,24 @@ import java.util.List;
  */
 public interface Dashboard extends Serializable {
 
-	public String getDashboardId();
+	String getDashboardId();
 	
-	public String getTitle();
+	String getTitle();
 	
-	public void setTitle(String title);
+	void setTitle(String title);
 	
-	public int getColumnCount();   
+	int getColumnCount();
 
-	public void setColumnCount(int columnCount);
+	void setColumnCount(int columnCount);
 	
-	public List<Widget> getWidgets();
+	List<Widget> getWidgets();
 	
-	public List<Widget> getWidgets(int column);
+	List<Widget> getWidgets(int column);
 	
-	public Widget getWidget(String widgetId);		
+	Widget getWidget(String widgetId);
 	
-	public void addWidget(Widget widget);
+	void addWidget(Widget widget);
 	
-	public void deleteWidget(String widgetId);
+	void deleteWidget(String widgetId);
 
 }

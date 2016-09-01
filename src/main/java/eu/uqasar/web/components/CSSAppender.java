@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -52,13 +49,13 @@ public class CSSAppender extends AttributeAppender {
 
 	private IModel<String> model;
 
-	public CSSAppender(IModel<String> model) {
+	private CSSAppender(IModel<String> model) {
 		super(attribute, model, separator);
 		this.setModel(model);
 	}
 
 	public CSSAppender(String css) {
-		this(new Model<String>(css));
+		this(new Model<>(css));
 	}
 
 	/*

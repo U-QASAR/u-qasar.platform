@@ -85,13 +85,15 @@ public class SubsetProposalPanel extends Panel {
 	private final CheckGroup<QMTreeNode> dataGroup;
 //	private final AjaxSubmitLink saveSelectedButton;
 	
-	private Set<MetaData> projectTags;
+	private final Set<MetaData> projectTags;
 	
-	protected TreeNode currentParentProjectNode, currentParentQualityObjective,
-	currentParentQualityIndicator;
+	private TreeNode currentParentProjectNode;
+    private TreeNode currentParentQualityObjective;
+    private TreeNode currentParentQualityIndicator;
 
-	protected QMTreeNode currentParentQMProjectNode, currentParentQMQualityObjective,
-	currentParentQMQualityIndicator;
+	private QMTreeNode currentParentQMProjectNode;
+    private QMTreeNode currentParentQMQualityObjective;
+    private QMTreeNode currentParentQMQualityIndicator;
 
 
 	/**
@@ -103,8 +105,7 @@ public class SubsetProposalPanel extends Panel {
 
 	/**
 	 * @param markupId
-	 * @param newProjectTags
-	 */
+     */
 	public SubsetProposalPanel(final String markupId, final Project project) {
 		super(markupId);
 
@@ -175,9 +176,9 @@ public class SubsetProposalPanel extends Panel {
 	}
 
 	private Set<MetaData> projectTags(Project project) {
-		Set<MetaData> projectTagsSet=new HashSet<MetaData>();
+		Set<MetaData> projectTagsSet= new HashSet<>();
 		
-		    projectTagsSet = new HashSet<MetaData>();
+		    projectTagsSet = new HashSet<>();
         	projectTagsSet.addAll(project.getCustomerTypes());
         	projectTagsSet.addAll(project.getProjectTypes());
         	projectTagsSet.addAll(project.getSoftwareTypes());
@@ -239,8 +240,8 @@ public class SubsetProposalPanel extends Panel {
 	 * @return
 	 */
 	private CheckGroup<QMTreeNode> newDataCheckGroup() {
-		CheckGroup<QMTreeNode> checkGroup = new CheckGroup<QMTreeNode>(
-				"dataGroup", new ArrayList<QMTreeNode>());
+		CheckGroup<QMTreeNode> checkGroup = new CheckGroup<>(
+                "dataGroup", new ArrayList<QMTreeNode>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;
@@ -262,8 +263,7 @@ public class SubsetProposalPanel extends Panel {
 		String labelProject = new StringResourceModel("auto.created.project", this, null).getString();
 		
 		long randomId = UUID.randomUUID().toString().hashCode();
-		Project project = new Project(labelProject, String.format("prj-%s", randomId));
-		currentParentProjectNode = project;
+        currentParentProjectNode = new Project(labelProject, String.format("prj-%s", randomId));
 		
 		// Add selected elements to the current created project
 		for (QMTreeNode qmTreeNode : dataGroup.getModelObject()) {
@@ -309,35 +309,30 @@ public class SubsetProposalPanel extends Panel {
 				
 			} else if (node instanceof QMQualityObjective) {
 				QMQualityObjective qmqo = (QMQualityObjective) node;
-				QualityObjective qo = new QualityObjective(qmqo, (Project) project);
-				currentParentQualityObjective = qo;
+            currentParentQualityObjective = new QualityObjective(qmqo, project);
 				currentParentQMQualityObjective = qmqo;
 				
 			} else if (node instanceof QMQualityIndicator) {
 				QMQualityIndicator qmqi = (QMQualityIndicator) node;
 
 				if(qmqi.getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, (Project) project);
-						currentParentQualityObjective = qo;
+                    currentParentQualityObjective = new QualityObjective(labelObjective, project);
 						currentParentQMQualityObjective = qmqi.getParent();
 				}
-				
-				QualityIndicator qi = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
-				currentParentQualityIndicator = qi;
+
+            currentParentQualityIndicator = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
 				currentParentQMQualityIndicator = qmqi;
 				
 			} else if (node instanceof QMMetric) {
 				QMMetric qmm = (QMMetric) node;
 
 				if(qmm.getParent().getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, (Project) project);
-						currentParentQualityObjective = qo;
+                    currentParentQualityObjective = new QualityObjective(labelObjective, project);
 						currentParentQMQualityObjective = qmm.getParent().getParent();
 				}
 				
 				if(qmm.getParent() != currentParentQMQualityIndicator){
-						QualityIndicator qi = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
-						currentParentQualityIndicator = qi;
+                    currentParentQualityIndicator = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
 						currentParentQMQualityIndicator = qmm.getParent();
 				}
 				
@@ -367,35 +362,30 @@ public class SubsetProposalPanel extends Panel {
 			
 		} else if (node instanceof QMQualityObjective) {
 			QMQualityObjective qmqo = (QMQualityObjective) node;
-			QualityObjective qo = new QualityObjective(qmqo, (Project) currentParentProjectNode);
-			currentParentQualityObjective = qo;
+            currentParentQualityObjective = new QualityObjective(qmqo, (Project) currentParentProjectNode);
 			currentParentQMQualityObjective = qmqo;
 			
 		} else if (node instanceof QMQualityIndicator) {
 			QMQualityIndicator qmqi = (QMQualityIndicator) node;
 			
 			if(qmqi.getParent()!=currentParentQMQualityObjective){
-				QualityObjective qo = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
-				currentParentQualityObjective = qo;
+                currentParentQualityObjective = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
 				currentParentQMQualityObjective = qmqi.getParent();
 			}
-			
-			QualityIndicator qi = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
-			currentParentQualityIndicator = qi;
+
+            currentParentQualityIndicator = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
 			currentParentQMQualityIndicator = qmqi;
 			
 		} else if (node instanceof QMMetric) {
 			QMMetric qmm = (QMMetric) node;
 			
 			if(qmm.getParent().getParent()!=currentParentQMQualityObjective){
-				QualityObjective qo = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
-				currentParentQualityObjective = qo;
+                currentParentQualityObjective = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
 				currentParentQMQualityObjective = qmm.getParent().getParent();
 			}
 			
 			if(qmm.getParent() != currentParentQMQualityIndicator){
-				QualityIndicator qi = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
-				currentParentQualityIndicator = qi;
+                currentParentQualityIndicator = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
 				currentParentQMQualityIndicator = qmm.getParent();
 			}
 			
@@ -416,7 +406,7 @@ public class SubsetProposalPanel extends Panel {
 			@Override
 			public void onConfigure(){
 				super.onConfigure();
-				setDefaultModel(Model.of(this.getDefaultModelObjectAsString().toString().replace("[", "").replace("]", "")));
+				setDefaultModel(Model.of(this.getDefaultModelObjectAsString().replace("[", "").replace("]", "")));
 				if(this.getDefaultModelObjectAsString().isEmpty()){
 					wmc.setVisible(false);
 				}

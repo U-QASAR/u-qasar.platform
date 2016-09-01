@@ -46,7 +46,7 @@ public enum Role {
 
 	private final String labelKey;
 
-	private Role(final String labelKey) {
+	Role(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 	
@@ -84,7 +84,7 @@ public enum Role {
 		return hasAnyRoles(EnumSet.copyOf(Arrays.asList(roles)));
 	}
 
-	public boolean hasAnyRoles(EnumSet<Role> allowedRoles) {
+	private boolean hasAnyRoles(EnumSet<Role> allowedRoles) {
 		return allowedRoles.contains(this);
 	}
 
@@ -96,7 +96,7 @@ public enum Role {
         // check user role
         if (user.getRole() != null) {
             if (user.getRole() != Role.Administrator) {
-                List<Role> roles = new LinkedList<Role>();
+                List<Role> roles = new LinkedList<>();
                 for (Role role : getAllRoles()) {
                     if (role.compareTo(Administrator) != 0) {
                         roles.add(role);

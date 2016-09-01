@@ -75,7 +75,7 @@ public class Product extends AbstractEntity implements Namable {
 
 	@OneToMany
 	@JoinColumn(name = "project_id", nullable = true)
-	private Set<Project> projects = new HashSet<Project>();
+	private Set<Project> projects = new HashSet<>();
 
 	public Product(final String name) {
 		this.setName(name);
@@ -86,7 +86,7 @@ public class Product extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 

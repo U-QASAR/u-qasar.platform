@@ -146,28 +146,28 @@ import eu.uqasar.web.provider.user.UserRoleChoiceProvider;
 public class ProjectWizardPanel extends Wizard{
 
 	private static final long serialVersionUID = 1L;
-	private WizardModel wizard;
-	private WizardStep1 step1;
-	private WizardStep2 step2;
-	private WizardStep3 step3;
-	private WizardStep4 step4;
-	private WizardStep5 step5;
-	private WizardStep6 step6;
-	private WizardStep7 step7;
+	private final WizardModel wizard;
+	private final WizardStep1 step1;
+	private final WizardStep2 step2;
+	private final WizardStep3 step3;
+	private final WizardStep4 step4;
+	private final WizardStep5 step5;
+	private final WizardStep6 step6;
+	private final WizardStep7 step7;
 
 	private Project project;
 	private Company company;    
 	private User user;
-	private List<Role> rolesNeeded = new ArrayList<Role>();
+	private List<Role> rolesNeeded = new ArrayList<>();
 	private List<Team> teams;
-	private List<User> proposedUsers = new ArrayList<User>();
+	private List<User> proposedUsers = new ArrayList<>();
 	private WebMarkupContainer teamContainer;
 	private ListView<User> usersView;
 	private boolean toggle = false;
 	private Form<Void> step4Form;
 	// The AdapterSettings to edit/save
-	private List<AdapterSettings> adapterSettingsList = new ArrayList<>();
-    private AdapterSettings adapterSettings  = new AdapterSettings();
+	private final List<AdapterSettings> adapterSettingsList = new ArrayList<>();
+    private final AdapterSettings adapterSettings  = new AdapterSettings();
 	// New Project Tags to match with the QM
 	private WebMarkupContainer subsetContainer;
 	private SubsetProposalPanel subsetProposalPanel;
@@ -186,7 +186,7 @@ public class ProjectWizardPanel extends Wizard{
 	private AdapterSettingsService adapterSettingsService;
 
 
-	private Multimap<User, String> matchedSkills = ArrayListMultimap.create();
+	private final Multimap<User, String> matchedSkills = ArrayListMultimap.create();
 
 	/**
 	 * Step1
@@ -220,8 +220,7 @@ public class ProjectWizardPanel extends Wizard{
 		/**
 		 * 
 		 * @param markupId
-		 * @param model
-		 * @return 
+		 * @return
 		 */
 		private TextField<Project> newTextField(String markupId, Project project, String property){
 			return new TextField<>(markupId, new PropertyModel<Project>(project, property));
@@ -278,7 +277,7 @@ public class ProjectWizardPanel extends Wizard{
 		private static final long serialVersionUID = 5941982365548199496L;
 
 		private final Form<Void> form;      
-		private final List<Role> roles = new ArrayList<Role>();
+		private final List<Role> roles = new ArrayList<>();
 
 
 
@@ -327,9 +326,9 @@ public class ProjectWizardPanel extends Wizard{
 		 * @return
 		 */
 		private <T extends MetaData> Select2Choice<T> newSelect2Single(final String id, Class<T> clazz, PropertyModel<T> model){
-			return new Select2Choice<T>(
-					id, model, new MetaDataCreateMissingEntitiesChoiceProvider<T>(
-							metaDataService.getAll(clazz), clazz));
+			return new Select2Choice<>(
+                    id, model, new MetaDataCreateMissingEntitiesChoiceProvider<>(
+                    metaDataService.getAll(clazz), clazz));
 		}
 		/**
 		 * 
@@ -340,7 +339,7 @@ public class ProjectWizardPanel extends Wizard{
 		 */
 		private Select2MultiChoice<Role> newSelect2MultiRoles(final String id, Class clazz, PropertyModel<Collection<Role>> model) {
 
-			Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<Role>(id, model, new UserRoleChoiceProvider());
+			Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<>(id, model, new UserRoleChoiceProvider());
 
 
 			final IModel<String> placeHolder = new StringResourceModelPlaceholderDelegate("placeholder.meta.role", this, null);
@@ -382,10 +381,10 @@ public class ProjectWizardPanel extends Wizard{
 			Class<T> clazz = (Class<T>) metaDataObject.getClass();
 			S service = metaDataServiceBroker.getService(clazz);
 			long count = service.countAll();
-			return new DropDownChoice<T>(
-					markupId, 
-					new PropertyModel<T>(metaDataObject, "name"),
-					service.getAllAscendingByName(clazz, 0, count)); 
+			return new DropDownChoice<>(
+                    markupId,
+                    new PropertyModel<T>(metaDataObject, "name"),
+                    service.getAllAscendingByName(clazz, 0, count));
 		}   
 	}
 
@@ -397,7 +396,7 @@ public class ProjectWizardPanel extends Wizard{
 
 		@Inject
 		private TeamMembershipService teamMemberService;
-		private AutoCompleteTextField<User> userComplete;
+		private final AutoCompleteTextField<User> userComplete;
 
 		public WizardStep4(){            
 			super("", "");   
@@ -439,7 +438,7 @@ public class ProjectWizardPanel extends Wizard{
 					Link userEditNameLink = new BookmarkablePageLink("link.name.edit.user", UserEditPage.class, new PageParameters().add("id", proposedUser.getId()));
 					item.add(userEditNameLink.add(new Label("td.username", new PropertyModel<>(proposedUser, "fullNameWithUserName"))));
 
-					item.add(new DropDownChoice<Role>("role", new PropertyModel<Role>(proposedUser, "role"), Role.getAllRolesWithLoggedInUser(proposedUser)).setOutputMarkupId(true).setEnabled(false));		
+					item.add(new DropDownChoice<>("role", new PropertyModel<Role>(proposedUser, "role"), Role.getAllRolesWithLoggedInUser(proposedUser)).setOutputMarkupId(true).setEnabled(false));
 					item.add(new MultiLineLabel("skills", getMatchedSkillsFromUser(proposedUser)));
 
 					final WebMarkupContainer btnContainer = new WebMarkupContainer("btnContainer");
@@ -545,7 +544,7 @@ public class ProjectWizardPanel extends Wizard{
 		private String getMatchedSkillsFromUser(User user) {
 
 			List<String> skills = (List<String>) matchedSkills.get(user);
-			Set<String> skillsNoDoubles = new HashSet<String>();
+			Set<String> skillsNoDoubles = new HashSet<>();
 			skillsNoDoubles.addAll(skills);
 
 			return skillsNoDoubles.toString().replace("[", "").replace("]", "");
@@ -599,9 +598,9 @@ public class ProjectWizardPanel extends Wizard{
 
 
 
-		private Team team = new Team();
+		private final Team team = new Team();
 
-		TeamMembership membership1 = new TeamMembership();
+		final TeamMembership membership1 = new TeamMembership();
 
 
 
@@ -628,7 +627,7 @@ public class ProjectWizardPanel extends Wizard{
 				}
 			};
 		}
-		protected Iterator<User> getTeamableUsers(final String input) {
+		Iterator<User> getTeamableUsers(final String input) {
 			List<User> potentialUsers = userService.getAllExceptAndFilter(team.getAllUsers(), input);
 			potentialUsers.removeAll(proposedUsers);
 			return potentialUsers.iterator();
@@ -1141,7 +1140,7 @@ public class ProjectWizardPanel extends Wizard{
 	 */
 	private List<Team> buildTeams(List<User> proposedUsers) {
 
-		List<Team> teams = new ArrayList<Team>();
+		List<Team> teams = new ArrayList<>();
 
 		Team proposedTeam = new Team();
 
@@ -1233,7 +1232,7 @@ public class ProjectWizardPanel extends Wizard{
 	 * 
 	 * @param newProject
 	 */
-	public void matchUsersWithNewProject(Project newProject){
+    private void matchUsersWithNewProject(Project newProject){
 
 		// get ALL platform Users
 		List<User> users = userService.getAllByAscendingName(0, (int) userService.countAll());    	
@@ -1266,9 +1265,7 @@ public class ProjectWizardPanel extends Wizard{
 	/**
 	 * 
 	 * @param user
-	 * @param types
-	 * @param type
-	 */
+     */
 	private <T> void matchSoftwareEngineeringData(User user, Set<T> userTypes, Set<T> projectTypes) {	
 		for(T userType : userTypes){
 			for(T projectType : projectTypes){
@@ -1299,7 +1296,7 @@ public class ProjectWizardPanel extends Wizard{
 	 * @param skillsGiven
 	 * @param skillsNeeded
 	 */
-	public <T> void matchToolSkills(User user, Set<T> skillsGiven, Set<T> skillsNeeded){
+    private <T> void matchToolSkills(User user, Set<T> skillsGiven, Set<T> skillsNeeded){
 
 		for(T skillGiven : skillsGiven){
 			for(T skillNeeded : skillsNeeded){

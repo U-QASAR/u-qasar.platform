@@ -39,7 +39,7 @@ public abstract class QMTree extends NestedTree<QMTreeNode> {
 	 */
 	private static final long serialVersionUID = 6485363198642769165L;
 	
-	private QMSelectableTreeFolder nodeContent;
+	private final QMSelectableTreeFolder nodeContent;
 
 	public QMTree(String id, ITreeProvider<QMTreeNode> provider,
 			IModel<Set<QMTreeNode>> state) {

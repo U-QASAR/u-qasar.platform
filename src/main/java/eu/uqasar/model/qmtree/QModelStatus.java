@@ -42,7 +42,7 @@ public enum QModelStatus {
 
 	private final String labelKey;
 
-	private QModelStatus(final String labelKey) {
+	QModelStatus(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -51,7 +51,7 @@ public enum QModelStatus {
 		return getLabelModel().getObject();
 	}
 	
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(QModelStatus.class, "label.qmodelstatus." + labelKey);
 	}
 	

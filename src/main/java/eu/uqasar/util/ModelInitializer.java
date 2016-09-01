@@ -1,6 +1,3 @@
-/**
- *
- */
 package eu.uqasar.util;
 
 /*
@@ -31,7 +28,6 @@ import java.nio.file.Path;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -62,14 +58,11 @@ import org.jboss.weld.context.http.Http;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
-import eu.uqasar.model.analytic.Analysis;
-import eu.uqasar.model.analytic.Dimensions;
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.lifecycle.LifeCycleStage;
 import eu.uqasar.model.lifecycle.RupStage;
 import eu.uqasar.model.measure.MetricSource;
 import eu.uqasar.model.measure.Scale;
-import eu.uqasar.model.measure.TestLinkMetricMeasurement;
 import eu.uqasar.model.measure.Unit;
 import eu.uqasar.model.meta.ContinuousIntegrationTool;
 import eu.uqasar.model.meta.CustomerType;
@@ -96,15 +89,10 @@ import eu.uqasar.model.quality.indicator.Paradigm;
 import eu.uqasar.model.quality.indicator.Purpose;
 import eu.uqasar.model.quality.indicator.Version;
 import eu.uqasar.model.role.Role;
-import eu.uqasar.model.settings.adapter.AdapterSettings;
 import eu.uqasar.model.settings.mail.MailSettings;
 import eu.uqasar.model.settings.platform.PlatformSettings;
 import eu.uqasar.model.settings.qmodel.QModelSettings;
-import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
-import eu.uqasar.model.tree.QualityIndicator;
-import eu.uqasar.model.tree.QualityObjective;
-import eu.uqasar.model.tree.Threshold;
 import eu.uqasar.model.user.Gender;
 import eu.uqasar.model.user.RegistrationStatus;
 import eu.uqasar.model.user.Team;
@@ -278,9 +266,7 @@ public class ModelInitializer implements Serializable {
             // Initialize timer for fetching data by using the adapters
             adapterSettingsService.initAdapterDataTimer();
             
-        } catch (NoSuchAlgorithmException e) {
-            logger.error(e.getMessage());
-        } catch (InvalidKeySpecException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             logger.error(e.getMessage());
         } catch (Exception e) {
         	e.printStackTrace();
@@ -376,7 +362,7 @@ public class ModelInitializer implements Serializable {
     	testCompany.setPhone("");
     	testCompany.setFax("");
     	testCompany.setStreet("");
-    	testCompany.setZipcode(00000);
+    	testCompany.setZipcode(0);
     	testCompany.setCity("");
     	testCompany.setCountry("");
     	companies[--companyCount] = companyService.create(testCompany);
@@ -894,7 +880,7 @@ public class ModelInitializer implements Serializable {
         int monthOffset = 6;
         int day = LocalDate.now().plusMonths(monthOffset).dayOfMonth().getMaximumValue();
         product1.setReleaseDate(DateTime.now().plusMonths(monthOffset).withDayOfMonth(day).toDate());
-        product1 = (Product) productService.create(product1);
+        product1 = productService.create(product1);
 
         return new Product[]{product1};
     }
@@ -908,7 +894,7 @@ public class ModelInitializer implements Serializable {
         process1.setDescription("Development of the U-QASAR platform");
         process1.setStartDate(DateTime.now().minusDays(14).toDate());
         process1.setEndDate(DateTime.now().plusMonths(5).toDate());
-        process1 = (Process) processService.create(process1);
+        process1 = processService.create(process1);
 
         return new Process[]{process1};
     }

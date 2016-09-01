@@ -27,12 +27,8 @@ package eu.uqasar.exception;
 
 
 import eu.uqasar.util.resources.ResourceBundleLocator;
-import java.util.Locale;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
 
 import lombok.Getter;
-import org.apache.wicket.Session;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
@@ -47,16 +43,16 @@ public class ModelBasedException extends Exception {
 
 	private IModel<String> model = Model.of("");
 
-	public ModelBasedException() {
+	protected ModelBasedException() {
 		fillInStackTrace();
 	}
 
-	public ModelBasedException(final String message) {
+	protected ModelBasedException(final String message) {
 		fillInStackTrace();
 		model = Model.of(message);
 	}
 
-	public ModelBasedException(final String message, Throwable cause) {
+	protected ModelBasedException(final String message, Throwable cause) {
 		fillInStackTrace();
 		this.cause = cause;
 		model = Model.of(message);
@@ -82,7 +78,7 @@ public class ModelBasedException extends Exception {
 		return getLabelModel(key, this.getClass());
 	}
 
-	public static IModel<String> getLabelModel(final String key, final Class<?> clazz) {
+	private static IModel<String> getLabelModel(final String key, final Class<?> clazz) {
 		return ResourceBundleLocator.getLabelModel(clazz, key);
 	}
 }

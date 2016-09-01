@@ -69,15 +69,12 @@ public class GitlabDataService extends AbstractService<GitlabMetricMeasurement> 
 		CriteriaQuery<GitlabMetricMeasurement> query = 
 				cb.createQuery(GitlabMetricMeasurement.class);
 		query.from(GitlabMetricMeasurement.class);
-		List<GitlabMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<GitlabMetricMeasurement> metrics) {
 		for (GitlabMetricMeasurement m : metrics) {
 			delete(m);

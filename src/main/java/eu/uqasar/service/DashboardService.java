@@ -53,8 +53,7 @@ public class DashboardService extends AbstractService<DbDashboard> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<DbDashboard> query = cb.createQuery(DbDashboard.class);
 		query.from(DbDashboard.class);
-		List<DbDashboard> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**

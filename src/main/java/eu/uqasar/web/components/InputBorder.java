@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -67,10 +64,10 @@ public class InputBorder<T> extends Border implements IFeedback {
 	private static final String helpID = "helpLabel";
 
 	// this borders feedback panel
-	protected final FeedbackPanel feedback;
+	private final FeedbackPanel feedback;
 
 	// the form component to validate
-	protected final FormComponent<T> inputComponent;
+	final FormComponent<T> inputComponent;
 
 	/**
 	 * Constructor.

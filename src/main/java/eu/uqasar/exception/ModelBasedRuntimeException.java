@@ -24,12 +24,8 @@ package eu.uqasar.exception;
 
 
 import eu.uqasar.util.resources.ResourceBundleLocator;
-import java.util.Locale;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
 
 import lombok.Getter;
-import org.apache.wicket.Session;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 
@@ -44,27 +40,27 @@ public class ModelBasedRuntimeException extends RuntimeException {
 
 	private IModel<String> model = Model.of("");
 
-	public ModelBasedRuntimeException() {
+	protected ModelBasedRuntimeException() {
 		fillInStackTrace();
 	}
 
-	public ModelBasedRuntimeException(final String message) {
+	protected ModelBasedRuntimeException(final String message) {
 		fillInStackTrace();
 		model = Model.of(message);
 	}
 
-	public ModelBasedRuntimeException(final String message, Throwable cause) {
+	protected ModelBasedRuntimeException(final String message, Throwable cause) {
 		fillInStackTrace();
 		this.cause = cause;
 		model = Model.of(message);
 	}
 
-	public ModelBasedRuntimeException(IModel<String> messageModel) {
+	protected ModelBasedRuntimeException(IModel<String> messageModel) {
 		fillInStackTrace();
 		model = messageModel;
 	}
 
-	public ModelBasedRuntimeException(IModel<String> messageModel, Throwable cause) {
+	protected ModelBasedRuntimeException(IModel<String> messageModel, Throwable cause) {
 		fillInStackTrace();
 		this.cause = cause;
 		model = messageModel;
@@ -79,7 +75,7 @@ public class ModelBasedRuntimeException extends RuntimeException {
 		return getLabelModel(key, this.getClass());
 	}
 
-	public static IModel<String> getLabelModel(final String key, final Class<?> clazz) {
+	private static IModel<String> getLabelModel(final String key, final Class<?> clazz) {
 		return ResourceBundleLocator.getLabelModel(clazz, key);
 	}
 }

@@ -65,14 +65,12 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * 
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getAllSonarMetricObjects() {
+    private List<SonarMetricMeasurement> getAllSonarMetricObjects() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<SonarMetricMeasurement> query = 
 				cb.createQuery(SonarMetricMeasurement.class);
 		query.from(SonarMetricMeasurement.class);
-		List<SonarMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -127,9 +125,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	
 	
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<SonarMetricMeasurement> metrics) {
 		for (SonarMetricMeasurement m : metrics) {
 			delete(m);
@@ -161,8 +158,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * @param project
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getMeasurementsForProject(
-			String project) {
+    private List<SonarMetricMeasurement> getMeasurementsForProject(
+            String project) {
 		logger.info("Obtaining measurements for the project: " +project);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -184,8 +181,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * @param date
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getMeasurementsForProjectByDate(
-			String project, Date date) {
+    private List<SonarMetricMeasurement> getMeasurementsForProjectByDate(
+            String project, Date date) {
 		logger.info("Obtaining measurements for the project: " +project);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -206,7 +203,6 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	/**
 	 * 
 	 * @param project
-	 * @param date
 	 * @return
 	 */
 	public List<SonarMetricMeasurement> getMeasurementsForProjectByPeriod(String project, String period) {
@@ -239,18 +235,24 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	private Date getDateForPeriod(String period) {
 		DateTime now = DateTime.now();
 		Date date;
-		
-		if(period.equals("Last Year")){
-			date = now.minusMonths(12).toDate(); 
-		} else if(period.equals("Last 6 Months")){
-			date = now.minusMonths(6).toDate(); 
-		} else if(period.equals("Last Month")){
-			date = now.minusMonths(1).toDate(); 
-		} else if(period.equals("Last Week")){
-			date = now.minusWeeks(1).toDate();
-		} else{
-			date = now.minusYears(5).toDate();
-		}
+
+        switch (period) {
+            case "Last Year":
+                date = now.minusMonths(12).toDate();
+                break;
+            case "Last 6 Months":
+                date = now.minusMonths(6).toDate();
+                break;
+            case "Last Month":
+                date = now.minusMonths(1).toDate();
+                break;
+            case "Last Week":
+                date = now.minusWeeks(1).toDate();
+                break;
+            default:
+                date = now.minusYears(5).toDate();
+                break;
+        }
 		//System.out.println("datedatedate:"+date);
 		
 		return date;
@@ -303,8 +305,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
                 newestDate = smm.getTimeStamp();
             }  
         }
-        List<SonarMetricMeasurement> resultListLatest = getMeasurementsForProjectByDate(project,newestDate);
-        return resultListLatest;               
+        return getMeasurementsForProjectByDate(project,newestDate);
     }
 
 	
@@ -315,7 +316,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	public List<String> getSonarProjects() {
 		logger.info("Getting Sonar projects...");
 		List<SonarMetricMeasurement> measurements = getAllSonarMetricObjects();
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		for (SonarMetricMeasurement sonarMetricMeasurement : measurements) {
 			String project = sonarMetricMeasurement.getName();
 			if (!projects.contains(project)) {
@@ -393,16 +394,16 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 					Gson gson = new Gson();
 					SonarMetricMeasurement[] measurement = gson.fromJson(json, 
 							SonarMetricMeasurement[].class);
-					for (int i = 0; i < measurement.length; i++) {
+                    for (SonarMetricMeasurement aMeasurement : measurement) {
 //						logger.info(measurement[i].toString());
-						// Add a timestamp and metric name to the object´
-						measurement[i].setTimeStamp(snapshotTimeStamp);
-						measurement[i].setSonarMetric(metric);
-						measurement[i].setProject(adapterSettings.getProject());
-						measurement[i].setAdapter(adapterSettings);
-						// Create an entity
-						create(measurement[i]);
-					}
+                        // Add a timestamp and metric name to the object´
+                        aMeasurement.setTimeStamp(snapshotTimeStamp);
+                        aMeasurement.setSonarMetric(metric);
+                        aMeasurement.setProject(adapterSettings.getProject());
+                        aMeasurement.setAdapter(adapterSettings);
+                        // Create an entity
+                        create(aMeasurement);
+                    }
 				}					
 			}
 		}

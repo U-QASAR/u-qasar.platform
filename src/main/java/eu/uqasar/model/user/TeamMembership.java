@@ -23,11 +23,9 @@ package eu.uqasar.model.user;
  */
 
 
-import static javax.persistence.CascadeType.MERGE;
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.role.Role;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -36,7 +34,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
-import org.hibernate.annotations.Cascade;
 
 /**
  *

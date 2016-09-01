@@ -37,7 +37,7 @@ public abstract class SnapshotSaveConfirmationModal extends Modal {
 
 	private static final long serialVersionUID = -8215655410653633733L;
 
-	private TextField<String> snapNameTextField;
+	private final TextField<String> snapNameTextField;
 	private ModalActionButton submitButton;
 
 	public SnapshotSaveConfirmationModal(String id, final IModel<String> projectNameModel) {
