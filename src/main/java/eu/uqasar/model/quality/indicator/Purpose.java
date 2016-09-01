@@ -22,6 +22,7 @@ package eu.uqasar.model.quality.indicator;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -59,9 +60,7 @@ public enum Purpose implements IResourceKeyProvider {
 
 	public static List<Purpose> getAllPurposes(){
 		List<Purpose> list = new ArrayList<Purpose>();
-		for (Purpose val : Purpose.values()) {
-		    	list.add(val);
-		}
+        Collections.addAll(list, Purpose.values());
 		return list;
 	}
 

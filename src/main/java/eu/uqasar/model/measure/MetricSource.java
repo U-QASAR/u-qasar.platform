@@ -22,6 +22,7 @@ package eu.uqasar.model.measure;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -68,9 +69,7 @@ public enum MetricSource implements IResourceKeyProvider {
 	
 	public static List<MetricSource> getAllMetricSources(){
 		List<MetricSource> list = new ArrayList<MetricSource>();
-		for (MetricSource val : MetricSource.values()) {
-		    	list.add(val);
-		}
+        Collections.addAll(list, MetricSource.values());
 		return list;
 	}
 

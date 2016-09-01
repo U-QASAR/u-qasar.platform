@@ -22,6 +22,7 @@ package eu.uqasar.model.quality.indicator;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -66,9 +67,7 @@ public enum Domain implements IResourceKeyProvider {
 	
 	public static List<Domain> getAllDomains(){
 		List<Domain> list = new ArrayList<Domain>();
-		for (Domain val : Domain.values()) {
-		    	list.add(val);
-		}
+		Collections.addAll(list, Domain.values());
 		return list;
 	}
 

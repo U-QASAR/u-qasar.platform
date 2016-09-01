@@ -22,6 +22,7 @@ package eu.uqasar.model.measure;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -62,9 +63,7 @@ public enum Scale implements IResourceKeyProvider {
 	
 	public static List<Scale> getAllScales(){
 		List<Scale> list = new ArrayList<Scale>();
-		for (Scale val : Scale.values()) {
-		    	list.add(val);
-		}
+        Collections.addAll(list, Scale.values());
 		return list;
 	}
 

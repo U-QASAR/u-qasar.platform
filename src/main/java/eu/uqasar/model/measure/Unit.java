@@ -24,6 +24,7 @@ package eu.uqasar.model.measure;
 import eu.uqasar.util.resources.IResourceKeyProvider;
 import eu.uqasar.util.resources.ResourceBundleLocator;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.apache.wicket.model.IModel;
 
@@ -80,9 +81,7 @@ public enum Unit implements IResourceKeyProvider {
 	}
 	public static List<Unit> getAllUnits(){
 		List<Unit> list = new ArrayList<Unit>();
-		for (Unit val : Unit.values()) {
-		    	list.add(val);
-		}
+        Collections.addAll(list, Unit.values());
 		return list;
 	}
 
