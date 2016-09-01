@@ -232,9 +232,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 				}
 			}
 			// select half year before
-			for (int i=0; i<=elementCount-1; i++) {
-				numbersHalfYear[i] = numbersFullYear[nowMonth-elementCount+i];
-			}	
+			System.arraycopy(numbersFullYear, nowMonth - elementCount + 0, numbersHalfYear, 0, elementCount - 1 + 1);
 		} else{
 			for (int i=0; i<=numbersFullYear.length-1; i++) {
 				numbersFullYear[i] = 0.0f;
