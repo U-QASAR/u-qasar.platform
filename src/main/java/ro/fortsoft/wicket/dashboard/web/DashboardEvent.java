@@ -22,8 +22,8 @@ public class DashboardEvent {
 	public enum EventType {
 		WIDGET_ADDED,
 		WIDGET_REMOVED,
-		WIDGETS_SORTED;
-	}
+		WIDGETS_SORTED
+    }
 	
 	private final AjaxRequestTarget target;
 	private final EventType type;

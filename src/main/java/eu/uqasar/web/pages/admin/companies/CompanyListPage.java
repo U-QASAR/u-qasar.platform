@@ -337,9 +337,9 @@ public class CompanyListPage extends AdminBasePage {
 
 		public CompanyProvider() {
 			this.filter = null;
-		};
+		}
 
-		public CompanyProvider(CompanyFilterStructure filter) {
+        public CompanyProvider(CompanyFilterStructure filter) {
 			this.filter = filter;
 		}
 

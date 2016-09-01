@@ -192,8 +192,7 @@ public class IssueTrackerDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-			;
-		}
+        }
 
 		;
 	}

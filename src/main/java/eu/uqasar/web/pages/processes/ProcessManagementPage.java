@@ -206,8 +206,8 @@ public class ProcessManagementPage extends BasePage {
 				// add javascript to load tagsinput plugin
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Process-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**
@@ -365,9 +365,9 @@ public class ProcessManagementPage extends BasePage {
 		private ProcessesFilterStructure filter;
 
 		public ProcessProvider() {
-		};
+		}
 
-		public ProcessProvider(ProcessesFilterStructure filter) {
+        public ProcessProvider(ProcessesFilterStructure filter) {
 			this.filter = filter;
 		}
 

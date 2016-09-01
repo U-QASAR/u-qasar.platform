@@ -259,8 +259,7 @@ public class AdapterManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "AdapterSettings-list")));
 			}
-			;
-		}
+        }
 
 		;
 	}

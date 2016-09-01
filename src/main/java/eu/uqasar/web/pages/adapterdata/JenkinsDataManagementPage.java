@@ -185,8 +185,7 @@ public class JenkinsDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "jenkins-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}

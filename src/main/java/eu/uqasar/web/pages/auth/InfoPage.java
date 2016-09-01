@@ -197,7 +197,7 @@ public class InfoPage extends BasePage {
 	 */
 	private enum InfoFragmentType {
 
-		EMPTY, LOGIN, REGISTER, LOGIN_REGISTER, RESEND_REGISTRATION, FORGOT_PASSWORD;
+		EMPTY, LOGIN, REGISTER, LOGIN_REGISTER, RESEND_REGISTRATION, FORGOT_PASSWORD
 	}
 
 	private static class EmptyInfoFragment extends Fragment {

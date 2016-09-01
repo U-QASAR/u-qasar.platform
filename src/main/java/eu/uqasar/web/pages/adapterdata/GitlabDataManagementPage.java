@@ -167,8 +167,7 @@ public class GitlabDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "gitlab-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}

@@ -245,8 +245,8 @@ public class HistoricProjectPage extends BasePage {
 				// add javascript to load tagsinput plugin
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "historic-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**

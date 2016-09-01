@@ -243,8 +243,8 @@ public class HistoricBaseIndicatorPage extends BasePage {
 				super.renderHead(response);
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "historic-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**

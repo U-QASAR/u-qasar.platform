@@ -216,8 +216,7 @@ public class ProductManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -387,9 +386,9 @@ public class ProductManagementPage extends BasePage {
 
 		public ProductProvider() {
 
-		};
+		}
 
-		public void setFilter(ProductFilterStructure filter) {
+        public void setFilter(ProductFilterStructure filter) {
 			this.filter = filter;
 		}
 
