@@ -58,11 +58,9 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 	public static final String BAR_TYPE = "BAR";
 	public static final String LINE_TYPE = "LINE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			LINE_TYPE, 
-			BAR_TYPE,
-			GAUGE_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(LINE_TYPE,
+            BAR_TYPE,
+            GAUGE_TYPE);
 
 	
 	public ProjectQualityGoogleChartWidget() {

@@ -68,7 +68,7 @@ public class UqasarDataVisualizationWidget extends AbstractWidget{
 	private static final long serialVersionUID = -2447400380886027022L;
 	private Title chartTitle = new Title();	
 	
-	public static final List<String> ALL = Arrays.asList(new String[] { "All Quality Parameters"});
+	public static final List<String> ALL = Arrays.asList("All Quality Parameters");
 	
 	public UqasarDataVisualizationWidget() {
 		super();

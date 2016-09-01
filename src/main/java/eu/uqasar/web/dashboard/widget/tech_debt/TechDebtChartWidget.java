@@ -87,10 +87,8 @@ public class TechDebtChartWidget extends AbstractWidget{
 	public static final String BAR_TYPE = "BAR";
 	public static final String PIE_TYPE = "PIE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			PIE_TYPE, 
-			BAR_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(PIE_TYPE,
+            BAR_TYPE);
 
 	private static TechDebtChartFactory chartDataFactory;	
 

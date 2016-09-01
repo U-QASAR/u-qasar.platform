@@ -113,8 +113,8 @@ implements DashboardContextAware {
 		if(noOfItems == null){
 		    noOfItems = "10";
 		}
-		List<String> numbers = Arrays.asList(new String[] { "10", "20",
-            "30", "40", "50", "60", "70", "80", "90", "100" });
+		List<String> numbers = Arrays.asList("10", "20",
+				"30", "40", "50", "60", "70", "80", "90", "100");
 		noOfItemsDp = new DropDownChoice<String>("noOfItemsDp", new PropertyModel<String>(this, "noOfItems"), numbers);
 		noOfItemsDp.setRequired(true);
         form.add(noOfItemsDp);

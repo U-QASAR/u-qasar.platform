@@ -77,11 +77,9 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 	public static final String BAR_TYPE = "BAR";
 	public static final String LINE_TYPE = "LINE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			LINE_TYPE, 
-			BAR_TYPE,
-			GAUGE_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(LINE_TYPE,
+            BAR_TYPE,
+            GAUGE_TYPE);
 
 	private static ProjectQualityChartFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;

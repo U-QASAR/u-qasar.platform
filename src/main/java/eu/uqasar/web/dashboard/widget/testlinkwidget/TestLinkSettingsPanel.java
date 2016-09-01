@@ -127,7 +127,7 @@ implements DashboardContextAware {
 		});
 
 		// Period
-		List<String> timeIntervals = Arrays.asList(new String[] { "Last Year", "Last 6 Months", "Last Month", "Last Week" });
+		List<String> timeIntervals = Arrays.asList("Last Year", "Last 6 Months", "Last Month", "Last Week");
 		form.add(new DropDownChoice<String>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
 
 

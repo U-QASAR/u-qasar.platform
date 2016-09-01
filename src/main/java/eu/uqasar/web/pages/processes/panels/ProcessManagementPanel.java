@@ -40,8 +40,8 @@ public abstract class ProcessManagementPanel extends Panel {
 	private static final long serialVersionUID = 1L;
 
 	private static final List<String> orderSelection = Arrays
-			.asList(new String[] { "Ascending Date Order",
-					"Descending Date Order" });
+			.asList("Ascending Date Order",
+                    "Descending Date Order");
 	public static String ASCENDING_IS_SELECTED = "Ascending Date Order";
 	public static String DESCENDING_IS_SELECTED = "Descending Date Order";
 

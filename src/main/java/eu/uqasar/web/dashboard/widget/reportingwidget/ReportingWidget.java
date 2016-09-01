@@ -67,7 +67,7 @@ public class ReportingWidget extends AbstractWidget {
     public static final String PIE_TYPE = "PIE";
 
     public static final List<String> TYPES = 
-    		Arrays.asList(new String[] { COLUMN_TYPE, PIE_TYPE });
+    		Arrays.asList(COLUMN_TYPE, PIE_TYPE);
 
     private static ReportingFactory chartDataFactory;
 

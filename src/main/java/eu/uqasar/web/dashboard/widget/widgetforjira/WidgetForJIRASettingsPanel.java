@@ -101,8 +101,8 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 		form.add(wmcGeneral);
 
 		chartType = getModelObject().getSettings().get("chartType");
-		List<String> chartTypes = Arrays.asList(new String[] { "AREA", "BAR", "LINE", "COLUMN" });
-		List<String> timeIntervals = Arrays.asList(new String[] { "Last Year", "Last 6 Months", "Last Month", "Last Week", "Latest" });
+		List<String> chartTypes = Arrays.asList("AREA", "BAR", "LINE", "COLUMN");
+		List<String> timeIntervals = Arrays.asList("Last Year", "Last 6 Months", "Last Month", "Last Week", "Latest");
 
 		wmcGeneral.add(new DropDownChoice<String>("chartType", new PropertyModel<String>(this, "chartType"), chartTypes));
 
