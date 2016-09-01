@@ -207,14 +207,14 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 				Gson gson = new Gson();
 				CubesMetricMeasurement[] CubesMetricMeasurement = gson.fromJson(json, 
 						CubesMetricMeasurement[].class);
-				for (int i = 0; i < CubesMetricMeasurement.length; i++) {
-					// Add a timestamp and metric name to the object
-					CubesMetricMeasurement[i].setTimeStamp(snapshotTimeStamp);
-					CubesMetricMeasurement[i].setCubesMetric(metric);
-					CubesMetricMeasurement[i].setProject(settings.getProject());
-					CubesMetricMeasurement[i].setAdapter(settings);
-					create(CubesMetricMeasurement[i]);
-				}
+                for (eu.uqasar.model.measure.CubesMetricMeasurement aCubesMetricMeasurement : CubesMetricMeasurement) {
+                    // Add a timestamp and metric name to the object
+                    aCubesMetricMeasurement.setTimeStamp(snapshotTimeStamp);
+                    aCubesMetricMeasurement.setCubesMetric(metric);
+                    aCubesMetricMeasurement.setProject(settings.getProject());
+                    aCubesMetricMeasurement.setAdapter(settings);
+                    create(aCubesMetricMeasurement);
+                }
 			}
 		}
 

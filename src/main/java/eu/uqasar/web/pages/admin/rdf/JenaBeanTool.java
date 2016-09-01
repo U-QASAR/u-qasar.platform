@@ -94,8 +94,8 @@ public class JenaBeanTool implements JenaBean {
      */
     public void convertToRdf() {
         loggerJenaBean.info("Transform objects to beans.");
-        for (int i = 0; i < listOfObjects.size(); i++) {
-            writer.save(listOfObjects.get(i));
+        for (Object listOfObject : listOfObjects) {
+            writer.save(listOfObject);
         }
     }
 

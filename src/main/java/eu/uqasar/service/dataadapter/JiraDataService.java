@@ -51,6 +51,7 @@ import eu.uqasar.qualifier.Conversational;
 import eu.uqasar.service.AbstractService;
 import eu.uqasar.util.UQasarUtil;
 import us.monoid.json.JSONException;
+import us.monoid.json.JSONObject;
 import us.monoid.web.JSONResource;
 import us.monoid.web.Resty;
 
@@ -192,32 +193,32 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 				Gson gson = new Gson();
 				JiraMetricMeasurement[] jiraMetricMeasurement = gson.fromJson(json, 
 						JiraMetricMeasurement[].class);
-				for (int i = 0; i < jiraMetricMeasurement.length; i++) {
-					// Add a timestamp and metric name to the object
-					jiraMetricMeasurement[i].setTimeStamp(snapshotTimeStamp);
-					jiraMetricMeasurement[i].setJiraMetric(metric);
-					jiraMetricMeasurement[i].setProject(settings.getProject());
-					jiraMetricMeasurement[i].setAdapter(settings);
+                for (JiraMetricMeasurement aJiraMetricMeasurement : jiraMetricMeasurement) {
+                    // Add a timestamp and metric name to the object
+                    aJiraMetricMeasurement.setTimeStamp(snapshotTimeStamp);
+                    aJiraMetricMeasurement.setJiraMetric(metric);
+                    aJiraMetricMeasurement.setProject(settings.getProject());
+                    aJiraMetricMeasurement.setAdapter(settings);
 
-					// Get the url from the measurement for fetching the JSON content 
-					String url = jiraMetricMeasurement[i].getSelf();
-					String jsonContent = "";
-					try {
-						JSONResource res = resty.json(url);
-						us.monoid.json.JSONObject jobj = res.toObject();
-						//						logger.info(jobj.toString());
-						jsonContent = jobj.toString();
-						//						logger.info("JSON Content: " +jsonContent);
-						jiraMetricMeasurement[i].setJsonContent(jsonContent);
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (JSONException e) {
-						e.printStackTrace();
-					}
+                    // Get the url from the measurement for fetching the JSON content
+                    String url = aJiraMetricMeasurement.getSelf();
+                    String jsonContent = "";
+                    try {
+                        JSONResource res = resty.json(url);
+                        JSONObject jobj = res.toObject();
+                        //						logger.info(jobj.toString());
+                        jsonContent = jobj.toString();
+                        //						logger.info("JSON Content: " +jsonContent);
+                        aJiraMetricMeasurement.setJsonContent(jsonContent);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
-					// persist the measurement
-					create(jiraMetricMeasurement[i]);
-				}
+                    // persist the measurement
+                    create(aJiraMetricMeasurement);
+                }
 			}
 		}
 		// Set timestamp to the adapter settings

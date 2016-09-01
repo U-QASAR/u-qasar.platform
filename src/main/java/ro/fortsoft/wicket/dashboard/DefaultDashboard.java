@@ -103,12 +103,12 @@ public class DefaultDashboard implements Dashboard {
 		// Now do not add widget, if there already is one with the 
 		// given id.
 		boolean exists = false;
-		for (int i = 0; i < widgets.size(); i++) {
-			if (widgets.get(i).getId().equals(widget.getId())) {
-				exists = true;
-				break;
-			}
-		}
+        for (Widget widget1 : widgets) {
+            if (widget1.getId().equals(widget.getId())) {
+                exists = true;
+                break;
+            }
+        }
 		if (!exists) {
 			widgets.add(widget);
 		}

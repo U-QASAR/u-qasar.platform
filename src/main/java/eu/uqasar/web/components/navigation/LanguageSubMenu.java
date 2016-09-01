@@ -80,7 +80,7 @@ public class LanguageSubMenu extends NavbarDropDownButton {
 				containingPage.getPageParameters());
 		params.remove("lang");
 		params.add("lang", language.getLocale().getLanguage());
-		BootstrapBookmarkablePageLink<Page> link = new MenuBookmarkablePageLink<>(
+		BootstrapBookmarkablePageLink<Page> link = new MenuBookmarkablePageLink<Page>(
                 containingPage.getPageClass(), params, Model.of(locale
                 .getDisplayLanguage(locale))).setIconType(new IconType(
 								"please-ignore-me"));

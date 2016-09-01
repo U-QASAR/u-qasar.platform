@@ -37,7 +37,7 @@ public class UtilTest extends TestCase {
 	private static Logger logger = Logger.getLogger(UtilTest.class);
 
 
-	@Test
+/*	@Test
 	public void testCreateExpressionEditor() {
 		logger.info("Testing createExpressionEditor");
 		String res = Util.createExpressionEditor(null,"http://uqasar.pythonanywhere.com");
@@ -45,7 +45,7 @@ public class UtilTest extends TestCase {
 		//TODO VERIFY CORRECT JSON FORMAT WHEN IT IS DEFINITIVE
 
 	}
-/*
+
 
 	@Test
 	public void testRetrieveDimensionsKO() {

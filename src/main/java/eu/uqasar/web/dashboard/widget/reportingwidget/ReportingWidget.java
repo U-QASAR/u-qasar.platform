@@ -279,8 +279,8 @@ public class ReportingWidget extends AbstractWidget {
             // Add all those points to one series
             PointSeries series = new PointSeries();
             series.setType(SeriesType.PIE);
-            for (int i = 0; i < pointList.size(); i++) {
-                series.addPoint(pointList.get(i));
+            for (Point aPointList : pointList) {
+                series.addPoint(aPointList);
             }
             pieOptions.addSeries(series);
             return pieOptions;

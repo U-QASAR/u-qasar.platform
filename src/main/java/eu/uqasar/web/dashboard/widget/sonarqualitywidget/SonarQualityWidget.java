@@ -228,9 +228,9 @@ public class SonarQualityWidget extends AbstractWidget {
 		// incoming metrics are already sorted by timestamp descending (newest at beginning)
 		List<SonarMetricMeasurement> latestMetrics = new ArrayList<>();
 		if (metrics != null && !metrics.isEmpty()) {
-			for (int i = 0; i < metrics.size(); i++) {
-				latestMetrics.add(metrics.get(i));
-			}
+            for (SonarMetricMeasurement metric : metrics) {
+                latestMetrics.add(metric);
+            }
 		}
 		return latestMetrics;
 	}

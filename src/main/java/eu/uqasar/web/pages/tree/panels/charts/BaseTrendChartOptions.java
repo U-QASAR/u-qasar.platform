@@ -166,8 +166,8 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 
 			for (int i = 0; i < seriesElementCount; i++) {
 				int seriesValueSum = 0;
-				for (int j = 0; j < seriesValues.size(); j++) {
-					seriesValueSum += seriesValues.get(j)[i].intValue();
+				for (Number[] seriesValue : seriesValues) {
+					seriesValueSum += seriesValue[i].intValue();
 				}
 				averages[i] = (float) seriesValueSum
 						/ (float) seriesValues.size();

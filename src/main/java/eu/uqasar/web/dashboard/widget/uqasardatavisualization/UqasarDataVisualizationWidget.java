@@ -259,18 +259,18 @@ public class UqasarDataVisualizationWidget extends AbstractWidget{
 						   Qmetrics = new LinkedList<>();						
 	
 			Qmodels.add(proj.getParent());
-	
-			for(int obj=0; obj< Qobjectives.size(); obj++){
-				int QOsize = Qobjectives.get(obj).getChildren().size();
-				for(int indicator=0; indicator< QOsize; indicator++){
-					Qindicators.add(Qobjectives.get(obj).getChildren().get(indicator));
+
+			for (TreeNode Qobjective : Qobjectives) {
+				int QOsize = Qobjective.getChildren().size();
+				for (int indicator = 0; indicator < QOsize; indicator++) {
+					Qindicators.add(Qobjective.getChildren().get(indicator));
 				}
 			}
-	
-			for(int ind=0; ind < Qindicators.size(); ind++){
-				int QIsize = Qindicators.get(ind).getChildren().size();
-				for(int metric = 0; metric < QIsize; metric++){
-					Qmetrics.add(Qindicators.get(ind).getChildren().get(metric));
+
+			for (TreeNode Qindicator : Qindicators) {
+				int QIsize = Qindicator.getChildren().size();
+				for (int metric = 0; metric < QIsize; metric++) {
+					Qmetrics.add(Qindicator.getChildren().get(metric));
 				}
 			}	
 	

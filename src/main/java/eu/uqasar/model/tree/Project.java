@@ -666,16 +666,15 @@ public class Project extends TreeNode implements Comparable<Project> {
 		// Create a sum formula
 		evalFormula += "(";
 		viewFormula += "(";
-		for (int i = 0; i < nodes.size(); i++) {
-			TreeNode node = nodes.get(i);
-			if (node instanceof QualityObjective) {
-				QualityObjective obj = (QualityObjective) node;
-				evalFormula += obj.getValue();
-				viewFormula += obj.getName();
-			}
-			evalFormula += "+";
-			viewFormula += "+";
-		}
+        for (TreeNode node : nodes) {
+            if (node instanceof QualityObjective) {
+                QualityObjective obj = (QualityObjective) node;
+                evalFormula += obj.getValue();
+                viewFormula += obj.getName();
+            }
+            evalFormula += "+";
+            viewFormula += "+";
+        }
 
 		if (evalFormula.endsWith("+")) {
 			evalFormula = evalFormula.substring(0, evalFormula.length() - 1);

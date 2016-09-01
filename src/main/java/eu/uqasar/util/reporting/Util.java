@@ -82,9 +82,9 @@ public class Util {
                 + "                    operators: [\"equal\"]\n"
                 + "                }";
 
-        for (int i = 0; i < dimensions.size(); i++) {
+        for (Object dimension1 : dimensions) {
             //get dimensions
-            String dimension = (String) dimensions.get(i);
+            String dimension = (String) dimension1;
             ArrayList retvalues = (ArrayList) retrieveValues(cubeurl + "/members/" + dimension, dimension);
 
             script += ", {\n"

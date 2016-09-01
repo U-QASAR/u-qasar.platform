@@ -393,16 +393,16 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 					Gson gson = new Gson();
 					SonarMetricMeasurement[] measurement = gson.fromJson(json, 
 							SonarMetricMeasurement[].class);
-					for (int i = 0; i < measurement.length; i++) {
+                    for (SonarMetricMeasurement aMeasurement : measurement) {
 //						logger.info(measurement[i].toString());
-						// Add a timestamp and metric name to the object´
-						measurement[i].setTimeStamp(snapshotTimeStamp);
-						measurement[i].setSonarMetric(metric);
-						measurement[i].setProject(adapterSettings.getProject());
-						measurement[i].setAdapter(adapterSettings);
-						// Create an entity
-						create(measurement[i]);
-					}
+                        // Add a timestamp and metric name to the object´
+                        aMeasurement.setTimeStamp(snapshotTimeStamp);
+                        aMeasurement.setSonarMetric(metric);
+                        aMeasurement.setProject(adapterSettings.getProject());
+                        aMeasurement.setAdapter(adapterSettings);
+                        // Create an entity
+                        create(aMeasurement);
+                    }
 				}					
 			}
 		}
