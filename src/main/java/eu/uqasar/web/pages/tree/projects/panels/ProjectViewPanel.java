@@ -364,7 +364,7 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 	}
 
 	private IModel<?> replaceBracketsModel(Label label) {
-		return Model.of(label.getDefaultModelObjectAsString().toString()
+		return Model.of(label.getDefaultModelObjectAsString()
 				.replace("[", "").replace("]", ""));
 	}
 

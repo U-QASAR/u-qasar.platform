@@ -416,7 +416,7 @@ public class SubsetProposalPanel extends Panel {
 			@Override
 			public void onConfigure(){
 				super.onConfigure();
-				setDefaultModel(Model.of(this.getDefaultModelObjectAsString().toString().replace("[", "").replace("]", "")));
+				setDefaultModel(Model.of(this.getDefaultModelObjectAsString().replace("[", "").replace("]", "")));
 				if(this.getDefaultModelObjectAsString().isEmpty()){
 					wmc.setVisible(false);
 				}

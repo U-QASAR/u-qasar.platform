@@ -136,6 +136,6 @@ public class MetricViewPanel extends QMBaseTreePanel<QMMetric> {
 	}
 	
 	private IModel<?> replaceBracketsModel(Label label) {
-		return Model.of(label.getDefaultModelObjectAsString().toString().replace("[", "").replace("]", ""));
+		return Model.of(label.getDefaultModelObjectAsString().replace("[", "").replace("]", ""));
 	}
 }

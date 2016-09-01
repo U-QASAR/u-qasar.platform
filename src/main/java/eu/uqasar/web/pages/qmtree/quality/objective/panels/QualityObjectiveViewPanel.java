@@ -176,6 +176,6 @@ public class QualityObjectiveViewPanel extends QMBaseTreePanel<QMQualityObjectiv
 	}
 	
 	private IModel<?> replaceBracketsModel(Label label) {
-		return Model.of(label.getDefaultModelObjectAsString().toString().replace("[", "").replace("]", ""));
+		return Model.of(label.getDefaultModelObjectAsString().replace("[", "").replace("]", ""));
 	}
 }
