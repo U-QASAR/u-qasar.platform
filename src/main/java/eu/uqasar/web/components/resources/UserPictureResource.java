@@ -109,7 +109,7 @@ public class UserPictureResource extends DynamicImageResource {
 				bytes = baos.toByteArray();
 			}
 			return bytes;
-		} catch (IOException | ResourceStreamNotFoundException ex) {
+		} catch (IOException | ResourceStreamNotFoundException ignored) {
 		}
 		return null;
 	}

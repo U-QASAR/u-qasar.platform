@@ -260,7 +260,7 @@ public class UQasarMessage extends MimeMessage {
 					try {
 						bundle = ResourceBundle.getBundle(clazz.getCanonicalName(), localeT, clazz.getClassLoader());
 						return bundle;
-					} catch (MissingResourceException ex2) {
+					} catch (MissingResourceException ignored) {
 					}
 				}
 			}

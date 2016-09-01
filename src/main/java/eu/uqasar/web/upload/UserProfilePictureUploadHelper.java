@@ -104,7 +104,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 			try (FileOutputStream baos = new FileOutputStream(target.toFile())) {
 				ImageIO.write(thumb, "PNG", baos);
 			}
-		} catch (IOException ex) {
+		} catch (IOException ignored) {
 		}
 		return target;
 	}

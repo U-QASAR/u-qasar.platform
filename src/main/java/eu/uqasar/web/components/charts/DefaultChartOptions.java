@@ -60,7 +60,7 @@ public class DefaultChartOptions extends Options {
 			lang.setResetZoom(bundle.getString("chart.button.reset.zoom"));
 			lang.setResetZoomTitle(bundle
 					.getString("chart.button.title.reset.zoom"));
-		} catch (MissingResourceException e) {
+		} catch (MissingResourceException ignored) {
 		}
 
 		return lang;

@@ -57,7 +57,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 			if (attribute != null) {
 				return (T) attribute.get();
 			}
-		} catch (NamingException e) {
+		} catch (NamingException ignored) {
 		}
 		return null;
 	}
@@ -68,7 +68,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 			if (attribute != null) {
 				return (T) attribute.get();
 			}
-		} catch (NamingException e) {
+		} catch (NamingException ignored) {
 		}
 		return null;
 	}
