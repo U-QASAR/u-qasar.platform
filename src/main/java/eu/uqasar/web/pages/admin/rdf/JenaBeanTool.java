@@ -76,7 +76,7 @@ public class JenaBeanTool implements JenaBean {
      *
      */
     public void isEmpty() {
-        if (listOfObjects.isEmpty() == true) {
+        if (listOfObjects.isEmpty()) {
             loggerJenaBean.info("ArrayList doesn't have any objects!");
         } else {
             if (listOfObjects.size() == 1) {

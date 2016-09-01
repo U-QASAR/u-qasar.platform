@@ -187,7 +187,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 		String boundSystemURL = settings.getUrl();
 		String project = settings.getAdapterProject();
 
-		if(testConnectionToServer(boundSystemURL,10000) == false) return;
+		if(!testConnectionToServer(boundSystemURL, 10000)) return;
 
 		//TODO: Manu, create Cubes adapter
 		CubesAdapter adapter = new CubesAdapter();

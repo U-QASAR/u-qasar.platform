@@ -119,7 +119,7 @@ public class DashboardViewPage extends BasePage {
 			}
 		} 
 
-		if (!parameters.get("useSuggestion").isEmpty() && parameters.get("useSuggestion").toBoolean() == true) {
+		if (!parameters.get("useSuggestion").isEmpty() && parameters.get("useSuggestion").toBoolean()) {
 
 			logger.info("Getting a suggestion for recommended dashboard setup.");
 			DbDashboard dbDash = (DbDashboard) dashboard;

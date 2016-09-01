@@ -209,7 +209,7 @@ public class ErrorPage extends BasePage {
 			sb.append("Last cause: ").append(cause.getMessage()).append('\n');
 			if (throwable instanceof WicketRuntimeException) {
 				String msg = throwable.getMessage();
-				if ((msg != null) && (msg.equals(cause.getMessage()) == false)) {
+				if ((msg != null) && (!msg.equals(cause.getMessage()))) {
 					if (throwable instanceof MarkupException) {
 						MarkupStream stream = ((MarkupException) throwable).getMarkupStream();
 						if (stream != null) {

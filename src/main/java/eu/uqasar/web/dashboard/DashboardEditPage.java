@@ -130,7 +130,7 @@ public class DashboardEditPage extends BasePage {
 	protected void onConfigure() {
 		super.onConfigure();
 		
-		if (suggestionCheck.getModelObject() == true) {
+		if (suggestionCheck.getModelObject()) {
 			allWidgetCheck.setModelObject(false);
 			
 		} else {

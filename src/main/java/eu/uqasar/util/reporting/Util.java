@@ -127,7 +127,7 @@ public class Util {
         ArrayList objToReturn = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 JSONObject json = readJsonFromUrl(url);
@@ -157,7 +157,7 @@ public class Util {
         ArrayList objToReturn = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 System.out.println("to url pou prospatho na xtipitso" + url);
@@ -189,7 +189,7 @@ public class Util {
 
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 is = new URL(url).openStream();
@@ -215,7 +215,7 @@ public class Util {
 
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 is = new URL(url).openStream();
@@ -248,7 +248,7 @@ public class Util {
         ArrayList ret = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 JSONObject json = Util.readJsonFromUrl(url);
                 if (json.has("error")) {

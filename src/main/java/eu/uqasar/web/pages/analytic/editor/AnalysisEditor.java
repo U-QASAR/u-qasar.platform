@@ -79,7 +79,7 @@ public class AnalysisEditor extends BasePage {
 		
 		// Check if the passed value is a new analysis or an existing one 
 		if (parameters != null && parameters.get("analysis-id") != null
-				&& parameters.get("analysis-id").toOptionalString().equals("new") == true) {
+				&& parameters.get("analysis-id").toOptionalString().equals("new")) {
 			analysis = new Analysis();
 		} else {
 			analysis = analyticService.getById(parameters.get("analysis-id").toOptionalLong());

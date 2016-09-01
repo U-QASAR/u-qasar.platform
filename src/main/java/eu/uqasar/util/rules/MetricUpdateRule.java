@@ -161,7 +161,7 @@ public class MetricUpdateRule extends BasicRule {
             }
         }
         UQasarUtil.getNotifications().removeAll(notificationsRemoved);
-        if (checkConditionManually() == true) {
+        if (checkConditionManually()) {
             
             logger.info("Note! Metric needs to be updated)");
 

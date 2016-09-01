@@ -107,7 +107,7 @@ public class AnnotationBasedAuthorizationStrategy extends AbstractAuthorizationS
 		if (authorizeActionAnnotation != null) {
 			if (action.getName().equals(authorizeActionAnnotation.action())) {
 				Role[] deniedRoles = authorizeActionAnnotation.deny();
-				if ((isEmpty(deniedRoles) == false) && hasAny(deniedRoles)) {
+				if ((!isEmpty(deniedRoles)) && hasAny(deniedRoles)) {
 					return false;
 				}
 

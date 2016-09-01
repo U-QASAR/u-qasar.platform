@@ -81,11 +81,9 @@ public class TreeNode extends
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
     String nodeKey;
 
-	@XmlTransient
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
     String name;
 
-	@XmlTransient
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
     @Lob
     String description;
