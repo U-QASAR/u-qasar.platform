@@ -192,7 +192,6 @@ public class ProductAddEditPage extends BasePage {
 
 	/**
 	 * 
-	 * @param someDateTextField
 	 * @return
 	 */
 	private InputBorder<Date> newReleaseDateTextField(

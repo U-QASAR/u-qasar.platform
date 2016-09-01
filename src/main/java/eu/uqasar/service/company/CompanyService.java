@@ -48,7 +48,6 @@ public class CompanyService extends AbstractService<Company> {
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Company> getAllByAscendingName() {
@@ -62,7 +61,6 @@ public class CompanyService extends AbstractService<Company> {
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Company> getAllByAscendingNameFiltered(CompanyFilterStructure filter, int first, int count) {

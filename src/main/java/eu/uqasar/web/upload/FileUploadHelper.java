@@ -109,10 +109,6 @@ public abstract class FileUploadHelper extends FileUploadUtil implements Seriali
 	 * Processes and writes the uploaded file into the upload folder of the
 	 * given user and overwrites any existing file.
 	 *
-	 * @see
-	 * FileUploadHelper#processUserFileUpload(org.apache.wicket.markup.html.form.upload.FileUpload,
-	 * boolean)
-	 *
 	 * @param file The uploaded file to be stored in the upload folder of the
 	 * givenuser.
 	 * @param user The user object used for determining the upload folder where

@@ -64,8 +64,7 @@ public class VisualProjectPanel extends Panel {
 	/**
 	 * Constructor building the page
 	 *
-	 * @param parameters
-	 */
+     */
 	public VisualProjectPanel(final String markupId) {
 		super(markupId);
 		

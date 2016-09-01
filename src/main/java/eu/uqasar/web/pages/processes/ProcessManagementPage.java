@@ -308,7 +308,6 @@ public class ProcessManagementPage extends BasePage {
 
 	/**
 	 * 
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedProcesses(

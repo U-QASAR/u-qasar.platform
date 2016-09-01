@@ -226,7 +226,6 @@ public class TestFrameworkDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -365,7 +364,6 @@ public class TestFrameworkDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forTestLink(TestLinkMetricMeasurement testLinkMeasurement) {

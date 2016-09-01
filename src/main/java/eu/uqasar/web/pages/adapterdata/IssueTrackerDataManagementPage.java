@@ -219,7 +219,6 @@ public class IssueTrackerDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -304,7 +303,6 @@ public class IssueTrackerDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedMeasurements(

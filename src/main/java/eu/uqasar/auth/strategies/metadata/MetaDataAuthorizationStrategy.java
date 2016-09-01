@@ -293,9 +293,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 *
 	 * @param component The component
 	 * @param action The action
-	 * @param rolesroles The set of roles that are no longer allowed to perform the
-	 * given action
-	 */
+     */
 	private static void unauthorize(final Component component, final Action action, final EnumSet<Role> roleslevels) {
 		unauthorize(component, action, roleslevels.toArray(new Role[roleslevels.size()]));
 	}

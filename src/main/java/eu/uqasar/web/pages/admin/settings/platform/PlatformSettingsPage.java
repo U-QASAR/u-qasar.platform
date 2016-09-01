@@ -164,7 +164,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param AdapterSettings
      * @return
      */
     private static PageParameters forSetting(PlatformSettings setting) {
@@ -203,7 +202,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param productGroup
      * @return
      */
     private AjaxSubmitLink newDeleteSelectedButton(final CheckGroup<PlatformSettings> adapterGroup) {
@@ -282,7 +280,6 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     /**
      *
-     * @param products
      * @param target
      */
     private void deleteSelectedAdapters(Collection<PlatformSettings> adapters, AjaxRequestTarget target) {

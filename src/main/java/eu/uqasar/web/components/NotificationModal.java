@@ -44,7 +44,6 @@ public class NotificationModal extends Modal {
 	/**
 	 * 
 	 * @param id
-	 * @param model
 	 * @param showImmediately
 	 */
 	public NotificationModal(final String id, final IModel<String> headerModel,

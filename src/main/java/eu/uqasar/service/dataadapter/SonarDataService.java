@@ -127,9 +127,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	
 	
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<SonarMetricMeasurement> metrics) {
 		for (SonarMetricMeasurement m : metrics) {
 			delete(m);
@@ -206,7 +205,6 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	/**
 	 * 
 	 * @param project
-	 * @param date
 	 * @return
 	 */
 	public List<SonarMetricMeasurement> getMeasurementsForProjectByPeriod(String project, String period) {

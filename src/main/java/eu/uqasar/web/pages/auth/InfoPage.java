@@ -159,8 +159,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @param headerMarkupId
 	 * @param messageMarkupId
-	 * @param infoFragment
-	 */
+     */
 	private InfoPage(final String headerMarkupId, final String messageMarkupId,
 			final InfoFragmentType infoFragmentType,
 			final IModel<String> model, final PageParameters parameters) {

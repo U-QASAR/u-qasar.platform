@@ -289,7 +289,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -366,7 +365,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedAdapters(
@@ -448,7 +446,6 @@ public class AdapterManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param AdapterSettings
 	 * @return
 	 */
 	private static PageParameters forAdapter(AdapterSettings adapter) {

@@ -291,9 +291,7 @@ public class UQasarRestService implements Serializable {
 	
 	/**
 	 * Return historical values for a treenode as JSON formatted string 
-	 * @param name : full name of the Quality Project 
-	 * @param treenodeid : Id of the treenode for which the historical values are to be fetched
-	 * @return json string 
+	 * @return json string
 	 * @throws IOException 
 	 * @throws JsonMappingException 
 	 * @throws JsonGenerationException 

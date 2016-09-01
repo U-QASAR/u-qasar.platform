@@ -213,7 +213,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -294,7 +293,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedMeasurements(
@@ -346,7 +344,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 	}
 
 	/**
-	 * @param project
 	 * @return
 	 */
 	private ExternalLink linkCubesQuery(

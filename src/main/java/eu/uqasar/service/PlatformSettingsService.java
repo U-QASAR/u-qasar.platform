@@ -57,8 +57,7 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
     }
 
     /**
-     * 
-     * @param processes
+     *
      */
     public void delete(Collection<PlatformSettings> settings) {
         for (PlatformSettings setting : settings) {
@@ -68,7 +67,6 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
 
     /**
      * 
-     * @param processId
      * @return
      */
     public boolean ProjectSettingsExists(Long projectSettingId) {

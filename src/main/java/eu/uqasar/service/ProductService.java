@@ -57,7 +57,6 @@ public class ProductService extends AbstractService<Product> {
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Product> getAllByAscendingName(int first, int count) {

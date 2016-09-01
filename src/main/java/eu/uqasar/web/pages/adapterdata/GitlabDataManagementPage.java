@@ -194,7 +194,6 @@ public class GitlabDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -323,7 +322,6 @@ public class GitlabDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forGitlab(GitlabMetricMeasurement gitlabMeasurement) {

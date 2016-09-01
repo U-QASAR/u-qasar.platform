@@ -268,7 +268,6 @@ public class HistoricBaseIndicatorPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -369,8 +368,7 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	/**
 	 *
 	 * @param modal
-	 * @param targetcubes
-	 */
+     */
 	private void closeDeleteConfirmationModal(final Modal modal,
 			AjaxRequestTarget target) {
 		// close

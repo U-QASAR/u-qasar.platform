@@ -117,9 +117,8 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	}
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<CubesMetricMeasurement> metrics) {
 		for (CubesMetricMeasurement m : metrics) {
 			delete(m);

@@ -32,7 +32,6 @@ import eu.uqasar.model.role.Role;
 /**
  *
  *
- * @param <T>
  */
 public class UserRoleChoiceProvider  extends TextChoiceProvider<Role> {
 

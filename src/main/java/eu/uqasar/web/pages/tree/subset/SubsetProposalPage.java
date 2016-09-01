@@ -125,8 +125,7 @@ public class SubsetProposalPage extends BasePage{
 	/**
 	 *
 	 * @param modal
-	 * @param targetcubes
-	 */
+     */
 	private void closeSaveConfirmationModal(final Modal modal,
 			AjaxRequestTarget target) {
 		// close

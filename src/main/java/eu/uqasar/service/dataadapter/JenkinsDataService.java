@@ -75,9 +75,8 @@ public class JenkinsDataService extends AbstractService<JenkinsMetricMeasurement
 	}	
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<JenkinsMetricMeasurement> metrics) {
 		for (JenkinsMetricMeasurement m : metrics) {
 			delete(m);

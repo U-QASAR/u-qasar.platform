@@ -135,9 +135,8 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<JiraMetricMeasurement> metrics) {
 		for (JiraMetricMeasurement m : metrics) {
 			delete(m);
@@ -315,7 +314,6 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 	/**
 	 * 
 	 * @param metric
-	 * @param date
 	 * @return
 	 * @throws uQasarException
 	 */
@@ -419,7 +417,6 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 	/**
 	 * 
 	 * @param metric
-	 * @param date
 	 * @return
 	 * @throws uQasarException
 	 */
@@ -447,7 +444,6 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 	/**
 	 * 
 	 * @param metric
-	 * @param date
 	 * @return
 	 * @throws uQasarException
 	 */

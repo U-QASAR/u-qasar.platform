@@ -72,9 +72,8 @@ public class SnapshotViewPanel extends Panel {
 	
 	/**
 	 * Constructor building the page
-	 * @param snap 
-	 * @param parameters
-	 */
+	 * @param snap
+     */
 	public SnapshotViewPanel(final String markupId, IModel<Snapshot> snap) {
 		super(markupId);
 		
@@ -126,7 +125,6 @@ public class SnapshotViewPanel extends Panel {
 
 	/**
 	 * @param markupId
-	 * @param item
 	 * @return Returns a WebMarkContainer with the item details of an element of the tree
 	 */
 	private WebMarkupContainer drawTreeElement(String markupId, TreeNode node){

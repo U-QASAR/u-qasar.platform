@@ -212,7 +212,6 @@ public class JenkinsDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -341,7 +340,6 @@ public class JenkinsDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forJenkins(JenkinsMetricMeasurement jenkinsMeasurement) {

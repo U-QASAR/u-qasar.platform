@@ -75,9 +75,8 @@ public class GitlabDataService extends AbstractService<GitlabMetricMeasurement> 
 	}	
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<GitlabMetricMeasurement> metrics) {
 		for (GitlabMetricMeasurement m : metrics) {
 			delete(m);

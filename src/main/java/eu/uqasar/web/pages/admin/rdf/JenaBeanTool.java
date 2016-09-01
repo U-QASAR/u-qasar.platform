@@ -90,7 +90,6 @@ public class JenaBeanTool implements JenaBean {
     /**
      * Transformation from instances to the RDF.
      *
-     * @param list List of instances.
      */
     private void convertToRdf() {
         loggerJenaBean.info("Transform objects to beans.");

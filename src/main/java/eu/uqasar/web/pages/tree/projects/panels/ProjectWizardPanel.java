@@ -220,8 +220,7 @@ public class ProjectWizardPanel extends Wizard{
 		/**
 		 * 
 		 * @param markupId
-		 * @param model
-		 * @return 
+		 * @return
 		 */
 		private TextField<Project> newTextField(String markupId, Project project, String property){
 			return new TextField<>(markupId, new PropertyModel<Project>(project, property));
@@ -1266,9 +1265,7 @@ public class ProjectWizardPanel extends Wizard{
 	/**
 	 * 
 	 * @param user
-	 * @param types
-	 * @param type
-	 */
+     */
 	private <T> void matchSoftwareEngineeringData(User user, Set<T> userTypes, Set<T> projectTypes) {	
 		for(T userType : userTypes){
 			for(T projectType : projectTypes){

@@ -105,8 +105,7 @@ public class SubsetProposalPanel extends Panel {
 
 	/**
 	 * @param markupId
-	 * @param newProjectTags
-	 */
+     */
 	public SubsetProposalPanel(final String markupId, final Project project) {
 		super(markupId);
 

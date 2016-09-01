@@ -191,8 +191,7 @@ public class QualityIndicator extends BaseIndicator {
 	}
 
 	/**
-	 * @param formula the view formula to set
-	 */
+     */
 	@JsonIgnore
 	public void setViewFormula(String viewFormula) {
 		this.viewFormula = viewFormula;

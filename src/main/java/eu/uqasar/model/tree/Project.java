@@ -548,8 +548,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	}
 	
 	/**
-	 * @param Add Historical values from project
-	 */
+     */
     private void addHistoricValues(final Project project) {
 		addHistoricValues(new HistoricValuesProject(project));
 	}
@@ -609,8 +608,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	}
 
 	/**
-	 * @param true to use Objective weights to compute Project Quality
-	 */
+     */
 	@JsonIgnore
 	public void setFormulaAverage(final boolean formulaAverage) {
 		this.formulaAverage = formulaAverage;

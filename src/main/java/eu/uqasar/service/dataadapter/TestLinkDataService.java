@@ -126,9 +126,8 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<TestLinkMetricMeasurement> metrics) {
 		for (TestLinkMetricMeasurement m : metrics) {
 			delete(m);
@@ -193,7 +192,6 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	/**
 	 * 
 	 * @param project
-	 * @param date
 	 * @return
 	 */
 	public List<TestLinkMetricMeasurement> getMeasurementsForProjectByPeriod(String project, String period) {

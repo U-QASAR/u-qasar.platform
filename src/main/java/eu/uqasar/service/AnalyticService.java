@@ -92,7 +92,6 @@ public class AnalyticService extends AbstractService<Analysis> {
 	/**
 	 *
 	 * @param projectId
-	 * @param postedAt
 	 * @param count
 	 *
 	 * @return

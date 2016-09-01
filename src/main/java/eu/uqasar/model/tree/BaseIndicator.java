@@ -231,8 +231,7 @@ public abstract class BaseIndicator extends TreeNode {
 	}
 	
 	/**
-	 * @param Add Historical values from baseIndicator
-	 */
+     */
 	private void addHistoricValues(final BaseIndicator baseIndicator) {
 		final HistoricValuesBaseIndicator historicValues = new HistoricValuesBaseIndicator(
 		baseIndicator);

@@ -54,7 +54,6 @@ public class ModalActionButton extends AjaxLink<Void> {
 
 	/**
 	 * 
-	 * @param form
 	 * @param modal
 	 * @param buttonType
 	 * @param bodyModel
@@ -100,8 +99,7 @@ public class ModalActionButton extends AjaxLink<Void> {
 	 * Override for actions after clicking the button.
 	 * 
 	 * @param target
-	 * @param form
-	 */
+     */
 	protected void onAfterClick(AjaxRequestTarget target) {}
 
 }

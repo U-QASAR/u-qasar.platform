@@ -247,7 +247,6 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 	/**
 	 *
 	 * @param projectId
-	 * @param postedAt
 	 * @param count
 	 *
 	 * @return

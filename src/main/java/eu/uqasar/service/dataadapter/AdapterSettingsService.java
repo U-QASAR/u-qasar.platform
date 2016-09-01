@@ -170,8 +170,7 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 
 	/**
 	 * Get a new snapshot of adapter data
-	 * @param timer
-	 */
+     */
 	@Timeout
 	public void updateAdapterData() {
 

@@ -373,7 +373,6 @@ public class ProductManagementPage extends BasePage {
 
 	/**
 	 * 
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forProduct(Product product) {
