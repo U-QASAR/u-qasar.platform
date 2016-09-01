@@ -25,20 +25,16 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import lombok.NoArgsConstructor;
 import org.apache.wicket.util.file.File;
 
 import eu.uqasar.model.tree.Project;
 
-
+@NoArgsConstructor
 public class QProjectXmlWriter extends QProjectWriter {
 	
 	private File file;
 	
-	/**
-	 * Default Constructor.
-	 */
-	public QProjectXmlWriter() {}
-
 	/**
 	 * Create a xml file containing the quality project.
 	 * @param p Project

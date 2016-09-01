@@ -90,9 +90,9 @@ public class QModelParserTest {
 		try {
 			qm = QModelXmlDomParser.parseFile(xmlFileNM);
 			Assert.assertNotNull(qm);
-			Assert.assertFalse(qm.getIsCompleted());
-			Assert.assertFalse(qm.getChildren().get(2).getIsCompleted());
-			Assert.assertFalse((qm.getChildren().get(2)).getChildren().get(0).getIsCompleted());
+			Assert.assertFalse(qm.isCompleted());
+			Assert.assertFalse(qm.getChildren().get(2).isCompleted());
+			Assert.assertFalse((qm.getChildren().get(2)).getChildren().get(0).isCompleted());
 		} catch (JAXBException e) {
 			assertTrue(false);
 		}
@@ -105,8 +105,8 @@ public class QModelParserTest {
 		try {
 			qm = QModelXmlDomParser.parseFile(xmlFileNI);
 			Assert.assertNotNull(qm);
-			Assert.assertFalse(qm.getIsCompleted());
-			Assert.assertFalse(qm.getChildren().get(0).getIsCompleted());
+			Assert.assertFalse(qm.isCompleted());
+			Assert.assertFalse(qm.getChildren().get(0).isCompleted());
 		} catch (JAXBException e) {
 			assertTrue(false);
 		}
@@ -119,7 +119,7 @@ public class QModelParserTest {
 		try {
 			qm = QModelXmlDomParser.parseFile(xmlFileNO);
 			Assert.assertNotNull(qm);
-			Assert.assertFalse(qm.getIsCompleted());
+			Assert.assertFalse(qm.isCompleted());
 		} catch (JAXBException e) {
 			assertTrue(false);
 		}

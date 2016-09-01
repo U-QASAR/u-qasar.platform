@@ -23,11 +23,16 @@ package eu.uqasar.model.tree.historic;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
 import eu.uqasar.model.tree.BaseIndicator;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Indexed
 public class HistoricValuesBaseIndicator extends AbstractHistoricValues {
@@ -39,12 +44,6 @@ public class HistoricValuesBaseIndicator extends AbstractHistoricValues {
 	private BaseIndicator baseIndicator;
 
 	private Float weight;
-
-	/**
-	 * 
-	 */
-	public HistoricValuesBaseIndicator() {
-	}
 
 	/**
 	 * @param baseIndicator
@@ -59,29 +58,6 @@ public class HistoricValuesBaseIndicator extends AbstractHistoricValues {
 		super.setUpperAcceptanceLimit(baseIndicator.getThreshold().getUpperAcceptanceLimit());
 		this.setWeight(baseIndicator.getWeight());
 		this.baseIndicator = baseIndicator;
-	}
-
-	public BaseIndicator getBaseIndicator() {
-		return baseIndicator;
-	}
-
-	public void setBaseIndicator(BaseIndicator baseIndicator) {
-		this.baseIndicator = baseIndicator;
-	}
-
-	/**
-	 * @return the weight
-	 */
-	public Float getWeight() {
-		return weight;
-	}
-
-	/**
-	 * @param weight
-	 *            the weight to set
-	 */
-	public void setWeight(Float weight) {
-		this.weight = weight;
 	}
 
 	/*

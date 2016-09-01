@@ -29,7 +29,12 @@ import javax.persistence.Temporal;
 
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.tree.QualityStatus;
-
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 public abstract class AbstractHistoricValues extends AbstractEntity implements Comparable<AbstractHistoricValues>{
 
@@ -46,123 +51,10 @@ public abstract class AbstractHistoricValues extends AbstractEntity implements C
 	private QualityStatus qualityStatus = QualityStatus.Gray;
 	private Boolean deleted = Boolean.FALSE;
 	
-	public AbstractHistoricValues() {
-	}
-		
-
-	/**
-	 * @return
-	 */
-	public Date getDate() {
-		return date;
-	}
-
-	/**
-	 * @param date
-	 */
-	public void setDate(final Date date) {
-		this.date = date;
-	}
-
-	
-	/**
-	 * @return the value
-	 */
-	public float getValue() {
-		return value;
-	}
-
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(final float value) {
-		this.value = value;
-	}
-
-
-	/**
-	 * @return the targetValue
-	 */
-	public Float getTargetValue() {
-		return targetValue;
-	}
-
-
-	/**
-	 * @param targetValue the targetValue to set
-	 */
-	public void setTargetValue(final Float targetValue) {
-		this.targetValue = targetValue;
-	}
-
-
-	/**
-	 * @return the lowerAcceptanceLimit
-	 */
-	public Double getLowerAcceptanceLimit() {
-		return lowerAcceptanceLimit;
-	}
-
-
-	/**
-	 * @param lowerAcceptanceLimit the lowerAcceptanceLimit to set
-	 */
-	public void setLowerAcceptanceLimit(final Double lowerAcceptanceLimit) {
-		this.lowerAcceptanceLimit = lowerAcceptanceLimit;
-	}
-
-
-	/**
-	 * @return the upperAcceptanceLimit
-	 */
-	public Double getUpperAcceptanceLimit() {
-		return upperAcceptanceLimit;
-	}
-
-
-	/**
-	 * @param upperAcceptanceLimit the upperAcceptanceLimit to set
-	 */
-	public void setUpperAcceptanceLimit(final Double upperAcceptanceLimit) {
-		this.upperAcceptanceLimit = upperAcceptanceLimit;
-	}
-
-
-	/**
-	 * @return the qualityStatus
-	 */
-	public QualityStatus getQualityStatus() {
-		return qualityStatus;
-	}
-
-
-	/**
-	 * @param qualityStatus the qualityStatus to set
-	 */
-	public void setQualityStatus(QualityStatus qualityStatus) {
-		this.qualityStatus = qualityStatus;
-	}
-
-
-	/**
-	 * @return the deleted
-	 */
-	public Boolean getDeleted() {
-		return deleted;
-	}
-
-	/**
-	 * @param deleted the deleted to set
-	 */
-	public void setDeleted(Boolean deleted) {
-		this.deleted = deleted;
-	}
-
 	@Override
 	public int compareTo(AbstractHistoricValues o) {
 		return getDate().compareTo(o.getDate());
 	}
-
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

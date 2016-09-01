@@ -25,19 +25,15 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+import lombok.NoArgsConstructor;
 import org.apache.wicket.util.file.File;
 
 import eu.uqasar.model.qmtree.QModel;
-
+@NoArgsConstructor
 public class QModelXmlWriter {
 
 	private File file;
     
-	/**
-	 * Default Constructor.
-	 */
-	public QModelXmlWriter() {}
-	
 	/**
 	 * Create a xml file containing the quality model.
 	 * @param model QModel

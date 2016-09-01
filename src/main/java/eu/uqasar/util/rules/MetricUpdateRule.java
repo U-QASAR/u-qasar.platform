@@ -30,6 +30,8 @@ import java.util.concurrent.TimeUnit;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.easyrules.annotation.Action;
 import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
@@ -51,6 +53,8 @@ import eu.uqasar.util.UQasarUtil;
  * Rule taking care of viewing notifications about metrics that should be updated
  *
  */
+@Setter
+@Getter
 @Rule(name = "Metric Update Rule", description = "Checking Metric Update")
 public class MetricUpdateRule extends BasicRule {
 	
@@ -197,18 +201,5 @@ public class MetricUpdateRule extends BasicRule {
 
     }
 
-    
-	/**
-	 * @return the targetValue
-	 */
-	public Float getTargetQualityValue() {
-		return targetQualityValue;
-	}
 
-	/**
-	 * @param targetValue the targetValue to set
-	 */
-	public void setTargetQualityValue(Float targetQualityValue) {
-		this.targetQualityValue = targetQualityValue;
-	}
 }

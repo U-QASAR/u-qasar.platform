@@ -59,7 +59,7 @@ public class DashboardService extends AbstractService<DbDashboard> {
 	
 	/**
 	 * 
-	 * @param processes
+	 * @param dashboards
 	 */
 	public void delete(Collection<DbDashboard> dashboards) {
 		for (DbDashboard db : dashboards) {

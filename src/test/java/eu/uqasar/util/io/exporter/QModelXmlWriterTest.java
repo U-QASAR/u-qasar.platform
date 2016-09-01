@@ -93,31 +93,31 @@ public class QModelXmlWriterTest {
 		qo1.setTargetAudience(roles);	
 		// Set Objective "Code coverage above 80%" description
 		qo1.setDescription("Average degree to which the source code  is tested by the set of Test Cases designed for the system at all Test Levels (i.e. Unit, Integration and Acceptance)");
-		qo1.setLowerLimit(80);
-		qo1.setUpperLimit(90);
+		qo1.setLowerLimit((double) 80);
+		qo1.setUpperLimit((double) 90);
 		qo1.setDomain(domains);
 		qo1.setIndicatorPurpose(null);
 		qo1.setParadigm(null);
-		qo1.setIsCompleted(true);
+		qo1.setCompleted(true);
 		
 		QMQualityIndicator qi1 = new QMQualityIndicator("Unit Test coverage", qo1);
 		qi1.setTargetAudience(roles);
 		qi1.setDescription("Average degree to which the source code  is tested by the set of Unit Tests. It should be above 60%");
 		qi1.setLowerLimit(Double.MIN_VALUE);
-		qi1.setUpperLimit(100);
+		qi1.setUpperLimit((double) 100);
 		qi1.setIndicatorPurpose(qo1.getIndicatorPurpose());
 		qi1.setParadigm(qo1.getParadigm());
 		qi1.setLifeCycleStage(null);
-		qi1.setIsCompleted(true);
+		qi1.setCompleted(true);
 		
 		QMMetric m1 = new QMMetric("Lines covered by Unit Tests", qi1);
 		m1.setDescription("Number of lines of code covered by Unit Tests");
 		m1.setSource(MetricSource.StaticAnalysis);
 		m1.setScale(null);
 		m1.setUnit(null);
-		m1.setIsCompleted(true);
+		m1.setCompleted(true);
 		
-		qm1.setIsCompleted(true);
+		qm1.setCompleted(true);
 		
 		return qm1;
 	}

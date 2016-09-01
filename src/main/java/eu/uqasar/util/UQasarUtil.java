@@ -37,6 +37,8 @@ import javax.inject.Singleton;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.wicket.model.IModel;
@@ -110,6 +112,8 @@ import eu.uqasar.util.resources.ResourceBundleLocator;
  * Various utilities used on the platform 
  *
  */
+@Setter
+@Getter
 @Singleton
 public class UQasarUtil {
 
@@ -122,10 +126,16 @@ public class UQasarUtil {
 	private static Logger logger = Logger.getLogger(UQasarUtil.class);
 
 	// List containing the notifications triggered by the rules' engine
+	@Setter
+	@Getter
 	private static List<INotification> notifications = new ArrayList<>();
 	
-	private static Date latestTreeUpdateDate = new Date(); 
+	@Setter
+	@Getter
+	private static Date latestTreeUpdateDate = new Date();
 	
+	@Setter
+	@Getter
 	private static Model uqModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 
 	// Enumeration for the various suggestion types
@@ -216,8 +226,7 @@ public class UQasarUtil {
 
 	/**
 	 * Construct a formula string to be evaluated.
-	 * @param vars
-	 * @param operators
+	 * @param varsAndOpers
 	 * @return
 	 */
 	public static String constructFormula(List<Object> varsAndOpers) {
@@ -873,7 +882,6 @@ public class UQasarUtil {
 	/**
 	 * 
 	 * @param node Node whose value is studied
-	 * @param value Value of a measurement/computed value
 	 * @return
 	 */
 	public static Multimap<SuggestionType, Object> getSuggestionForNode(TreeNode node) {
@@ -948,38 +956,6 @@ public class UQasarUtil {
 
 
 	/**
-	 * @return the notifications
-	 */
-	public static List<INotification> getNotifications() {
-		return notifications;
-	}
-
-
-	/**
-	 * @param notifications the notifications to set
-	 */
-	public static void setNotifications(List<INotification> notifications) {
-		UQasarUtil.notifications = notifications;
-	}
-
-
-	/**
-	 * @return the latestTreeUpdateDate
-	 */
-	public static Date getLatestTreeUpdateDate() {
-		return latestTreeUpdateDate;
-	}
-
-
-	/**
-	 * @param latestTreeUpdateDate the latestTreeUpdateDate to set
-	 */
-	public static void setLatestTreeUpdateDate(Date latestTreeUpdateDate) {
-		UQasarUtil.latestTreeUpdateDate = latestTreeUpdateDate;
-	}
-
-
-	/**
 	 * Get a list of Jenkins metrics
 	 * @return
 	 */
@@ -1030,7 +1006,6 @@ public class UQasarUtil {
 
 	/**
 	 * Writes the user entities to rdf
-	 * @param writer
 	 */
 	private static OntModel writeUserEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1051,7 +1026,6 @@ public class UQasarUtil {
 
 	/**
 	 * Writes the project entities to rdf
-	 * @param writer
 	 */
 	private static OntModel writeProjectEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1073,7 +1047,6 @@ public class UQasarUtil {
 
 	/**
 	 * Write metadata entities from the beans to rdf model
-	 * @param writer
 	 */
 	private static OntModel writeMetaDataModelEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1248,18 +1221,5 @@ public class UQasarUtil {
 		return usersString;
 	}
 
-	/**
-	 * @return the myModel
-	 */
-	public static Model getUqModel() {
-		return uqModel;
-	}
 
-
-	/**
-	 * @param myModel the myModel to set
-	 */
-	public static void setUqModel(Model newModel) {
-		UQasarUtil.uqModel = newModel;
-	}	
 }

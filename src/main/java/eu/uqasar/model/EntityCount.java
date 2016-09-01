@@ -23,14 +23,16 @@ package eu.uqasar.model;
  * #L%
  */
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 
 import javax.xml.bind.annotation.XmlRootElement;
-
-/**
- *
- * 
- */
+@NoArgsConstructor
+@Setter
+@Getter
 @XmlRootElement
 public class EntityCount implements Serializable {
 
@@ -42,31 +44,10 @@ public class EntityCount implements Serializable {
 	private long count = 0;
 
 	/**
-	 * 
-	 */
-	public EntityCount() {
-	}
-
-	/**
 	 * @param count
 	 */
 	public EntityCount(long count) {
 		super();
-		this.count = count;
-	}
-
-	/**
-	 * @return the count
-	 */
-	public long getCount() {
-		return count;
-	}
-
-	/**
-	 * @param count
-	 *            the count to set
-	 */
-	public void setCount(long count) {
 		this.count = count;
 	}
 

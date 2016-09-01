@@ -137,11 +137,11 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 				if (!oldParent.equals(newParent)) {
 					qmtreeNodeService.update(oldParent);
 					if (oldParent.getChildren().isEmpty() || !oldParent.allChildrenCompleted()){
-						oldParent.setIsCompleted(false);
+						oldParent.setCompleted(false);
 						updateCompleted(oldParent);
 					}
 					if (newParent.allChildrenCompleted()){
-						newParent.setIsCompleted(true);
+						newParent.setCompleted(true);
 					}
 				}
 				updateCompleted(node);
@@ -528,33 +528,33 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		if (node instanceof QMMetric){
 			if (node.getParent().getChildren().isEmpty()){
 				//indicator
-				node.getParent().setIsCompleted(false);			
+				node.getParent().setCompleted(false);
 				qmtreeNodeService.update (node.getParent());
-				node.getParent().getParent().setIsCompleted(false);
+				node.getParent().getParent().setCompleted(false);
 				qmtreeNodeService.update(node.getParent().getParent());
-				node.getParent().getParent().getParent().setIsCompleted(false);
+				node.getParent().getParent().getParent().setCompleted(false);
 				qmtreeNodeService.update(node.getParent().getParent().getParent());
 			}
 		} else if (node instanceof QMQualityIndicator){
 			if (node.getParent().getChildren().isEmpty() || !node.getParent().allChildrenCompleted()){
-				node.getParent().setIsCompleted(false);
+				node.getParent().setCompleted(false);
 				qmtreeNodeService.update(node.getParent());
-				node.getParent().getParent().setIsCompleted(false);
+				node.getParent().getParent().setCompleted(false);
 				qmtreeNodeService.update(node.getParent().getParent());
 			} else if (node.getParent().allChildrenCompleted()) {
-				node.getParent().setIsCompleted(true);
+				node.getParent().setCompleted(true);
 				qmtreeNodeService.update(node.getParent());
 				if (node.getParent().getParent().allChildrenCompleted()){
-					node.getParent().getParent().setIsCompleted(true);
+					node.getParent().getParent().setCompleted(true);
 					qmtreeNodeService.update(node.getParent().getParent());
 				}
 			}
 		} else if (node instanceof QMQualityObjective){
 			if (node.getParent().getChildren().isEmpty() || !node.getParent().allChildrenCompleted()){
-				node.getParent().setIsCompleted(false);
+				node.getParent().setCompleted(false);
 				qmtreeNodeService.update(node.getParent());
 			} else if (node.getParent().allChildrenCompleted()) {
-				node.getParent().setIsCompleted(true);
+				node.getParent().setCompleted(true);
 				qmtreeNodeService.update(node.getParent());
 			}
 		}

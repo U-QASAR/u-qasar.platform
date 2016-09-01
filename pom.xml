@@ -57,7 +57,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 <!--		<generated.sources.dir>src/main/generated</generated.sources.dir> -->
 		<generated.sources.dir>${project.build.directory}/generated</generated.sources.dir>
-		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<jboss.javaee6.spec.version>1.0.0.Final</jboss.javaee6.spec.version>
 		<jboss.as.version>8.2.1.Final</jboss.as.version>

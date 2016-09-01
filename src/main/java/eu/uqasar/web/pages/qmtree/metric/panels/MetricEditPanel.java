@@ -31,6 +31,7 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import lombok.NoArgsConstructor;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
@@ -84,7 +85,6 @@ import eu.uqasar.web.pages.qmtree.panels.QMBaseTreePanel;
 import eu.uqasar.web.pages.qmtree.qmodels.QModelViewPage;
 import eu.uqasar.web.pages.qmtree.quality.indicator.QMQualityIndicatorViewPage;
 import eu.uqasar.web.provider.meta.MetaDataChoiceProvider;
-
 public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 
 
@@ -327,20 +327,20 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	}
 
 	public QMMetric checkCompleted(QMMetric node) {
-		if (!node.getParent().getIsCompleted()) {
+		if (!node.getParent().isCompleted()) {
 			//update indicator
-			node.getParent().setIsCompleted(true);
+			node.getParent().setCompleted(true);
 			qmodelService.update(node.getParent());
 			QMQualityObjective qo = (QMQualityObjective) node.getParent().getParent();
 			if (qo.allChildrenCompleted()){
 				//update objective
-				qo.setIsCompleted(true);
+				qo.setCompleted(true);
 				qmodelService.update(qo);
 				
 				QModel qm = (QModel)node.getParent().getParent().getParent();
 				if (qm.allChildrenCompleted ()) {
 					//update model
-					qm.setIsCompleted(true);
+					qm.setCompleted(true);
 					qmodelService.update(qm);
 				}
 			}

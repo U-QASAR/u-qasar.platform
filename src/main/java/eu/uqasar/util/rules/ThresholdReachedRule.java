@@ -27,6 +27,8 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.easyrules.annotation.Action;
 import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
@@ -43,6 +45,8 @@ import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.util.UQasarUtil;
 
+@Setter
+@Getter
 @Rule(name = "Threashold Reached Rule", description = "Check, if a threshold of a children in the project tree is reached")
 public class ThresholdReachedRule extends BasicRule {
 	
@@ -145,20 +149,6 @@ public class ThresholdReachedRule extends BasicRule {
 			}
 		}
 	}
-	
-	/**
-	 * @return the projects
-	 */
-	public List<Project> getProjects() {
-		return projects;
-	}
 
 
-	/**
-	 * @param projects the projects to set
-	 */
-	public void setProjects(List<Project> projects) {
-		this.projects = projects;
-	}
-	
 }

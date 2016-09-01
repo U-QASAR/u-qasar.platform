@@ -21,9 +21,12 @@ package eu.uqasar.model.tree;
  */
 
 
+import lombok.Getter;
+
 import java.util.Random;
 
 
+@Getter
 public enum QualityStatus {
 
 	Green(0),
@@ -48,10 +51,6 @@ public enum QualityStatus {
 
 	private QualityStatus(int severity) {
 		this.severity = severity;
-	}
-
-	public int getSeverity() {
-		return this.severity;
 	}
 
 	/**
@@ -117,7 +116,7 @@ public enum QualityStatus {
 	}
 
 	/**Return Basic QualityStatus for defined limits
-	 * @param value
+	 * @param qualityValue
 	 * @param threshold
 	 * @return QualityStatus with the according color name
 	 */

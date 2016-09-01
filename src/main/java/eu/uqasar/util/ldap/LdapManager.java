@@ -47,6 +47,9 @@ import javax.naming.directory.SearchResult;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 import javax.naming.ldap.LdapReferralException;
+
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.apache.commons.lang.Validate;
 import org.jboss.solder.logging.Logger;
 
@@ -54,6 +57,7 @@ import org.jboss.solder.logging.Logger;
  *
  *
  */
+@Getter(AccessLevel.PRIVATE)
 public class LdapManager implements Serializable {
 
     private static final Logger logger = Logger.getLogger(LdapManager.class);
@@ -254,24 +258,6 @@ public class LdapManager implements Serializable {
         }
         Collections.sort(entities, comparator);
         return entities;
-    }
-
-    private LdapContext getContext() {
-        try {
-            context.getAttributes("");
-        } catch (NamingException e) {
-            logger.
-                    debug("LDAP connection seems to be gone, trying to re-connect...");
-            try {
-                context = getConnection();
-                logger.debug("LDAP connection restored successfully");
-            } catch (NamingException ex) {
-                logger.info("Could not re-connect to LDAP server!");
-                logger.error(ex.getMessage(), ex);
-                throw new RuntimeException(ex);
-            }
-        }
-        return context;
     }
 
     private LdapContext getConnection(LdapSettings settings) throws NamingException {

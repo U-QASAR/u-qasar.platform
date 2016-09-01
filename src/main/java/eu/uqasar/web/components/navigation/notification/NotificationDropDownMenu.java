@@ -171,11 +171,11 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 					e.printStackTrace();
 				}
 				// go through tree
-				LinkedList<TreeNode> objectives = project.getChildren();
+				List<TreeNode> objectives = project.getChildren();
 				for(TreeNode obj : objectives){
-					LinkedList<TreeNode> indicators = obj.getChildren();
+					List<TreeNode> indicators = obj.getChildren();
 					for(TreeNode ind : indicators){
-						LinkedList<TreeNode> metrics = ind.getChildren();
+						List<TreeNode> metrics = ind.getChildren();
 						for(TreeNode metric : metrics){											
 							// cast to a real Metric
 							Metric m = (Metric)  metric;

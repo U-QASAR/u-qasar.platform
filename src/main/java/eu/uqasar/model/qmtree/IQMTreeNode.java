@@ -63,5 +63,5 @@ public interface IQMTreeNode<Key extends Serializable> extends Persistable<Long>
 	
 	public IconType getIconType();
 
-	public boolean getIsCompleted();
+	public boolean isCompleted();
 }

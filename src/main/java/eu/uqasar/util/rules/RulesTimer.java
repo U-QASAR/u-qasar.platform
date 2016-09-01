@@ -32,6 +32,7 @@ import javax.ejb.Timer;
 import javax.ejb.TimerService;
 import javax.inject.Inject;
 
+import lombok.NoArgsConstructor;
 import org.apache.log4j.Logger;
 import org.easyrules.core.AnnotatedRulesEngine;
 import org.jboss.weld.context.ConversationContext;
@@ -47,6 +48,7 @@ import eu.uqasar.util.UQasarUtil;
  * Timer service for interpreting and executing rules
  * 
  */
+@NoArgsConstructor
 @Stateless
 public class RulesTimer {
 
@@ -65,9 +67,6 @@ public class RulesTimer {
 
 	@Resource
 	private TimerService timerService;
-
-	public RulesTimer() {
-	}
 
 	/**
 	 * Initialize the provided sample rules to be triggered when needed

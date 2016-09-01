@@ -31,7 +31,11 @@ import eu.uqasar.model.notification.Notification;
 import eu.uqasar.model.notification.NotificationType;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.TreeNode;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 public class ThresholdReachedNotification extends Notification {
 
@@ -45,22 +49,6 @@ public class ThresholdReachedNotification extends Notification {
 
 	public ThresholdReachedNotification() {
 		this.notificationType = NotificationType.THRESHOLD;
-	}
-	
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-	
-	public List<TreeNode> getTreeNodes() {
-		return treeNodes;
-	}
-
-	public void setTreeNodes(List<TreeNode> treeNodes) {
-		this.treeNodes = treeNodes;
 	}
 
 }
