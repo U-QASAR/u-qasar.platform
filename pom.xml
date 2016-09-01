@@ -69,7 +69,7 @@
 		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
 		<freemarker.version>2.3.20</freemarker.version>
 		<!-- resteasy version used in JBoss ${jboss.as.version} -->
-		<resteasy.version>2.3.2.Final</resteasy.version>
+		<resteasy.version>3.0.19.Final</resteasy.version>
 		<jackson.version>1.9.2</jackson.version>
 		<arquillian.version>1.1.2.Final</arquillian.version>
 		<slf4j.version>1.6.4</slf4j.version>
@@ -286,7 +286,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.0.Final</version>
+			<version>4.3.2.Final</version>
 			<!-- use provided scope as it is included in JBoss 7 -->
 			<scope>provided</scope>
 			<exclusions>
