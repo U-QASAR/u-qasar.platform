@@ -58,12 +58,12 @@ public class QModelXmlDomParser {
 			if (qm.getChildren()!=null && qm.getChildren().size()>0){
 				Iterator<QMTreeNode> itObj = qm.getChildren().iterator();
 				while (itObj.hasNext()) {
-					QMTreeNode obj = (QMTreeNode) itObj.next();
+					QMTreeNode obj = itObj.next();
 					boolean qobjCompleted = true;
 					if (obj.getChildren()!=null && obj.getChildren().size()>0){
 						Iterator<QMTreeNode> itInd = obj.getChildren().iterator();
 						while (itInd.hasNext()){
-							QMTreeNode ind = (QMTreeNode) itInd.next();
+							QMTreeNode ind = itInd.next();
 							if (ind.getChildren() != null && ind.getChildren().size()>0){
 								ind.setCompleted(true);
 							}

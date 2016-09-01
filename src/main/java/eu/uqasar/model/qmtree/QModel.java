@@ -115,9 +115,9 @@ public class QModel extends QMTreeNode {
 			} else {
 			Iterator<QMQualityObjective> it = children.iterator();
 			while (it.hasNext()){
-				QMQualityObjective qo = (QMQualityObjective)it.next();
+				QMQualityObjective qo = it.next();
 				isCompleted = isCompleted && qo.isCompleted();
-				nodes.add((QMTreeNode)qo);
+				nodes.add(qo);
 			}
 			}
 		} else {

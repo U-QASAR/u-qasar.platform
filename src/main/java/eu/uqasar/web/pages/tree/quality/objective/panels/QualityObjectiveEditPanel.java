@@ -110,7 +110,7 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 				String formulaToEval = Formula.parseFormula(model.getObject().getViewFormula());
 				final Float computedValue = Formula.evalFormula(formulaToEval);
 				if (computedValue != null) {
-					getModelObject().setValue((float) computedValue);
+					getModelObject().setValue(computedValue);
 				}
 
 				// Update the tree on save
@@ -129,7 +129,7 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 					boolean found = false;
 					TreeNode qon = null;
 					while (children.hasNext() && !found){
-						qon = (TreeNode)children.next();
+						qon = children.next();
 						if (qon.equals(obj)){	
 							found=true;
 						}

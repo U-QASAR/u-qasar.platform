@@ -57,7 +57,7 @@ public class QModelSettingsPage extends AdminBasePage {
 
 	public QModelSettingsPage(PageParameters pageParameters) {
 		super(pageParameters);
-		settings = (QModelSettings) qmService.get(new QModelSettings());
+		settings = qmService.get(new QModelSettings());
 		form = new Form<Void>("form") {
 
 			@Override

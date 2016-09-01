@@ -223,7 +223,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Purpose) getFormComponent().getConvertedInput()).equals(Purpose.Process)){
+				if (getFormComponent().getConvertedInput().equals(Purpose.Process)){
 					purposeAtt.remove(versionLabel);
 					purposeAtt.remove(version);
 					purposeAtt.add(paradigmLabel);
@@ -431,7 +431,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;

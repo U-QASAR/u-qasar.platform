@@ -162,7 +162,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
             try {
                 Long id = Long.parseLong(potentialId);
                 // try to find existing tag
-                T existingMetaData = (T) getById(clazz, id);
+                T existingMetaData = getById(clazz, id);
                 if (existingMetaData == null) {
                     // not existent yet, create a new tag
                     existingMetaData = getByMetaDataOrCreate(clazz, potentialId);
@@ -184,7 +184,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
             try {
                 Long id = Long.parseLong(potentialId);
                 // try to find existing tag
-                T existingMetaData = (T) getById(clazz, id);
+                T existingMetaData = getById(clazz, id);
                 if (existingMetaData == null) {
                     // not existent yet
                     throw new EntityNotFoundException(potentialId);
@@ -192,7 +192,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
                 metaData.add(existingMetaData);
             } catch (NumberFormatException e) {
             	
-            	 T existingMetaData = (T) getByName(clazz, potentialId);
+            	 T existingMetaData = getByName(clazz, potentialId);
                  if (existingMetaData == null) {
                      // not existent yet
                      throw new EntityNotFoundException(potentialId);
@@ -227,7 +227,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
     	
     	if (!ent.getClass().equals(QModelTagData.class)){
         	logger.info("Creating QModelTagData");
-    		QModelTagData newQmTag = (QModelTagData) this.mergeQMTagData(new QModelTagData(newTag));
+    		QModelTagData newQmTag = this.mergeQMTagData(new QModelTagData(newTag));
     		logger.info("Created QModelTagData " + newQmTag.getName());
     	}
     	return newTag;

@@ -281,7 +281,7 @@ public class DashboardEditPage extends BasePage {
 			dashboard = getDefaultDashboard(dashboard);
 		}  
 
-		return dashboardService.create((DbDashboard) dashboard);
+		return dashboardService.create(dashboard);
 	}
 
 	/**

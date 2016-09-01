@@ -203,7 +203,7 @@ public class DashboardSharePage extends BasePage {
 		for (User user : users) {
 			dashboard.setSharedBy(UQasar.getSession().getLoggedInUser().getFullName());
 			DbDashboard copyDash = new DbDashboard(dashboard);
-			DbDashboard persistedDash = dashboardService.create((DbDashboard) copyDash);
+			DbDashboard persistedDash = dashboardService.create(copyDash);
 			
 			user.addDashboard(persistedDash);
 			userService.update(user);

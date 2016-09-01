@@ -43,8 +43,8 @@ public class QueryPage extends WebPage {
     public QueryPage(final PageParameters parameters) {
         super(parameters);
         try {
-            HttpServletRequest request = (HttpServletRequest) ((WebRequest) getRequest()).getContainerRequest();
-            HttpServletResponse response = (HttpServletResponse) ((WebResponse) getResponse()).getContainerResponse();
+            HttpServletRequest request = (HttpServletRequest) getRequest().getContainerRequest();
+            HttpServletResponse response = (HttpServletResponse) getResponse().getContainerResponse();
             //generate cube output
 
             JSONObject objToReturn = new JSONObject();

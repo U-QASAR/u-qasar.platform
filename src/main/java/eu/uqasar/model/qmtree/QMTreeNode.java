@@ -149,12 +149,12 @@ public class QMTreeNode extends
             // TODO not sure if QModels cannot have siblings!
             LinkedList<QMTreeNode> list = new LinkedList<>();
             if (includeSelf) {
-                list.add((QMTreeNode) this);
+                list.add(this);
             }
             return list;
         } else {
             if (includeSelf) {
-                return (LinkedList<QMTreeNode>) getParent().getChildren();
+                return getParent().getChildren();
             } else {
                 List<QMTreeNode> siblings = getParent()
                         .getChildren();

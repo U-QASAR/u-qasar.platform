@@ -95,8 +95,8 @@ public class QMQualityIndicator extends QMBaseIndicator {
 		Iterator<QMMetric> it = children.iterator();
 		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
 		while (it.hasNext()){
-			QMMetric met = (QMMetric)it.next();
-			nodes.add((QMTreeNode)met);
+			QMMetric met = it.next();
+			nodes.add(met);
 		}
 		this.setChildren(nodes);
 		if (this.getChildren().size()>0){

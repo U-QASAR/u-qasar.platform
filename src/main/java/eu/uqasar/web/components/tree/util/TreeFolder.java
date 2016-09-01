@@ -70,7 +70,7 @@ public class TreeFolder extends Folder<TreeNode> {
 				suggestionStr = " (*Change Suggestion)";
 			}			
 		}
-		Label suggestionLabel = (Label) new Label("suggestionLabelText", suggestionStr);
+		Label suggestionLabel = new Label("suggestionLabelText", suggestionStr);
 		labelContainer.add(label);
 		labelContainer.add(icon);
 		labelContainer.add(suggestionLabel);

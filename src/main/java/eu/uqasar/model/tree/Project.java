@@ -266,8 +266,8 @@ public class Project extends TreeNode implements Comparable<Project> {
 		Iterator<QualityObjective> it = children.iterator();
 		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		while (it.hasNext()){
-			QualityObjective qo = (QualityObjective)it.next();
-			nodes.add((TreeNode)qo);
+			QualityObjective qo = it.next();
+			nodes.add(qo);
 		}
 		this.setChildren(nodes);
 	}
@@ -465,7 +465,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 		this.value = value;
 		
 		// Update the quality status
-		this.setQualityStatus(QualityStatus.getQualityStatusForValue((double)value, threshold));
+		this.setQualityStatus(QualityStatus.getQualityStatusForValue(value, threshold));
 	}
 	
 	/**

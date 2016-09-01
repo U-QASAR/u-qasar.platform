@@ -885,7 +885,7 @@ public class ModelInitializer implements Serializable {
         int monthOffset = 6;
         int day = LocalDate.now().plusMonths(monthOffset).dayOfMonth().getMaximumValue();
         product1.setReleaseDate(DateTime.now().plusMonths(monthOffset).withDayOfMonth(day).toDate());
-        product1 = (Product) productService.create(product1);
+        product1 = productService.create(product1);
 
         return new Product[]{product1};
     }
@@ -899,7 +899,7 @@ public class ModelInitializer implements Serializable {
         process1.setDescription("Development of the U-QASAR platform");
         process1.setStartDate(DateTime.now().minusDays(14).toDate());
         process1.setEndDate(DateTime.now().plusMonths(5).toDate());
-        process1 = (Process) processService.create(process1);
+        process1 = processService.create(process1);
 
         return new Process[]{process1};
     }

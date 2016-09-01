@@ -401,7 +401,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;

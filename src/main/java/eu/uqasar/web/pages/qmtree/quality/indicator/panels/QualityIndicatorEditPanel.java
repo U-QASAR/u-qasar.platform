@@ -247,7 +247,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Purpose) getFormComponent().getConvertedInput()).equals(Purpose.Process)){
+				if (getFormComponent().getConvertedInput().equals(Purpose.Process)){
 					purposeAtt.remove(versionLabel);
 					purposeAtt.remove(version);
 					purposeAtt.remove(emptyLabel2);
@@ -281,7 +281,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Paradigm) getFormComponent().getConvertedInput()).equals(Paradigm.Waterfall)){
+				if (getFormComponent().getConvertedInput().equals(Paradigm.Waterfall)){
 					purposeAtt.remove(rupStage);
 					purposeAtt.add(lcStage);
 				} else {
@@ -498,7 +498,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;

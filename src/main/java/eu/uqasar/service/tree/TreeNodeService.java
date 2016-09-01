@@ -250,7 +250,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
 			child.setParent(parent);
 		}
 		update(parent);
-		return (T) ((LinkedList<TreeNode>)parent.getChildren()).getLast();
+		return (T) parent.getChildren().getLast();
 	}
 
 	/**

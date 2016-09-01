@@ -127,7 +127,7 @@ public class QualityIndicatorEditPanel extends BaseTreePanel<QualityIndicator> {
 					boolean found = false;
 					TreeNode qin = null;
 					while (children.hasNext() && !found){
-						qin = (TreeNode)children.next();
+						qin = children.next();
 						if (qin.equals(ind)){	
 							found=true;
 						}

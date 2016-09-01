@@ -161,12 +161,12 @@ public class TreeNode extends
 			// TODO not sure if projects cannot have siblings!
 			LinkedList<TreeNode> list = new LinkedList<>();
 			if (includeSelf) {
-				list.add((TreeNode) this);
+				list.add(this);
 			}
 			return list;
 		} else {
 			if (includeSelf) {
-				return (LinkedList<TreeNode>) getParent().getChildren();
+				return getParent().getChildren();
 			} else {
 				LinkedList<TreeNode> siblings = (LinkedList<TreeNode>) getParent()
 						.getChildren().clone();

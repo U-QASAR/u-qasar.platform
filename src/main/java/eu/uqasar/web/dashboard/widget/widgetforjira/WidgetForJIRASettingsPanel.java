@@ -66,7 +66,7 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 
 		setOutputMarkupPlaceholderTag(true);
 
-		final WidgetForJira tasksWidget = (WidgetForJira) model.getObject();
+		final WidgetForJira tasksWidget = model.getObject();
 		// Get the project from the settings
 		if (tasksWidget.getSettings().get("project") != null) {
 			chartType = tasksWidget.getSettings().get("chartType");

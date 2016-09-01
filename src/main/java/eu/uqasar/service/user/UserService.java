@@ -84,7 +84,7 @@ public class UserService extends AbstractService<User> {
 		Root<User> root = query.from(User.class);
 		if (filter != null && !filter.isEmpty()) {
 
-			Expression<String> literal = cb.upper(cb.literal((String) LIKE_WILDCARD + filter + LIKE_WILDCARD));
+			Expression<String> literal = cb.upper(cb.literal(LIKE_WILDCARD + filter + LIKE_WILDCARD));
 			Predicate likeFirstName = cb.like(cb.upper(root.get(User_.firstName)), literal);
 			Predicate likeLastName = cb.like(cb.upper(root.get(User_.lastName)), literal);
 			Predicate likeUserName = cb.like(cb.upper(root.get(User_.userName)), literal);

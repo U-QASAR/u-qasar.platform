@@ -309,7 +309,7 @@ public class SubsetProposalPanel extends Panel {
 				
 			} else if (node instanceof QMQualityObjective) {
 				QMQualityObjective qmqo = (QMQualityObjective) node;
-				QualityObjective qo = new QualityObjective(qmqo, (Project) project);
+				QualityObjective qo = new QualityObjective(qmqo, project);
 				currentParentQualityObjective = qo;
 				currentParentQMQualityObjective = qmqo;
 				
@@ -317,7 +317,7 @@ public class SubsetProposalPanel extends Panel {
 				QMQualityIndicator qmqi = (QMQualityIndicator) node;
 
 				if(qmqi.getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, (Project) project);
+						QualityObjective qo = new QualityObjective(labelObjective, project);
 						currentParentQualityObjective = qo;
 						currentParentQMQualityObjective = qmqi.getParent();
 				}
@@ -330,7 +330,7 @@ public class SubsetProposalPanel extends Panel {
 				QMMetric qmm = (QMMetric) node;
 
 				if(qmm.getParent().getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, (Project) project);
+						QualityObjective qo = new QualityObjective(labelObjective, project);
 						currentParentQualityObjective = qo;
 						currentParentQMQualityObjective = qmm.getParent().getParent();
 				}

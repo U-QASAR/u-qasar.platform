@@ -67,7 +67,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 	@Override
 	protected Component newLabelComponent(String id, final IModel<QMTreeNode> model) {
 		WebMarkupContainer labelContainer = new WebMarkupContainer(id);
-		settings = (QModelSettings) qmService.get(new QModelSettings());
+		settings = qmService.get(new QModelSettings());
 		
 		Label idLabel;
 		Label entityLabel;

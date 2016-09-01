@@ -612,7 +612,7 @@ public class UQasarUtil {
 					float denominator = 0;
 					for (final TreeNode me : qi.getChildren()) {
 						float weight = ((Metric)me).getWeight();
-						if (((Metric) me).getQualityStatus() == QualityStatus.Green) {
+						if (me.getQualityStatus() == QualityStatus.Green) {
 							achieved += weight;
 						}
 						denominator +=weight;
@@ -632,7 +632,7 @@ public class UQasarUtil {
 
 						Float computedValue = Formula.evalFormula(formulaToEval);
 						if (computedValue != null && !computedValue.isNaN()) {
-							qo.setValue((float) computedValue);
+							qo.setValue(computedValue);
 							qo.setLastUpdated(getLatestTreeUpdateDate());
 						}							
 
@@ -642,7 +642,7 @@ public class UQasarUtil {
 					float achieved= 0;
 					for(final TreeNode qi : qo.getChildren()){
 						float weight = ((QualityIndicator)qi).getWeight();
-						if (((QualityIndicator)qi).getQualityStatus() == QualityStatus.Green){
+						if (qi.getQualityStatus() == QualityStatus.Green){
 							achieved += weight;
 						}
 						denominator +=weight;
@@ -674,7 +674,7 @@ public class UQasarUtil {
 				Double computedValue = qoValueSum/denominator;
 
 				if (computedValue != null && !computedValue.isNaN() && !computedValue.isInfinite()) {
-					prj.setValue((double)computedValue);
+					prj.setValue(computedValue);
 				}
 
 				prj.setLastUpdated(getLatestTreeUpdateDate());
@@ -779,7 +779,7 @@ public class UQasarUtil {
                     float denominator = 0;
                     for (final TreeNode me : qi.getChildren()) {
                         float weight = ((Metric)me).getWeight();
-                        if (((Metric) me).getQualityStatus() == QualityStatus.Green) {
+                        if (me.getQualityStatus() == QualityStatus.Green) {
                             achieved += weight;
                         }
                         denominator +=weight;
@@ -799,7 +799,7 @@ public class UQasarUtil {
 
                         Float computedValue = Formula.evalFormula(formulaToEval);
                         if (computedValue != null && !computedValue.isNaN()) {
-                            qo.setValue((float) computedValue);
+                            qo.setValue(computedValue);
                             qo.setLastUpdated(getLatestTreeUpdateDate());
                         }                           
 
@@ -809,7 +809,7 @@ public class UQasarUtil {
                     float achieved= 0;
                     for(final TreeNode qi : qo.getChildren()){
                         float weight = ((QualityIndicator)qi).getWeight();
-                        if (((QualityIndicator)qi).getQualityStatus() == QualityStatus.Green){
+                        if (qi.getQualityStatus() == QualityStatus.Green){
                             achieved += weight;
                         }
                         denominator +=weight;
@@ -841,7 +841,7 @@ public class UQasarUtil {
                 Double computedValue = qoValueSum/denominator;
 
                 if (computedValue != null && !computedValue.isNaN() && !computedValue.isInfinite()) {
-                    prj.setValue((double)computedValue);
+                    prj.setValue(computedValue);
                 }
 
                 prj.setLastUpdated(getLatestTreeUpdateDate());
@@ -872,7 +872,7 @@ public class UQasarUtil {
 
         
         // Iterate the node children
-        TreeNode nodeChild = (TreeNode)projectTreeNode.getParent();
+        TreeNode nodeChild = projectTreeNode.getParent();
         UQasarUtil.postorderWithParticularNode(projectTreeNode,nodeChild);
         
         return;

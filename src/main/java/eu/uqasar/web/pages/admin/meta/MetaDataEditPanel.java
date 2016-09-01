@@ -313,7 +313,7 @@ public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>>
 
             @Override
             public Iterator<T> iterator(long first, long count) {
-                return (Iterator<T>) service.
+                return service.
                         getAllAscendingByName(clazz, first, count).iterator();
             }
 

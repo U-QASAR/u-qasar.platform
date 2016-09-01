@@ -80,7 +80,7 @@ public class MailSettingsPage extends AdminBasePage {
 
 	public MailSettingsPage(PageParameters pageParameters) {
 		super(pageParameters);
-		settings = (MailSettings) msService.get(new MailSettings());
+		settings = msService.get(new MailSettings());
 		form = new Form<Void>("form") {
 
 			@Override

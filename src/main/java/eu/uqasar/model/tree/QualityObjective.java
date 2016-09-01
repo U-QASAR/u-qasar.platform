@@ -102,8 +102,8 @@ public class QualityObjective extends BaseIndicator implements Comparable<Qualit
 		Iterator<QualityIndicator> it = children.iterator();
 		List<TreeNode> nodes = new LinkedList<TreeNode>();
 		while (it.hasNext()){
-			QualityIndicator qi = (QualityIndicator)it.next();
-			nodes.add((TreeNode)qi);
+			QualityIndicator qi = it.next();
+			nodes.add(qi);
 		}
 		this.setChildren(nodes);
 	}

@@ -92,7 +92,7 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
         setOutputMarkupPlaceholderTag(true);
 
-        final ReportingWidget qualityWidget = (ReportingWidget) model.getObject();
+        final ReportingWidget qualityWidget = model.getObject();
 
         Form<Widget> form = new Form<Widget>("form");
 
