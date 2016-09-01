@@ -59,8 +59,8 @@
 		<generated.sources.dir>${project.build.directory}/generated</generated.sources.dir>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<jboss.javaee6.spec.version>1.0.0.Final</jboss.javaee6.spec.version>
-		<jboss.as.version>8.2.1.Final</jboss.as.version>
+		<jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
+		<jboss.as.version>7.1.1.Final</jboss.as.version>
 		<weld.version>1.1.Final</weld.version>
 		<jboss.solder.version>3.1.0.Final</jboss.solder.version>
 		<jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
@@ -115,7 +115,7 @@
 		<!-- JBoss Java EE 6 dependencies -->
 		<dependency>
 			<groupId>org.jboss.spec</groupId>
-			<artifactId>jboss-javaee-7.0</artifactId>
+			<artifactId>jboss-javaee-6.0</artifactId>
 			<version>${jboss.javaee6.spec.version}</version>
 			<type>pom</type>
 			<!-- use provided scope as they are included in JBoss 7 -->
@@ -822,8 +822,8 @@
 			</activation>
 			<dependencies>
 				<dependency>
-					<groupId>org.wildfly</groupId>
-					<artifactId>wildfly-arquillian-container-managed</artifactId>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -844,8 +844,8 @@
 				</testResources>
 				<plugins>
 					<plugin>
-						<groupId>org.wildfly</groupId>
-						<artifactId>wildfly-arquillian-container-managed</artifactId>
+						<groupId>org.jboss.as</groupId>
+						<artifactId>jboss-as-arquillian-container-managed</artifactId>
 						<version>${jboss.as.version}</version>
 						<configuration>
 							<!-- to deploy run: "mvn clean compile package jboss-as:deploy" -->
@@ -879,11 +879,11 @@
 			anything regarding the server. Can not be used to debug test cases from within 
 			IDE. -->
 		<profile>
-			<id>arq-wildfly-managed</id>
+			<id>arquillian-jboss7-managed</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.wildfly</groupId>
-					<artifactId>wildfly-arquillian-container-managed</artifactId>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -948,11 +948,11 @@
 			the remote debug session in Eclipse - right-click test case and select Debug 
 			As -> JUnit Test -->
 		<profile>
-			<id>arquillian-wildfly-remote</id>
+			<id>arquillian-jboss7-remote</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.wildfly</groupId>
-					<artifactId>wildfly-arquillian-container-managed</artifactId>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -978,8 +978,8 @@
 			<id>jenkins</id>
 			<dependencies>
 				<dependency>
-					<groupId>org.wildfly</groupId>
-					<artifactId>wildfly-arquillian-container-managed</artifactId>
+					<groupId>org.jboss.as</groupId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
