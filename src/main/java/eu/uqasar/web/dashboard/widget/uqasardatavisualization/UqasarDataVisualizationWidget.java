@@ -110,7 +110,7 @@ public class UqasarDataVisualizationWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new UqasarDataVisualizationSettingsPanel(settingsPanelId, new Model<UqasarDataVisualizationWidget>(this));
+		return new UqasarDataVisualizationSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 		
 	
@@ -171,7 +171,7 @@ public class UqasarDataVisualizationWidget extends AbstractWidget{
 			PointSeries series = new PointSeries();	
 			series.setType(seriesType);
 			
-			List<String> xAxisLabels = new ArrayList<String>();
+			List<String> xAxisLabels = new ArrayList<>();
 
 			for(HistoricValuesBaseIndicator dat : data){
 				String name = dat.getBaseIndicator().getName();
@@ -229,7 +229,7 @@ public class UqasarDataVisualizationWidget extends AbstractWidget{
 
 	private List<HistoricValuesBaseIndicator> getHistoricalValues() {
 		HistoricalDataService historicalDataService = null;
-		List<HistoricValuesBaseIndicator> histValues = new ArrayList<HistoricValuesBaseIndicator>();		
+		List<HistoricValuesBaseIndicator> histValues = new ArrayList<>();
 		try {
 			InitialContext ic = new InitialContext();
 			historicalDataService = (HistoricalDataService) ic.lookup("java:module/HistoricalDataService");	

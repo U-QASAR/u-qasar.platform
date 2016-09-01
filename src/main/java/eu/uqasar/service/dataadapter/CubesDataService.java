@@ -289,7 +289,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 
 	public List<Measurement> cubesAdapterQuery(String bindedSystem, String cubeName, String queryExpression) throws uQasarException{
 		URI uri = null;
-		LinkedList<Measurement> measurements = new LinkedList<Measurement>();
+		LinkedList<Measurement> measurements = new LinkedList<>();
 
 		try {
 			uri = new URI(bindedSystem + "/" + queryExpression);

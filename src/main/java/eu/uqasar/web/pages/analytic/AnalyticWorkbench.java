@@ -114,7 +114,7 @@ public class AnalyticWorkbench extends BasePage {
 	 * @return the link to the provided ID Analysis view Page
 	 */
 	private BookmarkablePageLink<AnalysisDrilldown> viewAnalysisLink (final Analysis analysis){
-		BookmarkablePageLink<AnalysisDrilldown> link = new BookmarkablePageLink<AnalysisDrilldown>("link", AnalysisDrilldown.class, BaseTreePage.forAnalysis(analysis));
+		BookmarkablePageLink<AnalysisDrilldown> link = new BookmarkablePageLink<>("link", AnalysisDrilldown.class, BaseTreePage.forAnalysis(analysis));
 		link.add(new Label("name", new PropertyModel<String>(analysis, "name")));
 		return link;
 	}
@@ -124,7 +124,7 @@ public class AnalyticWorkbench extends BasePage {
 	 * @return The link to edit the current Analysis in the Analysis editor
 	 */
 	private BookmarkablePageLink<AnalysisEditor> analysisEditorLink(final Analysis analysis){
-		BookmarkablePageLink<AnalysisEditor> link = new BookmarkablePageLink<AnalysisEditor>("edit",AnalysisEditor.class, BaseTreePage.forAnalysis(analysis));
+		BookmarkablePageLink<AnalysisEditor> link = new BookmarkablePageLink<>("edit", AnalysisEditor.class, BaseTreePage.forAnalysis(analysis));
 		return link;
 	}
 	

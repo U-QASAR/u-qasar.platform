@@ -80,7 +80,7 @@ public enum Unit implements IResourceKeyProvider {
 		return "label.unit." + this.labelKey;
 	}
 	public static List<Unit> getAllUnits(){
-		List<Unit> list = new ArrayList<Unit>();
+		List<Unit> list = new ArrayList<>();
         Collections.addAll(list, Unit.values());
 		return list;
 	}

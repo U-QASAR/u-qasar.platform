@@ -176,8 +176,8 @@ public class PlatformSettingsPage extends AdminBasePage {
      * @return
      */
     private CheckGroup<PlatformSettings> newAdapterSettingsCheckGroup() {
-        CheckGroup<PlatformSettings> checkGroup = new CheckGroup<PlatformSettings>("adapterGroup",
-            new ArrayList<PlatformSettings>());
+        CheckGroup<PlatformSettings> checkGroup = new CheckGroup<>("adapterGroup",
+                new ArrayList<PlatformSettings>());
         checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
             /**

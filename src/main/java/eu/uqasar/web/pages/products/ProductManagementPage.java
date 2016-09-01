@@ -227,8 +227,8 @@ public class ProductManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<Product> newProductCheckGroup() {
-		CheckGroup<Product> checkGroup = new CheckGroup<Product>(
-				"productGroup", new ArrayList<Product>());
+		CheckGroup<Product> checkGroup = new CheckGroup<>(
+                "productGroup", new ArrayList<Product>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;

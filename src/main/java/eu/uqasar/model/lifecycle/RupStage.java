@@ -63,7 +63,7 @@ public enum RupStage implements IResourceKeyProvider {
 	}
 	
 	public static List<RupStage> getAllRupStages(){
-		List<RupStage> list = new ArrayList<RupStage>();
+		List<RupStage> list = new ArrayList<>();
         Collections.addAll(list, RupStage.values());
 		return list;
 	}

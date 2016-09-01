@@ -31,7 +31,7 @@ public abstract class AbstractWidget implements Widget {
     protected WidgetLocation location;
 
     public AbstractWidget() {
-		settings = new HashMap<String, String>();
+		settings = new HashMap<>();
 		location = new WidgetLocation();
 	}
     

@@ -131,7 +131,7 @@ public class TechDebtChartWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new TechDebtChartSettingsPanel(settingsPanelId, new Model<TechDebtChartWidget>(this));
+		return new TechDebtChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 

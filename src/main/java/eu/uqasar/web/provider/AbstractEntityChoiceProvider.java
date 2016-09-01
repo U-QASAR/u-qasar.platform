@@ -41,7 +41,7 @@ import java.util.List;
 public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		extends TextChoiceProvider<Type> {
 
-	private List<Type> allEntities = new ArrayList<Type>();
+	private List<Type> allEntities = new ArrayList<>();
 	public AbstractEntityChoiceProvider(){
 		
 	}

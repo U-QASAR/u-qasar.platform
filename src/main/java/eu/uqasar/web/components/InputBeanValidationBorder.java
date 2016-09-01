@@ -97,7 +97,7 @@ public class InputBeanValidationBorder<T> extends InputBorder<T> {
 	 */
 	protected void addPropertyValidator(FormComponent<T> fc) {
 		if (!hasPropertyValidator(fc)) {
-			final PropertyValidator<T> propertyValidator = new PropertyValidator<T>();
+			final PropertyValidator<T> propertyValidator = new PropertyValidator<>();
 			fc.add(propertyValidator);
 		}
 	}

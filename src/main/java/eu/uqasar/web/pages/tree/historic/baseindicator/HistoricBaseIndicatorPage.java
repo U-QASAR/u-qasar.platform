@@ -252,8 +252,8 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<AbstractHistoricValues> newDataCheckGroup() {
-		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<AbstractHistoricValues>(
-				"dataGroup", new ArrayList<AbstractHistoricValues>());
+		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<>(
+                "dataGroup", new ArrayList<AbstractHistoricValues>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;

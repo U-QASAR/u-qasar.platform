@@ -185,7 +185,7 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private Form<Dashboard> newDashboardForm() {
-		Form<Dashboard> form = new InputValidationForm<Dashboard>("form");
+		Form<Dashboard> form = new InputValidationForm<>("form");
 		form.setOutputMarkupId(true);
 		return form;
 	}
@@ -195,12 +195,12 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newTitleTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"nameValidationBorder", new TextField<String>("title",
-						new PropertyModel<String>(dashboard, "title"))
-						.setRequired(true),
-						new StringResourceModel("title.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "nameValidationBorder", new TextField<>("title",
+                new PropertyModel<String>(dashboard, "title"))
+                .setRequired(true),
+                new StringResourceModel("title.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -208,12 +208,12 @@ public class DashboardEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<Integer> newColumnTextField() {
-		return new OnEventInputBeanValidationBorder<Integer>(
-				"columnValidationBorder", new TextField<Integer>("columnCount",
-						new PropertyModel<Integer>(dashboard, "columnCount"))
-						.setRequired(false),
-						new StringResourceModel("columncount.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "columnValidationBorder", new TextField<>("columnCount",
+                new PropertyModel<Integer>(dashboard, "columnCount"))
+                .setRequired(false),
+                new StringResourceModel("columncount.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -301,8 +301,8 @@ public class DashboardEditPage extends BasePage {
 		for (WidgetDescriptor widgetDescriptor : descr) {
 			WidgetFactory widgetFactory = 
 					dashboardContext.getWidgetFactory();
-			Model<WidgetDescriptor> item = 
-					new Model<WidgetDescriptor>(widgetDescriptor);
+			Model<WidgetDescriptor> item =
+                    new Model<>(widgetDescriptor);
 			Widget widget = widgetFactory.createWidget(item.getObject());
 			WidgetLocation location = new WidgetLocation(col, row);
 			widget.setLocation(location);

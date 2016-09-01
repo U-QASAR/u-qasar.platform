@@ -142,7 +142,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
     	User loggedInUser = UQasar.getSession().getLoggedInUser();
        
         List<Project> projects = getAllProjectsFiltered(filter);
-        List<Project> returnProjects = new LinkedList<Project>();
+        List<Project> returnProjects = new LinkedList<>();
         for (Project project : projects) {
             List<Team> teams = project.getTeams();
             for (Team team : teams) {
@@ -173,7 +173,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
         User loggedInUser = UQasar.getSession().getLoggedInUser();
 
         List<Project> projects = getAllProjectsFiltered(new TreeFilterStructure());
-        List<Project> returnProjects = new LinkedList<Project>();
+        List<Project> returnProjects = new LinkedList<>();
         for (Project project : projects) {
             List<Team> teams = project.getTeams();
             for (Team team : teams) {

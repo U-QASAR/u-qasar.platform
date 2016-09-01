@@ -272,11 +272,11 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	        form.add(cancel);
 			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-				"cancel",
-				QMMetricViewPage.class,
-				QMMetricViewPage.forMetric(model.getObject()),
-				de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>(
+                    "cancel",
+                    QMMetricViewPage.class,
+                    QMMetricViewPage.forMetric(model.getObject()),
+                    de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 				.setLabel(new StringResourceModel("button.cancel", this, null)));
 		}
 
@@ -405,7 +405,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));

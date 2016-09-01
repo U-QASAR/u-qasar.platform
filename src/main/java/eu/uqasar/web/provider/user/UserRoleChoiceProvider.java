@@ -39,7 +39,7 @@ public class UserRoleChoiceProvider  extends TextChoiceProvider<Role> {
 
     @Override
     public Collection<Role> toChoices(Collection<String> ids) {    	
-    	ArrayList<Role> roles = new ArrayList<Role>();
+    	ArrayList<Role> roles = new ArrayList<>();
     	
     	// TODO: Mapping String to Enum with translation
     	for(String id : ids){

@@ -141,7 +141,7 @@ public class LoginPage extends BasePage {
 		// Load all the dashboards belonging to the user
 		List<Dashboard> dashboards = dashboardContext.getDashboardPersiter().loadAll();
 		if (dashboards == null || dashboards.size() == 0) {
-			dashboards = new ArrayList<Dashboard>();
+			dashboards = new ArrayList<>();
 		}
 		UQasar.getSession().getLoggedInUser().setDashboards(dashboards);
 	}	

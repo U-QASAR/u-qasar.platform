@@ -68,7 +68,7 @@ public enum MetricSource implements IResourceKeyProvider {
 	}
 	
 	public static List<MetricSource> getAllMetricSources(){
-		List<MetricSource> list = new ArrayList<MetricSource>();
+		List<MetricSource> list = new ArrayList<>();
         Collections.addAll(list, MetricSource.values());
 		return list;
 	}

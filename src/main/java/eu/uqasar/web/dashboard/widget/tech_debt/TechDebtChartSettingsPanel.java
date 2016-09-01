@@ -63,7 +63,7 @@ public class TechDebtChartSettingsPanel extends GenericPanel<TechDebtChartWidget
 		
 		setOutputMarkupPlaceholderTag(true);
 		
-		Form<Widget> form = new Form<Widget>("form");
+		Form<Widget> form = new Form<>("form");
 
 		// Get the project from the settings
 		projectName = getModelObject().getSettings().get("project");
@@ -84,13 +84,13 @@ public class TechDebtChartSettingsPanel extends GenericPanel<TechDebtChartWidget
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-        DropDownChoice<Project> projectChoice = new DropDownChoice<Project>("project", new PropertyModel<Project>(this, "project"), projects);
+        DropDownChoice<Project> projectChoice = new DropDownChoice<>("project", new PropertyModel<Project>(this, "project"), projects);
         form.add(projectChoice);
 		
 		// Field for the chart type
 		chartType = getModelObject().getSettings().get("chartType");
-        DropDownChoice<String> choice = new DropDownChoice<String>("chartType", 
-        		new PropertyModel<String>(this, "chartType"), TechDebtChartWidget.TYPES);
+        DropDownChoice<String> choice = new DropDownChoice<>("chartType",
+                new PropertyModel<String>(this, "chartType"), TechDebtChartWidget.TYPES);
         form.add(choice);
         
         form.add(new AjaxSubmitLink("submit") {

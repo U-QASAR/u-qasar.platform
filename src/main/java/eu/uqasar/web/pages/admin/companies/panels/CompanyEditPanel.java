@@ -61,7 +61,7 @@ public abstract class CompanyEditPanel extends Panel {
 		super(id);
 		this.company = company;
 		
-		final Form<Company> form = new Form<Company>("form", Model.of(company));
+		final Form<Company> form = new Form<>("form", Model.of(company));
 		
 		form.setOutputMarkupId(true);
 

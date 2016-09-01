@@ -58,7 +58,7 @@ public class CSSAppender extends AttributeAppender {
 	}
 
 	public CSSAppender(String css) {
-		this(new Model<String>(css));
+		this(new Model<>(css));
 	}
 
 	/*

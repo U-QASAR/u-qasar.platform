@@ -379,11 +379,11 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 
 			} else {
 
-				form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-						"cancel",
-						QMQualityIndicatorViewPage.class,
-						QMQualityIndicatorViewPage.forQualityIndicator(model.getObject()),
-						de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+				form.add(new BootstrapBookmarkablePageLink<>(
+                        "cancel",
+                        QMQualityIndicatorViewPage.class,
+                        QMQualityIndicatorViewPage.forQualityIndicator(model.getObject()),
+                        de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 						.setLabel(new StringResourceModel("button.cancel", this, null)));
 			}
 			
@@ -502,7 +502,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));

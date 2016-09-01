@@ -103,7 +103,7 @@ public class QualityIndicatorViewPanel extends BaseTreePanel<QualityIndicator> {
 				"description")).setEscapeModelStrings(false));
 
 		// Threshold indicator
-		add(new ThresholdIndicator<QualityIndicator>("thresholdIndicator", model));
+		add(new ThresholdIndicator<>("thresholdIndicator", model));
 
 		// Indicator target value 
 		add(new Label("targetValue", qi.getTargetValue()));
@@ -127,7 +127,7 @@ public class QualityIndicatorViewPanel extends BaseTreePanel<QualityIndicator> {
 		
 		// add quality trend chart
 		// TODO: Replace this with real an example utilizing real data
-		add(new BaseTrendChartPanel<QualityIndicator>("trend", model));
+		add(new BaseTrendChartPanel<>("trend", model));
 		
 		// Historical data panel with the last 10 values
 		RepeatingView listOfHistValues = new RepeatingView("listOfHistValues");

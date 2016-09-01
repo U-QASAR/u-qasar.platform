@@ -143,14 +143,14 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 		form.add(name).add(new AttributeAppender("maxlength", 255));
 		form.add(new TextField<>("nodeKey", new PropertyModel<>(model, "nodeKey"))
 				.add(new AttributeAppender("maxlength", 255)));
-		form.add(description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description")));
+		form.add(description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description")));
 		form.add(newDateTextField("startDate", new PropertyModel<Date>(model,
 				"startDate")));
 		form.add(newDateTextField("endDate", new PropertyModel<Date>(model,
 				"endDate")));
-		form.add(new DropDownChoice<QModel>("qmodel", 
-				new PropertyModel<QModel>(model, "qmodel"), qmTreeNodeService.getAllQModels()));
+		form.add(new DropDownChoice<>("qmodel",
+                new PropertyModel<QModel>(model, "qmodel"), qmTreeNodeService.getAllQModels()));
 		form.add(new DropDownChoice<Product>("product", 
 				new PropertyModel<Product>(model, "product"), productService.getAllProducts()){
 			// TODO: If it is uncommented there is no way to select any product
@@ -173,16 +173,16 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 		});
 		
 		// Threshold indicator
-		form.add(new ThresholdEditor<Project>("thresholdEditor", model));
+		form.add(new ThresholdEditor<>("thresholdEditor", model));
 		
 //		form.add(new NumberTextField<Double>("lowerAcceptanceLimit", new PropertyModel<Double>(model, "lowerAcceptanceLimit")));
 //		form.add(new NumberTextField<Double>("upperAcceptanceLimit", new PropertyModel<Double>(model, "upperAcceptanceLimit")));
 
 		form.add(new DropDownChoice<>("formulaAverage", new PropertyModel<>(model, "formulaAverage"), Arrays.asList(Boolean.TRUE, Boolean.FALSE) ));
 		
-		form.add(new DropDownChoice<LifeCycleStage>("lcStage",
-				new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
-				Arrays.asList(LifeCycleStage.values())));
+		form.add(new DropDownChoice<>("lcStage",
+                new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
+                Arrays.asList(LifeCycleStage.values())));
 		description.add(tinyMceBehavior = new TinyMceBehavior(
 				DefaultTinyMCESettings.get()));
 		form.add(new AjaxCheckBox("toggle.richtext", richEnabledModel) {
@@ -267,9 +267,9 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 	        form.add(cancel);			
 		} else {
 			form.add(
-					new BootstrapBookmarkablePageLink<ProjectViewPage>("cancel",
-					ProjectViewPage.class, ProjectViewPage.forProject(model
-							.getObject()), Type.Default)
+                    new BootstrapBookmarkablePageLink<>("cancel",
+                            ProjectViewPage.class, ProjectViewPage.forProject(model
+                            .getObject()), Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, 
 							null)));
 		}
@@ -328,7 +328,7 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 	
 	 private Select2MultiChoice<Role> newSelect2MultiRoles(final String id, Class clazz, PropertyModel<Collection<Role>> model) {
      	
-     	Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<Role>(id, model, new UserRoleChoiceProvider());
+     	Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<>(id, model, new UserRoleChoiceProvider());
 
      			
      	final IModel<String> placeHolder = new StringResourceModelPlaceholderDelegate("placeholder.meta.role", this, null);

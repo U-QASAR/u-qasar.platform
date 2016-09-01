@@ -196,8 +196,8 @@ public class JenkinsDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<JenkinsMetricMeasurement> newJenkinsCheckGroup() {
-		CheckGroup<JenkinsMetricMeasurement> checkGroup = new CheckGroup<JenkinsMetricMeasurement>(
-				"jenkinsGroup", new ArrayList<JenkinsMetricMeasurement>());
+		CheckGroup<JenkinsMetricMeasurement> checkGroup = new CheckGroup<>(
+                "jenkinsGroup", new ArrayList<JenkinsMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;

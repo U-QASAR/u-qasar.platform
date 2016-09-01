@@ -75,8 +75,8 @@ public abstract class ProductManagementPanel extends Panel {
 		Form form = new Form<>("form");
 		add(form);
 
-		productName = (TextField) new TextField<String>("name",
-				new PropertyModel(this, "name"))
+		productName = (TextField) new TextField<>("name",
+                new PropertyModel(this, "name"))
 				.add(new OnChangeAjaxBehavior() {
 
 					@Override

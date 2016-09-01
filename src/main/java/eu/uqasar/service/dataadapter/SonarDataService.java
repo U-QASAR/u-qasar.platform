@@ -315,7 +315,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	public List<String> getSonarProjects() {
 		logger.info("Getting Sonar projects...");
 		List<SonarMetricMeasurement> measurements = getAllSonarMetricObjects();
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		for (SonarMetricMeasurement sonarMetricMeasurement : measurements) {
 			String project = sonarMetricMeasurement.getName();
 			if (!projects.contains(project)) {

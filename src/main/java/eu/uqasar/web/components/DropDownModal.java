@@ -63,13 +63,13 @@ public class DropDownModal extends Modal {
 		show(showImmediately);
 		header(headerModel);		
 
-		List<String> ls = new ArrayList<String>();
+		List<String> ls = new ArrayList<>();
 		Iterator it = types.iterator();
 		while (it.hasNext()){
 			ls.add(((Class)it.next()).getSimpleName());
 		}
 
-		metaDataTypes = new DropDownChoice<String>("metaDataTypes",  new Model(), ls);
+		metaDataTypes = new DropDownChoice<>("metaDataTypes", new Model(), ls);
 
 		metaDataTypes.add(new AjaxEventBehavior("onchange") {
 			@Override

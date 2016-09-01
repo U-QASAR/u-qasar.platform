@@ -123,7 +123,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new ProjectQualityChartSettingsPanel(settingsPanelId, new Model<ProjectQualityChartWidget>(this));
+		return new ProjectQualityChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 	/**
@@ -263,7 +263,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 		PointSeries series = new PointSeries();	
 		series.setType(seriesType);
 
-		List<String> xAxisLabels = new ArrayList<String>();
+		List<String> xAxisLabels = new ArrayList<>();
 
 		for (HistoricValuesProject historicValue : projectHistoricvalues) {
 			float value = historicValue.getValue();
@@ -301,7 +301,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 	
 	private List<HistoricValuesProject> getHistoricalValues(Project proj) {
 		HistoricalDataService historicalDataService = null;
-		List<HistoricValuesProject> histValues = new ArrayList<HistoricValuesProject>();
+		List<HistoricValuesProject> histValues = new ArrayList<>();
 		if (proj != null) {
 			try {
 				InitialContext ic = new InitialContext();

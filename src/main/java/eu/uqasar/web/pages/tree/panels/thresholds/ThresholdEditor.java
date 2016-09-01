@@ -64,8 +64,8 @@ public class ThresholdEditor<Type extends TreeNode> extends BaseTreePanel<Type> 
 		// Inicator container
 		indicatorThreshold = new WebMarkupContainer("indicatorThreshold");
 		
-		indicatorThreshold.add(new TextField<Double>("lowerAcceptanceLimit", new PropertyModel<Double>(model, "threshold.lowerAcceptanceLimit")).add(new TooltipBehavior(new StringResourceModel("help.lower.limit", this, model), confConfig)));
-		indicatorThreshold.add(new TextField<Double>("upperAcceptanceLimit", new PropertyModel<Double>(model, "threshold.upperAcceptanceLimit")).add(new TooltipBehavior(new StringResourceModel("help.upper.limit", this, model), confConfig)));
+		indicatorThreshold.add(new TextField<>("lowerAcceptanceLimit", new PropertyModel<Double>(model, "threshold.lowerAcceptanceLimit")).add(new TooltipBehavior(new StringResourceModel("help.lower.limit", this, model), confConfig)));
+		indicatorThreshold.add(new TextField<>("upperAcceptanceLimit", new PropertyModel<Double>(model, "threshold.upperAcceptanceLimit")).add(new TooltipBehavior(new StringResourceModel("help.upper.limit", this, model), confConfig)));
 		
 		// Adding Color indicators
 		indicatorThreshold.add(choiceColorMenu(model, "threshold.colorLowerAcceptanceLimit"));

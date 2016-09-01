@@ -99,7 +99,7 @@ public class QualityIndicator extends BaseIndicator {
 		this.setWeight(weight);
 		
 		Iterator<Metric> it = children.iterator();
-		List<TreeNode> nodes = new LinkedList<TreeNode>();
+		List<TreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
 			Metric met = it.next();
 			nodes.add(met);

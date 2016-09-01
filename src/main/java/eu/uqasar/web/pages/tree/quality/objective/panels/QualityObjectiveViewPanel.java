@@ -78,7 +78,7 @@ public class QualityObjectiveViewPanel extends BaseTreePanel<QualityObjective> {
 				"description")).setEscapeModelStrings(false));
 
 		// Threshold indicator
-		add(new ThresholdIndicator<QualityObjective>("thresholdIndicator", model));
+		add(new ThresholdIndicator<>("thresholdIndicator", model));
 		
 		// Target value
 		add(new Label("targetValue", qo.getTargetValue()));

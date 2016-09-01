@@ -119,7 +119,7 @@ class DashboardColumnPanel extends GenericPanel<Dashboard> {
 
         CharSequence script = sortableAjaxBehavior.getCallbackFunctionBody();
 
-        Map<String, String> vars = new HashMap<String, String>();
+        Map<String, String> vars = new HashMap<>();
         vars.put("component", get("columnContainer").getMarkupId());
         vars.put("stopBehavior", script.toString());
 

@@ -51,7 +51,7 @@ public class BaseTrendChartPanel<Type extends TreeNode> extends
 		Theme theme = new Theme();
 		theme.setLang(DefaultChartOptions.getLocalizedLanguageOptions());
 		replace(new Chart("chart",
-				new BaseTrendChartOptions<Type>(this, model), theme));
+                new BaseTrendChartOptions<>(this, model), theme));
 
 	}
 

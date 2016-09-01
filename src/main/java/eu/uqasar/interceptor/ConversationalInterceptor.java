@@ -57,8 +57,8 @@ public class ConversationalInterceptor {
 		BoundRequest storage = null;
 
 		if (!context.isActive() && !boundContext.isActive()) {
-			Map<String, Object> session = new HashMap<String, Object>();
-			Map<String, Object> request = new HashMap<String, Object>();
+			Map<String, Object> session = new HashMap<>();
+			Map<String, Object> request = new HashMap<>();
 			storage = new MutableBoundRequest(request, session);
 			boundContext.associate(storage);
 			boundContext.activate();

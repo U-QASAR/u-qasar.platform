@@ -207,8 +207,8 @@ public class TestFrameworkDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<TestLinkMetricMeasurement> newTestLinkCheckGroup() {
-		CheckGroup<TestLinkMetricMeasurement> checkGroup = new CheckGroup<TestLinkMetricMeasurement>(
-				"testLinkGroup", new ArrayList<TestLinkMetricMeasurement>());
+		CheckGroup<TestLinkMetricMeasurement> checkGroup = new CheckGroup<>(
+                "testLinkGroup", new ArrayList<TestLinkMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			/**

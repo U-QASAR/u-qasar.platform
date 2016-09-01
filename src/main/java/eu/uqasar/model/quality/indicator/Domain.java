@@ -66,7 +66,7 @@ public enum Domain implements IResourceKeyProvider {
 	}
 	
 	public static List<Domain> getAllDomains(){
-		List<Domain> list = new ArrayList<Domain>();
+		List<Domain> list = new ArrayList<>();
 		Collections.addAll(list, Domain.values());
 		return list;
 	}

@@ -97,7 +97,7 @@ public class UQasarRestService implements Serializable {
 	private GitlabDataService gitlabDataService;
 	@Inject 
 	private JenkinsDataService jenkinsDataService;
-	private List<TreeNode> allNodes = new LinkedList<TreeNode>();
+	private List<TreeNode> allNodes = new LinkedList<>();
 
 
 	/**
@@ -305,7 +305,7 @@ public class UQasarRestService implements Serializable {
 	public List<String> getHistValueOFTreeNode(@QueryParam("projectname") String projectName,
 			@QueryParam("treenodeid") Long treeNodeId) throws JsonGenerationException, JsonMappingException, IOException {
 
-		List<String> histValues = new LinkedList<String>();
+		List<String> histValues = new LinkedList<>();
 		Project project = treeNodeService.getProjectByName(projectName);
 
 		if (project != null) {

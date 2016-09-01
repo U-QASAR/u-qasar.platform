@@ -203,8 +203,8 @@ public class IssueTrackerDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<JiraMetricMeasurement> newJiraCheckGroup() {
-		CheckGroup<JiraMetricMeasurement> checkGroup = new CheckGroup<JiraMetricMeasurement>(
-				"jiraGroup", new ArrayList<JiraMetricMeasurement>());
+		CheckGroup<JiraMetricMeasurement> checkGroup = new CheckGroup<>(
+                "jiraGroup", new ArrayList<JiraMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;

@@ -97,14 +97,14 @@ implements DashboardContextAware {
 
 
 		//Form and WMCs
-		final Form<Widget> form = new Form<Widget>("form");		
+		final Form<Widget> form = new Form<>("form");
 
 		// project
-		projectChoice = new DropDownChoice<Project>("projects", new PropertyModel<Project>(this, "project"), projects);
+		projectChoice = new DropDownChoice<>("projects", new PropertyModel<Project>(this, "project"), projects);
 		form.add(projectChoice);
 		
 		// metric
-		metricChoice = new DropDownChoice<String>("metrics", new PropertyModel<String>(this, "metric"), UQasarUtil.getJenkinsMetricNames().subList(1, 3));
+		metricChoice = new DropDownChoice<>("metrics", new PropertyModel<String>(this, "metric"), UQasarUtil.getJenkinsMetricNames().subList(1, 3));
 		metricChoice.setRequired(true);
 		form.add(metricChoice);
 		
@@ -115,7 +115,7 @@ implements DashboardContextAware {
 		}
 		List<String> numbers = Arrays.asList("10", "20",
 				"30", "40", "50", "60", "70", "80", "90", "100");
-		noOfItemsDp = new DropDownChoice<String>("noOfItemsDp", new PropertyModel<String>(this, "noOfItems"), numbers);
+		noOfItemsDp = new DropDownChoice<>("noOfItemsDp", new PropertyModel<String>(this, "noOfItems"), numbers);
 		noOfItemsDp.setRequired(true);
         form.add(noOfItemsDp);
         

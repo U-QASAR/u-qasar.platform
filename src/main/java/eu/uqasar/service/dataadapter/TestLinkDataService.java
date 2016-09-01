@@ -296,7 +296,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	public List<String> getTestLinkProjects() {
 		logger.info("Getting TestLink projects...");
 		List<TestLinkMetricMeasurement> measurements = getAllTestLinkMetricObjects();
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		for (TestLinkMetricMeasurement testLinkMetricMeasurement : measurements) {
 			String project = testLinkMetricMeasurement.getName();
 			if (!projects.contains(project)) {

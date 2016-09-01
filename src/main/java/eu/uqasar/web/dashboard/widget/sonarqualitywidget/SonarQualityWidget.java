@@ -112,8 +112,8 @@ public class SonarQualityWidget extends AbstractWidget {
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new SonarQualityWidgetSettingsPanel(settingsPanelId, 
-				new Model<SonarQualityWidget>(this));
+		return new SonarQualityWidgetSettingsPanel(settingsPanelId,
+                new Model<>(this));
 	}
 
 	
@@ -123,7 +123,7 @@ public class SonarQualityWidget extends AbstractWidget {
 	 */
 	public List<SonarMetricMeasurement> getMeasurements(String period) {
 
-		List<SonarMetricMeasurement> measurements = new ArrayList<SonarMetricMeasurement>();
+		List<SonarMetricMeasurement> measurements = new ArrayList<>();
 
 		if (settings.get("project") != null) {
 			project = settings.get("project");
@@ -288,7 +288,7 @@ public class SonarQualityWidget extends AbstractWidget {
 				return struct;
 			}
 		}
-		return new ArrayList<SonarMetricMeasurement>();
+		return new ArrayList<>();
 	}
 	
 	/**

@@ -59,7 +59,7 @@ public enum Purpose implements IResourceKeyProvider {
 
 
 	public static List<Purpose> getAllPurposes(){
-		List<Purpose> list = new ArrayList<Purpose>();
+		List<Purpose> list = new ArrayList<>();
         Collections.addAll(list, Purpose.values());
 		return list;
 	}

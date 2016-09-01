@@ -63,8 +63,8 @@ public abstract class ProcessManagementPanel extends Panel {
 		form = new Form<>("form");
 		add(form);
 
-		processName = new TextField<String>("name", new PropertyModel<String>(
-				this, "name"));
+		processName = new TextField<>("name", new PropertyModel<String>(
+                this, "name"));
 		form.add(processName);
 
 		startDate = new DropDownChoice("start.date", new PropertyModel(this,

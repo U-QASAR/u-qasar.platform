@@ -201,8 +201,8 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<SonarMetricMeasurement> newSonarCheckGroup() {
-		CheckGroup<SonarMetricMeasurement> checkGroup = new CheckGroup<SonarMetricMeasurement>(
-				"sonarGroup", new ArrayList<SonarMetricMeasurement>());
+		CheckGroup<SonarMetricMeasurement> checkGroup = new CheckGroup<>(
+                "sonarGroup", new ArrayList<SonarMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;

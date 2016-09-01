@@ -143,7 +143,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private Form<Process> newProcessForm() {
-		Form<Process> form = new InputValidationForm<Process>("form");
+		Form<Process> form = new InputValidationForm<>("form");
 		form.setOutputMarkupId(true);
 		return form;
 	}
@@ -153,12 +153,12 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newNameTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"nameValidationBorder", new TextField<String>("name",
-						new PropertyModel<String>(process, "name"))
-						.setRequired(true),
-						new StringResourceModel("name.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "nameValidationBorder", new TextField<>("name",
+                new PropertyModel<String>(process, "name"))
+                .setRequired(true),
+                new StringResourceModel("name.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -166,11 +166,11 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newDescriptionTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"descriptionValidationBorder", new TextField<String>("description",
-						new PropertyModel<String>(process, "description")),
-						new StringResourceModel("description.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "descriptionValidationBorder", new TextField<>("description",
+                new PropertyModel<String>(process, "description")),
+                new StringResourceModel("description.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -180,10 +180,10 @@ public class ProcessAddEditPage extends BasePage {
 	 */
 	private InputBorder<Date> newStartDateTextField(
 			final DateTextField startDateTextField) {
-		return new OnEventInputBeanValidationBorder<Date>(
-				"startDateValidationBorder", startDateTextField,
-				new StringResourceModel("startdate.input.label", this, null),
-				HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "startDateValidationBorder", startDateTextField,
+                new StringResourceModel("startdate.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -193,10 +193,10 @@ public class ProcessAddEditPage extends BasePage {
 	 */
 	private InputBorder<Date> newEndDateTextField(
 			final DateTextField endDateTextField) {
-		return new OnEventInputBeanValidationBorder<Date>(
-				"endDateValidationBorder", endDateTextField,
-				new StringResourceModel("enddate.input.label", this, null),
-				HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "endDateValidationBorder", endDateTextField,
+                new StringResourceModel("enddate.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**

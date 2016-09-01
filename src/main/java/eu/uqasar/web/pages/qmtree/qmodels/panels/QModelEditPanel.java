@@ -198,7 +198,7 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 				qmodel.setCompany(user.getCompany());
 			}
 		}
-		companySelect = new DropDownChoice<Company>("company", Model.of(qmodel.getCompany()), companyService.getAll());
+		companySelect = new DropDownChoice<>("company", Model.of(qmodel.getCompany()), companyService.getAll());
 		form.add(companySelect);
 		
 		if (isNew){
@@ -222,9 +222,9 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 	        form.add(cancel);
 			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<QModelViewPage>("cancel",
-					QModelViewPage.class, QModelViewPage.forQModel(model
-							.getObject()), Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>("cancel",
+                    QModelViewPage.class, QModelViewPage.forQModel(model
+                    .getObject()), Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, null)));
 		}
 		

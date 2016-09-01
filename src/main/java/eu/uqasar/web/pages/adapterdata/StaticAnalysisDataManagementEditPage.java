@@ -147,7 +147,7 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<SonarMetricMeasurement> newTableEntityForm() {
-        Form<SonarMetricMeasurement> form = new InputValidationForm<SonarMetricMeasurement>("form");
+        Form<SonarMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -157,10 +157,10 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectNameField() {
-        return new OnEventInputBeanValidationBorder<String>("projectNameBorder",
-                new TextField<String>("name", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectNameBorder",
+                new TextField<>("name", new PropertyModel<String>(
                         tableEntity, "name")), new StringResourceModel(
-                        "name.input.label", this, null),
+                "name.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -169,10 +169,10 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectKeyField() {
-        return new OnEventInputBeanValidationBorder<String>("projectKeyBorder",
-                new TextField<String>("sonarKey", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectKeyBorder",
+                new TextField<>("sonarKey", new PropertyModel<String>(
                         tableEntity, "sonarKey")), new StringResourceModel(
-                        "sonarKey.input.label", this, null),
+                "sonarKey.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -181,11 +181,11 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newMetricField(){
-        return new OnEventInputBeanValidationBorder<String>("metricBorder",
-            new TextField<String>("sonarMetric", new PropertyModel<String>(
-                    tableEntity, "sonarMetric")), new StringResourceModel(
-                    "sonarMetric.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("metricBorder",
+                new TextField<>("sonarMetric", new PropertyModel<String>(
+                        tableEntity, "sonarMetric")), new StringResourceModel(
+                "sonarMetric.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -193,11 +193,11 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField(){
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-            new org.apache.wicket.markup.html.form.TextArea<String>("value", new PropertyModel<String>(
-                    tableEntity, "value")), new StringResourceModel(
-                    "value.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("value", new PropertyModel<String>(
+                        tableEntity, "value")), new StringResourceModel(
+                "value.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -207,7 +207,7 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);

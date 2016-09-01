@@ -66,7 +66,7 @@ public enum Paradigm implements IResourceKeyProvider {
 		return "label.paradigm." + this.labelKey;
 	}
 	public static List<Paradigm> getAllParadigms(){
-		List<Paradigm> list = new ArrayList<Paradigm>();
+		List<Paradigm> list = new ArrayList<>();
         Collections.addAll(list, Paradigm.values());
 		return list;
 	}

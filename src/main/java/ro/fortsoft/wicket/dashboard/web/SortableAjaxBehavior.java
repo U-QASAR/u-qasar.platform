@@ -50,7 +50,7 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 	protected void respond(AjaxRequestTarget target) {
 		String jsonData = getComponent().getRequest().getRequestParameters().getParameterValue(JSON_DATA).toString();
 		Item[] items = getItems(jsonData);
-		Map<String, WidgetLocation> locations = new HashMap<String, WidgetLocation>();
+		Map<String, WidgetLocation> locations = new HashMap<>();
 		for (Item item : items) {
 			WidgetLocation location = new WidgetLocation(item.column, item.sortIndex);
 			locations.put(item.widget, location);

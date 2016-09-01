@@ -146,7 +146,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<TestLinkMetricMeasurement> newTableEntityForm() {
-        Form<TestLinkMetricMeasurement> form = new InputValidationForm<TestLinkMetricMeasurement>("form");
+        Form<TestLinkMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -157,10 +157,10 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectNameField() {
-        return new OnEventInputBeanValidationBorder<String>("projectNameBorder",
-                new TextField<String>("name", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectNameBorder",
+                new TextField<>("name", new PropertyModel<String>(
                         tableEntity, "name")), new StringResourceModel(
-                        "name.input.label", this, null),
+                "name.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -169,10 +169,10 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectKeyField() {
-        return new OnEventInputBeanValidationBorder<String>("projectKeyBorder",
-                new TextField<String>("testLinkKey", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectKeyBorder",
+                new TextField<>("testLinkKey", new PropertyModel<String>(
                         tableEntity, "testLinkKey")), new StringResourceModel(
-                        "testLinkKey.input.label", this, null),
+                "testLinkKey.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -181,11 +181,11 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newMetricField(){
-        return new OnEventInputBeanValidationBorder<String>("metricBorder",
-            new TextField<String>("testLinkMetric", new PropertyModel<String>(
-                    tableEntity, "testLinkMetric")), new StringResourceModel(
-                    "testLinkMetric.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("metricBorder",
+                new TextField<>("testLinkMetric", new PropertyModel<String>(
+                        tableEntity, "testLinkMetric")), new StringResourceModel(
+                "testLinkMetric.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -193,11 +193,11 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField(){
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-            new org.apache.wicket.markup.html.form.TextArea<String>("value", new PropertyModel<String>(
-                    tableEntity, "value")), new StringResourceModel(
-                    "value.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("value", new PropertyModel<String>(
+                        tableEntity, "value")), new StringResourceModel(
+                "value.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -207,7 +207,7 @@ public class TestFrameworkDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);

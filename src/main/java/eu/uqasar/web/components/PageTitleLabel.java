@@ -38,7 +38,7 @@ public class PageTitleLabel extends Label {
 	}
 
 	public PageTitleLabel(final String id, String label) {
-		this(id, new Model<String>(label));
+		this(id, new Model<>(label));
 	}
 
 	public PageTitleLabel(final String id, Serializable label) {

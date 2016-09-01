@@ -153,14 +153,14 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 			}
 		};
 
-		hiddenTextField = new TextArea<String>("hidden", new PropertyModel<String>(model, "viewFormula"));
+		hiddenTextField = new TextArea<>("hidden", new PropertyModel<String>(model, "viewFormula"));
 		form.add(hiddenTextField);
 		
 		form.add(new TextField<>("name", new PropertyModel<>(model, "name"))
 				.add(new AttributeAppender("maxlength", 255)));
 
-		form.add(description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description")));
+		form.add(description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description")));
 
 		description.add(tinyMceBehavior = new TinyMceBehavior(
 				DefaultTinyMCESettings.get()));
@@ -181,7 +181,7 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 		});
 
 		// Threshold indicator
-		form.add(new ThresholdEditor<QualityObjective>("thresholdEditor", model));
+		form.add(new ThresholdEditor<>("thresholdEditor", model));
 
 		// Selector to choose calculation mode
 		form.add(new DropDownChoice<>("useFormula", new PropertyModel<>(model, "useFormula"), Arrays.asList(Boolean.TRUE, Boolean.FALSE) ));
@@ -191,9 +191,9 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 		form.add(new TextField<>("weight", new PropertyModel<>(model, "weight")));
 		
 		// Weight indicator shows data of weight consumed and available
-		form.add(new WeightIndicator<QualityObjective>("totalWeight",model));
+		form.add(new WeightIndicator<>("totalWeight", model));
 		
-		final JQueryTextCompleteEditor<Object> formulaEditor = new JQueryTextCompleteEditor<Object>("autocomp-text", new PropertyModel<>(model, "viewFormula"));
+		final JQueryTextCompleteEditor<Object> formulaEditor = new JQueryTextCompleteEditor<>("autocomp-text", new PropertyModel<>(model, "viewFormula"));
 		
 		// URL for obtaining the children of the treenode
 		final String url = UQasar.get().getHomePageUrl() + "/rest/treenodes/" +model.getObject().getId();
@@ -215,11 +215,11 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 	        cancel.setDefaultFormProcessing(false);
 	        form.add(cancel);			
 		} else {			
-			form.add(new BootstrapBookmarkablePageLink<QualityObjectiveViewPage>(
-					"cancel",
-					QualityObjectiveViewPage.class,
-					QualityObjectiveViewPage.forQualityObjective(model.getObject()),
-					de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>(
+                    "cancel",
+                    QualityObjectiveViewPage.class,
+                    QualityObjectiveViewPage.forQualityObjective(model.getObject()),
+                    de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, null)));			
 		}
 

@@ -126,7 +126,7 @@ public class TeamListPage extends AdminBasePage {
 			@Override
 			protected void populateItem(Item<Team> item) {
 				final Team team = item.getModelObject();
-				item.add(new Check<Team>("teamCheck", item.getModel(), teamGroup));
+				item.add(new Check<>("teamCheck", item.getModel(), teamGroup));
 				BookmarkablePageLink<TeamEditPage> editTeam = new BookmarkablePageLink<>("link.edit.team", TeamEditPage.class, new PageParameters().add("id", team.getId()));
 				item.add(editTeam.add(new Label("td.teamname", new PropertyModel<>(team, "name"))));
 				item.add(new Label("td.description", new PropertyModel<>(team, "description")));

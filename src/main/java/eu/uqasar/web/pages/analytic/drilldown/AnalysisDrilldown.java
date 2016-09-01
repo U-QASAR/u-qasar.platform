@@ -118,11 +118,11 @@ public class AnalysisDrilldown extends BasePage {
 
 		
 		// Add the form to add/remove drilldown elements
-		form = new Form<Analysis>("form");
+		form = new Form<>("form");
 		
 		// Add the dimension selector 
-		form.add(new Select2MultiChoice<Dimensions>("dimensionSelector",
-				new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
+		form.add(new Select2MultiChoice<>("dimensionSelector",
+                new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
 		
 		// Add the button to Submit the form with the Dimension changes
 		Button saveButton = new Button("save", new StringResourceModel(
@@ -211,7 +211,7 @@ public class AnalysisDrilldown extends BasePage {
 	 * @return Return a List with all the data from JSON 
 	 */
 	private List<String> getDataFromDimension(String jsonObject) {
-		List<String> data = new ArrayList<String>();
+		List<String> data = new ArrayList<>();
 		try {
 			JSONObject jobj = new JSONObject(jsonObject);
 			us.monoid.json.JSONArray jsonArray = jobj.getJSONArray("cells");
@@ -234,7 +234,7 @@ public class AnalysisDrilldown extends BasePage {
 	 * @return Return as headers the dimensions stored on Analysis
 	 */
 	private List<String> getHeaders() {
-		List<String> headers = new ArrayList<String>();
+		List<String> headers = new ArrayList<>();
 
 		for (Dimensions dim : analysis.getDimensions()) {
 			headers.add(dim.name());
@@ -316,7 +316,7 @@ public class AnalysisDrilldown extends BasePage {
 
 		@Override
 		public Collection<Dimensions> toChoices(Collection<String> ids) {
-	    	ArrayList<Dimensions> dimensions = new ArrayList<Dimensions>();
+	    	ArrayList<Dimensions> dimensions = new ArrayList<>();
 	    	
 	    	for(String id : ids){
 	    		dimensions.add(Dimensions.valueOf(id));

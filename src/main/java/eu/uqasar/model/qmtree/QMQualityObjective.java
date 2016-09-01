@@ -106,7 +106,7 @@ public class QMQualityObjective extends QMBaseIndicator {
 		
 		boolean isCompleted = true;
 		Iterator<QMQualityIndicator> it = children.iterator();
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
 			QMQualityIndicator qi = it.next();
 

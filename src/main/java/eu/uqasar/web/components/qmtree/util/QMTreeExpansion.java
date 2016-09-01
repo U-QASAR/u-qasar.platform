@@ -48,7 +48,7 @@ public class QMTreeExpansion implements Set<QMTreeNode>, Serializable {
 	
 	};
 
-	private Set<Long> ids = new HashSet<Long>();
+	private Set<Long> ids = new HashSet<>();
 
 	private boolean inverse;
 

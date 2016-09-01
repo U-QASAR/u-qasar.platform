@@ -178,8 +178,8 @@ public class GitlabDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<GitlabMetricMeasurement> newGitlabCheckGroup() {
-		CheckGroup<GitlabMetricMeasurement> checkGroup = new CheckGroup<GitlabMetricMeasurement>(
-				"gitlabGroup", new ArrayList<GitlabMetricMeasurement>());
+		CheckGroup<GitlabMetricMeasurement> checkGroup = new CheckGroup<>(
+                "gitlabGroup", new ArrayList<GitlabMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;

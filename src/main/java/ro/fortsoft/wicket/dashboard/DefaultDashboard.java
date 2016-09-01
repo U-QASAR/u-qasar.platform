@@ -32,7 +32,7 @@ public class DefaultDashboard implements Dashboard {
 		this.dashboardId = id;
 		this.title = title;
 		columnCount = 2;
-		widgets = new ArrayList<Widget>();
+		widgets = new ArrayList<>();
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class DefaultDashboard implements Dashboard {
 	
 	@Override
 	public List<Widget> getWidgets(int column) {
-		List<Widget> columnWidgets = new ArrayList<Widget>();
+		List<Widget> columnWidgets = new ArrayList<>();
 		for (Widget widget : widgets) {
 			if (column == widget.getLocation().getColumn()) {
 				columnWidgets.add(widget);

@@ -137,7 +137,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<CubesMetricMeasurement> newTableEntityForm() {
-        Form<CubesMetricMeasurement> form = new InputValidationForm<CubesMetricMeasurement>("form");
+        Form<CubesMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -148,10 +148,10 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField() {
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-                new TextField<String>("value", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new TextField<>("value", new PropertyModel<String>(
                         tableEntity, "value")), new StringResourceModel(
-                        "value.input.label", this, null),
+                "value.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -160,10 +160,10 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newJsonContentField() {
-        return new OnEventInputBeanValidationBorder<String>("jsonContentBorder",
-                new org.apache.wicket.markup.html.form.TextArea<String>("jsonContent", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("jsonContentBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("jsonContent", new PropertyModel<String>(
                         tableEntity, "jsonContent")), new StringResourceModel(
-                        "jsonContent.input.label", this, null),
+                "jsonContent.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -190,7 +190,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);

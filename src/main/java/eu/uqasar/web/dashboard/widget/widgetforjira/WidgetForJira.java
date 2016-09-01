@@ -77,8 +77,8 @@ public class WidgetForJira extends AbstractWidget {
 	
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new WidgetForJIRASettingsPanel(settingsPanelId, 
-				new Model<WidgetForJira>(this));
+		return new WidgetForJIRASettingsPanel(settingsPanelId,
+                new Model<>(this));
 	}
 
 	
@@ -104,7 +104,7 @@ public class WidgetForJira extends AbstractWidget {
 	 */
 	public List<JiraMetricMeasurement> getMeasurements(Project project, String timeInterval) {		
 		
-		List<JiraMetricMeasurement> measurements = new ArrayList<JiraMetricMeasurement>();
+		List<JiraMetricMeasurement> measurements = new ArrayList<>();
 		try {
 			InitialContext ic = new InitialContext();
 			JiraDataService dataService = (JiraDataService) ic.lookup("java:module/JiraDataService");
@@ -113,7 +113,7 @@ public class WidgetForJira extends AbstractWidget {
 				Date latestSnapshotDate = dataService.getLatestDate();
 				if (latestSnapshotDate != null) {
 					for (String metric : UQasarUtil.getJiraMetricNames()) {
-					    List<JiraMetricMeasurement> metricMeasurements = new LinkedList<JiraMetricMeasurement>();
+					    List<JiraMetricMeasurement> metricMeasurements = new LinkedList<>();
 					    if (timeInterval.compareToIgnoreCase("Latest") == 0) {
 					        metricMeasurements =         
 					            dataService.getMeasurementsPerProjectByMetricWithLatestDate(project, metric);

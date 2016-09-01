@@ -187,18 +187,18 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		feedbackName.setOutputMarkupId(true);
 		
 		//Domains
-		domain = new CheckBoxMultipleChoice<Domain>("domain", new PropertyModel<List<Domain>>(indicator, "domain"), Domain.getAllDomains());
+		domain = new CheckBoxMultipleChoice<>("domain", new PropertyModel<List<Domain>>(indicator, "domain"), Domain.getAllDomains());
 		form.add(domain);		
 
 		// Purpose
-		purpose = new DropDownChoice<Purpose>("purpose", new PropertyModel<Purpose>(indicator, "indicatorPurpose"), Purpose.getAllPurposes());
+		purpose = new DropDownChoice<>("purpose", new PropertyModel<Purpose>(indicator, "indicatorPurpose"), Purpose.getAllPurposes());
 		
 		// Purpose attributes
-		paradigm = new DropDownChoice<Paradigm>("attContent", new PropertyModel<Paradigm>(indicator, "paradigm"), Paradigm.getAllParadigms());
+		paradigm = new DropDownChoice<>("attContent", new PropertyModel<Paradigm>(indicator, "paradigm"), Paradigm.getAllParadigms());
 
 		final Label paradigmLabel = new Label("attLabel", new StringResourceModel("label.objective.paradigm",this, null));
 
-		version = new DropDownChoice<Version>("attContent", new PropertyModel<Version>(indicator, "version"), Version.getAllVersions());
+		version = new DropDownChoice<>("attContent", new PropertyModel<Version>(indicator, "version"), Version.getAllVersions());
 
 		final Label versionLabel = new Label("attLabel", new StringResourceModel("label.objective.version",this, null));
 
@@ -241,8 +241,8 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		});
 
 		// Description
-		description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description"));
+		description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description"));
 		form.add(description);
 		description.add(tinyMceBehavior = new TinyMceBehavior(
 				DefaultTinyMCESettings.get()));
@@ -267,8 +267,8 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		});
 
 		//roles
-		final CheckBoxMultipleChoice<Role> targetAudience = 
-				new CheckBoxMultipleChoice<Role>("targetAudience", new PropertyModel<List<Role>>(indicator, "targetAudience"), Role.getAllRoles());
+		final CheckBoxMultipleChoice<Role> targetAudience =
+                new CheckBoxMultipleChoice<>("targetAudience", new PropertyModel<List<Role>>(indicator, "targetAudience"), Role.getAllRoles());
 		form.add(targetAudience);
 
 		//lower and upper limits
@@ -319,11 +319,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 				cancel.setDefaultFormProcessing(false);
 				form.add(cancel);
 			} else {
-				form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-						"cancel",
-						QMQualityObjectiveViewPage.class,
-						QMQualityObjectiveViewPage.forQualityObjective(model.getObject()),
-						de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+				form.add(new BootstrapBookmarkablePageLink<>(
+                        "cancel",
+                        QMQualityObjectiveViewPage.class,
+                        QMQualityObjectiveViewPage.forQualityObjective(model.getObject()),
+                        de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 						.setLabel(new StringResourceModel("button.cancel", this, null)));
 			}
 
@@ -435,7 +435,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));

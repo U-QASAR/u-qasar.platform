@@ -77,7 +77,7 @@ public class Process extends AbstractEntity implements Namable {
 
 	@OneToMany
 	@JoinColumn(name = "project_id", nullable = true)
-	private Set<Project> projects = new HashSet<Project>();
+	private Set<Project> projects = new HashSet<>();
 
 	/**
 	 *

@@ -241,7 +241,7 @@ public class TeamEditPage extends AdminBasePage {
 			@Override
 			protected void populateItem(Item<TeamMembership> item) {
 				final TeamMembership team = item.getModelObject();
-				Check<TeamMembership> check = new Check<TeamMembership>("memberCheck", item.getModel(), teamGroup);
+				Check<TeamMembership> check = new Check<>("memberCheck", item.getModel(), teamGroup);
 				List<Role> roles = new ArrayList<>(Arrays.asList(Role.teamAssignableRoles()));
 				item.add(check);
 				BookmarkablePageLink<Object> editMemberLink = new BookmarkablePageLink<>("link.edit.member", UserEditPage.class, new PageParameters().add("id", team.getUser().getId()));

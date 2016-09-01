@@ -75,7 +75,7 @@ public class AnalysisEditor extends BasePage {
 	
 	private Analysis analysis;
 
-	Form<Analysis> analysisForm = new Form<Analysis>("form");
+	Form<Analysis> analysisForm = new Form<>("form");
 	
 	public AnalysisEditor(PageParameters parameters) {
 		super(parameters);
@@ -94,7 +94,7 @@ public class AnalysisEditor extends BasePage {
 		analysisForm.add(newNameTextField());
 		
 		// Analysis description
-		analysisForm.add(new TextArea<String>("description", new PropertyModel<String>(analysis, "description")));
+		analysisForm.add(new TextArea<>("description", new PropertyModel<String>(analysis, "description")));
 		
 		// Dropdown with all the projects stored in platform
 //		form.add(newProjectDropDownChoice());
@@ -111,8 +111,8 @@ public class AnalysisEditor extends BasePage {
 		add(analysisForm);
 		
 		// Add the dimension selector 
-		analysisForm.add(new Select2MultiChoice<Dimensions>("dimensionSelector",
-				new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
+		analysisForm.add(new Select2MultiChoice<>("dimensionSelector",
+                new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
 	}
 	
 	/**
@@ -235,7 +235,7 @@ public class AnalysisEditor extends BasePage {
 
 		@Override
 		public Collection<Dimensions> toChoices(Collection<String> ids) {
-	    	ArrayList<Dimensions> dimensions = new ArrayList<Dimensions>();
+	    	ArrayList<Dimensions> dimensions = new ArrayList<>();
 	    	
 	    	for(String id : ids){
 	    		dimensions.add(Dimensions.valueOf(id));

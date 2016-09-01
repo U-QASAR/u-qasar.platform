@@ -100,8 +100,8 @@ public class TestLinkWidget extends AbstractWidget {
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new TestLinkSettingsPanel(settingsPanelId, 
-				new Model<TestLinkWidget>(this));
+		return new TestLinkSettingsPanel(settingsPanelId,
+                new Model<>(this));
 	}
 
 
@@ -111,7 +111,7 @@ public class TestLinkWidget extends AbstractWidget {
 	 */
 	public List<TestLinkMetricMeasurement> getMeasurements(String period) {
 
-		List<TestLinkMetricMeasurement> measurements = new ArrayList<TestLinkMetricMeasurement>();
+		List<TestLinkMetricMeasurement> measurements = new ArrayList<>();
 
 		try {
 			InitialContext ic = new InitialContext();

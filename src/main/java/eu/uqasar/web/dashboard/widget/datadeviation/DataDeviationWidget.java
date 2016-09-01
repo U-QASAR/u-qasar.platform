@@ -116,7 +116,7 @@ public class DataDeviationWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new DataDeviationSettingsPanel(settingsPanelId, new Model<DataDeviationWidget>(this));
+		return new DataDeviationSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 		
 	
@@ -146,7 +146,7 @@ public class DataDeviationWidget extends AbstractWidget{
 		List<HistoricValuesBaseIndicator> historicValues = getHistoricalValues();
 		List<HistoricValuesBaseIndicator> qualityParam = new LinkedList<>();	
 		
-		List<Float> baseIndicatorValues = new LinkedList<Float>();
+		List<Float> baseIndicatorValues = new LinkedList<>();
 		// get and save parameter values
 		for(HistoricValuesBaseIndicator hv : historicValues){
 			if(hv.getBaseIndicator().getName().equals(qualityParameterChoice)){	
@@ -173,7 +173,7 @@ public class DataDeviationWidget extends AbstractWidget{
 		PointSeries series = new PointSeries();	
 		series.setType(seriesType);
 		
-		List<String> xAxisLabels = new ArrayList<String>();
+		List<String> xAxisLabels = new ArrayList<>();
 
 		for(int f = 0; f < deviations.size(); f++){		
 			String name = qualityParam.get(f).getBaseIndicator().getName();
@@ -238,7 +238,7 @@ public class DataDeviationWidget extends AbstractWidget{
 
 	private List<HistoricValuesBaseIndicator> getHistoricalValues() {
 		HistoricalDataService historicalDataService = null;
-		List<HistoricValuesBaseIndicator> histValues = new ArrayList<HistoricValuesBaseIndicator>();		
+		List<HistoricValuesBaseIndicator> histValues = new ArrayList<>();
 		try {
 			InitialContext ic = new InitialContext();
 			historicalDataService = (HistoricalDataService) ic.lookup("java:module/HistoricalDataService");	

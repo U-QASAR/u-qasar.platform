@@ -91,7 +91,7 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new ProjectQualityGoogleChartSettingsPanel(settingsPanelId, new Model<ProjectQualityGoogleChartWidget>(this));
+		return new ProjectQualityGoogleChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 	public Double returnProjectQualityValue(){

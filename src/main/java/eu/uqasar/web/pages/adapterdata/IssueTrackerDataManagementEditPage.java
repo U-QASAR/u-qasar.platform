@@ -146,7 +146,7 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<JiraMetricMeasurement> newTableEntityForm() {
-        Form<JiraMetricMeasurement> form = new InputValidationForm<JiraMetricMeasurement>("form");
+        Form<JiraMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -156,10 +156,10 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newKeyField() {
-        return new OnEventInputBeanValidationBorder<String>("keyBorder",
-                new TextField<String>("jiraKey", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("keyBorder",
+                new TextField<>("jiraKey", new PropertyModel<String>(
                         tableEntity, "jiraKey")), new StringResourceModel(
-                        "jiraKey.input.label", this, null),
+                "jiraKey.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -169,11 +169,11 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newJiraMetricField(){
-        return new OnEventInputBeanValidationBorder<String>("jiraMetricBorder",
-            new TextField<String>("jiraMetric", new PropertyModel<String>(
-                    tableEntity, "jiraMetric")), new StringResourceModel(
-                    "jiraMetric.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("jiraMetricBorder",
+                new TextField<>("jiraMetric", new PropertyModel<String>(
+                        tableEntity, "jiraMetric")), new StringResourceModel(
+                "jiraMetric.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -181,11 +181,11 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newIssueContentField(){
-        return new OnEventInputBeanValidationBorder<String>("jsonContentBorder",
-            new org.apache.wicket.markup.html.form.TextArea<String>("jsonContent", new PropertyModel<String>(
-                    tableEntity, "jsonContent")), new StringResourceModel(
-                    "jsonContent.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("jsonContentBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("jsonContent", new PropertyModel<String>(
+                        tableEntity, "jsonContent")), new StringResourceModel(
+                "jsonContent.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     
@@ -197,7 +197,7 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);

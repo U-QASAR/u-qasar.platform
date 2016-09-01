@@ -162,7 +162,7 @@ public class User extends AbstractEntity implements Namable {
 
     @ElementCollection
     @Lob
-    private List<Dashboard> dashboards = new ArrayList<Dashboard>();
+    private List<Dashboard> dashboards = new ArrayList<>();
     
     @ManyToMany(cascade = MERGE)
 	private Set<CustomerType> customerTypes = new HashSet<>();

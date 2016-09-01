@@ -107,7 +107,7 @@ public class QModel extends QMTreeNode {
 		this.setShortName(key);
 
 		boolean isCompleted = true;
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 
 		if (children != null){
 			if (children.isEmpty()){

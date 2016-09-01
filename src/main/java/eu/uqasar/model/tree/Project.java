@@ -225,7 +225,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 
     @XmlTransient
 	@ManyToMany
-    private List<Team> teams = new ArrayList<Team>();  
+    private List<Team> teams = new ArrayList<>();
     
     @XmlTransient
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="project")
@@ -264,7 +264,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 		this.setValue(value);
 		
 		Iterator<QualityObjective> it = children.iterator();
-		List<TreeNode> nodes = new LinkedList<TreeNode>();
+		List<TreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
 			QualityObjective qo = it.next();
 			nodes.add(qo);

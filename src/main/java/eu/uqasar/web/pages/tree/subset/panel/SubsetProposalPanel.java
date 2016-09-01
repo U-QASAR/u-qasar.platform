@@ -175,9 +175,9 @@ public class SubsetProposalPanel extends Panel {
 	}
 
 	private Set<MetaData> projectTags(Project project) {
-		Set<MetaData> projectTagsSet=new HashSet<MetaData>();
+		Set<MetaData> projectTagsSet= new HashSet<>();
 		
-		    projectTagsSet = new HashSet<MetaData>();
+		    projectTagsSet = new HashSet<>();
         	projectTagsSet.addAll(project.getCustomerTypes());
         	projectTagsSet.addAll(project.getProjectTypes());
         	projectTagsSet.addAll(project.getSoftwareTypes());
@@ -239,8 +239,8 @@ public class SubsetProposalPanel extends Panel {
 	 * @return
 	 */
 	private CheckGroup<QMTreeNode> newDataCheckGroup() {
-		CheckGroup<QMTreeNode> checkGroup = new CheckGroup<QMTreeNode>(
-				"dataGroup", new ArrayList<QMTreeNode>());
+		CheckGroup<QMTreeNode> checkGroup = new CheckGroup<>(
+                "dataGroup", new ArrayList<QMTreeNode>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;

@@ -66,7 +66,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 	
 	@ElementCollection
 	@Lob
-	private List<Widget> widgets = new ArrayList<Widget>();
+	private List<Widget> widgets = new ArrayList<>();
 	
 	public DbDashboard(String id, String title) {
 		this.dashboardId = id;
@@ -96,7 +96,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 
 	@Override
 	public List<Widget> getWidgets(int column) {
-		List<Widget> columnWidgets = new ArrayList<Widget>();
+		List<Widget> columnWidgets = new ArrayList<>();
 		for (Widget widget : widgets) {
 			if (column == widget.getLocation().getColumn()) {
 				columnWidgets.add(widget);

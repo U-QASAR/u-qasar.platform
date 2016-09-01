@@ -158,9 +158,9 @@ public class ProjectWizardPanel extends Wizard{
 	private Project project;
 	private Company company;    
 	private User user;
-	private List<Role> rolesNeeded = new ArrayList<Role>();
+	private List<Role> rolesNeeded = new ArrayList<>();
 	private List<Team> teams;
-	private List<User> proposedUsers = new ArrayList<User>();
+	private List<User> proposedUsers = new ArrayList<>();
 	private WebMarkupContainer teamContainer;
 	private ListView<User> usersView;
 	private boolean toggle = false;
@@ -278,7 +278,7 @@ public class ProjectWizardPanel extends Wizard{
 		private static final long serialVersionUID = 5941982365548199496L;
 
 		private final Form<Void> form;      
-		private final List<Role> roles = new ArrayList<Role>();
+		private final List<Role> roles = new ArrayList<>();
 
 
 
@@ -327,9 +327,9 @@ public class ProjectWizardPanel extends Wizard{
 		 * @return
 		 */
 		private <T extends MetaData> Select2Choice<T> newSelect2Single(final String id, Class<T> clazz, PropertyModel<T> model){
-			return new Select2Choice<T>(
-					id, model, new MetaDataCreateMissingEntitiesChoiceProvider<T>(
-							metaDataService.getAll(clazz), clazz));
+			return new Select2Choice<>(
+                    id, model, new MetaDataCreateMissingEntitiesChoiceProvider<>(
+                    metaDataService.getAll(clazz), clazz));
 		}
 		/**
 		 * 
@@ -340,7 +340,7 @@ public class ProjectWizardPanel extends Wizard{
 		 */
 		private Select2MultiChoice<Role> newSelect2MultiRoles(final String id, Class clazz, PropertyModel<Collection<Role>> model) {
 
-			Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<Role>(id, model, new UserRoleChoiceProvider());
+			Select2MultiChoice<Role> select2MultiChoice = new Select2MultiChoice<>(id, model, new UserRoleChoiceProvider());
 
 
 			final IModel<String> placeHolder = new StringResourceModelPlaceholderDelegate("placeholder.meta.role", this, null);
@@ -382,10 +382,10 @@ public class ProjectWizardPanel extends Wizard{
 			Class<T> clazz = (Class<T>) metaDataObject.getClass();
 			S service = metaDataServiceBroker.getService(clazz);
 			long count = service.countAll();
-			return new DropDownChoice<T>(
-					markupId, 
-					new PropertyModel<T>(metaDataObject, "name"),
-					service.getAllAscendingByName(clazz, 0, count)); 
+			return new DropDownChoice<>(
+                    markupId,
+                    new PropertyModel<T>(metaDataObject, "name"),
+                    service.getAllAscendingByName(clazz, 0, count));
 		}   
 	}
 
@@ -439,7 +439,7 @@ public class ProjectWizardPanel extends Wizard{
 					Link userEditNameLink = new BookmarkablePageLink("link.name.edit.user", UserEditPage.class, new PageParameters().add("id", proposedUser.getId()));
 					item.add(userEditNameLink.add(new Label("td.username", new PropertyModel<>(proposedUser, "fullNameWithUserName"))));
 
-					item.add(new DropDownChoice<Role>("role", new PropertyModel<Role>(proposedUser, "role"), Role.getAllRolesWithLoggedInUser(proposedUser)).setOutputMarkupId(true).setEnabled(false));		
+					item.add(new DropDownChoice<>("role", new PropertyModel<Role>(proposedUser, "role"), Role.getAllRolesWithLoggedInUser(proposedUser)).setOutputMarkupId(true).setEnabled(false));
 					item.add(new MultiLineLabel("skills", getMatchedSkillsFromUser(proposedUser)));
 
 					final WebMarkupContainer btnContainer = new WebMarkupContainer("btnContainer");
@@ -545,7 +545,7 @@ public class ProjectWizardPanel extends Wizard{
 		private String getMatchedSkillsFromUser(User user) {
 
 			List<String> skills = (List<String>) matchedSkills.get(user);
-			Set<String> skillsNoDoubles = new HashSet<String>();
+			Set<String> skillsNoDoubles = new HashSet<>();
 			skillsNoDoubles.addAll(skills);
 
 			return skillsNoDoubles.toString().replace("[", "").replace("]", "");
@@ -1141,7 +1141,7 @@ public class ProjectWizardPanel extends Wizard{
 	 */
 	private List<Team> buildTeams(List<User> proposedUsers) {
 
-		List<Team> teams = new ArrayList<Team>();
+		List<Team> teams = new ArrayList<>();
 
 		Team proposedTeam = new Team();
 

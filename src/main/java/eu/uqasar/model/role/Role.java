@@ -96,7 +96,7 @@ public enum Role {
         // check user role
         if (user.getRole() != null) {
             if (user.getRole() != Role.Administrator) {
-                List<Role> roles = new LinkedList<Role>();
+                List<Role> roles = new LinkedList<>();
                 for (Role role : getAllRoles()) {
                     if (role.compareTo(Administrator) != 0) {
                         roles.add(role);

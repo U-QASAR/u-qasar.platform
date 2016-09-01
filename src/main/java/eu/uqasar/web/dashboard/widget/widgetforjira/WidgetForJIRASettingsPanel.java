@@ -96,7 +96,7 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 			e.printStackTrace();
 		}
 
-		Form<Widget> form = new Form<Widget>("form");
+		Form<Widget> form = new Form<>("form");
 		wmcGeneral = new WebMarkupContainer("wmcGeneral");
 		form.add(wmcGeneral);
 
@@ -104,12 +104,12 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 		List<String> chartTypes = Arrays.asList("AREA", "BAR", "LINE", "COLUMN");
 		List<String> timeIntervals = Arrays.asList("Last Year", "Last 6 Months", "Last Month", "Last Week", "Latest");
 
-		wmcGeneral.add(new DropDownChoice<String>("chartType", new PropertyModel<String>(this, "chartType"), chartTypes));
+		wmcGeneral.add(new DropDownChoice<>("chartType", new PropertyModel<String>(this, "chartType"), chartTypes));
 
-		wmcGeneral.add(new DropDownChoice<String>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
+		wmcGeneral.add(new DropDownChoice<>("time", new PropertyModel<String>(this, "timeInterval"), timeIntervals));
 
 		// project
-		projectChoice = new DropDownChoice<Project>("project", new PropertyModel<Project>(this, "project"), projects);
+		projectChoice = new DropDownChoice<>("project", new PropertyModel<Project>(this, "project"), projects);
 		if (project != null) {
 			projectChoice.add(new AjaxFormComponentUpdatingBehavior("onChange") {
 				private static final long serialVersionUID = 1L;
@@ -123,8 +123,8 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 
 		}
 		List<String> individualMetricGroups = UQasarUtil.getJiraMetricNames();
-		DropDownChoice<String> dropDown = new DropDownChoice<String>("individualMetric", new PropertyModel<String>(this,
-				"individualMetric"), individualMetricGroups);
+		DropDownChoice<String> dropDown = new DropDownChoice<>("individualMetric", new PropertyModel<String>(this,
+                "individualMetric"), individualMetricGroups);
 		dropDown.setNullValid(true);
 		wmcGeneral.add(dropDown);
 		wmcGeneral.setOutputMarkupId(true);

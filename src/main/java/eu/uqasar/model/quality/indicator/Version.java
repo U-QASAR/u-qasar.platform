@@ -63,7 +63,7 @@ public enum Version implements IResourceKeyProvider {
 	}
 	
 	public static List<Version> getAllVersions(){
-		List<Version> list = new ArrayList<Version>();
+		List<Version> list = new ArrayList<>();
         Collections.addAll(list, Version.values());
 		return list;
 	}

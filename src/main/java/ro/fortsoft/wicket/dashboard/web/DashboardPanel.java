@@ -110,7 +110,7 @@ public class DashboardPanel extends GenericPanel<Dashboard> implements Dashboard
 				@Override
 				protected void onBeforeRender() {
 					if (!hasBeenRendered()) {
-						columnPanels = new ArrayList<DashboardColumnPanel>();
+						columnPanels = new ArrayList<>();
 					}
 					
 					super.onBeforeRender();

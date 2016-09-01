@@ -152,28 +152,28 @@ public class QualityIndicatorEditPanel extends BaseTreePanel<QualityIndicator> {
 			}
 		};
 
-		hiddenTextField = new TextArea<String>("hidden", new PropertyModel<String>(model, "viewFormula"));
+		hiddenTextField = new TextArea<>("hidden", new PropertyModel<String>(model, "viewFormula"));
 		form.add(hiddenTextField);
 		
 		form.add(new TextField<>("name", new PropertyModel<>(model, "name"))
 				.add(new AttributeAppender("maxlength", 255)));
 
-		form.add(new DropDownChoice<Type>("type", new PropertyModel<Type>(
-				model, "indicatorType"), Arrays.asList(Type.values())));
+		form.add(new DropDownChoice<>("type", new PropertyModel<Type>(
+                model, "indicatorType"), Arrays.asList(Type.values())));
 
-		form.add(new DropDownChoice<Purpose>("purpose",
-				new PropertyModel<Purpose>(model, "indicatorPurpose"), Arrays
-				.asList(Purpose.values())));
+		form.add(new DropDownChoice<>("purpose",
+                new PropertyModel<Purpose>(model, "indicatorPurpose"), Arrays
+                .asList(Purpose.values())));
 
-		form.add(new DropDownChoice<LifeCycleStage>("lcStage",
-				new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
-				Arrays.asList(LifeCycleStage.values())));
+		form.add(new DropDownChoice<>("lcStage",
+                new PropertyModel<LifeCycleStage>(model, "lifeCycleStage"),
+                Arrays.asList(LifeCycleStage.values())));
 
-		form.add(description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description")));
+		form.add(description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description")));
 
 		// Threshold indicator
-		form.add(new ThresholdEditor<QualityIndicator>("thresholdEditor", model));
+		form.add(new ThresholdEditor<>("thresholdEditor", model));
 		
 		// Selector to choose calculation mode
 		form.add(new DropDownChoice<>("useFormula", new PropertyModel<>(model, "useFormula"), Arrays.asList(Boolean.TRUE, Boolean.FALSE) ));
@@ -183,7 +183,7 @@ public class QualityIndicatorEditPanel extends BaseTreePanel<QualityIndicator> {
 		form.add(new TextField<>("weight", new PropertyModel<>(model, "weight")));
 		
 		// Weight indicator shows data of weight consumed and available
-		form.add(new WeightIndicator<QualityIndicator>("totalWeight",model));
+		form.add(new WeightIndicator<>("totalWeight", model));
 
 		formulaEditor = new JQueryTextCompleteEditor<>("formulaEditor",  new PropertyModel<String>(model, "viewFormula"));
 				
@@ -224,11 +224,11 @@ public class QualityIndicatorEditPanel extends BaseTreePanel<QualityIndicator> {
 			cancel.setDefaultFormProcessing(false);
 			form.add(cancel);			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<QualityIndicatorViewPage>(
-					"cancel",
-					QualityIndicatorViewPage.class,
-					QualityIndicatorViewPage.forQualityIndicator(model.getObject()),
-					de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+			form.add(new BootstrapBookmarkablePageLink<>(
+                    "cancel",
+                    QualityIndicatorViewPage.class,
+                    QualityIndicatorViewPage.forQualityIndicator(model.getObject()),
+                    de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 					.setLabel(new StringResourceModel("button.cancel", this, null)));
 		}
 		form.add(new Button("save", new StringResourceModel("button.save",

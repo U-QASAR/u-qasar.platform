@@ -70,7 +70,7 @@ public class RDFManagementPage extends AdminBasePage {
 		add(newReadModelButton());
 		add(newOutputModelButton());
 		
-		sparqlEditor = new TextArea<String>("sparqleditor", Model.of(""));
+		sparqlEditor = new TextArea<>("sparqleditor", Model.of(""));
 		sparqlEditor.setModelObject("SELECT ?s WHERE { ?s a <http://eu.uqasar.model.user/User> }");
 		add(sparqlEditor);
 		add(newExecSparqlQueryButton());		

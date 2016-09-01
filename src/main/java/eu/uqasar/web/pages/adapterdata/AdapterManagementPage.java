@@ -270,8 +270,8 @@ public class AdapterManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<AdapterSettings> newAdapterSettingsCheckGroup() {
-		CheckGroup<AdapterSettings> checkGroup = new CheckGroup<AdapterSettings>(
-				"adapterGroup", new ArrayList<AdapterSettings>());
+		CheckGroup<AdapterSettings> checkGroup = new CheckGroup<>(
+                "adapterGroup", new ArrayList<AdapterSettings>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			/**

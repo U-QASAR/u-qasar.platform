@@ -197,8 +197,8 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<CubesMetricMeasurement> newCubesCheckGroup() {
-		CheckGroup<CubesMetricMeasurement> checkGroup = new CheckGroup<CubesMetricMeasurement>(
-				"cubesGroup", new ArrayList<CubesMetricMeasurement>());
+		CheckGroup<CubesMetricMeasurement> checkGroup = new CheckGroup<>(
+                "cubesGroup", new ArrayList<CubesMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;

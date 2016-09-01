@@ -69,7 +69,7 @@ public class Team extends AbstractEntity implements Namable {
 	private Set<TeamMembership> members = new HashSet<>();
 
 	public Collection<User> getAllUsers() {
-		List<User> users = new ArrayList<User>();
+		List<User> users = new ArrayList<>();
 		for (TeamMembership member : members) {
 			users.add(member.getUser());
 		}

@@ -83,7 +83,7 @@ public class TestLinkWidgetView extends WidgetView {
 				        return TDT.getMeasurementsForProjectByPeriod("UQASAR", period);
 				    }
 				} else {
-					return new ArrayList<TestLinkMetricMeasurement>();
+					return new ArrayList<>();
 				}
 			}
 		};

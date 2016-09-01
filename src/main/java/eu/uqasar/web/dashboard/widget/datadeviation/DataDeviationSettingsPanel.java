@@ -75,9 +75,9 @@ implements DashboardContextAware {
 	private final DropDownChoice<Project> projectChoice;
 	private final DropDownChoice<String> qualityParameterChoice;
 	private final WebMarkupContainer wmcGeneral;
-	private List<String> OBJS = new ArrayList<String>(), 
-			INDIS= new ArrayList<String>(), 
-			MTRX = new ArrayList<String>();
+	private List<String> OBJS = new ArrayList<>(),
+			INDIS= new ArrayList<>(),
+			MTRX = new ArrayList<>();
 	private List<Project> projects;
 
 	public DataDeviationSettingsPanel(String id, IModel<DataDeviationWidget> model) {
@@ -107,7 +107,7 @@ implements DashboardContextAware {
 
 
 		//Form and WMCs
-		final Form<Widget> form = new Form<Widget>("form");		
+		final Form<Widget> form = new Form<>("form");
 		wmcGeneral = newWebMarkupContainer("wmcGeneral");
 		form.add(wmcGeneral);
 
@@ -135,7 +135,7 @@ implements DashboardContextAware {
 		wmcGeneral.add(qualityParameterChoice);
 
 		// project
-		projectChoice = new DropDownChoice<Project>("projects", new PropertyModel<Project>(this, "project"), projects);
+		projectChoice = new DropDownChoice<>("projects", new PropertyModel<Project>(this, "project"), projects);
 		projectChoice.add(new AjaxFormComponentUpdatingBehavior("onChange") {
 			private static final long serialVersionUID = 1L;
 			@Override
@@ -200,22 +200,23 @@ implements DashboardContextAware {
 		//	IModel<List<String>> model = new Model<List<String>>();
 
 
-		SelectOptions<String> selectOptions = new SelectOptions<String>(
-				wicketId, 
-				Model.ofList(selections), 
-				new IOptionRenderer<String>() {
-					private static final long serialVersionUID = 1L;
-					@Override 
-					public String getDisplayValue(String object) { 
-						return object;
-					}
+		SelectOptions<String> selectOptions = new SelectOptions<>(
+                wicketId,
+                Model.ofList(selections),
+                new IOptionRenderer<String>() {
+                    private static final long serialVersionUID = 1L;
 
-					@Override 
-					public IModel<String> getModel(String value) { 
-						return new Model<String>(value);
-					}
-				}
-				);
+                    @Override
+                    public String getDisplayValue(String object) {
+                        return object;
+                    }
+
+                    @Override
+                    public IModel<String> getModel(String value) {
+                        return new Model<>(value);
+                    }
+                }
+        );
 		selectOptions.setRecreateChoices(true);
 		selectOptions.setOutputMarkupId(true);
 

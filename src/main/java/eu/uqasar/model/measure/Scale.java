@@ -62,7 +62,7 @@ public enum Scale implements IResourceKeyProvider {
 	}
 	
 	public static List<Scale> getAllScales(){
-		List<Scale> list = new ArrayList<Scale>();
+		List<Scale> list = new ArrayList<>();
         Collections.addAll(list, Scale.values());
 		return list;
 	}

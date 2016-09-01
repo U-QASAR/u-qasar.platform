@@ -121,7 +121,7 @@ public class JenkinsWidgetView extends WidgetView {
         if (last100Builds != null && last100Builds.size() != 0) {
             // sortedLast100Builds = new TreeMap<Number, String>(last100Builds);
             Set<Entry<Number, String>> entrySet = last100Builds.entrySet();
-            sortedLast100Builds = new ArrayList<Entry<Number, String>>(entrySet);
+            sortedLast100Builds = new ArrayList<>(entrySet);
             Collections.sort(sortedLast100Builds, new SortByKeyDescending());
         }
 
@@ -203,8 +203,8 @@ public class JenkinsWidgetView extends WidgetView {
         // add the correct labels on the axes (0 = stable, 1=unstable, 2=broken, 3=Unknown
         // add the correct BuildNumber on the x-axis (not 0-99, but 634-734)
         List<Number> data = new ArrayList<>();
-        List<String> yAxisLabels = new ArrayList<String>();
-        List<String> xAxisLabels = new ArrayList<String>();
+        List<String> yAxisLabels = new ArrayList<>();
+        List<String> xAxisLabels = new ArrayList<>();
         
         int counter = 0;
          

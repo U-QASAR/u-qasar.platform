@@ -60,7 +60,7 @@ public class DetachWidgetAction extends WidgetAction {
 	public AbstractLink getLink(String id) {
 		PageParameters parameters = new PageParameters();
 		parameters.add("id", widget.getId());
-		BookmarkablePageLink<Void> link = new BookmarkablePageLink<Void>(id, WidgetPage.class, parameters);
+		BookmarkablePageLink<Void> link = new BookmarkablePageLink<>(id, WidgetPage.class, parameters);
 	    
 		PopupSettings popupSettings = new PopupSettings(widget.getTitle()).setHeight(320).setWidth(550);
 	    link.setPopupSettings(popupSettings);

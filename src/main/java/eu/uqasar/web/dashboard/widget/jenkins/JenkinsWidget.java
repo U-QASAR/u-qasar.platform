@@ -83,7 +83,7 @@ public class JenkinsWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new JenkinsSettingsPanel(settingsPanelId, new Model<JenkinsWidget>(this));
+		return new JenkinsSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 		
 
