@@ -56,7 +56,7 @@ public class FileUploadUtil {
 	@Getter(AccessLevel.PRIVATE)
 	private static String uploadFolderBasePath;
 
-	public static Path getUserUploadFolder(User user) throws IOException {
+	private static Path getUserUploadFolder(User user) throws IOException {
 		String userId = "default";
 		if (user != null) {
 			userId = String.valueOf(user.getId());
@@ -76,7 +76,7 @@ public class FileUploadUtil {
 		return basePath;
 	}
 
-	public static Path getUserProfilePicturesUploadFolder() throws IOException {
+	static Path getUserProfilePicturesUploadFolder() throws IOException {
 		Path basePath = FileSystems.getDefault().getPath(getUploadFolderBasePath(), "userprofiles");
 		if (!Files.exists(basePath)) {
 			Files.createDirectories(basePath);
@@ -94,7 +94,7 @@ public class FileUploadUtil {
 		return mediaType;
 	}
 
-	protected Path getNewFileName(FileUpload file, User user, boolean overwrite) throws IOException {
+	Path getNewFileName(FileUpload file, User user, boolean overwrite) throws IOException {
 		Path target;
 		String uploadedFileFileName = file.getClientFileName();
 		if (overwrite) {
@@ -121,7 +121,7 @@ public class FileUploadUtil {
 		return getMimeType(upload.getInputStream());
 	}
 
-	public static MediaType getMimeType(InputStream stream) throws IOException {
+	private static MediaType getMimeType(InputStream stream) throws IOException {
 		return getMimeType(stream, new Metadata());
 	}
 

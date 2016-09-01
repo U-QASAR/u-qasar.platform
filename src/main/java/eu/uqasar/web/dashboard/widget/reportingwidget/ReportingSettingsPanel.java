@@ -70,8 +70,8 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
     private transient DashboardContext dashboardContext;
     private String cube;
-    SonarDataService dataService;
-    List<String> projects = new ArrayList<>();
+    private SonarDataService dataService;
+    private List<String> projects = new ArrayList<>();
 
     private Map<String, List<String>> rulesMap = new HashMap<>(); // map:rule->additionalRules
     private final String selectedRule;
@@ -84,8 +84,8 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
     private final WebMarkupContainer ruleWebMrkUpContainer;
     private final List<Rule> proposedRules = new ArrayList<>();
 
-    DropDownChoice<String> rules;
-    DropDownChoice<String> additionalRules;
+    private DropDownChoice<String> rules;
+    private DropDownChoice<String> additionalRules;
 
     public ReportingSettingsPanel(String id, IModel<ReportingWidget> model) {
         super(id, model);

@@ -74,8 +74,8 @@ public abstract class QMSelectableTreeFolder extends QMTreeNodeContent {
 		selected = provider.model(node);
 	}
 
-	protected void select(QMTreeNode node, AbstractTree<QMTreeNode> tree,
-			final AjaxRequestTarget target) {
+	private void select(QMTreeNode node, AbstractTree<QMTreeNode> tree,
+                        final AjaxRequestTarget target) {
 		if (selected != null) {
 			tree.updateNode(selected.getObject(), target);
 

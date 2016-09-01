@@ -157,9 +157,9 @@ public class ProductService extends AbstractService<Product> {
 	    
 	
 
-	protected List<Predicate> getFilterPredicates(
-			final ProductFilterStructure filter, CriteriaBuilder cb,
-			Root<Product> from) {
+	private List<Predicate> getFilterPredicates(
+            final ProductFilterStructure filter, CriteriaBuilder cb,
+            Root<Product> from) {
 		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;

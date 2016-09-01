@@ -150,7 +150,7 @@ public abstract class ProductManagementPanel extends Panel {
 		return this.selected;
 	}
 
-	public void setSelected(String selected) {
+	private void setSelected(String selected) {
 		this.selected = selected;
 	}
 

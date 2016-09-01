@@ -88,7 +88,7 @@ public class MetricNotificationLink extends
         super.onConfigure();
     }
     
-    public Metric getMetric() {
+    private Metric getMetric() {
         return getModelObject() != null ? getModelObject().getMetric() : null;
     }
 

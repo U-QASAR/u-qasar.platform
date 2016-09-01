@@ -108,7 +108,7 @@ public class LdapUser extends LdapEntity {
         return toUser(this);
     }
 
-    public static User toUser(LdapUser ldapUser) {
+    private static User toUser(LdapUser ldapUser) {
         User user = new User();
         user.setFirstName(ldapUser.getFirstName());
         user.setLastName(ldapUser.getLastName());

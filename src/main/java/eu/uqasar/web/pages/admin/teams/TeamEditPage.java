@@ -266,12 +266,12 @@ public class TeamEditPage extends AdminBasePage {
 		}
 	}
 
-	protected Iterator<User> getTeamableUsers(final String input) {
+	private Iterator<User> getTeamableUsers(final String input) {
 		List<User> potentialUsers = userService.getAllExceptAndFilter(team.getAllUsers(), input);
 		return potentialUsers.iterator();
 	}
 
-	public <T> IConverter<T> getAutocompleteConverter() {
+	private <T> IConverter<T> getAutocompleteConverter() {
 		return new IConverter<T>() {
 
 			@Override
@@ -286,7 +286,7 @@ public class TeamEditPage extends AdminBasePage {
 		};
 	}
 
-	public IAutoCompleteRenderer<User> getAutocompleteRenderer() {
+	private IAutoCompleteRenderer<User> getAutocompleteRenderer() {
 		return new AbstractAutoCompleteTextRenderer<User>() {
 
 			@Override
@@ -296,7 +296,7 @@ public class TeamEditPage extends AdminBasePage {
 		};
 	}
 
-	public IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
+	private IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
 		return new IDataProvider<TeamMembership>() {
 
 			@Override
@@ -435,7 +435,7 @@ public class TeamEditPage extends AdminBasePage {
 	        return linkToEdit(entity.getId());
 	    }
 	    
-	    public static PageParameters linkToEdit(Long entityId) {
+	    private static PageParameters linkToEdit(Long entityId) {
 	        return new PageParameters().set("id", entityId);
 	    }
 

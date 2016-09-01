@@ -73,11 +73,11 @@ public abstract class BasePage extends WebPage {
 	 */
 	private static final long serialVersionUID = 6323920767950541998L;
 
-	public static final String MESSAGE_PARAM = "message";
+	protected static final String MESSAGE_PARAM = "message";
 
-	public static final String LEVEL_PARAM = "level";
+	protected static final String LEVEL_PARAM = "level";
 
-	protected static final String FEEDBACKPANEL_ID = "feedbackPanel";
+	private static final String FEEDBACKPANEL_ID = "feedbackPanel";
 
     private final HeaderNavigationBar navbar;
     
@@ -149,7 +149,7 @@ public abstract class BasePage extends WebPage {
 		return feedbackPanel;
 	}
 	
-	protected void logUserAction(UserActionLog logEntry) {
+	private void logUserAction(UserActionLog logEntry) {
 		loggingService.create(logEntry);
 	}
 
@@ -261,7 +261,7 @@ public abstract class BasePage extends WebPage {
 		return appendFeedbackMessage(params, FeedbackMessage.INFO, message.getObject());
 	}
 
-	public static PageParameters appendWarnMessage(PageParameters params, final IModel<? extends Serializable> message) {
+	protected static PageParameters appendWarnMessage(PageParameters params, final IModel<? extends Serializable> message) {
 		return appendFeedbackMessage(params, FeedbackMessage.WARNING, message.getObject());
 	}
 
@@ -273,7 +273,7 @@ public abstract class BasePage extends WebPage {
 		return appendFeedbackMessage(new PageParameters(), level, message.getObject());
 	}
 
-	public static PageParameters appendFeedbackMessage(PageParameters params, final int level, Serializable message) {
+	private static PageParameters appendFeedbackMessage(PageParameters params, final int level, Serializable message) {
 		params.add(LEVEL_PARAM, level);
 		params.add(MESSAGE_PARAM, message);
 		return params;

@@ -64,20 +64,20 @@ public class ReportingWidget extends AbstractWidget {
     private static final long serialVersionUID = -105357652483079696L;
 
     public static final String COLUMN_TYPE = "COLUMN";
-    public static final String PIE_TYPE = "PIE";
+    private static final String PIE_TYPE = "PIE";
 
     public static final List<String> TYPES = 
     		Arrays.asList(COLUMN_TYPE, PIE_TYPE);
 
     private static ReportingFactory chartDataFactory;
 
-    public String cube_table;
+    private String cube_table;
 
     public String getCube_table() {
         return cube_table;
     }
 
-    public void setCube_table(String cube_table) {
+    private void setCube_table(String cube_table) {
         this.cube_table = cube_table;
     }
 

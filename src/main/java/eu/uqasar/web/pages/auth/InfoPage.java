@@ -139,7 +139,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @return
 	 */
-	public static InfoPage registrationConfirmationSentAgainMessage() {
+	private static InfoPage registrationConfirmationSentAgainMessage() {
 		return new InfoPage("headerRegistrationConfirmationSentAgain",
 				"messageRegistrationConfirmationSentAgain",
 				InfoFragmentType.EMPTY, null, new PageParameters());
@@ -149,7 +149,7 @@ public class InfoPage extends BasePage {
 	 *
 	 * @return
 	 */
-	public static InfoPage resendRegistrationFailureMessage() {
+	private static InfoPage resendRegistrationFailureMessage() {
 		return new InfoPage("headerResendRegistrationFailure",
 				"messageResendRegistrationFailure",
 				InfoFragmentType.LOGIN_REGISTER, null, new PageParameters());

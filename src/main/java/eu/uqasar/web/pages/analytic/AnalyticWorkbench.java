@@ -62,7 +62,7 @@ public class AnalyticWorkbench extends BasePage {
 //	@Inject
 //	TreeNodeService treeNodeService;
 	
-	final WebMarkupContainer analysisContainer = new WebMarkupContainer("analysisContainer");
+	private final WebMarkupContainer analysisContainer = new WebMarkupContainer("analysisContainer");
 
 	
 	// how many adapters do we show per page

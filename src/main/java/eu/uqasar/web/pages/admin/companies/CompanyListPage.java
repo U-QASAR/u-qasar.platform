@@ -255,7 +255,7 @@ public class CompanyListPage extends AdminBasePage {
 		}
 	}
 	
-	public static PageParameters forCompany(final String name) {
+	private static PageParameters forCompany(final String name) {
 		return new PageParameters().add("name", name);
 	}
 	

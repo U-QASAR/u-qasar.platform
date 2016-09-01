@@ -176,7 +176,7 @@ public class ProjectImportPage extends BasePage {
         return new StringResourceModel("page.title", this, null);
     }
 
-    public Project parseProject(FileUpload upload, String content) throws uQasarException, Exception {
+    private Project parseProject(FileUpload upload, String content) throws uQasarException, Exception {
         File file = new File(upload.getClientFileName());
         if (file.exists()) {
             file.delete();

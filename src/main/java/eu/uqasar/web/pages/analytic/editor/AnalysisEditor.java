@@ -75,7 +75,7 @@ public class AnalysisEditor extends BasePage {
 	
 	private final Analysis analysis;
 
-	final Form<Analysis> analysisForm = new Form<>("form");
+	private final Form<Analysis> analysisForm = new Form<>("form");
 	
 	public AnalysisEditor(PageParameters parameters) {
 		super(parameters);
@@ -166,7 +166,7 @@ public class AnalysisEditor extends BasePage {
 	/**
 	 * @param target Saves the current edited Analysis
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		analyticService.update(analysis);
 		Session.get().success(
 				new StringResourceModel("saved.message", this, Model
@@ -185,7 +185,7 @@ public class AnalysisEditor extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(analysisForm);

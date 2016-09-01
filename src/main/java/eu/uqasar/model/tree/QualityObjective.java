@@ -58,7 +58,7 @@ import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
 public class QualityObjective extends BaseIndicator implements Comparable<QualityObjective>{
 
 	private static final long serialVersionUID = 9113178213997749526L;
-	public static final IconType ICON = new IconType("tasks");
+	private static final IconType ICON = new IconType("tasks");
 
 	@XmlTransient
 	@ManyToOne

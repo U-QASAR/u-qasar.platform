@@ -67,7 +67,7 @@ public final class Gravatar implements Serializable {
 	/**
 	 * Returns the Gravatar URL for the given email address.
 	 */
-	public String getUrl(String email) {
+    private String getUrl(String email) {
 		Validate.notNull(email, "email");
 
 		// hexadecimal MD5 hash of the requested user's lowercased email address

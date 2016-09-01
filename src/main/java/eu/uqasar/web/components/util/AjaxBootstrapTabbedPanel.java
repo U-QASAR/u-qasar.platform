@@ -44,12 +44,12 @@ public class AjaxBootstrapTabbedPanel<T extends ITab> extends AjaxTabbedPanel<T>
 
     private Direction direction = ABOVE;
     
-    public AjaxBootstrapTabbedPanel(String id, List<T> tabs) {
+    AjaxBootstrapTabbedPanel(String id, List<T> tabs) {
         super(id, tabs);
         commonInit();
     }
 
-    public AjaxBootstrapTabbedPanel(String id, List<T> tabs, IModel<Integer> model) {
+    AjaxBootstrapTabbedPanel(String id, List<T> tabs, IModel<Integer> model) {
         super(id, tabs, model);
         commonInit();
     }

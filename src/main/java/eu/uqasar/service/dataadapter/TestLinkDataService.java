@@ -65,7 +65,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * 
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getAllTestLinkMetricObjects() {
+    private List<TestLinkMetricMeasurement> getAllTestLinkMetricObjects() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<TestLinkMetricMeasurement> query = 
 				cb.createQuery(TestLinkMetricMeasurement.class);
@@ -157,7 +157,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * @param project
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getMeasurementsForProject(String project) {
+    private List<TestLinkMetricMeasurement> getMeasurementsForProject(String project) {
 		logger.info("Obtaining measurements for the project: " +project);
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -176,7 +176,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * @param date
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getMeasurementsForProjectByDate(String project, Date date) {
+    private List<TestLinkMetricMeasurement> getMeasurementsForProjectByDate(String project, Date date) {
 		logger.info("Obtaining measurements for the project: " +project);
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();

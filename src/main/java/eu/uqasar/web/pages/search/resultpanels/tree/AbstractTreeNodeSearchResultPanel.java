@@ -37,7 +37,7 @@ public abstract class AbstractTreeNodeSearchResultPanel<T extends AbstractEntity
     @Inject
     TreeNodeService service;
     
-    public AbstractTreeNodeSearchResultPanel(String id, String searchTerm, Class<T> clazz) {
+    AbstractTreeNodeSearchResultPanel(String id, String searchTerm, Class<T> clazz) {
         super(id, searchTerm, clazz);
     }
 

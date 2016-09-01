@@ -183,7 +183,7 @@ public class SnapshotViewPanel extends Panel {
 	 * @param node
 	 * @return Returns a Link to the page element according to the type of the node
 	 */
-	protected BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
+    private BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
 		BookmarkablePageLink<?> link = null;
 		
 		if (node instanceof Project) {

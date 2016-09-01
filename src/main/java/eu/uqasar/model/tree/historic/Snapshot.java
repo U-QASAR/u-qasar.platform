@@ -77,7 +77,7 @@ public class Snapshot extends AbstractEntity{
 	/**
 	 * @return formated date ready to be printed without milliseconds
 	 */
-	public String getFormatedDate(){
+    private String getFormatedDate(){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		return sdf.format(date);
 	}

@@ -39,7 +39,7 @@ public abstract class AbstractQModelTreeNodeSearchResultPanel<T extends Abstract
     
     
     
-    public AbstractQModelTreeNodeSearchResultPanel(String id, String searchTerm, Class<T> clazz) {
+    AbstractQModelTreeNodeSearchResultPanel(String id, String searchTerm, Class<T> clazz) {
         super(id, searchTerm, clazz);
     }
 

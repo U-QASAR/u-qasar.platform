@@ -50,11 +50,11 @@ public class UserPictureResource extends DynamicImageResource {
 	public static final ContextRelativeResource defaultProfilePictureRef
 			= new ContextRelativeResource("assets/img/user/anonymous.png");
 
-	public UserPictureResource(int maxSize) {
+	private UserPictureResource(int maxSize) {
 		this.maxSize = maxSize;
 	}
 
-	public UserPictureResource(long userId, int maxSize) {
+	private UserPictureResource(long userId, int maxSize) {
 		this.maxSize = maxSize;
 	}
 

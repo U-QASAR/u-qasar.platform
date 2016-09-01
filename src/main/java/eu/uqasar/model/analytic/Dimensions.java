@@ -52,7 +52,7 @@ public enum Dimensions {
 		return getLabelModel().getObject();
 	}
 
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(Dimensions.class, "label.dimension." + labelKey);
 	}
 	

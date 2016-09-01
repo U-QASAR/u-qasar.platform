@@ -154,7 +154,7 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 	/**	
 	 * Cancel an existing timer
 	 */
-	public void cancelTimer() {
+    private void cancelTimer() {
 		if (timerService.getTimers() != null && timerService.getTimers().size() > 0) {
 			System.out.println("Cancelling U-QASAR adapter data update timer ");
 

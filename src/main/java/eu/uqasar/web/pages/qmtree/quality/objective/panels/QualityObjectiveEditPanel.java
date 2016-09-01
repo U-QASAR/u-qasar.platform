@@ -373,7 +373,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		super.onConfigure();
 	}
 	
-	public QMQualityObjective checkCompleted(QMQualityObjective node) {
+	private QMQualityObjective checkCompleted(QMQualityObjective node) {
 		if (node.getChildren().isEmpty()){
 			node.setCompleted(false);
 			//update quality model

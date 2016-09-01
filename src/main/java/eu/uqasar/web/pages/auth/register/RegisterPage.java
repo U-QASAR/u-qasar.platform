@@ -123,7 +123,7 @@ public class RegisterPage extends BasePage {
 		add(form);
 	};
 
-	protected void tryToRegister() {
+	private void tryToRegister() {
 		try {
 			authenticationService.checkMailAlreadyRegistered(newUser.getMail());
 			authenticationService.checkUserNameAlreadyRegistered(newUser.getUserName());

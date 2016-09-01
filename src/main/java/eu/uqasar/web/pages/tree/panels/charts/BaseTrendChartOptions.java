@@ -66,7 +66,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 	private static final int MONTHS_TO_SHOW = 6;
 
 	
-	HistoricalDataService dataService;
+	private HistoricalDataService dataService;
 	
 	public BaseTrendChartOptions(Component chartContainer, IModel<Type> model) {
 		TreeNode object = model.getObject();
@@ -159,7 +159,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 
 	}
 
-	protected Number[] getAverage(List<Number[]> seriesValues) {
+	private Number[] getAverage(List<Number[]> seriesValues) {
 		if (seriesValues.size() > 0) {
 			int seriesElementCount = seriesValues.get(0).length;
 			Float[] averages = new Float[seriesElementCount];
@@ -199,7 +199,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 		return numbers;
 	}
 	
-	protected Number[] getRealNumbers(TreeNode node, int elementCount){
+	private Number[] getRealNumbers(TreeNode node, int elementCount){
 		Number[] numbersHalfYear = new Number[elementCount];
 		Number[] numbersFullYear = new Number[2*elementCount];
 		BaseIndicator baseIndicator = (BaseIndicator) node;

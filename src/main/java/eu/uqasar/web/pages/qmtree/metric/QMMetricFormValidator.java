@@ -80,7 +80,7 @@ public class QMMetricFormValidator extends AbstractFormValidator {
 	}
 
 
-	public final Localizer getLocalizer(Form<?> form)
+	private Localizer getLocalizer(Form<?> form)
 	{
 		return form.getApplication().getResourceSettings().getLocalizer();
 	}	

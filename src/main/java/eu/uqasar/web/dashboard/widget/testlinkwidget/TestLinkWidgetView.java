@@ -42,7 +42,7 @@ import eu.uqasar.service.dataadapter.TestLinkDataService;
 
 public class TestLinkWidgetView extends WidgetView {
 
-	TestLinkDataService TDT;
+	private TestLinkDataService TDT;
 	/**
 	 * 
 	 */

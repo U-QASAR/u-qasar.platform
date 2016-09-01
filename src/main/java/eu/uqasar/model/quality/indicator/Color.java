@@ -44,7 +44,7 @@ public enum Color implements IResourceKeyProvider {
 		this.labelKey = labelKey;
 	}
 	
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(this.getClass(), this);
 	}
 

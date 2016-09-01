@@ -39,7 +39,7 @@ import org.apache.wicket.request.component.IRequestableComponent;
  */
 public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy {
 
-	public static final MetaDataKey<ActionPermissions> ACTION_PERMISSIONS = new MetaDataKey<ActionPermissions>() {
+	private static final MetaDataKey<ActionPermissions> ACTION_PERMISSIONS = new MetaDataKey<ActionPermissions>() {
 		private static final long serialVersionUID = -6034806047968773277L;
 
 	};
@@ -49,7 +49,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * do not need to use this meta data key directly, but instead use one of
 	 * the bind methods of this class.
 	 */
-	public static final MetaDataKey<InstantiationPermissions> INSTANTIATION_PERMISSIONS = new MetaDataKey<InstantiationPermissions>() {
+	private static final MetaDataKey<InstantiationPermissions> INSTANTIATION_PERMISSIONS = new MetaDataKey<InstantiationPermissions>() {
 		private static final long serialVersionUID = 5526377385090628897L;
 	};
 
@@ -74,7 +74,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param roles The roles that are authorized to create component instances
 	 * of type componentClass
 	 */
-	public static final <T extends Component> void authorize(final Class<T> componentClass, final Role... roles) {
+	private static <T extends Component> void authorize(final Class<T> componentClass, final Role... roles) {
 		final Application application = Application.get();
 		InstantiationPermissions permissions = application.getMetaData(INSTANTIATION_PERMISSIONS);
 		if (permissions == null) {
@@ -103,7 +103,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param roles The roles that are authorized to create component instances
 	 * of type componentClass
 	 */
-	public static final <T extends Component> void authorize(final Class<T> componentClass, final EnumSet<Role> roles) {
+	private static <T extends Component> void authorize(final Class<T> componentClass, final EnumSet<Role> roles) {
 		authorize(componentClass, roles.toArray(new Role[roles.size()]));
 	}
 
@@ -122,7 +122,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param action The action to authorize
 	 * @param roles The roles to authorize
 	 */
-	public static final void authorize(final Component component, final Action action, final Role... roles) {
+	private static void authorize(final Component component, final Action action, final Role... roles) {
 		ActionPermissions permissions = component.getMetaData(ACTION_PERMISSIONS);
 		if (permissions == null) {
 			permissions = new ActionPermissions();
@@ -146,7 +146,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param action The action to authorize
 	 * @param roles The roles to authorize
 	 */
-	public static final void authorize(final Component component, final Action action, final EnumSet<Role> roles) {
+	private static void authorize(final Component component, final Action action, final EnumSet<Role> roles) {
 		authorize(component, action, roles.toArray(new Role[roles.size()]));
 	}
 
@@ -165,7 +165,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 *
 	 * @param componentClass The component class
 	 */
-	public static final <T extends Component> void authorizeAll(final Class<T> componentClass) {
+	private static <T extends Component> void authorizeAll(final Class<T> componentClass) {
 		Application application = Application.get();
 		InstantiationPermissions authorizedLevels = application.getMetaData(INSTANTIATION_PERMISSIONS);
 		if (authorizedLevels != null) {
@@ -186,7 +186,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param component The component that is subject to the authorization
 	 * @param action The action to authorize
 	 */
-	public static final void authorizeAll(final Component component, final Action action) {
+	private static void authorizeAll(final Component component, final Action action) {
 		ActionPermissions permissions = component.getMetaData(ACTION_PERMISSIONS);
 		if (permissions != null) {
 			permissions.authorizeAll(action);
@@ -214,7 +214,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param roles The set of roles that are no longer to be authorized to
 	 * create instances of type componentClass
 	 */
-	public static final <T extends Component> void unauthorize(final Class<T> componentClass, final Role... roles) {
+	private static <T extends Component> void unauthorize(final Class<T> componentClass, final Role... roles) {
 		final InstantiationPermissions permissions = Application.get().getMetaData(INSTANTIATION_PERMISSIONS);
 		if (permissions != null) {
 			permissions.unauthorize(componentClass, roles);
@@ -243,7 +243,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param roles The set of roles that are no longer to be authorized to
 	 * create instances of type componentClass
 	 */
-	public static final <T extends Component> void unauthorize(final Class<T> componentClass, final EnumSet<Role> roles) {
+	private static <T extends Component> void unauthorize(final Class<T> componentClass, final EnumSet<Role> roles) {
 		unauthorize(componentClass, roles.toArray(new Role[roles.size()]));
 	}
 
@@ -268,7 +268,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param roles The set of roles that are no longer allowed to perform the
 	 * given action
 	 */
-	public static final void unauthorize(final Component component, final Action action, final Role... roles) {
+	private static void unauthorize(final Component component, final Action action, final Role... roles) {
 		final ActionPermissions permissions = component.getMetaData(ACTION_PERMISSIONS);
 		if (permissions != null) {
 			permissions.unauthorize(action, roles);
@@ -296,7 +296,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param rolesroles The set of roles that are no longer allowed to perform the
 	 * given action
 	 */
-	public static final void unauthorize(final Component component, final Action action, final EnumSet<Role> roleslevels) {
+	private static void unauthorize(final Component component, final Action action, final EnumSet<Role> roleslevels) {
 		unauthorize(component, action, roleslevels.toArray(new Role[roleslevels.size()]));
 	}
 
@@ -315,7 +315,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 *
 	 * @param componentClass The component class
 	 */
-	public static final <T extends Component> void unauthorizeAll(Class<T> componentClass) {
+	private static <T extends Component> void unauthorizeAll(Class<T> componentClass) {
 		authorizeAll(componentClass);
 		authorize(componentClass, Role.NoRole);
 	}
@@ -333,7 +333,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	 * @param component the component that is subject to the authorization
 	 * @param action the action to authorize
 	 */
-	public static final void unauthorizeAll(final Component component, final Action action) {
+	private static void unauthorizeAll(final Component component, final Action action) {
 		authorizeAll(component, action);
 		authorize(component, action, Role.NoRole);
 	}

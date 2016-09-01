@@ -57,14 +57,14 @@ public class ProcessAddEditPage extends BasePage {
 
 	private final Form<Process> processForm;
 
-	protected final InputBorder<String> nameValidationBorder;
-	protected final InputBorder<String> descriptionValidationBorder;
-	protected final DateTextField startDateTextField;
-	protected final DateTextField endDateTextField;
+	private final InputBorder<String> nameValidationBorder;
+	private final InputBorder<String> descriptionValidationBorder;
+	private final DateTextField startDateTextField;
+	private final DateTextField endDateTextField;
 	// TODO: Stages
 
 	// The process to edit/save
-	protected Process process;
+    private Process process;
 
 	/**
 	 * @param parameters
@@ -116,7 +116,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadProcess(final StringValue idParam) {
+    private void loadProcess(final StringValue idParam) {
 		// If no id is provided
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
@@ -274,7 +274,7 @@ public class ProcessAddEditPage extends BasePage {
 	/**
 	 * 
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		// save process
 		saveProcess();
 
@@ -323,7 +323,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(processForm);
@@ -333,7 +333,7 @@ public class ProcessAddEditPage extends BasePage {
 		return linkToEdit(entity.getId());
 	}
 
-	public static PageParameters linkToEdit(Long entityId) {
+	private static PageParameters linkToEdit(Long entityId) {
 		return new PageParameters().set("id", entityId);
 	}
 }

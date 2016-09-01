@@ -43,15 +43,15 @@ import org.apache.wicket.model.StringResourceModel;
  */
 public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> extends Panel {
 
-    protected String searchTerm;
-    protected final Class<T> clazz;
+    private String searchTerm;
+    private final Class<T> clazz;
     private final WebMarkupContainer container = new WebMarkupContainer("container");
     private DataView<T> entities;
     private final WebMarkupContainer tableFoot = new WebMarkupContainer("tableFoot");
 
-    protected final int itemsPerPage = 10;
+    private final int itemsPerPage = 10;
 
-    public AbstractSearchResultsPanel(String id, String searchTerm, Class<T> clazz) {
+    protected AbstractSearchResultsPanel(String id, String searchTerm, Class<T> clazz) {
         super(id);
         this.clazz = clazz;
         this.searchTerm = searchTerm;
@@ -66,7 +66,7 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
         return this;
     }
 
-    public int getItemsPerPage() {
+    private int getItemsPerPage() {
         return this.itemsPerPage;
     }
 
@@ -98,7 +98,7 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
         }
     }
 
-    protected EntityProvider<T> getEntityProvider() {
+    private EntityProvider<T> getEntityProvider() {
         return new EntityProvider<T>() {
 
             @Override

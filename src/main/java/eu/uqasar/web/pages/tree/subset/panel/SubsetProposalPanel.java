@@ -87,11 +87,13 @@ public class SubsetProposalPanel extends Panel {
 	
 	private final Set<MetaData> projectTags;
 	
-	protected TreeNode currentParentProjectNode, currentParentQualityObjective,
-	currentParentQualityIndicator;
+	private TreeNode currentParentProjectNode;
+    private TreeNode currentParentQualityObjective;
+    private TreeNode currentParentQualityIndicator;
 
-	protected QMTreeNode currentParentQMProjectNode, currentParentQMQualityObjective,
-	currentParentQMQualityIndicator;
+	private QMTreeNode currentParentQMProjectNode;
+    private QMTreeNode currentParentQMQualityObjective;
+    private QMTreeNode currentParentQMQualityIndicator;
 
 
 	/**

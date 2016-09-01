@@ -169,7 +169,7 @@ public class AnalyticService extends AbstractService<Analysis> {
 	 * 
 	 * @param analysis
 	 */
-	public void softDelete(Analysis analysis) {
+    private void softDelete(Analysis analysis) {
 			analysis.setDeleted(true);
 	}
 

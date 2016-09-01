@@ -86,7 +86,7 @@ public class Product extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 

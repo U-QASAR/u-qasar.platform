@@ -344,7 +344,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 		setOutputMarkupId(true);
 	}
 
-    protected void switchValueField(MetricSource metricSource) {
+    private void switchValueField(MetricSource metricSource) {
 		// TODO Auto-generated method stub
 		if(metricSource == null){
 			valueField.setEnabled(true);
@@ -369,7 +369,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
      * 
      * @param planName 
      */
-    public void setPlanName(String planName) {
+    private void setPlanName(String planName) {
         this.planName = planName;
     }
     
@@ -385,7 +385,7 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
      * 
      * @param adapterProjectName 
      */
-    public void setAdapterProjectName(String adapterProjectName) {
+    private void setAdapterProjectName(String adapterProjectName) {
         this.adapterProjectName = adapterProjectName;
     }
 

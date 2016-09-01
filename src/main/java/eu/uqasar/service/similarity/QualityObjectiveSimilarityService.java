@@ -46,7 +46,7 @@ public class QualityObjectiveSimilarityService extends AbstractService<QualityOb
 	private final List<QualityObjective> similarQOs = new ArrayList<>();
 	
 	
-	public QualityObjectiveSimilarityService() {
+	private QualityObjectiveSimilarityService() {
 		super(QualityObjective.class);
 	}
 

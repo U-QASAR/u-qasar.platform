@@ -136,7 +136,7 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
         return getLabelModelForNew(clazz).getObject();
     }
 
-    public static <T extends MetaData> IModel<String> getLabelModelForExisting(Class<T> clazz) {
+    private static <T extends MetaData> IModel<String> getLabelModelForExisting(Class<T> clazz) {
         return ResourceBundleLocator.
                 getLabelModel(MetaData.class, PREFIX + getLabelKey(clazz) + EXISTING_SUFFIX);
     }
@@ -158,7 +158,7 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
         return getLabelKey(getClass());
     }
 
-    protected static String getLabelKey(Class clazz) {
+    private static String getLabelKey(Class clazz) {
         return clazz.getSimpleName();
     }
 

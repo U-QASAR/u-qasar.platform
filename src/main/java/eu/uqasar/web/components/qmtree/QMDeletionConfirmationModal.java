@@ -98,11 +98,11 @@ public abstract class QMDeletionConfirmationModal extends NotificationModal {
 		super.onConfigure();
 	}
 
-	protected IModel<String> getHeader(Model<?> model) {
+	private IModel<String> getHeader(Model<?> model) {
 		return new StringResourceModel("header.delete", model);
 	}
 
-	protected IModel<String> getMessage(Model<?> model) {
+	private IModel<String> getMessage(Model<?> model) {
 		QMTreeNode node = (QMTreeNode) model.getObject();
 		final String prefix = " (<em>", suffix = "</em>)";
 		if (node instanceof QModel) {

@@ -104,7 +104,7 @@ public class LoginPage extends BasePage {
 		add(new BookmarkablePageLink<RegisterPage>("registerLink", RegisterPage.class));
 	}
 
-	protected void doSubmit(final String login, final String password) {
+	private void doSubmit(final String login, final String password) {
 		final String cred = StringUtils.trimToEmpty(login);
 		try {
 			User user = authService.authenticate(cred, password);

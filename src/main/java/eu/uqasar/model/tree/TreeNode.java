@@ -79,38 +79,38 @@ public class TreeNode extends
 	@JsonIgnore
 	@XmlTransient
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
-	protected String nodeKey;
+    String nodeKey;
 
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
-	protected String name;
+    String name;
 
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
     @Lob
-	protected String description;
+    String description;
 
     @XmlTransient
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
 	@Enumerated(EnumType.STRING)
-	protected QualityStatus qualityStatus = QualityStatus.Gray;
+    private QualityStatus qualityStatus = QualityStatus.Gray;
 
     @XmlTransient
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
 	@Enumerated(EnumType.STRING)
-	protected LifeCycleStage lifeCycleStage = LifeCycleStage.Requirements;
+    private LifeCycleStage lifeCycleStage = LifeCycleStage.Requirements;
 
     @XmlTransient
     @ManyToOne(cascade = CascadeType.ALL)
     @IndexedEmbedded(depth = 3)
     @JsonBackReference("parent")
-	protected TreeNode parent;
+    private TreeNode parent;
 
 	// Set the type of the suggestion and the belonging value, but do not store 
 	// those to the DB as they are computed on the fly 
     @XmlTransient
-	protected SuggestionType suggestionType;
+    private SuggestionType suggestionType;
 	
     @XmlTransient
-	protected String suggestionValue;
+    private String suggestionValue;
 	
 	@XmlElement
 	@OneToMany(cascade = CascadeType.ALL)
@@ -118,7 +118,7 @@ public class TreeNode extends
 	@OrderColumn
 	@JsonManagedReference("parent")
 	@IndexedEmbedded(depth = 3)
-	protected List<TreeNode> children = new LinkedList<>();
+    private List<TreeNode> children = new LinkedList<>();
 	
 	protected TreeNode() {
 	}
@@ -151,12 +151,12 @@ public class TreeNode extends
 	}
 	
 	@JsonIgnore
-	protected List<TreeNode> getMutableSiblings() {
+    private List<TreeNode> getMutableSiblings() {
 		return getMutableSiblings(true);
 	}
 	
 	@JsonIgnore
-	protected List<TreeNode> getMutableSiblings(boolean includeSelf) {
+    private List<TreeNode> getMutableSiblings(boolean includeSelf) {
 		if (this instanceof Project) {
 			// TODO not sure if projects cannot have siblings!
 			LinkedList<TreeNode> list = new LinkedList<>();
@@ -375,7 +375,7 @@ public class TreeNode extends
 	}
 
 	@JsonIgnore
-	public void setNodeKey(String mKey) {
+    void setNodeKey(String mKey) {
 		this.nodeKey = mKey;
 	}
 
@@ -387,7 +387,7 @@ public class TreeNode extends
 	}
 
 	@JsonIgnore
-	public void setQualityStatus(QualityStatus status) {
+    void setQualityStatus(QualityStatus status) {
 		this.qualityStatus = status;
 	}
 
@@ -451,8 +451,8 @@ public class TreeNode extends
 	}
 
 	@JsonIgnore
-	protected static QualityIndicator getQualityIndicator(
-			ITreeNode<String> node) {
+    private static QualityIndicator getQualityIndicator(
+            ITreeNode<String> node) {
 		if (node instanceof QualityIndicator) {
 			return (QualityIndicator) node;
 		}
@@ -463,8 +463,8 @@ public class TreeNode extends
 	}
 
 	@JsonIgnore
-	protected static QualityObjective getQualityObjective(
-			ITreeNode<String> node) {
+    private static QualityObjective getQualityObjective(
+            ITreeNode<String> node) {
 		if (node instanceof QualityObjective) {
 			return (QualityObjective) node;
 		}
@@ -475,7 +475,7 @@ public class TreeNode extends
 	}
 
 	@JsonIgnore
-	protected static Project getProject(ITreeNode<String> node) {
+    private static Project getProject(ITreeNode<String> node) {
 		if (node.getParent() == null || node instanceof Project) {
 			return (Project) node;
 		}

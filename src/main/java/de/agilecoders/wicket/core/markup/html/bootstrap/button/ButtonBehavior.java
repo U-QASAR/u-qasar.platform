@@ -76,7 +76,7 @@ public class ButtonBehavior extends BootstrapBaseBehavior {
 	 * @param size
 	 *            Size of button
 	 */
-	public ButtonBehavior(final Buttons.Type type, final Buttons.Size size) {
+    private ButtonBehavior(final Buttons.Type type, final Buttons.Size size) {
 		this(Model.of(type), Model.of(size));
 	}
 
@@ -106,7 +106,7 @@ public class ButtonBehavior extends BootstrapBaseBehavior {
 	/**
 	 * @return type of button
 	 */
-	public Buttons.Type getType() {
+    private Buttons.Type getType() {
 		return buttonType.getObject();
 	}
 

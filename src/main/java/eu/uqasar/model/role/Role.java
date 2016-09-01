@@ -84,7 +84,7 @@ public enum Role {
 		return hasAnyRoles(EnumSet.copyOf(Arrays.asList(roles)));
 	}
 
-	public boolean hasAnyRoles(EnumSet<Role> allowedRoles) {
+	private boolean hasAnyRoles(EnumSet<Role> allowedRoles) {
 		return allowedRoles.contains(this);
 	}
 

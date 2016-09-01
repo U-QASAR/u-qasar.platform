@@ -92,7 +92,7 @@ public class Process extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return the abbreviated name
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 

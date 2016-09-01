@@ -628,7 +628,7 @@ public class ProjectWizardPanel extends Wizard{
 				}
 			};
 		}
-		protected Iterator<User> getTeamableUsers(final String input) {
+		Iterator<User> getTeamableUsers(final String input) {
 			List<User> potentialUsers = userService.getAllExceptAndFilter(team.getAllUsers(), input);
 			potentialUsers.removeAll(proposedUsers);
 			return potentialUsers.iterator();
@@ -1233,7 +1233,7 @@ public class ProjectWizardPanel extends Wizard{
 	 * 
 	 * @param newProject
 	 */
-	public void matchUsersWithNewProject(Project newProject){
+    private void matchUsersWithNewProject(Project newProject){
 
 		// get ALL platform Users
 		List<User> users = userService.getAllByAscendingName(0, (int) userService.countAll());    	
@@ -1299,7 +1299,7 @@ public class ProjectWizardPanel extends Wizard{
 	 * @param skillsGiven
 	 * @param skillsNeeded
 	 */
-	public <T> void matchToolSkills(User user, Set<T> skillsGiven, Set<T> skillsNeeded){
+    private <T> void matchToolSkills(User user, Set<T> skillsGiven, Set<T> skillsNeeded){
 
 		for(T skillGiven : skillsGiven){
 			for(T skillNeeded : skillsNeeded){

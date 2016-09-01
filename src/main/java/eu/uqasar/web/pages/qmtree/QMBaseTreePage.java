@@ -75,16 +75,17 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 
 	@SuppressWarnings("unused")
 	private WebMarkupContainer content;
-	protected QMTreePanel treePanel;
-	protected final QMFilterPanel filterPanel;
-	protected Long currentlySelectedNodeId, initiallyRequestedNodeId;
-	protected QMTreeNode currentlySelectedNode,
-			initiallyRequestedNode;
-	protected QMDeletionConfirmationModal deleteConfirmationModal;
+	private QMTreePanel treePanel;
+	private final QMFilterPanel filterPanel;
+	private Long currentlySelectedNodeId;
+    private Long initiallyRequestedNodeId;
+	private QMTreeNode currentlySelectedNode;
+    private QMTreeNode initiallyRequestedNode;
+	private QMDeletionConfirmationModal deleteConfirmationModal;
 	private static final String Container_Id = "content";
 	private static final Logger logger = Logger.getLogger(QMBaseTreePage.class);
 
-	public QMBaseTreePage(final PageParameters parameters) {
+	protected QMBaseTreePage(final PageParameters parameters) {
 		super(parameters);
 		
 		add(filterPanel = new QMFilterPanel("filter"){
@@ -122,7 +123,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return null;
 	}
 	
-	protected void moveNodeQM(final QMTreeNode node, AjaxRequestTarget target, boolean down) {
+	private void moveNodeQM(final QMTreeNode node, AjaxRequestTarget target, boolean down) {
 		boolean up = !down;
 		if (!(node instanceof QModel)) {
 			boolean moved = false;
@@ -155,8 +156,8 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		}
 	}
 
-	protected void deleteNode(final IModel<QMTreeNode> node,
-			AjaxRequestTarget target) {
+	private void deleteNode(final IModel<QMTreeNode> node,
+                            AjaxRequestTarget target) {
 		if ((node.getObject() instanceof QModel) &&
 			((((QModel)node.getObject()).getIsActive()).equals(QModelStatus.Active) || (((QModel)node.getObject()).getIsActive()).equals(QModelStatus.OldActive))){
 					
@@ -169,7 +170,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		}
 	}
 	
-	protected void createNewQModel() {
+	private void createNewQModel() {
 		long randomId = UUID.randomUUID().toString().hashCode();
 		QModel qm = (QModel) qmtreeNodeService.create(new QModel("Quality Model", String.format("qm-%s", randomId)));
 		
@@ -177,7 +178,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 
 	}
 
-	protected QMTreeNode createNewQualityObjective(QModel parent) {
+	private QMTreeNode createNewQualityObjective(QModel parent) {
 		if (parent != null) {
 			QMQualityObjective obj = new QMQualityObjective("Quality Objective B", parent);
 			return qmtreeNodeService.addNewChild(parent, obj);
@@ -185,7 +186,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return null;
 	}
 
-	protected QMTreeNode createNewQualityIndicator(QMQualityObjective parent) {
+	private QMTreeNode createNewQualityIndicator(QMQualityObjective parent) {
 		if (parent != null) {
 			QMQualityIndicator indi = new QMQualityIndicator("Quality Indicator B", parent);
 			return qmtreeNodeService.addNewChild(parent, indi);
@@ -193,7 +194,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return null;
 	}
 
-	protected QMTreeNode createNewMetric(QMQualityIndicator parent) {
+	private QMTreeNode createNewMetric(QMQualityIndicator parent) {
 		if (parent != null) {
 			QMMetric metric = new QMMetric("Metric B", parent);
 			return qmtreeNodeService.addNewChild(parent, metric);
@@ -211,7 +212,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return getTreePanel().getTree();
 	}
 
-	public QMTreePanel getTreePanel() {
+	private QMTreePanel getTreePanel() {
 		return this.treePanel;
 	}
 
@@ -315,8 +316,8 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		response.render(CssHeaderItem.forUrl("assets/css/qmtree/panels.css"));
 	}
 
-	public abstract WebMarkupContainer getContent(final String markupId,
-			final IModel<Type> model);
+	protected abstract WebMarkupContainer getContent(final String markupId,
+                                                     final IModel<Type> model);
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -340,15 +341,15 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		addOrReplace(getUpdatedDeleteConfirmationModal());		
 	}
 
-	protected void handleNodeClick(AjaxRequestTarget target,
-			IModel<QMTreeNode> nodeModel) {
+	void handleNodeClick(AjaxRequestTarget target,
+                         IModel<QMTreeNode> nodeModel) {
 		QMTreeNode node = nodeModel.getObject();
 		setRedirectToNodePage(node);
 		currentlySelectedNode = node;
 		currentlySelectedNodeId = node.getId();
 	}
 
-	protected void setRedirectToNodePage(QMTreeNode node) {
+	private void setRedirectToNodePage(QMTreeNode node) {
 		if (node instanceof QModel) {
 			setResponsePage(QModelViewPage.class, forQModel((QModel) node));
 		} else if (node instanceof QMQualityObjective) {
@@ -362,7 +363,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		}
 	}
 
-	protected QMDeletionConfirmationModal createDeleteConfirmationModal() {
+	private QMDeletionConfirmationModal createDeleteConfirmationModal() {
 		deleteConfirmationModal = new QMDeletionConfirmationModal(
 				"deleteConfirmationModal", currentlySelectedNode) {
 
@@ -391,16 +392,16 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return deleteConfirmationModal;
 	}
 
-	protected QMDeletionConfirmationModal getUpdatedDeleteConfirmationModal() {
+	private QMDeletionConfirmationModal getUpdatedDeleteConfirmationModal() {
 		deleteConfirmationModal.update(currentlySelectedNode);
 		return deleteConfirmationModal;
 	}
 
-	protected QMDeletionConfirmationModal getDenyDeleteConfirmationModal() {
+	private QMDeletionConfirmationModal getDenyDeleteConfirmationModal() {
 		deleteConfirmationModal.deny(currentlySelectedNode);
 		return deleteConfirmationModal;
 	}
-	protected Long getRequestedNodeId() {
+	private Long getRequestedNodeId() {
 		StringValue id = getPageParameters().get("id");
 		if (id.isEmpty()) {
 			String key = getPageParameters().get("qmodel-key")
@@ -420,7 +421,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 	}
 
 	@SuppressWarnings("unchecked")
-	protected Type getRequestedNode() {
+    private Type getRequestedNode() {
 		if (getRequestedNodeId()==null) {
 			//create qmodel from navigation menu
 			return (Type) (new QModel("new QModel", "new QModel"));
@@ -430,18 +431,18 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 	}
 
 	@SuppressWarnings("unchecked")
-	protected Type getRequestedNode(final Long requestedNodeId) {
+    private Type getRequestedNode(final Long requestedNodeId) {
 		return (Type) qmtreeNodeService.getTreeNode(requestedNodeId);
 	}
 
-	protected void selectCurrentNode(final Long requestedNodeId) {
+	private void selectCurrentNode(final Long requestedNodeId) {
 		QMTreeNode node = qmtreeNodeService
 				.getTreeNode(requestedNodeId);
 		// select the requested node
 		treePanel.getTree().selectNode(node);
 	}
 
-	protected void expandTreeToSelectedNode(final Long requestedNodeId) {
+	private void expandTreeToSelectedNode(final Long requestedNodeId) {
 		QMTreeNode node = qmtreeNodeService
 				.getTreeNode(requestedNodeId);
 		// add nodes and all parents to initial tree expansion
@@ -474,7 +475,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 	}
 
 	
-	public static PageParameters forQModel(final QModel qmodel, final boolean newQModel) {
+	private static PageParameters forQModel(final QModel qmodel, final boolean newQModel) {
 		PageParameters params = new PageParameters();
 		params.add("isNew", newQModel);
 		if(qmodel != null) {
@@ -488,12 +489,12 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		} else return new PageParameters();
 	}
 	
-	public static PageParameters forQModel(final String qmodelKey) {
+	private static PageParameters forQModel(final String qmodelKey) {
 		return new PageParameters().add("qmodel-key", qmodelKey);
 	}
 
 	
-	public static PageParameters forQualityObjective(final QMQualityObjective objective, final boolean newQO) {
+	private static PageParameters forQualityObjective(final QMQualityObjective objective, final boolean newQO) {
 		PageParameters params = forQModel(objective.getQModel()).add("id", objective.getId());
 		params.add("isNew", newQO);
 		return params;
@@ -503,7 +504,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return forQModel(objective.getQModel()).add("id", objective.getId());
 	}
 
-	public static PageParameters forQualityIndicator(final QMQualityIndicator indicator, final boolean newQI) {
+	private static PageParameters forQualityIndicator(final QMQualityIndicator indicator, final boolean newQI) {
 		PageParameters params = forQModel(indicator.getQModel()).add("id", indicator.getId());
 		params.add("isNew", newQI);
 		return params;
@@ -513,7 +514,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 		return forQModel(indicator.getQModel()).add("id", indicator.getId());
 	}
 
-	public static PageParameters forMetric(final QMMetric metric, final boolean newMet) {
+	private static PageParameters forMetric(final QMMetric metric, final boolean newMet) {
 		PageParameters params = forQModel(metric.getQModel()).add("id", metric.getId());
 		params.add("isNew", newMet);
 		return params;

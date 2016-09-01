@@ -57,8 +57,8 @@ public class DropDownModal extends Modal {
 	 * @param types Options in DropDownChoice
 	 * @param showImmediately
 	 */
-	public DropDownModal(final String id, final IModel<String> headerModel,
-			List<Class> types, final boolean showImmediately) {
+	protected DropDownModal(final String id, final IModel<String> headerModel,
+							List<Class> types, final boolean showImmediately) {
 		super(id);
 		show(showImmediately);
 		header(headerModel);		

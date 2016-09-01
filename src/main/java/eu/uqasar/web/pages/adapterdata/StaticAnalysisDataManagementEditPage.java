@@ -53,14 +53,17 @@ import eu.uqasar.web.pages.BasePage;
 public class StaticAnalysisDataManagementEditPage extends BasePage {
 
     // The tableEntity to edit/save
-    protected SonarMetricMeasurement tableEntity;
+    private SonarMetricMeasurement tableEntity;
     
     @Inject
     private SonarDataService sonarService;
     
     private final Form<SonarMetricMeasurement> tableEntityForm;
     
-    protected final InputBorder<String> projectNameBorder,projectKeyBorder,metricBorder,valueBorder;
+    private final InputBorder<String> projectNameBorder;
+    private final InputBorder<String> projectKeyBorder;
+    private final InputBorder<String> metricBorder;
+    private final InputBorder<String> valueBorder;
     
     @SuppressWarnings("unused")
     private final DateTextField someDateField;
@@ -119,7 +122,7 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * 
      * @param idParam
      */
-    protected void loadTableEntity(final StringValue idParam) {
+    private void loadTableEntity(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this,
                     null));
@@ -251,7 +254,7 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
     /**
      * 
      */
-    protected void save(AjaxRequestTarget target, PageParameters parameters) {
+    private void save(AjaxRequestTarget target, PageParameters parameters) {
         // save tableEntity
         saveTableEntity();
         // success message has to be associated to session so that it is shown
@@ -281,7 +284,7 @@ public class StaticAnalysisDataManagementEditPage extends BasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(tableEntityForm);

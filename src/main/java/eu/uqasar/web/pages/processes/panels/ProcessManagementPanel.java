@@ -42,7 +42,7 @@ public abstract class ProcessManagementPanel extends Panel {
 	private static final List<String> orderSelection = Arrays
 			.asList("Ascending Date Order",
                     "Descending Date Order");
-	public static final String ASCENDING_IS_SELECTED = "Ascending Date Order";
+	private static final String ASCENDING_IS_SELECTED = "Ascending Date Order";
 	public static final String DESCENDING_IS_SELECTED = "Descending Date Order";
 
 	private String selected = ASCENDING_IS_SELECTED;
@@ -148,7 +148,7 @@ public abstract class ProcessManagementPanel extends Panel {
 		endDate.setModelObject(null);
 	}
 
-	public void setSelected(String selected) {
+	private void setSelected(String selected) {
 		this.selected = selected;
 	}
 

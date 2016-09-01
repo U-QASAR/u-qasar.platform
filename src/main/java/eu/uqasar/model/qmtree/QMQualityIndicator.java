@@ -61,7 +61,7 @@ public class QMQualityIndicator extends QMBaseIndicator {
 	 */
 	private static final long serialVersionUID = 7941535859451021850L;
 
-	public static final IconType ICON = new IconType("dashboard");
+	private static final IconType ICON = new IconType("dashboard");
 
 	@JsonCreator
 	public QMQualityIndicator(

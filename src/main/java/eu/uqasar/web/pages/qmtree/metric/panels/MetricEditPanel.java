@@ -327,7 +327,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 		super.onConfigure();
 	}
 
-	public QMMetric checkCompleted(QMMetric node) {
+	private QMMetric checkCompleted(QMMetric node) {
 		if (!node.getParent().isCompleted()) {
 			//update indicator
 			node.getParent().setCompleted(true);

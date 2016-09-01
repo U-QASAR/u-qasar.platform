@@ -88,7 +88,7 @@ public class MetricUpdateRule extends BasicRule {
 		return checkConditionManually();
 	}
 
-    public boolean checkConditionManually() {
+    private boolean checkConditionManually() {
         List<Metric> AllMetricList= new LinkedList<>();
         MetricListForNotification.clear();
         projectsForNotifications.clear();

@@ -884,7 +884,7 @@ public class UQasarUtil {
 	 * @param node Node whose value is studied
 	 * @return
 	 */
-	public static Multimap<SuggestionType, Object> getSuggestionForNode(TreeNode node) {
+	private static Multimap<SuggestionType, Object> getSuggestionForNode(TreeNode node) {
 
 		// For storing the suggestion type and the payload
 		Multimap<SuggestionType,Object> suggestionsMultimap = ArrayListMultimap.create();

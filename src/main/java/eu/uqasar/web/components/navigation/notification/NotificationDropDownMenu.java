@@ -61,7 +61,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	protected INotification[] notifications = new INotification[0];
 
 
-	public NotificationDropDownMenu() {
+	protected NotificationDropDownMenu() {
 		super(Model.of(""));
 		setOutputMarkupId(true);
 	}
@@ -71,7 +71,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 		return false;
 	}
 
-	protected void updateLabelAndIcon() {
+	private void updateLabelAndIcon() {
 		if (notifications.length == 0) {
 			getNotificationCountLabelContainer().add(
 					new CssClassNameAppender("badge-inverse"));
@@ -87,11 +87,11 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 		return this.get("btn");
 	}
 
-	protected Component getNotificationCountLabelContainer() {
+	private Component getNotificationCountLabelContainer() {
 		return this.get("btn").get("label.container");
 	}
 
-	protected Component getNotificationCountLabel() {
+	private Component getNotificationCountLabel() {
 		return this.get("btn").get("label.container").get("label");
 	}
 

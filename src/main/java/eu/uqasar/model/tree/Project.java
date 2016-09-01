@@ -103,7 +103,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 
 	private static final long serialVersionUID = 1724244299796140695L;
 	
-	public static final IconType ICON = new IconType("sitemap");
+	private static final IconType ICON = new IconType("sitemap");
 	
 	@XmlSchemaType(name = "date")
 	@Temporal(javax.persistence.TemporalType.DATE)
@@ -139,7 +139,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	private Double value;
 	
 	@XmlTransient
-	protected Date lastUpdated = DateTime.now().toDate();
+    private Date lastUpdated = DateTime.now().toDate();
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Threshold threshold = new Threshold();
@@ -543,14 +543,14 @@ public class Project extends TreeNode implements Comparable<Project> {
 	/**
 	 * @param historicValues
 	 */
-	public void addHistoricValues(final HistoricValuesProject historicValues){
+    private void addHistoricValues(final HistoricValuesProject historicValues){
 		this.historicValues.add(historicValues);
 	}
 	
 	/**
 	 * @param Add Historical values from project
 	 */
-	public void addHistoricValues(final Project project) {
+    private void addHistoricValues(final Project project) {
 		addHistoricValues(new HistoricValuesProject(project));
 	}
 	

@@ -59,8 +59,8 @@ public abstract class IndicatingAjaxAutoCompleteTextField<T> extends AutoComplet
 	 * @param settings settings for autocomplete
 	 */
 	@SuppressWarnings("unchecked")
-	public IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model, final Class<T> type,
-			final AutoCompleteSettings settings) {
+    private IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model, final Class<T> type,
+                                                final AutoCompleteSettings settings) {
 		this(id, model, type, StringAutoCompleteRenderer.INSTANCE, settings);
 	}
 
@@ -71,8 +71,8 @@ public abstract class IndicatingAjaxAutoCompleteTextField<T> extends AutoComplet
 	 * @param model model
 	 * @param settings settings for autocomplete
 	 */
-	public IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model,
-			final AutoCompleteSettings settings) {
+    private IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model,
+                                                final AutoCompleteSettings settings) {
 		this(id, model, null, settings);
 	}
 
@@ -134,8 +134,8 @@ public abstract class IndicatingAjaxAutoCompleteTextField<T> extends AutoComplet
 	 * @param model model
 	 * @param renderer renderer for autocomplete
 	 */
-	public IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model,
-			final IAutoCompleteRenderer<T> renderer) {
+    private IndicatingAjaxAutoCompleteTextField(final String id, final IModel<T> model,
+                                                final IAutoCompleteRenderer<T> renderer) {
 		this(id, model, null, renderer, new AutoCompleteSettings());
 	}
 

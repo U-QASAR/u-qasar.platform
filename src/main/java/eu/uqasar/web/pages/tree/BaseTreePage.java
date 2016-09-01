@@ -88,17 +88,19 @@ public abstract class BaseTreePage<Type extends TreeNode>
 
 	@SuppressWarnings("unused")
 	private WebMarkupContainer content;
-	protected TreePanel treePanel;
-	protected final FilterPanel filterPanel;
-	protected Long currentlySelectedNodeId, initiallyRequestedNodeId;
-	protected TreeNode currentlySelectedNode,
-			initiallyRequestedNode;
-	protected TreeNode currentParentProjectNode, currentParentQualityObjective,
-			currentParentQualityIndicator;
-	protected DeletionConfirmationModal deleteConfirmationModal;
+	private TreePanel treePanel;
+	private final FilterPanel filterPanel;
+	private Long currentlySelectedNodeId;
+    private Long initiallyRequestedNodeId;
+	private TreeNode currentlySelectedNode;
+    private TreeNode initiallyRequestedNode;
+	private TreeNode currentParentProjectNode;
+    private TreeNode currentParentQualityObjective;
+    private TreeNode currentParentQualityIndicator;
+	private DeletionConfirmationModal deleteConfirmationModal;
 	private static final String Container_Id = "content";
 
-	public BaseTreePage(final PageParameters parameters) {
+	protected BaseTreePage(final PageParameters parameters) {
 		super(parameters);
 
 		add(filterPanel = new FilterPanel("filter"){
@@ -246,7 +248,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	 *
 	 * @param node
 	 */
-	public void preorder(QMTreeNode node) {
+    private void preorder(QMTreeNode node) {
 		if (node == null) {
 			return;
 		}
@@ -292,8 +294,8 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		}
 	}
 
-	protected void moveNode(final TreeNode node,
-			AjaxRequestTarget target, boolean down) {
+	private void moveNode(final TreeNode node,
+                          AjaxRequestTarget target, boolean down) {
 		boolean up = !down;
 		if (!(node instanceof Project)) {
 			boolean moved = false;
@@ -315,19 +317,19 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		}
 	}
 
-	protected void deleteNode(final TreeNode node,
-			AjaxRequestTarget target) {
+	private void deleteNode(final TreeNode node,
+                            AjaxRequestTarget target) {
 		target.add(getUpdatedDeleteConfirmationModal());
 		deleteConfirmationModal.appendShowDialogJavaScript(target);
 	}
 
-	protected void createNewProject() {
+	private void createNewProject() {
 		//long randomId = UUID.randomUUID().toString().hashCode();
 		//Project project = (Project) treeNodeService.create(new Project("Project", String.format("prj-%s", randomId)));
 		setResponsePage(ProjectWizardPage.class);
 	}
 
-	protected TreeNode createNewQualityObjective(Project parent) {
+	private TreeNode createNewQualityObjective(Project parent) {
 		if (parent != null) {
 			QualityObjective obj = new QualityObjective("Quality Objective", parent);
 			return treeNodeService.addNewChild(parent, obj);
@@ -335,7 +337,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		return null;
 	}
 
-	protected TreeNode createNewQualityIndicator(QualityObjective parent) {
+	private TreeNode createNewQualityIndicator(QualityObjective parent) {
 		if (parent != null) {
 			QualityIndicator indi = new QualityIndicator("Quality Indicator", parent);
 			return treeNodeService.addNewChild(parent, indi);
@@ -343,7 +345,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		return null;
 	}
 
-	protected TreeNode createNewMetric(QualityIndicator parent) {
+	private TreeNode createNewMetric(QualityIndicator parent) {
 		if (parent != null) {
 			Metric metric = new Metric("Metric", parent);
 			return treeNodeService.addNewChild(parent, metric);
@@ -361,7 +363,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		return getTreePanel().getTree();
 	}
 
-	public TreePanel getTreePanel() {
+	private TreePanel getTreePanel() {
 		return this.treePanel;
 	}
 
@@ -380,8 +382,8 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		response.render(CssHeaderItem.forUrl("assets/css/tree/panels.css"));
 	}
 
-	public abstract WebMarkupContainer getContent(final String markupId,
-			final IModel<Type> model);
+	protected abstract WebMarkupContainer getContent(final String markupId,
+                                                     final IModel<Type> model);
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -406,15 +408,15 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		addOrReplace(getUpdatedDeleteConfirmationModal());
 	}
 
-	protected void handleNodeClick(AjaxRequestTarget target,
-			IModel<TreeNode> nodeModel) {
+	void handleNodeClick(AjaxRequestTarget target,
+                         IModel<TreeNode> nodeModel) {
 		TreeNode node = nodeModel.getObject();
 		setRedirectToNodePage(node);
 		currentlySelectedNode = node;
 		currentlySelectedNodeId = node.getId();
 	}
 
-	protected void setRedirectToNodePage(TreeNode node) {
+	private void setRedirectToNodePage(TreeNode node) {
 		if (node instanceof Project) {
 			setResponsePage(ProjectViewPage.class, forProject((Project) node));
 		} else if (node instanceof QualityObjective) {
@@ -486,12 +488,12 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		return deleteConfirmationModal;
 	}
 
-	protected DeletionConfirmationModal getUpdatedDeleteConfirmationModal() {
+	private DeletionConfirmationModal getUpdatedDeleteConfirmationModal() {
 		deleteConfirmationModal.update(currentlySelectedNode);
 		return deleteConfirmationModal;
 	}
 
-	protected Long getRequestedNodeId() {
+	private Long getRequestedNodeId() {
 		StringValue id = getPageParameters().get("id");
 		if (id.isEmpty()) {
 			String key = getPageParameters().get("project-key")
@@ -511,7 +513,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 
 	@SuppressWarnings("unchecked")
-	protected Type getRequestedNode() {
+    private Type getRequestedNode() {
 		if (getRequestedNodeId() == null) {
 			// create project 
 			return (Type) (new Project());
@@ -521,11 +523,11 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 
 	@SuppressWarnings("unchecked")
-	protected Type getRequestedNode(final Long requestedNodeId) {
+    private Type getRequestedNode(final Long requestedNodeId) {
 		return (Type) treeNodeService.getTreeNode(requestedNodeId);
 	}
 
-	protected void selectCurrentNode(final Long requestedNodeId) {
+	private void selectCurrentNode(final Long requestedNodeId) {
 		TreeNode node = treeNodeService
 				.getTreeNode(requestedNodeId);
 		if (node == null) {
@@ -535,7 +537,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		treePanel.getTree().selectNode(node);
 	}
 
-	protected void expandTreeToSelectedNode(final Long requestedNodeId) {
+	private void expandTreeToSelectedNode(final Long requestedNodeId) {
 		TreeNode node = treeNodeService
 				.getTreeNode(requestedNodeId);
 		// add nodes and all parents to initial tree expansion
@@ -591,8 +593,8 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 
 	// New QO
-	public static PageParameters forQualityObjective(QualityObjective objective,
-			final boolean newQO) {
+	private static PageParameters forQualityObjective(QualityObjective objective,
+                                                      final boolean newQO) {
 		PageParameters params = forProject(objective.getProject()).add("id", objective.getId());
 		params.add("isNew", newQO);
 		return params;
@@ -603,8 +605,8 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 
 	// New QI
-	public static PageParameters forQualityIndicator(QualityIndicator indicator,
-			final boolean newQI) {
+	private static PageParameters forQualityIndicator(QualityIndicator indicator,
+                                                      final boolean newQI) {
 		PageParameters params
 				= forProject(indicator.getProject()).add("id", indicator.getId());
 		params.add("isNew", newQI);
@@ -616,7 +618,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 
 	// New QM
-	public static PageParameters forMetric(Metric metric, final boolean newM) {
+	private static PageParameters forMetric(Metric metric, final boolean newM) {
 		PageParameters params = forProject(metric.getProject()).add("id", metric.getId());
 		params.add("isNew", newM);
 		return params;

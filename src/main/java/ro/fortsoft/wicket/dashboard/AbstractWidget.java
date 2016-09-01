@@ -24,11 +24,11 @@ public abstract class AbstractWidget implements Widget {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected String id;
+	private String id;
 	protected String title;
-	protected boolean collapsed;
+	private boolean collapsed;
     protected Map<String, String> settings;
-    protected WidgetLocation location;
+    private WidgetLocation location;
 
     public AbstractWidget() {
 		settings = new HashMap<>();

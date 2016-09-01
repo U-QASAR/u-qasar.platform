@@ -61,7 +61,7 @@ public enum Domain implements IResourceKeyProvider {
 		return getLabelModel().getObject();
 	}
 	
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(this.getClass(), this);
 	}
 	

@@ -68,7 +68,7 @@ import eu.uqasar.web.components.StyledFeedbackPanel;
  * @param <T>
  * @param <S>
  */
-public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>> extends Panel {
+class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>> extends Panel {
 
     private final S service;
     
@@ -143,7 +143,7 @@ public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>>
         add(deleteConfirmationModal = newDeleteConfirmationModal());
     }
     
-    protected void addNewMetaData(AjaxRequestTarget target, Form<?> form) {
+    private void addNewMetaData(AjaxRequestTarget target, Form<?> form) {
         service.create(metaData);
         
         metaData = MetaData.newInstance(clazz);
@@ -153,7 +153,7 @@ public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>>
         Effects.replaceWithFading(target, existingListForm);
     }
 
-    protected void updateExistingMetaData(AjaxRequestTarget target, Form<?> form) {
+    private void updateExistingMetaData(AjaxRequestTarget target, Form<?> form) {
     	String message = new StringResourceModel("update.confirmed", this, null).getString();
         Iterator<Item<T>> items = existingList.getItems();
         while (items.hasNext()) {
@@ -308,7 +308,7 @@ public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>>
         modal.appendCloseDialogJavaScript(target);
     }
 
-    public IDataProvider<T> getMetaDataProvider(final Class<T> clazz) {
+    private IDataProvider<T> getMetaDataProvider(final Class<T> clazz) {
         return new IDataProvider<T>() {
 
             @Override

@@ -38,9 +38,9 @@ import org.json.JSONObject;
  *
  *
  */
-public class QueryPage extends WebPage {
+class QueryPage extends WebPage {
 
-    public QueryPage(final PageParameters parameters) {
+    private QueryPage(final PageParameters parameters) {
         super(parameters);
         try {
             HttpServletRequest request = (HttpServletRequest) getRequest().getContainerRequest();

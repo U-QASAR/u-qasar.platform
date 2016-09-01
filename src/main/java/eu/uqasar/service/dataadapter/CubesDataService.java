@@ -232,7 +232,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * Update the content of a CubesMetricMeasurement that is behind a URL (payload as JSON)
 	 * @param settings
 	 */
-	public void storeJSONPayload(AdapterSettings settings) {
+    private void storeJSONPayload(AdapterSettings settings) {
 		logger.info("Get JSON Payload for all CUBES metrics.");
 		String creds = settings.getAdapterUsername() +":" +settings.getAdapterPassword();
 
@@ -363,7 +363,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * @return 	True or False according to the connection success
 	 * 			
 	 */
-	public static boolean testConnectionToServer(String url, int timeout) {
+	private static boolean testConnectionToServer(String url, int timeout) {
 		try {
 			URL myUrl = new URL(url);
 			URLConnection connection = myUrl.openConnection();
@@ -398,7 +398,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * Get the latest date of measurement snapshots
 	 * @return
 	 */
-	public Date getLatestDate() {
+    private Date getLatestDate() {
 		logger.info("Get the latest date from CUBES measurements...");
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<CubesMetricMeasurement> query = cb.createQuery(CubesMetricMeasurement.class);
@@ -414,7 +414,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	 * @return
 	 * @throws uQasarException
 	 */
-	public List<CubesMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date) 
+    private List<CubesMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date)
 			throws uQasarException {
 		logger.info("Get measurements for metric: " +metric);
 

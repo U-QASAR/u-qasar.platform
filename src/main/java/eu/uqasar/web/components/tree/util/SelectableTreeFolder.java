@@ -74,8 +74,8 @@ public abstract class SelectableTreeFolder extends TreeNodeContent {
 		selected = provider.model(node);
 	}
 
-	protected void select(TreeNode node, AbstractTree<TreeNode> tree,
-			final AjaxRequestTarget target) {
+	private void select(TreeNode node, AbstractTree<TreeNode> tree,
+                        final AjaxRequestTarget target) {
 		if (selected != null) {
 			tree.updateNode(selected.getObject(), target);
 

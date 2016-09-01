@@ -152,7 +152,7 @@ public class UserService extends AbstractService<User> {
 		return countByUserName(userName) > 0;
 	}
 
-	public Long countByUserName(final String userName) {
+	private Long countByUserName(final String userName) {
 		logger.infof("counting Users with userName %s ...", userName);
 		return performDistinctCountWithEqualPredicate(User_.userName, userName);
 	}
@@ -234,7 +234,7 @@ public class UserService extends AbstractService<User> {
 		return countByMail(mail) > 0;
 	}
 
-	public Long countByMail(final String mail) {
+	private Long countByMail(final String mail) {
 		logger.infof("counting Users with mail %s ...", mail);
 		return performDistinctCountWithEqualPredicate(User_.mail, mail);
 	}
@@ -321,7 +321,7 @@ public class UserService extends AbstractService<User> {
 		return em.createQuery(criteria).getSingleResult();
 	}
 
-	protected List<Predicate> getFilterPredicates(final UserFilterStructure filter, CriteriaBuilder cb, Root<User> from) {
+	private List<Predicate> getFilterPredicates(final UserFilterStructure filter, CriteriaBuilder cb, Root<User> from) {
 		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;

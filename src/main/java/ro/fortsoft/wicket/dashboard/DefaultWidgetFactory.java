@@ -41,7 +41,7 @@ public class DefaultWidgetFactory implements WidgetFactory {
 		return null;
 	}
 
-	protected String createWidgetId(WidgetDescriptor widgetDescriptor, Widget widget) {
+	private String createWidgetId(WidgetDescriptor widgetDescriptor, Widget widget) {
 		return UUID.randomUUID().toString();
 	}
 	

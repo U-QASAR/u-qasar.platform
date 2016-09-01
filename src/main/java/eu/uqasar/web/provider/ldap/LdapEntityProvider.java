@@ -49,7 +49,7 @@ public abstract class LdapEntityProvider<Entity extends LdapEntity> implements I
 	protected boolean initialized;
 	protected List<Entity> entities = new ArrayList<>();
 
-	public LdapEntityProvider(LdapManager manager, int max) {
+	LdapEntityProvider(LdapManager manager, int max) {
 		this.ldapManager = manager;
 		this.maximumNoOfEntities = max;
 	}
@@ -72,7 +72,7 @@ public abstract class LdapEntityProvider<Entity extends LdapEntity> implements I
 		return Collections.emptyIterator();
 	}
 
-	public abstract List<Entity> getEntities(LdapManager manager, int max) throws NamingException;
+	protected abstract List<Entity> getEntities(LdapManager manager, int max) throws NamingException;
 
 	@Override
 	public long size() {

@@ -44,7 +44,7 @@ public enum UserSource {
 		return getLabelModel().getObject();
 	}
 
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(UserSource.class, "label.source." + labelKey);
 	}
 }

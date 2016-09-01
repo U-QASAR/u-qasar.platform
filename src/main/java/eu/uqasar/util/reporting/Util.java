@@ -153,7 +153,7 @@ public class Util {
         return objToReturn;
     }//EoM   
 
-    public static List retrieveCubes(String url) {
+    private static List retrieveCubes(String url) {
         ArrayList objToReturn = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
@@ -209,7 +209,7 @@ public class Util {
         return json;
     }//EoM    
 
-    public static JSONArray readJsonArrayFromUrl(String url) throws JSONException {
+    private static JSONArray readJsonArrayFromUrl(String url) throws JSONException {
         InputStream is = null;
         JSONArray json = null;
 
@@ -235,7 +235,7 @@ public class Util {
         return json;
     }//EoM 
 
-    public static String readAll(Reader rd) throws IOException {
+    private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
         while ((cp = rd.read()) != -1) {
@@ -244,7 +244,7 @@ public class Util {
         return sb.toString();
     }//EoM        
 
-    public static List retrieveValues(String url, String filtername) {
+    private static List retrieveValues(String url, String filtername) {
         ArrayList ret = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;

@@ -62,7 +62,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 	private Class<T> clazz;
 	private String readableClassName;
 
-	public static final String LIKE_WILDCARD = "%";
+	protected static final String LIKE_WILDCARD = "%";
 
 	/**
 	 *
@@ -130,7 +130,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
         return getRange((int) first, (int) count);
     }
     
-    public List<T> getRange(int first, int count) {
+    private List<T> getRange(int first, int count) {
 		logger.infof("loading %d %s starting from %d  ...", count, readableClassName, first);
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<T> query = cb.createQuery(this.clazz);
@@ -210,7 +210,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 		logger.infof("deleted %s %s with id %s ...", readableClassName, entity, id);
 	}
 
-    protected <T extends Persistable> String getReadableClassName(Class<T> clazz) {
+    private <T extends Persistable> String getReadableClassName(Class<T> clazz) {
         return clazz.getSimpleName();
     }
     
@@ -223,7 +223,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 		return em.createQuery(criteria).getSingleResult();
     }
     
-	public <T extends Persistable> T getById(Class<T> clazz, Long id) {
+	protected <T extends Persistable> T getById(Class<T> clazz, Long id) {
 		logger.infof("loading %s with ID %d ...",  getReadableClassName(clazz), id);
 		T entity = em.find(clazz, id);
 		return entity;
@@ -253,7 +253,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 	}
     
     
-	public <T extends Persistable> List<T> getByIds(Class<T> clazz, Collection<Long> ids) {
+	private <T extends Persistable> List<T> getByIds(Class<T> clazz, Collection<Long> ids) {
 		logger.infof("loading %s with IDs %d ...",  getReadableClassName(clazz), ids);
         List<T> results = new ArrayList<>();
         for(Long id : ids) {
@@ -290,7 +290,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
         return getRange(clazz, (int) first, (int) count);
     }
     
-     public <T extends Persistable> List<T> getRange(Class<T> clazz, int first, int count) {
+     private <T extends Persistable> List<T> getRange(Class<T> clazz, int first, int count) {
 		logger.infof("loading %d %s starting from %d  ...", count, getReadableClassName(clazz), first);
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<T> query = cb.createQuery(clazz);
@@ -316,7 +316,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
         return fullTextSearchForIds(this.clazz, terms);
     }
     
-    public <P extends T> Collection<Long> fullTextSearchForIds(Class<P> clazz, String... terms) {
+    private <P extends T> Collection<Long> fullTextSearchForIds(Class<P> clazz, String... terms) {
         FullTextEntityManager ftem = Search.getFullTextEntityManager(em);
         QueryBuilder qb = ftem.getSearchFactory().buildQueryBuilder().
                 forEntity(clazz).get();
@@ -349,7 +349,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
         return wc.onField(AbstractEntity_.id.getName());
     }
 
-    protected <P extends T> List<P> filterFullTextSearchResults(List<P> results, Class<P> clazz) {
+    private <P extends T> List<P> filterFullTextSearchResults(List<P> results, Class<P> clazz) {
         return results;
     }
 
@@ -396,7 +396,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
     }
     
     
-    protected <T extends Persistable> List<T> getRangeOrdered(Class<T> clazz, int first, int count, Order... orders) {
+    private <T extends Persistable> List<T> getRangeOrdered(Class<T> clazz, int first, int count, Order... orders) {
 		logger.infof("loading %d %s starting from %d  ...", count, getReadableClassName(clazz), first);
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<T> query = cb.createQuery(clazz);

@@ -79,7 +79,7 @@ public class UserPage extends BasePage {
 		return getRequestedUser(userName.toString());
 	}
 
-	protected User getRequestedUser(final String userName) {
+	private User getRequestedUser(final String userName) {
 		return userService.getByUserName(userName);
 	}
 
@@ -87,7 +87,7 @@ public class UserPage extends BasePage {
 		return forUser(user.getUserName());
 	}
 
-	public static PageParameters forUser(final String userName) {
+	private static PageParameters forUser(final String userName) {
 		return new PageParameters().add("userName", userName);
 	}
 }

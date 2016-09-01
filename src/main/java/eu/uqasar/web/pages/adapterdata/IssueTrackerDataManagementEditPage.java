@@ -53,14 +53,16 @@ import eu.uqasar.web.pages.BasePage;
 public class IssueTrackerDataManagementEditPage extends BasePage {
 
     // The tableEntity to edit/save
-    protected JiraMetricMeasurement tableEntity;
+    private JiraMetricMeasurement tableEntity;
     
     @Inject
     private JiraDataService jiraService;
     
     private final Form<JiraMetricMeasurement> tableEntityForm;
     
-    protected final InputBorder<String> keyBorder,jiraMetricBorder,issueContentBorder;
+    private final InputBorder<String> keyBorder;
+    private final InputBorder<String> jiraMetricBorder;
+    private final InputBorder<String> issueContentBorder;
     
     @SuppressWarnings("unused")
     private final DateTextField someDateField;
@@ -118,7 +120,7 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * 
      * @param idParam
      */
-    protected void loadTableEntity(final StringValue idParam) {
+    private void loadTableEntity(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this,
                     null));
@@ -241,7 +243,7 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
     /**
      * 
      */
-    protected void save(AjaxRequestTarget target, PageParameters parameters) {
+    private void save(AjaxRequestTarget target, PageParameters parameters) {
         // save tableEntity
         saveTableEntity();
         // success message has to be associated to session so that it is shown
@@ -271,7 +273,7 @@ public class IssueTrackerDataManagementEditPage extends BasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(tableEntityForm);

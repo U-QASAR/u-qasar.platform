@@ -82,7 +82,7 @@ public class AdapterAddEditPage extends BasePage {
 	private final DropDownChoice<Project> projectChoice;
 
 	// The AdapterSettings to edit/save
-	protected AdapterSettings adapterSettings;
+	private AdapterSettings adapterSettings;
 
 	/**
 	 * @param parameters
@@ -146,7 +146,7 @@ public class AdapterAddEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadAdapter(final StringValue idParam) {
+	private void loadAdapter(final StringValue idParam) {
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
 					null));
@@ -333,7 +333,7 @@ public class AdapterAddEditPage extends BasePage {
 	 * adapter list
 	 * @param target
 	 */
-	protected void save(AjaxRequestTarget target) {
+	private void save(AjaxRequestTarget target) {
 
 		// Set the QA Project for the Adapter
 		adapterSettings.setProject(projectChoice.getModelObject());
@@ -370,12 +370,12 @@ public class AdapterAddEditPage extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+	private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(adapterSettingsForm);
 	}
 
-	public void onSubmit(AdapterSettings adapterSettings, final String password) {
+	private void onSubmit(AdapterSettings adapterSettings, final String password) {
 	}	
 }

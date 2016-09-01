@@ -39,7 +39,7 @@ import org.apache.wicket.request.http.WebRequest;
  *
  *
  */
-public class UQasarExceptionRequestCycleListener extends AbstractRequestCycleListener {
+class UQasarExceptionRequestCycleListener extends AbstractRequestCycleListener {
 
 	private final boolean deploymentMode;
 

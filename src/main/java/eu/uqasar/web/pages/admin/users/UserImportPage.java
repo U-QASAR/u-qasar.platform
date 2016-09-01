@@ -170,7 +170,7 @@ public class UserImportPage extends AdminBasePage {
         addOrReplace(feedbackPanel);
     }
 
-    protected boolean tryToRegister(LdapUser ldapUser) {
+    private boolean tryToRegister(LdapUser ldapUser) {
         User newUser = ldapUser.toUser();
         try {
             authenticationService.checkMailAlreadyRegistered(newUser.getMail());

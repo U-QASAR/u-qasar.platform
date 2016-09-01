@@ -79,7 +79,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
      * @param filter
      * @return
      */
-	public List<Project> getAllProjectsFiltered(TreeFilterStructure filter) {
+    private List<Project> getAllProjectsFiltered(TreeFilterStructure filter) {
 		List<Project> resultList = new ArrayList<>();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Project> query = cb.createQuery(Project.class);

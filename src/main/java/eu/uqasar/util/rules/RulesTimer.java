@@ -85,7 +85,7 @@ public class RulesTimer {
 	/**
 	 * Initialize the timers for all the adapters taking care of data updates
 	 */
-	public void initRuleTimer() {
+    private void initRuleTimer() {
 
 		logger.debug("initRuleTimer() [" + new Date() + "]");
 
@@ -102,7 +102,7 @@ public class RulesTimer {
 	/**
 	 * Cancels the existing timer
 	 */
-	public void cancelTimer() {
+    private void cancelTimer() {
 
 		if (timerService.getTimers() != null
 				&& timerService.getTimers().size() > 0) {

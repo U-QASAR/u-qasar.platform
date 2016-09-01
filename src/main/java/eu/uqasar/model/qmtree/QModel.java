@@ -138,7 +138,7 @@ public class QModel extends QMTreeNode {
 
 
 	@JsonIgnore
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 
@@ -160,7 +160,7 @@ public class QModel extends QMTreeNode {
 	
 	@JsonProperty("shortName")
 	@XmlElement(name="shortName")
-	public void setShortName(String nodeKey) {
+    private void setShortName(String nodeKey) {
 		super.setNodeKey(nodeKey);
 	}
 	

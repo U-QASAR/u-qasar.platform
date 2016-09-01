@@ -84,8 +84,8 @@ public class TechDebtChartWidget extends AbstractWidget{
 	 * 
 	 */
 	private static final long serialVersionUID = 376923874435436400L;
-	public static final String BAR_TYPE = "BAR";
-	public static final String PIE_TYPE = "PIE";
+	private static final String BAR_TYPE = "BAR";
+	private static final String PIE_TYPE = "PIE";
 
 	public static final List<String> TYPES = Arrays.asList(PIE_TYPE,
             BAR_TYPE);

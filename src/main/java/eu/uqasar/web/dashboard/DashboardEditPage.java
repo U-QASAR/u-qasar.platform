@@ -76,7 +76,7 @@ public class DashboardEditPage extends BasePage {
 
 	private final transient DashboardContext dashboardContext = UQasar.get().getDashboardContext();
 	// The dashboard to edit/save
-	protected DbDashboard dashboard;
+    private DbDashboard dashboard;
 
 	/**
 	 * @param parameters
@@ -156,7 +156,7 @@ public class DashboardEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadDashboard(final StringValue idParam) {
+    private void loadDashboard(final StringValue idParam) {
 		// Create a new dashboard, if no ID is provided 
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
@@ -260,7 +260,7 @@ public class DashboardEditPage extends BasePage {
 	/**
 	 * 
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		DbDashboard dbdb = (DbDashboard) saveDashboard();
 		User user = userService.getById(UQasar.getSession().getLoggedInUser().getId());
 		user.addDashboard(dbdb);
@@ -288,7 +288,7 @@ public class DashboardEditPage extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(dashboardForm);
@@ -322,12 +322,12 @@ public class DashboardEditPage extends BasePage {
 	/**
 	 * @return the suggestionCheck
 	 */
-	public CheckBox getSuggestionCheck() {
+    private CheckBox getSuggestionCheck() {
 		return suggestionCheck;
 	}
 
 	
-	public CheckBox getAllWidgetCheck() {
+	private CheckBox getAllWidgetCheck() {
 		return allWidgetCheck;
 	}
 }

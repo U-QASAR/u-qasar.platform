@@ -53,7 +53,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
  */
 public class SearchResultsPage extends BasePage {
 
-    public static final String QUERY_PARAM = "query";
+    private static final String QUERY_PARAM = "query";
     private final TextField<String> searchField;
     private final String query;
 

@@ -100,7 +100,7 @@ public class NotificationsSubMenu extends NotificationDropDownMenu {
 		return links;
 	}
 	
-	protected static Class<? extends NotificationBookmarkablePageLink> getNotificationLink(INotification notification) {
+	private static Class<? extends NotificationBookmarkablePageLink> getNotificationLink(INotification notification) {
 		if (notification instanceof ProjectNearEndNotification) {
 			return ProjectNearEndNotificationLink.class;
 		} else if(notification instanceof DashboardSharedNotification){

@@ -27,7 +27,7 @@ package eu.uqasar.model.meta;
  */
 
 
-public interface IMetaData {
+interface IMetaData {
     
     String getName();
     

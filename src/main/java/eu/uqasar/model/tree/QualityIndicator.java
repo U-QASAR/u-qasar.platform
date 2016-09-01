@@ -56,7 +56,7 @@ import eu.uqasar.model.quality.indicator.Type;
 public class QualityIndicator extends BaseIndicator {
 
 	private static final long serialVersionUID = -3419215509636045908L;
-	public static final IconType ICON = new IconType("dashboard");
+	private static final IconType ICON = new IconType("dashboard");
 	
 	// The formula in the format that meant for viewing. In order to compute
 	// a value the formula is parsed and eval'd

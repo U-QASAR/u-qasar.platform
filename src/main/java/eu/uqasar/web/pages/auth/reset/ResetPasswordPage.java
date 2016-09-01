@@ -104,7 +104,7 @@ public class ResetPasswordPage extends BasePage {
 		add(form);
 	}
 
-	protected void resetPassword() {
+	private void resetPassword() {
 		try {
 			// encrypt password and store user entity in db
 			authenticationService.resetPassword(user, password.getModelObject());

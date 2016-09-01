@@ -28,7 +28,7 @@ import java.io.InputStream;
  *
  * @author Dominik Šmíd
  */
-public interface JenaBean {
+interface JenaBean {
 
     /**
      * Getr for output of this tool.

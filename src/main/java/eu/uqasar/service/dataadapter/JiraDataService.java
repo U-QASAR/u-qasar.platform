@@ -272,7 +272,7 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 	 * @return
 	 * @throws uQasarException
 	 */
-	public List<JiraMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date) 
+    private List<JiraMetricMeasurement> getMeasurementsByMetricAndDate(String metric, Date date)
 			throws uQasarException {
 		logger.info("Get measurements for metric: " +metric);
 

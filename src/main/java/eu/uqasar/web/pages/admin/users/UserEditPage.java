@@ -304,13 +304,13 @@ public final class UserEditPage extends AdminBasePage {
 		response.render(CssHeaderItem.forUrl("assets/css/admin/user.css"));
 	}
 
-	protected Iterator<Team> getPotentialTeams(final String input) {
+	private Iterator<Team> getPotentialTeams(final String input) {
 		List<Team> alreadyAssociatedTeams = teamService.getForUser(user);
 		List<Team> potentialTeams = teamService.getAllExceptAndFilter(alreadyAssociatedTeams, input);
 		return potentialTeams.iterator();
 	}
 
-	public <T> IConverter<T> getAutocompleteConverter() {
+	private <T> IConverter<T> getAutocompleteConverter() {
 		return new IConverter<T>() {
 
 			@Override
@@ -325,7 +325,7 @@ public final class UserEditPage extends AdminBasePage {
 		};
 	}
 
-	public IAutoCompleteRenderer<Team> getAutocompleteRenderer() {
+	private IAutoCompleteRenderer<Team> getAutocompleteRenderer() {
 		return new AbstractAutoCompleteTextRenderer<Team>() {
 
 			@Override
@@ -435,7 +435,7 @@ public final class UserEditPage extends AdminBasePage {
 		return check;
 	}
 
-	protected User tryToRegister(User newUser, final String password, final String passwordConfirmation) {
+	private User tryToRegister(User newUser, final String password, final String passwordConfirmation) {
 		try {
 			authenticationService.checkMailAlreadyRegistered(newUser.getMail());
 			authenticationService.checkUserNameAlreadyRegistered(newUser.getUserName());
@@ -498,7 +498,7 @@ public final class UserEditPage extends AdminBasePage {
         return linkToEdit(entity.getId());
     }
     
-    public static PageParameters linkToEdit(Long entityId) {
+    private static PageParameters linkToEdit(Long entityId) {
         return new PageParameters().set("id", entityId);
     }
 	

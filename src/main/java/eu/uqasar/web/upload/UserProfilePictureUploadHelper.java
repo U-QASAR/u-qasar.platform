@@ -79,7 +79,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		return getNewFileName(user.getId());
 	}
 
-	public static Path getNewFileName(Long userId) throws IOException {
+	private static Path getNewFileName(Long userId) throws IOException {
 		/*	we want the user picture files to always reside in a different folder than the users 
 		 personal folder, so we overwrite the method for determining the new name 
 		 */
@@ -145,7 +145,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		return null;
 	}
 
-	public static Path getUserPicturePath(User user) {
+	private static Path getUserPicturePath(User user) {
 		return getUserPicturePath(user.getId());
 	}
 

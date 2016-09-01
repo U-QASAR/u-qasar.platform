@@ -184,11 +184,11 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 		}
 	}
 
-	protected String getMetricStyle(QMMetric node) {
+	private String getMetricStyle(QMMetric node) {
 		return getOtherStyleClass(node);
 	}
 
-	protected String getQualityIndicatorStyle(QMQualityIndicator node) {
+	private String getQualityIndicatorStyle(QMQualityIndicator node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {
@@ -196,7 +196,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 		}
 	}
 
-	protected String getQualityObjectiveStyle(QMQualityObjective node) {
+	private String getQualityObjectiveStyle(QMQualityObjective node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {

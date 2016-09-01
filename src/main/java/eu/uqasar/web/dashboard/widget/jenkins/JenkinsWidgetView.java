@@ -316,7 +316,7 @@ public class JenkinsWidgetView extends WidgetView {
 		return pro;
 	}
 	
-	class SortByKeyDescending implements Comparator<Map.Entry<Number, String>>{
+	private class SortByKeyDescending implements Comparator<Map.Entry<Number, String>>{
 	    
 	    @Override
 	    public int compare( Map.Entry<Number,String> entry1, Map.Entry<Number,String> entry2){

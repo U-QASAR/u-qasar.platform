@@ -73,9 +73,9 @@ import eu.uqasar.util.UQasarUtil;
  */
 public class ProjectQualityChartWidget extends AbstractWidget{
 
-	public static final String GAUGE_TYPE = "GAUGE"; 
-	public static final String BAR_TYPE = "BAR";
-	public static final String LINE_TYPE = "LINE";
+	private static final String GAUGE_TYPE = "GAUGE";
+	private static final String BAR_TYPE = "BAR";
+	private static final String LINE_TYPE = "LINE";
 
 	public static final List<String> TYPES = Arrays.asList(LINE_TYPE,
             BAR_TYPE,

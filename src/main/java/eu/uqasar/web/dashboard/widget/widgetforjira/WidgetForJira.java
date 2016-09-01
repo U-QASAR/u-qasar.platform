@@ -82,7 +82,7 @@ public class WidgetForJira extends AbstractWidget {
 	}
 
 	
-	public Project getProject(String projName) {
+	private Project getProject(String projName) {
 		Project pro = null;
 		if (projName == null || projName.isEmpty()) {
 			projName = "U-QASAR Platform Development";

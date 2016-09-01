@@ -175,9 +175,9 @@ public class ProcessService extends AbstractService<Process> {
 
 	}
 
-	protected List<Predicate> getFilterPredicates(
-			final ProcessesFilterStructure filter, CriteriaBuilder cb,
-			Root<Process> from) {
+	private List<Predicate> getFilterPredicates(
+            final ProcessesFilterStructure filter, CriteriaBuilder cb,
+            Root<Process> from) {
 		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;

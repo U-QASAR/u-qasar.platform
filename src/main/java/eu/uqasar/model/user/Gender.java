@@ -46,7 +46,7 @@ public enum Gender {
 		return getLabelModel().getObject();
 	}
 
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(Gender.class, "label.gender." + labelKey);
 	}
     

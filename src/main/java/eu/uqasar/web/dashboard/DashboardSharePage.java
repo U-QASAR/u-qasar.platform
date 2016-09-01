@@ -106,7 +106,7 @@ public class DashboardSharePage extends BasePage {
 	private final UserEntityProvider userProvider;
 
 	// The dashboard to be shared
-	protected DbDashboard dashboard;
+    private DbDashboard dashboard;
 		
 	// how many items do we show per page
 	private static final int itemsPerPage = 10;

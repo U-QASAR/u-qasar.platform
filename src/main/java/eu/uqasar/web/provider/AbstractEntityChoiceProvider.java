@@ -42,12 +42,12 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		extends TextChoiceProvider<Type> {
 
 	private List<Type> allEntities = new ArrayList<>();
-	public AbstractEntityChoiceProvider(){
+	protected AbstractEntityChoiceProvider(){
 		
 	}
 	
-	public AbstractEntityChoiceProvider(List<Type> allEntities,
-			Type... entitiesToExclude) {
+	private AbstractEntityChoiceProvider(List<Type> allEntities,
+                                         Type... entitiesToExclude) {
 		this.allEntities = allEntities;
 
 		if ((entitiesToExclude != null) && (entitiesToExclude.length > 0)) {
@@ -56,7 +56,7 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		}
 	}
 
-	public AbstractEntityChoiceProvider(List<Type> entities) {
+	protected AbstractEntityChoiceProvider(List<Type> entities) {
 		this(entities, (Type[]) null);
 	}
 
@@ -99,8 +99,8 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 	 *            items per page
 	 * @return list of matches
 	 */
-	protected List<Type> queryMatches(String term, final int page,
-			final int pageSize) {
+    private List<Type> queryMatches(String term, final int page,
+                                    final int pageSize) {
 		List<Type> result = new ArrayList<>();
 		final int offset = page * pageSize;
 		int matched = 0;

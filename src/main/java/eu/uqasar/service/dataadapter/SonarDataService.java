@@ -65,7 +65,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * 
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getAllSonarMetricObjects() {
+    private List<SonarMetricMeasurement> getAllSonarMetricObjects() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<SonarMetricMeasurement> query = 
 				cb.createQuery(SonarMetricMeasurement.class);
@@ -161,8 +161,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * @param project
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getMeasurementsForProject(
-			String project) {
+    private List<SonarMetricMeasurement> getMeasurementsForProject(
+            String project) {
 		logger.info("Obtaining measurements for the project: " +project);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -184,8 +184,8 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 	 * @param date
 	 * @return
 	 */
-	public List<SonarMetricMeasurement> getMeasurementsForProjectByDate(
-			String project, Date date) {
+    private List<SonarMetricMeasurement> getMeasurementsForProjectByDate(
+            String project, Date date) {
 		logger.info("Obtaining measurements for the project: " +project);
 		
 		CriteriaBuilder cb = em.getCriteriaBuilder();

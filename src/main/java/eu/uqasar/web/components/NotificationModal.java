@@ -75,7 +75,7 @@ public class NotificationModal extends Modal {
      * @param escapeMarkup True is model strings should be escaped
      * @return This
      */
-    public Modal message(final IModel<String> label, final boolean escapeMarkup) {
+    private Modal message(final IModel<String> label, final boolean escapeMarkup) {
     	if(message != null) {
     		message.setDefaultModel(label);
     		message.setEscapeModelStrings(escapeMarkup);

@@ -142,7 +142,7 @@ public class ProjectSimilarityService extends AbstractService<Project> {
 	 * the computed similarity value.
 	 * @return Sorted list of projects
 	 */
-	public List<Project> getProjectsByDescendingSimilarityValue() {
+    private List<Project> getProjectsByDescendingSimilarityValue() {
 
 		logger.debugf("Sorting projects to a descending similarity value...");
 		if (similarProjects != null && similarProjects.size() > 0) {

@@ -112,7 +112,7 @@ public final class CompanyEditPage extends AdminBasePage {
 	        return linkToEdit(entity.getId());
 	    }
 	    
-	    public static PageParameters linkToEdit(Long entityId) {
+	    private static PageParameters linkToEdit(Long entityId) {
 	        return new PageParameters().set("id", entityId);
 	    }
 

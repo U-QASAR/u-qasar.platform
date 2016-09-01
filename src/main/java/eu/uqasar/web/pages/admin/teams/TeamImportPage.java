@@ -197,7 +197,7 @@ public class TeamImportPage extends AdminBasePage {
         addOrReplace(feedbackPanel);
     }
 
-    protected boolean tryToRegister(LdapGroup ldapGroup) {
+    private boolean tryToRegister(LdapGroup ldapGroup) {
         if (!teamService.ldapBasedGroupExists(ldapGroup)) {
             Team team = new Team();
             team.setName(ldapGroup.getName());
@@ -228,7 +228,7 @@ public class TeamImportPage extends AdminBasePage {
         return false;
     }
 
-    protected User tryToRegister(LdapUser ldapUser) {
+    private User tryToRegister(LdapUser ldapUser) {
         User newUser = ldapUser.toUser();
         try {
             authenticationService.checkMailAlreadyRegistered(newUser.getMail());

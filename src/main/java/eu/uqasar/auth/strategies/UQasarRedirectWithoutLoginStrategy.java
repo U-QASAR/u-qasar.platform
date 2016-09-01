@@ -49,7 +49,7 @@ import org.apache.wicket.request.component.IRequestableComponent;
  *
  *
  */
-public class UQasarRedirectWithoutLoginStrategy implements IAuthorizationStrategy {
+class UQasarRedirectWithoutLoginStrategy implements IAuthorizationStrategy {
 
 	// List of pages that don't require authentication, all other pages will redirect to login if user is not authenticated!
 	private static final List<Class<? extends WebPage>> PAGES_WO_AUTH_REQ = Arrays.asList(

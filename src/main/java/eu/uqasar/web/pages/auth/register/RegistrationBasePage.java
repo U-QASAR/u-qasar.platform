@@ -36,7 +36,7 @@ public abstract class RegistrationBasePage extends BasePage {
 	@Inject
 	UserService userService;
 	
-	public RegistrationBasePage(PageParameters parameters) {
+	RegistrationBasePage(PageParameters parameters) {
 		super(parameters);
 		token = parameters.get("token").toOptionalString();
 	}
@@ -52,11 +52,11 @@ public abstract class RegistrationBasePage extends BasePage {
 		}
 	}
 	
-	public abstract void tokenValidated(User user);
+	protected abstract void tokenValidated(User user);
 	
-	public abstract void tokenInvalidated();
+	protected abstract void tokenInvalidated();
 	
-	public final String getToken() {
+	final String getToken() {
 		return token;
 	}
 	
@@ -64,7 +64,7 @@ public abstract class RegistrationBasePage extends BasePage {
 		return pendingUser;
 	}
 	
-	public final User getPendingUserByToken() {
+	private User getPendingUserByToken() {
 		User user = userService.getByRegistrationTokenAndRegistrationStatus(token, RegistrationStatus.PENDING);
 		return user;
 	}

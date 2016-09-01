@@ -65,7 +65,7 @@ public class TeamMembershipService extends AbstractService<TeamMembership> {
 		}
 	}
 	
-	public void removeUserFromTeams(User user) {
+	private void removeUserFromTeams(User user) {
 		List<TeamMembership> teams = getForUser(user);
 		delete(teams);
 	}
