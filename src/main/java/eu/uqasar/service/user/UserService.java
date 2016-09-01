@@ -337,7 +337,7 @@ public class UserService extends AbstractService<User> {
 			predicates.add(cb.equal(from.get(User_.registrationStatus), filter.getStatus()));
 		}
 		if (!StringUtils.isEmpty(filter.getName())) {
-			Predicate firstName = cb.like(cb.lower(from.<String> get(User_.lastName)), LIKE_WILDCARD + filter.getName().toLowerCase() + LIKE_WILDCARD);
+			Predicate firstName = cb.like(cb.lower(from.get(User_.lastName)), LIKE_WILDCARD + filter.getName().toLowerCase() + LIKE_WILDCARD);
 			Predicate lastName = cb.like(from.get(User_.firstName), LIKE_WILDCARD + filter.getName() + LIKE_WILDCARD);
 			Predicate userName = cb.like(from.get(User_.userName), LIKE_WILDCARD + filter.getName() + LIKE_WILDCARD);
 			Expression<String> fullName = cb.concat(cb.concat(from.get(User_.firstName), " "), from.get(User_.lastName));

@@ -194,7 +194,7 @@ public class ProcessService extends AbstractService<Process> {
 
 		if (!StringUtils.isEmpty(filter.getName())) {
 			Predicate firstName = cb.like(
-					cb.lower(from.<String> get(Process_.name)), LIKE_WILDCARD
+					cb.lower(from.get(Process_.name)), LIKE_WILDCARD
 							+ filter.getName().toLowerCase() + LIKE_WILDCARD);
 			predicates.add((firstName));
 		}

@@ -176,7 +176,7 @@ public class ProductService extends AbstractService<Product> {
 
 		if (!StringUtils.isEmpty(filter.getName())) {
 			Predicate firstName = cb.like(
-					cb.lower(from.<String> get(Product_.name)), LIKE_WILDCARD
+					cb.lower(from.get(Product_.name)), LIKE_WILDCARD
 							+ filter.getName().toLowerCase() + LIKE_WILDCARD);
 			predicates.add(firstName);
 		}
