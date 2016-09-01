@@ -26,7 +26,6 @@ package eu.uqasar.web.pages.errors;
 import eu.uqasar.exception.model.EntityNotFoundException;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.model.Model;
 import org.apache.wicket.model.StringResourceModel;
 import org.apache.wicket.request.http.WebResponse;
 import org.apache.wicket.request.mapper.parameter.PageParameters;

@@ -22,7 +22,6 @@ package eu.uqasar.model.quality.indicator;
 
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;

@@ -35,7 +35,6 @@ import eu.uqasar.service.tree.ProjectSearchService;
 import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.service.user.TeamMembershipService;
 import eu.uqasar.service.user.TeamService;
-import eu.uqasar.service.user.UserService;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
 import eu.uqasar.web.pages.admin.AdminBasePage;

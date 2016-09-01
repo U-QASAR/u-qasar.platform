@@ -48,7 +48,6 @@ import eu.uqasar.model.qmtree.QMTreeNode_;
 import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.qmtree.QModelStatus;
 import eu.uqasar.model.qmtree.QModel_;
-import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.web.pages.qmtree.panels.filter.QMTreeFilterStructure;
 
 /**

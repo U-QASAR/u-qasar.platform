@@ -55,14 +55,11 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.StringResourceModel;
-import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.protocol.https.RequireHttps;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.util.string.StringValue;
 import org.jboss.solder.logging.Logger;
 import org.joda.time.LocalDate;
-
-import com.jcabi.manifests.Manifests;
 
 /**
  *

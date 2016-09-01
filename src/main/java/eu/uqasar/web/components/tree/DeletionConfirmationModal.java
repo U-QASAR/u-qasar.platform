@@ -33,7 +33,6 @@ import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.QualityIndicator;
 import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.TreeNode;
-import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
 

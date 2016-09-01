@@ -21,10 +21,7 @@ package eu.uqasar.model.notification.dashboard;
  */
 
 import eu.uqasar.model.dashboard.DbDashboard;
-import eu.uqasar.model.dashboard.DbDashboard_;
 import eu.uqasar.model.notification.Notification;
-import eu.uqasar.model.notification.NotificationType;
-import eu.uqasar.model.tree.Project;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -32,7 +29,6 @@ import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ro.fortsoft.wicket.dashboard.Dashboard;
 
 @NoArgsConstructor
 @Setter

@@ -26,7 +26,6 @@ import static javax.persistence.CascadeType.MERGE;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
@@ -37,12 +36,9 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
@@ -88,7 +84,6 @@ import eu.uqasar.model.meta.StaticAnalysisTool;
 import eu.uqasar.model.meta.TestManagementTool;
 import eu.uqasar.model.meta.Topic;
 import eu.uqasar.model.role.Role;
-import eu.uqasar.model.tree.Project;
 import eu.uqasar.web.components.resources.UserPictureResource;
 
 @Setter

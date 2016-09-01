@@ -24,11 +24,9 @@ package eu.uqasar.web.pages.search.resultpanels;
 
 
 import eu.uqasar.model.user.Team;
-import eu.uqasar.model.user.TeamMembership;
 import eu.uqasar.service.AbstractService;
 import eu.uqasar.service.user.TeamService;
 import eu.uqasar.web.pages.admin.teams.TeamEditPage;
-import eu.uqasar.web.pages.admin.teams.TeamListPage;
 
 import javax.inject.Inject;
 import org.apache.wicket.markup.html.basic.Label;

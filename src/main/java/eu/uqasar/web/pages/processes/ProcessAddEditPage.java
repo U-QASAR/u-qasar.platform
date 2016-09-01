@@ -24,8 +24,6 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.RestartResponseException;
-import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.feedback.FeedbackMessage;
@@ -43,13 +41,11 @@ import de.agilecoders.wicket.extensions.markup.html.bootstrap.form.DateTextField
 import de.agilecoders.wicket.extensions.markup.html.bootstrap.form.DateTextFieldConfig;
 import eu.uqasar.exception.model.EntityNotFoundException;
 import eu.uqasar.model.process.Process;
-import eu.uqasar.model.product.Product;
 import eu.uqasar.service.ProcessService;
 import eu.uqasar.web.components.HtmlEvent;
 import eu.uqasar.web.components.InputBorder;
 import eu.uqasar.web.components.InputValidationForm;
 import eu.uqasar.web.components.OnEventInputBeanValidationBorder;
-import eu.uqasar.web.pages.AboutPage;
 import eu.uqasar.web.pages.BasePage;
 
 public class ProcessAddEditPage extends BasePage {

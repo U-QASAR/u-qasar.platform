@@ -23,7 +23,6 @@ package eu.uqasar.web.provider.user;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Locale;
 
 import com.vaynberg.wicket.select2.Response;
 import com.vaynberg.wicket.select2.TextChoiceProvider;

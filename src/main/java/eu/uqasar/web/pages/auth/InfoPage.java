@@ -28,8 +28,6 @@ import eu.uqasar.service.AuthenticationService;
 import eu.uqasar.service.notification.message.auth.register.RegistrationMessageService;
 import eu.uqasar.web.pages.BasePage;
 import eu.uqasar.web.pages.auth.login.LoginPage;
-import eu.uqasar.web.pages.auth.register.CancelRegistrationPage;
-import eu.uqasar.web.pages.auth.register.ConfirmRegistrationPage;
 import eu.uqasar.web.pages.auth.register.RegisterPage;
 import eu.uqasar.web.provider.UrlProvider;
 import javax.inject.Inject;

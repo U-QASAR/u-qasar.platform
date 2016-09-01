@@ -22,7 +22,6 @@ package eu.uqasar.web.pages.qmtree.qmodels;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

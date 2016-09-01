@@ -31,7 +31,6 @@ import java.util.Set;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import lombok.NoArgsConstructor;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;

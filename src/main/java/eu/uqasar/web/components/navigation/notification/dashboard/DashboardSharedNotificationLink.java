@@ -21,10 +21,6 @@ package eu.uqasar.web.components.navigation.notification.dashboard;
  */
 
 
-import java.util.Date;
-
-import javax.inject.Inject;
-
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -33,9 +29,7 @@ import org.apache.wicket.model.IModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
-import eu.uqasar.model.notification.NotificationType;
 import eu.uqasar.model.notification.dashboard.DashboardSharedNotification;
-import eu.uqasar.service.NotificationService;
 import eu.uqasar.web.components.navigation.notification.NotificationBookmarkablePageLink;
 import eu.uqasar.web.dashboard.DashboardViewPage;
 

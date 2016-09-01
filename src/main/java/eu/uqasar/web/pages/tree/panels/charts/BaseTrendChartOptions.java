@@ -25,11 +25,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
-import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -54,11 +51,8 @@ import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Series;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
-import com.jcabi.log.Logger;
 
 import eu.uqasar.model.tree.BaseIndicator;
-import eu.uqasar.model.tree.QualityIndicator;
-import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.QualityStatus;
 import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;

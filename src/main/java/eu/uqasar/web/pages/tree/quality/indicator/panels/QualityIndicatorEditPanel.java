@@ -26,7 +26,6 @@ import java.util.Date;
 import java.util.Iterator;
 
 import javax.inject.Inject;
-import javax.script.ScriptException;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxCheckBox;

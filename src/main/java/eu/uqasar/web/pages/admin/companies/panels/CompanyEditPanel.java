@@ -29,21 +29,14 @@ import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.SubmitLink;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.model.StringResourceModel;
-import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 import eu.uqasar.model.company.Company;
-import eu.uqasar.model.user.User;
 import eu.uqasar.service.company.CompanyService;
 import eu.uqasar.web.components.HtmlEvent;
 import eu.uqasar.web.components.OnEventInputBeanValidationBorder;
-import eu.uqasar.web.pages.BasePage;
-import eu.uqasar.web.pages.admin.companies.CompanyEditPage;
-import eu.uqasar.web.pages.admin.companies.CompanyListPage;
-import eu.uqasar.web.pages.user.panels.EditProfilePanel;
 
 /**
  *

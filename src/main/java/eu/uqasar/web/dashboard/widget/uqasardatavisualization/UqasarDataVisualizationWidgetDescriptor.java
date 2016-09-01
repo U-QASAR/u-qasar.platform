@@ -21,8 +21,6 @@ package eu.uqasar.web.dashboard.widget.uqasardatavisualization;
  */
 
 
-import com.googlecode.wickedcharts.highcharts.options.Options;
-
 import ro.fortsoft.wicket.dashboard.WidgetDescriptor;
 
 /**

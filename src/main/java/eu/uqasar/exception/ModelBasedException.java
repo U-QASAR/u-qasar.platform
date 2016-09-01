@@ -27,12 +27,8 @@ package eu.uqasar.exception;
 
 
 import eu.uqasar.util.resources.ResourceBundleLocator;
-import java.util.Locale;
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
 
 import lombok.Getter;
-import org.apache.wicket.Session;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 

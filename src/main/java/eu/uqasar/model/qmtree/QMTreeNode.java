@@ -58,8 +58,6 @@ import org.hibernate.search.annotations.Store;
 import org.hibernate.search.annotations.TermVector;
 import org.jboss.solder.logging.Logger;
 
-import com.github.slugify.Slugify;
-
 import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
 import eu.uqasar.model.AbstractEntity;
 

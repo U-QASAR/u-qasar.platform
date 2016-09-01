@@ -21,42 +21,17 @@ package eu.uqasar.web.dashboard.widget.jenkins;
  */
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
-import org.joda.time.DateTime;
 
 import ro.fortsoft.wicket.dashboard.AbstractWidget;
 import ro.fortsoft.wicket.dashboard.Widget;
 import ro.fortsoft.wicket.dashboard.web.WidgetView;
 
-import com.googlecode.wickedcharts.highcharts.options.Axis;
-import com.googlecode.wickedcharts.highcharts.options.AxisType;
-import com.googlecode.wickedcharts.highcharts.options.ChartOptions;
-import com.googlecode.wickedcharts.highcharts.options.CssStyle;
-import com.googlecode.wickedcharts.highcharts.options.HorizontalAlignment;
-import com.googlecode.wickedcharts.highcharts.options.Labels;
-import com.googlecode.wickedcharts.highcharts.options.Options;
-import com.googlecode.wickedcharts.highcharts.options.SeriesType;
-import com.googlecode.wickedcharts.highcharts.options.Title;
-import com.googlecode.wickedcharts.highcharts.options.series.Point;
-import com.googlecode.wickedcharts.highcharts.options.series.PointSeries;
-
 import eu.uqasar.model.tree.Project;
-import eu.uqasar.model.tree.TreeNode;
-import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
-import eu.uqasar.service.HistoricalDataService;
 import eu.uqasar.service.tree.TreeNodeService;
 
 /**

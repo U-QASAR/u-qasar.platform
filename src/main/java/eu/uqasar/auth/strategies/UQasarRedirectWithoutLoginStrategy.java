@@ -25,7 +25,6 @@ package eu.uqasar.auth.strategies;
 
 import eu.uqasar.web.UQSession;
 import eu.uqasar.web.pages.AboutPage;
-import eu.uqasar.web.pages.BasePage;
 import eu.uqasar.web.pages.ContactPage;
 import eu.uqasar.web.pages.auth.InfoPage;
 import eu.uqasar.web.pages.auth.login.LoginPage;

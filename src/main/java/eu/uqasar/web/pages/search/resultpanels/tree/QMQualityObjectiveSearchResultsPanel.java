@@ -22,11 +22,8 @@ package eu.uqasar.web.pages.search.resultpanels.tree;
 
 
 import eu.uqasar.model.qmtree.QMQualityObjective;
-import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.web.pages.qmtree.qmodels.QModelViewPage;
 import eu.uqasar.web.pages.qmtree.quality.objective.QMQualityObjectiveEditPage;
-import eu.uqasar.web.pages.tree.projects.ProjectViewPage;
-import eu.uqasar.web.pages.tree.quality.objective.QualityObjectiveEditPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.repeater.Item;

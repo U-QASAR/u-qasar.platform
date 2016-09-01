@@ -21,8 +21,6 @@ package eu.uqasar.service.tree;
  */
 
 
-import eu.uqasar.model.qmtree.QMTreeNode;
-import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;

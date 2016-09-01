@@ -21,7 +21,6 @@ package eu.uqasar.web.components.tree.util;
  */
 
 
-import java.io.Serializable;
 import java.util.Set;
 
 import org.apache.wicket.Component;

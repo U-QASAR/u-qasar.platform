@@ -40,7 +40,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
-import org.jasypt.util.text.BasicTextEncryptor;
 import org.jboss.solder.logging.Logger;
 
 import eu.uqasar.adapter.exception.uQasarException;

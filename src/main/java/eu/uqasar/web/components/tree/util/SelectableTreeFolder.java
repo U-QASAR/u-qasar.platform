@@ -21,8 +21,6 @@ package eu.uqasar.web.components.tree.util;
  */
 
 
-import java.io.Serializable;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree;
