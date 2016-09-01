@@ -431,13 +431,13 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 	
 	public QMQualityIndicator checkCompleted(QMQualityIndicator node) {
 		if (node.getChildren().isEmpty()){
-			node.setIsCompleted(false);
+			node.setCompleted(false);
 			//update quality objective
-			node.getParent().setIsCompleted(false);
+			node.getParent().setCompleted(false);
 			qmodelService.update(node.getParent());
 			
 			//update quality model
-			node.getParent().getParent().setIsCompleted(false);
+			node.getParent().getParent().setCompleted(false);
 			qmodelService.update(node.getParent().getParent());
 		}
 		return node;

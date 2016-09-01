@@ -23,6 +23,8 @@ package eu.uqasar.web.components.tree;
 
 import java.util.Set;
 
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.panel.Panel;
@@ -48,14 +50,22 @@ public abstract class TreePanel extends Panel {
 
 	private static final long serialVersionUID = -2358690350800694195L;
 
+	@Getter
 	private final Tree tree;
 
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> editLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> newProjectLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> newMetricLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> newQualityIndicatorLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> newQualityObjectiveLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> moveUpLink;
+	@Getter(AccessLevel.PRIVATE)
 	private final BootstrapAjaxLink<String> moveDownLink;
 	private final BootstrapAjaxLink<String> deleteLink;
 	private final WebMarkupContainer newLinksContainer;
@@ -161,68 +171,6 @@ public abstract class TreePanel extends Panel {
 		}
 	}
 
-	private BootstrapAjaxLink<String> getEditLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.edit", Buttons.Type.Success) {
-			private static final long serialVersionUID = 4604465575758878183L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onEditClicked(target, tree.getSelectedNode());
-			}
-		};
-		TooltipBehavior behavior = 
-				new TooltipBehavior(
-						new StringResourceModel("tooltip.tree.node.edit", 
-								this, null));
-		link.add(behavior);
-		link.setIconType(IconType.pencil);
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	private BootstrapAjaxLink<String> getMoveDownLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.move.down", Buttons.Type.Default) {
-			private static final long serialVersionUID = -5402117100634166400L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this
-						.onMoveDownClicked(target, tree.getSelectedNode());
-			}
-		};
-		TooltipBehavior behavior = 
-				new TooltipBehavior(
-						new StringResourceModel("tooltip.tree.node.move.down", 
-								this, null));
-		link.add(behavior);
-		link.setIconType(new IconType("chevron-sign-down"));
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	private BootstrapAjaxLink<String> getMoveUpLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.move.up", Buttons.Type.Default) {
-			private static final long serialVersionUID = 339875927979390279L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onMoveUpClicked(target, tree.getSelectedNode());
-			}
-		};
-		
-		TooltipBehavior behavior = 
-				new TooltipBehavior(
-						new StringResourceModel("tooltip.tree.node.move.up", 
-								this, null));
-		link.add(behavior);
-		link.setIconType(new IconType("chevron-sign-up"));
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
 	private BootstrapAjaxLink<String> getNewDeleteLink() {
 		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
 				"link.tree.node.delete", Buttons.Type.Danger) {
@@ -243,79 +191,7 @@ public abstract class TreePanel extends Panel {
 		return link;
 	}
 
-	private BootstrapAjaxLink<String> getNewProjectLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.new.project", new StringResourceModel(
-						"button.tree.new.project", this, null),
-				Buttons.Type.Link) {
-			private static final long serialVersionUID = -3891261827414844194L;
 
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onNewClicked(target, tree.getSelectedNode(),
-						Project.class);
-			}
-		};
-		link.setIconType(new IconType("sitemap"));
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	private BootstrapAjaxLink<String> getNewQualityObjectiveLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.new.objective", new StringResourceModel(
-						"button.tree.new.objective", this, null),
-				Buttons.Type.Link) {
-			private static final long serialVersionUID = -3891261827414844194L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onNewClicked(target, tree.getSelectedNode(),
-						QualityObjective.class);
-			}
-		};
-		link.setIconType(IconType.tasks);
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	private BootstrapAjaxLink<String> getNewQualityIndicatorLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.new.indicator", new StringResourceModel(
-						"button.tree.new.indicator", this, null),
-				Buttons.Type.Link) {
-			private static final long serialVersionUID = -3891261827414844194L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onNewClicked(target, tree.getSelectedNode(),
-						QualityIndicator.class);
-			}
-		};
-		link.setIconType(new IconType("dashboard"));
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	private BootstrapAjaxLink<String> getNewMetricLink() {
-		BootstrapAjaxLink<String> link = new BootstrapAjaxLink<String>(
-				"link.tree.node.new.metric", new StringResourceModel(
-						"button.tree.new.metric", this, null),
-				Buttons.Type.Link) {
-			private static final long serialVersionUID = -3891261827414844194L;
-
-			@Override
-			public void onClick(final AjaxRequestTarget target) {
-				TreePanel.this.onNewClicked(target, tree.getSelectedNode(),
-						Metric.class);
-			}
-		};
-		link.setIconType(IconType.signal);
-		link.setOutputMarkupId(true);
-		return link;
-	}
-
-	
 	public void unselectNode() {
 		getTree().unselect();
 		updateTreeLinksEnabling(null, tree.getSelectedNode());
@@ -344,10 +220,6 @@ public abstract class TreePanel extends Panel {
 
 	public abstract void onNodeClicked(AjaxRequestTarget target,
 			IModel<TreeNode> node);
-
-	public Tree getTree() {
-		return tree;
-	}
 
 	private class TreeExpansionModel extends
 			AbstractReadOnlyModel<Set<TreeNode>> {

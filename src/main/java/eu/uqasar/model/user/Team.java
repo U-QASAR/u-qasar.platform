@@ -44,6 +44,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.IndexColumn;
@@ -55,10 +57,8 @@ import org.hibernate.search.annotations.Store;
 import org.hibernate.search.annotations.TermVector;
 
 
-/**
- *
- *
- */
+@Setter
+@Getter
 @Entity(name = "Teams")
 @XmlRootElement
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
@@ -74,30 +74,6 @@ public class Team extends AbstractEntity implements Namable {
 
 	@OneToMany(orphanRemoval = false, mappedBy = "team")
 	private Set<TeamMembership> members = new HashSet<>();
-	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Set<TeamMembership> getMembers() {
-		return members;
-	}
-
-	public void setMembers(Set<TeamMembership> members) {
-		this.members = members;
-	}
 
 	public Collection<User> getAllUsers() {
 		List<User> users = new ArrayList<User>();

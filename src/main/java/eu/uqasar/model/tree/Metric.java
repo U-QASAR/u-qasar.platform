@@ -32,6 +32,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
@@ -45,7 +48,9 @@ import eu.uqasar.model.lifecycle.LifeCycleStage;
 import eu.uqasar.model.measure.MetricSource;
 import eu.uqasar.model.qmtree.QMMetric;
 import eu.uqasar.model.quality.indicator.Purpose;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -94,10 +99,6 @@ public class Metric extends BaseIndicator {
 		this.setUnit(unit);
 		this.setValue(value);
 		this.setWeight(weight);
-	}
-
-	public Metric() {
-
 	}
 
 	public Metric(final String name, final QualityIndicator parent) {
@@ -158,56 +159,6 @@ public class Metric extends BaseIndicator {
 	@Override
 	public Class<TreeNode> getChildType() {
 		return TreeNode.class;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String getMetricType() {
-		return metricType;
-	}
-
-	/**
-	 * 
-	 * @param metricType
-	 */
-	@JsonIgnore
-	public void setMetricType(String metricType) {
-		this.metricType = metricType;
-	}
-
-	/**
-	 * @return the unit
-	 */
-	public String getUnit() {
-		return unit;
-	}
-
-	/**
-	 * @param unit
-	 *            the unit to set
-	 */
-	@JsonIgnore
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
-
-	/**
-	 * @return the qmMetric
-	 */
-	@JsonIgnore
-	public QMMetric getQmMetric() {
-		return qmMetric;
-	}
-
-	/**
-	 * @param qmMetric
-	 *            the qmMetric to set
-	 */
-	@JsonIgnore
-	public void setQmMetric(QMMetric qmMetric) {
-		this.qmMetric = qmMetric;
 	}
 
 	@XmlElement(name = "indicatorPurpose")

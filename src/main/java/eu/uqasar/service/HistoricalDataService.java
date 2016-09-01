@@ -102,7 +102,7 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 	/**
 	 *
 	 * @param baseIndicatorId
-	 * @param postedAt
+	 * @param first
 	 * @param count
 	 *
 	 * @return

@@ -37,8 +37,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "jirametricmeasurement")
@@ -59,94 +63,6 @@ public class JiraMetricMeasurement extends AbstractEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private AdapterSettings adapter; // To which adapter the measurement belongs
 
-	/**
-	 * 
-	 * @return
-	 */
-	public String getSelf() {
-		return self;
-	}
-	
-	/**
-	 * 
-	 * @param self
-	 */
-	public void setSelf(String self) {
-		this.self = self;
-	}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getJiraKey() {
-		return jiraKey;
-	}
-	
-	/**
-	 * 
-	 * @param key
-	 */
-	public void setJiraKey(String jiraKey) {
-		this.jiraKey = jiraKey;
-	}
-	
-	/**
-	 * @return the metric
-	 */
-	public String getJiraMetric() {
-		return jiraMetric;
-	}
-
-	/**
-	 * @param metric the metric to set
-	 */
-	public void setJiraMetric(String jiraMetric) {
-		this.jiraMetric = jiraMetric;
-	}
-
-	/**
-	 * @return the timeStamp
-	 */
-	public Date getTimeStamp() {
-		return timeStamp;
-	}
-
-	/**
-	 * @param timeStamp the timeStamp to set
-	 */
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
-	/**
-	 * @return the jsonContent
-	 */
-	public String getJsonContent() {
-		return jsonContent;
-	}
-
-	/**
-	 * @param jsonContent the jsonContent to set
-	 */
-	public void setJsonContent(String jsonContent) {
-		this.jsonContent = jsonContent;
-	}
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
 	@Override
 	public String toString() {
 		return "JiraMetricMeasurement [self=" +self 
@@ -157,17 +73,4 @@ public class JiraMetricMeasurement extends AbstractEntity {
 				+"]";
 	}
 
-	/**
-	 * @return the adapter
-	 */
-	public AdapterSettings getAdapter() {
-		return adapter;
-	}
-
-	/**
-	 * @param adapter the adapter to set
-	 */
-	public void setAdapter(AdapterSettings adapter) {
-		this.adapter = adapter;
-	}
 }

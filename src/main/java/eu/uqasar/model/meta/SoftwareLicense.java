@@ -21,17 +21,13 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 @Entity
 public class SoftwareLicense extends MetaData {
-
-    public SoftwareLicense() {
-    }
 
     public SoftwareLicense(String name) {
         super(name);

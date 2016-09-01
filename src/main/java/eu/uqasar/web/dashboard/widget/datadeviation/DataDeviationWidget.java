@@ -298,11 +298,11 @@ public class DataDeviationWidget extends AbstractWidget{
 			// Objectives of Project	 	 
 			for(TreeNode obj : objs){
 				objNames.add(obj.getName());				
-				LinkedList<TreeNode> indicatorsOfObj = obj.getChildren();
+				List<TreeNode> indicatorsOfObj = obj.getChildren();
 				// Indicators of Objective
 				for(TreeNode ind: indicatorsOfObj){
 					indiNames.add(ind.getName());				
-					LinkedList<TreeNode> metricsOfIndis = ind.getChildren();
+					List<TreeNode> metricsOfIndis = ind.getChildren();
 					// Metrics Of Indicator
 					for(TreeNode metric : metricsOfIndis){
 						metricNames.add(metric.getName());

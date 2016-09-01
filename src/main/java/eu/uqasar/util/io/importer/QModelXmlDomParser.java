@@ -65,14 +65,14 @@ public class QModelXmlDomParser {
 						while (itInd.hasNext()){
 							QMTreeNode ind = (QMTreeNode) itInd.next();
 							if (ind.getChildren() != null && ind.getChildren().size()>0){
-								ind.setIsCompleted(true);
+								ind.setCompleted(true);
 							}
-							qobjCompleted = qobjCompleted && ind.getIsCompleted();
+							qobjCompleted = qobjCompleted && ind.isCompleted();
 						}
-						obj.setIsCompleted(qobjCompleted);
+						obj.setCompleted(qobjCompleted);
 					}
-					qmCompleted = qmCompleted && obj.getIsCompleted();
-					qm.setIsCompleted(qmCompleted);
+					qmCompleted = qmCompleted && obj.isCompleted();
+					qm.setCompleted(qmCompleted);
 				}
 			}
 		}

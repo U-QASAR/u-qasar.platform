@@ -60,7 +60,9 @@ public class MetaDataSettingsPage extends AdminBasePage {
                 }
             });
         }
-        tabPanel = new AjaxBootstrapTabbedPillsPanel<>("tabs", tabs).setAdjustPillsForMobile(true);
+        AjaxBootstrapTabbedPillsPanel tmp = new AjaxBootstrapTabbedPillsPanel<>("tabs", tabs);
+        tmp.setAdjustPillsForMobile(true);
+        tabPanel = tmp;
         add(tabPanel);
     }
 }

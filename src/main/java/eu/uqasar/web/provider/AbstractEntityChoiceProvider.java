@@ -25,6 +25,9 @@ package eu.uqasar.web.provider;
 import com.vaynberg.wicket.select2.Response;
 import com.vaynberg.wicket.select2.TextChoiceProvider;
 import eu.uqasar.model.AbstractEntity;
+import lombok.AccessLevel;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,6 +37,7 @@ import java.util.List;
  *
  *
  */
+@Setter(AccessLevel.PROTECTED)
 public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		extends TextChoiceProvider<Type> {
 
@@ -80,10 +84,6 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 			entities.add(findEntityById(Long.valueOf(id)));
 		}
 		return entities;
-	}
-	
-	protected void setAllEntities(List<Type> entities) {
-		this.allEntities = entities;
 	}
 
 	/**

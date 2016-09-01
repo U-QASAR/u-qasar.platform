@@ -21,6 +21,7 @@ package eu.uqasar.service.tree;
  */
 
 
+import eu.uqasar.model.qmtree.QMTreeNode;
 import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
@@ -251,7 +252,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
 			child.setParent(parent);
 		}
 		update(parent);
-		return (T) parent.getChildren().getLast();
+		return (T) ((LinkedList<TreeNode>)parent.getChildren()).getLast();
 	}
 
 	/**
@@ -303,7 +304,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
 				delete(node);
 			} else {
 				TreeNode oldParent = node.getParent();
-				LinkedList<TreeNode> oldParentChildren = oldParent.getChildren();
+				List<TreeNode> oldParentChildren = oldParent.getChildren();
 				if (oldParentChildren != null) {
 					oldParentChildren.remove(node);
 					oldParent.setChildren(oldParentChildren);

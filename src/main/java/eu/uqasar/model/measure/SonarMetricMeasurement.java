@@ -29,6 +29,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 
 import com.google.gson.annotations.SerializedName;
@@ -36,7 +39,9 @@ import com.google.gson.annotations.SerializedName;
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.settings.adapter.AdapterSettings;
 import eu.uqasar.model.tree.Project;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "sonarmetricmeasurement")
@@ -56,83 +61,6 @@ public class SonarMetricMeasurement extends AbstractEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private AdapterSettings adapter; // To which adapter the measurement belongs
 	
-	public SonarMetricMeasurement() {
-	}
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getValue() {
-		return value;
-	}
-	public void setValue(String value) {
-		this.value = value;
-	}
-	public String getSonarKey() {
-		return sonarKey;
-	}
-	public void setSonarKey(String sonarKey) {
-		this.sonarKey = sonarKey;
-	}
-	/**
-	 * @return the sonarMetric
-	 */
-	public String getSonarMetric() {
-		return sonarMetric;
-	}
-	
-	/**
-	 * @param sonarMetric the sonarMetric to set
-	 */
-	public void setSonarMetric(String sonarMetric) {
-		this.sonarMetric = sonarMetric;
-	}
-
-	/**
-	 * @return the timeStamp
-	 */
-	public Date getTimeStamp() {
-		return timeStamp;
-	}
-
-	/**
-	 * @param timeStamp the timeStamp to set
-	 */
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	/**
-	 * @return the adapter
-	 */
-	public AdapterSettings getAdapter() {
-		return adapter;
-	}
-
-	/**
-	 * @param adapter the adapter to set
-	 */
-	public void setAdapter(AdapterSettings adapter) {
-		this.adapter = adapter;
-	}
-
 	@Override
 	public String toString() {
 		return "SonarMetricMeasurement [name=" +name + ", value=" +value

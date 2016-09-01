@@ -38,6 +38,7 @@ import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Root;
 import javax.persistence.metamodel.Attribute;
 
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang.StringUtils;
 import org.apache.lucene.search.Query;
 import org.hibernate.search.jpa.FullTextEntityManager;
@@ -50,7 +51,7 @@ import org.jboss.solder.logging.Logger;
 
 import eu.uqasar.model.AbstractEntity_;
 import eu.uqasar.model.Persistable;
-
+@NoArgsConstructor
 public abstract class AbstractService<T extends Persistable> implements Serializable {
 
 	/**
@@ -58,8 +59,8 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 	 */
 	private static final long serialVersionUID = -4171879462026403888L;
 
-	private final Class<T> clazz;
-	private final String readableClassName;
+	private Class<T> clazz;
+	private String readableClassName;
 
 	public static final String LIKE_WILDCARD = "%";
 

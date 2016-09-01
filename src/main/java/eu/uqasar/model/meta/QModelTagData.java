@@ -22,23 +22,23 @@ package eu.uqasar.model.meta;
 
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 
-
+@Setter
+@Getter
+@NoArgsConstructor
 @Entity
 public class QModelTagData extends MetaData {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private Long tagId;
 
 	private String className;
-
-	public QModelTagData() {
-	}
 
 	public QModelTagData(String name) {
 		super(name);
@@ -56,19 +56,4 @@ public class QModelTagData extends MetaData {
 		tagId = tId;
 	}
 
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
-	public Long getTagId() {
-		return tagId;
-	}
-
-	public void setTagId(Long tagId) {
-		this.tagId = tagId;
-	}
 }

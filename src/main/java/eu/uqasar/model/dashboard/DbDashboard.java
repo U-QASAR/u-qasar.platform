@@ -42,11 +42,16 @@ import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ro.fortsoft.wicket.dashboard.Dashboard;
 import ro.fortsoft.wicket.dashboard.Widget;
 import ro.fortsoft.wicket.dashboard.WidgetComparator;
 import eu.uqasar.model.AbstractEntity;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 public class DbDashboard extends AbstractEntity implements Dashboard {
@@ -62,8 +67,6 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 	@ElementCollection
 	@Lob
 	private List<Widget> widgets = new ArrayList<Widget>();
-	
-	public DbDashboard() {}
 	
 	public DbDashboard(String id, String title) {
 		this.dashboardId = id;
@@ -90,45 +93,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		this.widgets.addAll(copy.getWidgets()); 
 		this.sharedBy = copy.getSharedBy();
 	}
-	
-	public String getSharedBy() {
-		return sharedBy;
-	}
 
-	public void setSharedBy(String sharedBy) {
-		this.sharedBy = sharedBy;
-	}
-
-	@Override
-	public String getDashboardId() {
-		return dashboardId;
-	}
-
-	@Override
-	public String getTitle() {
-		return title;
-	}
-
-	@Override
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	@Override
-	public int getColumnCount() {
-		return columnCount;
-	}        
-
-	@Override
-	public void setColumnCount(int columnCount) {
-		this.columnCount = columnCount;
-	}
-	
-	@Override
-	public List<Widget> getWidgets() {
-		return widgets;
-	}
-	
 	@Override
 	public List<Widget> getWidgets(int column) {
 		List<Widget> columnWidgets = new ArrayList<Widget>();
@@ -153,10 +118,6 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		}
 		
 		return null;
-	}
-
-	public void setWidgets(List<Widget> widgets) {
-		this.widgets = widgets;
 	}
 
 	@Override

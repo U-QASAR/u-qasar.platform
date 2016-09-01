@@ -23,20 +23,16 @@ package eu.uqasar.util.io.exporter;
 
 import java.io.IOException;
 
+import lombok.NoArgsConstructor;
 import org.apache.wicket.util.file.File;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.SerializationConfig;
 
 import eu.uqasar.model.qmtree.QModel;
-
+@NoArgsConstructor
 public class QModelJsonWriter {
 
 	private File file;
-
-	/**
-	 * Default Constructor.
-	 */
-	public QModelJsonWriter() {}
 
 	/**
 	 * Create a json file containing the quality model received.

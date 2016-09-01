@@ -21,6 +21,9 @@ package eu.uqasar.web.upload;
  */
 
 
+import lombok.Getter;
+
+@Getter
 public enum GravatarDefaultImage {
 
 	GRAVATAR_ICON(""),
@@ -37,10 +40,6 @@ public enum GravatarDefaultImage {
 
 	private GravatarDefaultImage(String code) {
 		this.code = code;
-	}
-
-	public String getCode() {
-		return code;
 	}
 
 }

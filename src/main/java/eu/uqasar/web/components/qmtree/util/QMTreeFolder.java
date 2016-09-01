@@ -109,7 +109,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 			@Override
 			protected void onComponentTag(ComponentTag tag) {
 				super.onComponentTag(tag);
-				if (!model.getObject().getIsCompleted()){
+				if (!model.getObject().isCompleted()){
 					tag.getAttributes().put("src",  "/uqasar/assets/img/exclamation.jpg");
 					tag.getAttributes().put("alt", "incomplete");
 					tag.getAttributes().put("title", "incomplete");

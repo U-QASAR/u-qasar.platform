@@ -23,6 +23,8 @@ package eu.uqasar.web.components;
  * #L%
  */
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.model.IModel;
@@ -35,6 +37,8 @@ import org.apache.wicket.model.Model;
  *
  * 
  */
+@Setter
+@Getter
 public class CSSAppender extends AttributeAppender {
 
 	/**
@@ -55,14 +59,6 @@ public class CSSAppender extends AttributeAppender {
 
 	public CSSAppender(String css) {
 		this(new Model<String>(css));
-	}
-
-	public IModel<String> getModel() {
-		return model;
-	}
-
-	public void setModel(IModel<String> model) {
-		this.model = model;
 	}
 
 	/*

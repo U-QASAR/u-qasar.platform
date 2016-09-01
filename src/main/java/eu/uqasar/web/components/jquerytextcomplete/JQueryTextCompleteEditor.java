@@ -21,6 +21,8 @@ package eu.uqasar.web.components.jquerytextcomplete;
  */
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.markup.head.IHeaderResponse;
 import org.apache.wicket.markup.head.JavaScriptHeaderItem;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -29,6 +31,8 @@ import org.apache.wicket.request.resource.PackageResourceReference;
 import org.apache.wicket.settings.IJavaScriptLibrarySettings;
 
 
+@Setter
+@Getter
 public class JQueryTextCompleteEditor<T> extends WebMarkupContainer {
 
 	private static final long serialVersionUID = 1L;
@@ -205,19 +209,5 @@ public class JQueryTextCompleteEditor<T> extends WebMarkupContainer {
 			+"});"	
 		+"});";
 	}
-	/**
-	 * Get the URL from which a list of autocomplete items can be obtained
-	 * @return the autocompleteDataUrl
-	 */
-	public String getAutocompleteDataUrl() {
-		return autocompleteDataUrl;
-	}
 
-	/**
-	 * Set the URL from which a list of autocomplete items can be obtained (in JSON format)
-	 * @param autocompleteDataUrl the autocompleteDataUrl to set
-	 */
-	public void setAutocompleteDataUrl(String autocompleteDataUrl) {
-		this.autocompleteDataUrl = autocompleteDataUrl;
-	}
 }

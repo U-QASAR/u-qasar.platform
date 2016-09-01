@@ -23,11 +23,16 @@ package eu.uqasar.model.tree.historic;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
 import eu.uqasar.model.tree.Project;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @Indexed
 public class HistoricValuesProject extends AbstractHistoricValues {
@@ -40,9 +45,6 @@ public class HistoricValuesProject extends AbstractHistoricValues {
 	@IndexedEmbedded
 	private Project project;
 
-	public HistoricValuesProject() {
-	}
-
 	public HistoricValuesProject(Project project) {
 		super();
 		super.setDate(project.getLastUpdated());
@@ -50,20 +52,6 @@ public class HistoricValuesProject extends AbstractHistoricValues {
 		super.setQualityStatus(project.getQualityStatus());
 		super.setLowerAcceptanceLimit(project.getThreshold().getLowerAcceptanceLimit());
 		super.setUpperAcceptanceLimit(project.getThreshold().getUpperAcceptanceLimit());
-		this.project = project;
-	}
-
-	/**
-	 * @return
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project
-	 */
-	public void setProject(Project project) {
 		this.project = project;
 	}
 

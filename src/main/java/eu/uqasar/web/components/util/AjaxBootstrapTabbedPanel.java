@@ -25,6 +25,9 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.BootstrapBaseBe
 import de.agilecoders.wicket.core.util.Attributes;
 import static eu.uqasar.web.components.util.AjaxBootstrapTabbedPanel.Direction.ABOVE;
 import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.extensions.ajax.markup.html.tabs.AjaxTabbedPanel;
 import org.apache.wicket.extensions.markup.html.tabs.ITab;
 import org.apache.wicket.markup.ComponentTag;
@@ -35,6 +38,8 @@ import org.apache.wicket.model.IModel;
  *
  * @param <T>
  */
+@Setter
+@Getter
 public class AjaxBootstrapTabbedPanel<T extends ITab> extends AjaxTabbedPanel<T> {
 
     private Direction direction = ABOVE;
@@ -49,14 +54,6 @@ public class AjaxBootstrapTabbedPanel<T extends ITab> extends AjaxTabbedPanel<T>
         commonInit();
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-    
-    public Direction getDirection() {
-        return this.direction;
-    }
-    
     /**
      * common initializer
      */

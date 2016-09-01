@@ -33,6 +33,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonTypeInfo;
 import org.hibernate.annotations.Cascade;
 
@@ -40,6 +42,8 @@ import org.hibernate.annotations.Cascade;
  *
  *
  */
+@Setter
+@Getter
 @Entity(name = "TeamMemberships")
 @XmlRootElement
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
@@ -54,15 +58,7 @@ public class TeamMembership extends AbstractEntity {
 	@ManyToOne
 	@JoinColumn
 	private Team team;
-	
-	public Team getTeam() {
-		return team;
-	}
 
-	public void setTeam(Team team) {
-		this.team = team;
-	}
-	
 	public User getUser() {
 		return member;
 	}

@@ -22,17 +22,12 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
-/**
- *
- *
- */
-@Entity
+@NoArgsConstructor@Entity
 public class Topic extends MetaData {
-
-    public Topic() {
-    }
 
     public Topic(String name) {
         super(name);
