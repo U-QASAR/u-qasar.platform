@@ -60,13 +60,13 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<jboss.javaee6.spec.version>3.0.3.Final</jboss.javaee6.spec.version>
-		<jboss.as.version>7.2.0.Final</jboss.as.version>
+		<jboss.as.version>7.1.1.Final</jboss.as.version>
 		<weld.version>2.4.CR1</weld.version>
 		<jboss.solder.version>3.2.1.Final</jboss.solder.version>
 		<jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
 		<jboss.seam.conversation.version>3.0.0.Final</jboss.seam.conversation.version>
-		<wicket.version>6.24.0</wicket.version>
-		<wicket.bootstrap.version>0.9.18</wicket.bootstrap.version>
+		<wicket.version>6.14.0</wicket.version>
+		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<!-- resteasy version used in JBoss ${jboss.as.version} -->
 		<resteasy.version>3.0.19.Final</resteasy.version>
