@@ -37,7 +37,7 @@ public enum Gender {
     
     private final String labelKey;
 
-	private Gender(final String labelKey) {
+	Gender(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

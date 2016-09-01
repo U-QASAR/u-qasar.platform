@@ -38,7 +38,7 @@ public enum Type implements IResourceKeyProvider {
 	private final String labelKey;
 	private final IconType icon;
 
-	private Type(final String labelKey, IconType icon) {
+	Type(final String labelKey, IconType icon) {
 		this.labelKey = labelKey;
 		this.icon = icon;
 	}

@@ -45,7 +45,7 @@ public enum RupStage implements IResourceKeyProvider {
 
 	private final String labelKey;
 
-	private RupStage(final String labelKey) {
+	RupStage(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

@@ -42,7 +42,7 @@ public enum Dimensions {
 
 	private final String labelKey;
 
-	private Dimensions(final String labelKey) {
+	Dimensions(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 	

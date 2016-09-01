@@ -44,7 +44,7 @@ public enum Scale implements IResourceKeyProvider {
 
 	private final String labelKey;
 
-	private Scale(final String labelKey) {
+	Scale(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

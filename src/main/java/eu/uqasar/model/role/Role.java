@@ -46,7 +46,7 @@ public enum Role {
 
 	private final String labelKey;
 
-	private Role(final String labelKey) {
+	Role(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 	

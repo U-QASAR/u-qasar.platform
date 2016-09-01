@@ -49,7 +49,7 @@ public enum QualityStatus {
 	private static Random r = new Random();
 	private int severity = 0;
 
-	private QualityStatus(int severity) {
+	QualityStatus(int severity) {
 		this.severity = severity;
 	}
 

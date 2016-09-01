@@ -38,7 +38,7 @@ public enum GravatarDefaultImage {
 
 	private String code;
 
-	private GravatarDefaultImage(String code) {
+	GravatarDefaultImage(String code) {
 		this.code = code;
 	}
 

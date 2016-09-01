@@ -82,7 +82,7 @@ public class AjaxBootstrapTabbedPanel<T extends ITab> extends AjaxTabbedPanel<T>
         return "";
     }
     
-    public static enum Direction {
+    public enum Direction {
         
         LEFT,
         

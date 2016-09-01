@@ -150,7 +150,7 @@ public class UQasarUtil {
 
 		private final String labelKey;
 
-		private SuggestionType(final String labelKey) {
+		SuggestionType(final String labelKey) {
 			this.labelKey = labelKey;
 		}
 

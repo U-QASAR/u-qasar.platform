@@ -42,7 +42,7 @@ public enum QModelStatus {
 
 	private final String labelKey;
 
-	private QModelStatus(final String labelKey) {
+	QModelStatus(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

@@ -35,7 +35,7 @@ public enum UserSource {
 
 	private final String labelKey;
 
-	private UserSource(final String labelKey) {
+	UserSource(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

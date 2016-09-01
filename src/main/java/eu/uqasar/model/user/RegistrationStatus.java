@@ -38,7 +38,7 @@ public enum RegistrationStatus {
 	
 	private final String labelKey;
 
-	private RegistrationStatus(final String labelKey) {
+	RegistrationStatus(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 

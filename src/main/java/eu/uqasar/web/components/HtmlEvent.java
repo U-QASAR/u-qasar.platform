@@ -41,7 +41,7 @@ public enum HtmlEvent {
 
 	private String event;
 
-	private HtmlEvent(String event) {
+	HtmlEvent(String event) {
 		this.event = event;
 	}
 

@@ -45,7 +45,7 @@ public enum LifeCycleStage {
 
 	private final String labelKey;
 
-	private LifeCycleStage(final String labelKey) {
+	LifeCycleStage(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
