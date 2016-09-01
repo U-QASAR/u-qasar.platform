@@ -80,14 +80,13 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 		
 		@Override
 		public String toString() {
-			StringBuffer buffer = new StringBuffer();
-			buffer.append("Item[");
-			buffer.append("column = ").append(column);
-			buffer.append(" widget = ").append(widget);
-			buffer.append(" sortIndex = ").append(sortIndex);
-			buffer.append("]");
+            String buffer = "Item[" +
+                    "column = " + column +
+                    " widget = " + widget +
+                    " sortIndex = " + sortIndex +
+                    "]";
 
-			return buffer.toString();
+            return buffer;
 		}
 
 	}

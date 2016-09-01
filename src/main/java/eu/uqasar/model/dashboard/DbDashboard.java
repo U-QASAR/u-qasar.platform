@@ -149,14 +149,13 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 	
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("DefaultDashboard[");
-		buffer.append("id = ").append(dashboardId);
-		buffer.append(" title = ").append(title);
-		buffer.append(" widgets = ").append(widgets);
-		buffer.append("]");
+		String buffer = "DefaultDashboard[" +
+				"id = " + dashboardId +
+				" title = " + title +
+				" widgets = " + widgets +
+				"]";
 
-		return buffer.toString();
+		return buffer;
 	}
 	
 }

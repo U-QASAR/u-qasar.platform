@@ -131,10 +131,9 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 			return currentValue != null ? currentValue : null;
 		}
 
-		StringBuilder sb = new StringBuilder(currentValue);
-		sb.append((getSeparator() == null ? "" : getSeparator()));
-		sb.append(appendValue);
-		return sb.toString();
+        String sb = currentValue + (getSeparator() == null ? "" : getSeparator()) +
+                appendValue;
+        return sb;
 	}
 
 	/**

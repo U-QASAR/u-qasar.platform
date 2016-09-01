@@ -311,11 +311,10 @@ public class QMTreeNode extends
     public final String getChildrenString(final String prefix,
                                           final String suffix) {
 
-        StringBuilder builder = new StringBuilder();
-        builder.append(prefix);
-        builder.append(StringUtils.join(getChildren(), ", "));
-        builder.append(suffix);
-        return builder.toString();
+        String builder = prefix +
+                StringUtils.join(getChildren(), ", ") +
+                suffix;
+        return builder;
     }
 
     @JsonIgnore

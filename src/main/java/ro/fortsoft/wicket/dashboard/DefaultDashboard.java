@@ -124,14 +124,13 @@ public class DefaultDashboard implements Dashboard {
 	
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("DefaultDashboard[");
-		buffer.append("dashboardId = ").append(dashboardId);
-		buffer.append(" title = ").append(title);
-		buffer.append(" widgets = ").append(widgets);
-		buffer.append("]");
+        String buffer = "DefaultDashboard[" +
+                "dashboardId = " + dashboardId +
+                " title = " + title +
+                " widgets = " + widgets +
+                "]";
 
-		return buffer.toString();
+        return buffer;
 	}
 	
 }
