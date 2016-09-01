@@ -99,7 +99,7 @@ public class ProcessService extends AbstractService<Process> {
 		Root<Process> from = criteria.from(Process.class);
 		criteria.where(cb.equal(from.get(Process_.id), processId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 
     @Override

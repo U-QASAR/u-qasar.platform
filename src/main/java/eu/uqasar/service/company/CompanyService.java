@@ -111,6 +111,6 @@ public class CompanyService extends AbstractService<Company> {
 		Root<Company> from = criteria.from(Company.class);
 		criteria.where(cb.equal(from.get(Company_.id), companyId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 }

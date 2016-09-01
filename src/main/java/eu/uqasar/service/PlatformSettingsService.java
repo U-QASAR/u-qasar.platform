@@ -78,7 +78,7 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
         Root<PlatformSettings> from = criteria.from(PlatformSettings.class);
         criteria.where(cb.equal(from.get(PlatformSettings_.id), projectSettingId));
         criteria.select(cb.countDistinct(from));
-        return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+        return (em.createQuery(criteria).getSingleResult() == 1);
     }
 
     public List<PlatformSettings> getAllByAscendingName(int first, int count) {

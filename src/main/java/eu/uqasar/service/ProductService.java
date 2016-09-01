@@ -83,7 +83,7 @@ public class ProductService extends AbstractService<Product> {
 		Root<Product> from = criteria.from(Product.class);
 		criteria.where(cb.equal(from.get(Product_.id), productId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 
 	public List<Product> sortAscendingDates() {
