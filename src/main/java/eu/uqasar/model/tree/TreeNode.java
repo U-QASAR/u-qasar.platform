@@ -369,7 +369,7 @@ public class TreeNode extends
 	@Override
 	public String getNodeKey() {
 		if (StringUtils.isBlank(nodeKey)) {
-			nodeKey = Slugify.slugify(getName());
+			nodeKey = new Slugify().slugify(getName());
 		}
 		return nodeKey;
 	}
