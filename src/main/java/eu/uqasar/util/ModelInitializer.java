@@ -367,7 +367,7 @@ public class ModelInitializer implements Serializable {
     	testCompany.setPhone("");
     	testCompany.setFax("");
     	testCompany.setStreet("");
-    	testCompany.setZipcode(00000);
+    	testCompany.setZipcode(0);
     	testCompany.setCity("");
     	testCompany.setCountry("");
     	companies[--companyCount] = companyService.create(testCompany);
