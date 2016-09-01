@@ -28,6 +28,9 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import javax.naming.NamingException;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.markup.repeater.data.IDataProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
@@ -37,6 +40,8 @@ import org.apache.wicket.model.Model;
  *
  * @param <Entity>
  */
+@Setter
+@Getter
 public abstract class LdapEntityProvider<Entity extends LdapEntity> implements IDataProvider<Entity> {
 
 	protected int maximumNoOfEntities;
@@ -47,14 +52,6 @@ public abstract class LdapEntityProvider<Entity extends LdapEntity> implements I
 	public LdapEntityProvider(LdapManager manager, int max) {
 		this.ldapManager = manager;
 		this.maximumNoOfEntities = max;
-	}
-
-	public int getMaximumNoOfEntities() {
-		return maximumNoOfEntities;
-	}
-
-	public void setMaximumNoOfEntities(int maximumNoOfEntities) {
-		this.maximumNoOfEntities = maximumNoOfEntities;
 	}
 
 	public void update(LdapManager manager) throws NamingException {

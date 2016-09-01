@@ -28,6 +28,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.Setter;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -51,6 +52,7 @@ import org.apache.commons.lang.Validate;
  * byte[] jpg = gravatar.download("info@ralfebert.de");
  * </code>
  */
+@Setter
 public final class Gravatar implements Serializable {
 
 	private final static int DEFAULT_SIZE = 80;
@@ -61,32 +63,6 @@ public final class Gravatar implements Serializable {
 	private int size = DEFAULT_SIZE;
 	private GravatarRating rating = DEFAULT_RATING;
 	private GravatarDefaultImage defaultImage = DEFAULT_DEFAULT_IMAGE;
-
-	/**
-	 * Specify a gravatar size between 1 and 512 pixels. If you omit this, a
-	 * default size of 80 pixels is used.
-	 */
-	public void setSize(int sizeInPixels) {
-		Validate.isTrue(sizeInPixels >= 1 && sizeInPixels <= 512,
-				"sizeInPixels needs to be between 1 and 512");
-		this.size = sizeInPixels;
-	}
-
-	/**
-	 * Specify a rating to ban gravatar images with explicit content.
-	 */
-	public void setRating(GravatarRating rating) {
-		Validate.notNull(rating, "rating");
-		this.rating = rating;
-	}
-
-	/**
-	 * Specify the default image to be produced if no gravatar image was found.
-	 */
-	public void setDefaultImage(GravatarDefaultImage defaultImage) {
-		Validate.notNull(defaultImage, "defaultImage");
-		this.defaultImage = defaultImage;
-	}
 
 	/**
 	 * Returns the Gravatar URL for the given email address.

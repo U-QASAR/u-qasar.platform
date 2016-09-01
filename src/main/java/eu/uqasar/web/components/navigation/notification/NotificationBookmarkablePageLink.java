@@ -26,6 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.util.Date;
 
+import lombok.Setter;
 import org.apache.wicket.Page;
 import org.apache.wicket.core.util.lang.WicketObjects;
 import org.apache.wicket.markup.html.TransparentWebMarkupContainer;
@@ -44,6 +45,7 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
 import eu.uqasar.model.notification.INotification;
 import eu.uqasar.web.UQasar;
 
+@Setter
 public class NotificationBookmarkablePageLink<T extends INotification, C extends Page> extends Link<T> {
 
 	private static final long serialVersionUID = 9134635901931928968L;
@@ -110,11 +112,6 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 
 	public NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
 		icon.setType(iconType);
-		return this;
-	}
-
-	public NotificationBookmarkablePageLink<T, C> setIcon(String iconName) {
-		icon.setType(new IconType(iconName));
 		return this;
 	}
 

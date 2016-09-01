@@ -21,6 +21,9 @@ package eu.uqasar.web.upload;
  */
 
 
+import lombok.Getter;
+
+@Getter
 public enum GravatarRating {
 
 	GENERAL_AUDIENCES("g"),
@@ -35,10 +38,6 @@ public enum GravatarRating {
 
 	private GravatarRating(String code) {
 		this.code = code;
-	}
-
-	public String getCode() {
-		return code;
 	}
 
 }

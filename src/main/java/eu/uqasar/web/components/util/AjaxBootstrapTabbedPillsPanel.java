@@ -23,6 +23,9 @@ package eu.uqasar.web.components.util;
 
 
 import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.extensions.markup.html.tabs.ITab;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
@@ -32,8 +35,10 @@ import org.apache.wicket.model.IModel;
  *
  * @param <T>
  */
+@Setter
+@Getter
 public class AjaxBootstrapTabbedPillsPanel<T extends ITab> extends AjaxBootstrapTabbedPanel<T> {
-    
+    @Setter
     private boolean adjustPillsForMobile = false;
 
     public AjaxBootstrapTabbedPillsPanel(String id, List<T> tabs) {
@@ -44,15 +49,6 @@ public class AjaxBootstrapTabbedPillsPanel<T extends ITab> extends AjaxBootstrap
         super(id, tabs, model);
     }
 
-    public boolean getAdjustPillsForMobile() {
-        return adjustPillsForMobile;
-    }
-
-    public AjaxBootstrapTabbedPillsPanel<T> setAdjustPillsForMobile(boolean adjustPillsForMobile) {
-        this.adjustPillsForMobile = adjustPillsForMobile;
-        return this;
-    }
-    
     @Override
     protected void onInitialize() {
         super.onInitialize();

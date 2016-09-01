@@ -34,6 +34,7 @@ import javax.naming.InitialContext;
 import javax.naming.NameNotFoundException;
 import javax.naming.NamingException;
 
+import lombok.Getter;
 import org.apache.wicket.Page;
 import org.apache.wicket.Session;
 import org.apache.wicket.bean.validation.BeanValidationConfiguration;
@@ -134,6 +135,7 @@ import eu.uqasar.web.pages.user.ProfilePage;
 import eu.uqasar.web.pages.user.UserPage;
 import eu.uqasar.web.provider.UrlProvider;
 
+@Getter
 public class UQasar extends WebApplication {
 
 	@Inject
@@ -147,10 +149,6 @@ public class UQasar extends WebApplication {
 	@Override
 	public Class<? extends Page> getHomePage() {
 		return AboutPage.class;
-	}
-
-	public UrlProvider getUrlProvider() {
-		return this.urlProvider;
 	}
 
 	public String getHomePageUrl() {

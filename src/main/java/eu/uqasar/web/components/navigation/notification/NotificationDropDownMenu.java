@@ -28,6 +28,7 @@ import java.util.Random;
 
 import javax.naming.InitialContext;
 
+import lombok.Setter;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -53,6 +54,7 @@ import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.web.UQasar;
 
+@Setter
 public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 
 	private static final long serialVersionUID = 969519549174632887L;
@@ -68,10 +70,6 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	@Override
 	public boolean isActive(Component item) {
 		return false;
-	}
-
-	public void setNotifications(INotification... notifications) {
-		this.notifications = notifications;
 	}
 
 	protected void updateLabelAndIcon() {

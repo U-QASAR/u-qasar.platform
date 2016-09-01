@@ -26,9 +26,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import lombok.Getter;
 import org.apache.wicket.Session;
 import org.joda.time.DateTime;
 
+@Getter
 public enum Language {
 
 	German(Locale.GERMAN),
@@ -47,10 +49,6 @@ public enum Language {
 
 	Language(Locale locale) {
 		this.locale = locale;
-	}
-
-	public Locale getLocale() {
-		return this.locale;
 	}
 
 	/**

@@ -32,6 +32,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
+
+import lombok.NoArgsConstructor;
 import org.apache.wicket.request.resource.ContextRelativeResource;
 import org.apache.wicket.request.resource.DynamicImageResource;
 import org.apache.wicket.request.resource.IResource;
@@ -41,10 +43,7 @@ import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
 import org.apache.wicket.util.time.Time;
 import org.imgscalr.Scalr;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 public class UserPictureResource extends DynamicImageResource {
 
 	private int maxSize = 500;
@@ -52,9 +51,6 @@ public class UserPictureResource extends DynamicImageResource {
 
 	public static final ContextRelativeResource defaultProfilePictureRef
 			= new ContextRelativeResource("assets/img/user/anonymous.png");
-
-	public UserPictureResource() {
-	}
 
 	public UserPictureResource(int maxSize) {
 		this.maxSize = maxSize;

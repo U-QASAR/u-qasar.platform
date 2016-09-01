@@ -26,6 +26,8 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -39,6 +41,8 @@ import eu.uqasar.util.UQasarUtil;
 /**
  * A sample widget using Google Charts API <https://developers.google.com/chart/>
  */
+@Setter
+@Getter
 public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	/**
@@ -46,6 +50,8 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 	 */
 	private static final long serialVersionUID = 2172703196794098298L;
 
+	@Setter
+	@Getter
 	private static ProjectQualityGoogleChartFactory chartDataFactory;
 	
 	public static final String GAUGE_TYPE = "GAUGE"; 
@@ -66,14 +72,6 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	@Override
 	public void init() {
-	}
-
-	public static ProjectQualityGoogleChartFactory getChartDataFactory() {
-		return chartDataFactory;
-	}
-
-	public static void setChartDataFactory(ProjectQualityGoogleChartFactory chartDataFactory) {
-		ProjectQualityGoogleChartWidget.chartDataFactory = chartDataFactory;
 	}
 
 	public String getChartData() {
