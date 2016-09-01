@@ -73,7 +73,7 @@ public class ProcessManagementPage extends BasePage {
 
 //	private List dataMeasurements;
 
-	private ProcessManagementPanel filterPanel;
+	private final ProcessManagementPanel filterPanel;
 	// how many products do we show per page
 	private static final int itemsPerPage = 10;
 

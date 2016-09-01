@@ -103,7 +103,7 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 	private SnapshotSaveConfirmationModal saveSnapshotModal;
 	private SnapshotRecoverConfirmationModal recoverSnapshotModal;
 
-	private Project project;
+	private final Project project;
 
 	public ProjectViewPanel(String id, final IModel<Project> model) {
 		super(id, model);

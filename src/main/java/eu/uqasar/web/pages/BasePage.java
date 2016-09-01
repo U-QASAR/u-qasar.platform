@@ -79,7 +79,7 @@ public abstract class BasePage extends WebPage {
 
 	protected static final String FEEDBACKPANEL_ID = "feedbackPanel";
 
-    private HeaderNavigationBar navbar;
+    private final HeaderNavigationBar navbar;
     
 	// inject the conversation
 	@Inject

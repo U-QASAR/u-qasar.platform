@@ -66,7 +66,7 @@ import eu.uqasar.service.tree.TreeNodeService;
  */
 public class DataDeviationWidget extends AbstractWidget{
 
-	private Project project;
+	private final Project project;
 	private static DataDeviationFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;
 	private Title chartTitle = new Title();	

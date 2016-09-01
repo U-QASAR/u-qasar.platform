@@ -30,8 +30,8 @@ import eu.uqasar.service.user.UserService;
  */
 public class DbDashboardPersister implements DashboardPersister {
 	
-	private static Logger logger = Logger.getLogger(DbDashboardPersister.class);
-	private Long userId; // Id of the user whose dashboard is used
+	private static final Logger logger = Logger.getLogger(DbDashboardPersister.class);
+	private final Long userId; // Id of the user whose dashboard is used
 	private UserService userService;
 	private DashboardService dashboardService;
 	

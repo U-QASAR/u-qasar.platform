@@ -41,13 +41,13 @@ import thewebsemantic.binding.Jenabean;
  */
 public class JenaBeanTool implements JenaBean {
 
-    static Logger loggerJenaBean = Logger.getLogger(JenaBeanTool.class);
+    static final Logger loggerJenaBean = Logger.getLogger(JenaBeanTool.class);
     /* InputStream is used as input for OwlApi. */
     private InputStream outputJenaBean;
     /* List of instances of objects. */
     private List listOfObjects = new ArrayList();
-    public Model model;
-    public Bean2RDF writer;
+    public final Model model;
+    public final Bean2RDF writer;
 
     /**
      * Constructor JenaBean. Input is a List of instances of objects. Instances are

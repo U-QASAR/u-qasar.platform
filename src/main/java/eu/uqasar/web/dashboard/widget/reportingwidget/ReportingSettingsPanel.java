@@ -74,15 +74,15 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
     List<String> projects = new ArrayList<>();
 
     private Map<String, List<String>> rulesMap = new HashMap<>(); // map:rule->additionalRules
-    private String selectedRule;
-    private String selectedAdditionalRule;
+    private final String selectedRule;
+    private final String selectedAdditionalRule;
     private String chartType;
 
     private ListView<Rule> rulesView;
 
     private String urlToLoad;
-    private WebMarkupContainer ruleWebMrkUpContainer;
-    private List<Rule> proposedRules = new ArrayList<>();
+    private final WebMarkupContainer ruleWebMrkUpContainer;
+    private final List<Rule> proposedRules = new ArrayList<>();
 
     DropDownChoice<String> rules;
     DropDownChoice<String> additionalRules;

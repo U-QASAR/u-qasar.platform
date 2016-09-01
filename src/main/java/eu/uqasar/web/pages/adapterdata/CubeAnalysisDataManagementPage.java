@@ -379,7 +379,7 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -3884368466400425503L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public CubesProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

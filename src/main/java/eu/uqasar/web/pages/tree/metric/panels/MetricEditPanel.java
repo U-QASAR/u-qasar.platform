@@ -80,16 +80,16 @@ public class MetricEditPanel extends BaseTreePanel<Metric> {
 	private static final long serialVersionUID = 734784522589149171L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 	private final Form<Metric> form;
-	private static Logger logger = Logger.getLogger(MetricEditPanel.class);
+	private static final Logger logger = Logger.getLogger(MetricEditPanel.class);
 
 	@Inject
 	private TreeNodeService treeNodeService;
 	// map:source of metrics->list of metric types
 	private final Map<MetricSource, List<String>> metricsMap = new HashMap<>();
-	private TextField valueField; 
+	private final TextField valueField;
 	
 	
 	//TODO: [Manu] maybe this two next attributes could be delete? Are they going to be used?

@@ -72,7 +72,7 @@ public class ProductManagementPage extends BasePage {
 	@Inject
 	private ProductService productService;
 
-	private ProductManagementPanel filterPanel;
+	private final ProductManagementPanel filterPanel;
 
 	private ProductFilterStructure productFilterStructure;
 
@@ -86,7 +86,7 @@ public class ProductManagementPage extends BasePage {
 
 	private final CheckGroup<Product> productGroup;
 
-	private ProductProvider productProvider;
+	private final ProductProvider productProvider;
 
 	private final AjaxSubmitLink deleteSelectedButton;
 

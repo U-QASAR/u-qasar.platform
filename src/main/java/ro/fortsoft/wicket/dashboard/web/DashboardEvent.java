@@ -25,9 +25,9 @@ public class DashboardEvent {
 		WIDGETS_SORTED;
 	}
 	
-	private AjaxRequestTarget target;
-	private EventType type;
-	private Object detail;
+	private final AjaxRequestTarget target;
+	private final EventType type;
+	private final Object detail;
 
 	public DashboardEvent(AjaxRequestTarget target, EventType type, Object detail) {
 		this.type = type;

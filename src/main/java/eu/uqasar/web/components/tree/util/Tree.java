@@ -36,7 +36,7 @@ public abstract class Tree extends NestedTree<TreeNode> {
 
 	private static final long serialVersionUID = -7991762156346710807L;
 
-	private SelectableTreeFolder nodeContent;
+	private final SelectableTreeFolder nodeContent;
 
 	public Tree(String id, ITreeProvider<TreeNode> provider,
 			IModel<Set<TreeNode>> state) {

@@ -49,7 +49,7 @@ import ro.fortsoft.wicket.dashboard.Dashboard;
 public class DashboardsSubMenu extends DropDownSubMenu {
 
 	private static final long serialVersionUID = 2708741180794473231L;	
-	private Logger logger = Logger.getLogger(DashboardsSubMenu.class);
+	private final Logger logger = Logger.getLogger(DashboardsSubMenu.class);
 	
 	public DashboardsSubMenu(IModel<String> labelModel) {
 		super(labelModel);

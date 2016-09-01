@@ -38,7 +38,7 @@ public enum Purpose implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Purpose(final String labelKey) {
 		this.labelKey = labelKey;

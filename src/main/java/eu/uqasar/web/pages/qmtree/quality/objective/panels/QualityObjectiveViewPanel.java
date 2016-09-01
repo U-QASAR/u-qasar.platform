@@ -55,7 +55,7 @@ public class QualityObjectiveViewPanel extends QMBaseTreePanel<QMQualityObjectiv
 	private static final long serialVersionUID = -1616097622736317089L;
 
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	private final WebMarkupContainer wmcQModelTagData;
 

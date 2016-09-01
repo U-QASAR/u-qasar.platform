@@ -55,7 +55,9 @@ implements DashboardContextAware {
 	private static final long serialVersionUID = 1L;
 
 	private transient DashboardContext dashboardContext;
-	private String project, timeInterval, individualMetric;
+	private String project;
+    private final String timeInterval;
+    private final String individualMetric;
 
 	public TestLinkSettingsPanel(String id, 
 			IModel<TestLinkWidget> model) {

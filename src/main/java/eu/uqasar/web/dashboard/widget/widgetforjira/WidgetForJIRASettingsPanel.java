@@ -56,7 +56,10 @@ public class WidgetForJIRASettingsPanel extends GenericPanel<WidgetForJira> impl
 
 	private transient DashboardContext dashboardContext;
 	private Project project;
-	private String projectName, timeInterval, chartType, individualMetric;
+	private String projectName;
+    private final String timeInterval;
+    private String chartType;
+    private final String individualMetric;
 	private final DropDownChoice<Project> projectChoice;
 	private final WebMarkupContainer wmcGeneral;
 	private List<Project> projects;

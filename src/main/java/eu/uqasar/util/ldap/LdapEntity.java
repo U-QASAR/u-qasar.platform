@@ -37,7 +37,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 
 	protected String dn;
 	protected final Attributes attributes;
-	protected LdapSettings settings;
+	protected final LdapSettings settings;
 
 	public LdapEntity(Attributes attr, LdapSettings settings) {
 		this.attributes = attr;

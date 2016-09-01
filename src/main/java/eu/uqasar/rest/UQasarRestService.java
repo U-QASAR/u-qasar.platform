@@ -97,7 +97,7 @@ public class UQasarRestService implements Serializable {
 	private GitlabDataService gitlabDataService;
 	@Inject 
 	private JenkinsDataService jenkinsDataService;
-	private List<TreeNode> allNodes = new LinkedList<>();
+	private final List<TreeNode> allNodes = new LinkedList<>();
 
 
 	/**

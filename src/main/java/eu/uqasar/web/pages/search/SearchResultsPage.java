@@ -55,7 +55,7 @@ public class SearchResultsPage extends BasePage {
 
     public static final String QUERY_PARAM = "query";
     private final TextField<String> searchField;
-    private String query;
+    private final String query;
 
     public SearchResultsPage(PageParameters parameters) {
         super(parameters);

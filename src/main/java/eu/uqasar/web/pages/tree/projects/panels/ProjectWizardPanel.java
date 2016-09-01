@@ -146,14 +146,14 @@ import eu.uqasar.web.provider.user.UserRoleChoiceProvider;
 public class ProjectWizardPanel extends Wizard{
 
 	private static final long serialVersionUID = 1L;
-	private WizardModel wizard;
-	private WizardStep1 step1;
-	private WizardStep2 step2;
-	private WizardStep3 step3;
-	private WizardStep4 step4;
-	private WizardStep5 step5;
-	private WizardStep6 step6;
-	private WizardStep7 step7;
+	private final WizardModel wizard;
+	private final WizardStep1 step1;
+	private final WizardStep2 step2;
+	private final WizardStep3 step3;
+	private final WizardStep4 step4;
+	private final WizardStep5 step5;
+	private final WizardStep6 step6;
+	private final WizardStep7 step7;
 
 	private Project project;
 	private Company company;    
@@ -166,8 +166,8 @@ public class ProjectWizardPanel extends Wizard{
 	private boolean toggle = false;
 	private Form<Void> step4Form;
 	// The AdapterSettings to edit/save
-	private List<AdapterSettings> adapterSettingsList = new ArrayList<>();
-    private AdapterSettings adapterSettings  = new AdapterSettings();
+	private final List<AdapterSettings> adapterSettingsList = new ArrayList<>();
+    private final AdapterSettings adapterSettings  = new AdapterSettings();
 	// New Project Tags to match with the QM
 	private WebMarkupContainer subsetContainer;
 	private SubsetProposalPanel subsetProposalPanel;
@@ -186,7 +186,7 @@ public class ProjectWizardPanel extends Wizard{
 	private AdapterSettingsService adapterSettingsService;
 
 
-	private Multimap<User, String> matchedSkills = ArrayListMultimap.create();
+	private final Multimap<User, String> matchedSkills = ArrayListMultimap.create();
 
 	/**
 	 * Step1
@@ -397,7 +397,7 @@ public class ProjectWizardPanel extends Wizard{
 
 		@Inject
 		private TeamMembershipService teamMemberService;
-		private AutoCompleteTextField<User> userComplete;
+		private final AutoCompleteTextField<User> userComplete;
 
 		public WizardStep4(){            
 			super("", "");   
@@ -599,9 +599,9 @@ public class ProjectWizardPanel extends Wizard{
 
 
 
-		private Team team = new Team();
+		private final Team team = new Team();
 
-		TeamMembership membership1 = new TeamMembership();
+		final TeamMembership membership1 = new TeamMembership();
 
 
 

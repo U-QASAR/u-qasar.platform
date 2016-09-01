@@ -61,7 +61,7 @@ public enum Unit implements IResourceKeyProvider {
 	
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Unit(final String labelKey) {
 		this.labelKey = labelKey;

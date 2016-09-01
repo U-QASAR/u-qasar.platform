@@ -85,7 +85,7 @@ public class SubsetProposalPanel extends Panel {
 	private final CheckGroup<QMTreeNode> dataGroup;
 //	private final AjaxSubmitLink saveSelectedButton;
 	
-	private Set<MetaData> projectTags;
+	private final Set<MetaData> projectTags;
 	
 	protected TreeNode currentParentProjectNode, currentParentQualityObjective,
 	currentParentQualityIndicator;

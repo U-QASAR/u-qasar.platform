@@ -73,9 +73,9 @@ public class AnalysisEditor extends BasePage {
 	@Inject 
 	TreeNodeService treeNodeService;
 	
-	private Analysis analysis;
+	private final Analysis analysis;
 
-	Form<Analysis> analysisForm = new Form<>("form");
+	final Form<Analysis> analysisForm = new Form<>("form");
 	
 	public AnalysisEditor(PageParameters parameters) {
 		super(parameters);

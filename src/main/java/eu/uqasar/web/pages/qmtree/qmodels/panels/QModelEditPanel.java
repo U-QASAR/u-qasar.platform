@@ -85,9 +85,10 @@ public class QModelEditPanel extends QMBaseTreePanel<QModel> {
 
 	private final FormComponent name, key;
 	private FormComponent<Company> companySelect;
-	private ComponentFeedbackPanel feedbackName, feedbackKey;
-	private AjaxButton save;
-	private User user;
+	private final ComponentFeedbackPanel feedbackName;
+    private final ComponentFeedbackPanel feedbackKey;
+	private final AjaxButton save;
+	private final User user;
 	//private Company company;
 	private CheckBox chkActive;
 

@@ -41,7 +41,7 @@ import eu.uqasar.service.tree.TreeNodeService;
  */
 public class JenkinsWidget extends AbstractWidget{
 
-	private Project project;
+	private final Project project;
 	private static JenkinsFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;
 		

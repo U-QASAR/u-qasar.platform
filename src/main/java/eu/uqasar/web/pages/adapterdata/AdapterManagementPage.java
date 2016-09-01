@@ -102,7 +102,7 @@ public class AdapterManagementPage extends BasePage {
 
 	private final AjaxSubmitLink deleteSelectedButton;
 
-	private Logger logger = Logger.getLogger(AdapterManagementPage.class);
+	private final Logger logger = Logger.getLogger(AdapterManagementPage.class);
 
 	/**
 	 * Constructor building the page

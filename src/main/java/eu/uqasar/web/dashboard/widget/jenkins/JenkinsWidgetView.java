@@ -75,9 +75,9 @@ public class JenkinsWidgetView extends WidgetView {
 	private static final long serialVersionUID = 7504539323135550980L;
 	private String metricName, projectName;
 	private Project project;
-	private JenkinsMetricMeasurement lastBuildSuccess;
-	private Map<Number, String> last100Builds;
-	private JenkinsWidget widget;
+	private final JenkinsMetricMeasurement lastBuildSuccess;
+	private final Map<Number, String> last100Builds;
+	private final JenkinsWidget widget;
 	private List<Entry<Number, String>> sortedLast100Builds;
 	
     public JenkinsWidgetView(String id, IModel<Widget> model) {

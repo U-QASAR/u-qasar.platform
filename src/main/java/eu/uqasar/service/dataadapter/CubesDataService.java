@@ -79,7 +79,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 	// Counts the number of trials to connect to Rest service, and limits them to 10
 	// TO BE removed after Cubes adapter integration
 	private Integer counter = 0;
-	private Integer counterLimit = 10;
+	private final Integer counterLimit = 10;
 
 	public CubesDataService() {
 		super(CubesMetricMeasurement.class);

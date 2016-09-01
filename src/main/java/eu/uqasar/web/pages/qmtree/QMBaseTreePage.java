@@ -76,7 +76,7 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 	@SuppressWarnings("unused")
 	private WebMarkupContainer content;
 	protected QMTreePanel treePanel;
-	protected QMFilterPanel filterPanel;
+	protected final QMFilterPanel filterPanel;
 	protected Long currentlySelectedNodeId, initiallyRequestedNodeId;
 	protected QMTreeNode currentlySelectedNode,
 			initiallyRequestedNode;

@@ -103,7 +103,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 
 	private static final long serialVersionUID = 1724244299796140695L;
 	
-	public static IconType ICON = new IconType("sitemap");
+	public static final IconType ICON = new IconType("sitemap");
 	
 	@XmlSchemaType(name = "date")
 	@Temporal(javax.persistence.TemporalType.DATE)

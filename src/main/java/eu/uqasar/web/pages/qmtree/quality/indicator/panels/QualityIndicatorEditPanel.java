@@ -98,11 +98,11 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 	private static final long serialVersionUID = -2213926772560599402L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
+	private final TextArea<String> description;
 	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 	
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -112,20 +112,22 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 	
-    private TagsSelectionModal tagsModal;
+    private final TagsSelectionModal tagsModal;
 
 	private final Form<QMQualityIndicator> form;
 	
 	private final FormComponent name, lowerLimit, upperLimit, weight, targetValue;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
-	private AjaxButton save;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
+	private final AjaxButton save;
 	private CheckBox chkCreateCopy;
 
 	private final List<Class> metaDataClasses;
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 	
 	public QualityIndicatorEditPanel(String id, final IModel<QMQualityIndicator> model, final boolean isNew) {
 		super(id, model);
@@ -379,7 +381,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 
 			} else {
 
-				form.add(new BootstrapBookmarkablePageLink<>(
+				form.add(new BootstrapBookmarkablePageLink<QMQualityIndicator>(
                         "cancel",
                         QMQualityIndicatorViewPage.class,
                         QMQualityIndicatorViewPage.forQualityIndicator(model.getObject()),
@@ -506,7 +508,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							for (Object aCh : ch) {
+							for (QModelTagData aCh : ch) {
 								set.add(aCh);
 							}
 						} 

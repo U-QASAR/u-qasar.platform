@@ -41,7 +41,7 @@ import org.apache.wicket.request.http.WebRequest;
  */
 public class UQasarExceptionRequestCycleListener extends AbstractRequestCycleListener {
 
-	private boolean deploymentMode;
+	private final boolean deploymentMode;
 
 	public UQasarExceptionRequestCycleListener(boolean runsInDeployment) {
 		this.deploymentMode = runsInDeployment;

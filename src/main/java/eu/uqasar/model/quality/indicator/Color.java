@@ -38,7 +38,7 @@ public enum Color implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Color(final String labelKey) {
 		this.labelKey = labelKey;

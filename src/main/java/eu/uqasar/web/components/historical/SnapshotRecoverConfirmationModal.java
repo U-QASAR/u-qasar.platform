@@ -43,9 +43,9 @@ public abstract class SnapshotRecoverConfirmationModal extends Modal {
 	@Inject
 	SnapshotService snapShotService;
 
-	private ModalActionButton submitButton;
+	private final ModalActionButton submitButton;
 
-	private DropDownChoice<Snapshot> snapDropDown;
+	private final DropDownChoice<Snapshot> snapDropDown;
 
 	private Snapshot snap;
 

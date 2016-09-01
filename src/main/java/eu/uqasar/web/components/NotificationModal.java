@@ -39,7 +39,7 @@ public class NotificationModal extends Modal {
 	 */
 	private static final long serialVersionUID = 1530140481889690683L;
 
-	private Label message;
+	private final Label message;
 	
 	/**
 	 * 

@@ -95,12 +95,12 @@ public class DashboardViewPage extends BasePage {
 
 	private static final long serialVersionUID = 1L;
 	private WebMarkupContainer newLinksContainer;
-	private transient DashboardContext dashboardContext =
+	private final transient DashboardContext dashboardContext =
 			UQasar.get().getDashboardContext();
 	private Dashboard dashboard;
 	private final Modal resetConfirmationModal;
 	private final Modal deleteConfirmationModal;
-	private Logger logger = Logger.getLogger(DashboardViewPage.class);
+	private final Logger logger = Logger.getLogger(DashboardViewPage.class);
 
 	@Inject
 	private DashboardService dashboardService;

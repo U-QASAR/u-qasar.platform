@@ -89,7 +89,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	@SuppressWarnings("unused")
 	private WebMarkupContainer content;
 	protected TreePanel treePanel;
-	protected FilterPanel filterPanel;
+	protected final FilterPanel filterPanel;
 	protected Long currentlySelectedNodeId, initiallyRequestedNodeId;
 	protected TreeNode currentlySelectedNode,
 			initiallyRequestedNode;

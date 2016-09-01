@@ -33,7 +33,7 @@ public abstract class QMSelectableTreeFolder extends QMTreeNodeContent {
 
 	private static final long serialVersionUID = 1L;
 
-	private ITreeProvider<QMTreeNode> provider;
+	private final ITreeProvider<QMTreeNode> provider;
 
 	private IModel<QMTreeNode> selected;
 

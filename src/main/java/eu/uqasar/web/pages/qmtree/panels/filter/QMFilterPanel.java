@@ -39,9 +39,9 @@ public abstract class QMFilterPanel extends Panel {
 
 	private final Form<Void> form;
 	private final AjaxSubmitLink apply, reset;
-	private QModelStatus activeSelected = QModelStatus.NotActive;
+	private final QModelStatus activeSelected = QModelStatus.NotActive;
 	private List<String> activeOptList;
-	private DropDownChoice<QModelStatus> activeChoice;
+	private final DropDownChoice<QModelStatus> activeChoice;
 
 	public QMFilterPanel(String id) {
 		super(id);

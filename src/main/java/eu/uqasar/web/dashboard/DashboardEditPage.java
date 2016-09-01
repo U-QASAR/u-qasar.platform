@@ -74,7 +74,7 @@ public class DashboardEditPage extends BasePage {
 	private final InputBorder<Integer> columnValidationBorder; 
 	private final AjaxCheckBox suggestionCheck, allWidgetCheck;	
 
-	private transient DashboardContext dashboardContext = UQasar.get().getDashboardContext();
+	private final transient DashboardContext dashboardContext = UQasar.get().getDashboardContext();
 	// The dashboard to edit/save
 	protected DbDashboard dashboard;
 

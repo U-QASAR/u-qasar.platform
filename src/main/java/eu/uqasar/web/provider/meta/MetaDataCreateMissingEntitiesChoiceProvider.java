@@ -37,7 +37,7 @@ import org.apache.wicket.cdi.CdiContainer;
  */
 public class MetaDataCreateMissingEntitiesChoiceProvider<T extends MetaData> extends AbstractEntityChoiceProvider<T> {
 
-    private Class<T> clazz;
+    private final Class<T> clazz;
 
     @Inject
     @Named(MetaDataService.NAME)

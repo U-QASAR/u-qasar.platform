@@ -51,7 +51,7 @@ public enum Domain implements IResourceKeyProvider {
 	
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Domain(final String labelKey) {
 		this.labelKey = labelKey;

@@ -44,11 +44,11 @@ public class ModalActionButton extends AjaxLink<Void> {
 
 	private static final String id = "button";
 
-	private Buttons.Type buttonType;
+	private final Buttons.Type buttonType;
 
-	private IModel<?> bodyModel;
+	private final IModel<?> bodyModel;
 
-	private Modal modal;
+	private final Modal modal;
 
 	private boolean closeModalAfterSubmit = true;
 

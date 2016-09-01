@@ -22,7 +22,7 @@ public abstract class CascadingLoadableDetachableModel<M, P> extends LoadableDet
 
 	private static final long serialVersionUID = 1L;
 
-	protected IModel<P> parentModel;
+	protected final IModel<P> parentModel;
 
 	public CascadingLoadableDetachableModel(IModel<P> parentModel) {
 		super();

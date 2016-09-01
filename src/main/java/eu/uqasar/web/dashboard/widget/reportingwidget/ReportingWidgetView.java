@@ -48,11 +48,12 @@ public class ReportingWidgetView extends WidgetView {
 
     private static final long serialVersionUID = 2880002420318496717L;
     private transient List<ReportMeasurement> measurements;
-    private String cube, chartType;
-    private WebMarkupContainer reportWMC;
+    private final String cube;
+    private final String chartType;
+    private final WebMarkupContainer reportWMC;
     private ListView<ReportMeasurement> reportView;
 
-    private String urlToLoad;
+    private final String urlToLoad;
 
     public ReportingWidgetView(String id, IModel<Widget> model) {
         super(id, model);

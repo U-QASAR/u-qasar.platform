@@ -51,8 +51,8 @@ public class UserProfilePictureBackgroundBehaviour extends Behavior implements I
 	 */
 	private final String attribute = "style";
 	private User user;
-	private boolean caching;
-	private User.PictureDimensions dimension;
+	private final boolean caching;
+	private final User.PictureDimensions dimension;
 	
 	@Inject
 	UrlProvider urlProvider;

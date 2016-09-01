@@ -52,9 +52,12 @@ public class WidgetForJIRAView extends WidgetView {
 
 	private static final long serialVersionUID = 2880002420318496717L;
 	private transient List<JiraMetricMeasurement> measurements = new ArrayList<>();
-	private String chartType, timeInterval, projectName, individualMetric;
-	private Project project;
-	private Chart jiraChart;
+	private final String chartType;
+    private final String timeInterval;
+    private final String projectName;
+    private final String individualMetric;
+	private final Project project;
+	private final Chart jiraChart;
 
 	public WidgetForJIRAView(String id, IModel<Widget> model) {
 		super(id, model);

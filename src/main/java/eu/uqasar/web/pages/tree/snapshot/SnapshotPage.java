@@ -44,9 +44,9 @@ public class SnapshotPage extends BasePage {
 	@Inject
 	SnapshotService snapshotService;
 	
-	private Snapshot snap;
+	private final Snapshot snap;
 
-	private SnapshotViewPanel panel;
+	private final SnapshotViewPanel panel;
 
 	public SnapshotPage(PageParameters parameters) {
 		super(parameters);

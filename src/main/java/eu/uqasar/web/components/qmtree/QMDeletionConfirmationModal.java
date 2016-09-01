@@ -44,7 +44,7 @@ public abstract class QMDeletionConfirmationModal extends NotificationModal {
 	 */
 	private static final long serialVersionUID = -3913695236156146161L;
 	
-	private ModalActionButton confirm;
+	private final ModalActionButton confirm;
 	
 	public QMDeletionConfirmationModal(String id, QMTreeNode node) {
 		super(id, Model.of(""), Model.of(""), false);

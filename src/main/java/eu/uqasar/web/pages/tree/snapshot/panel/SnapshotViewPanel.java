@@ -68,7 +68,7 @@ public class SnapshotViewPanel extends Panel {
 	@Inject
 	SnapshotService snapshotService;
 	
-	private Snapshot snapshot;
+	private final Snapshot snapshot;
 	
 	/**
 	 * Constructor building the page

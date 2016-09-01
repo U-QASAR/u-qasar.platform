@@ -72,7 +72,7 @@ import eu.uqasar.util.UQasarUtil.SuggestionType;
 public class TreeNode extends
 		AbstractEntity implements ITreeNode<String> {
 
-	private static Logger logger = Logger.getLogger(TreeNode.class);
+	private static final Logger logger = Logger.getLogger(TreeNode.class);
 
 	private static final long serialVersionUID = -3121513789680716019L;
 

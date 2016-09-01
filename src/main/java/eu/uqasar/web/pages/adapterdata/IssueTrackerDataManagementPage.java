@@ -361,7 +361,7 @@ public class IssueTrackerDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -2276310015122208686L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public JiraProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

@@ -75,11 +75,11 @@ public class QualityObjectiveEditPanel extends BaseTreePanel<QualityObjective> {
 	private static final long serialVersionUID = -2819662546551975700L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
-	private List<QualityIndicator> indicators = new ArrayList<>();
-	private Logger logger = Logger.getLogger(QualityObjectiveEditPanel.class);
-	private TextArea<String> hiddenTextField;
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final List<QualityIndicator> indicators = new ArrayList<>();
+	private final Logger logger = Logger.getLogger(QualityObjectiveEditPanel.class);
+	private final TextArea<String> hiddenTextField;
 
 	private final Form<QualityObjective> form;
 	

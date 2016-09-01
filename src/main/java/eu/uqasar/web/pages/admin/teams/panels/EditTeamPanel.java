@@ -77,7 +77,7 @@ public abstract class EditTeamPanel extends Panel {
 	private final TextField<String> nameField;
 	private final Team team;
 	private final Form<Team> teamMembersList;
-	private TeamMembership membership = new TeamMembership();
+	private final TeamMembership membership = new TeamMembership();
 
 	private final CheckGroup<TeamMembership> teamGroup;
 	private final SubmitLink deleteSelectedButton;

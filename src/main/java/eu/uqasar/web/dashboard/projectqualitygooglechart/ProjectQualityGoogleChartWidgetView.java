@@ -31,7 +31,7 @@ import ro.fortsoft.wicket.dashboard.web.WidgetView;
 public class ProjectQualityGoogleChartWidgetView extends WidgetView {
 
 	private static final long serialVersionUID = 7504539323135550980L;
-	private Double value;
+	private final Double value;
 	
 	public ProjectQualityGoogleChartWidgetView(String id, IModel<Widget> model) {
 		super(id, model);

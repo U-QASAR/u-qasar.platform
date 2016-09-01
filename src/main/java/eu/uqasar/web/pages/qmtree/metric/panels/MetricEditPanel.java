@@ -93,9 +93,9 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	private static final long serialVersionUID = -8405334366910955035L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
+	private final TextArea<String> description;
 	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
-	private AjaxButton save;
+	private final AjaxButton save;
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -104,12 +104,14 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 
-	private TagsSelectionModal tagsModal;
+	private final TagsSelectionModal tagsModal;
 
 	private final Form<QMMetric> form;
 
 	private final FormComponent<Object> name, lowerLimit, upperLimit, weight, targetValue;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
 
 	private CheckBox chkCreateCopy;
 	
@@ -118,7 +120,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 
 	public MetricEditPanel(String id, final IModel<QMMetric> model, final boolean isNew) {
 		super(id, model);
@@ -272,7 +274,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 	        form.add(cancel);
 			
 		} else {
-			form.add(new BootstrapBookmarkablePageLink<>(
+			form.add(new BootstrapBookmarkablePageLink<QMMetric>(
                     "cancel",
                     QMMetricViewPage.class,
                     QMMetricViewPage.forMetric(model.getObject()),
@@ -409,7 +411,7 @@ public class MetricEditPanel extends QMBaseTreePanel<QMMetric> {
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							for (Object aCh : ch) {
+							for (QModelTagData aCh : ch) {
 								set.add(aCh);
 							}
 						} 

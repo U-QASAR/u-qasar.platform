@@ -95,11 +95,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 	private static final long serialVersionUID = -6228029042856652686L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -108,24 +108,30 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 
-	private TagsSelectionModal tagsModal;
+	private final TagsSelectionModal tagsModal;
 
     private final Form<QMQualityObjective> form;
 
-	private FormComponent name, lowerLimit, upperLimit, weight, targetValue;
-	private FormComponent<Purpose> purpose;
-	private FormComponent<Paradigm> paradigm;
-	private FormComponent<Version> version;
-	private CheckBoxMultipleChoice<Domain> domain;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
-	private AjaxButton save;
+	private final FormComponent name;
+	private final FormComponent lowerLimit;
+	private final FormComponent upperLimit;
+	private final FormComponent weight;
+	private final FormComponent targetValue;
+	private final FormComponent<Purpose> purpose;
+	private final FormComponent<Paradigm> paradigm;
+	private final FormComponent<Version> version;
+	private final CheckBoxMultipleChoice<Domain> domain;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
+	private final AjaxButton save;
 	private CheckBox chkCreateCopy;
 
 	private final List<Class> metaDataClasses;
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 	
 	public QualityObjectiveEditPanel(String id, final IModel<QMQualityObjective> model, final boolean isNew) {
 		super(id, model);
@@ -319,7 +325,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 				cancel.setDefaultFormProcessing(false);
 				form.add(cancel);
 			} else {
-				form.add(new BootstrapBookmarkablePageLink<>(
+				form.add(new BootstrapBookmarkablePageLink<QMQualityObjective>(
                         "cancel",
                         QMQualityObjectiveViewPage.class,
                         QMQualityObjectiveViewPage.forQualityObjective(model.getObject()),
@@ -439,7 +445,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							for (Object aCh : ch) {
+							for (QModelTagData aCh : ch) {
 								set.add(aCh);
 							}
 						} 

@@ -70,7 +70,7 @@ import eu.uqasar.web.components.StyledFeedbackPanel;
  */
 public class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>> extends Panel {
 
-    private S service;
+    private final S service;
     
     private final Class<T> clazz;
     private final TextField<String> nameField;

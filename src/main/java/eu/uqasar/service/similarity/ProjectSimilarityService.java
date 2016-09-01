@@ -44,8 +44,8 @@ public class ProjectSimilarityService extends AbstractService<Project> {
 	 */
 	private static final long serialVersionUID = -1867993817677767380L;
 
-	private Multimap<Project, String> matchedProjectProperties = ArrayListMultimap.create();
-	private List<Project> similarProjects = new ArrayList<>();
+	private final Multimap<Project, String> matchedProjectProperties = ArrayListMultimap.create();
+	private final List<Project> similarProjects = new ArrayList<>();
 
 
 	public ProjectSimilarityService() {

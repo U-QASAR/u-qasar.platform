@@ -75,9 +75,9 @@ public class PlatformSettingsPage extends AdminBasePage {
 
     private final Form<Void> form1;
 
-    private WebMarkupContainer container;
+    private final WebMarkupContainer container;
     // private ListView<ProjectSettings> settingsView;
-    private PlatformSettings settings = new PlatformSettings();
+    private final PlatformSettings settings = new PlatformSettings();
 
     private final CheckGroup<PlatformSettings> settingsGroup;
     private final AjaxSubmitLink deleteSelectedButton;

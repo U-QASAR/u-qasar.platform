@@ -60,7 +60,7 @@ public class ProjectExportPage extends BasePage {
 	private TreeNodeService treeNodeService;
 
 	private Project project;
-	private String selected = "Json";
+	private final String selected = "Json";
 
 	public ProjectExportPage(PageParameters parameters) {
 		super(parameters);

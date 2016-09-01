@@ -92,7 +92,7 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	private final Chart historicChart;
 	
 	private final Long baseIndicatorId;
-	private BaseIndicator baseIndicator;
+	private final BaseIndicator baseIndicator;
 	
 
 	/**

@@ -60,8 +60,8 @@ public class RDFManagementPage extends AdminBasePage {
 	@Inject
 	private Logger logger;
 	
-	private TextArea<String> sparqlEditor;
-	private Label queryResultLabel;
+	private final TextArea<String> sparqlEditor;
+	private final Label queryResultLabel;
 
 	public RDFManagementPage(PageParameters pageParameters) {
 		super(pageParameters);

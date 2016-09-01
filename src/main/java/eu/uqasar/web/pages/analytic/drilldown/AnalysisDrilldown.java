@@ -76,11 +76,11 @@ public class AnalysisDrilldown extends BasePage {
 	private final List<String> headerLabel;
 	private final List<String> dataResults;
 	
-	private String cubesJSON;
-	private Form<Analysis> form;
-	private Analysis analysis;
+	private final String cubesJSON;
+	private final Form<Analysis> form;
+	private final Analysis analysis;
 
-	private String url = "http://uqasar.pythonanywhere.com/cube/jira/aggregate?";
+	private final String url = "http://uqasar.pythonanywhere.com/cube/jira/aggregate?";
 	
 	private String query = url;
 			

@@ -79,13 +79,13 @@ public class TeamImportPage extends AdminBasePage {
     private static final Logger logger = Logger.getLogger(TeamImportPage.class);
 
     private Label groupRetrievalInfo;
-    private SubmitLink importButton;
+    private final SubmitLink importButton;
     private LdapSettings ldapSettings;
     private LdapManager manager;
     private LdapGroupListPanel ldapGroupsList;
-    private Role userRole = Role.User;
-    private Role groupRole = Role.User;
-    private Boolean needToConfirmRegistration = false;
+    private final Role userRole = Role.User;
+    private final Role groupRole = Role.User;
+    private final Boolean needToConfirmRegistration = false;
 
     @Inject
     LdapSettingsService settingsService;

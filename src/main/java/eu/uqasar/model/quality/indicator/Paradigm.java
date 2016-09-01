@@ -47,7 +47,7 @@ public enum Paradigm implements IResourceKeyProvider {
 	
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Paradigm(final String labelKey) {
 		this.labelKey = labelKey;

@@ -75,8 +75,9 @@ public class MailSettingsPage extends AdminBasePage {
 	private final CheckBox checkTls, checkAuth;
 	private final Label validationResults;
 
-	private String receiverAddress, subject = "U-QASAR Test Mail";
-	private MailSettings settings;
+	private String receiverAddress;
+    private final String subject = "U-QASAR Test Mail";
+	private final MailSettings settings;
 
 	public MailSettingsPage(PageParameters pageParameters) {
 		super(pageParameters);

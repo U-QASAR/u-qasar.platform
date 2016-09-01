@@ -76,13 +76,13 @@ public class QualityIndicatorEditPanel extends BaseTreePanel<QualityIndicator> {
 	private static final long serialVersionUID = -1817961330159870190L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private TextArea<String> hiddenTextField;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
-	private JQueryTextCompleteEditor<String> formulaEditor;
+	private final TextArea<String> description;
+	private final TextArea<String> hiddenTextField;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final JQueryTextCompleteEditor<String> formulaEditor;
 	
 	private final Form<QualityIndicator> form;
-	private Logger logger = Logger.getLogger(QualityIndicatorEditPanel.class);
+	private final Logger logger = Logger.getLogger(QualityIndicatorEditPanel.class);
 
 	@Inject
 	TreeNodeService treeNodeService;

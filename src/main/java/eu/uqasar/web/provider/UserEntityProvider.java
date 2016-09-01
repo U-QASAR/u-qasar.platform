@@ -37,7 +37,7 @@ public class UserEntityProvider extends EntityProvider<User> {
 	@Inject
 	UserService userService;
 
-	Collection<User> users;
+	final Collection<User> users;
 
 	/**
 	 * Constructs a new user provider that provides a data view to ALL users in

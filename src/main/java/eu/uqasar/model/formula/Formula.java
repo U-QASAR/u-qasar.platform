@@ -43,7 +43,7 @@ import eu.uqasar.util.UQasarUtil;
 @NoArgsConstructor
 public class Formula {
 
-	private static Logger logger = Logger.getLogger(Formula.class);
+	private static final Logger logger = Logger.getLogger(Formula.class);
 	
 	/**
 	 * Evaluate a String containing a complete formula by using the JS engine.

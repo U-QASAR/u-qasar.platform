@@ -46,7 +46,7 @@ public abstract class CompanyEditPanel extends Panel {
 
 	@Inject private CompanyService companyService; 
 
-	private Company company;
+	private final Company company;
     private final TextField<String> name;
     private final TextField<String> shortName;
     private final TextField<String> street;

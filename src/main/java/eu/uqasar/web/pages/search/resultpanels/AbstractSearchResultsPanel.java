@@ -45,11 +45,11 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
 
     protected String searchTerm;
     protected final Class<T> clazz;
-    private  WebMarkupContainer container = new WebMarkupContainer("container");
+    private final WebMarkupContainer container = new WebMarkupContainer("container");
     private DataView<T> entities;
-    private WebMarkupContainer tableFoot = new WebMarkupContainer("tableFoot");
+    private final WebMarkupContainer tableFoot = new WebMarkupContainer("tableFoot");
 
-    protected int itemsPerPage = 10;
+    protected final int itemsPerPage = 10;
 
     public AbstractSearchResultsPanel(String id, String searchTerm, Class<T> clazz) {
         super(id);

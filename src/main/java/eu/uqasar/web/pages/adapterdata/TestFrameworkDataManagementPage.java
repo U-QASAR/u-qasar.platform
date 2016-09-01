@@ -380,7 +380,7 @@ public class TestFrameworkDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -6101725388622909893L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public TestLinkProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

@@ -100,11 +100,11 @@ public class ProjectEditPanel extends BaseTreePanel<Project> {
 	private static final long serialVersionUID = -1742487426459945529L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 	private final Form<Project> form;
-	private Logger logger = Logger.getLogger(ProjectEditPanel.class);	
-	private User loggedInUser = UQasar.getSession().getLoggedInUser();    
+	private final Logger logger = Logger.getLogger(ProjectEditPanel.class);
+	private final User loggedInUser = UQasar.getSession().getLoggedInUser();
 	
 	@Inject 
 	private TreeNodeService treeNodeService;

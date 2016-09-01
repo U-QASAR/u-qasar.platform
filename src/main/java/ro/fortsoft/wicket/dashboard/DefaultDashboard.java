@@ -23,7 +23,7 @@ public class DefaultDashboard implements Dashboard {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String dashboardId;
+	private final String dashboardId;
 	private String title;
 	private int columnCount;
 	private List<Widget> widgets;

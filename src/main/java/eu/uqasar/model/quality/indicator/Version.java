@@ -43,7 +43,7 @@ public enum Version implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private Version(final String labelKey) {
 		this.labelKey = labelKey;

@@ -355,7 +355,7 @@ public class JenkinsDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -5178285310705591769L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 
 		public JenkinsProvider(Long adapterID) {

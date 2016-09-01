@@ -107,7 +107,7 @@ public class TeamEditPage extends AdminBasePage {
 	private final Form<Void> formAdd;
 	private final WebMarkupContainer existingTeamContainer;
 	private Team team = new Team();
-	private TeamMembership membership = new TeamMembership();
+	private final TeamMembership membership = new TeamMembership();
 
 	private final DropDownChoice<Role> userRole;
 	private final AutoCompleteTextField<User> userComplete;

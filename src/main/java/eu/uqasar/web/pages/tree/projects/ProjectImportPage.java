@@ -71,7 +71,7 @@ public class ProjectImportPage extends BasePage {
 
     private boolean error = false;
 
-    private FileUploadField upload;
+    private final FileUploadField upload;
     
     private String errorMessage = "";
 

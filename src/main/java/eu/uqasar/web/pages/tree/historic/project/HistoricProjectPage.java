@@ -97,10 +97,10 @@ public class HistoricProjectPage extends BasePage {
 	private final Modal deleteConfirmationModal;
 	private final CheckGroup<AbstractHistoricValues> dataGroup;
 	private final AjaxSubmitLink deleteSelectedButton;
-	private Chart historicChart;
+	private final Chart historicChart;
 	
-	private Long projectId;
-	private Project project;
+	private final Long projectId;
+	private final Project project;
 
 	/**
 	 * Constructor building the page

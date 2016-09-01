@@ -37,7 +37,7 @@ public abstract class WidgetAction implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	protected Widget widget;	
+	protected final Widget widget;
 	protected String label; // for the moment is unused
 	protected IResource image;
 	protected String tooltip;

@@ -51,7 +51,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 	 */
 	private static final long serialVersionUID = -5703638374309845463L;
 
-	private AbstractTree<QMTreeNode> tree;
+	private final AbstractTree<QMTreeNode> tree;
 
 	@Inject
 	private QModelSettingsService qmService;

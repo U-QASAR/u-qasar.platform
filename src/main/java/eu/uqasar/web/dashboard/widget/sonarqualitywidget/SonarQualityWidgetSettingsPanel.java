@@ -54,7 +54,10 @@ public class SonarQualityWidgetSettingsPanel extends GenericPanel<SonarQualityWi
     private static final long serialVersionUID = 1L;
 
     private transient DashboardContext dashboardContext;
-    private String project, timeInterval, metric, individualMetric;
+    private String project;
+    private final String timeInterval;
+    private final String metric;
+    private final String individualMetric;
     private SonarDataService dataService;
 
     public SonarQualityWidgetSettingsPanel(String id, IModel<SonarQualityWidget> model) {

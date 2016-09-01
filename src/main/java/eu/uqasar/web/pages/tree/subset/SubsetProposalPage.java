@@ -41,11 +41,11 @@ import eu.uqasar.web.pages.tree.subset.panel.SubsetProposalPanel;
  */
 public class SubsetProposalPage extends BasePage{
 	private static final long serialVersionUID = 1404486356253398289L;
-	private SubsetProposalPanel subsetProposalPanel;
+	private final SubsetProposalPanel subsetProposalPanel;
 	private final Modal saveConfirmationModal;
 	
 	//TODO: AjaxLink is the best solution to use as button?
-	private AjaxLink saveSelectedButton;
+	private final AjaxLink saveSelectedButton;
 
 	public SubsetProposalPage(PageParameters parameters) {
 		super(parameters);

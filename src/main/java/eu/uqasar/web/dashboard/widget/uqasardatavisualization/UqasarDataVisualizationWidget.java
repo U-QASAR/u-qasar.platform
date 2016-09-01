@@ -63,7 +63,7 @@ import ro.fortsoft.wicket.dashboard.web.WidgetView;
  */
 public class UqasarDataVisualizationWidget extends AbstractWidget{
 
-	private Project project;
+	private final Project project;
 	private static UqasarDataVisualizationFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;
 	private Title chartTitle = new Title();	

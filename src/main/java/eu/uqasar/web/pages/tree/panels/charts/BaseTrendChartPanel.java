@@ -36,7 +36,7 @@ public class BaseTrendChartPanel<Type extends TreeNode> extends
 
 	private static final long serialVersionUID = -4929627660704707931L;
 
-	private IModel<Type> model;
+	private final IModel<Type> model;
 
 	public BaseTrendChartPanel(String id, IModel<Type> model) {
 		super(id, model);

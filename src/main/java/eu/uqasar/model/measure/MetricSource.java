@@ -48,7 +48,7 @@ public enum MetricSource implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
 	private MetricSource(final String labelKey) {
 		this.labelKey = labelKey;

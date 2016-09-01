@@ -56,14 +56,14 @@ public class QModelExportPage extends BasePage {
 
 	private static final long serialVersionUID = 3828016161086818909L;
 
-	private Logger logger = Logger.getLogger(QModelExportPage.class);
+	private final Logger logger = Logger.getLogger(QModelExportPage.class);
 
 	@Inject
 	private QMTreeNodeService treeNodeService;
 
 	private QModel currentQmodel;
 
-	private String selected = "Json";
+	private final String selected = "Json";
 
 	public QModelExportPage(PageParameters parameters) {
 		super(parameters);

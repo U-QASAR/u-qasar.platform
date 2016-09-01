@@ -357,7 +357,7 @@ public class StaticAnalysisDataManagementPage extends BasePage {
 	private final class SonarProvider extends EntityProvider<SonarMetricMeasurement> {
 
 		private static final long serialVersionUID = 1360608566900210699L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public SonarProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

@@ -47,7 +47,8 @@ public class TestLinkWidgetView extends WidgetView {
 	 * 
 	 */
 	private static final long serialVersionUID = -1947241458043860995L;
-	private String period, individualMetric;	
+	private final String period;
+    private final String individualMetric;
 	public TestLinkWidgetView(String id, IModel<Widget> model) {
 		super(id, model);
 
