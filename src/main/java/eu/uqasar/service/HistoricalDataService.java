@@ -73,9 +73,7 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 		CriteriaQuery<HistoricValuesBaseIndicator> query = 
 				cb.createQuery(HistoricValuesBaseIndicator.class);
 		query.from(HistoricValuesBaseIndicator.class);
-		List<HistoricValuesBaseIndicator> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**

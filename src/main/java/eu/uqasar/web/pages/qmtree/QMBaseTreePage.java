@@ -217,85 +217,84 @@ public abstract class QMBaseTreePage<Type extends QMTreeNode>
 	}
 
 	private QMTreePanel getTreePanel(QMTreeFilterStructure filter) {
-		QMTreePanel panel = new QMTreePanel("tree", filter) {
-			private static final long serialVersionUID = -3862120828153062154L;
+        return new QMTreePanel("tree", filter) {
+            private static final long serialVersionUID1 = -3862120828153062154L;
 
-			@Override
-			public void onNodeClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> nodeModel) {
-				QMBaseTreePage.this.handleNodeClick(target, nodeModel);
-			}
+            @Override
+            public void onNodeClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> nodeModel) {
+                QMBaseTreePage.this.handleNodeClick(target, nodeModel);
+            }
 
-			@Override
-			public void onMoveUpClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> node) {
-				//TODO REVIEW
-				moveNodeQM(node.getObject(), target, false);
-			}
+            @Override
+            public void onMoveUpClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> node) {
+                //TODO REVIEW
+                moveNodeQM(node.getObject(), target, false);
+            }
 
-			@Override
-			public void onMoveDownClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> node) {
-				//TODO REVIEW
-				moveNodeQM(node.getObject(), target, true);
-			}
+            @Override
+            public void onMoveDownClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> node) {
+                //TODO REVIEW
+                moveNodeQM(node.getObject(), target, true);
+            }
 
-			@Override
-			public void onEditClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> node) {
-				if (node.getObject() instanceof QModel) {
-					setResponsePage(QModelEditPage.class,
-							QMBaseTreePage.forQModel((QModel) node.getObject()));
-				} else if (node.getObject() instanceof QMQualityObjective) {
-					setResponsePage(
-							QMQualityObjectiveEditPage.class,
-							QMBaseTreePage
-							.forQualityObjective((QMQualityObjective) node
-									.getObject()));
-				} else if (node.getObject() instanceof QMQualityIndicator) {
-					setResponsePage(
-							QMQualityIndicatorEditPage.class,
-							QMBaseTreePage
-							.forQualityIndicator((QMQualityIndicator) node
-									.getObject()));
-				} else if (node.getObject() instanceof QMMetric) {
-					setResponsePage(QMMetricEditPage.class,
-							QMBaseTreePage.forMetric((QMMetric) node.getObject()));
-				}
-			}
+            @Override
+            public void onEditClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> node) {
+                if (node.getObject() instanceof QModel) {
+                    setResponsePage(QModelEditPage.class,
+                            QMBaseTreePage.forQModel((QModel) node.getObject()));
+                } else if (node.getObject() instanceof QMQualityObjective) {
+                    setResponsePage(
+                            QMQualityObjectiveEditPage.class,
+                            QMBaseTreePage
+                            .forQualityObjective((QMQualityObjective) node
+                                    .getObject()));
+                } else if (node.getObject() instanceof QMQualityIndicator) {
+                    setResponsePage(
+                            QMQualityIndicatorEditPage.class,
+                            QMBaseTreePage
+                            .forQualityIndicator((QMQualityIndicator) node
+                                    .getObject()));
+                } else if (node.getObject() instanceof QMMetric) {
+                    setResponsePage(QMMetricEditPage.class,
+                            QMBaseTreePage.forMetric((QMMetric) node.getObject()));
+                }
+            }
 
-			@Override
-			public void onDeleteClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> node) {
-				deleteNode(node, target);
-			}
+            @Override
+            public void onDeleteClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> node) {
+                deleteNode(node, target);
+            }
 
-			@Override
-			public void onNewClicked(AjaxRequestTarget target,
-					IModel<QMTreeNode> node, Class<? extends QMTreeNode> newNodeType) {
-				QMTreeNode newNode = null;
-				if (newNodeType == QModel.class) {
-					createNewQModel();
-				} else if (newNodeType == QMQualityObjective.class) {
-					newNode = createNewQualityObjective(node.getObject().getQModel());
-				} else if (newNodeType == QMQualityIndicator.class) {
-					newNode = createNewQualityIndicator(node.getObject()
-							.getQualityObjective());
-				} else if (newNodeType == QMMetric.class) {
-					newNode = createNewMetric(node.getObject().getQualityIndicator());
-				}
+            @Override
+            public void onNewClicked(AjaxRequestTarget target,
+                    IModel<QMTreeNode> node, Class<? extends QMTreeNode> newNodeType) {
+                QMTreeNode newNode = null;
+                if (newNodeType == QModel.class) {
+                    createNewQModel();
+                } else if (newNodeType == QMQualityObjective.class) {
+                    newNode = createNewQualityObjective(node.getObject().getQModel());
+                } else if (newNodeType == QMQualityIndicator.class) {
+                    newNode = createNewQualityIndicator(node.getObject()
+                            .getQualityObjective());
+                } else if (newNodeType == QMMetric.class) {
+                    newNode = createNewMetric(node.getObject().getQualityIndicator());
+                }
 
-				if (newNode instanceof QMQualityObjective) {
-					setResponsePage(QMQualityObjectiveEditPage.class, forQualityObjective((QMQualityObjective) newNode, true));
-				} else if (newNode instanceof QMQualityIndicator) {
-					setResponsePage(QMQualityIndicatorEditPage.class, forQualityIndicator((QMQualityIndicator) newNode, true));
-				} else if (newNode instanceof QMMetric) {
-					setResponsePage(QMMetricEditPage.class, forMetric((QMMetric) newNode, true));
-				}
-			}
+                if (newNode instanceof QMQualityObjective) {
+                    setResponsePage(QMQualityObjectiveEditPage.class, forQualityObjective((QMQualityObjective) newNode, true));
+                } else if (newNode instanceof QMQualityIndicator) {
+                    setResponsePage(QMQualityIndicatorEditPage.class, forQualityIndicator((QMQualityIndicator) newNode, true));
+                } else if (newNode instanceof QMMetric) {
+                    setResponsePage(QMMetricEditPage.class, forMetric((QMMetric) newNode, true));
+                }
+            }
 
-		};
-		return panel;
+        };
 	}
 
 	

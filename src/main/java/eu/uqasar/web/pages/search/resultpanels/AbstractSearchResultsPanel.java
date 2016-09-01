@@ -116,9 +116,8 @@ public abstract class AbstractSearchResultsPanel<T extends AbstractEntity> exten
             public long size() {
                 final String[] terms = AbstractService.
                         prepareSearchTerm(searchTerm);
-                long count = getService().
+                return getService().
                         countFullTextResults(clazz, terms);
-                return count;
             }
         };
     }

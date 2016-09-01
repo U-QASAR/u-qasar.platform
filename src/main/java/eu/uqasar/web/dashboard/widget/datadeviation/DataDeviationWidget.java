@@ -210,10 +210,9 @@ public class DataDeviationWidget extends AbstractWidget{
 	
 
 	private List<Float> calculateDeviations(List<Float> baseIndicatorValues) {
-		List<Float> values = baseIndicatorValues;
-		List<Float> deviations = new LinkedList<>();
-		for(int f = 1; f < values.size(); f++){			
-			Float delta = values.get(f) - values.get(f-1);
+        List<Float> deviations = new LinkedList<>();
+		for(int f = 1; f < baseIndicatorValues.size(); f++){
+			Float delta = baseIndicatorValues.get(f) - baseIndicatorValues.get(f-1);
 			deviations.add(delta);
 		}
 		return deviations;

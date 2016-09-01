@@ -191,14 +191,13 @@ class MetaDataEditPanel<T extends MetaData, S extends MetaDataService<T>> extend
     }
 
     private WebMarkupContainer newIsInUseIndicator(final String id, final T object) {
-        AjaxLazyLoadPanel panel = new AjaxLazyLoadPanel(id) {
+        return new AjaxLazyLoadPanel(id) {
             @Override
             public Component getLazyLoadComponent(String markupId) {
                 boolean inUse = service.isInUse(object);
                 return new MetaDataInUseIndicatorPanel(markupId, inUse, Model.of(object.getName()));
             }
         };
-        return panel;
     }
     
     private IndicatingAjaxButton newDeleteSelectedButton(

@@ -154,11 +154,9 @@ public class LdapManager implements Serializable {
     }
 
     private NamingEnumeration<SearchResult> searchLDAP(final String baseDN, final String preferredFilter) throws NamingException {
-        final String groupFilter = preferredFilter;
-        final String filter = groupFilter == null || groupFilter.isEmpty() ? EMPTY_FILTER : groupFilter;
-        NamingEnumeration<SearchResult> answer = getContext().
+        final String filter = preferredFilter == null || preferredFilter.isEmpty() ? EMPTY_FILTER : preferredFilter;
+        return getContext().
                 search(baseDN, filter, getDefaultSearchControls());
-        return answer;
     }
 
     private SearchControls getDefaultSearchControls() {

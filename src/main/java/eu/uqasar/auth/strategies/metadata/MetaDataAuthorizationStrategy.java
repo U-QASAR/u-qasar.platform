@@ -419,8 +419,7 @@ public class MetaDataAuthorizationStrategy extends AbstractAuthorizationStrategy
 	private static EnumSet<Role> levelsAuthorizedToPerformAction(final Component component, final Action action) {
 		final ActionPermissions permissions = component.getMetaData(ACTION_PERMISSIONS);
 		if (permissions != null) {
-			EnumSet<Role> rolesFor = permissions.rolesFor(action);
-			return rolesFor;
+            return permissions.rolesFor(action);
 		}
 		return null;
 	}

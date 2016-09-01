@@ -282,15 +282,14 @@ public class UserListPage extends AdminBasePage {
 	}
 
 	private Check<User> newDeleteCheck(final Item<User> item) {
-		Check<User> check = new Check<User>("userCheck", item.getModel(), userGroup) {
+        return new Check<User>("userCheck", item.getModel(), userGroup) {
 
-			@Override
-			protected void onConfigure() {
-				super.onConfigure();
-				setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
-			}
-		};
-		return check;
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
+            }
+        };
 	}
 
 	private class UserEntityProvider extends EntityProvider<User> {

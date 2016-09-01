@@ -365,8 +365,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	public int getDurationInDays() {
 		DateTime end = new DateTime(getEndDate());
 		DateTime start = new DateTime(getStartDate());
-		int daysTotal = Days.daysBetween(start, end).getDays();
-		return daysTotal;
+        return Days.daysBetween(start, end).getDays();
 	}
 
 	@JsonIgnore

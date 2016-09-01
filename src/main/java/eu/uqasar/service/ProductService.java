@@ -51,8 +51,7 @@ public class ProductService extends AbstractService<Product> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Product> query = cb.createQuery(Product.class);
 		query.from(Product.class);
-		List<Product> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**
@@ -100,8 +99,7 @@ public class ProductService extends AbstractService<Product> {
 		CriteriaQuery<Product> criteria = cb.createQuery(Product.class);
 		Root<Product> from = criteria.from(Product.class);
 		criteria.multiselect(from.get(Product_.version));
-		List allVersion = em.createQuery(criteria).getResultList();
-		return allVersion;
+        return (List) em.createQuery(criteria).getResultList();
 	}
 
 	public List<Product> sortDescendingDates() {

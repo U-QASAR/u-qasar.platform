@@ -61,7 +61,6 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
 	private Item[] getItems(String jsonData) {
 		Gson gson = new Gson();
-		Item[] items = gson.fromJson(jsonData, Item[].class);
 		/*
 		System.out.println(items.length);
 		for (Item item : items) {
@@ -69,7 +68,7 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 		}
 		*/
 		
-		return items;
+		return gson.fromJson(jsonData, Item[].class);
 	}
 		
 	static class Item {

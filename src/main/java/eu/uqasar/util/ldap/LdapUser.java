@@ -145,8 +145,7 @@ public class LdapUser extends LdapEntity {
 				if (mail != 0) {
 					return mail;
 				}
-				int dn = LdapEntity.compare(o1.getDN(), o2.getDN(), false);
-				return dn;
+                return LdapEntity.compare(o1.getDN(), o2.getDN(), false);
 			}
 		}
 

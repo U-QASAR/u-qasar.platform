@@ -56,8 +56,7 @@ public class ProcessService extends AbstractService<Process> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Process> query = cb.createQuery(Process.class);
 		query.from(Process.class);
-		List<Process> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**

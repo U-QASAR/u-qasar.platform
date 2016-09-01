@@ -68,8 +68,7 @@ public class LdapGroup extends LdapEntity {
 				if (name != 0) {
 					return name;
 				}
-				int dn = LdapEntity.compare(o1.getDN(), o2.getDN(), false);
-				return dn;
+                return LdapEntity.compare(o1.getDN(), o2.getDN(), false);
 			}
 		}
 

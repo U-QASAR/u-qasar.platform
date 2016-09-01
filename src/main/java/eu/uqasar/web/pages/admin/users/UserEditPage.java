@@ -431,8 +431,7 @@ public final class UserEditPage extends AdminBasePage {
 	}
 
 	private Check<TeamMembership> newDeleteCheck(final Item<TeamMembership> item) {
-		Check<TeamMembership> check = new Check<>("teamCheck", item.getModel(), teamGroup);
-		return check;
+        return new Check<>("teamCheck", item.getModel(), teamGroup);
 	}
 
 	private User tryToRegister(User newUser, final String password, final String passwordConfirmation) {

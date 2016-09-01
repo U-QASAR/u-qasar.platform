@@ -253,8 +253,7 @@ public class JenkinsWidgetView extends WidgetView {
 	}
 	
 	private Options getOptions(){
-		Options options = new Options();
-		return options;
+        return new Options();
 	}
 	
 	private JenkinsMetricMeasurement getLastBuildSuccessStatus(Project project){

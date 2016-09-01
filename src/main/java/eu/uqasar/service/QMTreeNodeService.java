@@ -97,9 +97,8 @@ public class QMTreeNodeService extends AbstractService<QMTreeNode> {
 		if(and != null) {
 			query.where(and);
 		}
-		
-		List<QModel> resultList = em.createQuery(query).getResultList();
-		return resultList;
+
+        return em.createQuery(query).getResultList();
 	}
 
 	

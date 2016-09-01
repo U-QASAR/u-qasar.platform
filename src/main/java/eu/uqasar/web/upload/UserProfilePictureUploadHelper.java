@@ -87,8 +87,7 @@ public class UserProfilePictureUploadHelper extends FileUploadHelper {
 		// we always name it PNG even though it could be a JPG or GIF. 
 		// This makes it easier for serving it later, so we don't have to are about extensions
 		final String fileName = String.format("%s.%s", userId, PROFILEPIC_EXTENSION);
-		final Path targetPath = FileSystems.getDefault().getPath(basePath, fileName);
-		return targetPath;
+        return FileSystems.getDefault().getPath(basePath, fileName);
 	}
 
 	public Path processFile(InputStream is, Path target) throws IOException {

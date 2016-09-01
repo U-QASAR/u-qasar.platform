@@ -134,8 +134,7 @@ public abstract class BasePage extends WebPage {
 	
 	private String getServerNameAndPort(){
 		HttpServletRequest req = (HttpServletRequest) getRequestCycle().getRequest().getContainerRequest();
-		String serverNameAndPort = req.getServerName() + ":" + req.getServerPort();
-		return serverNameAndPort;
+        return req.getServerName() + ":" + req.getServerPort();
 	}
 		
     protected void setSearchTerm(final String query) {

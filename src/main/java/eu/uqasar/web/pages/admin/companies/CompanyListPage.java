@@ -316,15 +316,14 @@ public class CompanyListPage extends AdminBasePage {
 	}
 
 	private Check<Company> newDeleteCheck(final Item<Company> item) {
-		Check<Company> check = new Check<Company>("companyCheck", item.getModel(), companyGroup) {
+        return new Check<Company>("companyCheck", item.getModel(), companyGroup) {
 
-			@Override
-			protected void onConfigure() {
-				super.onConfigure();
-				setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
-			}
-		};
-		return check;
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
+            }
+        };
 	}
 	
 	

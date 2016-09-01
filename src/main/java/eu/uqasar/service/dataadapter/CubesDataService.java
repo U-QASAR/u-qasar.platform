@@ -94,9 +94,7 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 		CriteriaQuery<CubesMetricMeasurement> query = 
 				cb.createQuery(CubesMetricMeasurement.class);
 		query.from(CubesMetricMeasurement.class);
-		List<CubesMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 

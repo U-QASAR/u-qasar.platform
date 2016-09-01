@@ -155,8 +155,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
 	 */
 	public T getById(Long id) {
 		logger.infof("loading %s with ID %d ...", readableClassName, id);
-		T entity = em.find(clazz, id);
-		return entity;
+		return em.find(clazz, id);
 	}
 
 	/**
@@ -222,8 +221,7 @@ public abstract class AbstractService<T extends Persistable> implements Serializ
     
 	protected <T extends Persistable> T getById(Class<T> clazz, Long id) {
 		logger.infof("loading %s with ID %d ...",  getReadableClassName(clazz), id);
-		T entity = em.find(clazz, id);
-		return entity;
+		return em.find(clazz, id);
 	}
     
 	/**

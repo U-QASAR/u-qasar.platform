@@ -178,9 +178,8 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
                 .withStartDate(new DateTime().withYear(1900))
                 .allowKeyboardNavigation(true).autoClose(true)
                 .highlightToday(false).showTodayButton(false);
-        DateTextField dateTextField = new DateTextField("timeStamp",
+        return new DateTextField("timeStamp",
                 new PropertyModel<Date>(tableEntity, "timeStamp"), config);
-        return dateTextField;
     }
     
     /**

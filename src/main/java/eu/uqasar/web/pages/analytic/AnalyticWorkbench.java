@@ -121,8 +121,7 @@ public class AnalyticWorkbench extends BasePage {
 	 * @return The link to edit the current Analysis in the Analysis editor
 	 */
 	private BookmarkablePageLink<AnalysisEditor> analysisEditorLink(final Analysis analysis){
-		BookmarkablePageLink<AnalysisEditor> link = new BookmarkablePageLink<>("edit", AnalysisEditor.class, BaseTreePage.forAnalysis(analysis));
-		return link;
+        return new BookmarkablePageLink<>("edit", AnalysisEditor.class, BaseTreePage.forAnalysis(analysis));
 	}
 	
 	

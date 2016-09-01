@@ -70,9 +70,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 		CriteriaQuery<TestLinkMetricMeasurement> query = 
 				cb.createQuery(TestLinkMetricMeasurement.class);
 		query.from(TestLinkMetricMeasurement.class);
-		List<TestLinkMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -230,10 +228,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 			}  
 		}
 
-		List<TestLinkMetricMeasurement> resultsLatest = 
-				getMeasurementsForProjectByDate(project,newDate);
-
-		return resultsLatest;
+        return getMeasurementsForProjectByDate(project,newDate);
 	}
 
 

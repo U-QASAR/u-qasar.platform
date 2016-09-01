@@ -263,8 +263,7 @@ public class SubsetProposalPanel extends Panel {
 		String labelProject = new StringResourceModel("auto.created.project", this, null).getString();
 		
 		long randomId = UUID.randomUUID().toString().hashCode();
-		Project project = new Project(labelProject, String.format("prj-%s", randomId));
-		currentParentProjectNode = project;
+        currentParentProjectNode = new Project(labelProject, String.format("prj-%s", randomId));
 		
 		// Add selected elements to the current created project
 		for (QMTreeNode qmTreeNode : dataGroup.getModelObject()) {
@@ -310,35 +309,30 @@ public class SubsetProposalPanel extends Panel {
 				
 			} else if (node instanceof QMQualityObjective) {
 				QMQualityObjective qmqo = (QMQualityObjective) node;
-				QualityObjective qo = new QualityObjective(qmqo, project);
-				currentParentQualityObjective = qo;
+            currentParentQualityObjective = new QualityObjective(qmqo, project);
 				currentParentQMQualityObjective = qmqo;
 				
 			} else if (node instanceof QMQualityIndicator) {
 				QMQualityIndicator qmqi = (QMQualityIndicator) node;
 
 				if(qmqi.getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, project);
-						currentParentQualityObjective = qo;
+                    currentParentQualityObjective = new QualityObjective(labelObjective, project);
 						currentParentQMQualityObjective = qmqi.getParent();
 				}
-				
-				QualityIndicator qi = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
-				currentParentQualityIndicator = qi;
+
+            currentParentQualityIndicator = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
 				currentParentQMQualityIndicator = qmqi;
 				
 			} else if (node instanceof QMMetric) {
 				QMMetric qmm = (QMMetric) node;
 
 				if(qmm.getParent().getParent()!=currentParentQMQualityObjective){
-						QualityObjective qo = new QualityObjective(labelObjective, project);
-						currentParentQualityObjective = qo;
+                    currentParentQualityObjective = new QualityObjective(labelObjective, project);
 						currentParentQMQualityObjective = qmm.getParent().getParent();
 				}
 				
 				if(qmm.getParent() != currentParentQMQualityIndicator){
-						QualityIndicator qi = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
-						currentParentQualityIndicator = qi;
+                    currentParentQualityIndicator = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
 						currentParentQMQualityIndicator = qmm.getParent();
 				}
 				
@@ -368,35 +362,30 @@ public class SubsetProposalPanel extends Panel {
 			
 		} else if (node instanceof QMQualityObjective) {
 			QMQualityObjective qmqo = (QMQualityObjective) node;
-			QualityObjective qo = new QualityObjective(qmqo, (Project) currentParentProjectNode);
-			currentParentQualityObjective = qo;
+            currentParentQualityObjective = new QualityObjective(qmqo, (Project) currentParentProjectNode);
 			currentParentQMQualityObjective = qmqo;
 			
 		} else if (node instanceof QMQualityIndicator) {
 			QMQualityIndicator qmqi = (QMQualityIndicator) node;
 			
 			if(qmqi.getParent()!=currentParentQMQualityObjective){
-				QualityObjective qo = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
-				currentParentQualityObjective = qo;
+                currentParentQualityObjective = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
 				currentParentQMQualityObjective = qmqi.getParent();
 			}
-			
-			QualityIndicator qi = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
-			currentParentQualityIndicator = qi;
+
+            currentParentQualityIndicator = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
 			currentParentQMQualityIndicator = qmqi;
 			
 		} else if (node instanceof QMMetric) {
 			QMMetric qmm = (QMMetric) node;
 			
 			if(qmm.getParent().getParent()!=currentParentQMQualityObjective){
-				QualityObjective qo = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
-				currentParentQualityObjective = qo;
+                currentParentQualityObjective = new QualityObjective(labelObjective, (Project) currentParentProjectNode);
 				currentParentQMQualityObjective = qmm.getParent().getParent();
 			}
 			
 			if(qmm.getParent() != currentParentQMQualityIndicator){
-				QualityIndicator qi = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
-				currentParentQualityIndicator = qi;
+                currentParentQualityIndicator = new QualityIndicator(labelIndicator, (QualityObjective) currentParentQualityObjective);
 				currentParentQMQualityIndicator = qmm.getParent();
 			}
 			

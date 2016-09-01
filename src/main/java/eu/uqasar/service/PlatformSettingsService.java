@@ -52,8 +52,7 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<PlatformSettings> query = cb.createQuery(PlatformSettings.class);
         query.from(PlatformSettings.class);
-        List<PlatformSettings> resultList = em.createQuery(query).getResultList();
-        return resultList;
+        return em.createQuery(query).getResultList();
     }
 
     /**

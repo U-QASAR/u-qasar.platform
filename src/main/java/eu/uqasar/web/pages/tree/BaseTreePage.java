@@ -136,88 +136,87 @@ public abstract class BaseTreePage<Type extends TreeNode>
 	}
 	
 	private TreePanel getTreePanel(TreeFilterStructure filter) {
-		TreePanel panel = new TreePanel("tree", filter) {
-			private static final long serialVersionUID = -3862120828153062154L;
+        return new TreePanel("tree", filter) {
+            private static final long serialVersionUID1 = -3862120828153062154L;
 
-			@Override
-			public void onNodeClicked(AjaxRequestTarget target,
-					IModel<TreeNode> nodeModel) {
-				BaseTreePage.this.handleNodeClick(target, nodeModel);
-			}
+            @Override
+            public void onNodeClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> nodeModel) {
+                BaseTreePage.this.handleNodeClick(target, nodeModel);
+            }
 
-			@Override
-			public void onMoveUpClicked(AjaxRequestTarget target,
-					IModel<TreeNode> node) {
-				moveNode(node.getObject(), target, false);
-			}
+            @Override
+            public void onMoveUpClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> node) {
+                moveNode(node.getObject(), target, false);
+            }
 
-			@Override
-			public void onMoveDownClicked(AjaxRequestTarget target,
-					IModel<TreeNode> node) {
-				moveNode(node.getObject(), target, true);
-			}
+            @Override
+            public void onMoveDownClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> node) {
+                moveNode(node.getObject(), target, true);
+            }
 
-			@Override
-			public void onEditClicked(AjaxRequestTarget target,
-					IModel<TreeNode> node) {
-				if (node.getObject() instanceof Project) {
-					setResponsePage(ProjectEditPage.class,
-							BaseTreePage.forProject((Project) node.getObject()));
-				} else if (node.getObject() instanceof QualityObjective) {
-					setResponsePage(
-							QualityObjectiveEditPage.class,
-							BaseTreePage
-							.forQualityObjective((QualityObjective) node
-									.getObject()));
-				} else if (node.getObject() instanceof QualityIndicator) {
-					setResponsePage(
-							QualityIndicatorEditPage.class,
-							BaseTreePage
-							.forQualityIndicator((QualityIndicator) node
-									.getObject()));
-				} else if (node.getObject() instanceof Metric) {
-					setResponsePage(MetricEditPage.class,
-							BaseTreePage.forMetric((Metric) node.getObject()));
-				}
-			}
+            @Override
+            public void onEditClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> node) {
+                if (node.getObject() instanceof Project) {
+                    setResponsePage(ProjectEditPage.class,
+                            BaseTreePage.forProject((Project) node.getObject()));
+                } else if (node.getObject() instanceof QualityObjective) {
+                    setResponsePage(
+                            QualityObjectiveEditPage.class,
+                            BaseTreePage
+                            .forQualityObjective((QualityObjective) node
+                                    .getObject()));
+                } else if (node.getObject() instanceof QualityIndicator) {
+                    setResponsePage(
+                            QualityIndicatorEditPage.class,
+                            BaseTreePage
+                            .forQualityIndicator((QualityIndicator) node
+                                    .getObject()));
+                } else if (node.getObject() instanceof Metric) {
+                    setResponsePage(MetricEditPage.class,
+                            BaseTreePage.forMetric((Metric) node.getObject()));
+                }
+            }
 
-			@Override
-			public void onDeleteClicked(AjaxRequestTarget target,
-					IModel<TreeNode> node) {
-				deleteNode(node.getObject(), target);
-			}
+            @Override
+            public void onDeleteClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> node) {
+                deleteNode(node.getObject(), target);
+            }
 
-			@Override
-			public void onNewClicked(AjaxRequestTarget target,
-					IModel<TreeNode> node, Class<? extends TreeNode> newNodeType) {
-				TreeNode newNode = null;
-				if (newNodeType == Project.class) {
-					createNewProject();
-				} else if (newNodeType == QualityObjective.class) {
-					newNode = createNewQualityObjective(node.getObject().getProject());
-				} else if (newNodeType == QualityIndicator.class) {
-					newNode = createNewQualityIndicator(node.getObject()
-							.getQualityObjective());
-				} else if (newNodeType == Metric.class) {
-					newNode = createNewMetric(node.getObject().getQualityIndicator());
-				}
+            @Override
+            public void onNewClicked(AjaxRequestTarget target,
+                    IModel<TreeNode> node, Class<? extends TreeNode> newNodeType) {
+                TreeNode newNode = null;
+                if (newNodeType == Project.class) {
+                    createNewProject();
+                } else if (newNodeType == QualityObjective.class) {
+                    newNode = createNewQualityObjective(node.getObject().getProject());
+                } else if (newNodeType == QualityIndicator.class) {
+                    newNode = createNewQualityIndicator(node.getObject()
+                            .getQualityObjective());
+                } else if (newNodeType == Metric.class) {
+                    newNode = createNewMetric(node.getObject().getQualityIndicator());
+                }
 
-				if (newNode instanceof QualityObjective) {
-					setResponsePage(QualityObjectiveEditPage.class, forQualityObjective((QualityObjective) newNode, true));
-				} else if (newNode instanceof QualityIndicator) {
-					setResponsePage(QualityIndicatorEditPage.class, forQualityIndicator((QualityIndicator) newNode, true));
-				} else if (newNode instanceof Metric) {
-					setResponsePage(MetricEditPage.class, forMetric((Metric) newNode, true));
-				}
-			}
+                if (newNode instanceof QualityObjective) {
+                    setResponsePage(QualityObjectiveEditPage.class, forQualityObjective((QualityObjective) newNode, true));
+                } else if (newNode instanceof QualityIndicator) {
+                    setResponsePage(QualityIndicatorEditPage.class, forQualityIndicator((QualityIndicator) newNode, true));
+                } else if (newNode instanceof Metric) {
+                    setResponsePage(MetricEditPage.class, forMetric((Metric) newNode, true));
+                }
+            }
 
 //			@Override
 //			public void onNewProjectFromQMClicked(AjaxRequestTarget target,
 //					IModel<TreeNode> node) {
 //				createProjectTreeLeaves(node.getObject(), target);
 //			}
-		};
-		return panel;
+        };
 	}
 
 //	/**
@@ -284,8 +283,7 @@ public abstract class BaseTreePage<Type extends TreeNode>
 		} else if (node instanceof QMQualityIndicator) {
 			QMQualityIndicator qmqi = (QMQualityIndicator) node;
 			logger.info("[Quality Indicator] " + qmqi);
-			QualityIndicator qi = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
-			currentParentQualityIndicator = qi;
+            currentParentQualityIndicator = new QualityIndicator(qmqi, (QualityObjective) currentParentQualityObjective);
 		} else if (node instanceof QMMetric) {
 			QMMetric qmm = (QMMetric) node;
 			logger.info("[Quality Metric] " + qmm);

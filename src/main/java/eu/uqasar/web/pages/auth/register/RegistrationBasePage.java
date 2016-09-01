@@ -65,8 +65,7 @@ public abstract class RegistrationBasePage extends BasePage {
 	}
 	
 	private User getPendingUserByToken() {
-		User user = userService.getByRegistrationTokenAndRegistrationStatus(token, RegistrationStatus.PENDING);
-		return user;
+        return userService.getByRegistrationTokenAndRegistrationStatus(token, RegistrationStatus.PENDING);
 	}
 	
 	protected final User getFakeUser() {

@@ -78,9 +78,7 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 		CriteriaQuery<JiraMetricMeasurement> query = 
 				cb.createQuery(JiraMetricMeasurement.class);
 		query.from(JiraMetricMeasurement.class);
-		List<JiraMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -378,8 +376,7 @@ public class JiraDataService extends AbstractService<JiraMetricMeasurement> {
 
 		}
 
-		List<JiraMetricMeasurement> returnResultsLatest = getMeasurementsByMetricAndDate(metric,newDate);
-		return returnResultsLatest;
+        return getMeasurementsByMetricAndDate(metric,newDate);
 	}
 
 

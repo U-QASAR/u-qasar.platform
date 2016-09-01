@@ -175,13 +175,12 @@ public abstract class LdapEntityListPanel<Entity extends LdapEntity> extends Pan
 	protected abstract void selectionChanged(AjaxRequestTarget target);
 
 	private String getJavaScript() {
-		String js = "	var $table = $('#entityList');\n"
-				+ "	$table.floatThead({\n"
-				+ "			scrollContainer: function() {\n"
-				+ "			return $('#tableContainer');\n"
-				+ "		}\n"
-				+ "	});\n";
-		return js;
+        return "	var $table = $('#entityList');\n"
+                + "	$table.floatThead({\n"
+                + "			scrollContainer: function() {\n"
+                + "			return $('#tableContainer');\n"
+                + "		}\n"
+                + "	});\n";
 	}
 
 	private CheckGroup newCheckGroup() {

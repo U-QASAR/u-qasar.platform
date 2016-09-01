@@ -341,15 +341,14 @@ public class DashboardSharePage extends BasePage {
 	}
 
 	private Check<User> newShareCheck(final Item<User> item) {
-		Check<User> check = new Check<User>("userCheck", item.getModel(), userGroup) {
+        return new Check<User>("userCheck", item.getModel(), userGroup) {
 
-			@Override
-			protected void onConfigure() {
-				super.onConfigure();
-				setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
-			}
-		};
-		return check;
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
+            }
+        };
 	}
 
 	private class UserEntityProvider extends EntityProvider<User> {

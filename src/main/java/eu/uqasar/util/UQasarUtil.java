@@ -308,9 +308,7 @@ public class UQasarUtil {
 	 * @return
 	 */
 	public static String getEncDecPwd() {
-		final String MASTERPWD = 
-				"jvnqeiPIqX_6cpdOYfDc7sHk7nEIv4zRn5984JwIHnq4AX7XQt";
-		return MASTERPWD;
+        return "jvnqeiPIqX_6cpdOYfDc7sHk7nEIv4zRn5984JwIHnq4AX7XQt";
 	}
 
 	/**
@@ -518,9 +516,8 @@ public class UQasarUtil {
 	 */
 	public static int minsToMs(int minutes) {
 		final int SEC = 60;
-		final int MS = 1000; 
-		int ms = minutes * SEC * MS;
-		return ms;
+		final int MS = 1000;
+        return minutes * SEC * MS;
 	}
 
 

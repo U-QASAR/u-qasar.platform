@@ -275,7 +275,7 @@ public class Util {
     }//EoM
 
     public static String createExpressionEditorInputExperiment() {
-        String str = "                 "                    //<script>
+        return "                 "                    //<script>
                 + "       "
                 + "   var filters = ["
                 + "{\n"
@@ -298,8 +298,7 @@ public class Util {
                 + "            });\n"
                 + "            \n"
                 + "             //$.unblockUI();"
-                + "                ";               //</script>
-        return str;
+                + "                ";
     }//EoM    
 
     public static String createSummaryTable(JSONObject cuberesponse) {

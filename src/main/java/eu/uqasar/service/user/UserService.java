@@ -262,8 +262,7 @@ public class UserService extends AbstractService<User> {
 		CriteriaQuery<User> query = cb.createQuery(User.class);
 		Root<User> root = query.from(User.class);
 		query.where(cb.equal(root.get(User_.company), company));
-		List<User> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}
 
 	public User getByPWResetToken(final String token) {

@@ -70,9 +70,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
 		CriteriaQuery<SonarMetricMeasurement> query = 
 				cb.createQuery(SonarMetricMeasurement.class);
 		query.from(SonarMetricMeasurement.class);
-		List<SonarMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -307,8 +305,7 @@ public class SonarDataService extends AbstractService<SonarMetricMeasurement> {
                 newestDate = smm.getTimeStamp();
             }  
         }
-        List<SonarMetricMeasurement> resultListLatest = getMeasurementsForProjectByDate(project,newestDate);
-        return resultListLatest;               
+        return getMeasurementsForProjectByDate(project,newestDate);
     }
 
 	

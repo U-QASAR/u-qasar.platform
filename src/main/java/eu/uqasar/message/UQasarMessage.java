@@ -163,10 +163,9 @@ public class UQasarMessage extends MimeMessage {
 				replace("." + this.getClass().getSimpleName(), "");
 
 		// build final template path by combining diffPath, type of template (txt or html) and name of this class
-		final String templatePath = String.format("%s/%s/%s", diffPath.replace(".", "/"),
-				getMessageType().getTemplateSourceType(), getContentTemplateFileName());
 
-		return templatePath;
+        return String.format("%s/%s/%s", diffPath.replace(".", "/"),
+                getMessageType().getTemplateSourceType(), getContentTemplateFileName());
 	}
 
 	private Configuration updateTemplatingConfiguration() {
@@ -334,8 +333,7 @@ public class UQasarMessage extends MimeMessage {
 
 	public static Address convertStringToAddress(final String address) {
 		try {
-			Address from = new InternetAddress(address, CHARSET);
-			return from;
+            return new InternetAddress(address, CHARSET);
 		} catch (UnsupportedEncodingException ex) {
 			logger.error(ex.getMessage(), ex);
 		}
@@ -344,8 +342,7 @@ public class UQasarMessage extends MimeMessage {
 
 	public static Address convertStringToAddress(final String address, final String name) {
 		try {
-			Address from = new InternetAddress(address, name, CHARSET);
-			return from;
+            return new InternetAddress(address, name, CHARSET);
 		} catch (UnsupportedEncodingException ex) {
 			logger.error(ex.getMessage(), ex);
 		}
