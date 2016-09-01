@@ -135,11 +135,6 @@ public class TechDebtChartWidget extends AbstractWidget{
 	}
 
 
-	/**
-	 * Create a chart based on Google Chart
-	 * TODO: Before releasing U-QASAR as Open Source, HighCharts should be replaced by Google Chart or something corresponding. 
-	 * @return
-	 */
 	/*
 	public Chart createChart() {
 
