@@ -113,13 +113,7 @@ public class QModelExportPage extends BasePage {
 										name));
 				
 				logger.info("onSubmit end");
-				} catch (JAXBException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (JsonGenerationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (JsonMappingException e) {
+				} catch (JAXBException | JsonGenerationException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} catch (IOException e) {

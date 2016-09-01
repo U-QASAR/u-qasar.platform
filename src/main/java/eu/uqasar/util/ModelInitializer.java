@@ -269,9 +269,7 @@ public class ModelInitializer implements Serializable {
             // Initialize timer for fetching data by using the adapters
             adapterSettingsService.initAdapterDataTimer();
             
-        } catch (NoSuchAlgorithmException e) {
-            logger.error(e.getMessage());
-        } catch (InvalidKeySpecException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             logger.error(e.getMessage());
         } catch (Exception e) {
         	e.printStackTrace();

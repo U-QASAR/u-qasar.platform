@@ -127,11 +127,9 @@ public class WidgetForJira extends AbstractWidget {
 					}
 				}
 			}
-		} catch (NamingException e) {
-			e.printStackTrace();
-		} catch (uQasarException e) {
+		} catch (NamingException | uQasarException e) {
 			e.printStackTrace();
 		}
-		return measurements;
+        return measurements;
 	}
 }

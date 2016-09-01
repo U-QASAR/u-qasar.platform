@@ -274,12 +274,10 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 						// Persist in database
 						update(CubesMetricMeasurement);
 
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (JSONException e) {
+					} catch (IOException | JSONException e) {
 						e.printStackTrace();
 					}
-				}
+                }
 			} catch (uQasarException e) {
 				e.printStackTrace();
 			}
@@ -309,20 +307,11 @@ public class CubesDataService extends AbstractService<CubesMetricMeasurement> {
 
 			measurements.add(new Measurement(uQasarMetric.PROJECTS_PER_SYSTEM_INSTANCE, measurementResultJSONArray.toString()));
 
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (org.apache.wicket.ajax.json.JSONException e) {
-			// TODO Auto-generated catch block
+		} catch (URISyntaxException | org.apache.wicket.ajax.json.JSONException | JSONException | IOException e) {
 			e.printStackTrace();
 		}
 
-		return measurements;
+        return measurements;
 	}
 
 

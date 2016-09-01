@@ -452,17 +452,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						this.setTypeSelected("");
 						this.setTagName("");
 					}
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SecurityException e) {
+				} catch (ClassNotFoundException | SecurityException | IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return confirmed;
+                return confirmed;
 			}
 		};
 		

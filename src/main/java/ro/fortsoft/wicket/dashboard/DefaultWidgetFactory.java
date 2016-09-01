@@ -34,8 +34,6 @@ public class DefaultWidgetFactory implements WidgetFactory {
 			return widget;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
