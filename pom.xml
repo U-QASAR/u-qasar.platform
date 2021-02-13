@@ -125,19 +125,10 @@
 
 		<!-- explicitly add jackson for @JsonIgnore annotation -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${jackson.version}</version>
-			<!-- use provided scope as it is included in JBoss 7 -->
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.0.0</version>
 		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
 		<!-- Wicket dependencies -->
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
