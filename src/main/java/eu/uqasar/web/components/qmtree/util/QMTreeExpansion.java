@@ -39,7 +39,7 @@ public class QMTreeExpansion implements Set<QMTreeNode>, Serializable {
 	 */
 	private static final long serialVersionUID = -3491982586004906646L;
 
-	private static MetaDataKey<QMTreeExpansion> KEY = new MetaDataKey<QMTreeExpansion>() {
+	private static final MetaDataKey<QMTreeExpansion> KEY = new MetaDataKey<QMTreeExpansion>() {
 
 		/**
 		 * 
@@ -48,7 +48,7 @@ public class QMTreeExpansion implements Set<QMTreeNode>, Serializable {
 	
 	};
 
-	private Set<Long> ids = new HashSet<Long>();
+	private final Set<Long> ids = new HashSet<>();
 
 	private boolean inverse;
 

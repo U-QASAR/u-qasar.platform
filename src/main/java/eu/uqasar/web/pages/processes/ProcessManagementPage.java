@@ -73,7 +73,7 @@ public class ProcessManagementPage extends BasePage {
 
 //	private List dataMeasurements;
 
-	private ProcessManagementPanel filterPanel;
+	private final ProcessManagementPanel filterPanel;
 	// how many products do we show per page
 	private static final int itemsPerPage = 10;
 
@@ -206,8 +206,8 @@ public class ProcessManagementPage extends BasePage {
 				// add javascript to load tagsinput plugin
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Process-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**
@@ -308,7 +308,6 @@ public class ProcessManagementPage extends BasePage {
 
 	/**
 	 * 
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedProcesses(
@@ -366,9 +365,9 @@ public class ProcessManagementPage extends BasePage {
 		private ProcessesFilterStructure filter;
 
 		public ProcessProvider() {
-		};
+		}
 
-		public ProcessProvider(ProcessesFilterStructure filter) {
+        public ProcessProvider(ProcessesFilterStructure filter) {
 			this.filter = filter;
 		}
 

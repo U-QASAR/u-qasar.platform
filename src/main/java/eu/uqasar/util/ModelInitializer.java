@@ -1,6 +1,3 @@
-/**
- *
- */
 package eu.uqasar.util;
 
 /*
@@ -31,7 +28,6 @@ import java.nio.file.Path;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -62,14 +58,11 @@ import org.jboss.weld.context.http.Http;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
-import eu.uqasar.model.analytic.Analysis;
-import eu.uqasar.model.analytic.Dimensions;
 import eu.uqasar.model.company.Company;
 import eu.uqasar.model.lifecycle.LifeCycleStage;
 import eu.uqasar.model.lifecycle.RupStage;
 import eu.uqasar.model.measure.MetricSource;
 import eu.uqasar.model.measure.Scale;
-import eu.uqasar.model.measure.TestLinkMetricMeasurement;
 import eu.uqasar.model.measure.Unit;
 import eu.uqasar.model.meta.ContinuousIntegrationTool;
 import eu.uqasar.model.meta.CustomerType;
@@ -96,15 +89,10 @@ import eu.uqasar.model.quality.indicator.Paradigm;
 import eu.uqasar.model.quality.indicator.Purpose;
 import eu.uqasar.model.quality.indicator.Version;
 import eu.uqasar.model.role.Role;
-import eu.uqasar.model.settings.adapter.AdapterSettings;
 import eu.uqasar.model.settings.mail.MailSettings;
 import eu.uqasar.model.settings.platform.PlatformSettings;
 import eu.uqasar.model.settings.qmodel.QModelSettings;
-import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
-import eu.uqasar.model.tree.QualityIndicator;
-import eu.uqasar.model.tree.QualityObjective;
-import eu.uqasar.model.tree.Threshold;
 import eu.uqasar.model.user.Gender;
 import eu.uqasar.model.user.RegistrationStatus;
 import eu.uqasar.model.user.Team;
@@ -278,9 +266,7 @@ public class ModelInitializer implements Serializable {
             // Initialize timer for fetching data by using the adapters
             adapterSettingsService.initAdapterDataTimer();
             
-        } catch (NoSuchAlgorithmException e) {
-            logger.error(e.getMessage());
-        } catch (InvalidKeySpecException e) {
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             logger.error(e.getMessage());
         } catch (Exception e) {
         	e.printStackTrace();
@@ -376,7 +362,7 @@ public class ModelInitializer implements Serializable {
     	testCompany.setPhone("");
     	testCompany.setFax("");
     	testCompany.setStreet("");
-    	testCompany.setZipcode(00000);
+    	testCompany.setZipcode(0);
     	testCompany.setCity("");
     	testCompany.setCountry("");
     	companies[--companyCount] = companyService.create(testCompany);
@@ -389,7 +375,9 @@ public class ModelInitializer implements Serializable {
         int userCount = 1;
         User[] users = new User[userCount];
 
-		users[--userCount] = userService.create(prepareUser(new User("Admin", "User", "admin", "admin@example.net")).setCompany(companies[0]));
+        User user = prepareUser(new User("Admin", "User", "admin", "admin@example.net"));
+        user.setCompany(companies[0]);
+		users[--userCount] = userService.create(user);
         
         return users;
     }
@@ -555,12 +543,12 @@ public class ModelInitializer implements Serializable {
         qo1.setTargetAudience(roles);
         // Set Objective "Code coverage above 80%" description
 		qo1.setDescription("Average degree to which the source code  is tested by the set of Test Cases designed for the system at all Test Levels (i.e. Unit, Integration and Acceptance)");
-        qo1.setLowerLimit(80);
-        qo1.setUpperLimit(90);
+        qo1.setLowerLimit((double) 80);
+        qo1.setUpperLimit((double) 90);
         qo1.setDomain(domains);
         qo1.setIndicatorPurpose(Purpose.Process);
         qo1.setParadigm(Paradigm.Waterfall);
-        qo1.setIsCompleted(true);
+        qo1.setCompleted(true);
         qo1.getQModelTagData().add(qmtagSonar);
         qo1.getQModelTagData().add(qmtagClang);
         qo1.getQModelTagData().add(qmtagRegCust);
@@ -568,12 +556,12 @@ public class ModelInitializer implements Serializable {
         QMQualityIndicator qi1 = new QMQualityIndicator("Unit Test coverage", qo1);
         qi1.setTargetAudience(roles);
 		qi1.setDescription("Average degree to which the source code  is tested by the set of Unit Tests. It should be above 60%");
-        qi1.setLowerLimit(60);
-        qi1.setUpperLimit(100);
+        qi1.setLowerLimit((double) 60);
+        qi1.setUpperLimit((double) 100);
         qi1.setIndicatorPurpose(qo1.getIndicatorPurpose());
         qi1.setParadigm(qo1.getParadigm());
         qi1.setLifeCycleStage(LifeCycleStage.Implementation);
-        qi1.setIsCompleted(true);
+        qi1.setCompleted(true);
         qi1.getQModelTagData().add(qmtagSonar);
         qi1.getQModelTagData().add(qmtagClang);
         qi1.getQModelTagData().add(qmtagRegCust);
@@ -583,23 +571,23 @@ public class ModelInitializer implements Serializable {
         m1.setSource(MetricSource.StaticAnalysis);
         m1.setScale(Scale.Ordinal);
         m1.setUnit(Unit.Loc);
-        m1.setLowerLimit(0);
-        m1.setUpperLimit(0);
+        m1.setLowerLimit((double) 0);
+        m1.setUpperLimit((double) 0);
         m1.setTargetValue(0);
         m1.setWeight(1);
-        m1.setIsCompleted(true);
+        m1.setCompleted(true);
         m1.getQModelTagData().add(qmtagClang);
         m1.getQModelTagData().add(qmtagRegCust);
 
         QMQualityIndicator qi2 = new QMQualityIndicator("Integration Test coverage", qo1);
         //qi2.setTargetAudience(roles);
 		qi2.setDescription("Average degree to which the source code  is tested by the set of Integration Tests.  It should be 100%");
-        qi2.setLowerLimit(60);
-        qi2.setUpperLimit(100);
+        qi2.setLowerLimit((double) 60);
+        qi2.setUpperLimit((double) 100);
         qi2.setIndicatorPurpose(qo1.getIndicatorPurpose());
         qi2.setParadigm(qo1.getParadigm());
         qi2.setLifeCycleStage(LifeCycleStage.Testing);
-        qi2.setIsCompleted(true);
+        qi2.setCompleted(true);
         qi2.getQModelTagData().add(qmtagSonar);
         qi2.getQModelTagData().add(qmtagClang);
         qi2.getQModelTagData().add(qmtagRegCust);
@@ -609,23 +597,23 @@ public class ModelInitializer implements Serializable {
         m2.setSource(MetricSource.TestingFramework);
         m2.setScale(Scale.Ordinal);
         m2.setUnit(Unit.Loc);
-        m2.setLowerLimit(0);
-        m2.setUpperLimit(0);
+        m2.setLowerLimit((double) 0);
+        m2.setUpperLimit((double) 0);
         m2.setTargetValue(0);
         m2.setWeight(1);
-        m2.setIsCompleted(true);
+        m2.setCompleted(true);
         m2.getQModelTagData().add(qmtagClang);
         m2.getQModelTagData().add(qmtagRegCust);
 
         QMQualityIndicator qi3 = new QMQualityIndicator("Acceptance Test coverage", qo1);
         qi3.setTargetAudience(roles);
 		qi3.setDescription("Average degree to which the source code  is tested by the set of Acceptance Tests.It should be above 80%");
-        qi3.setLowerLimit(50);
-        qi3.setUpperLimit(100);
+        qi3.setLowerLimit((double) 50);
+        qi3.setUpperLimit((double) 100);
         qi3.setIndicatorPurpose(qo1.getIndicatorPurpose());
         qi3.setParadigm(qo1.getParadigm());
         qi3.setLifeCycleStage(LifeCycleStage.Testing);
-        qi3.setIsCompleted(true);
+        qi3.setCompleted(true);
         qi3.getQModelTagData().add(qmtagSonar);
         qi3.getQModelTagData().add(qmtagClang);
         qi3.getQModelTagData().add(qmtagRegCust);
@@ -635,11 +623,11 @@ public class ModelInitializer implements Serializable {
         m3.setSource(MetricSource.TestingFramework);
         m3.setScale(Scale.Ordinal);
         m3.setUnit(Unit.Test);
-        m3.setLowerLimit(0);
-        m3.setUpperLimit(0);
+        m3.setLowerLimit((double) 0);
+        m3.setUpperLimit((double) 0);
         m3.setTargetValue(0);
         m3.setWeight(1);
-        m3.setIsCompleted(true);
+        m3.setCompleted(true);
         m3.getQModelTagData().add(qmtagSonar);
         m3.getQModelTagData().add(qmtagClang);
         m3.getQModelTagData().add(qmtagRegCust);
@@ -649,11 +637,11 @@ public class ModelInitializer implements Serializable {
         m4.setSource(MetricSource.TestingFramework);
         m4.setScale(Scale.Ordinal);
         m4.setUnit(Unit.Loc);
-        m4.setLowerLimit(0);
-        m4.setUpperLimit(0);
+        m4.setLowerLimit((double) 0);
+        m4.setUpperLimit((double) 0);
         m4.setTargetValue(0);
         m4.setWeight(1);
-        m4.setIsCompleted(true);
+        m4.setCompleted(true);
         m4.getQModelTagData().add(qmtagSonar);
         m4.getQModelTagData().add(qmtagClang);
         m4.getQModelTagData().add(qmtagRegCust);
@@ -661,12 +649,12 @@ public class ModelInitializer implements Serializable {
         QMQualityObjective qo2 = new QMQualityObjective("Minimize Technical Debt", qm1);
 		qo2.setDescription("Work that needs to be done before a particular job can be considered complete.");
         qo2.setTargetAudience(roles);
-        qo2.setLowerLimit(0);
-        qo2.setUpperLimit(70);
+        qo2.setLowerLimit((double) 0);
+        qo2.setUpperLimit((double) 70);
         qo2.setDomain(domains);
         qo2.setIndicatorPurpose(Purpose.Product);
         qo2.setVersion(Version.Alfa);
-        qo2.setIsCompleted(true);
+        qo2.setCompleted(true);
         qo2.getQModelTagData().add(qmtagJira);
         qo2.getQModelTagData().add(qmtagRed);
         qo2.getQModelTagData().add(qmtagBugz);
@@ -674,11 +662,11 @@ public class ModelInitializer implements Serializable {
         
         QMQualityIndicator qi4 = new QMQualityIndicator("Effort needed to fix all issues", qo2);
         qi4.setTargetAudience(roles);
-        qi4.setLowerLimit(0);
-        qi4.setUpperLimit(90);
+        qi4.setLowerLimit((double) 0);
+        qi4.setUpperLimit((double) 90);
         qi4.setIndicatorPurpose(qo2.getIndicatorPurpose());
         qi4.setVersion(qo2.getVersion());
-        qi4.setIsCompleted(true);
+        qi4.setCompleted(true);
         qi4.getQModelTagData().add(qmtagJira);
         qi4.getQModelTagData().add(qmtagRed);
         qi4.getQModelTagData().add(qmtagBugz);
@@ -689,11 +677,11 @@ public class ModelInitializer implements Serializable {
         m5.setSource(MetricSource.IssueTracker);
         m5.setScale(Scale.Ordinal);
         m5.setUnit(Unit.Issue);
-        m5.setLowerLimit(0);
-        m5.setUpperLimit(0);
+        m5.setLowerLimit((double) 0);
+        m5.setUpperLimit((double) 0);
         m5.setTargetValue(0);
         m5.setWeight(1);
-        m5.setIsCompleted(true);
+        m5.setCompleted(true);
         m5.getQModelTagData().add(qmtagJira);
         m5.getQModelTagData().add(qmtagRed);
         m5.getQModelTagData().add(qmtagBugz);
@@ -704,11 +692,11 @@ public class ModelInitializer implements Serializable {
         m6.setSource(MetricSource.IssueTracker);
         m6.setScale(Scale.Ordinal);
         m6.setUnit(Unit.Issue);
-        m6.setLowerLimit(0);
-        m6.setUpperLimit(0);
+        m6.setLowerLimit((double) 0);
+        m6.setUpperLimit((double) 0);
         m6.setTargetValue(0);
         m6.setWeight(1);
-        m6.setIsCompleted(true);
+        m6.setCompleted(true);
         m6.getQModelTagData().add(qmtagJira);
         m6.getQModelTagData().add(qmtagRed);
         m6.getQModelTagData().add(qmtagBugz);
@@ -717,23 +705,23 @@ public class ModelInitializer implements Serializable {
         QMQualityObjective qo3 = new QMQualityObjective("High Degree of Code Documentation", qm1);
         qo3.setDescription("Average percentage of commented lines of code");
         qo3.setTargetAudience(roles);
-        qo3.setLowerLimit(60);
-        qo3.setUpperLimit(100);
+        qo3.setLowerLimit((double) 60);
+        qo3.setUpperLimit((double) 100);
         qo3.setDomain(domains);
         qo3.setIndicatorPurpose(Purpose.Process);
         qo3.setParadigm(Paradigm.Rup);
-        qo3.setIsCompleted(true);
+        qo3.setCompleted(true);
         qo3.getQModelTagData().add(qmtagSonar);
         qo3.getQModelTagData().add(qmtagNewDev);
 
         QMQualityIndicator qi5 = new QMQualityIndicator("Percentage of commented lines of code", qo3);
         qi5.setTargetAudience(roles);
-        qi5.setLowerLimit(0);
-        qi5.setUpperLimit(100);
+        qi5.setLowerLimit((double) 0);
+        qi5.setUpperLimit((double) 100);
         qi5.setIndicatorPurpose(qo3.getIndicatorPurpose());
         qi5.setParadigm(qo3.getParadigm());
         qi5.setRupStage(RupStage.Transition);
-        qi5.setIsCompleted(true);
+        qi5.setCompleted(true);
         qi5.getQModelTagData().add(qmtagSonar);
         qi5.getQModelTagData().add(qmtagNewDev);
 
@@ -742,11 +730,11 @@ public class ModelInitializer implements Serializable {
         m7.setSource(MetricSource.StaticAnalysis);
         m7.setScale(Scale.Ordinal);
         m7.setUnit(Unit.Loc);
-        m7.setLowerLimit(0);
-        m7.setUpperLimit(0);
+        m7.setLowerLimit((double) 0);
+        m7.setUpperLimit((double) 0);
         m7.setTargetValue(0);
         m7.setWeight(1);
-        m7.setIsCompleted(true);
+        m7.setCompleted(true);
         m7.getQModelTagData().add(qmtagSonar);
         m7.getQModelTagData().add(qmtagNewDev);
 
@@ -755,23 +743,23 @@ public class ModelInitializer implements Serializable {
         m8.setSource(MetricSource.StaticAnalysis);
         m8.setScale(Scale.Ordinal);
         m8.setUnit(Unit.Loc);
-        m8.setLowerLimit(0);
-        m8.setUpperLimit(0);
+        m8.setLowerLimit((double) 0);
+        m8.setUpperLimit((double) 0);
         m8.setTargetValue(0);
         m8.setWeight(1);
-        m8.setIsCompleted(true);
+        m8.setCompleted(true);
         m8.getQModelTagData().add(qmtagSonar);
         m8.getQModelTagData().add(qmtagNewDev);
 
         QMQualityObjective qo4 = new QMQualityObjective("Percentage of testing completion", qm1);
         qo4.setTargetAudience(roles);
         qo4.setDescription("Percentage of testing completion");
-        qo4.setLowerLimit(80);
-        qo4.setUpperLimit(100);
+        qo4.setLowerLimit((double) 80);
+        qo4.setUpperLimit((double) 100);
         qo4.setDomain(domains);
         qo4.setIndicatorPurpose(Purpose.Process);
         qo4.setParadigm(Paradigm.Waterfall);
-        qo4.setIsCompleted(true);
+        qo4.setCompleted(true);
         qo4.getQModelTagData().add(qmtagMantis);
         qo4.getQModelTagData().add(qmtagCrit);
         qo4.getQModelTagData().add(qmtagIBMRat);
@@ -782,12 +770,12 @@ public class ModelInitializer implements Serializable {
         QMQualityIndicator qi6 = new QMQualityIndicator("Percentage of functional testing completion", qo4);
         qi6.setTargetAudience(roles);
 		qi6.setDescription("100 * Executed functional test cases / Planned functional test cases. It should be above 80%");
-        qi6.setLowerLimit(80);
-        qi6.setUpperLimit(100);
+        qi6.setLowerLimit((double) 80);
+        qi6.setUpperLimit((double) 100);
         qi6.setIndicatorPurpose(qo4.getIndicatorPurpose());
         qi6.setParadigm(qo4.getParadigm());
         qi6.setLifeCycleStage(LifeCycleStage.Testing);
-        qi6.setIsCompleted(true);
+        qi6.setCompleted(true);
         qi6.getQModelTagData().add(qmtagMantis);
         qi6.getQModelTagData().add(qmtagCrit);
         qi6.getQModelTagData().add(qmtagIBMRat);
@@ -800,11 +788,11 @@ public class ModelInitializer implements Serializable {
         m9.setSource(MetricSource.TestingFramework);
         m9.setScale(Scale.Ordinal);
         m9.setUnit(Unit.Test);
-        m9.setLowerLimit(0);
-        m9.setUpperLimit(0);
+        m9.setLowerLimit((double) 0);
+        m9.setUpperLimit((double) 0);
         m9.setTargetValue(0);
         m9.setWeight(1);
-        m9.setIsCompleted(true);
+        m9.setCompleted(true);
         m9.getQModelTagData().add(qmtagMantis);
         m9.getQModelTagData().add(qmtagCrit);
         m9.getQModelTagData().add(qmtagIBMRat);
@@ -816,11 +804,11 @@ public class ModelInitializer implements Serializable {
         m10.setSource(MetricSource.TestingFramework);
         m10.setScale(Scale.Ordinal);
         m10.setUnit(Unit.Test);
-        m10.setLowerLimit(0);
-        m10.setUpperLimit(0);
+        m10.setLowerLimit((double) 0);
+        m10.setUpperLimit((double) 0);
         m10.setTargetValue(0);
         m10.setWeight(1);
-        m10.setIsCompleted(true);
+        m10.setCompleted(true);
         m10.getQModelTagData().add(qmtagMantis);
         m10.getQModelTagData().add(qmtagCrit);
         m10.getQModelTagData().add(qmtagIBMRat);
@@ -832,11 +820,11 @@ public class ModelInitializer implements Serializable {
         m11.setSource(MetricSource.TestingFramework);
         m11.setScale(Scale.Ordinal);
         m11.setUnit(Unit.Test);
-        m11.setLowerLimit(0);
-        m11.setUpperLimit(0);
+        m11.setLowerLimit((double) 0);
+        m11.setUpperLimit((double) 0);
         m11.setTargetValue(0);
         m11.setWeight(1);
-        m11.setIsCompleted(true);
+        m11.setCompleted(true);
         m11.getQModelTagData().add(qmtagMantis);
         m11.getQModelTagData().add(qmtagCrit);
         m11.getQModelTagData().add(qmtagIBMRat);
@@ -848,11 +836,11 @@ public class ModelInitializer implements Serializable {
         m12.setSource(MetricSource.TestingFramework);
         m12.setScale(Scale.Ordinal);
         m12.setUnit(Unit.Test);
-        m12.setLowerLimit(0);
-        m12.setUpperLimit(0);
+        m12.setLowerLimit((double) 0);
+        m12.setUpperLimit((double) 0);
         m12.setTargetValue(0);
         m12.setWeight(1);
-        m12.setIsCompleted(true);
+        m12.setCompleted(true);
         m12.getQModelTagData().add(qmtagMantis);
         m12.getQModelTagData().add(qmtagCrit);
         m12.getQModelTagData().add(qmtagIBMRat);
@@ -864,18 +852,18 @@ public class ModelInitializer implements Serializable {
         m13.setSource(MetricSource.TestingFramework);
         m13.setScale(Scale.Ordinal);
         m13.setUnit(Unit.Test);
-        m13.setLowerLimit(0);
-        m13.setUpperLimit(0);
+        m13.setLowerLimit((double) 0);
+        m13.setUpperLimit((double) 0);
         m13.setTargetValue(0);
         m13.setWeight(1);
-        m13.setIsCompleted(true);
+        m13.setCompleted(true);
         m13.getQModelTagData().add(qmtagMantis);
         m13.getQModelTagData().add(qmtagCrit);
         m13.getQModelTagData().add(qmtagIBMRat);
         m13.getQModelTagData().add(qmtagTestlink);
         m13.getQModelTagData().add(qmtagBank);
         
-		qm1.setIsCompleted(true);
+		qm1.setCompleted(true);
         qm1 = (QModel) qmtreeNodeService.create(qm1);
 
         return new QModel[]{qm1};
@@ -892,7 +880,7 @@ public class ModelInitializer implements Serializable {
         int monthOffset = 6;
         int day = LocalDate.now().plusMonths(monthOffset).dayOfMonth().getMaximumValue();
         product1.setReleaseDate(DateTime.now().plusMonths(monthOffset).withDayOfMonth(day).toDate());
-        product1 = (Product) productService.create(product1);
+        product1 = productService.create(product1);
 
         return new Product[]{product1};
     }
@@ -906,7 +894,7 @@ public class ModelInitializer implements Serializable {
         process1.setDescription("Development of the U-QASAR platform");
         process1.setStartDate(DateTime.now().minusDays(14).toDate());
         process1.setEndDate(DateTime.now().plusMonths(5).toDate());
-        process1 = (Process) processService.create(process1);
+        process1 = processService.create(process1);
 
         return new Process[]{process1};
     }

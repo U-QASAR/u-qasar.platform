@@ -42,11 +42,11 @@ public class QualityObjectiveSimilarityService extends AbstractService<QualityOb
 	 */
 	private static final long serialVersionUID = 6234035716679476943L;
 	
-	private Logger logger = Logger.getLogger(QualityObjectiveSimilarityService.class);
-	private List<QualityObjective> similarQOs = new ArrayList<>();
+	private final Logger logger = Logger.getLogger(QualityObjectiveSimilarityService.class);
+	private final List<QualityObjective> similarQOs = new ArrayList<>();
 	
 	
-	public QualityObjectiveSimilarityService() {
+	private QualityObjectiveSimilarityService() {
 		super(QualityObjective.class);
 	}
 

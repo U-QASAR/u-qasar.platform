@@ -24,8 +24,6 @@ import java.util.Date;
 
 import javax.inject.Inject;
 
-import org.apache.wicket.RestartResponseException;
-import org.apache.wicket.Session;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.feedback.FeedbackMessage;
@@ -43,13 +41,11 @@ import de.agilecoders.wicket.extensions.markup.html.bootstrap.form.DateTextField
 import de.agilecoders.wicket.extensions.markup.html.bootstrap.form.DateTextFieldConfig;
 import eu.uqasar.exception.model.EntityNotFoundException;
 import eu.uqasar.model.process.Process;
-import eu.uqasar.model.product.Product;
 import eu.uqasar.service.ProcessService;
 import eu.uqasar.web.components.HtmlEvent;
 import eu.uqasar.web.components.InputBorder;
 import eu.uqasar.web.components.InputValidationForm;
 import eu.uqasar.web.components.OnEventInputBeanValidationBorder;
-import eu.uqasar.web.pages.AboutPage;
 import eu.uqasar.web.pages.BasePage;
 
 public class ProcessAddEditPage extends BasePage {
@@ -61,14 +57,14 @@ public class ProcessAddEditPage extends BasePage {
 
 	private final Form<Process> processForm;
 
-	protected final InputBorder<String> nameValidationBorder;
-	protected final InputBorder<String> descriptionValidationBorder;
-	protected final DateTextField startDateTextField;
-	protected final DateTextField endDateTextField;
+	private final InputBorder<String> nameValidationBorder;
+	private final InputBorder<String> descriptionValidationBorder;
+	private final DateTextField startDateTextField;
+	private final DateTextField endDateTextField;
 	// TODO: Stages
 
 	// The process to edit/save
-	protected Process process;
+    private Process process;
 
 	/**
 	 * @param parameters
@@ -120,7 +116,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadProcess(final StringValue idParam) {
+    private void loadProcess(final StringValue idParam) {
 		// If no id is provided
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
@@ -147,7 +143,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private Form<Process> newProcessForm() {
-		Form<Process> form = new InputValidationForm<Process>("form");
+		Form<Process> form = new InputValidationForm<>("form");
 		form.setOutputMarkupId(true);
 		return form;
 	}
@@ -157,12 +153,12 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newNameTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"nameValidationBorder", new TextField<String>("name",
-						new PropertyModel<String>(process, "name"))
-						.setRequired(true),
-						new StringResourceModel("name.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "nameValidationBorder", new TextField<>("name",
+                new PropertyModel<String>(process, "name"))
+                .setRequired(true),
+                new StringResourceModel("name.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -170,11 +166,11 @@ public class ProcessAddEditPage extends BasePage {
 	 * @return
 	 */
 	private InputBorder<String> newDescriptionTextField() {
-		return new OnEventInputBeanValidationBorder<String>(
-				"descriptionValidationBorder", new TextField<String>("description",
-						new PropertyModel<String>(process, "description")),
-						new StringResourceModel("description.input.label", this, null),
-						HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "descriptionValidationBorder", new TextField<>("description",
+                new PropertyModel<String>(process, "description")),
+                new StringResourceModel("description.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -184,10 +180,10 @@ public class ProcessAddEditPage extends BasePage {
 	 */
 	private InputBorder<Date> newStartDateTextField(
 			final DateTextField startDateTextField) {
-		return new OnEventInputBeanValidationBorder<Date>(
-				"startDateValidationBorder", startDateTextField,
-				new StringResourceModel("startdate.input.label", this, null),
-				HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "startDateValidationBorder", startDateTextField,
+                new StringResourceModel("startdate.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -197,10 +193,10 @@ public class ProcessAddEditPage extends BasePage {
 	 */
 	private InputBorder<Date> newEndDateTextField(
 			final DateTextField endDateTextField) {
-		return new OnEventInputBeanValidationBorder<Date>(
-				"endDateValidationBorder", endDateTextField,
-				new StringResourceModel("enddate.input.label", this, null),
-				HtmlEvent.ONCHANGE);
+		return new OnEventInputBeanValidationBorder<>(
+                "endDateValidationBorder", endDateTextField,
+                new StringResourceModel("enddate.input.label", this, null),
+                HtmlEvent.ONCHANGE);
 	}
 
 	/**
@@ -278,7 +274,7 @@ public class ProcessAddEditPage extends BasePage {
 	/**
 	 * 
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		// save process
 		saveProcess();
 
@@ -327,7 +323,7 @@ public class ProcessAddEditPage extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(processForm);
@@ -337,7 +333,7 @@ public class ProcessAddEditPage extends BasePage {
 		return linkToEdit(entity.getId());
 	}
 
-	public static PageParameters linkToEdit(Long entityId) {
+	private static PageParameters linkToEdit(Long entityId) {
 		return new PageParameters().set("id", entityId);
 	}
 }

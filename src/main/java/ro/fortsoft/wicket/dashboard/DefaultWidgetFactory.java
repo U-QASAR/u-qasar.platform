@@ -34,8 +34,6 @@ public class DefaultWidgetFactory implements WidgetFactory {
 			return widget;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		} catch (NoSuchMethodException e) {
-			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,7 +41,7 @@ public class DefaultWidgetFactory implements WidgetFactory {
 		return null;
 	}
 
-	protected String createWidgetId(WidgetDescriptor widgetDescriptor, Widget widget) {
+	private String createWidgetId(WidgetDescriptor widgetDescriptor, Widget widget) {
 		return UUID.randomUUID().toString();
 	}
 	

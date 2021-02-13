@@ -154,7 +154,7 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 	/**	
 	 * Cancel an existing timer
 	 */
-	public void cancelTimer() {
+    private void cancelTimer() {
 		if (timerService.getTimers() != null && timerService.getTimers().size() > 0) {
 			System.out.println("Cancelling U-QASAR adapter data update timer ");
 
@@ -170,8 +170,7 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 
 	/**
 	 * Get a new snapshot of adapter data
-	 * @param timer
-	 */
+     */
 	@Timeout
 	public void updateAdapterData() {
 
@@ -215,12 +214,10 @@ public class AdapterSettingsService extends AbstractService<AdapterSettings> {
 
 			// Only update project tree for the projects whose adapters were used to fetch data updates 
 			if (updateTree) {
-				Iterator<Project> iterator = projectsToUpdate.iterator();
-			    while (iterator.hasNext()) {
-			    	Project projectToUpdate = iterator.next();
-		            // Update the project tree
-		            UQasarUtil.updateTree(projectToUpdate);
-			    }
+                for (Project projectToUpdate : projectsToUpdate) {
+                    // Update the project tree
+                    UQasarUtil.updateTree(projectToUpdate);
+                }
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

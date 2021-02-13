@@ -37,8 +37,8 @@ public class SonarQualityWidgetView extends WidgetView {
 
 	private static final long serialVersionUID = 2880002420318496717L;
 	private transient List<SonarMetricMeasurement> measurements;
-	private String period;
-	private String individualMetric;
+	private final String period;
+	private final String individualMetric;
 	public SonarQualityWidgetView(String id, IModel<Widget> model) {
 		super(id, model);
 

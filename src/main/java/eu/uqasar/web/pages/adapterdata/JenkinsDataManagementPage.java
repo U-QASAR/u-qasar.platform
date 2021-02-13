@@ -185,8 +185,7 @@ public class JenkinsDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "jenkins-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -196,8 +195,8 @@ public class JenkinsDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<JenkinsMetricMeasurement> newJenkinsCheckGroup() {
-		CheckGroup<JenkinsMetricMeasurement> checkGroup = new CheckGroup<JenkinsMetricMeasurement>(
-				"jenkinsGroup", new ArrayList<JenkinsMetricMeasurement>());
+		CheckGroup<JenkinsMetricMeasurement> checkGroup = new CheckGroup<>(
+                "jenkinsGroup", new ArrayList<JenkinsMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = -6392535303739708646L;
@@ -212,7 +211,6 @@ public class JenkinsDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -341,7 +339,6 @@ public class JenkinsDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forJenkins(JenkinsMetricMeasurement jenkinsMeasurement) {
@@ -355,7 +352,7 @@ public class JenkinsDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -5178285310705591769L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 
 		public JenkinsProvider(Long adapterID) {

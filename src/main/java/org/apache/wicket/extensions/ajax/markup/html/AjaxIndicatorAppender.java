@@ -101,7 +101,7 @@ public class AjaxIndicatorAppender extends Behavior {
 	/**
 	 * @return url of the animated indicator image
 	 */
-	protected CharSequence getIndicatorUrl() {
+    private CharSequence getIndicatorUrl() {
 		IRequestHandler handler = new ResourceReferenceRequestHandler(SPINNER);
 		return RequestCycle.get().urlFor(handler);
 	}
@@ -109,7 +109,7 @@ public class AjaxIndicatorAppender extends Behavior {
 	/**
 	 * @return css class name of the generated outer span
 	 */
-	protected String getSpanClass() {
+    private String getSpanClass() {
 		return "ajax-indicator";
 	}
 

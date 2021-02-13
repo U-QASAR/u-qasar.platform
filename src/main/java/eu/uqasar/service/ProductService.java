@@ -51,13 +51,11 @@ public class ProductService extends AbstractService<Product> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Product> query = cb.createQuery(Product.class);
 		query.from(Product.class);
-		List<Product> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**
 	 * 
-	 * @param innovationObjective
 	 * @return
 	 */
 	public List<Product> getAllByAscendingName(int first, int count) {
@@ -83,7 +81,7 @@ public class ProductService extends AbstractService<Product> {
 		Root<Product> from = criteria.from(Product.class);
 		criteria.where(cb.equal(from.get(Product_.id), productId));
 		criteria.select(cb.countDistinct(from));
-		return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+		return (em.createQuery(criteria).getSingleResult() == 1);
 	}
 
 	public List<Product> sortAscendingDates() {
@@ -101,8 +99,7 @@ public class ProductService extends AbstractService<Product> {
 		CriteriaQuery<Product> criteria = cb.createQuery(Product.class);
 		Root<Product> from = criteria.from(Product.class);
 		criteria.multiselect(from.get(Product_.version));
-		List allVersion = em.createQuery(criteria).getResultList();
-		return allVersion;
+        return (List) em.createQuery(criteria).getResultList();
 	}
 
 	public List<Product> sortDescendingDates() {
@@ -157,10 +154,10 @@ public class ProductService extends AbstractService<Product> {
 	    
 	
 
-	protected List<Predicate> getFilterPredicates(
-			final ProductFilterStructure filter, CriteriaBuilder cb,
-			Root<Product> from) {
-		List<Predicate> predicates = new ArrayList<Predicate>();
+	private List<Predicate> getFilterPredicates(
+            final ProductFilterStructure filter, CriteriaBuilder cb,
+            Root<Product> from) {
+		List<Predicate> predicates = new ArrayList<>();
 		if (filter == null) {
 			return predicates;
 		}
@@ -176,7 +173,7 @@ public class ProductService extends AbstractService<Product> {
 
 		if (!StringUtils.isEmpty(filter.getName())) {
 			Predicate firstName = cb.like(
-					cb.lower(from.<String> get(Product_.name)), LIKE_WILDCARD
+					cb.lower(from.get(Product_.name)), LIKE_WILDCARD
 							+ filter.getName().toLowerCase() + LIKE_WILDCARD);
 			predicates.add(firstName);
 		}

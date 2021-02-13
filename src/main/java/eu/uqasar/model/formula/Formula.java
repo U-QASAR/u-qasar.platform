@@ -27,6 +27,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+import lombok.NoArgsConstructor;
 import org.jboss.solder.logging.Logger;
 
 import eu.uqasar.model.tree.Metric;
@@ -39,11 +40,10 @@ import eu.uqasar.util.UQasarUtil;
  * Methods for parsing and evaluating a formula
  *
  */
+@NoArgsConstructor
 public class Formula {
 
-	private static Logger logger = Logger.getLogger(Formula.class);
-	
-	public Formula() {}
+	private static final Logger logger = Logger.getLogger(Formula.class);
 	
 	/**
 	 * Evaluate a String containing a complete formula by using the JS engine.

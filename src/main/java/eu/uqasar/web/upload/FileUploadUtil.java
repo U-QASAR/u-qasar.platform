@@ -33,6 +33,9 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.UUID;
+
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.tika.detect.Detector;
@@ -46,12 +49,14 @@ import org.jboss.solder.logging.Logger;
  *
  *
  */
+@Getter(AccessLevel.PRIVATE)
 public class FileUploadUtil {
 
 	private static final Logger logger = Logger.getLogger(FileUploadHelper.class);
+	@Getter(AccessLevel.PRIVATE)
 	private static String uploadFolderBasePath;
 
-	public static Path getUserUploadFolder(User user) throws IOException {
+	private static Path getUserUploadFolder(User user) throws IOException {
 		String userId = "default";
 		if (user != null) {
 			userId = String.valueOf(user.getId());
@@ -71,31 +76,12 @@ public class FileUploadUtil {
 		return basePath;
 	}
 
-	public static Path getUserProfilePicturesUploadFolder() throws IOException {
+	static Path getUserProfilePicturesUploadFolder() throws IOException {
 		Path basePath = FileSystems.getDefault().getPath(getUploadFolderBasePath(), "userprofiles");
 		if (!Files.exists(basePath)) {
 			Files.createDirectories(basePath);
 		}
 		return basePath;
-	}
-
-	private static String getUploadFolderBasePath() {
-		if (uploadFolderBasePath == null) {
-			String home = System.getProperty("user.home");
-			if (StringUtils.isBlank(home)) {
-				logger.info("Cannot determine user.home for upload folder!");
-				home = "";
-			}
-			File uploadFolder = new File(home + File.separatorChar + ".uqasar"
-					+ File.separatorChar + "uploads");
-			try {
-				uploadFolder.mkdirs();
-			} catch (Exception e) {
-				logger.info("Could not create upload folder!", e);
-			}
-			uploadFolderBasePath = uploadFolder.getAbsolutePath();
-		}
-		return uploadFolderBasePath;
 	}
 
 	private static MediaType getMimeType(InputStream stream, Metadata md) throws IOException {
@@ -108,7 +94,7 @@ public class FileUploadUtil {
 		return mediaType;
 	}
 
-	protected Path getNewFileName(FileUpload file, User user, boolean overwrite) throws IOException {
+	Path getNewFileName(FileUpload file, User user, boolean overwrite) throws IOException {
 		Path target;
 		String uploadedFileFileName = file.getClientFileName();
 		if (overwrite) {
@@ -135,7 +121,7 @@ public class FileUploadUtil {
 		return getMimeType(upload.getInputStream());
 	}
 
-	public static MediaType getMimeType(InputStream stream) throws IOException {
+	private static MediaType getMimeType(InputStream stream) throws IOException {
 		return getMimeType(stream, new Metadata());
 	}
 

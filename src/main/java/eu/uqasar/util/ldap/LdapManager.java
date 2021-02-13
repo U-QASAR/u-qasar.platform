@@ -47,6 +47,9 @@ import javax.naming.directory.SearchResult;
 import javax.naming.ldap.InitialLdapContext;
 import javax.naming.ldap.LdapContext;
 import javax.naming.ldap.LdapReferralException;
+
+import lombok.AccessLevel;
+import lombok.Getter;
 import org.apache.commons.lang.Validate;
 import org.jboss.solder.logging.Logger;
 
@@ -54,6 +57,7 @@ import org.jboss.solder.logging.Logger;
  *
  *
  */
+@Getter(AccessLevel.PRIVATE)
 public class LdapManager implements Serializable {
 
     private static final Logger logger = Logger.getLogger(LdapManager.class);
@@ -65,7 +69,7 @@ public class LdapManager implements Serializable {
     private static final transient Comparator<LdapUser> userComparator = new LdapUser.LdapUserComparator();
     private static final transient Comparator<LdapGroup> groupComparator = new LdapGroup.LdapGroupComparator();
 
-    protected LdapManager(LdapSettings settings) throws NamingException {
+    private LdapManager(LdapSettings settings) throws NamingException {
         this.settings = settings;
         context = getConnection();
     }
@@ -150,11 +154,9 @@ public class LdapManager implements Serializable {
     }
 
     private NamingEnumeration<SearchResult> searchLDAP(final String baseDN, final String preferredFilter) throws NamingException {
-        final String groupFilter = preferredFilter;
-        final String filter = groupFilter == null || groupFilter.isEmpty() ? EMPTY_FILTER : groupFilter;
-        NamingEnumeration<SearchResult> answer = getContext().
+        final String filter = preferredFilter == null || preferredFilter.isEmpty() ? EMPTY_FILTER : preferredFilter;
+        return getContext().
                 search(baseDN, filter, getDefaultSearchControls());
-        return answer;
     }
 
     private SearchControls getDefaultSearchControls() {
@@ -209,7 +211,7 @@ public class LdapManager implements Serializable {
         return null;
     }
 
-    public boolean hasRequiredUserAttributesFilled(Attributes attrs, LdapSettings settings) {
+    private boolean hasRequiredUserAttributesFilled(Attributes attrs, LdapSettings settings) {
         return LdapUser.hasValidMailValue(attrs, settings) && LdapUser.
                 hasValidUserNameValue(attrs, settings);
     }
@@ -254,24 +256,6 @@ public class LdapManager implements Serializable {
         }
         Collections.sort(entities, comparator);
         return entities;
-    }
-
-    private LdapContext getContext() {
-        try {
-            context.getAttributes("");
-        } catch (NamingException e) {
-            logger.
-                    debug("LDAP connection seems to be gone, trying to re-connect...");
-            try {
-                context = getConnection();
-                logger.debug("LDAP connection restored successfully");
-            } catch (NamingException ex) {
-                logger.info("Could not re-connect to LDAP server!");
-                logger.error(ex.getMessage(), ex);
-                throw new RuntimeException(ex);
-            }
-        }
-        return context;
     }
 
     private LdapContext getConnection(LdapSettings settings) throws NamingException {

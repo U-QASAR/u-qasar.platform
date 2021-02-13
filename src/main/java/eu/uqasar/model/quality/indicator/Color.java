@@ -38,13 +38,13 @@ public enum Color implements IResourceKeyProvider {
 
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
-	private Color(final String labelKey) {
+	Color(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 	
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(this.getClass(), this);
 	}
 

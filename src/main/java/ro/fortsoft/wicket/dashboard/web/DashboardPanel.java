@@ -94,7 +94,7 @@ public class DashboardPanel extends GenericPanel<Dashboard> implements Dashboard
 		dashboardContext.getDashboardPersiter().save(dashboard);
 	}
 
-	protected void onWidgetsSorted(DashboardEvent dashboardEvent) {
+	private void onWidgetsSorted(DashboardEvent dashboardEvent) {
 		Dashboard dashboard = getDashboard();
 		DashboardUtils.updateWidgetLocations(dashboard, dashboardEvent);
 		dashboardContext.getDashboardPersiter().save(dashboard);		
@@ -110,7 +110,7 @@ public class DashboardPanel extends GenericPanel<Dashboard> implements Dashboard
 				@Override
 				protected void onBeforeRender() {
 					if (!hasBeenRendered()) {
-						columnPanels = new ArrayList<DashboardColumnPanel>();
+						columnPanels = new ArrayList<>();
 					}
 					
 					super.onBeforeRender();

@@ -69,15 +69,12 @@ public class JenkinsDataService extends AbstractService<JenkinsMetricMeasurement
 		CriteriaQuery<JenkinsMetricMeasurement> query = 
 				cb.createQuery(JenkinsMetricMeasurement.class);
 		query.from(JenkinsMetricMeasurement.class);
-		List<JenkinsMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<JenkinsMetricMeasurement> metrics) {
 		for (JenkinsMetricMeasurement m : metrics) {
 			delete(m);

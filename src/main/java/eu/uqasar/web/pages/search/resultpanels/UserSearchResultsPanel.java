@@ -31,7 +31,6 @@ import eu.uqasar.service.AbstractService;
 import eu.uqasar.service.user.UserService;
 import eu.uqasar.web.pages.admin.users.UserEditPage;
 import eu.uqasar.web.pages.search.resultpanels.AbstractSearchResultsPanel;
-import eu.uqasar.web.pages.user.UserPage;
 
 
 public class UserSearchResultsPanel extends AbstractSearchResultsPanel<User> {

@@ -32,12 +32,10 @@ import org.apache.wicket.extensions.ajax.markup.html.autocomplete.AutoCompleteSe
 public class WebConstants {
 
 	public static AutoCompleteSettings getDefaultAutoCompleteSettings() {
-		AutoCompleteSettings settings = new AutoCompleteSettings()
-				.setPreselect(true)
-				.setThrottleDelay(100)
-				.setShowListOnFocusGain(true)
-				;
-		return settings;
+        return new AutoCompleteSettings()
+                .setPreselect(true)
+                .setThrottleDelay(100)
+                .setShowListOnFocusGain(true);
 	}
 
 }

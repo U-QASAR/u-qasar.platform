@@ -36,7 +36,7 @@ import org.apache.wicket.util.io.IClusterable;
  *
  *
  */
-public class InstantiationPermissions implements IClusterable {
+class InstantiationPermissions implements IClusterable {
 
 	/**
 	 * Holds roles objects for component classes

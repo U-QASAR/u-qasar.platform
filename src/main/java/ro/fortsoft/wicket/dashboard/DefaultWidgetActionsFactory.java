@@ -22,7 +22,7 @@ public class DefaultWidgetActionsFactory implements WidgetActionsFactory {
 
 	@Override
 	public List<WidgetAction> createWidgetActions(Widget widget) {
-		List<WidgetAction> widgetActions = new ArrayList<WidgetAction>();
+		List<WidgetAction> widgetActions = new ArrayList<>();
 		widgetActions.add(new WidgetAction.Refresh(widget));
 		if (widget.hasSettings()) {
 			widgetActions.add(new WidgetAction.Settings(widget));

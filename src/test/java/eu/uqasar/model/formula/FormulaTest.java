@@ -36,12 +36,17 @@ public class FormulaTest {
 	public void testEvalFormulaStr() {
 
 		logger.info("Test eval formula String");
-
+		
+		Double result;
 		Double expected = 15.0;
 		String evalStr = "5*3";
 		Object resObject = Formula.evalFormulaStr(evalStr);
 		Assert.assertNotNull(resObject);
-		Double result = (Double) resObject;
+		if (resObject instanceof Integer) {
+			result = ((Integer) resObject).doubleValue();
+		} else {
+			result = (Double) resObject;
+		}
 		Assert.assertEquals(expected, result);
 	}
 	

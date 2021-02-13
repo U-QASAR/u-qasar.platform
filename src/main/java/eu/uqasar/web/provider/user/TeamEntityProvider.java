@@ -39,7 +39,7 @@ public class TeamEntityProvider extends EntityProvider<Team> {
 	@Inject
 	TeamService teamService;
 
-	Collection<Team> teams;
+	private Collection<Team> teams;
 
 	public TeamEntityProvider() {
 		this.teams = teamService.getAll();

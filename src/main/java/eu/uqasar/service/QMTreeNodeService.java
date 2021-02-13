@@ -48,7 +48,6 @@ import eu.uqasar.model.qmtree.QMTreeNode_;
 import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.qmtree.QModelStatus;
 import eu.uqasar.model.qmtree.QModel_;
-import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.web.pages.qmtree.panels.filter.QMTreeFilterStructure;
 
 /**
@@ -98,9 +97,8 @@ public class QMTreeNodeService extends AbstractService<QMTreeNode> {
 		if(and != null) {
 			query.where(and);
 		}
-		
-		List<QModel> resultList = em.createQuery(query).getResultList();
-		return resultList;
+
+        return em.createQuery(query).getResultList();
 	}
 
 	
@@ -123,7 +121,7 @@ public class QMTreeNodeService extends AbstractService<QMTreeNode> {
 			child.setParent(parent);
 		}
 		update(parent);
-		return (T) parent.getChildren().getLast();
+		return (T) ((LinkedList<QMTreeNode>)parent.getChildren()).getLast();
 	}
 	
 	public QModel getQModel(Long id) {
@@ -152,7 +150,7 @@ public class QMTreeNodeService extends AbstractService<QMTreeNode> {
 				//detach(node);
 			} else {
 				QMTreeNode oldParent = node.getParent();
-				LinkedList<QMTreeNode> oldParentChildren = oldParent.getChildren();
+				List<QMTreeNode> oldParentChildren = oldParent.getChildren();
 				if (oldParentChildren != null ) {
 					oldParentChildren.remove(node);
 					oldParent.setChildren(oldParentChildren);

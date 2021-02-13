@@ -82,9 +82,9 @@ public class Util {
                 + "                    operators: [\"equal\"]\n"
                 + "                }";
 
-        for (int i = 0; i < dimensions.size(); i++) {
+        for (Object dimension1 : dimensions) {
             //get dimensions
-            String dimension = (String) dimensions.get(i);
+            String dimension = (String) dimension1;
             ArrayList retvalues = (ArrayList) retrieveValues(cubeurl + "/members/" + dimension, dimension);
 
             script += ", {\n"
@@ -127,7 +127,7 @@ public class Util {
         ArrayList objToReturn = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 JSONObject json = readJsonFromUrl(url);
@@ -153,11 +153,11 @@ public class Util {
         return objToReturn;
     }//EoM   
 
-    public static List retrieveCubes(String url) {
+    private static List retrieveCubes(String url) {
         ArrayList objToReturn = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 System.out.println("to url pou prospatho na xtipitso" + url);
@@ -189,7 +189,7 @@ public class Util {
 
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 is = new URL(url).openStream();
@@ -209,13 +209,13 @@ public class Util {
         return json;
     }//EoM    
 
-    public static JSONArray readJsonArrayFromUrl(String url) throws JSONException {
+    private static JSONArray readJsonArrayFromUrl(String url) throws JSONException {
         InputStream is = null;
         JSONArray json = null;
 
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 maxretries--;
                 is = new URL(url).openStream();
@@ -235,7 +235,7 @@ public class Util {
         return json;
     }//EoM 
 
-    public static String readAll(Reader rd) throws IOException {
+    private static String readAll(Reader rd) throws IOException {
         StringBuilder sb = new StringBuilder();
         int cp;
         while ((cp = rd.read()) != -1) {
@@ -244,11 +244,11 @@ public class Util {
         return sb.toString();
     }//EoM        
 
-    public static List retrieveValues(String url, String filtername) {
+    private static List retrieveValues(String url, String filtername) {
         ArrayList ret = new ArrayList();
         int maxretries = 10;
         boolean wellexecuted = false;
-        while (wellexecuted == false && maxretries > 0) {
+        while (!wellexecuted && maxretries > 0) {
             try {
                 JSONObject json = Util.readJsonFromUrl(url);
                 if (json.has("error")) {
@@ -275,7 +275,7 @@ public class Util {
     }//EoM
 
     public static String createExpressionEditorInputExperiment() {
-        String str = "                 "                    //<script>
+        return "                 "                    //<script>
                 + "       "
                 + "   var filters = ["
                 + "{\n"
@@ -298,8 +298,7 @@ public class Util {
                 + "            });\n"
                 + "            \n"
                 + "             //$.unblockUI();"
-                + "                ";               //</script>
-        return str;
+                + "                ";
     }//EoM    
 
     public static String createSummaryTable(JSONObject cuberesponse) {

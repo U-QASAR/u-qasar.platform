@@ -103,7 +103,7 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 	private SnapshotSaveConfirmationModal saveSnapshotModal;
 	private SnapshotRecoverConfirmationModal recoverSnapshotModal;
 
-	private Project project;
+	private final Project project;
 
 	public ProjectViewPanel(String id, final IModel<Project> model) {
 		super(id, model);
@@ -167,7 +167,7 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 				"lastUpdated")));
 
 		// Threshold indicator
-		add(new ThresholdIndicator<Project>("thresholdIndicator", model));
+		add(new ThresholdIndicator<>("thresholdIndicator", model));
 
 		add(new Label("formulaAverage", new PropertyModel<>(model,
 				"formulaAverage")));
@@ -215,7 +215,7 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 			teamLabel = new Label("teamLabelId", "Team:");
 		}
 		add(teamLabel);
-		add(new DataView<User>("users", new ListDataProvider<User>(users)) {
+		add(new DataView<User>("users", new ListDataProvider<>(users)) {
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -364,12 +364,12 @@ public class ProjectViewPanel extends BaseTreePanel<Project> {
 	}
 
 	private IModel<?> replaceBracketsModel(Label label) {
-		return Model.of(label.getDefaultModelObjectAsString().toString()
+		return Model.of(label.getDefaultModelObjectAsString()
 				.replace("[", "").replace("]", ""));
 	}
 
 	private List<User> getUsersOfAllTeamsPerProject(Project p) {
-		List<User> users = new ArrayList<User>();
+		List<User> users = new ArrayList<>();
 
 		if (p.getTeams() != null && p.getTeams().size() > 0) {
 			for (Team t : p.getTeams()) {

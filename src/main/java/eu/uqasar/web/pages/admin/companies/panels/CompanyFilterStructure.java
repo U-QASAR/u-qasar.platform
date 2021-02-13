@@ -21,7 +21,6 @@ package eu.uqasar.web.pages.admin.companies.panels;
  */
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  *

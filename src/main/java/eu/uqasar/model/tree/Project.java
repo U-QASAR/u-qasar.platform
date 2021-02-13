@@ -103,7 +103,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 
 	private static final long serialVersionUID = 1724244299796140695L;
 	
-	public static IconType ICON = new IconType("sitemap");
+	private static final IconType ICON = new IconType("sitemap");
 	
 	@XmlSchemaType(name = "date")
 	@Temporal(javax.persistence.TemporalType.DATE)
@@ -139,7 +139,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	private Double value;
 	
 	@XmlTransient
-	protected Date lastUpdated = DateTime.now().toDate();
+    private Date lastUpdated = DateTime.now().toDate();
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	private Threshold threshold = new Threshold();
@@ -225,7 +225,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 
     @XmlTransient
 	@ManyToMany
-    private List<Team> teams = new ArrayList<Team>();  
+    private List<Team> teams = new ArrayList<>();
     
     @XmlTransient
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="project")
@@ -264,10 +264,10 @@ public class Project extends TreeNode implements Comparable<Project> {
 		this.setValue(value);
 		
 		Iterator<QualityObjective> it = children.iterator();
-		List<TreeNode> nodes = new LinkedList<TreeNode>();
+		List<TreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
-			QualityObjective qo = (QualityObjective)it.next();
-			nodes.add((TreeNode)qo);
+			QualityObjective qo = it.next();
+			nodes.add(qo);
 		}
 		this.setChildren(nodes);
 	}
@@ -365,8 +365,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	public int getDurationInDays() {
 		DateTime end = new DateTime(getEndDate());
 		DateTime start = new DateTime(getStartDate());
-		int daysTotal = Days.daysBetween(start, end).getDays();
-		return daysTotal;
+        return Days.daysBetween(start, end).getDays();
 	}
 
 	@JsonIgnore
@@ -465,7 +464,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 		this.value = value;
 		
 		// Update the quality status
-		this.setQualityStatus(QualityStatus.getQualityStatusForValue((double)value, threshold));
+		this.setQualityStatus(QualityStatus.getQualityStatusForValue(value, threshold));
 	}
 	
 	/**
@@ -543,14 +542,13 @@ public class Project extends TreeNode implements Comparable<Project> {
 	/**
 	 * @param historicValues
 	 */
-	public void addHistoricValues(final HistoricValuesProject historicValues){
+    private void addHistoricValues(final HistoricValuesProject historicValues){
 		this.historicValues.add(historicValues);
 	}
 	
 	/**
-	 * @param Add Historical values from project
-	 */
-	public void addHistoricValues(final Project project) {
+     */
+    private void addHistoricValues(final Project project) {
 		addHistoricValues(new HistoricValuesProject(project));
 	}
 	
@@ -609,8 +607,7 @@ public class Project extends TreeNode implements Comparable<Project> {
 	}
 
 	/**
-	 * @param true to use Objective weights to compute Project Quality
-	 */
+     */
 	@JsonIgnore
 	public void setFormulaAverage(final boolean formulaAverage) {
 		this.formulaAverage = formulaAverage;
@@ -666,16 +663,15 @@ public class Project extends TreeNode implements Comparable<Project> {
 		// Create a sum formula
 		evalFormula += "(";
 		viewFormula += "(";
-		for (int i = 0; i < nodes.size(); i++) {
-			TreeNode node = nodes.get(i);
-			if (node instanceof QualityObjective) {
-				QualityObjective obj = (QualityObjective) node;
-				evalFormula += obj.getValue();
-				viewFormula += obj.getName();
-			}
-			evalFormula += "+";
-			viewFormula += "+";
-		}
+        for (TreeNode node : nodes) {
+            if (node instanceof QualityObjective) {
+                QualityObjective obj = (QualityObjective) node;
+                evalFormula += obj.getValue();
+                viewFormula += obj.getName();
+            }
+            evalFormula += "+";
+            viewFormula += "+";
+        }
 
 		if (evalFormula.endsWith("+")) {
 			evalFormula = evalFormula.substring(0, evalFormula.length() - 1);

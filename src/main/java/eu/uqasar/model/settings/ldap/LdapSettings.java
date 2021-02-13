@@ -89,7 +89,7 @@ public class LdapSettings extends Settings {
 		defSettings.setUserPhotoMapping("{thumbnailPhoto}");
 	}
 
-	public static final LdapSettings getDefault() {
+	public static LdapSettings getDefault() {
 		return defSettings;
 	}
 
@@ -121,7 +121,7 @@ public class LdapSettings extends Settings {
 		return getValue(HOST);
 	}
 
-	public void setPort(final int port) {
+	private void setPort(final int port) {
 		setValue(PORT, String.valueOf(port));
 	}
 
@@ -145,7 +145,7 @@ public class LdapSettings extends Settings {
 		return getValue(AUTH_USER_PASS);
 	}
 
-	public void setUserFilter(final String userFilter) {
+	private void setUserFilter(final String userFilter) {
 		setValue(USER_FILTER, userFilter);
 	}
 
@@ -161,7 +161,7 @@ public class LdapSettings extends Settings {
 		return getValue(USER_FILTER_BASE_DN);
 	}
 
-	public void setUserUserNameMapping(final String userUserNameMapping) {
+	private void setUserUserNameMapping(final String userUserNameMapping) {
 		setValue(USER_FIELD_MAPPING_USERNAME, userUserNameMapping);
 	}
 
@@ -173,7 +173,7 @@ public class LdapSettings extends Settings {
 		return value;
 	}
 
-	public void setUserMailMapping(final String userMailMapping) {
+	private void setUserMailMapping(final String userMailMapping) {
 		setValue(USER_FIELD_MAPPING_MAIL, userMailMapping);
 	}
 
@@ -181,7 +181,7 @@ public class LdapSettings extends Settings {
 		return getValue(USER_FIELD_MAPPING_MAIL);
 	}
 
-	public void setUserFirstNameMapping(final String userFirstNameMapping) {
+	private void setUserFirstNameMapping(final String userFirstNameMapping) {
 		setValue(USER_FIELD_MAPPING_FIRSTNAME, userFirstNameMapping);
 	}
 
@@ -189,7 +189,7 @@ public class LdapSettings extends Settings {
 		return getValue(USER_FIELD_MAPPING_FIRSTNAME);
 	}
 
-	public void setUserLastNameMapping(final String userLastNameMapping) {
+	private void setUserLastNameMapping(final String userLastNameMapping) {
 		setValue(USER_FIELD_MAPPING_LASTNAME, userLastNameMapping);
 	}
 
@@ -197,7 +197,7 @@ public class LdapSettings extends Settings {
 		return getValue(USER_FIELD_MAPPING_LASTNAME);
 	}
 
-	public void setUserPhotoMapping(final String userPhotoMapping) {
+	private void setUserPhotoMapping(final String userPhotoMapping) {
 		setValue(USER_FIELD_MAPPING_PHOTO, userPhotoMapping);
 	}
 
@@ -205,7 +205,7 @@ public class LdapSettings extends Settings {
 		return getValue(USER_FIELD_MAPPING_PHOTO);
 	}
 
-	public void setGroupFilter(final String groupFilter) {
+	private void setGroupFilter(final String groupFilter) {
 		setValue(GROUP_FILTER, groupFilter);
 	}
 
@@ -221,7 +221,7 @@ public class LdapSettings extends Settings {
 		return getValue(GROUP_FILTER_BASE_DN);
 	}
 
-	public void setGroupNameMapping(final String groupNameMapping) {
+	private void setGroupNameMapping(final String groupNameMapping) {
 		setValue(GROUP_FIELD_MAPPING_NAME, groupNameMapping);
 	}
 
@@ -229,7 +229,7 @@ public class LdapSettings extends Settings {
 		return getValue(GROUP_FIELD_MAPPING_NAME);
 	}
 
-	public void setGroupMemberMapping(final String groupMemberMapping) {
+	private void setGroupMemberMapping(final String groupMemberMapping) {
 		setValue(GROUP_FIELD_MAPPING_MEMBER, groupMemberMapping);
 	}
 
@@ -237,7 +237,7 @@ public class LdapSettings extends Settings {
 		return getValue(GROUP_FIELD_MAPPING_MEMBER);
 	}
 
-	public void setGroupDescriptionMapping(final String groupDescriptionMapping) {
+	private void setGroupDescriptionMapping(final String groupDescriptionMapping) {
 		setValue(GROUP_FIELD_MAPPING_DESCRIPTION, groupDescriptionMapping);
 	}
 

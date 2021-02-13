@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.service;
 
 /*

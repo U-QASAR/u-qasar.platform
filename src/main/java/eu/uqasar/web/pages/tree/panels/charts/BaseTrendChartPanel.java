@@ -36,7 +36,7 @@ public class BaseTrendChartPanel<Type extends TreeNode> extends
 
 	private static final long serialVersionUID = -4929627660704707931L;
 
-	private IModel<Type> model;
+	private final IModel<Type> model;
 
 	public BaseTrendChartPanel(String id, IModel<Type> model) {
 		super(id, model);
@@ -51,7 +51,7 @@ public class BaseTrendChartPanel<Type extends TreeNode> extends
 		Theme theme = new Theme();
 		theme.setLang(DefaultChartOptions.getLocalizedLanguageOptions());
 		replace(new Chart("chart",
-				new BaseTrendChartOptions<Type>(this, model), theme));
+                new BaseTrendChartOptions<>(this, model), theme));
 
 	}
 

@@ -17,6 +17,6 @@ package ro.fortsoft.wicket.dashboard;
  */
 public interface WidgetFactory {
 
-	public Widget createWidget(WidgetDescriptor widgetDescriptor);
+	Widget createWidget(WidgetDescriptor widgetDescriptor);
 	
 }

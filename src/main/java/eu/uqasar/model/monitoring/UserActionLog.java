@@ -36,6 +36,9 @@ import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.request.Url;
 import org.apache.wicket.request.cycle.RequestCycle;
@@ -44,6 +47,8 @@ import org.apache.wicket.request.cycle.RequestCycle;
  *
  *
  */
+@Setter
+@Getter
 @Entity
 public class UserActionLog extends AbstractEntity {
 
@@ -92,94 +97,6 @@ public class UserActionLog extends AbstractEntity {
 		fillPage(page);
 	}
 
-	public Date getTimestamp() {
-		return timestamp;
-	}
-
-	public void setTimestamp(Date timestamp) {
-		this.timestamp = timestamp;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public String getPageClassName() {
-		return pageClassName;
-	}
-
-	public void setPageClassName(String pageClassName) {
-		this.pageClassName = pageClassName;
-	}
-
-	public String getPageTitle() {
-		return pageTitle;
-	}
-
-	public void setPageTitle(String pageTitle) {
-		this.pageTitle = pageTitle;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public String getUserMail() {
-		return userMail;
-	}
-
-	public void setUserMail(String userMail) {
-		this.userMail = userMail;
-	}
-
-	public UserAction getAction() {
-		return action;
-	}
-
-	public void setAction(UserAction action) {
-		this.action = action;
-	}
-
-	public String getActionableItemClass() {
-		return actionableItemClass;
-	}
-
-	public void setActionableItemClass(String actionableItemClass) {
-		this.actionableItemClass = actionableItemClass;
-	}
-
-	public String getActionableItemName() {
-		return actionableItemName;
-	}
-
-	public void setActionableItemName(String actionableItemName) {
-		this.actionableItemName = actionableItemName;
-	}
-
-	public Long getActionableItemId() {
-		return actionableItemId;
-	}
-
-	public void setActionableItemId(Long actionableItemId) {
-		this.actionableItemId = actionableItemId;
-	}
-
-	public WebEnvironment getEnvironment() {
-		return environment;
-	}
-
-	public void setEnvironment(WebEnvironment environment) {
-		this.environment = environment;
-	}
-
 	public <P extends WebPage> void setPageDetails(P page) {
 		fillPage(page);
 	}
@@ -188,7 +105,7 @@ public class UserActionLog extends AbstractEntity {
 		fillActionableItem(entity);
 	}
 
-	public void setUserDetails(User user) {
+	private void setUserDetails(User user) {
 		if (user != null) {
 			this.userId = user.getId();
 			this.userMail = user.getMail();

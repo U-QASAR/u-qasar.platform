@@ -25,26 +25,23 @@ package eu.uqasar.web.components.resources;
 
 import eu.uqasar.model.user.User;
 import eu.uqasar.web.upload.UserProfilePictureUploadHelper;
-import java.awt.RenderingHints;
+
 import java.awt.image.BufferedImage;
-import java.awt.image.BufferedImageOp;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 import javax.imageio.ImageIO;
+
+import lombok.NoArgsConstructor;
 import org.apache.wicket.request.resource.ContextRelativeResource;
 import org.apache.wicket.request.resource.DynamicImageResource;
 import org.apache.wicket.request.resource.IResource;
 import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.request.resource.caching.IResourceCachingStrategy;
 import org.apache.wicket.util.resource.ResourceStreamNotFoundException;
 import org.apache.wicket.util.time.Time;
 import org.imgscalr.Scalr;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 public class UserPictureResource extends DynamicImageResource {
 
 	private int maxSize = 500;
@@ -53,14 +50,11 @@ public class UserPictureResource extends DynamicImageResource {
 	public static final ContextRelativeResource defaultProfilePictureRef
 			= new ContextRelativeResource("assets/img/user/anonymous.png");
 
-	public UserPictureResource() {
-	}
-
-	public UserPictureResource(int maxSize) {
+	private UserPictureResource(int maxSize) {
 		this.maxSize = maxSize;
 	}
 
-	public UserPictureResource(long userId, int maxSize) {
+	private UserPictureResource(long userId, int maxSize) {
 		this.maxSize = maxSize;
 	}
 
@@ -115,7 +109,7 @@ public class UserPictureResource extends DynamicImageResource {
 				bytes = baos.toByteArray();
 			}
 			return bytes;
-		} catch (IOException | ResourceStreamNotFoundException ex) {
+		} catch (IOException | ResourceStreamNotFoundException ignored) {
 		}
 		return null;
 	}

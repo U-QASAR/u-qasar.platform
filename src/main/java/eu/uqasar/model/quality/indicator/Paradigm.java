@@ -22,6 +22,7 @@ package eu.uqasar.model.quality.indicator;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.wicket.model.IModel;
@@ -46,9 +47,9 @@ public enum Paradigm implements IResourceKeyProvider {
 	
 	;
 
-	private String labelKey;
+	private final String labelKey;
 
-	private Paradigm(final String labelKey) {
+	Paradigm(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -65,10 +66,8 @@ public enum Paradigm implements IResourceKeyProvider {
 		return "label.paradigm." + this.labelKey;
 	}
 	public static List<Paradigm> getAllParadigms(){
-		List<Paradigm> list = new ArrayList<Paradigm>();
-		for (Paradigm val : Paradigm.values()) {
-		    	list.add(val);
-		}
+		List<Paradigm> list = new ArrayList<>();
+        Collections.addAll(list, Paradigm.values());
 		return list;
 	}
 	

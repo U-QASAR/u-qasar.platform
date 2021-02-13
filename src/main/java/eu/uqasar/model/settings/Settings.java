@@ -36,7 +36,7 @@ import java.util.Map;
  */
 public abstract class Settings implements Serializable {
 
-	protected Map<String, String> settings = new HashMap<>();
+	private Map<String, String> settings = new HashMap<>();
 
 	public abstract String[] getKeys();
 

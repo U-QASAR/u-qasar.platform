@@ -112,7 +112,7 @@ public class MetricViewPanel extends BaseTreePanel<Metric> {
 		add(new Label("metricType", metric.getMetricType()).setRenderBodyOnly(true));
 
 		// Threshold indicator
-		add(new ThresholdIndicator<Metric>("thresholdIndicator", model));
+		add(new ThresholdIndicator<>("thresholdIndicator", model));
 
 		add(new Label("weight", metric.getWeight()).setRenderBodyOnly(true));
 

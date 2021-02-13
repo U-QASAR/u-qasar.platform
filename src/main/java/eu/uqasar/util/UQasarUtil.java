@@ -37,6 +37,8 @@ import javax.inject.Singleton;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.jena.riot.RDFDataMgr;
 import org.apache.wicket.model.IModel;
@@ -110,6 +112,8 @@ import eu.uqasar.util.resources.ResourceBundleLocator;
  * Various utilities used on the platform 
  *
  */
+@Setter
+@Getter
 @Singleton
 public class UQasarUtil {
 
@@ -122,10 +126,16 @@ public class UQasarUtil {
 	private static Logger logger = Logger.getLogger(UQasarUtil.class);
 
 	// List containing the notifications triggered by the rules' engine
+	@Setter
+	@Getter
 	private static List<INotification> notifications = new ArrayList<>();
 	
-	private static Date latestTreeUpdateDate = new Date(); 
+	@Setter
+	@Getter
+	private static Date latestTreeUpdateDate = new Date();
 	
+	@Setter
+	@Getter
 	private static Model uqModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 
 	// Enumeration for the various suggestion types
@@ -140,7 +150,7 @@ public class UQasarUtil {
 
 		private final String labelKey;
 
-		private SuggestionType(final String labelKey) {
+		SuggestionType(final String labelKey) {
 			this.labelKey = labelKey;
 		}
 
@@ -216,8 +226,7 @@ public class UQasarUtil {
 
 	/**
 	 * Construct a formula string to be evaluated.
-	 * @param vars
-	 * @param operators
+	 * @param varsAndOpers
 	 * @return
 	 */
 	public static String constructFormula(List<Object> varsAndOpers) {
@@ -299,9 +308,7 @@ public class UQasarUtil {
 	 * @return
 	 */
 	public static String getEncDecPwd() {
-		final String MASTERPWD = 
-				"jvnqeiPIqX_6cpdOYfDc7sHk7nEIv4zRn5984JwIHnq4AX7XQt";
-		return MASTERPWD;
+        return "jvnqeiPIqX_6cpdOYfDc7sHk7nEIv4zRn5984JwIHnq4AX7XQt";
 	}
 
 	/**
@@ -509,9 +516,8 @@ public class UQasarUtil {
 	 */
 	public static int minsToMs(int minutes) {
 		final int SEC = 60;
-		final int MS = 1000; 
-		int ms = minutes * SEC * MS;
-		return ms;
+		final int MS = 1000;
+        return minutes * SEC * MS;
 	}
 
 
@@ -603,7 +609,7 @@ public class UQasarUtil {
 					float denominator = 0;
 					for (final TreeNode me : qi.getChildren()) {
 						float weight = ((Metric)me).getWeight();
-						if (((Metric) me).getQualityStatus() == QualityStatus.Green) {
+						if (me.getQualityStatus() == QualityStatus.Green) {
 							achieved += weight;
 						}
 						denominator +=weight;
@@ -623,7 +629,7 @@ public class UQasarUtil {
 
 						Float computedValue = Formula.evalFormula(formulaToEval);
 						if (computedValue != null && !computedValue.isNaN()) {
-							qo.setValue((float) computedValue);
+							qo.setValue(computedValue);
 							qo.setLastUpdated(getLatestTreeUpdateDate());
 						}							
 
@@ -633,7 +639,7 @@ public class UQasarUtil {
 					float achieved= 0;
 					for(final TreeNode qi : qo.getChildren()){
 						float weight = ((QualityIndicator)qi).getWeight();
-						if (((QualityIndicator)qi).getQualityStatus() == QualityStatus.Green){
+						if (qi.getQualityStatus() == QualityStatus.Green){
 							achieved += weight;
 						}
 						denominator +=weight;
@@ -665,7 +671,7 @@ public class UQasarUtil {
 				Double computedValue = qoValueSum/denominator;
 
 				if (computedValue != null && !computedValue.isNaN() && !computedValue.isInfinite()) {
-					prj.setValue((double)computedValue);
+					prj.setValue(computedValue);
 				}
 
 				prj.setLastUpdated(getLatestTreeUpdateDate());
@@ -770,7 +776,7 @@ public class UQasarUtil {
                     float denominator = 0;
                     for (final TreeNode me : qi.getChildren()) {
                         float weight = ((Metric)me).getWeight();
-                        if (((Metric) me).getQualityStatus() == QualityStatus.Green) {
+                        if (me.getQualityStatus() == QualityStatus.Green) {
                             achieved += weight;
                         }
                         denominator +=weight;
@@ -790,7 +796,7 @@ public class UQasarUtil {
 
                         Float computedValue = Formula.evalFormula(formulaToEval);
                         if (computedValue != null && !computedValue.isNaN()) {
-                            qo.setValue((float) computedValue);
+                            qo.setValue(computedValue);
                             qo.setLastUpdated(getLatestTreeUpdateDate());
                         }                           
 
@@ -800,7 +806,7 @@ public class UQasarUtil {
                     float achieved= 0;
                     for(final TreeNode qi : qo.getChildren()){
                         float weight = ((QualityIndicator)qi).getWeight();
-                        if (((QualityIndicator)qi).getQualityStatus() == QualityStatus.Green){
+                        if (qi.getQualityStatus() == QualityStatus.Green){
                             achieved += weight;
                         }
                         denominator +=weight;
@@ -832,7 +838,7 @@ public class UQasarUtil {
                 Double computedValue = qoValueSum/denominator;
 
                 if (computedValue != null && !computedValue.isNaN() && !computedValue.isInfinite()) {
-                    prj.setValue((double)computedValue);
+                    prj.setValue(computedValue);
                 }
 
                 prj.setLastUpdated(getLatestTreeUpdateDate());
@@ -863,7 +869,7 @@ public class UQasarUtil {
 
         
         // Iterate the node children
-        TreeNode nodeChild = (TreeNode)projectTreeNode.getParent();
+        TreeNode nodeChild = projectTreeNode.getParent();
         UQasarUtil.postorderWithParticularNode(projectTreeNode,nodeChild);
         
         return;
@@ -873,10 +879,9 @@ public class UQasarUtil {
 	/**
 	 * 
 	 * @param node Node whose value is studied
-	 * @param value Value of a measurement/computed value
 	 * @return
 	 */
-	public static Multimap<SuggestionType, Object> getSuggestionForNode(TreeNode node) {
+	private static Multimap<SuggestionType, Object> getSuggestionForNode(TreeNode node) {
 
 		// For storing the suggestion type and the payload
 		Multimap<SuggestionType,Object> suggestionsMultimap = ArrayListMultimap.create();
@@ -948,38 +953,6 @@ public class UQasarUtil {
 
 
 	/**
-	 * @return the notifications
-	 */
-	public static List<INotification> getNotifications() {
-		return notifications;
-	}
-
-
-	/**
-	 * @param notifications the notifications to set
-	 */
-	public static void setNotifications(List<INotification> notifications) {
-		UQasarUtil.notifications = notifications;
-	}
-
-
-	/**
-	 * @return the latestTreeUpdateDate
-	 */
-	public static Date getLatestTreeUpdateDate() {
-		return latestTreeUpdateDate;
-	}
-
-
-	/**
-	 * @param latestTreeUpdateDate the latestTreeUpdateDate to set
-	 */
-	public static void setLatestTreeUpdateDate(Date latestTreeUpdateDate) {
-		UQasarUtil.latestTreeUpdateDate = latestTreeUpdateDate;
-	}
-
-
-	/**
 	 * Get a list of Jenkins metrics
 	 * @return
 	 */
@@ -1030,7 +1003,6 @@ public class UQasarUtil {
 
 	/**
 	 * Writes the user entities to rdf
-	 * @param writer
 	 */
 	private static OntModel writeUserEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1051,7 +1023,6 @@ public class UQasarUtil {
 
 	/**
 	 * Writes the project entities to rdf
-	 * @param writer
 	 */
 	private static OntModel writeProjectEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1073,7 +1044,6 @@ public class UQasarUtil {
 
 	/**
 	 * Write metadata entities from the beans to rdf model
-	 * @param writer
 	 */
 	private static OntModel writeMetaDataModelEntries() {
 		OntModel model = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
@@ -1248,18 +1218,5 @@ public class UQasarUtil {
 		return usersString;
 	}
 
-	/**
-	 * @return the myModel
-	 */
-	public static Model getUqModel() {
-		return uqModel;
-	}
 
-
-	/**
-	 * @param myModel the myModel to set
-	 */
-	public static void setUqModel(Model newModel) {
-		UQasarUtil.uqModel = newModel;
-	}	
 }

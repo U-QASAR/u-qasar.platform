@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.model.analytic;
 
 /*
@@ -35,6 +32,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlTransient;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
@@ -45,7 +45,9 @@ import eu.uqasar.model.tree.Project;
  *
  *
  */
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlTransient
 @Table(name = "analysis")
@@ -71,10 +73,6 @@ public class Analysis extends AbstractEntity {
 
 	private Boolean deleted = Boolean.FALSE;
 
-	
-	public Analysis() {
-	}
-
 	public Analysis(String name) {
 		super();
 		this.name = name;
@@ -87,100 +85,11 @@ public class Analysis extends AbstractEntity {
 	}
 
 	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
-	 * @return the date
-	 */
-	public Date getDate() {
-		return date;
-	}
-
-	/**
-	 * @param date
-	 *            the date to set
-	 */
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	/**
-	 * @return the dimension
-	 */
-	public Set<Dimensions> getDimensions() {
-		return dimensions;
-	}
-
-	/**
-	 * @param dimension
-	 *            the dimension to set
-	 */
-	public void setDimensions(Set<Dimensions> dimension) {
-		this.dimensions = dimension;
-	}
-
-	/**
-	 * @param Adds
+	 * @param dim
 	 *            a dimension to the list
 	 */
 	public void addDimmension(Dimensions dim) {
 		this.dimensions.add(dim);
-	}
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project
-	 *            the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	/**
-	 * @return the deleted
-	 */
-	public Boolean getDeleted() {
-		return deleted;
-	}
-
-	/**
-	 * @param deleted
-	 *            the deleted to set
-	 */
-	public void setDeleted(Boolean deleted) {
-		this.deleted = deleted;
 	}
 
 	/* (non-Javadoc)

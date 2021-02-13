@@ -56,24 +56,20 @@ public class QModelXmlDomParser {
 		if (qm!=null){
 			boolean qmCompleted = true;
 			if (qm.getChildren()!=null && qm.getChildren().size()>0){
-				Iterator<QMTreeNode> itObj = qm.getChildren().iterator();
-				while (itObj.hasNext()) {
-					QMTreeNode obj = (QMTreeNode) itObj.next();
-					boolean qobjCompleted = true;
-					if (obj.getChildren()!=null && obj.getChildren().size()>0){
-						Iterator<QMTreeNode> itInd = obj.getChildren().iterator();
-						while (itInd.hasNext()){
-							QMTreeNode ind = (QMTreeNode) itInd.next();
-							if (ind.getChildren() != null && ind.getChildren().size()>0){
-								ind.setIsCompleted(true);
-							}
-							qobjCompleted = qobjCompleted && ind.getIsCompleted();
-						}
-						obj.setIsCompleted(qobjCompleted);
-					}
-					qmCompleted = qmCompleted && obj.getIsCompleted();
-					qm.setIsCompleted(qmCompleted);
-				}
+                for (QMTreeNode obj : qm.getChildren()) {
+                    boolean qobjCompleted = true;
+                    if (obj.getChildren() != null && obj.getChildren().size() > 0) {
+                        for (QMTreeNode ind : obj.getChildren()) {
+                            if (ind.getChildren() != null && ind.getChildren().size() > 0) {
+                                ind.setCompleted(true);
+                            }
+                            qobjCompleted = qobjCompleted && ind.isCompleted();
+                        }
+                        obj.setCompleted(qobjCompleted);
+                    }
+                    qmCompleted = qmCompleted && obj.isCompleted();
+                    qm.setCompleted(qmCompleted);
+                }
 			}
 		}
 		

@@ -24,9 +24,14 @@ package eu.uqasar.model.notification.softwarequality;
 import eu.uqasar.model.notification.Notification;
 import eu.uqasar.model.notification.NotificationType;
 import eu.uqasar.model.tree.Project;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+@Setter
+@Getter
 @Entity
 public class BadSoftwareQualityNotification extends Notification {
 
@@ -37,14 +42,6 @@ public class BadSoftwareQualityNotification extends Notification {
 	
 	public BadSoftwareQualityNotification() {
 		this.notificationType = NotificationType.UNDEFINED;
-	}
-	
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
 	}
 
 }

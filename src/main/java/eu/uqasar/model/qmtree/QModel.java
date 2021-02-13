@@ -36,6 +36,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 import org.codehaus.jackson.annotate.JsonCreator;
 import org.codehaus.jackson.annotate.JsonIgnore;
@@ -55,6 +57,8 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
 import eu.uqasar.model.company.Company;
 
 
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -103,40 +107,38 @@ public class QModel extends QMTreeNode {
 		this.setShortName(key);
 
 		boolean isCompleted = true;
-		List<QMTreeNode> nodes = new LinkedList<QMTreeNode>();
+		List<QMTreeNode> nodes = new LinkedList<>();
 
 		if (children != null){
 			if (children.isEmpty()){
 			isCompleted = false;	
 			} else {
-			Iterator<QMQualityObjective> it = children.iterator();
-			while (it.hasNext()){
-				QMQualityObjective qo = (QMQualityObjective)it.next();
-				isCompleted = isCompleted && qo.getIsCompleted();
-				nodes.add((QMTreeNode)qo);
-			}
+				for (QMQualityObjective qo : children) {
+					isCompleted = isCompleted && qo.isCompleted();
+					nodes.add(qo);
+				}
 			}
 		} else {
 			isCompleted = false;
 		}
 		this.setChildren(nodes);
-		this.setIsCompleted(isCompleted);
+		this.setCompleted(isCompleted);
 	}
 
 
 	public QModel() {
-		this.setIsCompleted(false);
+		this.setCompleted(false);
 	}
 
 	public QModel(final String name, final String key) {
 		this.setName(name);
 		this.setNodeKey(key);
-		this.setIsCompleted(false);
+		this.setCompleted(false);
 	}
 
 
 	@JsonIgnore
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 
@@ -151,76 +153,14 @@ public class QModel extends QMTreeNode {
 		return ICON;
 	}
 
-	public Date getUpdateDate() {
-		return updateDate;
-	}
 
-	@JsonIgnore
-	public void setUpdateDate(Date updateDate) {
-		this.updateDate = updateDate;
-	}
-
-	public String getEdition() {
-		if (edition == null || edition.equals("")) {
-			edition="0.0";
-		}
-		return edition;
-	}
-
-	@JsonIgnore
-	public void setEdition(String edition) {
-		this.edition = edition;
-	}
-
-	@JsonIgnore
-	public QModelStatus getIsActive() {
-		return isActive;
-	}
-
-	@JsonIgnore
-	public void setIsActive(QModelStatus isActive) {
-		this.isActive = isActive;
-	}
-
-	public Long getCompanyId() {
-		if (companyId == null){
-			companyId = Long.valueOf(0);
-			if (company != null) {
-				companyId = company.getId();
-			}
-		}
-		return companyId;
-	}
-
-	@JsonIgnore
-	public void setCompanyId(Long companyId) {
-		this.companyId = companyId;
-	}
-
-	/**
-	 * @return the company
-	 */
-	@JsonIgnore
-	public Company getCompany() {
-		return company;
-	}
-
-	/**
-	 * @param company the company to set
-	 */
-	@JsonIgnore
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-
-	
 	public String getShortName() {
 		return super.getNodeKey();
 	}
 	
 	@JsonProperty("shortName")
 	@XmlElement(name="shortName")
-	public void setShortName(String nodeKey) {
+    private void setShortName(String nodeKey) {
 		super.setNodeKey(nodeKey);
 	}
 	

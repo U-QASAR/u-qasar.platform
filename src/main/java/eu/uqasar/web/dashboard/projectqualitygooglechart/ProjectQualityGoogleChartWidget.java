@@ -26,6 +26,8 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.Model;
 
@@ -39,6 +41,8 @@ import eu.uqasar.util.UQasarUtil;
 /**
  * A sample widget using Google Charts API <https://developers.google.com/chart/>
  */
+@Setter
+@Getter
 public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	/**
@@ -46,17 +50,17 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 	 */
 	private static final long serialVersionUID = 2172703196794098298L;
 
+	@Setter
+	@Getter
 	private static ProjectQualityGoogleChartFactory chartDataFactory;
 	
 	public static final String GAUGE_TYPE = "GAUGE"; 
 	public static final String BAR_TYPE = "BAR";
 	public static final String LINE_TYPE = "LINE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			LINE_TYPE, 
-			BAR_TYPE,
-			GAUGE_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(LINE_TYPE,
+            BAR_TYPE,
+            GAUGE_TYPE);
 
 	
 	public ProjectQualityGoogleChartWidget() {
@@ -66,14 +70,6 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	@Override
 	public void init() {
-	}
-
-	public static ProjectQualityGoogleChartFactory getChartDataFactory() {
-		return chartDataFactory;
-	}
-
-	public static void setChartDataFactory(ProjectQualityGoogleChartFactory chartDataFactory) {
-		ProjectQualityGoogleChartWidget.chartDataFactory = chartDataFactory;
 	}
 
 	public String getChartData() {
@@ -95,7 +91,7 @@ public class ProjectQualityGoogleChartWidget extends AbstractWidget {
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new ProjectQualityGoogleChartSettingsPanel(settingsPanelId, new Model<ProjectQualityGoogleChartWidget>(this));
+		return new ProjectQualityGoogleChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 	public Double returnProjectQualityValue(){

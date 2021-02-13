@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/U-QASAR/u-qasar.platform.svg?branch=master)](https://travis-ci.org/U-QASAR/u-qasar.platform)
 [![Coverage Status](https://coveralls.io/repos/U-QASAR/u-qasar.platform/badge.svg?branch=master&service=github)](https://coveralls.io/github/U-QASAR/u-qasar.platform?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/5656ef30ff016c002c001cd8/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5656ef30ff016c002c001cd8)
+[![Dependency Status](https://www.versioneye.com/user/projects/57c84580968d6400336027bd/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c84580968d6400336027bd)
 [![](https://badge.waffle.io/U-QASAR/u-qasar.platform.svg?label=ready&title=Ready)](http://waffle.io/U-QASAR/u-qasar.platform)
 
 # U-QASAR Platform

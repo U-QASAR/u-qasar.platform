@@ -25,7 +25,7 @@ import ro.fortsoft.wicket.dashboard.web.DashboardContextInjector;
 public class DashboardContextInitializer implements IInitializer {
 
 	@SuppressWarnings("serial")
-	public static MetaDataKey<DashboardContext> DASHBOARD_CONTEXT_KEY = new MetaDataKey<DashboardContext>() {};
+	public static final MetaDataKey<DashboardContext> DASHBOARD_CONTEXT_KEY = new MetaDataKey<DashboardContext>() {};
 	
 	@Override
 	public void init(Application application) {

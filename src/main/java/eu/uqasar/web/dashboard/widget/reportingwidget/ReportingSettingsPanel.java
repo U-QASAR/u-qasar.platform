@@ -70,31 +70,31 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
     private transient DashboardContext dashboardContext;
     private String cube;
-    SonarDataService dataService;
-    List<String> projects = new ArrayList<String>();
+    private SonarDataService dataService;
+    private List<String> projects = new ArrayList<>();
 
-    private Map<String, List<String>> rulesMap = new HashMap<String, List<String>>(); // map:rule->additionalRules
-    private String selectedRule;
-    private String selectedAdditionalRule;
+    private Map<String, List<String>> rulesMap = new HashMap<>(); // map:rule->additionalRules
+    private final String selectedRule;
+    private final String selectedAdditionalRule;
     private String chartType;
 
     private ListView<Rule> rulesView;
 
     private String urlToLoad;
-    private WebMarkupContainer ruleWebMrkUpContainer;
-    private List<Rule> proposedRules = new ArrayList<Rule>();
+    private final WebMarkupContainer ruleWebMrkUpContainer;
+    private final List<Rule> proposedRules = new ArrayList<>();
 
-    DropDownChoice<String> rules;
-    DropDownChoice<String> additionalRules;
+    private DropDownChoice<String> rules;
+    private DropDownChoice<String> additionalRules;
 
     public ReportingSettingsPanel(String id, IModel<ReportingWidget> model) {
         super(id, model);
 
         setOutputMarkupPlaceholderTag(true);
 
-        final ReportingWidget qualityWidget = (ReportingWidget) model.getObject();
+        final ReportingWidget qualityWidget = model.getObject();
 
-        Form<Widget> form = new Form<Widget>("form");
+        Form<Widget> form = new Form<>("form");
 
         cube = getModelObject().getSettings().get("cube");
         if (cube == null) {
@@ -121,15 +121,15 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
         // //Add selection of cubes for report generation.
         List<String> cubes = Arrays.asList("jira", "sonarcube");
-        final DropDownChoice<String> selectedCubes = new DropDownChoice<String>("cube",
-            new PropertyModel<String>(this, "cube"), cubes);
+        final DropDownChoice<String> selectedCubes = new DropDownChoice<>("cube",
+                new PropertyModel<String>(this, "cube"), cubes);
         selectedCubes.setRequired(true);
         form.add(selectedCubes);
 
         // Field for the chart type
         chartType = getModelObject().getSettings().get("chartType");
-        DropDownChoice<String> choice = new DropDownChoice<String>("chartType", new PropertyModel<String>(this, "chartType"),
-            ReportingWidget.TYPES);
+        DropDownChoice<String> choice = new DropDownChoice<>("chartType", new PropertyModel<String>(this, "chartType"),
+                ReportingWidget.TYPES);
         form.add(choice);
 
         // Create a void form for ListView and WebMarkupContainer
@@ -163,7 +163,7 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
                     @Override
                     public List<String> getObject() {
-                        return new ArrayList<String>(rulesMap.keySet());
+                        return new ArrayList<>(rulesMap.keySet());
                     }
 
                 };
@@ -186,15 +186,15 @@ public class ReportingSettingsPanel extends GenericPanel<ReportingWidget> implem
 
                 };
 
-                item.add(rules = new DropDownChoice<String>("rules", new PropertyModel<String>(proposedRule, "selectedRule"),
-                    ruleChoices));
+                item.add(rules = new DropDownChoice<>("rules", new PropertyModel<String>(proposedRule, "selectedRule"),
+                        ruleChoices));
                 rules.setOutputMarkupId(true);
                 rules.setNullValid(true);
                 rules.setRequired(true);
                 rules.setMarkupId("rules" + item.getIndex()); // very important
 
-                item.add(additionalRules = new DropDownChoice<String>("additionalRules", new PropertyModel<String>(
-                    proposedRule, "selectedAdditionalRule"), additionalRuleChoices));
+                item.add(additionalRules = new DropDownChoice<>("additionalRules", new PropertyModel<String>(
+                        proposedRule, "selectedAdditionalRule"), additionalRuleChoices));
                 additionalRules.setOutputMarkupId(true);
                 additionalRules.setMarkupId("additionalRules" + item.getIndex()); // very important
                 additionalRules.setNullValid(true);

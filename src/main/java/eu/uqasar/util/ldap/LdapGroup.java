@@ -24,6 +24,8 @@ package eu.uqasar.util.ldap;
 
 
 import eu.uqasar.model.settings.ldap.LdapSettings;
+import lombok.Getter;
+
 import java.util.Comparator;
 import java.util.List;
 import javax.naming.NamingException;
@@ -33,6 +35,7 @@ import javax.naming.directory.Attributes;
  *
  *
  */
+@Getter
 public class LdapGroup extends LdapEntity {
 
 	private String name, description;
@@ -40,20 +43,6 @@ public class LdapGroup extends LdapEntity {
 
 	public LdapGroup(Attributes attr, LdapSettings settings) {
 		super(attr, settings);
-	}
-
-	public String getDescription() {
-		if (description == null) {
-			description = getStringValue(settings.getGroupDescriptionMapping());
-		}
-		return description;
-	}
-
-	public String getName() {
-		if (name == null) {
-			name = getStringValue(settings.getGroupNameMapping());
-		}
-		return name;
 	}
 
 	public List<LdapUser> getMembers() throws NamingException {
@@ -79,8 +68,7 @@ public class LdapGroup extends LdapEntity {
 				if (name != 0) {
 					return name;
 				}
-				int dn = LdapEntity.compare(o1.getDN(), o2.getDN(), false);
-				return dn;
+                return LdapEntity.compare(o1.getDN(), o2.getDN(), false);
 			}
 		}
 

@@ -25,11 +25,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
-import javax.ejb.EJB;
-import javax.inject.Inject;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -54,11 +51,8 @@ import com.googlecode.wickedcharts.highcharts.options.VerticalAlignment;
 import com.googlecode.wickedcharts.highcharts.options.color.HexColor;
 import com.googlecode.wickedcharts.highcharts.options.series.Series;
 import com.googlecode.wickedcharts.highcharts.options.series.SimpleSeries;
-import com.jcabi.log.Logger;
 
 import eu.uqasar.model.tree.BaseIndicator;
-import eu.uqasar.model.tree.QualityIndicator;
-import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.QualityStatus;
 import eu.uqasar.model.tree.TreeNode;
 import eu.uqasar.model.tree.historic.HistoricValuesBaseIndicator;
@@ -72,7 +66,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 	private static final int MONTHS_TO_SHOW = 6;
 
 	
-	HistoricalDataService dataService;
+	private HistoricalDataService dataService;
 	
 	public BaseTrendChartOptions(Component chartContainer, IModel<Type> model) {
 		TreeNode object = model.getObject();
@@ -165,15 +159,15 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 
 	}
 
-	protected Number[] getAverage(List<Number[]> seriesValues) {
+	private Number[] getAverage(List<Number[]> seriesValues) {
 		if (seriesValues.size() > 0) {
 			int seriesElementCount = seriesValues.get(0).length;
 			Float[] averages = new Float[seriesElementCount];
 
 			for (int i = 0; i < seriesElementCount; i++) {
 				int seriesValueSum = 0;
-				for (int j = 0; j < seriesValues.size(); j++) {
-					seriesValueSum += seriesValues.get(j)[i].intValue();
+				for (Number[] seriesValue : seriesValues) {
+					seriesValueSum += seriesValue[i].intValue();
 				}
 				averages[i] = (float) seriesValueSum
 						/ (float) seriesValues.size();
@@ -205,7 +199,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 		return numbers;
 	}
 	
-	protected Number[] getRealNumbers(TreeNode node, int elementCount){
+	private Number[] getRealNumbers(TreeNode node, int elementCount){
 		Number[] numbersHalfYear = new Number[elementCount];
 		Number[] numbersFullYear = new Number[2*elementCount];
 		BaseIndicator baseIndicator = (BaseIndicator) node;
@@ -238,9 +232,7 @@ public class BaseTrendChartOptions<Type extends TreeNode> extends
 				}
 			}
 			// select half year before
-			for (int i=0; i<=elementCount-1; i++) {
-				numbersHalfYear[i] = numbersFullYear[nowMonth-elementCount+i];
-			}	
+			System.arraycopy(numbersFullYear, nowMonth - elementCount + 0, numbersHalfYear, 0, elementCount - 1 + 1);
 		} else{
 			for (int i=0; i<=numbersFullYear.length-1; i++) {
 				numbersFullYear[i] = 0.0f;

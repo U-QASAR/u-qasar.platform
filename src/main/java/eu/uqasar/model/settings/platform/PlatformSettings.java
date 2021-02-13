@@ -27,11 +27,15 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.Namable;
 
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "project_settings")
@@ -52,23 +56,7 @@ public class PlatformSettings extends AbstractEntity implements Namable {
     }
 
     public PlatformSettings() { }
-    
 
-    public String getSettingKey() {
-		return settingKey;
-	}
-
-	public void setSettingKey(String settingKey) {
-		this.settingKey = settingKey;
-	}
-
-	public String getSettingValue() {
-		return settingValue;
-	}
-
-	public void setSettingValue(String settingValue) {
-		this.settingValue = settingValue;
-	}
 
 	@Override
     public String getUniqueName() {

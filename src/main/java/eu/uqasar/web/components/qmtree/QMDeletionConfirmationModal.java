@@ -44,7 +44,7 @@ public abstract class QMDeletionConfirmationModal extends NotificationModal {
 	 */
 	private static final long serialVersionUID = -3913695236156146161L;
 	
-	private ModalActionButton confirm;
+	private final ModalActionButton confirm;
 	
 	public QMDeletionConfirmationModal(String id, QMTreeNode node) {
 		super(id, Model.of(""), Model.of(""), false);
@@ -98,11 +98,11 @@ public abstract class QMDeletionConfirmationModal extends NotificationModal {
 		super.onConfigure();
 	}
 
-	protected IModel<String> getHeader(Model<?> model) {
+	private IModel<String> getHeader(Model<?> model) {
 		return new StringResourceModel("header.delete", model);
 	}
 
-	protected IModel<String> getMessage(Model<?> model) {
+	private IModel<String> getMessage(Model<?> model) {
 		QMTreeNode node = (QMTreeNode) model.getObject();
 		final String prefix = " (<em>", suffix = "</em>)";
 		if (node instanceof QModel) {

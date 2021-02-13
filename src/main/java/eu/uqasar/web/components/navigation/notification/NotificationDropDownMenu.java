@@ -22,12 +22,12 @@ package eu.uqasar.web.components.navigation.notification;
 
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
 import javax.naming.InitialContext;
 
+import lombok.Setter;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
@@ -53,6 +53,7 @@ import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.util.UQasarUtil;
 import eu.uqasar.web.UQasar;
 
+@Setter
 public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 
 	private static final long serialVersionUID = 969519549174632887L;
@@ -60,7 +61,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 	protected INotification[] notifications = new INotification[0];
 
 
-	public NotificationDropDownMenu() {
+	protected NotificationDropDownMenu() {
 		super(Model.of(""));
 		setOutputMarkupId(true);
 	}
@@ -70,11 +71,7 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 		return false;
 	}
 
-	public void setNotifications(INotification... notifications) {
-		this.notifications = notifications;
-	}
-
-	protected void updateLabelAndIcon() {
+	private void updateLabelAndIcon() {
 		if (notifications.length == 0) {
 			getNotificationCountLabelContainer().add(
 					new CssClassNameAppender("badge-inverse"));
@@ -90,11 +87,11 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 		return this.get("btn");
 	}
 
-	protected Component getNotificationCountLabelContainer() {
+	private Component getNotificationCountLabelContainer() {
 		return this.get("btn").get("label.container");
 	}
 
-	protected Component getNotificationCountLabel() {
+	private Component getNotificationCountLabel() {
 		return this.get("btn").get("label.container").get("label");
 	}
 
@@ -171,11 +168,11 @@ public abstract class NotificationDropDownMenu extends NavbarDropDownButton {
 					e.printStackTrace();
 				}
 				// go through tree
-				LinkedList<TreeNode> objectives = project.getChildren();
+				List<TreeNode> objectives = project.getChildren();
 				for(TreeNode obj : objectives){
-					LinkedList<TreeNode> indicators = obj.getChildren();
+					List<TreeNode> indicators = obj.getChildren();
 					for(TreeNode ind : indicators){
-						LinkedList<TreeNode> metrics = ind.getChildren();
+						List<TreeNode> metrics = ind.getChildren();
 						for(TreeNode metric : metrics){											
 							// cast to a real Metric
 							Metric m = (Metric)  metric;

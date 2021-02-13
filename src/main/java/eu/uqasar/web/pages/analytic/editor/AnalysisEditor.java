@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.pages.analytic.editor;
 
 /*
@@ -73,16 +70,16 @@ public class AnalysisEditor extends BasePage {
 	@Inject 
 	TreeNodeService treeNodeService;
 	
-	private Analysis analysis;
+	private final Analysis analysis;
 
-	Form<Analysis> analysisForm = new Form<Analysis>("form");
+	private final Form<Analysis> analysisForm = new Form<>("form");
 	
 	public AnalysisEditor(PageParameters parameters) {
 		super(parameters);
 		
 		// Check if the passed value is a new analysis or an existing one 
 		if (parameters != null && parameters.get("analysis-id") != null
-				&& parameters.get("analysis-id").toOptionalString().equals("new") == true) {
+				&& parameters.get("analysis-id").toOptionalString().equals("new")) {
 			analysis = new Analysis();
 		} else {
 			analysis = analyticService.getById(parameters.get("analysis-id").toOptionalLong());
@@ -94,7 +91,7 @@ public class AnalysisEditor extends BasePage {
 		analysisForm.add(newNameTextField());
 		
 		// Analysis description
-		analysisForm.add(new TextArea<String>("description", new PropertyModel<String>(analysis, "description")));
+		analysisForm.add(new TextArea<>("description", new PropertyModel<String>(analysis, "description")));
 		
 		// Dropdown with all the projects stored in platform
 //		form.add(newProjectDropDownChoice());
@@ -111,8 +108,8 @@ public class AnalysisEditor extends BasePage {
 		add(analysisForm);
 		
 		// Add the dimension selector 
-		analysisForm.add(new Select2MultiChoice<Dimensions>("dimensionSelector",
-				new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
+		analysisForm.add(new Select2MultiChoice<>("dimensionSelector",
+                new PropertyModel<Collection<Dimensions>>(analysis, "dimensions"), new DimensionProvider()));
 	}
 	
 	/**
@@ -166,7 +163,7 @@ public class AnalysisEditor extends BasePage {
 	/**
 	 * @param target Saves the current edited Analysis
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		analyticService.update(analysis);
 		Session.get().success(
 				new StringResourceModel("saved.message", this, Model
@@ -185,7 +182,7 @@ public class AnalysisEditor extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(analysisForm);
@@ -235,7 +232,7 @@ public class AnalysisEditor extends BasePage {
 
 		@Override
 		public Collection<Dimensions> toChoices(Collection<String> ids) {
-	    	ArrayList<Dimensions> dimensions = new ArrayList<Dimensions>();
+	    	ArrayList<Dimensions> dimensions = new ArrayList<>();
 	    	
 	    	for(String id : ids){
 	    		dimensions.add(Dimensions.valueOf(id));

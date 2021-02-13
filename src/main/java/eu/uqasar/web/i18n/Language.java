@@ -26,9 +26,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import lombok.Getter;
 import org.apache.wicket.Session;
 import org.joda.time.DateTime;
 
+@Getter
 public enum Language {
 
 	German(Locale.GERMAN),
@@ -49,10 +51,6 @@ public enum Language {
 		this.locale = locale;
 	}
 
-	public Locale getLocale() {
-		return this.locale;
-	}
-
 	/**
 	 * Returns the String pattern for formatting and parsing dates, depending on
 	 * the given style, for example "M/d/yy" for style {@link DateFormat#SHORT}
@@ -66,7 +64,7 @@ public enum Language {
 	 * @see DateFormat#LONG
 	 * @return
 	 */
-	public String getDatePattern(int style) {
+    private String getDatePattern(int style) {
 		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat
 				.getDateInstance(style, locale);
 		return dateFormat.toPattern();
@@ -96,7 +94,7 @@ public enum Language {
 		return getLocalizedDatePattern(DateFormat.SHORT);
 	}
 
-	public String getLocalizedDatePattern(int style) {
+	private String getLocalizedDatePattern(int style) {
 		SimpleDateFormat dateFormat = (SimpleDateFormat) DateFormat
 				.getDateInstance(style, locale);
 		return isGerman() ? dateFormat.toLocalizedPattern().replace('u', 'j')

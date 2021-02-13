@@ -188,8 +188,8 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 				// add javascript to load tagsinput plugin
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**
@@ -197,8 +197,8 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<CubesMetricMeasurement> newCubesCheckGroup() {
-		CheckGroup<CubesMetricMeasurement> checkGroup = new CheckGroup<CubesMetricMeasurement>(
-				"cubesGroup", new ArrayList<CubesMetricMeasurement>());
+		CheckGroup<CubesMetricMeasurement> checkGroup = new CheckGroup<>(
+                "cubesGroup", new ArrayList<CubesMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;
@@ -213,7 +213,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -294,7 +293,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param products
 	 * @param target
 	 */
 	private void deleteSelectedMeasurements(
@@ -346,7 +344,6 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 	}
 
 	/**
-	 * @param project
 	 * @return
 	 */
 	private ExternalLink linkCubesQuery(
@@ -379,7 +376,7 @@ public class CubeAnalysisDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -3884368466400425503L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public CubesProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

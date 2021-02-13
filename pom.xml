@@ -55,7 +55,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<generated.sources.dir>src/main/generated</generated.sources.dir>
+<!--		<generated.sources.dir>src/main/generated</generated.sources.dir> -->
+		<generated.sources.dir>${project.build.directory}/generated</generated.sources.dir>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
@@ -68,13 +69,28 @@
 		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
 		<freemarker.version>2.3.20</freemarker.version>
 		<!-- resteasy version used in JBoss ${jboss.as.version} -->
-		<resteasy.version>2.3.2.Final</resteasy.version>
+		<resteasy.version>3.0.19.Final</resteasy.version>
 		<jackson.version>1.9.13</jackson.version>
 		<arquillian.version>1.1.2.Final</arquillian.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<checkstyle.config.location>proseco-checkstyle.xml</checkstyle.config.location>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ssa</maven.build.timestamp.format>
-    		<timestamp>${maven.build.timestamp}</timestamp>
+   		<timestamp>${maven.build.timestamp}</timestamp>
+
+		<maven.plugin.enforcer.min.version>1.4.1</maven.plugin.enforcer.min.version>
+		<maven.plugin.versions.min.version>2.2</maven.plugin.versions.min.version>
+		<maven.plugin.compiler.min.version>3.5.1</maven.plugin.compiler.min.version>
+		<maven.plugin.surefire.min.version>2.19.1</maven.plugin.surefire.min.version>
+		<maven.plugin.failsafe.min.version>2.19.1</maven.plugin.failsafe.min.version>
+		<maven.plugin.docker.min.version>0.15.16</maven.plugin.docker.min.version>
+		<maven.plugin.license.min.version>1.9</maven.plugin.license.min.version>
+		<maven.plugin.source.min.version>3.0.0</maven.plugin.source.min.version>
+		<maven.plugin.javadoc.min.version>2.10.3</maven.plugin.javadoc.min.version>
+		<maven.plugin.install.min.version>2.5.2</maven.plugin.install.min.version>
+		<maven.plugin.deploy.min.version>2.8.2</maven.plugin.deploy.min.version>
+		<maven.plugin.release.min.version>2.5.3</maven.plugin.release.min.version>
+		<junit.version>4.12</junit.version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -86,6 +102,11 @@
 				<version>${arquillian.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.16.10</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -99,6 +120,11 @@
 			<type>pom</type>
 			<!-- use provided scope as they are included in JBoss 7 -->
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.resolver</groupId>
+			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+			<version>2.2.3</version>
 		</dependency>
 
 		<!-- Weld dependency -->
@@ -260,7 +286,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.0.Final</version>
+			<version>4.3.2.Final</version>
 			<!-- use provided scope as it is included in JBoss 7 -->
 			<scope>provided</scope>
 			<exclusions>
@@ -519,6 +545,12 @@
 			<version>4.1.4</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.16.10</version>
+			<scope>provided</scope>
+		</dependency>
 
 		<!-- for reading MANIFEST.MF SCM version number -->
 		<dependency>
@@ -568,7 +600,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.3.2</version>
+					<version>${maven.plugin.compiler.min.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -673,7 +705,6 @@
 					<target>${maven.compiler.target}</target>
 					<optimize>true</optimize>
 					<debug>true</debug>
-					<compilerArgument>-proc:none</compilerArgument>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -705,7 +736,7 @@
 				</configuration>
 			</plugin>
 			<!-- for generating meta model for entity classes to use in JPA Criteria 
-				API "right click project and Run As -> Maven generate-sources" -->
+				API "right click project and Run As -> Maven generate-sources"
 			<plugin>
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>
@@ -721,7 +752,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin> -->
 			<!-- -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -744,7 +775,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>2.16</version>
+				<version>2.17</version>
 				<configuration>
 					<sourceDirectory>src</sourceDirectory>
 					<configLocation>${checkstyle.config.location}</configLocation>
@@ -769,7 +800,7 @@
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>4.2.0</version>
             </plugin>
 		</plugins>
 	</build>
@@ -792,7 +823,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -813,8 +844,8 @@
 				</testResources>
 				<plugins>
 					<plugin>
-						<groupId>org.jboss.as.plugins</groupId>
-						<artifactId>jboss-as-maven-plugin</artifactId>
+						<groupId>org.jboss.as</groupId>
+						<artifactId>jboss-as-arquillian-container-managed</artifactId>
 						<version>${jboss.as.version}</version>
 						<configuration>
 							<!-- to deploy run: "mvn clean compile package jboss-as:deploy" -->
@@ -921,7 +952,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>
@@ -948,7 +979,7 @@
 			<dependencies>
 				<dependency>
 					<groupId>org.jboss.as</groupId>
-					<artifactId>jboss-as-arquillian-container-remote</artifactId>
+					<artifactId>jboss-as-arquillian-container-managed</artifactId>
 					<version>${jboss.as.version}</version>
 					<scope>test</scope>
 				</dependency>

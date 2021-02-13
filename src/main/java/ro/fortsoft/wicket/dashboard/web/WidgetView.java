@@ -24,13 +24,13 @@ public class WidgetView extends GenericPanel<Widget> {
 
 	private static final long serialVersionUID = 1L;	
 	
-	public WidgetView(String id, IModel<Widget> model) {
+	protected WidgetView(String id, IModel<Widget> model) {
 		super(id, model);
 
 		setOutputMarkupPlaceholderTag(true);		
 	}
 	
-	public Widget getWidget() {
+	private Widget getWidget() {
 		return getModelObject();
 	}
 

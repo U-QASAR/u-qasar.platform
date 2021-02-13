@@ -95,7 +95,7 @@ public class UQSession extends WebSession {
 		return this.userEnv;
 	}
 	
-	public boolean hasPersistedEnvironment() {
+	private boolean hasPersistedEnvironment() {
 		return userEnv != null && userEnv.getId() != null;
 	}
 	

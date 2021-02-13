@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.DropDownChoice;
@@ -32,6 +34,8 @@ import org.apache.wicket.model.Model;
 
 import de.agilecoders.wicket.core.markup.html.bootstrap.dialog.Modal;
 
+@Setter
+@Getter
 public class DropDownModal extends Modal {
 
 	private static final long serialVersionUID = -4262000688976309218L;
@@ -53,19 +57,18 @@ public class DropDownModal extends Modal {
 	 * @param types Options in DropDownChoice
 	 * @param showImmediately
 	 */
-	public DropDownModal(final String id, final IModel<String> headerModel,
-			List<Class> types, final boolean showImmediately) {
+	protected DropDownModal(final String id, final IModel<String> headerModel,
+							List<Class> types, final boolean showImmediately) {
 		super(id);
 		show(showImmediately);
 		header(headerModel);		
 
-		List<String> ls = new ArrayList<String>();
-		Iterator it = types.iterator();
-		while (it.hasNext()){
-			ls.add(((Class)it.next()).getSimpleName());
-		}
+		List<String> ls = new ArrayList<>();
+        for (Class type : types) {
+            ls.add((type).getSimpleName());
+        }
 
-		metaDataTypes = new DropDownChoice<String>("metaDataTypes",  new Model(), ls);
+		metaDataTypes = new DropDownChoice<>("metaDataTypes", new Model(), ls);
 
 		metaDataTypes.add(new AjaxEventBehavior("onchange") {
 			@Override
@@ -90,35 +93,4 @@ public class DropDownModal extends Modal {
 				+ ", show:" + showImmediately() + ", backdrop: 'static'})";
 	}
 
-	public String getTypeSelected() {
-		return typeSelected;
-	}
-
-	public void setTypeSelected(String typeSelected) {
-		this.typeSelected = typeSelected;
-	}
-
-	public String getTagName() {
-		return tagName;
-	}
-
-	public void setTagName(String tagName) {
-		this.tagName = tagName;
-	}
-
-	public String getInputSelection() {
-		return inputSelection;
-	}
-
-	public void setInputSelection(String inputSelection) {
-		this.inputSelection = inputSelection;
-	}
-
-	public Long getTagId() {
-		return tagId;
-	}
-
-	public void setTagId(Long tagId) {
-		this.tagId = tagId;
-	}
 }

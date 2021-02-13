@@ -51,7 +51,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 	 */
 	private static final long serialVersionUID = -5703638374309845463L;
 
-	private AbstractTree<QMTreeNode> tree;
+	private final AbstractTree<QMTreeNode> tree;
 
 	@Inject
 	private QModelSettingsService qmService;
@@ -67,7 +67,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 	@Override
 	protected Component newLabelComponent(String id, final IModel<QMTreeNode> model) {
 		WebMarkupContainer labelContainer = new WebMarkupContainer(id);
-		settings = (QModelSettings) qmService.get(new QModelSettings());
+		settings = qmService.get(new QModelSettings());
 		
 		Label idLabel;
 		Label entityLabel;
@@ -109,7 +109,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 			@Override
 			protected void onComponentTag(ComponentTag tag) {
 				super.onComponentTag(tag);
-				if (!model.getObject().getIsCompleted()){
+				if (!model.getObject().isCompleted()){
 					tag.getAttributes().put("src",  "/uqasar/assets/img/exclamation.jpg");
 					tag.getAttributes().put("alt", "incomplete");
 					tag.getAttributes().put("title", "incomplete");
@@ -184,11 +184,11 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 		}
 	}
 
-	protected String getMetricStyle(QMMetric node) {
+	private String getMetricStyle(QMMetric node) {
 		return getOtherStyleClass(node);
 	}
 
-	protected String getQualityIndicatorStyle(QMQualityIndicator node) {
+	private String getQualityIndicatorStyle(QMQualityIndicator node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {
@@ -196,7 +196,7 @@ public class QMTreeFolder extends Folder<QMTreeNode> {
 		}
 	}
 
-	protected String getQualityObjectiveStyle(QMQualityObjective node) {
+	private String getQualityObjectiveStyle(QMQualityObjective node) {
 		if (tree.getState(node) == State.EXPANDED) {
 			return getOpenStyleClass();
 		} else {

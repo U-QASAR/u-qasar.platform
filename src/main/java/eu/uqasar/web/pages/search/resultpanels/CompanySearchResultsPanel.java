@@ -25,7 +25,7 @@ import eu.uqasar.model.company.Company;
 import eu.uqasar.service.AbstractService;
 import eu.uqasar.service.company.CompanyService;
 import eu.uqasar.web.pages.admin.companies.CompanyEditPage;
-import eu.uqasar.web.pages.admin.companies.CompanyListPage;
+
 import javax.inject.Inject;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;

@@ -42,11 +42,16 @@ import javax.persistence.Entity;
 import javax.persistence.Lob;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import ro.fortsoft.wicket.dashboard.Dashboard;
 import ro.fortsoft.wicket.dashboard.Widget;
 import ro.fortsoft.wicket.dashboard.WidgetComparator;
 import eu.uqasar.model.AbstractEntity;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 public class DbDashboard extends AbstractEntity implements Dashboard {
@@ -61,9 +66,7 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 	
 	@ElementCollection
 	@Lob
-	private List<Widget> widgets = new ArrayList<Widget>();
-	
-	public DbDashboard() {}
+	private List<Widget> widgets = new ArrayList<>();
 	
 	public DbDashboard(String id, String title) {
 		this.dashboardId = id;
@@ -90,48 +93,10 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		this.widgets.addAll(copy.getWidgets()); 
 		this.sharedBy = copy.getSharedBy();
 	}
-	
-	public String getSharedBy() {
-		return sharedBy;
-	}
 
-	public void setSharedBy(String sharedBy) {
-		this.sharedBy = sharedBy;
-	}
-
-	@Override
-	public String getDashboardId() {
-		return dashboardId;
-	}
-
-	@Override
-	public String getTitle() {
-		return title;
-	}
-
-	@Override
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	@Override
-	public int getColumnCount() {
-		return columnCount;
-	}        
-
-	@Override
-	public void setColumnCount(int columnCount) {
-		this.columnCount = columnCount;
-	}
-	
-	@Override
-	public List<Widget> getWidgets() {
-		return widgets;
-	}
-	
 	@Override
 	public List<Widget> getWidgets(int column) {
-		List<Widget> columnWidgets = new ArrayList<Widget>();
+		List<Widget> columnWidgets = new ArrayList<>();
 		for (Widget widget : widgets) {
 			if (column == widget.getLocation().getColumn()) {
 				columnWidgets.add(widget);
@@ -155,10 +120,6 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		return null;
 	}
 
-	public void setWidgets(List<Widget> widgets) {
-		this.widgets = widgets;
-	}
-
 	@Override
 	public void addWidget(Widget widget) {
 		// With some widgets there has been the problem that 
@@ -167,8 +128,8 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 		// Now do not add widget, if there already is one with the 
 		// given id.
 		boolean exists = false;
-		for (int i = 0; i < widgets.size(); i++) {
-			if (widgets.get(i).getId().equals(widget.getId())) {
+		for (Widget widget1 : widgets) {
+			if (widget1.getId().equals(widget.getId())) {
 				exists = true;
 				break;
 			}
@@ -188,14 +149,13 @@ public class DbDashboard extends AbstractEntity implements Dashboard {
 	
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("DefaultDashboard[");
-		buffer.append("id = ").append(dashboardId);
-		buffer.append(" title = ").append(title);
-		buffer.append(" widgets = ").append(widgets);
-		buffer.append("]");
+		String buffer = "DefaultDashboard[" +
+				"id = " + dashboardId +
+				" title = " + title +
+				" widgets = " + widgets +
+				"]";
 
-		return buffer.toString();
+		return buffer;
 	}
 	
 }

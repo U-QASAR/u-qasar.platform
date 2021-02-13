@@ -107,7 +107,7 @@ public class TeamEditPage extends AdminBasePage {
 	private final Form<Void> formAdd;
 	private final WebMarkupContainer existingTeamContainer;
 	private Team team = new Team();
-	private TeamMembership membership = new TeamMembership();
+	private final TeamMembership membership = new TeamMembership();
 
 	private final DropDownChoice<Role> userRole;
 	private final AutoCompleteTextField<User> userComplete;
@@ -241,7 +241,7 @@ public class TeamEditPage extends AdminBasePage {
 			@Override
 			protected void populateItem(Item<TeamMembership> item) {
 				final TeamMembership team = item.getModelObject();
-				Check<TeamMembership> check = new Check<TeamMembership>("memberCheck", item.getModel(), teamGroup);
+				Check<TeamMembership> check = new Check<>("memberCheck", item.getModel(), teamGroup);
 				List<Role> roles = new ArrayList<>(Arrays.asList(Role.teamAssignableRoles()));
 				item.add(check);
 				BookmarkablePageLink<Object> editMemberLink = new BookmarkablePageLink<>("link.edit.member", UserEditPage.class, new PageParameters().add("id", team.getUser().getId()));
@@ -266,12 +266,12 @@ public class TeamEditPage extends AdminBasePage {
 		}
 	}
 
-	protected Iterator<User> getTeamableUsers(final String input) {
+	private Iterator<User> getTeamableUsers(final String input) {
 		List<User> potentialUsers = userService.getAllExceptAndFilter(team.getAllUsers(), input);
 		return potentialUsers.iterator();
 	}
 
-	public <T> IConverter<T> getAutocompleteConverter() {
+	private <T> IConverter<T> getAutocompleteConverter() {
 		return new IConverter<T>() {
 
 			@Override
@@ -286,7 +286,7 @@ public class TeamEditPage extends AdminBasePage {
 		};
 	}
 
-	public IAutoCompleteRenderer<User> getAutocompleteRenderer() {
+	private IAutoCompleteRenderer<User> getAutocompleteRenderer() {
 		return new AbstractAutoCompleteTextRenderer<User>() {
 
 			@Override
@@ -296,7 +296,7 @@ public class TeamEditPage extends AdminBasePage {
 		};
 	}
 
-	public IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
+	private IDataProvider<TeamMembership> getMembershipProvider(final Team team) {
 		return new IDataProvider<TeamMembership>() {
 
 			@Override
@@ -435,7 +435,7 @@ public class TeamEditPage extends AdminBasePage {
 	        return linkToEdit(entity.getId());
 	    }
 	    
-	    public static PageParameters linkToEdit(Long entityId) {
+	    private static PageParameters linkToEdit(Long entityId) {
 	        return new PageParameters().set("id", entityId);
 	    }
 

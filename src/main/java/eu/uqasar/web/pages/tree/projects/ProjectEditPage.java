@@ -38,8 +38,8 @@ public class ProjectEditPage extends BaseTreePage<Project> {
 
 	public ProjectEditPage(PageParameters parameters) {
 		super(parameters);
-		if (parameters !=null && parameters.get("isNew") !=null && 
-				parameters.get("isNew").toBoolean() == true){
+		if (parameters !=null && parameters.get("isNew") !=null &&
+                parameters.get("isNew").toBoolean()){
 			isNew = true;
 		}
 	}

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -44,17 +41,16 @@ public class ModalActionButton extends AjaxLink<Void> {
 
 	private static final String id = "button";
 
-	private Buttons.Type buttonType;
+	private final Buttons.Type buttonType;
 
-	private IModel<?> bodyModel;
+	private final IModel<?> bodyModel;
 
-	private Modal modal;
+	private final Modal modal;
 
 	private boolean closeModalAfterSubmit = true;
 
 	/**
 	 * 
-	 * @param form
 	 * @param modal
 	 * @param buttonType
 	 * @param bodyModel
@@ -100,8 +96,7 @@ public class ModalActionButton extends AjaxLink<Void> {
 	 * Override for actions after clicking the button.
 	 * 
 	 * @param target
-	 * @param form
-	 */
+     */
 	protected void onAfterClick(AjaxRequestTarget target) {}
 
 }

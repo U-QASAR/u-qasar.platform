@@ -92,7 +92,7 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	private final Chart historicChart;
 	
 	private final Long baseIndicatorId;
-	private BaseIndicator baseIndicator;
+	private final BaseIndicator baseIndicator;
 	
 
 	/**
@@ -243,8 +243,8 @@ public class HistoricBaseIndicatorPage extends BasePage {
 				super.renderHead(response);
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "historic-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**
@@ -252,8 +252,8 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<AbstractHistoricValues> newDataCheckGroup() {
-		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<AbstractHistoricValues>(
-				"dataGroup", new ArrayList<AbstractHistoricValues>());
+		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<>(
+                "dataGroup", new ArrayList<AbstractHistoricValues>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;
@@ -268,7 +268,6 @@ public class HistoricBaseIndicatorPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -369,8 +368,7 @@ public class HistoricBaseIndicatorPage extends BasePage {
 	/**
 	 *
 	 * @param modal
-	 * @param targetcubes
-	 */
+     */
 	private void closeDeleteConfirmationModal(final Modal modal,
 			AjaxRequestTarget target) {
 		// close

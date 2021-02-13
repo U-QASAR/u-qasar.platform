@@ -34,7 +34,7 @@ import org.apache.wicket.model.StringResourceModel;
  *
  *
  */
-public class MetaDataInUseIndicatorPanel extends Panel {
+class MetaDataInUseIndicatorPanel extends Panel {
     
     public MetaDataInUseIndicatorPanel(final String id, boolean inUse, final IModel<String> objectName) {
         super(id);

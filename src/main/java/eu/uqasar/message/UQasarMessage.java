@@ -74,14 +74,14 @@ public class UQasarMessage extends MimeMessage {
 		templateConfig.setDefaultEncoding("UTF-8");
 	}
 
-	public UQasarMessage(Session session, final String recipientAddress, final String fromAddress) throws MessagingException {
+	protected UQasarMessage(Session session, final String recipientAddress, final String fromAddress) throws MessagingException {
 		super(session);
 		setRecipient(Message.RecipientType.TO, convertStringToAddress(recipientAddress));
 		setFrom(fromAddress);
 		this.recipient = createDummyRecipient(recipientAddress);
 	}
 
-	public UQasarMessage(Session session, final String recipientAddress, Address fromAddress) throws MessagingException {
+	protected UQasarMessage(Session session, final String recipientAddress, Address fromAddress) throws MessagingException {
 		super(session);
 		setRecipient(Message.RecipientType.TO, convertStringToAddress(recipientAddress));
 		setFrom(fromAddress);
@@ -89,20 +89,20 @@ public class UQasarMessage extends MimeMessage {
 		this.from = fromAddress;
 	}
 
-	public UQasarMessage(Session session, User recipient, Address from) throws MessagingException {
+	protected UQasarMessage(Session session, User recipient, Address from) throws MessagingException {
 		super(session);
 		setRecipient(Message.RecipientType.TO, recipient);
 		setFrom(from);
 		this.from = from;
 	}
 
-	public UQasarMessage(Session session, User recipient, User from) throws MessagingException {
+	protected UQasarMessage(Session session, User recipient, User from) throws MessagingException {
 		super(session);
 		setRecipient(Message.RecipientType.TO, recipient);
 		setFrom(from);
 	}
 
-	public UQasarMessage(Session session, User recipient, final String fromAddress) throws MessagingException {
+	protected UQasarMessage(Session session, User recipient, final String fromAddress) throws MessagingException {
 		super(session);
 		setRecipient(Message.RecipientType.TO, recipient);
 		setFrom(fromAddress);
@@ -115,11 +115,11 @@ public class UQasarMessage extends MimeMessage {
 		return user;
 	}
 
-	public User getRecipient() {
+	protected User getRecipient() {
 		return this.recipient;
 	}
 
-	protected void validate() throws MessagingException {
+	private void validate() throws MessagingException {
 		if (getFrom() == null) {
 			throw new MessagingException("Sender cannot be null!");
 		}
@@ -144,11 +144,11 @@ public class UQasarMessage extends MimeMessage {
 		Transport.send(this);
 	}
 
-	protected String getContentTemplateFileName() {
+	private String getContentTemplateFileName() {
 		return this.getClass().getSimpleName() + ".ftl";
 	}
 
-	protected String getContentTemplatePath() {
+	private String getContentTemplatePath() {
 		// assume that all message templates reside below UQasarMessage class path
 		// base path therefor is UQasarMessage classpath without UQasarMessage name 
 		// (i.e. eu.uqasar.message.UQasarMessage -> eu.uqasar.message)
@@ -163,13 +163,12 @@ public class UQasarMessage extends MimeMessage {
 				replace("." + this.getClass().getSimpleName(), "");
 
 		// build final template path by combining diffPath, type of template (txt or html) and name of this class
-		final String templatePath = String.format("%s/%s/%s", diffPath.replace(".", "/"),
-				getMessageType().getTemplateSourceType(), getContentTemplateFileName());
 
-		return templatePath;
+        return String.format("%s/%s/%s", diffPath.replace(".", "/"),
+                getMessageType().getTemplateSourceType(), getContentTemplateFileName());
 	}
 
-	protected Configuration updateTemplatingConfiguration() {
+	private Configuration updateTemplatingConfiguration() {
 		// adjust execption handling based on message type
 		TemplateExceptionHandler handler = getMessageType() == MessageType.HTML
 				? TemplateExceptionHandler.HTML_DEBUG_HANDLER : TemplateExceptionHandler.DEBUG_HANDLER;
@@ -189,7 +188,7 @@ public class UQasarMessage extends MimeMessage {
 		return getDefaultModel();
 	}
 
-	protected UQasarMessage generateContentFromTemplate() throws MessagingException {
+	private UQasarMessage generateContentFromTemplate() throws MessagingException {
 		try {
 			Configuration cfg = updateTemplatingConfiguration();
 			final String templatePath = getContentTemplatePath();
@@ -205,7 +204,7 @@ public class UQasarMessage extends MimeMessage {
 		return this;
 	}
 
-	public UrlProvider getUrlProvider() {
+	protected UrlProvider getUrlProvider() {
 		if (Application.exists()) {
 			return UQasar.get().getUrlProvider();
 		} else {
@@ -213,15 +212,15 @@ public class UQasarMessage extends MimeMessage {
 		}
 	}
 
-	protected static final String getBaseURL() {
+	private static String getBaseURL() {
 		return "http://"+BasePage.SERVERNAMEANDPORT+"/uqasar";
 	}
 
-	protected static final String getAssetURL(final String assetPath) {
+	private static String getAssetURL(final String assetPath) {
 		return String.format("http://"+BasePage.SERVERNAMEANDPORT+"/uqasar/%s", assetPath);
 	}
 
-	public String getHomepageLink() {
+	private String getHomepageLink() {
 		if (Application.exists()) {
 			return UQasar.get().getHomePageUrl();
 		} else {
@@ -229,7 +228,7 @@ public class UQasarMessage extends MimeMessage {
 		}
 	}
 
-	public String getLogoLink() {
+	private String getLogoLink() {
 		if (Application.exists()) {
 			return UQasar.get().getHomePageUrl() + "/assets/img/uqasar-logo.png";
 		} else {
@@ -237,7 +236,7 @@ public class UQasarMessage extends MimeMessage {
 		}
 	}
 
-	protected String getLocalizedSubject() {
+	private String getLocalizedSubject() {
 		final String KEY_SUBJECT = "subject";
 		ResourceBundle bundle = getMyOrMyParentsResourceBundle();
 		if (bundle != null && bundle.containsKey(KEY_SUBJECT)) {
@@ -246,7 +245,7 @@ public class UQasarMessage extends MimeMessage {
 		return null;
 	}
 
-	protected ResourceBundle getMyOrMyParentsResourceBundle() {
+	private ResourceBundle getMyOrMyParentsResourceBundle() {
 		Class<?> clazzes[] = new Class<?>[]{this.getClass(), this.getClass().getSuperclass()};
 		Locale[] locales = new Locale[]{locale, new Locale("")};
 		ResourceBundle bundle = null;
@@ -260,7 +259,7 @@ public class UQasarMessage extends MimeMessage {
 					try {
 						bundle = ResourceBundle.getBundle(clazz.getCanonicalName(), localeT, clazz.getClassLoader());
 						return bundle;
-					} catch (MissingResourceException ex2) {
+					} catch (MissingResourceException ignored) {
 					}
 				}
 			}
@@ -271,7 +270,7 @@ public class UQasarMessage extends MimeMessage {
 		return bundle;
 	}
 
-	protected void adjustLocale() {
+	private void adjustLocale() {
 		if (recipient != null && recipient.getPreferredLocale() != null) {
 			this.locale = recipient.getPreferredLocale();
 		} else if (UQasar.exists()) {
@@ -280,7 +279,7 @@ public class UQasarMessage extends MimeMessage {
 		templateConfig.setLocale(this.locale);
 	}
 
-	protected UQasarMessage prepareHeaders() {
+	private UQasarMessage prepareHeaders() {
 		try {
 			if (this.getSubject() == null) {
 				// TODO add "U-QASAR" in front of every subject?
@@ -292,15 +291,15 @@ public class UQasarMessage extends MimeMessage {
 		return this;
 	}
 
-	public MessageType getMessageType() {
+	private MessageType getMessageType() {
 		return this.messageType;
 	}
 
-	public void setMessageType(MessageType type) {
+	private void setMessageType(MessageType type) {
 		this.messageType = type;
 	}
 
-	public Locale getLocale() {
+	private Locale getLocale() {
 		return this.locale;
 	}
 
@@ -308,19 +307,19 @@ public class UQasarMessage extends MimeMessage {
 		this.locale = locale;
 	}
 
-	public final void setFrom(User user) throws MessagingException {
+	private void setFrom(User user) throws MessagingException {
 		Address address = convertStringToAddress(user.getMail(), user.getFullName());
 		setFrom(address);
 		this.from = address;
 	}
 
-	public final void setFrom(final String mailAddress) throws MessagingException {
+	private void setFrom(final String mailAddress) throws MessagingException {
 		Address address = convertStringToAddress(mailAddress, mailAddress);
 		setFrom(address);
 		this.from = address;
 	}
 
-	public final void setRecipient(Message.RecipientType type, User user) throws MessagingException {
+	private void setRecipient(Message.RecipientType type, User user) throws MessagingException {
 		Address address = convertStringToAddress(user.getMail(), user.getFullName());
 		this.recipient = user;
 		setRecipient(type, address);
@@ -334,8 +333,7 @@ public class UQasarMessage extends MimeMessage {
 
 	public static Address convertStringToAddress(final String address) {
 		try {
-			Address from = new InternetAddress(address, CHARSET);
-			return from;
+            return new InternetAddress(address, CHARSET);
 		} catch (UnsupportedEncodingException ex) {
 			logger.error(ex.getMessage(), ex);
 		}
@@ -344,8 +342,7 @@ public class UQasarMessage extends MimeMessage {
 
 	public static Address convertStringToAddress(final String address, final String name) {
 		try {
-			Address from = new InternetAddress(address, name, CHARSET);
-			return from;
+            return new InternetAddress(address, name, CHARSET);
 		} catch (UnsupportedEncodingException ex) {
 			logger.error(ex.getMessage(), ex);
 		}

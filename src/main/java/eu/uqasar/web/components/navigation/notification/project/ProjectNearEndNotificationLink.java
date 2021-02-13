@@ -58,7 +58,7 @@ public class ProjectNearEndNotificationLink extends
 		super.onConfigure();
 	}
 	
-	public Project getProject() {
+	private Project getProject() {
 		return getModelObject() != null ? getModelObject().getProject() : null;
 	}
 

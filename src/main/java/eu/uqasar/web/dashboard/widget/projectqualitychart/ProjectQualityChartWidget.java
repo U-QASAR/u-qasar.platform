@@ -73,15 +73,13 @@ import eu.uqasar.util.UQasarUtil;
  */
 public class ProjectQualityChartWidget extends AbstractWidget{
 
-	public static final String GAUGE_TYPE = "GAUGE"; 
-	public static final String BAR_TYPE = "BAR";
-	public static final String LINE_TYPE = "LINE";
+	private static final String GAUGE_TYPE = "GAUGE";
+	private static final String BAR_TYPE = "BAR";
+	private static final String LINE_TYPE = "LINE";
 
-	public static final List<String> TYPES = Arrays.asList(new String[] {
-			LINE_TYPE, 
-			BAR_TYPE,
-			GAUGE_TYPE
-	});
+	public static final List<String> TYPES = Arrays.asList(LINE_TYPE,
+            BAR_TYPE,
+            GAUGE_TYPE);
 
 	private static ProjectQualityChartFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;
@@ -125,7 +123,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new ProjectQualityChartSettingsPanel(settingsPanelId, new Model<ProjectQualityChartWidget>(this));
+		return new ProjectQualityChartSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 
 	/**
@@ -265,7 +263,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 		PointSeries series = new PointSeries();	
 		series.setType(seriesType);
 
-		List<String> xAxisLabels = new ArrayList<String>();
+		List<String> xAxisLabels = new ArrayList<>();
 
 		for (HistoricValuesProject historicValue : projectHistoricvalues) {
 			float value = historicValue.getValue();
@@ -303,7 +301,7 @@ public class ProjectQualityChartWidget extends AbstractWidget{
 	
 	private List<HistoricValuesProject> getHistoricalValues(Project proj) {
 		HistoricalDataService historicalDataService = null;
-		List<HistoricValuesProject> histValues = new ArrayList<HistoricValuesProject>();
+		List<HistoricValuesProject> histValues = new ArrayList<>();
 		if (proj != null) {
 			try {
 				InitialContext ic = new InitialContext();

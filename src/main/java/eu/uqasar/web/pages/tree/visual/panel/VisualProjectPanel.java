@@ -64,8 +64,7 @@ public class VisualProjectPanel extends Panel {
 	/**
 	 * Constructor building the page
 	 *
-	 * @param parameters
-	 */
+     */
 	public VisualProjectPanel(final String markupId) {
 		super(markupId);
 		
@@ -163,7 +162,7 @@ public class VisualProjectPanel extends Panel {
 	 * @param node
 	 * @return Returns a Link to the page element according to the type of the node
 	 */
-	protected BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
+    private BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
 		BookmarkablePageLink<?> link = null;
 		
 		if (node instanceof Project) {

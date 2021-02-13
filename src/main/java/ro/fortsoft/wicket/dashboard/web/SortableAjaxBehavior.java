@@ -50,7 +50,7 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 	protected void respond(AjaxRequestTarget target) {
 		String jsonData = getComponent().getRequest().getRequestParameters().getParameterValue(JSON_DATA).toString();
 		Item[] items = getItems(jsonData);
-		Map<String, WidgetLocation> locations = new HashMap<String, WidgetLocation>();
+		Map<String, WidgetLocation> locations = new HashMap<>();
 		for (Item item : items) {
 			WidgetLocation location = new WidgetLocation(item.column, item.sortIndex);
 			locations.put(item.widget, location);
@@ -61,7 +61,6 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 
 	private Item[] getItems(String jsonData) {
 		Gson gson = new Gson();
-		Item[] items = gson.fromJson(jsonData, Item[].class);
 		/*
 		System.out.println(items.length);
 		for (Item item : items) {
@@ -69,7 +68,7 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 		}
 		*/
 		
-		return items;
+		return gson.fromJson(jsonData, Item[].class);
 	}
 		
 	static class Item {
@@ -80,14 +79,13 @@ public abstract class SortableAjaxBehavior extends AbstractDefaultAjaxBehavior {
 		
 		@Override
 		public String toString() {
-			StringBuffer buffer = new StringBuffer();
-			buffer.append("Item[");
-			buffer.append("column = ").append(column);
-			buffer.append(" widget = ").append(widget);
-			buffer.append(" sortIndex = ").append(sortIndex);
-			buffer.append("]");
+            String buffer = "Item[" +
+                    "column = " + column +
+                    " widget = " + widget +
+                    " sortIndex = " + sortIndex +
+                    "]";
 
-			return buffer.toString();
+            return buffer;
 		}
 
 	}

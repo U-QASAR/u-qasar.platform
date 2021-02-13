@@ -36,6 +36,10 @@ import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -43,7 +47,9 @@ import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 import org.hibernate.search.annotations.TermVector;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "product")
@@ -69,10 +75,7 @@ public class Product extends AbstractEntity implements Namable {
 
 	@OneToMany
 	@JoinColumn(name = "project_id", nullable = true)
-	private Set<Project> projects = new HashSet<Project>();
-
-	public Product() {
-	}
+	private Set<Project> projects = new HashSet<>();
 
 	public Product(final String name) {
 		this.setName(name);
@@ -83,7 +86,7 @@ public class Product extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 
@@ -93,70 +96,6 @@ public class Product extends AbstractEntity implements Namable {
 	 */
 	public String getAbbreviatedName() {
 		return getAbbreviatedName(48);
-	}
-
-	/**
-	 *
-	 * @return
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 *
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 *
-	 * @return
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 *
-	 * @param descr
-	 */
-	public void setDescription(String descr) {
-		this.description = descr;
-	}
-
-	/**
-	 *
-	 * @return
-	 */
-	public String getVersion() {
-		return version;
-	}
-
-	/**
-	 *
-	 * @param version
-	 */
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	/**
-	 *
-	 * @return
-	 */
-	public Date getReleaseDate() {
-		return releaseDate;
-	}
-
-	/**
-	 *
-	 * @param releaseDate
-	 */
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
 	}
 
 	@Override

@@ -20,18 +20,19 @@ package eu.uqasar.model.notification.complexity;
  * #L%
  */
 
-
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import eu.uqasar.model.notification.Notification;
 import eu.uqasar.model.notification.NotificationType;
 import eu.uqasar.model.tree.Project;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 public class ComplexityNotification extends Notification {
-
-	
 
 	private static final long serialVersionUID = 6838387940459194342L;
 
@@ -44,22 +45,6 @@ public class ComplexityNotification extends Notification {
 		this.notificationType = NotificationType.WARNING;
 	}
 
-	public Project getProject() {
-		return project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	@Override
 	public String toString() {
 		return "ComplexityNotification [project=" + project
@@ -70,7 +55,4 @@ public class ComplexityNotification extends Notification {
 				+ super.toString() + ", hashCode()=" + hashCode()
 				+ ", getClass()=" + getClass() + "]";
 	}
-	
-	
-
 }

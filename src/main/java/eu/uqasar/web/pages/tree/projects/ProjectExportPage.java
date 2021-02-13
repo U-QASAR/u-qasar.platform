@@ -60,7 +60,7 @@ public class ProjectExportPage extends BasePage {
 	private TreeNodeService treeNodeService;
 
 	private Project project;
-	private String selected = "Json";
+	private final String selected = "Json";
 
 	public ProjectExportPage(PageParameters parameters) {
 		super(parameters);
@@ -110,11 +110,7 @@ public class ProjectExportPage extends BasePage {
 									ContentDisposition.ATTACHMENT).setFileName(
 									name));
 					
-					} catch (JAXBException e){
-						e.printStackTrace();
-					} catch (JsonGenerationException e) {
-						e.printStackTrace();
-					} catch (JsonMappingException e) {
+					} catch (JAXBException | JsonGenerationException e){
 						e.printStackTrace();
 					} catch (IOException e) {
 						e.printStackTrace();

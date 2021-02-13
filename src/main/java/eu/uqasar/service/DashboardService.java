@@ -53,13 +53,12 @@ public class DashboardService extends AbstractService<DbDashboard> {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<DbDashboard> query = cb.createQuery(DbDashboard.class);
 		query.from(DbDashboard.class);
-		List<DbDashboard> resultList = em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 	
 	/**
 	 * 
-	 * @param processes
+	 * @param dashboards
 	 */
 	public void delete(Collection<DbDashboard> dashboards) {
 		for (DbDashboard db : dashboards) {

@@ -43,9 +43,9 @@ public abstract class SnapshotRecoverConfirmationModal extends Modal {
 	@Inject
 	SnapshotService snapShotService;
 
-	private ModalActionButton submitButton;
+	private final ModalActionButton submitButton;
 
-	private DropDownChoice<Snapshot> snapDropDown;
+	private final DropDownChoice<Snapshot> snapDropDown;
 
 	private Snapshot snap;
 
@@ -58,8 +58,8 @@ public abstract class SnapshotRecoverConfirmationModal extends Modal {
 		header(new StringResourceModel("snapshot.confirmation.modal.header",
 				this, null));
 
-		snapDropDown = new DropDownChoice<Snapshot>("snapshotName",
-				snapShotService.getProjectSnapshot(project));
+		snapDropDown = new DropDownChoice<>("snapshotName",
+                snapShotService.getProjectSnapshot(project));
 
 		snapDropDown.add(new AjaxEventBehavior("onchange") {
 			private static final long serialVersionUID = -5413222633224844355L;

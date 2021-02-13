@@ -25,6 +25,9 @@ package eu.uqasar.web.provider;
 import com.vaynberg.wicket.select2.Response;
 import com.vaynberg.wicket.select2.TextChoiceProvider;
 import eu.uqasar.model.AbstractEntity;
+import lombok.AccessLevel;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -34,16 +37,17 @@ import java.util.List;
  *
  *
  */
+@Setter(AccessLevel.PROTECTED)
 public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		extends TextChoiceProvider<Type> {
 
-	private List<Type> allEntities = new ArrayList<Type>();
-	public AbstractEntityChoiceProvider(){
+	private List<Type> allEntities = new ArrayList<>();
+	protected AbstractEntityChoiceProvider(){
 		
 	}
 	
-	public AbstractEntityChoiceProvider(List<Type> allEntities,
-			Type... entitiesToExclude) {
+	private AbstractEntityChoiceProvider(List<Type> allEntities,
+                                         Type... entitiesToExclude) {
 		this.allEntities = allEntities;
 
 		if ((entitiesToExclude != null) && (entitiesToExclude.length > 0)) {
@@ -52,7 +56,7 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		}
 	}
 
-	public AbstractEntityChoiceProvider(List<Type> entities) {
+	protected AbstractEntityChoiceProvider(List<Type> entities) {
 		this(entities, (Type[]) null);
 	}
 
@@ -81,10 +85,6 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 		}
 		return entities;
 	}
-	
-	protected void setAllEntities(List<Type> entities) {
-		this.allEntities = entities;
-	}
 
 	/**
 	 * Queries {@code pageSize} the list of entities, starting with
@@ -99,8 +99,8 @@ public abstract class AbstractEntityChoiceProvider<Type extends AbstractEntity>
 	 *            items per page
 	 * @return list of matches
 	 */
-	protected List<Type> queryMatches(String term, final int page,
-			final int pageSize) {
+    private List<Type> queryMatches(String term, final int page,
+                                    final int pageSize) {
 		List<Type> result = new ArrayList<>();
 		final int offset = page * pageSize;
 		int matched = 0;

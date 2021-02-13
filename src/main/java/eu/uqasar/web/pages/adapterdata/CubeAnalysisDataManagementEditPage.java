@@ -54,15 +54,15 @@ import eu.uqasar.web.pages.BasePage;
 public class CubeAnalysisDataManagementEditPage extends BasePage {
 
     // The tableEntity to edit/save
-    protected CubesMetricMeasurement tableEntity;
+    private CubesMetricMeasurement tableEntity;
     
     @Inject
     private CubesDataService cubesService;
     
     private final Form<CubesMetricMeasurement> tableEntityForm;
     
-    protected final InputBorder<String> valueBorder;
-    protected final InputBorder<String> jsonContentBorder;
+    private final InputBorder<String> valueBorder;
+    private final InputBorder<String> jsonContentBorder;
     @SuppressWarnings("unused")
     private final DateTextField someDateField;
     
@@ -109,7 +109,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * 
      * @param idParam
      */
-    protected void loadTableEntity(final StringValue idParam) {
+    private void loadTableEntity(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this,
                     null));
@@ -137,7 +137,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<CubesMetricMeasurement> newTableEntityForm() {
-        Form<CubesMetricMeasurement> form = new InputValidationForm<CubesMetricMeasurement>("form");
+        Form<CubesMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -148,10 +148,10 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField() {
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-                new TextField<String>("value", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new TextField<>("value", new PropertyModel<String>(
                         tableEntity, "value")), new StringResourceModel(
-                        "value.input.label", this, null),
+                "value.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -160,10 +160,10 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newJsonContentField() {
-        return new OnEventInputBeanValidationBorder<String>("jsonContentBorder",
-                new org.apache.wicket.markup.html.form.TextArea<String>("jsonContent", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("jsonContentBorder",
+                new org.apache.wicket.markup.html.form.TextArea<>("jsonContent", new PropertyModel<String>(
                         tableEntity, "jsonContent")), new StringResourceModel(
-                        "jsonContent.input.label", this, null),
+                "jsonContent.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -178,9 +178,8 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
                 .withStartDate(new DateTime().withYear(1900))
                 .allowKeyboardNavigation(true).autoClose(true)
                 .highlightToday(false).showTodayButton(false);
-        DateTextField dateTextField = new DateTextField("timeStamp",
+        return new DateTextField("timeStamp",
                 new PropertyModel<Date>(tableEntity, "timeStamp"), config);
-        return dateTextField;
     }
     
     /**
@@ -190,7 +189,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);
@@ -234,7 +233,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
     /**
      * 
      */
-    protected void save(AjaxRequestTarget target, PageParameters parameters) {
+    private void save(AjaxRequestTarget target, PageParameters parameters) {
         // save tableEntity
         saveTableEntity();
         // success message has to be associated to session so that it is shown
@@ -265,7 +264,7 @@ public class CubeAnalysisDataManagementEditPage extends BasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(tableEntityForm);

@@ -27,6 +27,8 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.easyrules.annotation.Action;
 import org.easyrules.annotation.Condition;
 import org.easyrules.annotation.Rule;
@@ -40,6 +42,8 @@ import eu.uqasar.model.tree.Project;
 import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.util.UQasarUtil;
 
+@Setter
+@Getter
 @Rule(name = "Project Quality Rule", description = "Checking the project overall quality")
 public class ProjectQualityRule extends BasicRule {
 	
@@ -122,32 +126,5 @@ public class ProjectQualityRule extends BasicRule {
 		}
 	}
 
-	/**
-	 * @return the projects
-	 */
-	public List<Project> getProjects() {
-		return projects;
-	}
 
-
-	/**
-	 * @param projects the projects to set
-	 */
-	public void setProjects(List<Project> projects) {
-		this.projects = projects;
-	}
-
-	/**
-	 * @return the targetValue
-	 */
-	public Float getTargetQualityValue() {
-		return targetQualityValue;
-	}
-
-	/**
-	 * @param targetValue the targetValue to set
-	 */
-	public void setTargetQualityValue(Float targetQualityValue) {
-		this.targetQualityValue = targetQualityValue;
-	}
 }

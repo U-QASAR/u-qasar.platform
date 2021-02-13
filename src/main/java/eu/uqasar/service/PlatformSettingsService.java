@@ -52,13 +52,11 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<PlatformSettings> query = cb.createQuery(PlatformSettings.class);
         query.from(PlatformSettings.class);
-        List<PlatformSettings> resultList = em.createQuery(query).getResultList();
-        return resultList;
+        return em.createQuery(query).getResultList();
     }
 
     /**
-     * 
-     * @param processes
+     *
      */
     public void delete(Collection<PlatformSettings> settings) {
         for (PlatformSettings setting : settings) {
@@ -68,7 +66,6 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
 
     /**
      * 
-     * @param processId
      * @return
      */
     public boolean ProjectSettingsExists(Long projectSettingId) {
@@ -78,7 +75,7 @@ public class PlatformSettingsService extends AbstractService<PlatformSettings> {
         Root<PlatformSettings> from = criteria.from(PlatformSettings.class);
         criteria.where(cb.equal(from.get(PlatformSettings_.id), projectSettingId));
         criteria.select(cb.countDistinct(from));
-        return (em.createQuery(criteria).getSingleResult().longValue() == 1);
+        return (em.createQuery(criteria).getSingleResult() == 1);
     }
 
     public List<PlatformSettings> getAllByAscendingName(int first, int count) {

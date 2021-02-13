@@ -21,7 +21,6 @@ package eu.uqasar.service.tree;
  */
 
 
-import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.model.tree.Metric;
 import eu.uqasar.model.tree.Project;
 import eu.uqasar.model.tree.Project_;
@@ -80,7 +79,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
      * @param filter
      * @return
      */
-	public List<Project> getAllProjectsFiltered(TreeFilterStructure filter) {
+    private List<Project> getAllProjectsFiltered(TreeFilterStructure filter) {
 		List<Project> resultList = new ArrayList<>();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<Project> query = cb.createQuery(Project.class);
@@ -143,7 +142,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
     	User loggedInUser = UQasar.getSession().getLoggedInUser();
        
         List<Project> projects = getAllProjectsFiltered(filter);
-        List<Project> returnProjects = new LinkedList<Project>();
+        List<Project> returnProjects = new LinkedList<>();
         for (Project project : projects) {
             List<Team> teams = project.getTeams();
             for (Team team : teams) {
@@ -174,7 +173,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
         User loggedInUser = UQasar.getSession().getLoggedInUser();
 
         List<Project> projects = getAllProjectsFiltered(new TreeFilterStructure());
-        List<Project> returnProjects = new LinkedList<Project>();
+        List<Project> returnProjects = new LinkedList<>();
         for (Project project : projects) {
             List<Team> teams = project.getTeams();
             for (Team team : teams) {
@@ -303,7 +302,7 @@ public class TreeNodeService extends AbstractService<TreeNode> {
 				delete(node);
 			} else {
 				TreeNode oldParent = node.getParent();
-				LinkedList<TreeNode> oldParentChildren = oldParent.getChildren();
+				List<TreeNode> oldParentChildren = oldParent.getChildren();
 				if (oldParentChildren != null) {
 					oldParentChildren.remove(node);
 					oldParent.setChildren(oldParentChildren);

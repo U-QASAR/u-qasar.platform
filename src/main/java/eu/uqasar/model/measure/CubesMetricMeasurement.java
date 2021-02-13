@@ -30,6 +30,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.search.annotations.Indexed;
 
 import com.google.gson.annotations.SerializedName;
@@ -37,7 +39,8 @@ import com.google.gson.annotations.SerializedName;
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.settings.adapter.AdapterSettings;
 import eu.uqasar.model.tree.Project;
-
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "cubesmetricmeasurement")
@@ -59,122 +62,6 @@ public class CubesMetricMeasurement extends AbstractEntity {
 	private Project project;		// 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private AdapterSettings adapter; // To which adapter the measurement belongs
-	
-	/**
-	 * @return the value
-	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(String value) {
-		this.value = value;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String getSelf() {
-		return self;
-	}
-	
-	/**
-	 * 
-	 * @param self
-	 */
-	public void setSelf(String self) {
-		this.self = self;
-	}
-	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getCubeName() {
-		return cubeName;
-	}
-	
-	/**
-	 * 
-	 * @param key
-	 */
-	public void setCubeName(String cubeName) {
-		this.cubeName = cubeName;
-	}
-	
-	/**
-	 * @return the metric
-	 */
-	public String getCubesMetric() {
-		return cubesMetric;
-	}
-
-	/**
-	 * @param metric the metric to set
-	 */
-	public void setCubesMetric(String cubesMetric) {
-		this.cubesMetric = cubesMetric;
-	}
-
-	/**
-	 * @return the timeStamp
-	 */
-	public Date getTimeStamp() {
-		return timeStamp;
-	}
-
-	/**
-	 * @param timeStamp the timeStamp to set
-	 */
-	public void setTimeStamp(Date timeStamp) {
-		this.timeStamp = timeStamp;
-	}
-
-	/**
-	 * @return the jsonContent
-	 */
-	public String getJsonContent() {
-		return jsonContent;
-	}
-
-	/**
-	 * @param jsonContent the jsonContent to set
-	 */
-	public void setJsonContent(String jsonContent) {
-		this.jsonContent = jsonContent;
-	}
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	/**
-	 * @return the adapter
-	 */
-	public AdapterSettings getAdapter() {
-		return adapter;
-	}
-
-	/**
-	 * @param adapter the adapter to set
-	 */
-	public void setAdapter(AdapterSettings adapter) {
-		this.adapter = adapter;
-	}
 
 	@Override
 	public String toString() {

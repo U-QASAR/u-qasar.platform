@@ -47,9 +47,9 @@ public abstract class ProductManagementPanel extends Panel {
 	private static final long serialVersionUID = 1L;
 
 	private static final List<String> orderSelection = Arrays
-			.asList(new String[] { "Ascending Date Order",
-					"Descending Date Order" });
-	public static String ASCENDING_IS_SELECTED = "Ascending Date Order";
+			.asList("Ascending Date Order",
+                    "Descending Date Order");
+	public static final String ASCENDING_IS_SELECTED = "Ascending Date Order";
 	public static String DESCENDING_IS_SELECTED = "Descending Date Order";
 
 	private String selected = ASCENDING_IS_SELECTED;
@@ -75,8 +75,8 @@ public abstract class ProductManagementPanel extends Panel {
 		Form form = new Form<>("form");
 		add(form);
 
-		productName = (TextField) new TextField<String>("name",
-				new PropertyModel(this, "name"))
+		productName = (TextField) new TextField<>("name",
+                new PropertyModel(this, "name"))
 				.add(new OnChangeAjaxBehavior() {
 
 					@Override
@@ -150,7 +150,7 @@ public abstract class ProductManagementPanel extends Panel {
 		return this.selected;
 	}
 
-	public void setSelected(String selected) {
+	private void setSelected(String selected) {
 		this.selected = selected;
 	}
 

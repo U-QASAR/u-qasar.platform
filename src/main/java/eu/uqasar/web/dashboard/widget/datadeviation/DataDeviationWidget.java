@@ -66,7 +66,7 @@ import eu.uqasar.service.tree.TreeNodeService;
  */
 public class DataDeviationWidget extends AbstractWidget{
 
-	private Project project;
+	private final Project project;
 	private static DataDeviationFactory chartDataFactory;	
 	private static final long serialVersionUID = -2447400380886027022L;
 	private Title chartTitle = new Title();	
@@ -116,7 +116,7 @@ public class DataDeviationWidget extends AbstractWidget{
 
 	@Override
 	public Panel createSettingsPanel(String settingsPanelId) {
-		return new DataDeviationSettingsPanel(settingsPanelId, new Model<DataDeviationWidget>(this));
+		return new DataDeviationSettingsPanel(settingsPanelId, new Model<>(this));
 	}
 		
 	
@@ -146,7 +146,7 @@ public class DataDeviationWidget extends AbstractWidget{
 		List<HistoricValuesBaseIndicator> historicValues = getHistoricalValues();
 		List<HistoricValuesBaseIndicator> qualityParam = new LinkedList<>();	
 		
-		List<Float> baseIndicatorValues = new LinkedList<Float>();
+		List<Float> baseIndicatorValues = new LinkedList<>();
 		// get and save parameter values
 		for(HistoricValuesBaseIndicator hv : historicValues){
 			if(hv.getBaseIndicator().getName().equals(qualityParameterChoice)){	
@@ -173,7 +173,7 @@ public class DataDeviationWidget extends AbstractWidget{
 		PointSeries series = new PointSeries();	
 		series.setType(seriesType);
 		
-		List<String> xAxisLabels = new ArrayList<String>();
+		List<String> xAxisLabels = new ArrayList<>();
 
 		for(int f = 0; f < deviations.size(); f++){		
 			String name = qualityParam.get(f).getBaseIndicator().getName();
@@ -210,10 +210,9 @@ public class DataDeviationWidget extends AbstractWidget{
 	
 
 	private List<Float> calculateDeviations(List<Float> baseIndicatorValues) {
-		List<Float> values = baseIndicatorValues;
-		List<Float> deviations = new LinkedList<>();
-		for(int f = 1; f < values.size(); f++){			
-			Float delta = values.get(f) - values.get(f-1);
+        List<Float> deviations = new LinkedList<>();
+		for(int f = 1; f < baseIndicatorValues.size(); f++){
+			Float delta = baseIndicatorValues.get(f) - baseIndicatorValues.get(f-1);
 			deviations.add(delta);
 		}
 		return deviations;
@@ -238,7 +237,7 @@ public class DataDeviationWidget extends AbstractWidget{
 
 	private List<HistoricValuesBaseIndicator> getHistoricalValues() {
 		HistoricalDataService historicalDataService = null;
-		List<HistoricValuesBaseIndicator> histValues = new ArrayList<HistoricValuesBaseIndicator>();		
+		List<HistoricValuesBaseIndicator> histValues = new ArrayList<>();
 		try {
 			InitialContext ic = new InitialContext();
 			historicalDataService = (HistoricalDataService) ic.lookup("java:module/HistoricalDataService");	
@@ -267,19 +266,19 @@ public class DataDeviationWidget extends AbstractWidget{
 
 		Qmodels.add(proj.getParent());
 
-		for(int obj=0; obj< Qobjectives.size(); obj++){
-			int QOsize = Qobjectives.get(obj).getChildren().size();
-			for(int indicator=0; indicator< QOsize; indicator++){
-				Qindicators.add(Qobjectives.get(obj).getChildren().get(indicator));
-			}
-		}
-		
-		for(int ind=0; ind < Qindicators.size(); ind++){
-			int QIsize = Qindicators.get(ind).getChildren().size();
-			for(int metric = 0; metric < QIsize; metric++){
-				Qmetrics.add(Qindicators.get(ind).getChildren().get(metric));
-			}
-		}	
+        for (TreeNode Qobjective : Qobjectives) {
+            int QOsize = Qobjective.getChildren().size();
+            for (int indicator = 0; indicator < QOsize; indicator++) {
+                Qindicators.add(Qobjective.getChildren().get(indicator));
+            }
+        }
+
+        for (TreeNode Qindicator : Qindicators) {
+            int QIsize = Qindicator.getChildren().size();
+            for (int metric = 0; metric < QIsize; metric++) {
+                Qmetrics.add(Qindicator.getChildren().get(metric));
+            }
+        }
 		
 		map.put("Quality Models", Qmodels);
 		map.put("Quality Objecvtives", Qobjectives);
@@ -298,11 +297,11 @@ public class DataDeviationWidget extends AbstractWidget{
 			// Objectives of Project	 	 
 			for(TreeNode obj : objs){
 				objNames.add(obj.getName());				
-				LinkedList<TreeNode> indicatorsOfObj = obj.getChildren();
+				List<TreeNode> indicatorsOfObj = obj.getChildren();
 				// Indicators of Objective
 				for(TreeNode ind: indicatorsOfObj){
 					indiNames.add(ind.getName());				
-					LinkedList<TreeNode> metricsOfIndis = ind.getChildren();
+					List<TreeNode> metricsOfIndis = ind.getChildren();
 					// Metrics Of Indicator
 					for(TreeNode metric : metricsOfIndis){
 						metricNames.add(metric.getName());

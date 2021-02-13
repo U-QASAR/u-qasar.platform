@@ -25,7 +25,6 @@ package eu.uqasar.auth.strategies;
 
 import eu.uqasar.web.UQSession;
 import eu.uqasar.web.pages.AboutPage;
-import eu.uqasar.web.pages.BasePage;
 import eu.uqasar.web.pages.ContactPage;
 import eu.uqasar.web.pages.auth.InfoPage;
 import eu.uqasar.web.pages.auth.login.LoginPage;
@@ -50,7 +49,7 @@ import org.apache.wicket.request.component.IRequestableComponent;
  *
  *
  */
-public class UQasarRedirectWithoutLoginStrategy implements IAuthorizationStrategy {
+class UQasarRedirectWithoutLoginStrategy implements IAuthorizationStrategy {
 
 	// List of pages that don't require authentication, all other pages will redirect to login if user is not authenticated!
 	private static final List<Class<? extends WebPage>> PAGES_WO_AUTH_REQ = Arrays.asList(

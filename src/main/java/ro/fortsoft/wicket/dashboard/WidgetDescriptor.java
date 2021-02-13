@@ -24,20 +24,20 @@ public interface WidgetDescriptor extends Serializable {
 	/**
 	 * Returns a UUID string that represents the widget type name.
 	 */
-	public String getTypeName();
+    String getTypeName();
 	
 	/**
 	 * Returns the widget name that user will see in the list of available widgets. 
 	 */
-	public String getName();
+    String getName();
 	
-	public String getProvider();
+	String getProvider();
 	
-	public String getDescription();
+	String getDescription();
 	
 	/**
 	 * Returns the classname of the widget.
 	 */
-	public String getWidgetClassName();
+    String getWidgetClassName();
 	
 }

@@ -65,14 +65,12 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * 
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getAllTestLinkMetricObjects() {
+    private List<TestLinkMetricMeasurement> getAllTestLinkMetricObjects() {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<TestLinkMetricMeasurement> query = 
 				cb.createQuery(TestLinkMetricMeasurement.class);
 		query.from(TestLinkMetricMeasurement.class);
-		List<TestLinkMetricMeasurement> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -126,9 +124,8 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 
 
 	/**
-	 * 
-	 * @param processes
-	 */
+	 *
+     */
 	public void delete(Collection<TestLinkMetricMeasurement> metrics) {
 		for (TestLinkMetricMeasurement m : metrics) {
 			delete(m);
@@ -157,7 +154,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * @param project
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getMeasurementsForProject(String project) {
+    private List<TestLinkMetricMeasurement> getMeasurementsForProject(String project) {
 		logger.info("Obtaining measurements for the project: " +project);
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -176,7 +173,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	 * @param date
 	 * @return
 	 */
-	public List<TestLinkMetricMeasurement> getMeasurementsForProjectByDate(String project, Date date) {
+    private List<TestLinkMetricMeasurement> getMeasurementsForProjectByDate(String project, Date date) {
 		logger.info("Obtaining measurements for the project: " +project);
 
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -193,7 +190,6 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	/**
 	 * 
 	 * @param project
-	 * @param date
 	 * @return
 	 */
 	public List<TestLinkMetricMeasurement> getMeasurementsForProjectByPeriod(String project, String period) {
@@ -232,10 +228,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 			}  
 		}
 
-		List<TestLinkMetricMeasurement> resultsLatest = 
-				getMeasurementsForProjectByDate(project,newDate);
-
-		return resultsLatest;
+        return getMeasurementsForProjectByDate(project,newDate);
 	}
 
 
@@ -248,17 +241,23 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 		DateTime now = DateTime.now();
 		Date date;
 
-		if(period.equals("Last Year")){
-			date = now.minusMonths(12).toDate(); 
-		} else if(period.equals("Last 6 Months")){
-			date = now.minusMonths(6).toDate(); 
-		} else if(period.equals("Last Month")){
-			date = now.minusMonths(1).toDate(); 
-		} else if(period.equals("Last Week")){
-			date = now.minusWeeks(1).toDate();
-		} else{
-			date = now.minusYears(5).toDate();
-		}
+        switch (period) {
+            case "Last Year":
+                date = now.minusMonths(12).toDate();
+                break;
+            case "Last 6 Months":
+                date = now.minusMonths(6).toDate();
+                break;
+            case "Last Month":
+                date = now.minusMonths(1).toDate();
+                break;
+            case "Last Week":
+                date = now.minusWeeks(1).toDate();
+                break;
+            default:
+                date = now.minusYears(5).toDate();
+                break;
+        }
 		//System.out.println("datedatedate:"+date);
 
 		return date;
@@ -296,7 +295,7 @@ public class TestLinkDataService extends AbstractService<TestLinkMetricMeasureme
 	public List<String> getTestLinkProjects() {
 		logger.info("Getting TestLink projects...");
 		List<TestLinkMetricMeasurement> measurements = getAllTestLinkMetricObjects();
-		List<String> projects = new ArrayList<String>();
+		List<String> projects = new ArrayList<>();
 		for (TestLinkMetricMeasurement testLinkMetricMeasurement : measurements) {
 			String project = testLinkMetricMeasurement.getName();
 			if (!projects.contains(project)) {

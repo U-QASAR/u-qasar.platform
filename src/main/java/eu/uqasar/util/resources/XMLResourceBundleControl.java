@@ -42,7 +42,7 @@ import java.util.Set;
  */
 public class XMLResourceBundleControl extends ResourceBundle.Control {
 
-	private static String XML = "properties.xml";
+	private static final String XML = "properties.xml";
 
 	public List<String> getFormats(String baseName) {
 		return Collections.singletonList(XML);
@@ -86,7 +86,7 @@ public class XMLResourceBundleControl extends ResourceBundle.Control {
 
 	private static class XMLResourceBundle extends ResourceBundle {
 
-		private Properties props;
+		private final Properties props;
 
 		XMLResourceBundle(InputStream stream) throws IOException {
 			props = new Properties();

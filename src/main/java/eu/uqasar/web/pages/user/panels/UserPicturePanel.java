@@ -55,7 +55,7 @@ public class UserPicturePanel extends Panel {
 
 	private final static int MAX_SIZE = 10240;
     private final User user;
-	private FileUploadField uploadField;
+	private final FileUploadField uploadField;
 
     @Inject
 	private UserService userService;

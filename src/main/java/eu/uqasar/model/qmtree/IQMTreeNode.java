@@ -29,39 +29,39 @@ import eu.uqasar.model.Persistable;
 
 public interface IQMTreeNode<Key extends Serializable> extends Persistable<Long>, Serializable {
 
-	public Key getNodeKey();
+	Key getNodeKey();
 	
-	public IQMTreeNode<Key> getParent();
+	IQMTreeNode<Key> getParent();
 	
-	public List<? extends IQMTreeNode<Key>> getSiblings();
+	List<? extends IQMTreeNode<Key>> getSiblings();
 	
-	public List<? extends IQMTreeNode<Key>> getSiblings(boolean includeSelf);
+	List<? extends IQMTreeNode<Key>> getSiblings(boolean includeSelf);
 	
-	public boolean canChangePositionWithNextSibling();
+	boolean canChangePositionWithNextSibling();
 
-	public boolean canChangePositionWithNextSibling(boolean changeParents);
+	boolean canChangePositionWithNextSibling(boolean changeParents);
 
-	public boolean canChangePositionWithPreviousSibling();
+	boolean canChangePositionWithPreviousSibling();
 
-	public boolean canChangePositionWithPreviousSibling(boolean changeParents);
+	boolean canChangePositionWithPreviousSibling(boolean changeParents);
 	
-	public boolean changePositionWithNextSibling();
+	boolean changePositionWithNextSibling();
 
-	public boolean changePositionWithNextSibling(boolean changeParents);
+	boolean changePositionWithNextSibling(boolean changeParents);
 
-	public boolean changePositionWithPreviousSibling();
+	boolean changePositionWithPreviousSibling();
 
-	public boolean changePositionWithPreviousSibling(boolean changeParents);
+	boolean changePositionWithPreviousSibling(boolean changeParents);
 	
-	public List<? extends IQMTreeNode<Key>> getChildren();
+	List<? extends IQMTreeNode<Key>> getChildren();
 	
-	public Class<? extends IQMTreeNode<Key>> getChildType();
+	Class<? extends IQMTreeNode<Key>> getChildType();
 
-	public void addChild(IQMTreeNode<Key> child);
+	void addChild(IQMTreeNode<Key> child);
 	
-	public String getName();
+	String getName();
 	
-	public IconType getIconType();
+	IconType getIconType();
 
-	public boolean getIsCompleted();
+	boolean isCompleted();
 }

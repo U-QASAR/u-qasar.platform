@@ -106,7 +106,7 @@ public class DashboardSharePage extends BasePage {
 	private final UserEntityProvider userProvider;
 
 	// The dashboard to be shared
-	protected DbDashboard dashboard;
+    private DbDashboard dashboard;
 		
 	// how many items do we show per page
 	private static final int itemsPerPage = 10;
@@ -203,7 +203,7 @@ public class DashboardSharePage extends BasePage {
 		for (User user : users) {
 			dashboard.setSharedBy(UQasar.getSession().getLoggedInUser().getFullName());
 			DbDashboard copyDash = new DbDashboard(dashboard);
-			DbDashboard persistedDash = dashboardService.create((DbDashboard) copyDash);
+			DbDashboard persistedDash = dashboardService.create(copyDash);
 			
 			user.addDashboard(persistedDash);
 			userService.update(user);
@@ -341,15 +341,14 @@ public class DashboardSharePage extends BasePage {
 	}
 
 	private Check<User> newShareCheck(final Item<User> item) {
-		Check<User> check = new Check<User>("userCheck", item.getModel(), userGroup) {
+        return new Check<User>("userCheck", item.getModel(), userGroup) {
 
-			@Override
-			protected void onConfigure() {
-				super.onConfigure();
-				setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
-			}
-		};
-		return check;
+            @Override
+            protected void onConfigure() {
+                super.onConfigure();
+                setVisible(!Objects.equals(item.getModelObject().getId(), UQSession.get().getLoggedInUser().getId()));
+            }
+        };
 	}
 
 	private class UserEntityProvider extends EntityProvider<User> {

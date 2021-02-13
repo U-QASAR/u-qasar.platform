@@ -36,7 +36,7 @@ import org.apache.wicket.request.mapper.parameter.PageParameters;
 @AuthorizeInstantiation(Role.Administrator)
 public abstract class AdminBasePage extends BasePage {
 
-	public AdminBasePage(final PageParameters pageParameters) {
+	protected AdminBasePage(final PageParameters pageParameters) {
 		super(pageParameters);
 	}
 

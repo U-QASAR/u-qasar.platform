@@ -22,9 +22,9 @@ public abstract class CascadingLoadableDetachableModel<M, P> extends LoadableDet
 
 	private static final long serialVersionUID = 1L;
 
-	protected IModel<P> parentModel;
+	private final IModel<P> parentModel;
 
-	public CascadingLoadableDetachableModel(IModel<P> parentModel) {
+	protected CascadingLoadableDetachableModel(IModel<P> parentModel) {
 		super();
 		
 		this.parentModel = parentModel;
@@ -37,7 +37,7 @@ public abstract class CascadingLoadableDetachableModel<M, P> extends LoadableDet
 		parentModel.detach();
 	}
 
-	public abstract M load(P parentObject);
+	protected abstract M load(P parentObject);
 	
 	@Override
 	protected M load() {

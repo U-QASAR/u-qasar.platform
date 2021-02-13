@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.model.tree.historic;
 
 /*
@@ -34,11 +31,13 @@ import javax.validation.constraints.Size;
 
 import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.model.tree.Project;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-/**
- *
- *
- */
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 public class Snapshot extends AbstractEntity{
 
@@ -64,12 +63,6 @@ public class Snapshot extends AbstractEntity{
 	@ManyToOne
 	private Project project;
 	
-	/**
-	 * 
-	 */
-	public Snapshot() {
-	}
-	
 	public Snapshot(String name) {
 		super();
 		
@@ -77,69 +70,13 @@ public class Snapshot extends AbstractEntity{
 		date = new Date();
 		
 	}
-	
-	/**
-	 * @return the date
-	 */
-	public Date getDate() {
-		return date;
-	}
 
 	/**
 	 * @return formated date ready to be printed without milliseconds
 	 */
-	public String getFormatedDate(){
+    private String getFormatedDate(){
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		return sdf.format(date);
-	}
-	
-	/**
-	 * @param date the date to set
-	 */
-	public void setDate(final Date date) {
-		this.date = date;
-	}
-
-	/**
-	 * @return the lastUpdate
-	 */
-	public Date getLastUpdate() {
-		return lastUpdate;
-	}
-
-	/**
-	 * @param lastUpdate the lastUpdate to set
-	 */
-	public void setLastUpdate(Date lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
-
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(final String name) {
-		this.name = name;
-	}
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-	/**
-	 * @param project the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
 	}
 
 	/* (non-Javadoc)

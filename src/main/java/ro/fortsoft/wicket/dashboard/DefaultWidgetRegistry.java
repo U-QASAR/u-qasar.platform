@@ -23,7 +23,7 @@ public class DefaultWidgetRegistry implements WidgetRegistry {
 	private List<WidgetDescriptor> widgetDescriptors;
 	
 	public DefaultWidgetRegistry() {
-		widgetDescriptors = new ArrayList<WidgetDescriptor>();
+		widgetDescriptors = new ArrayList<>();
 	}
 	
 	@Override

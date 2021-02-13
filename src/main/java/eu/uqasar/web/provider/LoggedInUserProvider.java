@@ -25,7 +25,6 @@ package eu.uqasar.web.provider;
 
 import eu.uqasar.model.user.User;
 import eu.uqasar.service.user.UserService;
-import eu.uqasar.web.LoggedInUser;
 import eu.uqasar.web.UQSession;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
@@ -34,9 +33,11 @@ import javax.enterprise.event.Observes;
 import javax.enterprise.event.Reception;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Produces;
+
+import lombok.Getter;
 import org.apache.wicket.Session;
 
+@Getter
 @SessionScoped
 public class LoggedInUserProvider implements Serializable {
 
@@ -47,15 +48,6 @@ public class LoggedInUserProvider implements Serializable {
 	HttpServletRequest httpRequest;
 
 	private User loggedInUser;
-
-	@Produces
-	@LoggedInUser
-	public User getLoggedInUser() {
-		if (loggedInUser == null) {
-			retrieveLoggedInUser();
-		}
-		return loggedInUser;
-	}
 
 	/**
 	 * Updates the logged in user entity when it receives the respective event.

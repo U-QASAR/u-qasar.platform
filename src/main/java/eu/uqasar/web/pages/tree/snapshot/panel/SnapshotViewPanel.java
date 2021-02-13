@@ -68,13 +68,12 @@ public class SnapshotViewPanel extends Panel {
 	@Inject
 	SnapshotService snapshotService;
 	
-	private Snapshot snapshot;
+	private final Snapshot snapshot;
 	
 	/**
 	 * Constructor building the page
-	 * @param snap 
-	 * @param parameters
-	 */
+	 * @param snap
+     */
 	public SnapshotViewPanel(final String markupId, IModel<Snapshot> snap) {
 		super(markupId);
 		
@@ -126,7 +125,6 @@ public class SnapshotViewPanel extends Panel {
 
 	/**
 	 * @param markupId
-	 * @param item
 	 * @return Returns a WebMarkContainer with the item details of an element of the tree
 	 */
 	private WebMarkupContainer drawTreeElement(String markupId, TreeNode node){
@@ -183,7 +181,7 @@ public class SnapshotViewPanel extends Panel {
 	 * @param node
 	 * @return Returns a Link to the page element according to the type of the node
 	 */
-	protected BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
+    private BookmarkablePageLink<?> setLinkToNodePage(final TreeNode node) {
 		BookmarkablePageLink<?> link = null;
 		
 		if (node instanceof Project) {

@@ -28,12 +28,17 @@ import java.util.Map;
 import javax.mail.Address;
 import javax.mail.MessagingException;
 import javax.mail.Session;
+
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 
 /**
  *
  *
  */
+@Setter
+@Getter
 public class ErrorReportMessage extends UQasarMessage {
 
 	private String report, reporter, errorMessage, markup, stacktrace;
@@ -44,46 +49,6 @@ public class ErrorReportMessage extends UQasarMessage {
 
 	public ErrorReportMessage(Session session, String recipientAddress, Address fromAddress) throws MessagingException {
 		super(session, recipientAddress, fromAddress);
-	}
-
-	public String getReport() {
-		return report;
-	}
-
-	public void setReport(String report) {
-		this.report = report;
-	}
-
-	public String getReporter() {
-		return reporter;
-	}
-
-	public void setReporter(String reporter) {
-		this.reporter = reporter;
-	}
-
-	public String getErrorMessage() {
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage) {
-		this.errorMessage = errorMessage;
-	}
-
-	public String getMarkup() {
-		return markup;
-	}
-
-	public void setMarkup(String markup) {
-		this.markup = markup;
-	}
-
-	public String getStacktrace() {
-		return stacktrace;
-	}
-
-	public void setStacktrace(String stacktrace) {
-		this.stacktrace = stacktrace;
 	}
 
 	@Override

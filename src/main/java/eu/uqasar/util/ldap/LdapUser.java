@@ -27,13 +27,12 @@ import eu.uqasar.model.settings.ldap.LdapSettings;
 import eu.uqasar.model.user.User;
 import java.util.Comparator;
 import javax.naming.directory.Attributes;
+
+import lombok.Getter;
 import org.apache.wicket.request.resource.DynamicImageResource;
 import org.apache.wicket.request.resource.IResource;
 
-/**
- *
- *
- */
+@Getter
 public class LdapUser extends LdapEntity {
 
 	private String userName, firstName, lastName, mail;
@@ -66,34 +65,6 @@ public class LdapUser extends LdapEntity {
 			return getLastName();
 		}
 		return null;
-	}
-
-	public String getUserName() {
-		if (userName == null) {
-			userName = getStringValue(settings.getUserUserNameMapping());
-		}
-		return userName;
-	}
-
-	public String getFirstName() {
-		if (firstName == null) {
-			firstName = getStringValue(settings.getUserFirstNameMapping());
-		}
-		return firstName;
-	}
-
-	public String getLastName() {
-		if (lastName == null) {
-			lastName = getStringValue(settings.getUserLastNameMapping());
-		}
-		return lastName;
-	}
-
-	public String getMail() {
-		if (mail == null) {
-			mail = getStringValue(settings.getUserMailMapping());
-		}
-		return mail;
 	}
 
 	public boolean hasProfilePicture() {
@@ -137,7 +108,7 @@ public class LdapUser extends LdapEntity {
         return toUser(this);
     }
 
-    public static User toUser(LdapUser ldapUser) {
+    private static User toUser(LdapUser ldapUser) {
         User user = new User();
         user.setFirstName(ldapUser.getFirstName());
         user.setLastName(ldapUser.getLastName());
@@ -174,8 +145,7 @@ public class LdapUser extends LdapEntity {
 				if (mail != 0) {
 					return mail;
 				}
-				int dn = LdapEntity.compare(o1.getDN(), o2.getDN(), false);
-				return dn;
+                return LdapEntity.compare(o1.getDN(), o2.getDN(), false);
 			}
 		}
 

@@ -20,7 +20,7 @@ import org.apache.wicket.application.IComponentInstantiationListener;
  */
 public class DashboardContextInjector implements IComponentInstantiationListener {
 
-	private DashboardContext dashboardContext;
+	private final DashboardContext dashboardContext;
 	
 	public DashboardContextInjector() {
 		dashboardContext = new DashboardContext();

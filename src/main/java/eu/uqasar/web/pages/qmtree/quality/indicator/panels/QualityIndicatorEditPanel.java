@@ -98,11 +98,11 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 	private static final long serialVersionUID = -2213926772560599402L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
+	private final TextArea<String> description;
 	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 	
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -112,20 +112,22 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 	
-    private TagsSelectionModal tagsModal;
+    private final TagsSelectionModal tagsModal;
 
 	private final Form<QMQualityIndicator> form;
 	
 	private final FormComponent name, lowerLimit, upperLimit, weight, targetValue;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
-	private AjaxButton save;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
+	private final AjaxButton save;
 	private CheckBox chkCreateCopy;
 
 	private final List<Class> metaDataClasses;
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 	
 	public QualityIndicatorEditPanel(String id, final IModel<QMQualityIndicator> model, final boolean isNew) {
 		super(id, model);
@@ -247,7 +249,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Purpose) getFormComponent().getConvertedInput()).equals(Purpose.Process)){
+				if (getFormComponent().getConvertedInput().equals(Purpose.Process)){
 					purposeAtt.remove(versionLabel);
 					purposeAtt.remove(version);
 					purposeAtt.remove(emptyLabel2);
@@ -281,7 +283,7 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Paradigm) getFormComponent().getConvertedInput()).equals(Paradigm.Waterfall)){
+				if (getFormComponent().getConvertedInput().equals(Paradigm.Waterfall)){
 					purposeAtt.remove(rupStage);
 					purposeAtt.add(lcStage);
 				} else {
@@ -379,11 +381,11 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 
 			} else {
 
-				form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-						"cancel",
-						QMQualityIndicatorViewPage.class,
-						QMQualityIndicatorViewPage.forQualityIndicator(model.getObject()),
-						de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+				form.add(new BootstrapBookmarkablePageLink<QMQualityIndicator>(
+                        "cancel",
+                        QMQualityIndicatorViewPage.class,
+                        QMQualityIndicatorViewPage.forQualityIndicator(model.getObject()),
+                        de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 						.setLabel(new StringResourceModel("button.cancel", this, null)));
 			}
 			
@@ -429,15 +431,15 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 	}
 	
 	
-	public QMQualityIndicator checkCompleted(QMQualityIndicator node) {
+	private QMQualityIndicator checkCompleted(QMQualityIndicator node) {
 		if (node.getChildren().isEmpty()){
-			node.setIsCompleted(false);
+			node.setCompleted(false);
 			//update quality objective
-			node.getParent().setIsCompleted(false);
+			node.getParent().setCompleted(false);
 			qmodelService.update(node.getParent());
 			
 			//update quality model
-			node.getParent().getParent().setIsCompleted(false);
+			node.getParent().getParent().setCompleted(false);
 			qmodelService.update(node.getParent().getParent());
 		}
 		return node;
@@ -498,17 +500,16 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							Iterator it = ch.iterator();
-							while (it.hasNext()){
-								set.add((QModelTagData)it.next());
+							for (QModelTagData aCh : ch) {
+								set.add(aCh);
 							}
 						} 
 						
@@ -519,17 +520,11 @@ public class QualityIndicatorEditPanel extends QMBaseTreePanel<QMQualityIndicato
 						this.setTypeSelected("");
 						this.setTagName("");
 					}
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SecurityException e) {
+				} catch (ClassNotFoundException | SecurityException | IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return confirmed;
+                return confirmed;
 			}
 		};
 		

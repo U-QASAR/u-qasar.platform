@@ -70,7 +70,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         super(clazz);
     }
 
-    protected long countUsersWithMetaData(T entity, SetAttribute<User, T> attribute) {
+    long countUsersWithMetaData(T entity, SetAttribute<User, T> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Long> query = cb.createQuery(Long.class);
         Root<User> root = query.from(User.class);
@@ -80,7 +80,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         return em.createQuery(query).getSingleResult();
     }
     
-    protected long countQOWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
+    long countQOWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Long> query = cb.createQuery(Long.class);
         Root<QMQualityObjective> root = query.from(QMQualityObjective.class);
@@ -90,7 +90,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         return em.createQuery(query).getSingleResult();
     }
     
-    protected long countQIWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
+    long countQIWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Long> query = cb.createQuery(Long.class);
         Root<QMQualityIndicator> root = query.from(QMQualityIndicator.class);
@@ -100,7 +100,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         return em.createQuery(query).getSingleResult();
     }
     
-    protected long countQMetricWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
+    long countQMetricWithMetaData(T entity, SetAttribute<QMBaseIndicator, QModelTagData> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Long> query = cb.createQuery(Long.class);
         Root<QMMetric> root = query.from(QMMetric.class);
@@ -111,7 +111,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
     }
     
     
-    protected long countprojectsWithMetaData(T entity, SetAttribute<Project, T> attribute) {
+    long countprojectsWithMetaData(T entity, SetAttribute<Project, T> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Long> query = cb.createQuery(Long.class);
         Root<Project> root = query.from(Project.class);
@@ -124,7 +124,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
     
     
 
-    protected List<User> getUsersWithMetaData(T entity, SetAttribute<User, T> attribute) {
+    List<User> getUsersWithMetaData(T entity, SetAttribute<User, T> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<User> query = cb.createQuery(User.class);
         Root<User> root = query.from(User.class);
@@ -134,7 +134,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
     }
 
    
-    protected List<Project> getProjectsWithMetaData(T entity, SetAttribute<Project, T> attribute) {
+    List<Project> getProjectsWithMetaData(T entity, SetAttribute<Project, T> attribute) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Project> query = cb.createQuery(Project.class);
         Root<Project> root = query.from(Project.class);
@@ -162,7 +162,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
             try {
                 Long id = Long.parseLong(potentialId);
                 // try to find existing tag
-                T existingMetaData = (T) getById(clazz, id);
+                T existingMetaData = getById(clazz, id);
                 if (existingMetaData == null) {
                     // not existent yet, create a new tag
                     existingMetaData = getByMetaDataOrCreate(clazz, potentialId);
@@ -184,7 +184,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
             try {
                 Long id = Long.parseLong(potentialId);
                 // try to find existing tag
-                T existingMetaData = (T) getById(clazz, id);
+                T existingMetaData = getById(clazz, id);
                 if (existingMetaData == null) {
                     // not existent yet
                     throw new EntityNotFoundException(potentialId);
@@ -192,7 +192,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
                 metaData.add(existingMetaData);
             } catch (NumberFormatException e) {
             	
-            	 T existingMetaData = (T) getByName(clazz, potentialId);
+            	 T existingMetaData = getByName(clazz, potentialId);
                  if (existingMetaData == null) {
                      // not existent yet
                      throw new EntityNotFoundException(potentialId);
@@ -227,7 +227,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
     	
     	if (!ent.getClass().equals(QModelTagData.class)){
         	logger.info("Creating QModelTagData");
-    		QModelTagData newQmTag = (QModelTagData) this.mergeQMTagData(new QModelTagData(newTag));
+    		QModelTagData newQmTag = this.mergeQMTagData(new QModelTagData(newTag));
     		logger.info("Created QModelTagData " + newQmTag.getName());
     	}
     	return newTag;
@@ -321,7 +321,7 @@ public class MetaDataService<T extends MetaData> extends AbstractService<T> {
         }
     }
     
-    public void removefromQM(T entity) {
+    void removefromQM(T entity) {
     	
         List<QMQualityObjective> qmqo = getQOWithMetaData(entity, QMQualityObjective_.qModelTagData);
         for (QMQualityObjective qo : qmqo) {

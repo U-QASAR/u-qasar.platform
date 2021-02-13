@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.provider;
 
 /*
@@ -43,7 +40,7 @@ public class TagChoiceProvider extends TextChoiceProvider<String> {
 	 */
 	private static final long serialVersionUID = -6769781095146146501L;
 	
-	public static final List<String> tags = Arrays.asList("Albania", "Bahamas",
+	private static final List<String> tags = Arrays.asList("Albania", "Bahamas",
 			"Cambodia", "Denmark", "Ecuador", "Fiji", "Gabon", "Haiti",
 			"Iceland", "Jamaica", "Kazakhstan", "Laos", "Macedonia", "Namibia",
 			"Oman", "Pakistan", "Qatar", "Romania", "Saudi Arabia", "Taiwan",

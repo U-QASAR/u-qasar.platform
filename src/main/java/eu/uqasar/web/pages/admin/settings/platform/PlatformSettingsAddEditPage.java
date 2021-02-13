@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.pages.admin.settings.platform;
 
 /*
@@ -68,7 +65,7 @@ public class PlatformSettingsAddEditPage extends AdminBasePage {
     private final InputBorder<String> valueValidationBorder;
 
     // The settings to edit/save
-    protected PlatformSettings platformSettings;
+    private PlatformSettings platformSettings;
 
     /**
      * @param parameters
@@ -115,7 +112,7 @@ public class PlatformSettingsAddEditPage extends AdminBasePage {
      * 
      * @param idParam
      */
-    protected void loadSettings(final StringValue idParam) {
+    private void loadSettings(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this, null));
             add(new Label("header", new StringResourceModel("form.create.header", this, null)));
@@ -208,7 +205,7 @@ public class PlatformSettingsAddEditPage extends AdminBasePage {
      * 
      * @param target
      */
-    protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 
         // Persist the adapter settings
         saveSettings();
@@ -236,7 +233,7 @@ public class PlatformSettingsAddEditPage extends AdminBasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(platformSettingsForm);

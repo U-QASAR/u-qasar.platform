@@ -26,6 +26,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import lombok.Setter;
 import org.apache.wicket.cdi.CdiContainer;
 import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
 import org.apache.wicket.model.IModel;
@@ -36,6 +37,7 @@ import eu.uqasar.model.qmtree.QModel;
 import eu.uqasar.service.QMTreeNodeService;
 import eu.uqasar.web.pages.qmtree.panels.filter.QMTreeFilterStructure;
 
+@Setter
 public class QMTreeProvider implements ITreeProvider<QMTreeNode> {
 
 
@@ -53,11 +55,7 @@ public class QMTreeProvider implements ITreeProvider<QMTreeNode> {
 		CdiContainer.get().getNonContextualManager().inject(this);
 		this.filter = filter;
 	}
-	
-	public void setFilter(QMTreeFilterStructure filter) {
-		this.filter = filter;
-	}
-	
+
 	@Override
 	public void detach() {
 	}
@@ -65,7 +63,7 @@ public class QMTreeProvider implements ITreeProvider<QMTreeNode> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<? extends QMTreeNode> getChildren(QMTreeNode node) {
-		return (Iterator<? extends QMTreeNode>) node.getChildren().iterator();
+		return node.getChildren().iterator();
 	}
 
 	@Override

@@ -56,7 +56,7 @@ import eu.uqasar.model.quality.indicator.Type;
 public class QualityIndicator extends BaseIndicator {
 
 	private static final long serialVersionUID = -3419215509636045908L;
-	public static final IconType ICON = new IconType("dashboard");
+	private static final IconType ICON = new IconType("dashboard");
 	
 	// The formula in the format that meant for viewing. In order to compute
 	// a value the formula is parsed and eval'd
@@ -99,10 +99,10 @@ public class QualityIndicator extends BaseIndicator {
 		this.setWeight(weight);
 		
 		Iterator<Metric> it = children.iterator();
-		List<TreeNode> nodes = new LinkedList<TreeNode>();
+		List<TreeNode> nodes = new LinkedList<>();
 		while (it.hasNext()){
-			Metric met = (Metric)it.next();
-			nodes.add((TreeNode)met);
+			Metric met = it.next();
+			nodes.add(met);
 		}
 		this.setChildren(nodes);
 	}
@@ -191,8 +191,7 @@ public class QualityIndicator extends BaseIndicator {
 	}
 
 	/**
-	 * @param formula the view formula to set
-	 */
+     */
 	@JsonIgnore
 	public void setViewFormula(String viewFormula) {
 		this.viewFormula = viewFormula;

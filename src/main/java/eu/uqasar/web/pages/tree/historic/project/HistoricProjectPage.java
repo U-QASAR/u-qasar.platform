@@ -97,10 +97,10 @@ public class HistoricProjectPage extends BasePage {
 	private final Modal deleteConfirmationModal;
 	private final CheckGroup<AbstractHistoricValues> dataGroup;
 	private final AjaxSubmitLink deleteSelectedButton;
-	private Chart historicChart;
+	private final Chart historicChart;
 	
-	private Long projectId;
-	private Project project;
+	private final Long projectId;
+	private final Project project;
 
 	/**
 	 * Constructor building the page
@@ -245,8 +245,8 @@ public class HistoricProjectPage extends BasePage {
 				// add javascript to load tagsinput plugin
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "historic-list")));
-			};
-		};
+			}
+        };
 	}
 
 	/**
@@ -254,8 +254,8 @@ public class HistoricProjectPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<AbstractHistoricValues> newDataCheckGroup() {
-		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<AbstractHistoricValues>(
-				"dataGroup", new ArrayList<AbstractHistoricValues>());
+		CheckGroup<AbstractHistoricValues> checkGroup = new CheckGroup<>(
+                "dataGroup", new ArrayList<AbstractHistoricValues>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			private static final long serialVersionUID = 7348039334236716476L;
@@ -270,7 +270,6 @@ public class HistoricProjectPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -371,8 +370,7 @@ public class HistoricProjectPage extends BasePage {
 	/**
 	 *
 	 * @param modal
-	 * @param targetcubes
-	 */
+     */
 	private void closeDeleteConfirmationModal(final Modal modal,
 			AjaxRequestTarget target) {
 		// close

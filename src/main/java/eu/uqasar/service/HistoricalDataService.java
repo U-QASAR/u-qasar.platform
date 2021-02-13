@@ -73,9 +73,7 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 		CriteriaQuery<HistoricValuesBaseIndicator> query = 
 				cb.createQuery(HistoricValuesBaseIndicator.class);
 		query.from(HistoricValuesBaseIndicator.class);
-		List<HistoricValuesBaseIndicator> resultList = 
-				em.createQuery(query).getResultList();
-		return resultList;
+        return em.createQuery(query).getResultList();
 	}	
 
 	/**
@@ -102,7 +100,7 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 	/**
 	 *
 	 * @param baseIndicatorId
-	 * @param postedAt
+	 * @param first
 	 * @param count
 	 *
 	 * @return
@@ -183,14 +181,10 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 				.orderBy(cb.asc(join.get(HistoricValuesProject_.date)));
 		
 		return em.createQuery(criteria).getResultList();
-	}	
-	
+	}
 
-	/**
-	 * @param baseIndicatorId
-	 * @return the number of historic values 
-	 */
-//	public int countHValsBelowLowLimitForBI(
+
+	//	public int countHValsBelowLowLimitForBI(
 //			Long baseIndicatorId) {
 //		logger.infof("Counting meassures of the base indicator with %d id", baseIndicatorId);
 //		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -247,7 +241,6 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 	/**
 	 *
 	 * @param projectId
-	 * @param postedAt
 	 * @param count
 	 *
 	 * @return
@@ -342,15 +335,9 @@ public class HistoricalDataService extends AbstractService<AbstractHistoricValue
 			m.setDeleted(true);
 		}
 	}
-	
-	
-	/**
-	 * 
-	 * @param metric
-	 * @return
-	 * @throws uQasarException
-	 */
-//	public List<HistoricValues> getMeasurementsByMetricAndDate(String metric, Date date) 
+
+
+	//	public List<HistoricValues> getMeasurementsByMetricAndDate(String metric, Date date)
 //			throws uQasarException {
 //		logger.info("Get measurements for metric: " +metric);
 //

@@ -24,6 +24,7 @@ package eu.uqasar.web.components.tree.util;
 import eu.uqasar.model.tree.Project;
 import java.util.Iterator;
 
+import lombok.Setter;
 import org.apache.wicket.extensions.markup.html.repeater.tree.ITreeProvider;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.LoadableDetachableModel;
@@ -35,6 +36,7 @@ import java.util.List;
 import javax.inject.Inject;
 import org.apache.wicket.cdi.CdiContainer;
 
+@Setter
 public class TreeProvider implements ITreeProvider<TreeNode> {
 
 	/**
@@ -51,11 +53,7 @@ public class TreeProvider implements ITreeProvider<TreeNode> {
 		CdiContainer.get().getNonContextualManager().inject(this);
 		this.filter = filter;
 	}
-	
-	public void setFilter(TreeFilterStructure filter) {
-		this.filter = filter;
-	}
-	
+
 	@Override
 	public void detach() {
 	}
@@ -63,7 +61,7 @@ public class TreeProvider implements ITreeProvider<TreeNode> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public Iterator<? extends TreeNode> getChildren(TreeNode node) {
-		return (Iterator<? extends TreeNode>) node.getChildren().iterator();
+		return node.getChildren().iterator();
 	}
 
 	@Override

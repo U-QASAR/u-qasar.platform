@@ -196,8 +196,7 @@ public class TestFrameworkDataManagementPage extends BasePage {
 				response.render(OnLoadHeaderItem.forScript(String.format(
 						JSTemplates.LOAD_TABLE_SORTER, "Product-list")));
 			}
-		;
-	}
+        }
 
 	;
 	}
@@ -207,8 +206,8 @@ public class TestFrameworkDataManagementPage extends BasePage {
 	 * @return
 	 */
 	private CheckGroup<TestLinkMetricMeasurement> newTestLinkCheckGroup() {
-		CheckGroup<TestLinkMetricMeasurement> checkGroup = new CheckGroup<TestLinkMetricMeasurement>(
-				"testLinkGroup", new ArrayList<TestLinkMetricMeasurement>());
+		CheckGroup<TestLinkMetricMeasurement> checkGroup = new CheckGroup<>(
+                "testLinkGroup", new ArrayList<TestLinkMetricMeasurement>());
 		checkGroup.add(new AjaxFormChoiceComponentUpdatingBehavior() {
 
 			/**
@@ -226,7 +225,6 @@ public class TestFrameworkDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param productGroup
 	 * @return
 	 */
 	private AjaxSubmitLink newDeleteSelectedButton(
@@ -365,7 +363,6 @@ public class TestFrameworkDataManagementPage extends BasePage {
 
 	/**
 	 *
-	 * @param Product
 	 * @return
 	 */
 	private static PageParameters forTestLink(TestLinkMetricMeasurement testLinkMeasurement) {
@@ -380,7 +377,7 @@ public class TestFrameworkDataManagementPage extends BasePage {
 		 * 
 		 */
 		private static final long serialVersionUID = -6101725388622909893L;
-		private AdapterSettings adapter;
+		private final AdapterSettings adapter;
 		
 		public TestLinkProvider(Long adapterID) {
 			adapter = adapterService.getById(adapterID);

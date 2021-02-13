@@ -26,6 +26,8 @@ import java.util.List;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
@@ -47,7 +49,9 @@ import ro.fortsoft.wicket.dashboard.web.DashboardContextAware;
 import ro.fortsoft.wicket.dashboard.web.DashboardPanel;
 import ro.fortsoft.wicket.dashboard.web.WidgetPanel;
 
-public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<ProjectQualityGoogleChartWidget> 
+@Setter
+@Getter
+public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<ProjectQualityGoogleChartWidget>
 	implements DashboardContextAware {
 
 	private static final long serialVersionUID = 1L;
@@ -63,7 +67,7 @@ public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<Project
 		
 		setOutputMarkupPlaceholderTag(true);
 		
-		Form<Widget> form = new Form<Widget>("form");
+		Form<Widget> form = new Form<>("form");
 
 		// Get the project from the settings
 		projectName = getModelObject().getSettings().get("project");
@@ -83,14 +87,14 @@ public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<Project
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
-		DropDownChoice<Project> projectChoice = new DropDownChoice<Project>("project", 
-        		new PropertyModel<Project>(this, "project"), projects);
+		DropDownChoice<Project> projectChoice = new DropDownChoice<>("project",
+                new PropertyModel<Project>(this, "project"), projects);
         form.add(projectChoice);
 		
 		// Field for the chart type
 		chartType = getModelObject().getSettings().get("chartType");
-        DropDownChoice<String> choice = new DropDownChoice<String>("chartType", 
-        		new PropertyModel<String>(this, "chartType"), ProjectQualityGoogleChartWidget.TYPES);
+        DropDownChoice<String> choice = new DropDownChoice<>("chartType",
+                new PropertyModel<String>(this, "chartType"), ProjectQualityGoogleChartWidget.TYPES);
         form.add(choice);
         
         form.add(new AjaxSubmitLink("submit") {
@@ -137,62 +141,12 @@ public class ProjectQualityGoogleChartSettingsPanel extends GenericPanel<Project
         
 		add(form);
 	}
-	
 
-	@Override
-	public void setDashboardContext(DashboardContext dashboardContext) {
-		this.dashboardContext = dashboardContext;
-	}
-	
+
 	private void hideSettingPanel(AjaxRequestTarget target) {
     	setVisible(false);
     	target.add(this);
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
-	public String getChartType() {
-		return chartType;
-	}
 
-	/**
-	 * 
-	 * @param chartType the chartType to set
-	 */
-	public void setChartType(String chartType) {
-		this.chartType = chartType;
-	}	
-
-	/**
-	 * @return the projectName
-	 */
-	public String getProjectName() {
-		return projectName;
-	}
-
-
-	/**
-	 * @param projectName the projectName to set
-	 */
-	public void setProjectName(String projectName) {
-		this.projectName = projectName;
-	}
-
-
-	/**
-	 * @return the project
-	 */
-	public Project getProject() {
-		return project;
-	}
-
-
-	/**
-	 * @param project the project to set
-	 */
-	public void setProject(Project project) {
-		this.project = project;
-	}
 }

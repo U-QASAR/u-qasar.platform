@@ -32,6 +32,9 @@ import java.util.logging.Logger;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.wicket.model.IModel;
 import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.search.annotations.Analyze;
@@ -45,10 +48,9 @@ import eu.uqasar.model.AbstractEntity;
 import eu.uqasar.util.resources.ResourceBundleLocator;
 import eu.uqasar.web.UQasar;
 
-/**
- *
- *
- */
+@NoArgsConstructor
+@Setter
+@Getter
 @MappedSuperclass
 @Indexed
 public abstract class MetaData extends AbstractEntity implements IMetaData {
@@ -57,10 +59,6 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
 	@NotNull
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO, termVector=TermVector.YES)
     private String name;
-
-    public MetaData() {
-
-    }
 
     public MetaData(final String name) {
         this.name = name;
@@ -81,15 +79,6 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
             entity.setName(name);
         }
         return entity;
-    }
-    
-    public void setName(final String name) {
-        this.name = name;
-    }
-    
-    @Override
-    public String getName() {
-        return this.name;
     }
 
     public static <T extends MetaData> Collection<Class<T>> getAllClasses() {
@@ -147,7 +136,7 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
         return getLabelModelForNew(clazz).getObject();
     }
 
-    public static <T extends MetaData> IModel<String> getLabelModelForExisting(Class<T> clazz) {
+    private static <T extends MetaData> IModel<String> getLabelModelForExisting(Class<T> clazz) {
         return ResourceBundleLocator.
                 getLabelModel(MetaData.class, PREFIX + getLabelKey(clazz) + EXISTING_SUFFIX);
     }
@@ -169,7 +158,7 @@ public abstract class MetaData extends AbstractEntity implements IMetaData {
         return getLabelKey(getClass());
     }
 
-    protected static String getLabelKey(Class clazz) {
+    private static String getLabelKey(Class clazz) {
         return clazz.getSimpleName();
     }
 

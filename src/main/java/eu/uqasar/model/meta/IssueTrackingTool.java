@@ -21,17 +21,17 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
 /**
  *
  *
  */
+@NoArgsConstructor
 @Entity
 public class IssueTrackingTool extends MetaData {
-
-    public IssueTrackingTool() {
-    }
 
     public IssueTrackingTool(String name) {
         super(name);

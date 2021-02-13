@@ -37,7 +37,7 @@ public class UserEntityProvider extends EntityProvider<User> {
 	@Inject
 	UserService userService;
 
-	Collection<User> users;
+	private final Collection<User> users;
 
 	/**
 	 * Constructs a new user provider that provides a data view to ALL users in
@@ -47,7 +47,7 @@ public class UserEntityProvider extends EntityProvider<User> {
 	 * @param includeMe <code>true</code> if the currently logged in user should
 	 * be part of the data view of ALL users, <code>false</code> otherwise.
 	 */
-	public UserEntityProvider(boolean includeMe) {
+    private UserEntityProvider(boolean includeMe) {
 		if (!includeMe) {
 			this.users = userService.getAllExceptOne(UQasar.getSession().getLoggedInUser());
 		} else {

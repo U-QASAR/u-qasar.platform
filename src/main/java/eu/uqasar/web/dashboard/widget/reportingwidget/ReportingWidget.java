@@ -64,20 +64,20 @@ public class ReportingWidget extends AbstractWidget {
     private static final long serialVersionUID = -105357652483079696L;
 
     public static final String COLUMN_TYPE = "COLUMN";
-    public static final String PIE_TYPE = "PIE";
+    private static final String PIE_TYPE = "PIE";
 
     public static final List<String> TYPES = 
-    		Arrays.asList(new String[] { COLUMN_TYPE, PIE_TYPE });
+    		Arrays.asList(COLUMN_TYPE, PIE_TYPE);
 
     private static ReportingFactory chartDataFactory;
 
-    public String cube_table;
+    private String cube_table;
 
     public String getCube_table() {
         return cube_table;
     }
 
-    public void setCube_table(String cube_table) {
+    private void setCube_table(String cube_table) {
         this.cube_table = cube_table;
     }
 
@@ -122,7 +122,7 @@ public class ReportingWidget extends AbstractWidget {
 
     @Override
     public Panel createSettingsPanel(String settingsPanelId) {
-        return new ReportingSettingsPanel(settingsPanelId, new Model<ReportingWidget>(this));
+        return new ReportingSettingsPanel(settingsPanelId, new Model<>(this));
     }
 
     /**
@@ -132,7 +132,7 @@ public class ReportingWidget extends AbstractWidget {
      */
     public List<ReportMeasurement> getMeasurements(String cube, String additionalUrlToLoad) {
 
-        List<ReportMeasurement> measurements = new ArrayList<ReportMeasurement>();
+        List<ReportMeasurement> measurements = new ArrayList<>();
 
         // generate cube Matrics
         if (cube != null) {
@@ -270,8 +270,8 @@ public class ReportingWidget extends AbstractWidget {
                         .setConnectorColor(new HexColor("#000000")).setFormatter(new PercentageAndValueFormatter()))));
 
             // Collect Points for Series
-            List<Point> pointList = new LinkedList<Point>();
-            List<String> names = new LinkedList<String>();
+            List<Point> pointList = new LinkedList<>();
+            List<String> names = new LinkedList<>();
             for (ReportMeasurement metric : metrics) {
                 pointList.add(new Point(metric.getReportValue(), metric.getCount()));
                 names.add(metric.getReportType());
@@ -279,8 +279,8 @@ public class ReportingWidget extends AbstractWidget {
             // Add all those points to one series
             PointSeries series = new PointSeries();
             series.setType(SeriesType.PIE);
-            for (int i = 0; i < pointList.size(); i++) {
-                series.addPoint(pointList.get(i));
+            for (Point aPointList : pointList) {
+                series.addPoint(aPointList);
             }
             pieOptions.addSeries(series);
             return pieOptions;
@@ -289,7 +289,7 @@ public class ReportingWidget extends AbstractWidget {
 
     public Map<String, List<String>> getRulesMap(List<String> projects) {
 
-        Map<String, List<String>> rulesMap = new HashMap<String, List<String>>(); // map:rule->additionalRules
+        Map<String, List<String>> rulesMap = new HashMap<>(); // map:rule->additionalRules
 
         // Add Rules and Additional Rules as DropDownList
         rulesMap.put("drillDown", Arrays.asList("Project", "Type", "Status", "Priority", "Resolution", "Assignee", "Reporter",

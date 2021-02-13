@@ -75,9 +75,9 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 	private final DropDownChoice<Project> projectChoice;
 	private final DropDownChoice<String> qualityParameterChoice;
 	private final WebMarkupContainer wmcGeneral;
-	private List<String> OBJS = new ArrayList<String>(), 
-						 INDIS= new ArrayList<String>(), 
-						 MTRX = new ArrayList<String>();
+	private List<String> OBJS = new ArrayList<>(),
+						 INDIS= new ArrayList<>(),
+						 MTRX = new ArrayList<>();
 	private List<Project> projects;
 	
 	public UqasarDataVisualizationSettingsPanel(String id, IModel<UqasarDataVisualizationWidget> model) {
@@ -86,7 +86,7 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 		setOutputMarkupPlaceholderTag(true);
 				
 		//Form and WMCs
-		final Form<Widget> form = new Form<Widget>("form");		
+		final Form<Widget> form = new Form<>("form");
 		wmcGeneral = newWebMarkupContainer("wmcGeneral");
 		form.add(wmcGeneral);
 
@@ -136,7 +136,7 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 		wmcGeneral.add(qualityParameterChoice);
 
 		// project
-        projectChoice = new DropDownChoice<Project>("projects", new PropertyModel<Project>(this, "project"), projects);
+        projectChoice = new DropDownChoice<>("projects", new PropertyModel<Project>(this, "project"), projects);
 		if (project != null) {
 			projectChoice.add(new AjaxFormComponentUpdatingBehavior("onChange") {
 				private static final long serialVersionUID = 1L;
@@ -206,22 +206,23 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 	//	IModel<List<String>> model = new Model<List<String>>();
 		
 		
-		SelectOptions<String> selectOptions = new SelectOptions<String>(
-				wicketId, 
-				Model.ofList(selections), 
-				new IOptionRenderer<String>() {
-					private static final long serialVersionUID = 1L;
-					@Override 
-					public String getDisplayValue(String object) { 
-						return object;
-					}
-					
-					@Override 
-					public IModel<String> getModel(String value) { 
-						return new Model<String>(value);
-					}
-				}
-		);
+		SelectOptions<String> selectOptions = new SelectOptions<>(
+                wicketId,
+                Model.ofList(selections),
+                new IOptionRenderer<String>() {
+                    private static final long serialVersionUID = 1L;
+
+                    @Override
+                    public String getDisplayValue(String object) {
+                        return object;
+                    }
+
+                    @Override
+                    public IModel<String> getModel(String value) {
+                        return new Model<>(value);
+                    }
+                }
+        );
 		selectOptions.setRecreateChoices(true);
 		selectOptions.setOutputMarkupId(true);
 		
@@ -231,7 +232,6 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 	/**
 	 * 
 	 * @param string
-	 * @param visible
 	 * @return
 	 */
 	private WebMarkupContainer newWebMarkupContainer(String string) {
@@ -303,11 +303,11 @@ public class UqasarDataVisualizationSettingsPanel extends GenericPanel<UqasarDat
 			// Objectives of Project	 	 
 			for(TreeNode obj : objs){
 				objNames.add(obj.getName());				
-				LinkedList<TreeNode> indicatorsOfObj = obj.getChildren();
+				List<TreeNode> indicatorsOfObj = obj.getChildren();
 				// Indicators of Objective
 				for(TreeNode ind: indicatorsOfObj){
 					indiNames.add(ind.getName());				
-					LinkedList<TreeNode> metricsOfIndis = ind.getChildren();
+					List<TreeNode> metricsOfIndis = ind.getChildren();
 					// Metrics Of Indicator
 					for(TreeNode metric : metricsOfIndis){
 						metricNames.add(metric.getName());

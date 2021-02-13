@@ -60,7 +60,7 @@ public class DefaultChartOptions extends Options {
 			lang.setResetZoom(bundle.getString("chart.button.reset.zoom"));
 			lang.setResetZoomTitle(bundle
 					.getString("chart.button.title.reset.zoom"));
-		} catch (MissingResourceException e) {
+		} catch (MissingResourceException ignored) {
 		}
 
 		return lang;
@@ -70,27 +70,27 @@ public class DefaultChartOptions extends Options {
 		return ResourceBundleLocator.getResourceBundle(DefaultChartOptions.class);
 	}
 
-	protected static String getDecimalSeparator() {
+	private static String getDecimalSeparator() {
 		Locale locale = Session.get().getLocale();
 		DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(
 				locale);
 		return String.valueOf(decimalFormatSymbols.getDecimalSeparator());
 	}
 
-	protected static String getGroupingSeparator() {
+	private static String getGroupingSeparator() {
 		Locale locale = Session.get().getLocale();
 		DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols(
 				locale);
 		return String.valueOf(decimalFormatSymbols.getGroupingSeparator());
 	}
 
-	protected static List<String> getLocalizedWeekDays() {
+	private static List<String> getLocalizedWeekDays() {
 		Locale locale = Session.get().getLocale();
 		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
 		return Arrays.asList(dateFormatSymbols.getShortWeekdays());
 	}
 
-	protected static List<String> getLocalizedMonthNames() {
+	private static List<String> getLocalizedMonthNames() {
 		Locale locale = Session.get().getLocale();
 		DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
 		return Arrays.asList(dateFormatSymbols.getShortMonths());

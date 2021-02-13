@@ -21,17 +21,13 @@ package eu.uqasar.model.meta;
  */
 
 
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 
-/**
- *
- *
- */
+@NoArgsConstructor
 @Entity
 public class SoftwareType extends MetaData {
-
-    public SoftwareType() {
-    }
 
     public SoftwareType(String name) {
         super(name);

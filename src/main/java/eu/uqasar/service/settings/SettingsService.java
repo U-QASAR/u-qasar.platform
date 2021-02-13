@@ -48,7 +48,7 @@ public abstract class SettingsService<T extends Settings> {
 	@Inject
 	protected EntityManager em;
 	
-	public Setting getByKey(final String key) {
+	private Setting getByKey(final String key) {
 		return em.find(Setting.class, key);
 	}
 	
@@ -56,7 +56,7 @@ public abstract class SettingsService<T extends Settings> {
 		return getAll(keys.toArray(new String[0]));
 	}
 	
-	public Collection<Setting> getAll(final String... keys) {
+	private Collection<Setting> getAll(final String... keys) {
 		List<Setting> settings = new ArrayList<>();
 		for (String key : keys) {
 			settings.add(getByKey(key));
@@ -68,12 +68,12 @@ public abstract class SettingsService<T extends Settings> {
 		return update(setting);
 	}
 	
-	public Setting update(Setting setting) {
+	private Setting update(Setting setting) {
 		setting = em.merge(setting);
 		return setting;
 	}
 	
-	public void delete(Setting setting) {
+	private void delete(Setting setting) {
 		em.remove(setting);
 	}
 	

@@ -81,8 +81,8 @@ public abstract class DropDownButton extends AbstractLink implements
 	 * @param iconTypeModel
 	 *            the type of the icon
 	 */
-	public DropDownButton(final String markupId, final IModel<String> model,
-			final IModel<IconType> iconTypeModel) {
+    private DropDownButton(final String markupId, final IModel<String> model,
+                           final IModel<IconType> iconTypeModel) {
 		super(markupId, model);
 
 		this.script = newInitializerScript();
@@ -110,7 +110,7 @@ public abstract class DropDownButton extends AbstractLink implements
 	/**
 	 * @return base css class name of button container element
 	 */
-	protected String createCssClassName() {
+    private String createCssClassName() {
 		return "dropdown";
 	}
 
@@ -120,7 +120,7 @@ public abstract class DropDownButton extends AbstractLink implements
 	 * @param icon
 	 *            The icon to add
 	 */
-	protected void addIconToBaseButton(final Icon icon) {
+    private void addIconToBaseButton(final Icon icon) {
 		baseButton.add(icon);
 	}
 
@@ -139,7 +139,7 @@ public abstract class DropDownButton extends AbstractLink implements
 	/**
 	 * @return new initializer script
 	 */
-	protected String newInitializerScript() {
+    private String newInitializerScript() {
 		return $(this, ".dropdown-toggle").chain(dropdown()).get();
 	}
 
@@ -177,9 +177,9 @@ public abstract class DropDownButton extends AbstractLink implements
 	 *            The icon type as model
 	 * @return a new button component
 	 */
-	protected WebMarkupContainer newButton(final String markupId,
-			final IModel<String> labelModel,
-			final IModel<IconType> iconTypeModel) {
+    private WebMarkupContainer newButton(final String markupId,
+                                         final IModel<String> labelModel,
+                                         final IModel<IconType> iconTypeModel) {
 		final WebMarkupContainer baseButton = new WebMarkupContainer(markupId);
 
 		baseButton.setOutputMarkupId(true);
@@ -214,8 +214,8 @@ public abstract class DropDownButton extends AbstractLink implements
 	 *            The icon type as model
 	 * @return new icon component
 	 */
-	protected Icon newButtonIcon(final String markupId,
-			final IModel<IconType> iconTypeModel) {
+    private Icon newButtonIcon(final String markupId,
+                               final IModel<IconType> iconTypeModel) {
 		return new Icon(markupId, iconTypeModel);
 	}
 
@@ -234,8 +234,8 @@ public abstract class DropDownButton extends AbstractLink implements
 	 * @param buttonSize
 	 *            mandatory parameter
 	 */
-	protected void addButtonBehavior(final IModel<Buttons.Type> buttonType,
-			final IModel<Buttons.Size> buttonSize) {
+    private void addButtonBehavior(final IModel<Buttons.Type> buttonType,
+                                   final IModel<Buttons.Size> buttonSize) {
 		baseButton.add(new ButtonBehavior(buttonType, buttonSize));
 	}
 

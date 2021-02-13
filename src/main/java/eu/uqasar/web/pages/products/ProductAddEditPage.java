@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.pages.products;
 
 /*
@@ -60,13 +57,13 @@ public class ProductAddEditPage extends BasePage {
 
 	private final Form<Product> productForm;
 
-	protected final InputBorder<String> nameValidationBorder;
-	protected final InputBorder<String> descriptionValidationBorder;
-	protected final InputBorder<String> versionValidationBorder;
-	protected final DateTextField releaseDateTextField;
+	private final InputBorder<String> nameValidationBorder;
+	private final InputBorder<String> descriptionValidationBorder;
+	private final InputBorder<String> versionValidationBorder;
+	private final DateTextField releaseDateTextField;
 
 	// The Product to edit/save
-	protected Product product;
+    private Product product;
 
 	/**
 	 * @param parameters
@@ -119,7 +116,7 @@ public class ProductAddEditPage extends BasePage {
 	 * 
 	 * @param idParam
 	 */
-	protected void loadProduct(final StringValue idParam) {
+    private void loadProduct(final StringValue idParam) {
 		// If no ID is provided
 		if (idParam.isEmpty()) {
 			setPageTitle(new StringResourceModel("page.create.title", this,
@@ -192,7 +189,6 @@ public class ProductAddEditPage extends BasePage {
 
 	/**
 	 * 
-	 * @param someDateTextField
 	 * @return
 	 */
 	private InputBorder<Date> newReleaseDateTextField(
@@ -264,7 +260,7 @@ public class ProductAddEditPage extends BasePage {
 	 * list
 	 * @param target
 	 */
-	protected void save(AjaxRequestTarget target) {
+    private void save(AjaxRequestTarget target) {
 		// save product
 		saveProduct();
 		if (product.getId() == null) {
@@ -297,7 +293,7 @@ public class ProductAddEditPage extends BasePage {
 	 * 
 	 * @param target
 	 */
-	protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
 		// in case of errors (e.g. validation errors) show error
 		// messages in form
 		target.add(productForm);
@@ -307,7 +303,7 @@ public class ProductAddEditPage extends BasePage {
 		return linkToEdit(entity.getId());
 	}
 
-	public static PageParameters linkToEdit(Long entityId) {
+	private static PageParameters linkToEdit(Long entityId) {
 		return new PageParameters().add("id", entityId);
 	}
 

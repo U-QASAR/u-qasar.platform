@@ -52,13 +52,13 @@ public abstract class BaseIndicator extends TreeNode {
 	private static final long serialVersionUID = -6441961332152113221L;
 
 	@XmlTransient
-	protected Purpose indicatorPurpose = Purpose.Process;
+    private Purpose indicatorPurpose = Purpose.Process;
 
 	@XmlTransient
-	protected Type indicatorType = Type.Automatic;
+    private Type indicatorType = Type.Automatic;
 	
 	@XmlTransient
-	protected Date lastUpdated = DateTime.now().toDate();
+    private Date lastUpdated = DateTime.now().toDate();
 	
 	@XmlTransient
 	private float value;
@@ -109,7 +109,7 @@ public abstract class BaseIndicator extends TreeNode {
 	}
 
 	@JsonIgnore
-	public void setIndicatorType(Type indicatorType) {
+    void setIndicatorType(Type indicatorType) {
 		this.indicatorType = indicatorType;
 	}
 
@@ -193,14 +193,14 @@ public abstract class BaseIndicator extends TreeNode {
 	 * @param historicValues
 	 */
 	@JsonIgnore
-	public void setHistoricValues(List<HistoricValuesBaseIndicator> historicValues) {
+    void setHistoricValues(List<HistoricValuesBaseIndicator> historicValues) {
 		this.historicValues = historicValues;
 	}
 
 	/**
 	 * @param historicValues
 	 */
-	public void addHistoricValues(final HistoricValuesBaseIndicator historicValues){
+    private void addHistoricValues(final HistoricValuesBaseIndicator historicValues){
 		this.historicValues.add(historicValues);
 	}
 	
@@ -231,8 +231,7 @@ public abstract class BaseIndicator extends TreeNode {
 	}
 	
 	/**
-	 * @param Add Historical values from baseIndicator
-	 */
+     */
 	private void addHistoricValues(final BaseIndicator baseIndicator) {
 		final HistoricValuesBaseIndicator historicValues = new HistoricValuesBaseIndicator(
 		baseIndicator);
@@ -279,7 +278,7 @@ public abstract class BaseIndicator extends TreeNode {
 	 * @param weight the weight to set
 	 */
 	@JsonIgnore
-	public void setWeight(float weight) {
+    void setWeight(float weight) {
 		this.weight = weight;
 	}
 

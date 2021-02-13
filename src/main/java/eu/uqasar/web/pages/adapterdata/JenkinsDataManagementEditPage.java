@@ -54,14 +54,16 @@ import eu.uqasar.web.pages.BasePage;
 public class JenkinsDataManagementEditPage extends BasePage {
 
     // The tableEntity to edit/save
-    protected JenkinsMetricMeasurement tableEntity;
+    private JenkinsMetricMeasurement tableEntity;
     
     @Inject
     private JenkinsDataService jenkinsService;
     
     private final Form<JenkinsMetricMeasurement> tableEntityForm;
     
-    protected final InputBorder<String> projectNameBorder,metricBorder,valueBorder;
+    private final InputBorder<String> projectNameBorder;
+    private final InputBorder<String> metricBorder;
+    private final InputBorder<String> valueBorder;
     
     @SuppressWarnings("unused")
     private final DateTextField someDateField;
@@ -120,7 +122,7 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * 
      * @param idParam
      */
-    protected void loadTableEntity(final StringValue idParam) {
+    private void loadTableEntity(final StringValue idParam) {
         if (idParam.isEmpty()) {
             setPageTitle(new StringResourceModel("page.create.title", this,
                     null));
@@ -148,7 +150,7 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * @return
      */
     private Form<JenkinsMetricMeasurement> newTableEntityForm() {
-        Form<JenkinsMetricMeasurement> form = new InputValidationForm<JenkinsMetricMeasurement>("form");
+        Form<JenkinsMetricMeasurement> form = new InputValidationForm<>("form");
         form.setOutputMarkupId(true);
         return form;
     }
@@ -158,10 +160,10 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newProjectNameField() {
-        return new OnEventInputBeanValidationBorder<String>("projectNameBorder",
-                new TextField<String>("name", new PropertyModel<String>(
+        return new OnEventInputBeanValidationBorder<>("projectNameBorder",
+                new TextField<>("name", new PropertyModel<String>(
                         tableEntity, "name")), new StringResourceModel(
-                        "name.input.label", this, null),
+                "name.input.label", this, null),
                 HtmlEvent.ONCHANGE);
     }
     
@@ -170,11 +172,11 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newMetricField(){
-        return new OnEventInputBeanValidationBorder<String>("metricBorder",
-            new TextField<String>("jenkinsMetric", new PropertyModel<String>(
-                    tableEntity, "jenkinsMetric")), new StringResourceModel(
-                    "metric.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("metricBorder",
+                new TextField<>("jenkinsMetric", new PropertyModel<String>(
+                        tableEntity, "jenkinsMetric")), new StringResourceModel(
+                "metric.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -182,11 +184,11 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * @return
      */
     private InputBorder<String> newValueField(){
-        return new OnEventInputBeanValidationBorder<String>("valueBorder",
-            new TextArea<String>("value", new PropertyModel<String>(
-                    tableEntity, "value")), new StringResourceModel(
-                    "value.input.label", this, null),
-            HtmlEvent.ONCHANGE);
+        return new OnEventInputBeanValidationBorder<>("valueBorder",
+                new TextArea<>("value", new PropertyModel<String>(
+                        tableEntity, "value")), new StringResourceModel(
+                "value.input.label", this, null),
+                HtmlEvent.ONCHANGE);
     }
     
     /**
@@ -196,7 +198,7 @@ public class JenkinsDataManagementEditPage extends BasePage {
      */
     private InputBorder<Date> newSomeDateTextField(
             final DateTextField someDateTextField) {
-        return new OnEventInputBeanValidationBorder<Date>(
+        return new OnEventInputBeanValidationBorder<>(
                 "someDateValidationBorder", someDateTextField,
                 new StringResourceModel("some.date.input.label", this, null),
                 HtmlEvent.ONCHANGE);
@@ -212,9 +214,8 @@ public class JenkinsDataManagementEditPage extends BasePage {
                 .withStartDate(new DateTime().withYear(1900))
                 .allowKeyboardNavigation(true).autoClose(true)
                 .highlightToday(false).showTodayButton(false);
-        DateTextField dateTextField = new DateTextField("timeStamp",
+        return new DateTextField("timeStamp",
                 new PropertyModel<Date>(tableEntity, "timeStamp"), config);
-        return dateTextField;
     }
     
     /**
@@ -240,7 +241,7 @@ public class JenkinsDataManagementEditPage extends BasePage {
     /**
      * 
      */
-    protected void save(AjaxRequestTarget target, PageParameters parameters) {
+    private void save(AjaxRequestTarget target, PageParameters parameters) {
         // save tableEntity
         saveTableEntity();
         // success message has to be associated to session so that it is shown
@@ -270,7 +271,7 @@ public class JenkinsDataManagementEditPage extends BasePage {
      * 
      * @param target
      */
-    protected void showErrors(AjaxRequestTarget target) {
+    private void showErrors(AjaxRequestTarget target) {
         // in case of errors (e.g. validation errors) show error
         // messages in form
         target.add(tableEntityForm);

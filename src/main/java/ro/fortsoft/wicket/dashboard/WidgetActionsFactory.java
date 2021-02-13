@@ -19,6 +19,6 @@ import java.util.List;
  */
 public interface WidgetActionsFactory {
 
-	public List<WidgetAction> createWidgetActions(Widget widget);
+	List<WidgetAction> createWidgetActions(Widget widget);
 	
 }

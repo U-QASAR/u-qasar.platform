@@ -23,6 +23,7 @@ package eu.uqasar.util.io.exporter;
 
 import java.io.IOException;
 
+import lombok.NoArgsConstructor;
 import org.apache.wicket.util.file.File;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -31,13 +32,10 @@ import org.codehaus.jackson.map.SerializationConfig;
 
 import eu.uqasar.model.tree.Project;
 
-
-
+@NoArgsConstructor
 public class QProjectJsonWriter extends QProjectWriter {
 
 	private File file;
-	
-	public QProjectJsonWriter() {}
 	
 	public File createJsonFile(Project p) throws JsonGenerationException, JsonMappingException, IOException {
 		

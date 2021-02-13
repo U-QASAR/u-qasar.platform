@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -79,7 +76,7 @@ public class InputValidationForm<T> extends Form<T> {
 	 * to their class attribute if the border's inputComponent has a validation
 	 * error.
 	 */
-	protected void addErrorCSS() {
+    private void addErrorCSS() {
 		IVisitor<? extends InputBorder<?>, Object> visitor = new IVisitor<InputBorder<?>, Object>() {
 
 			@Override
@@ -95,7 +92,7 @@ public class InputValidationForm<T> extends Form<T> {
 	/**
 	 * Override this method for further specific error handling.
 	 */
-	protected void onErrorHandling() {
+    private void onErrorHandling() {
 	}
 
 }

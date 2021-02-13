@@ -355,7 +355,7 @@ public class AuthenticationService {
      */
     private boolean isResetPWRequestTimeout(User user) {
         Date now = new Date();
-        long halfDay = 43200000l;
+        long halfDay = 43200000L;
         return (now.getTime() - user.getResetPWRequestDate().getTime()) > halfDay;
     }
 }

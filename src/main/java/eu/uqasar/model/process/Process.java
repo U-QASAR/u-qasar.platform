@@ -37,6 +37,10 @@ import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -44,7 +48,9 @@ import org.hibernate.search.annotations.Index;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.Store;
 import org.hibernate.search.annotations.TermVector;
-
+@NoArgsConstructor
+@Setter
+@Getter
 @Entity
 @XmlRootElement
 @Table(name = "process")
@@ -71,10 +77,7 @@ public class Process extends AbstractEntity implements Namable {
 
 	@OneToMany
 	@JoinColumn(name = "project_id", nullable = true)
-	private Set<Project> projects = new HashSet<Project>();
-
-	public Process() {
-	}
+	private Set<Project> projects = new HashSet<>();
 
 	/**
 	 *
@@ -89,7 +92,7 @@ public class Process extends AbstractEntity implements Namable {
 	 * @param maxLength
 	 * @return the abbreviated name
 	 */
-	public String getAbbreviatedName(int maxLength) {
+    private String getAbbreviatedName(int maxLength) {
 		return StringUtils.abbreviate(getName(), maxLength);
 	}
 
@@ -99,80 +102,6 @@ public class Process extends AbstractEntity implements Namable {
 	 */
 	public String getAbbreviatedName() {
 		return getAbbreviatedName(48);
-	}
-
-	/**
-	 *
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 *
-	 * @param name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 *
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 *
-	 * @param descr the descr to set
-	 */
-	public void setDescription(String descr) {
-		this.description = descr;
-	}
-
-	/**
-	 * @return the startDate
-	 */
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	/**
-	 * @param startDate the startDate to set
-	 */
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	/**
-	 * @return the endDate
-	 */
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	/**
-	 * @param endDate the endDate to set
-	 */
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	/**
-	 * @return the stages
-	 */
-	public HashMap<Integer, String> getStages() {
-		return stages;
-	}
-
-	/**
-	 * @param stages the stages to set
-	 */
-	public void setStages(HashMap<Integer, String> stages) {
-		this.stages = stages;
 	}
 
 	@Override

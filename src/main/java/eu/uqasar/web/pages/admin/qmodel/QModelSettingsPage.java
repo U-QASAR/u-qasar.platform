@@ -53,11 +53,11 @@ public class QModelSettingsPage extends AdminBasePage {
 	private final Form<Void> form;
 	private final TextField<String> highField, highEntityField, mediumField, mediumEntityField, lowField, lowEntityField;
 	
-	private QModelSettings settings;
+	private final QModelSettings settings;
 
 	public QModelSettingsPage(PageParameters pageParameters) {
 		super(pageParameters);
-		settings = (QModelSettings) qmService.get(new QModelSettings());
+		settings = qmService.get(new QModelSettings());
 		form = new Form<Void>("form") {
 
 			@Override

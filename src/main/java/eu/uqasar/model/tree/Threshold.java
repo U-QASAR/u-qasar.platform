@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.model.tree;
 
 /*
@@ -26,16 +23,16 @@ package eu.uqasar.model.tree;
 import javax.persistence.Entity;
 import javax.xml.bind.annotation.XmlType;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.codehaus.jackson.annotate.JsonCreator;
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import eu.uqasar.model.AbstractEntity;
-
-/**
- *
- *
- */
+@NoArgsConstructor
+@Setter
+@Getter
 @XmlType(propOrder = { "lowerAcceptanceLimit", "upperAcceptanceLimit" , "colorLowerAcceptanceLimit",
 		"colorMiddAcceptanceLimit", "colorUpperAcceptanceLimit"})
 @Entity
@@ -67,97 +64,10 @@ public class Threshold extends AbstractEntity {
 		this.setColorUpperAcceptanceLimit(colorUpp);
 	}
 	
-	public Threshold() {
-	}
-
 	public Threshold(int lowerAcceptanceLimit, int upperAcceptanceLimit) {
 		this.lowerAcceptanceLimit = lowerAcceptanceLimit;
 		this.upperAcceptanceLimit = upperAcceptanceLimit;
 	}
 
-	/**
-	 * @return the upperAcceptanceLimit
-	 */
-	public double getUpperAcceptanceLimit() {
-		return upperAcceptanceLimit;
-	}
 
-	/**
-	 * @param upperAcceptanceLimit the upperAcceptanceLimit to set
-	 */
-	@JsonIgnore
-	public void setUpperAcceptanceLimit(double upperAcceptanceLimit) {
-		this.upperAcceptanceLimit = upperAcceptanceLimit;
-	}
-
-	/**
-	 * @return the lowerAcceptanceLimit
-	 */
-	public double getLowerAcceptanceLimit() {
-		return lowerAcceptanceLimit;
-	}
-
-	/**
-	 * @param lowerAcceptanceLimit the lowerAcceptanceLimit to set
-	 */
-	@JsonIgnore
-	public void setLowerAcceptanceLimit(double lowerAcceptanceLimit) {
-		this.lowerAcceptanceLimit = lowerAcceptanceLimit;
-	}
-
-	/**
-	 * @return the colorLowerAcceptanceLimit
-	 */
-	public QualityStatus getColorLowerAcceptanceLimit() {
-		if (colorLowerAcceptanceLimit == null){
-			colorLowerAcceptanceLimit = QualityStatus.Red;
-		}
-		return colorLowerAcceptanceLimit;
-	}
-
-	/**
-	 * @param colorLowerAcceptanceLimit the colorLowerAcceptanceLimit to set
-	 */
-	@JsonIgnore
-	public void setColorLowerAcceptanceLimit(QualityStatus colorLowerAcceptanceLimit) {
-		this.colorLowerAcceptanceLimit = colorLowerAcceptanceLimit;
-	}
-
-	/**
-	 * @return the colorMiddAcceptanceLimit
-	 */
-	public QualityStatus getColorMiddAcceptanceLimit() {
-		if (colorMiddAcceptanceLimit==null){
-			colorMiddAcceptanceLimit = QualityStatus.Yellow;
-		}
-		return colorMiddAcceptanceLimit;
-	}
-
-	/**
-	 * @param colorMiddAcceptanceLimit the colorMiddAcceptanceLimit to set
-	 */
-	@JsonIgnore
-	public void setColorMiddAcceptanceLimit(QualityStatus colorMiddAcceptanceLimit) {
-		this.colorMiddAcceptanceLimit = colorMiddAcceptanceLimit;
-	}
-
-	/**
-	 * @return the colorUpperAcceptanceLimit
-	 */
-	public QualityStatus getColorUpperAcceptanceLimit() {
-		if (colorUpperAcceptanceLimit == null){
-			colorUpperAcceptanceLimit = QualityStatus.Green;
-		}
-		return colorUpperAcceptanceLimit;
-	}
-	
-	/**
-	 * @param colorUpperAcceptanceLimit the colorUpperAcceptanceLimit to set
-	 */
-	@JsonIgnore
-	public void setColorUpperAcceptanceLimit(QualityStatus colorUpperAcceptanceLimit) {
-		this.colorUpperAcceptanceLimit = colorUpperAcceptanceLimit;
-	}
-	
-	
 }

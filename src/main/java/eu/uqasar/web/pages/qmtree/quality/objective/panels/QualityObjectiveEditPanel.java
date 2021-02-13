@@ -95,11 +95,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 	private static final long serialVersionUID = -6228029042856652686L;
 
 	private TinyMceBehavior tinyMceBehavior;
-	private TextArea<String> description;
-	private IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
+	private final TextArea<String> description;
+	private final IModel<Boolean> richEnabledModel = Model.of(Boolean.TRUE);
 
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	@Inject
 	private QMTreeNodeService qmodelService;
@@ -108,24 +108,30 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
     @Named(MetaDataService.NAME)
     private MetaDataService metaDataService;
 
-	private TagsSelectionModal tagsModal;
+	private final TagsSelectionModal tagsModal;
 
     private final Form<QMQualityObjective> form;
 
-	private FormComponent name, lowerLimit, upperLimit, weight, targetValue;
-	private FormComponent<Purpose> purpose;
-	private FormComponent<Paradigm> paradigm;
-	private FormComponent<Version> version;
-	private CheckBoxMultipleChoice<Domain> domain;
-	private ComponentFeedbackPanel feedbackName, feedbackLimits, feedbackLow;
-	private AjaxButton save;
+	private final FormComponent name;
+	private final FormComponent lowerLimit;
+	private final FormComponent upperLimit;
+	private final FormComponent weight;
+	private final FormComponent targetValue;
+	private final FormComponent<Purpose> purpose;
+	private final FormComponent<Paradigm> paradigm;
+	private final FormComponent<Version> version;
+	private final CheckBoxMultipleChoice<Domain> domain;
+	private final ComponentFeedbackPanel feedbackName;
+	private final ComponentFeedbackPanel feedbackLimits;
+	private final ComponentFeedbackPanel feedbackLow;
+	private final AjaxButton save;
 	private CheckBox chkCreateCopy;
 
 	private final List<Class> metaDataClasses;
 	
 	private MetaDataChoiceProvider metaDataProvider;
 	
-	private Select2MultiChoice select;
+	private final Select2MultiChoice select;
 	
 	public QualityObjectiveEditPanel(String id, final IModel<QMQualityObjective> model, final boolean isNew) {
 		super(id, model);
@@ -187,18 +193,18 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		feedbackName.setOutputMarkupId(true);
 		
 		//Domains
-		domain = new CheckBoxMultipleChoice<Domain>("domain", new PropertyModel<List<Domain>>(indicator, "domain"), Domain.getAllDomains());
+		domain = new CheckBoxMultipleChoice<>("domain", new PropertyModel<List<Domain>>(indicator, "domain"), Domain.getAllDomains());
 		form.add(domain);		
 
 		// Purpose
-		purpose = new DropDownChoice<Purpose>("purpose", new PropertyModel<Purpose>(indicator, "indicatorPurpose"), Purpose.getAllPurposes());
+		purpose = new DropDownChoice<>("purpose", new PropertyModel<Purpose>(indicator, "indicatorPurpose"), Purpose.getAllPurposes());
 		
 		// Purpose attributes
-		paradigm = new DropDownChoice<Paradigm>("attContent", new PropertyModel<Paradigm>(indicator, "paradigm"), Paradigm.getAllParadigms());
+		paradigm = new DropDownChoice<>("attContent", new PropertyModel<Paradigm>(indicator, "paradigm"), Paradigm.getAllParadigms());
 
 		final Label paradigmLabel = new Label("attLabel", new StringResourceModel("label.objective.paradigm",this, null));
 
-		version = new DropDownChoice<Version>("attContent", new PropertyModel<Version>(indicator, "version"), Version.getAllVersions());
+		version = new DropDownChoice<>("attContent", new PropertyModel<Version>(indicator, "version"), Version.getAllVersions());
 
 		final Label versionLabel = new Label("attLabel", new StringResourceModel("label.objective.version",this, null));
 
@@ -223,7 +229,7 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 			@Override
 			protected void onUpdate(AjaxRequestTarget target)
 			{
-				if (((Purpose) getFormComponent().getConvertedInput()).equals(Purpose.Process)){
+				if (getFormComponent().getConvertedInput().equals(Purpose.Process)){
 					purposeAtt.remove(versionLabel);
 					purposeAtt.remove(version);
 					purposeAtt.add(paradigmLabel);
@@ -241,8 +247,8 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		});
 
 		// Description
-		description = new TextArea<String>("description",
-				new PropertyModel<String>(model, "description"));
+		description = new TextArea<>("description",
+                new PropertyModel<String>(model, "description"));
 		form.add(description);
 		description.add(tinyMceBehavior = new TinyMceBehavior(
 				DefaultTinyMCESettings.get()));
@@ -267,8 +273,8 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		});
 
 		//roles
-		final CheckBoxMultipleChoice<Role> targetAudience = 
-				new CheckBoxMultipleChoice<Role>("targetAudience", new PropertyModel<List<Role>>(indicator, "targetAudience"), Role.getAllRoles());
+		final CheckBoxMultipleChoice<Role> targetAudience =
+                new CheckBoxMultipleChoice<>("targetAudience", new PropertyModel<List<Role>>(indicator, "targetAudience"), Role.getAllRoles());
 		form.add(targetAudience);
 
 		//lower and upper limits
@@ -319,11 +325,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 				cancel.setDefaultFormProcessing(false);
 				form.add(cancel);
 			} else {
-				form.add(new BootstrapBookmarkablePageLink<QModelViewPage>(
-						"cancel",
-						QMQualityObjectiveViewPage.class,
-						QMQualityObjectiveViewPage.forQualityObjective(model.getObject()),
-						de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
+				form.add(new BootstrapBookmarkablePageLink<QMQualityObjective>(
+                        "cancel",
+                        QMQualityObjectiveViewPage.class,
+                        QMQualityObjectiveViewPage.forQualityObjective(model.getObject()),
+                        de.agilecoders.wicket.core.markup.html.bootstrap.button.Buttons.Type.Default)
 						.setLabel(new StringResourceModel("button.cancel", this, null)));
 			}
 
@@ -367,11 +373,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 		super.onConfigure();
 	}
 	
-	public QMQualityObjective checkCompleted(QMQualityObjective node) {
+	private QMQualityObjective checkCompleted(QMQualityObjective node) {
 		if (node.getChildren().isEmpty()){
-			node.setIsCompleted(false);
+			node.setCompleted(false);
 			//update quality model
-			node.getParent().setIsCompleted(false);
+			node.getParent().setCompleted(false);
 			qmodelService.update(node.getParent());
 		}
 		return node;
@@ -431,17 +437,16 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						Class<?> clazz = Class.forName("eu.uqasar.model.meta."+this.getTypeSelected());
 
 						MetaData created = metaDataService.getByMetaDataOrCreate(clazz, this.getTagName());
-						QModelTagData qmtg = (QModelTagData) metaDataService.getByQMTagData(created.getId());
+						QModelTagData qmtg = metaDataService.getByQMTagData(created.getId());
 						
 						String input = this.getInputSelection();
 						Collection<QModelTagData> ch;
-						Set<QModelTagData> set = new HashSet<QModelTagData>();
+						Set<QModelTagData> set = new HashSet<>();
 						if (input!=null){
 							input = input.replaceAll(this.getTagName(),String.valueOf(qmtg.getId()));
 							ch = metaDataProvider.toChoices((Arrays.asList(input.split(","))));
-							Iterator it = ch.iterator();
-							while (it.hasNext()){
-								set.add((QModelTagData)it.next());
+							for (QModelTagData aCh : ch) {
+								set.add(aCh);
 							}
 						} 
 						
@@ -452,17 +457,11 @@ public class QualityObjectiveEditPanel extends QMBaseTreePanel<QMQualityObjectiv
 						this.setTypeSelected("");
 						this.setTagName("");
 					}
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SecurityException e) {
+				} catch (ClassNotFoundException | SecurityException | IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				return confirmed;
+                return confirmed;
 			}
 		};
 		

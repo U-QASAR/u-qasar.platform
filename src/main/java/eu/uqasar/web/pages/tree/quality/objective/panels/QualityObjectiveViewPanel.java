@@ -21,20 +21,6 @@ package eu.uqasar.web.pages.tree.quality.objective.panels;
  */
 
 
-import java.util.List;
-
-import javax.inject.Inject;
-
-import org.apache.wicket.behavior.AttributeAppender;
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.apache.wicket.markup.repeater.RepeatingView;
-import org.apache.wicket.model.IModel;
-import org.apache.wicket.model.Model;
-import org.apache.wicket.model.PropertyModel;
-import org.apache.wicket.model.StringResourceModel;
-
 import de.agilecoders.wicket.core.markup.html.bootstrap.behavior.CssClassNameAppender;
 import eu.uqasar.model.tree.QualityObjective;
 import eu.uqasar.model.tree.QualityStatus;
@@ -45,6 +31,18 @@ import eu.uqasar.web.pages.tree.historic.baseindicator.HistoricBaseIndicatorPage
 import eu.uqasar.web.pages.tree.panels.BaseTreePanel;
 import eu.uqasar.web.pages.tree.panels.thresholds.ThresholdIndicator;
 import eu.uqasar.web.pages.tree.quality.objective.QualityObjectiveEditPage;
+import org.apache.wicket.behavior.AttributeAppender;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.repeater.RepeatingView;
+import org.apache.wicket.model.IModel;
+import org.apache.wicket.model.Model;
+import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.model.StringResourceModel;
+
+import javax.inject.Inject;
+import java.util.List;
 
 public class QualityObjectiveViewPanel extends BaseTreePanel<QualityObjective> {
 	
@@ -80,7 +78,7 @@ public class QualityObjectiveViewPanel extends BaseTreePanel<QualityObjective> {
 				"description")).setEscapeModelStrings(false));
 
 		// Threshold indicator
-		add(new ThresholdIndicator<QualityObjective>("thresholdIndicator", model));
+		add(new ThresholdIndicator<>("thresholdIndicator", model));
 		
 		// Target value
 		add(new Label("targetValue", qo.getTargetValue()));

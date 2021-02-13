@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.model;
 
 /*
@@ -33,7 +30,7 @@ import org.hibernate.search.bridge.StringBridge;
  *
  * 
  */
-public class TagsBridge implements StringBridge {
+class TagsBridge implements StringBridge {
 
 	/*
 	 * (non-Javadoc)

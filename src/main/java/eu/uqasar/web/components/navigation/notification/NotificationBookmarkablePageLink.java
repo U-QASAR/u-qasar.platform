@@ -26,6 +26,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.util.Date;
 
+import lombok.Setter;
 import org.apache.wicket.Page;
 import org.apache.wicket.core.util.lang.WicketObjects;
 import org.apache.wicket.markup.html.TransparentWebMarkupContainer;
@@ -44,6 +45,7 @@ import de.agilecoders.wicket.core.markup.html.bootstrap.image.IconType;
 import eu.uqasar.model.notification.INotification;
 import eu.uqasar.web.UQasar;
 
+@Setter
 public class NotificationBookmarkablePageLink<T extends INotification, C extends Page> extends Link<T> {
 
 	private static final long serialVersionUID = 9134635901931928968L;
@@ -64,11 +66,11 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 	protected WebMarkupContainer gotoContainer;
 	protected Label notificationDate;
 	
-	public NotificationBookmarkablePageLink(String id, Class<C> pageClass, IModel<T> model) {
+	private NotificationBookmarkablePageLink(String id, Class<C> pageClass, IModel<T> model) {
 		this(id, pageClass, new PageParameters(), model);
 	}
 
-	public NotificationBookmarkablePageLink(final String id, final Class<C> pageClass, final PageParameters parameters, IModel<T> model) {
+	protected NotificationBookmarkablePageLink(final String id, final Class<C> pageClass, final PageParameters parameters, IModel<T> model) {
 		
 		super(id, model);
 		this.parameters = parameters;
@@ -108,20 +110,15 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 		notificationContainer.add(gotoContainer);
 	}
 
-	public NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
+	protected NotificationBookmarkablePageLink<T, C> setIcon(IconType iconType) {
 		icon.setType(iconType);
-		return this;
-	}
-
-	public NotificationBookmarkablePageLink<T, C> setIcon(String iconName) {
-		icon.setType(new IconType(iconName));
 		return this;
 	}
 
 	/**
 	 * @return page parameters
 	 */
-	public PageParameters getPageParameters() {
+    protected PageParameters getPageParameters() {
 		if (parameters == null) {
 			parameters = new PageParameters();
 		}
@@ -137,7 +134,7 @@ public class NotificationBookmarkablePageLink<T extends INotification, C extends
 	 *
 	 * @return Page class
 	 */
-	public final Class<? extends Page> getPageClass() {
+    private Class<? extends Page> getPageClass() {
 		return WicketObjects.resolveClass(pageClassName);
 	}
 

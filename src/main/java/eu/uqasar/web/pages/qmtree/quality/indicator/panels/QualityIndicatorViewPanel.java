@@ -56,7 +56,7 @@ public class QualityIndicatorViewPanel extends QMBaseTreePanel<QMQualityIndicato
 	private static final long serialVersionUID = -7418672016918329832L;
 
 	//container for purpose and its attributes
-	private WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
+	private final WebMarkupContainer purposeAtt = new WebMarkupContainer("purposeAtt");
 
 	private final WebMarkupContainer wmcQModelTagData;
 
@@ -180,7 +180,7 @@ public class QualityIndicatorViewPanel extends QMBaseTreePanel<QMQualityIndicato
 	}
 	
 	private IModel<?> replaceBracketsModel(Label label) {
-		return Model.of(label.getDefaultModelObjectAsString().toString().replace("[", "").replace("]", ""));
+		return Model.of(label.getDefaultModelObjectAsString().replace("[", "").replace("]", ""));
 	}
 	
 

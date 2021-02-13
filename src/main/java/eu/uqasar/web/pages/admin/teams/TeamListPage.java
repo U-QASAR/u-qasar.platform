@@ -35,7 +35,6 @@ import eu.uqasar.service.tree.ProjectSearchService;
 import eu.uqasar.service.tree.TreeNodeService;
 import eu.uqasar.service.user.TeamMembershipService;
 import eu.uqasar.service.user.TeamService;
-import eu.uqasar.service.user.UserService;
 import eu.uqasar.web.components.ModalActionButton;
 import eu.uqasar.web.components.NotificationModal;
 import eu.uqasar.web.pages.admin.AdminBasePage;
@@ -127,7 +126,7 @@ public class TeamListPage extends AdminBasePage {
 			@Override
 			protected void populateItem(Item<Team> item) {
 				final Team team = item.getModelObject();
-				item.add(new Check<Team>("teamCheck", item.getModel(), teamGroup));
+				item.add(new Check<>("teamCheck", item.getModel(), teamGroup));
 				BookmarkablePageLink<TeamEditPage> editTeam = new BookmarkablePageLink<>("link.edit.team", TeamEditPage.class, new PageParameters().add("id", team.getId()));
 				item.add(editTeam.add(new Label("td.teamname", new PropertyModel<>(team, "name"))));
 				item.add(new Label("td.description", new PropertyModel<>(team, "description")));

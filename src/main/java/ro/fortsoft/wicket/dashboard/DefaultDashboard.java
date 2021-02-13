@@ -23,7 +23,7 @@ public class DefaultDashboard implements Dashboard {
 
 	private static final long serialVersionUID = 1L;
 	
-	private String dashboardId;
+	private final String dashboardId;
 	private String title;
 	private int columnCount;
 	private List<Widget> widgets;
@@ -32,7 +32,7 @@ public class DefaultDashboard implements Dashboard {
 		this.dashboardId = id;
 		this.title = title;
 		columnCount = 2;
-		widgets = new ArrayList<Widget>();
+		widgets = new ArrayList<>();
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class DefaultDashboard implements Dashboard {
 	
 	@Override
 	public List<Widget> getWidgets(int column) {
-		List<Widget> columnWidgets = new ArrayList<Widget>();
+		List<Widget> columnWidgets = new ArrayList<>();
 		for (Widget widget : widgets) {
 			if (column == widget.getLocation().getColumn()) {
 				columnWidgets.add(widget);
@@ -103,12 +103,12 @@ public class DefaultDashboard implements Dashboard {
 		// Now do not add widget, if there already is one with the 
 		// given id.
 		boolean exists = false;
-		for (int i = 0; i < widgets.size(); i++) {
-			if (widgets.get(i).getId().equals(widget.getId())) {
-				exists = true;
-				break;
-			}
-		}
+        for (Widget widget1 : widgets) {
+            if (widget1.getId().equals(widget.getId())) {
+                exists = true;
+                break;
+            }
+        }
 		if (!exists) {
 			widgets.add(widget);
 		}
@@ -124,14 +124,13 @@ public class DefaultDashboard implements Dashboard {
 	
 	@Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
-		buffer.append("DefaultDashboard[");
-		buffer.append("dashboardId = ").append(dashboardId);
-		buffer.append(" title = ").append(title);
-		buffer.append(" widgets = ").append(widgets);
-		buffer.append("]");
+        String buffer = "DefaultDashboard[" +
+                "dashboardId = " + dashboardId +
+                " title = " + title +
+                " widgets = " + widgets +
+                "]";
 
-		return buffer.toString();
+        return buffer;
 	}
 	
 }

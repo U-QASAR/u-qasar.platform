@@ -35,11 +35,11 @@ import javax.naming.directory.Attributes;
  */
 public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 
-	protected String dn;
-	protected final Attributes attributes;
-	protected LdapSettings settings;
+	private String dn;
+	private final Attributes attributes;
+	final LdapSettings settings;
 
-	public LdapEntity(Attributes attr, LdapSettings settings) {
+	LdapEntity(Attributes attr, LdapSettings settings) {
 		this.attributes = attr;
 		this.settings = settings;
 	}
@@ -51,24 +51,24 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 		return dn;
 	}
 
-	public static <T> T getValue(final String attributeName, final Attributes attr) {
+	private static <T> T getValue(final String attributeName, final Attributes attr) {
 		try {
 			Attribute attribute = attr.get(attributeName);
 			if (attribute != null) {
 				return (T) attribute.get();
 			}
-		} catch (NamingException e) {
+		} catch (NamingException ignored) {
 		}
 		return null;
 	}
 
-	public <T> T getValue(final String attributeName) {
+	private <T> T getValue(final String attributeName) {
 		try {
 			Attribute attribute = attributes.get(attributeName);
 			if (attribute != null) {
 				return (T) attribute.get();
 			}
-		} catch (NamingException e) {
+		} catch (NamingException ignored) {
 		}
 		return null;
 	}
@@ -85,7 +85,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 		return null;
 	}
 
-	public static <T> T getMappedValue(final String fieldMapping, final Attributes attr) {
+	static <T> T getMappedValue(final String fieldMapping, final Attributes attr) {
 		if (LdapSettings.isLookupField(fieldMapping)) {
 			final String attributeName = LdapSettings.getLookupFieldName(fieldMapping);
 			return getValue(attributeName, attr);
@@ -101,7 +101,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 		return null;
 	}
 
-	protected byte[] getByteArrayValue(final String fieldMapping) {
+	byte[] getByteArrayValue(final String fieldMapping) {
 		if (LdapSettings.isLookupField(fieldMapping)) {
 			final String attributeName = LdapSettings.getLookupFieldName(fieldMapping);
 			return getValue(attributeName);
@@ -129,7 +129,7 @@ public class LdapEntity implements Serializable, Comparable<LdapEntity> {
 		return compare(getDN(), o.getDN(), false);
 	}
 
-	public static int compare(String s1, String s2, boolean caseSensitive) {
+	static int compare(String s1, String s2, boolean caseSensitive) {
 		if (s1 == s2) {
 			return 0;
 		} else if (s1 == null) {

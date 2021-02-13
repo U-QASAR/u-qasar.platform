@@ -104,7 +104,7 @@ public class LoginPage extends BasePage {
 		add(new BookmarkablePageLink<RegisterPage>("registerLink", RegisterPage.class));
 	}
 
-	protected void doSubmit(final String login, final String password) {
+	private void doSubmit(final String login, final String password) {
 		final String cred = StringUtils.trimToEmpty(login);
 		try {
 			User user = authService.authenticate(cred, password);
@@ -141,7 +141,7 @@ public class LoginPage extends BasePage {
 		// Load all the dashboards belonging to the user
 		List<Dashboard> dashboards = dashboardContext.getDashboardPersiter().loadAll();
 		if (dashboards == null || dashboards.size() == 0) {
-			dashboards = new ArrayList<Dashboard>();
+			dashboards = new ArrayList<>();
 		}
 		UQasar.getSession().getLoggedInUser().setDashboards(dashboards);
 	}	

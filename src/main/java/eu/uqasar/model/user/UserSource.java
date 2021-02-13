@@ -35,7 +35,7 @@ public enum UserSource {
 
 	private final String labelKey;
 
-	private UserSource(final String labelKey) {
+	UserSource(final String labelKey) {
 		this.labelKey = labelKey;
 	}
 
@@ -44,7 +44,7 @@ public enum UserSource {
 		return getLabelModel().getObject();
 	}
 
-	public IModel<String> getLabelModel() {
+	private IModel<String> getLabelModel() {
 		return ResourceBundleLocator.getLabelModel(UserSource.class, "label.source." + labelKey);
 	}
 }

@@ -27,12 +27,15 @@ import eu.uqasar.model.AbstractEntity;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.apache.wicket.protocol.http.ClientProperties;
 
-/**
- *
- *
- */
+@Setter
+@Getter
+@NoArgsConstructor
 @Entity
 public class WebEnvironment extends AbstractEntity {
 
@@ -44,116 +47,8 @@ public class WebEnvironment extends AbstractEntity {
 	private boolean cookiesEnabled, javaEnabled;
 	private int screenWidth, screenHeight, colorDepth;
 
-	public WebEnvironment() {
-
-	}
-
 	public WebEnvironment(ClientProperties props) {
 		populateFromClientProperties(props);
-	}
-
-	public Browser getBrowser() {
-		return browser;
-	}
-
-	public void setBrowser(Browser browser) {
-		this.browser = browser;
-	}
-
-	public int getBrowserVersionMajor() {
-		return browserVersionMajor;
-	}
-
-	public void setBrowserVersionMajor(int browserVersionMajor) {
-		this.browserVersionMajor = browserVersionMajor;
-	}
-
-	public int getBrowserVersionMinor() {
-		return browserVersionMinor;
-	}
-
-	public void setBrowserVersionMinor(int browserVersionMinor) {
-		this.browserVersionMinor = browserVersionMinor;
-	}
-
-	public String getNavigatorPlatform() {
-		return navigatorPlatform;
-	}
-
-	public void setNavigatorPlatform(String navigatorPlatform) {
-		this.navigatorPlatform = navigatorPlatform;
-	}
-
-	public String getNavigatorUserAgent() {
-		return navigatorUserAgent;
-	}
-
-	public void setNavigatorUserAgent(String navigatorUserAgent) {
-		this.navigatorUserAgent = navigatorUserAgent;
-	}
-
-	public String getNavigatorLanguage() {
-		return navigatorLanguage;
-	}
-
-	public void setNavigatorLanguage(String navigatorLanguage) {
-		this.navigatorLanguage = navigatorLanguage;
-	}
-
-	public String getRemoteAddress() {
-		return remoteAddress;
-	}
-
-	public void setRemoteAddress(String remoteAddress) {
-		this.remoteAddress = remoteAddress;
-	}
-
-	public String getHostname() {
-		return hostname;
-	}
-
-	public void setHostname(String hostname) {
-		this.hostname = hostname;
-	}
-
-	public boolean isCookiesEnabled() {
-		return cookiesEnabled;
-	}
-
-	public void setCookiesEnabled(boolean cookiesEnabled) {
-		this.cookiesEnabled = cookiesEnabled;
-	}
-
-	public boolean isJavaEnabled() {
-		return javaEnabled;
-	}
-
-	public void setJavaEnabled(boolean javaEnabled) {
-		this.javaEnabled = javaEnabled;
-	}
-
-	public int getScreenWidth() {
-		return screenWidth;
-	}
-
-	public void setScreenWidth(int screenWidth) {
-		this.screenWidth = screenWidth;
-	}
-
-	public int getScreenHeight() {
-		return screenHeight;
-	}
-
-	public void setScreenHeight(int screenHeight) {
-		this.screenHeight = screenHeight;
-	}
-
-	public int getColorDepth() {
-		return colorDepth;
-	}
-
-	public void setColorDepth(int colorDepth) {
-		this.colorDepth = colorDepth;
 	}
 
 	private void populateFromClientProperties(ClientProperties props) {
@@ -176,7 +71,7 @@ public class WebEnvironment extends AbstractEntity {
 		return new WebEnvironment(properties);
 	}
 
-	public static enum Browser {
+	public enum Browser {
 
 		Chrome,
 		InternetExplorer,

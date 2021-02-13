@@ -21,8 +21,6 @@ package eu.uqasar.web.components.tree.util;
  */
 
 
-import java.io.Serializable;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.extensions.markup.html.repeater.tree.AbstractTree;
@@ -76,8 +74,8 @@ public abstract class SelectableTreeFolder extends TreeNodeContent {
 		selected = provider.model(node);
 	}
 
-	protected void select(TreeNode node, AbstractTree<TreeNode> tree,
-			final AjaxRequestTarget target) {
+	private void select(TreeNode node, AbstractTree<TreeNode> tree,
+                        final AjaxRequestTarget target) {
 		if (selected != null) {
 			tree.updateNode(selected.getObject(), target);
 

@@ -33,7 +33,7 @@ public abstract class QMBaseTreePanel<T extends IQMTreeNode<String>> extends Pan
 	 */
 	private static final long serialVersionUID = 1471525857010455058L;
 
-	public QMBaseTreePanel(String id, IModel<T> model) {
+	protected QMBaseTreePanel(String id, IModel<T> model) {
 		super(id, model);
 	}
 

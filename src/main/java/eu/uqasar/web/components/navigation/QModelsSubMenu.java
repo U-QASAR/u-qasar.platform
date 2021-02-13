@@ -95,10 +95,10 @@ public class QModelsSubMenu extends NavbarDropDownButton {
 		subMenu.add(newQModelLink);
 
 		
-		MenuBookmarkablePageLink<QModelImportPage> importQModelLink = new MenuBookmarkablePageLink<QModelImportPage>(
-				QModelImportPage.class,
-				new PageParameters(),
-				new StringResourceModel("menu.qmodels.import.text", this, null));
+		MenuBookmarkablePageLink<QModelImportPage> importQModelLink = new MenuBookmarkablePageLink<>(
+                QModelImportPage.class,
+                new PageParameters(),
+                new StringResourceModel("menu.qmodels.import.text", this, null));
 		importQModelLink.setIconType(new IconType("upload-alt"));
 		subMenu.add(importQModelLink);
 

@@ -1,6 +1,3 @@
-/**
- * 
- */
 package eu.uqasar.web.components;
 
 /*
@@ -23,10 +20,13 @@ package eu.uqasar.web.components;
  * #L%
  */
 
+import lombok.Getter;
+
 /**
  *
  * 
  */
+@Getter
 public enum HtmlEvent {
 
 	ONCHANGE("change"),
@@ -41,15 +41,8 @@ public enum HtmlEvent {
 
 	private String event;
 
-	private HtmlEvent(String event) {
+	HtmlEvent(String event) {
 		this.event = event;
-	}
-
-	/**
-	 * @return the event
-	 */
-	public String getEvent() {
-		return event;
 	}
 
 	@Override
