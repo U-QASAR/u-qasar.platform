@@ -57,7 +57,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 <!--		<generated.sources.dir>src/main/generated</generated.sources.dir> -->
 		<generated.sources.dir>${project.build.directory}/generated</generated.sources.dir>
-		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<jboss.javaee6.spec.version>3.0.0.Final</jboss.javaee6.spec.version>
 		<jboss.as.version>7.1.1.Final</jboss.as.version>
@@ -70,7 +70,6 @@
 		<freemarker.version>2.3.20</freemarker.version>
 		<!-- resteasy version used in JBoss ${jboss.as.version} -->
 		<resteasy.version>3.0.19.Final</resteasy.version>
-		<jackson.version>1.9.13</jackson.version>
 		<arquillian.version>1.1.2.Final</arquillian.version>
 		<slf4j.version>1.6.4</slf4j.version>
 		<checkstyle.config.location>proseco-checkstyle.xml</checkstyle.config.location>
@@ -79,7 +78,7 @@
 
 		<maven.plugin.enforcer.min.version>1.4.1</maven.plugin.enforcer.min.version>
 		<maven.plugin.versions.min.version>2.2</maven.plugin.versions.min.version>
-		<maven.plugin.compiler.min.version>3.5.1</maven.plugin.compiler.min.version>
+		<maven.plugin.compiler.min.version>3.8.0</maven.plugin.compiler.min.version>
 		<maven.plugin.surefire.min.version>2.19.1</maven.plugin.surefire.min.version>
 		<maven.plugin.failsafe.min.version>2.19.1</maven.plugin.failsafe.min.version>
 		<maven.plugin.docker.min.version>0.15.16</maven.plugin.docker.min.version>
@@ -151,17 +150,9 @@
 
 		<!-- explicitly add jackson for @JsonIgnore annotation -->
 		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${jackson.version}</version>
-			<!-- use provided scope as it is included in JBoss 7 -->
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-			<scope>provided</scope>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.7.9</version>
 		</dependency>
 
 		<!-- Wicket dependencies -->
@@ -439,9 +430,9 @@
 
 		<!-- Adapter by U-QASAR for JIRA(R) issue tracking system -->
 		<dependency>
-			<groupId>eu.uqasar.jira.adapter.JiraAdapter</groupId>
+			<groupId>eu.uqasar.adapter</groupId>
 			<artifactId>JiraAdapter</artifactId>
-			<version>1.2.3</version>
+			<version>2.0.0</version>
 		</dependency>
 
 		<!-- Sonar Adapter -->
@@ -548,7 +539,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.10</version>
+			<version>1.18.16</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -601,6 +592,9 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${maven.plugin.compiler.min.version}</version>
+					<configuration>
+						<release>8</release>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
