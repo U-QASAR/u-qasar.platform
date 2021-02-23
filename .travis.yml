@@ -1,6 +1,0 @@
-language: java
-jdk:
-  - oraclejdk7
-
-after_success:
-  - mvn clean generate-sources cobertura:cobertura coveralls:report
