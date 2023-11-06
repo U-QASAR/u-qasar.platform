@@ -65,7 +65,7 @@
 		<jboss.solder.version>3.1.0.Final</jboss.solder.version>
 		<jboss.seam.persistence.version>3.1.0.Final</jboss.seam.persistence.version>
 		<jboss.seam.conversation.version>3.0.0.Final</jboss.seam.conversation.version>
-		<wicket.version>7.17.0</wicket.version>
+		<wicket.version>7.18.0</wicket.version>
 		<wicket.bootstrap.version>0.8.4</wicket.bootstrap.version>
 		<freemarker.version>2.3.20</freemarker.version>
 		<!-- resteasy version used in JBoss ${jboss.as.version} -->
